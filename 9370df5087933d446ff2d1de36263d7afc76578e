@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_ee5c9aef",
+        "filename": "res/xml/settings.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-12-12T06:31:04Z",
+      "side": 1,
+      "message": "Is this really needed? And what does this have to do with the theme change?\n\nIn any case, it\u0027s misindented.",
+      "revId": "9370df5087933d446ff2d1de36263d7afc76578e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
