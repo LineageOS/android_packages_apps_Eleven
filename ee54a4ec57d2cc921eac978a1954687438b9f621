@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_3110c34e",
+        "filename": "src/com/cyanogenmod/eleven/loaders/SortedCursor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 11035
+      },
+      "writtenOn": "2014-12-12T12:18:44Z",
+      "side": 1,
+      "message": "extra indent/spaces",
+      "revId": "ee54a4ec57d2cc921eac978a1954687438b9f621",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b12af37c",
+        "filename": "src/com/cyanogenmod/eleven/loaders/SortedCursor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 11035
+      },
+      "writtenOn": "2014-12-12T12:18:44Z",
+      "side": 1,
+      "message": "extra indent/space",
+      "revId": "ee54a4ec57d2cc921eac978a1954687438b9f621",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
