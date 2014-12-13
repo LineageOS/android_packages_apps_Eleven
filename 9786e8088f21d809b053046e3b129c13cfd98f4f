@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_d17186e2",
+        "filename": "src/com/cyanogenmod/eleven/widgets/ViewPagerTabs.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-12-13T10:45:50Z",
+      "side": 1,
+      "message": "Using MATCH_PARENT instead of WRAP_CONTENT here should do the trick.",
+      "revId": "9786e8088f21d809b053046e3b129c13cfd98f4f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
