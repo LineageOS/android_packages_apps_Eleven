@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_622c3eac",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-12-14T03:12:06Z",
+      "side": 1,
+      "message": "Can probably also throw away this block and wrap the block below (lines 858 to 862) in a \u0027if (mNotifyMode !\u003d newNotifyMode)\u0027.",
+      "revId": "e1c1681dc88cae3ea99bac35548315d865aa1e4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c217f252",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2252,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2014-12-14T03:12:06Z",
+      "side": 1,
+      "message": "This comment could use some elaboration ;) It\u0027s obvious that the last played time is set before notifying about the change from looking at the code, the interesting piece of information is _why_ it needs to be that way.",
+      "revId": "e1c1681dc88cae3ea99bac35548315d865aa1e4b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
