@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_7a697e8b",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2769,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2014-12-17T13:49:17Z",
+      "side": 1,
+      "message": "Not quite sure, going to try to reupload and see if it fixes",
+      "parentUuid": "7aa08908_5a4be22b",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_7a521edf",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 1
@@ -81,6 +99,24 @@
       "writtenOn": "2014-12-17T13:25:39Z",
       "side": 1,
       "message": "Is there a chance the track will be null? won\u0027t cause an NPE or anything, but the message will look odd to a user.",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3a6ff693",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/BaseActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2014-12-17T13:49:17Z",
+      "side": 1,
+      "message": "I guess it is theoretically possible but haven\u0027t seen it happen in my test scenarios.  going to leave it for now, otherwise we\u0027d have to add another string for this scenario",
+      "parentUuid": "7aa08908_7abb3e0f",
       "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
