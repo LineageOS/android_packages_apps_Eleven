@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1a415a0c",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-12-17T13:25:39Z",
+      "side": 1,
+      "message": "oh god, thanks for changing this. drives me insane.",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fa456e17",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2766,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-12-17T13:25:39Z",
+      "side": 1,
+      "message": "Make \"track\" a constant",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_5a4be22b",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2769,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-12-17T13:25:39Z",
+      "side": 1,
+      "message": "what\u0027s going on here? extra white space char getting line wrapped? looks odd",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7a521edf",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 3172,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-12-17T13:25:39Z",
+      "side": 1,
+      "message": "Not exactly part of your change, but the 2000 value should also be constant",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7abb3e0f",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/BaseActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 9528
+      },
+      "writtenOn": "2014-12-17T13:25:39Z",
+      "side": 1,
+      "message": "Is there a chance the track will be null? won\u0027t cause an NPE or anything, but the message will look odd to a user.",
+      "revId": "fea83ef0d060408df85bada1d513981a49ad1be6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
