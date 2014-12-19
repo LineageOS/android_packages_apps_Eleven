@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_d02faef4",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2014-12-19T14:11:51Z",
+      "side": 1,
+      "message": "changed",
+      "revId": "c65640138e3dd1a36c3de4704b149c2b3cfdf58e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_30355246",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2014-12-19T14:11:51Z",
+      "side": 1,
+      "message": "changed",
+      "revId": "c65640138e3dd1a36c3de4704b149c2b3cfdf58e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
