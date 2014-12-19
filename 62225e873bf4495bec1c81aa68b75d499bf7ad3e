@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_b6e5baa9",
+        "filename": "res/values/colors.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-12-19T19:48:50Z",
+      "side": 0,
+      "message": "Joey, please don\u0027t make unnecessary whitespace changes.\n\nYou aren\u0027t following the standard 4 spaces indentation",
+      "revId": "62225e873bf4495bec1c81aa68b75d499bf7ad3e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
