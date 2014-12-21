@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_3987fa10",
+        "filename": "res/values/styles.xml",
+        "patchSetId": 22
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2014-12-21T09:14:09Z",
+      "side": 0,
+      "message": "useless indentation changes",
+      "revId": "657192dce57da265cf12100886e55a0a4cebe181",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
