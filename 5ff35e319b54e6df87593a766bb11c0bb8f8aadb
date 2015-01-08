@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_4cf49b86",
+        "filename": "src/com/cyanogenmod/eleven/provider/LocalizedStore.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 10984
+      },
+      "writtenOn": "2015-01-08T08:42:20Z",
+      "side": 0,
+      "message": "You might want to get rid of this comment now",
+      "revId": "5ff35e319b54e6df87593a766bb11c0bb8f8aadb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
