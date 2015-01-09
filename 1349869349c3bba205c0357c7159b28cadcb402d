@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5b50cf5e",
+        "filename": "res/values/config.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-01-09T23:48:36Z",
+      "side": 1,
+      "message": "Where is this supposed to be overlaid as last.fm for the open source part of CM?",
+      "revId": "1349869349c3bba205c0357c7159b28cadcb402d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_1b5e4776",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-01-09T23:48:36Z",
+      "side": 1,
+      "message": "addPreferencesFromResource(R.xml.settings);\nPreferenceScreen screen \u003d getPreferenceScreen();\n\nseems a little easier to follow :)",
+      "revId": "1349869349c3bba205c0357c7159b28cadcb402d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7b55cb4e",
+        "filename": "src/com/cyanogenmod/eleven/utils/ImageUtils.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-01-09T23:48:36Z",
+      "side": 1,
+      "message": "100 chars still",
+      "revId": "1349869349c3bba205c0357c7159b28cadcb402d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
