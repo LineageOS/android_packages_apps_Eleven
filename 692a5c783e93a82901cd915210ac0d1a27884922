@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c154c922",
+        "filename": "src/com/cyanogenmod/eleven/cache/ImageWorker.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2015-01-12T03:13:32Z",
+      "side": 1,
+      "message": "this condition gets only true, if imageCache is null ...",
+      "revId": "692a5c783e93a82901cd915210ac0d1a27884922",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2132ed10",
+        "filename": "src/com/cyanogenmod/eleven/cache/ImageWorker.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2015-01-12T03:13:32Z",
+      "side": 1,
+      "message": "... hello NPE",
+      "revId": "692a5c783e93a82901cd915210ac0d1a27884922",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
