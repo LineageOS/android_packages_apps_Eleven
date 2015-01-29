@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_e7494a90",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-01-29T17:04:49Z",
+      "side": 1,
+      "message": "i\u0027d throw this shakeDetector stop and null logic into the onDestroy method",
+      "revId": "2a3e3ab28e3ff71c081b0bdc480c1a679ef7ddc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_c74ec695",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-01-29T17:04:49Z",
+      "side": 1,
+      "message": "does this logic actually work?  from what I recall the preference logic does not support multiprocess, so when I last tried to get the preference from the service it would fail to retrieve a stored value.  So for example if you set it to true and then restart the device, does it work?  it sucks but i guess we could temporarily inform during homeactivity oncreate and then listen to onchange events like you currently doing\n\nalso assuming the preferenceutils works and returns true, if mShakeDetector happens to be instantiated the logic would be wrong",
+      "revId": "2a3e3ab28e3ff71c081b0bdc480c1a679ef7ddc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_27440273",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-01-29T17:04:49Z",
+      "side": 1,
+      "message": "we should call mShakeDetector.stop() before nulling to remove the sensor listener",
+      "revId": "2a3e3ab28e3ff71c081b0bdc480c1a679ef7ddc8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
