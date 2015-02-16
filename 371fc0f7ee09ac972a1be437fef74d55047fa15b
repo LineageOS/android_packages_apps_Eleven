@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_10d00f53",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "IMO we should always wrap if statements in braces - can you add it here?",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f0d45b48",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2369,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "for formatting consistency, put a space after the if word and then another space after the closing parenthesis and the following curly brace.  also there should be a space before and after the !\u003d so it should look like this\nif (mShakeDetector !\u003d null) {",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_50ca87a2",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2379,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "likewise here",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_30cf13b2",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2440,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "here as well",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_90c4ff92",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2763,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "we should put spaces around both sides of the + sign",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_5041e70a",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2765,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "put a space around both sides of the \u003d\u003d sign",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_f03bbb9a",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2769,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "likewise here",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_c7419c3b",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2775,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "seems like we should encapsulate this logic and the isPlaying logic into two functions, startShakeDetector and stopShakeDetector since some of the logic is the same",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_074c546f",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "sorry the person who wrote this previously improperly used m for static, it should be s.  On the other hand, i\u0027m not sure if there\u0027s a strong advantage to storing the value in a variable, maybe we should just query everytime it happens since it shouldn\u0027t be a common event",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a73e28b6",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "space before and after \u003d",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_e748205e",
+        "filename": "src/com/cyanogenmod/eleven/utils/ShakeDetector.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-02-16T23:15:55Z",
+      "side": 1,
+      "message": "do we really need fastest for the delay?  can we get away with normal or ui to hit the sensor less often",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
