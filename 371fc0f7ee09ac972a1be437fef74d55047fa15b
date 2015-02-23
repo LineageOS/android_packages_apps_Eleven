@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_f9e43f3c",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_10d00f53",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_f0d45b48",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-16T23:15:55Z",
       "side": 1,
       "message": "for formatting consistency, put a space after the if word and then another space after the closing parenthesis and the following curly brace.  also there should be a space before and after the !\u003d so it should look like this\nif (mShakeDetector !\u003d null) {",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_39eed722",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2369,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_f0d45b48",
       "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_99f3830a",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2379,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_50ca87a2",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_30cf13b2",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-16T23:15:55Z",
       "side": 1,
       "message": "here as well",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_79f84fe6",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2440,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_30cf13b2",
       "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_d9ddfb71",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2763,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_90c4ff92",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_5041e70a",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2015-02-16T23:15:55Z",
       "side": 1,
       "message": "put a space around both sides of the \u003d\u003d sign",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_b9dac776",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2765,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_5041e70a",
       "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_19e83310",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2769,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_f03bbb9a",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_c7419c3b",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 6
@@ -132,6 +258,24 @@
       "writtenOn": "2015-02-16T23:15:55Z",
       "side": 1,
       "message": "seems like we should encapsulate this logic and the isPlaying logic into two functions, startShakeDetector and stopShakeDetector since some of the logic is the same",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_79b5efcb",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 2775,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "I implemented suggested functions and replaced the code in relevant spots, available in next patch set.",
+      "parentUuid": "bacf61ea_c7419c3b",
       "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_598f4b23",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "I used a variable to store the value since there is no Context info in onServiceConnected callback method. I though of just querying PreferenceUtils every time but without Context info I cant access the value. Am I not seeing a way to access Context at this point?",
+      "parentUuid": "bacf61ea_074c546f",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_a73e28b6",
         "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
         "patchSetId": 6
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_39d53743",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bacf61ea_a73e28b6",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_e748205e",
         "filename": "src/com/cyanogenmod/eleven/utils/ShakeDetector.java",
         "patchSetId": 6
@@ -183,6 +363,24 @@
       "writtenOn": "2015-02-16T23:15:55Z",
       "side": 1,
       "message": "do we really need fastest for the delay?  can we get away with normal or ui to hit the sensor less often",
+      "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_d9e7bb10",
+        "filename": "src/com/cyanogenmod/eleven/utils/ShakeDetector.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-02-23T04:29:46Z",
+      "side": 1,
+      "message": "I\u0027ve tested it with UI and NORMAL and both of them dont give good results in terms of detecting shakes. Actions like picking up hone from your pocket get detected like shakes which is not quite convenient. Having it set as FASTEST gives correct results as you need to actually shake your phone in order to switch songs.",
+      "parentUuid": "bacf61ea_e748205e",
       "revId": "371fc0f7ee09ac972a1be437fef74d55047fa15b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
