@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_ceed4127",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-09T20:54:06Z",
+      "side": 1,
+      "message": "Maybe \u0027Lockscreen album art\u0027? The shorter the title is, the better.",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_eee80519",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-09T20:54:06Z",
+      "side": 1,
+      "message": "\u0027this\u0027 is sufficient",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_8e8d097e",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-09T20:54:06Z",
+      "side": 1,
+      "message": "} else if (...) {",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_4e9311a4",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-09T20:54:06Z",
+      "side": 1,
+      "message": "Please remove trailing whitespace and keep lines at 100 chars. Also (below) add spaces before \u0027{\u0027 and after \u0027if\u0027 and \u0027,\u0027.",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_ae90cd96",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-09T20:54:06Z",
+      "side": 1,
+      "message": "What\u0027s the exact advantage of using startService over using the (already existing) binder? I honestly don\u0027t see any.",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_6e96d595",
+        "filename": "src/com/cyanogenmod/eleven/utils/PreferenceUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-09T20:54:06Z",
+      "side": 1,
+      "message": "Spaces missing before and after \u0027\u003d\u0027",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
