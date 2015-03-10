@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_ce7d41e9",
+        "filename": "res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T03:29:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_ceed4127",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_eee80519",
         "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-09T20:54:06Z",
       "side": 1,
       "message": "\u0027this\u0027 is sufficient",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_0e88f9e6",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T03:29:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_eee80519",
       "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_4e6af11b",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T03:29:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_8e8d097e",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_4e9311a4",
         "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-09T20:54:06Z",
       "side": 1,
       "message": "Please remove trailing whitespace and keep lines at 100 chars. Also (below) add spaces before \u0027{\u0027 and after \u0027if\u0027 and \u0027,\u0027.",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_ae772d01",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T03:29:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_4e9311a4",
       "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_eeeda58f",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T03:29:11Z",
+      "side": 1,
+      "message": "I\u0027m using startService so that onStartCommand in playback service gets invoked. I find this solution to be better then extending service interface with methods for particular settings and invoking them when something is changed. Also, as the docs say: This provides a convenient way to submit jobs to a service without having to bind and call on to its interface. I find this code to be cleaner and better working then the previous one that was handling Shake to play preference change. I am open to any suggestion or a better solution, if this way of informing the service about a preference change is not optimal.",
+      "parentUuid": "9ad45d7e_ae90cd96",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_6e96d595",
         "filename": "src/com/cyanogenmod/eleven/utils/PreferenceUtils.java",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-09T20:54:06Z",
       "side": 1,
       "message": "Spaces missing before and after \u0027\u003d\u0027",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_eec64515",
+        "filename": "src/com/cyanogenmod/eleven/utils/PreferenceUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T03:29:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad45d7e_6e96d595",
       "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
