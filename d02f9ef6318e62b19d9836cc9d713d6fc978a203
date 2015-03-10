@@ -107,6 +107,57 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_0e72b9e5",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-10T04:29:34Z",
+      "side": 1,
+      "message": "Pass contextWrapper.getApplicationContext() here",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_6e77f5d4",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-10T04:29:34Z",
+      "side": 1,
+      "message": "Also keep passed context parameter as member variable",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_ae81ed91",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-10T04:29:34Z",
+      "side": 1,
+      "message": "Pass in the remembered context.",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_4e9311a4",
         "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
         "patchSetId": 1
@@ -207,6 +258,24 @@
       "side": 1,
       "message": "You are right, I missed the fact that this code actually gets executed after we obtain service binder. As for \u0027better working\u0027 I was thinking of service being notified as soon as the change is made (not waiting for music to play in order to notify the service about settings change), but since the settings code is also performed once you bind to service to plat music, it actually makes no sense to start the service just on settings change. Thanks for this comment.\n\nI will re-implement this part with AIDL interface and resubmit the patchset. One more thing: in initPlaybackServiceWithSettings method, do you see any better way to obtain Context in order to access preferences?",
       "parentUuid": "9ad45d7e_2ee85d7c",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_8e7ea9ac",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-10T04:29:34Z",
+      "side": 1,
+      "message": "See my comments above; I believe that\u0027s the most elegant way to do it. The application context is a global singleton anyway.",
+      "parentUuid": "9ad45d7e_2eb69d8a",
       "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
