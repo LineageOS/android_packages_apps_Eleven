@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_2eb69d8a",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 12430
+      },
+      "writtenOn": "2015-03-10T04:18:37Z",
+      "side": 1,
+      "message": "You are right, I missed the fact that this code actually gets executed after we obtain service binder. As for \u0027better working\u0027 I was thinking of service being notified as soon as the change is made (not waiting for music to play in order to notify the service about settings change), but since the settings code is also performed once you bind to service to plat music, it actually makes no sense to start the service just on settings change. Thanks for this comment.\n\nI will re-implement this part with AIDL interface and resubmit the patchset. One more thing: in initPlaybackServiceWithSettings method, do you see any better way to obtain Context in order to access preferences?",
+      "parentUuid": "9ad45d7e_2ee85d7c",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_6e96d595",
         "filename": "src/com/cyanogenmod/eleven/utils/PreferenceUtils.java",
         "patchSetId": 1
