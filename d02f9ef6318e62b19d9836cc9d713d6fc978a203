@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_2ee85d7c",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-03-10T03:44:48Z",
+      "side": 1,
+      "message": "The \u0027...without having to bind and call on its interface\u0027 argument is void, IMHO: after all, this code is executed after we _already have_ bound to the service and have its binder instance at hand. That\u0027s an entirely different scenario than having to create an AIDL interface first.\n\nPersonally, I find explicit interfaces much cleaner than the indirection of using the action strings. The startService variant has the advantage of performing a tiny bit better (not really relevant as it\u0027s called very rarely), the AIDL variant avoids calls if music isn\u0027t playing though.\n\nI\u0027m not sure in what way the startService variant is supposed to \u0027better working\u0027 though, can you elaborate on that?",
+      "parentUuid": "9ad45d7e_eeeda58f",
+      "revId": "d02f9ef6318e62b19d9836cc9d713d6fc978a203",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_6e96d595",
         "filename": "src/com/cyanogenmod/eleven/utils/PreferenceUtils.java",
         "patchSetId": 1
