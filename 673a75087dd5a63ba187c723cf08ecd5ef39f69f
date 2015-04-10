@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_24236707",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-04-10T11:25:23Z",
+      "side": 1,
+      "message": "Some of these color values have been redefined from previously.\nFor instance, letter_tile_red_color_dark is now defined as a blue.\n\nI suggest reviewing all the redefined colors, and comparing them with their previous definitions.",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_243c072f",
+        "filename": "res/values/colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-04-10T11:25:23Z",
+      "side": 1,
+      "message": "Deep orange not same color value as previously defined",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_84497bd3",
+        "filename": "res/values/colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-04-10T11:25:23Z",
+      "side": 1,
+      "message": "Brown  is currently not came color value as previously defined.\nAlso order of brown and deep orange have been swapped.",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_e4394f43",
+        "filename": "res/values/colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 12937
+      },
+      "writtenOn": "2015-04-10T11:25:23Z",
+      "side": 1,
+      "message": "None of the dark colors are the same as previously defined.\nAlso just like above, make sure all items are in the same order as previously defined.",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
