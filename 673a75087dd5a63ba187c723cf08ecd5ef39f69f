@@ -2,6 +2,159 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ac371cc_e45e6f75",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "this is a darker teal color, not brown",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_4454a353",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This is a red color, not purple",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2451a763",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This is more of a dark magenta color",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_844e9bbf",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "more purple than indigo",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_644b9fb1",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This one is also a darker purple color",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_c4c6d315",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "this looks more like a dark blue or possibly indigo",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_a4cbd71d",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This is a lighter blue color",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_04d10bce",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This is a dark teal color",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_44db03ee",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This is a darker teal color",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ac371cc_24236707",
         "filename": "res/values/cm_colors.xml",
         "patchSetId": 2
@@ -13,6 +166,23 @@
       "writtenOn": "2015-04-10T11:25:23Z",
       "side": 1,
       "message": "Some of these color values have been redefined from previously.\nFor instance, letter_tile_red_color_dark is now defined as a blue.\n\nI suggest reviewing all the redefined colors, and comparing them with their previous definitions.",
+      "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_24d887ef",
+        "filename": "res/values/cm_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9199
+      },
+      "writtenOn": "2015-04-10T11:50:38Z",
+      "side": 1,
+      "message": "This one is another teal color as well.",
       "revId": "673a75087dd5a63ba187c723cf08ecd5ef39f69f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
