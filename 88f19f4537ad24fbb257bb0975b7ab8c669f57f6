@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_e5e82219",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2436,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-04-15T12:26:20Z",
+      "side": 1,
+      "message": "char wrap",
+      "revId": "88f19f4537ad24fbb257bb0975b7ab8c669f57f6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
