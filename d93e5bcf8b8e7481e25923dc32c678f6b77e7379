@@ -16,6 +16,24 @@
       "revId": "d93e5bcf8b8e7481e25923dc32c678f6b77e7379",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_f511ecb0",
+        "filename": "src/com/cyanogenmod/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2015-06-07T02:39:37Z",
+      "side": 1,
+      "message": "Ya good catch. Was late lol. Will fix this up this weekend.",
+      "parentUuid": "7a8ec9b2_b59f645e",
+      "revId": "d93e5bcf8b8e7481e25923dc32c678f6b77e7379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
