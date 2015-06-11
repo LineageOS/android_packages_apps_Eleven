@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a57fde8_7269968b",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/preview/AudioPreviewActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-11T11:41:01Z",
+      "side": 1,
+      "message": "I am seeing some jank if I interact with the seekbar between these delayed updates. I think we should not do this on a 1 second interval and instead let the SeekBar drive the UI updates by registering a listener. \n\nYou can override SeekBar.OnSeekBarChangedListener.onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) and post the message on to the handler anytime that you receive this event (either fromUser or not). That should eliminate any jank.",
+      "revId": "00d2dfc383de07b2242be80e527c070080335375",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
