@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a57fde8_52901296",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/preview/AudioPreviewActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-11T10:32:44Z",
+      "side": 1,
+      "message": "What about URI.getLastPathSegment() here? that should be the filename in most cases? Instead of changing all \u0027/\u0027 to the empty string? With this code if my uri was \"file://com.example.stuff/music/artist/helloworld.mp3\" you would display \"musicartisthelloworld.mp3\" correct? getLastPathSegment() would give you \"helloworld.mp3\"",
+      "revId": "3b8eb8164459ddd63bd91854bc89de10ff1a864f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_92e8ba18",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/preview/AudioPreviewActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-11T10:32:44Z",
+      "side": 1,
+      "message": "Whether we stick with this or not (Per my above comment), we should abstract this block into a method for reuse in both places.",
+      "revId": "3b8eb8164459ddd63bd91854bc89de10ff1a864f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a57fde8_d2f24206",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/preview/AudioPreviewActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-11T10:32:44Z",
+      "side": 1,
+      "message": "Typo: \"unkown\"",
+      "revId": "3b8eb8164459ddd63bd91854bc89de10ff1a864f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
