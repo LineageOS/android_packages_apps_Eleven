@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_902b5a33",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/preview/PreviewSong.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 9621
+      },
+      "writtenOn": "2015-06-12T10:27:46Z",
+      "side": 1,
+      "message": "only constants should be all caps like this. mUri, mTitle, mArtist ?",
+      "revId": "48adc1f1521b6a4f205e13a54e053e3ac2fdb74a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
