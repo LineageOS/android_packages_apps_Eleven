@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf091321_933b4b9b",
+        "filename": "res/values/dimens.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 9045
+      },
+      "writtenOn": "2015-07-31T03:59:52Z",
+      "side": 1,
+      "message": "I think you can use ViewConfiguration.get(view.getContext()).getScaledTouchSlop() instead of hard coding this",
+      "revId": "927d649e5460e268d75d74b7b688715aebee7dc6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
