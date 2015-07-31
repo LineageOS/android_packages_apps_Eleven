@@ -16,6 +16,24 @@
       "revId": "927d649e5460e268d75d74b7b688715aebee7dc6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_b3040fc8",
+        "filename": "res/values/dimens.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-07-31T04:17:32Z",
+      "side": 1,
+      "message": "oh cool didn\u0027t know about this api",
+      "parentUuid": "bf091321_933b4b9b",
+      "revId": "927d649e5460e268d75d74b7b688715aebee7dc6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
