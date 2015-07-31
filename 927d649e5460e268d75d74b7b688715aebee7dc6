@@ -34,6 +34,23 @@
       "revId": "927d649e5460e268d75d74b7b688715aebee7dc6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf091321_33cfdf80",
+        "filename": "src/com/cyanogenmod/eleven/widgets/PlayPauseProgressButton.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 9045
+      },
+      "writtenOn": "2015-07-31T04:35:17Z",
+      "side": 1,
+      "message": "it\u0027s a bit choppy dragging it around - adding a updateState() call here seems to smooth it out",
+      "revId": "927d649e5460e268d75d74b7b688715aebee7dc6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
