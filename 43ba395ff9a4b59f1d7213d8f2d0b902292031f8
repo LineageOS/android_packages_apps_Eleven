@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f231b9d_dd1b1c71",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7231
+      },
+      "writtenOn": "2015-08-13T08:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_eb097131",
+      "revId": "43ba395ff9a4b59f1d7213d8f2d0b902292031f8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_ab03790f",
         "filename": "src/com/cyanogenmod/eleven/widgets/VisualizerView.java",
         "patchSetId": 2
