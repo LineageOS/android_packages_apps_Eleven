@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_ddf9bc4d",
+        "filename": "res/layout/play_pause_progress_button.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2015-12-04T02:45:57Z",
+      "side": 1,
+      "message": "We can probably delete the reminder on the scaleType.",
+      "revId": "b325edb2ce236157eecb3e934d46626da97ec58c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
