@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff6b8bd7_da5ea544",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-12-15T09:37:24Z",
+      "side": 1,
+      "message": "should bump the versionCode",
+      "revId": "7d4b906a522a614ff4025dacde9c446399499870",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff6b8bd7_fa5b6951",
+        "filename": "res/layout/main_playback_controls.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-12-15T09:37:24Z",
+      "side": 1,
+      "message": "spacing off",
+      "revId": "7d4b906a522a614ff4025dacde9c446399499870",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff6b8bd7_9a582d57",
+        "filename": "res/layout/main_playback_controls.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-12-15T09:37:24Z",
+      "side": 1,
+      "message": "if this button is not used anymore, just rip out the code",
+      "revId": "7d4b906a522a614ff4025dacde9c446399499870",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff6b8bd7_ba55f11f",
+        "filename": "res/layout/main_playback_controls.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 10394
+      },
+      "writtenOn": "2015-12-15T09:37:24Z",
+      "side": 1,
+      "message": "if this button isn\u0027t used anymore, rip it out from the code",
+      "revId": "7d4b906a522a614ff4025dacde9c446399499870",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
