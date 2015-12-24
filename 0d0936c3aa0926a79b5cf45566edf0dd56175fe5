@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f7f9b97_36400d08",
+        "filename": "src/com/cyanogenmod/eleven/ElevenApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "getBaseContext() -\u003e this",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_56458916",
+        "filename": "src/com/cyanogenmod/eleven/ElevenApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "Does the pref name really need to be a string resource? It\u0027s not used in any XML...",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_f6493532",
+        "filename": "src/com/cyanogenmod/eleven/ElevenApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "if (...) {",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_16471120",
+        "filename": "src/com/cyanogenmod/eleven/ElevenApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "Boolean.TRUE -\u003e true",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_b653bde2",
+        "filename": "src/com/cyanogenmod/eleven/ElevenApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "Those two lines probably can be inlined above. (If not, the first w needs to be lower case.)\n\nI\u0027d go with this:\n\nstartActivity(new Intent(this, ElevenIntro.class));",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_d650b9d7",
+        "filename": "src/com/cyanogenmod/eleven/ElevenApplication.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "The m prefix is for member variables.",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_765f65e5",
+        "filename": "src/com/cyanogenmod/eleven/ElevenIntro.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "The colors should be fetched from color resources.",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_966481bb",
+        "filename": "src/com/cyanogenmod/eleven/ElevenIntro.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "Drop the m prefix",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_3659edfd",
+        "filename": "src/com/cyanogenmod/eleven/ElevenIntro.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_565ee9e6",
+        "filename": "src/com/cyanogenmod/eleven/ElevenIntro.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-12-24T19:30:55Z",
+      "side": 1,
+      "message": "ElevenApplication is not an Activity.",
+      "revId": "0d0936c3aa0926a79b5cf45566edf0dd56175fe5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
