@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_94242fc8",
+        "filename": "src/com/cyanogenmod/eleven/widgets/ColorPickerView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-02-01T17:03:54Z",
+      "side": 1,
+      "message": "Better replace this thing by\n\n!TextUtils.isEmpty(mAlphaSliderText)",
+      "revId": "a1c8d0ccb4ba52a5dbb20eac2091d5476f043da1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
