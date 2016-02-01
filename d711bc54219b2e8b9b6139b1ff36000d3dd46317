@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_4f1cf269",
+        "filename": "src/com/cyanogenmod/eleven/cache/ImageFetcher.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-02-01T18:34:49Z",
+      "side": 1,
+      "message": "The line wrapping seems kinda pointless after the change.",
+      "revId": "d711bc54219b2e8b9b6139b1ff36000d3dd46317",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
