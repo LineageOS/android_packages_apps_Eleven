@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_34369b05",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-02-01T17:02:48Z",
+      "side": 1,
+      "message": "Isn\u0027t that whole variable pointless?",
+      "revId": "5a492dfa9b01c9d97442e671b4b1650999a1d978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_d43ab7e5",
+        "filename": "src/com/cyanogenmod/eleven/utils/SrtManager.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-02-01T17:02:48Z",
+      "side": 1,
+      "message": "???\n\nWhat\u0027s the point here?",
+      "revId": "5a492dfa9b01c9d97442e671b4b1650999a1d978",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
