@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_2f2de694",
+        "filename": "src/com/cyanogenmod/eleven/slidinguppanel/SlidingUpPanelLayout.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 762,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-02-01T18:38:02Z",
+      "side": 1,
+      "message": "I preferred the old code (for its symmetry) here.",
+      "revId": "83d6abfefd240aa87bb8a6744c69db2a66ab91ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
