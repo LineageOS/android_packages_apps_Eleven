@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_5867e34e",
+        "filename": "src/com/cyanogenmod/eleven/adapters/DetailSongAdapter.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2016-04-04T17:29:24Z",
+      "side": 1,
+      "message": "Unnecessary change",
+      "revId": "bf6842bde9aefce287336534bc394088080bbe36",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_18616b37",
+        "filename": "src/com/cyanogenmod/eleven/dragdrop/DragSortListView.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2016-04-04T17:29:24Z",
+      "side": 1,
+      "message": "Lots of weird formatting changes",
+      "revId": "bf6842bde9aefce287336534bc394088080bbe36",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_d8f67390",
         "filename": "src/com/cyanogenmod/eleven/ui/fragments/RecentFragment.java",
         "patchSetId": 11
@@ -121,6 +155,23 @@
       "writtenOn": "2016-04-04T16:51:12Z",
       "side": 1,
       "message": "100 chars",
+      "revId": "bf6842bde9aefce287336534bc394088080bbe36",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b855b752",
+        "filename": "src/com/cyanogenmod/eleven/widgets/LetterTileDrawable.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 10631
+      },
+      "writtenOn": "2016-04-04T17:29:24Z",
+      "side": 1,
+      "message": "?",
       "revId": "bf6842bde9aefce287336534bc394088080bbe36",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
