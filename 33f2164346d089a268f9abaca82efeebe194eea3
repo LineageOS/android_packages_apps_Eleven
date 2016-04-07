@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_d85988fe",
+        "filename": "src/com/cyanogenmod/eleven/model/Artist.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-04-07T16:23:08Z",
+      "side": 0,
+      "message": "I actually prefer the current code here",
+      "revId": "33f2164346d089a268f9abaca82efeebe194eea3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
