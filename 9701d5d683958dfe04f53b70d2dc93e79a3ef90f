@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_786ad480",
+        "filename": "src/com/cyanogenmod/eleven/dragdrop/DragSortListView.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-04-07T16:27:17Z",
+      "side": 1,
+      "message": "Unnecessary change",
+      "revId": "9701d5d683958dfe04f53b70d2dc93e79a3ef90f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
