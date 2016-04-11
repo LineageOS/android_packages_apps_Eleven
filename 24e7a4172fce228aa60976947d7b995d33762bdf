@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_ce353bdc",
+        "filename": "src/com/cyanogenmod/eleven/widgets/ColorPickerView.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-04-11T05:14:43Z",
+      "side": 1,
+      "message": "TextUtils.isEmpty() includes the null check, so either\n\n- remove the null check or\n- check for !isEmpty() instead of using TextUtils",
+      "revId": "24e7a4172fce228aa60976947d7b995d33762bdf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
