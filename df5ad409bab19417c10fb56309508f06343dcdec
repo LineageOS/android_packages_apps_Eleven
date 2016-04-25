@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_ad934f4f",
+        "filename": "res/layout/playlist_detail_header.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-04-25T06:10:22Z",
+      "side": 1,
+      "message": "While you\u0027re at it: match_parent.",
+      "revId": "df5ad409bab19417c10fb56309508f06343dcdec",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_ed73874c",
+        "filename": "res/layout/playlist_detail_header.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-04-25T06:10:22Z",
+      "side": 1,
+      "message": "This is android:layout_centerInParent\u003d\"true\" for RelativeLayout parents IIRC.\n\n(You probably want to nuke it completely though)",
+      "revId": "df5ad409bab19417c10fb56309508f06343dcdec",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
