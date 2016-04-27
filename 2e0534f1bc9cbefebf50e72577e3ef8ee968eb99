@@ -22,6 +22,30 @@
       "revId": "2e0534f1bc9cbefebf50e72577e3ef8ee968eb99",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_0be1269b",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/HomeActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-04-27T09:24:18Z",
+      "side": 1,
+      "message": "Yes and no. Yes, it should be done in background, but no, it\u0027s not getContrastingColor that should be called in background, but loadColorsIfNeeded().",
+      "parentUuid": "5faad753_eb4e0ac0",
+      "range": {
+        "startLine": 205,
+        "startChar": 34,
+        "endLine": 205,
+        "endChar": 53
+      },
+      "revId": "2e0534f1bc9cbefebf50e72577e3ef8ee968eb99",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
