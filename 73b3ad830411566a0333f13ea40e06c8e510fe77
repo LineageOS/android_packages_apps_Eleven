@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_727d46e6",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 10037
+      },
+      "writtenOn": "2016-08-15T06:47:34Z",
+      "side": 1,
+      "message": "I was just looking into this.\nMediaSessionCompat creates a pending intent in the following way:\nhttps://android.googlesource.com/platform/frameworks/support/+/refs/heads/master/v4/java/android/support/v4/media/session/MediaSessionCompat.java#190",
+      "revId": "73b3ad830411566a0333f13ea40e06c8e510fe77",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
