@@ -16,6 +16,24 @@
       "revId": "73b3ad830411566a0333f13ea40e06c8e510fe77",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_f284d6b3",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-08-15T08:07:27Z",
+      "side": 1,
+      "message": "Yeah, we\u0027re not filtering for the action, but it shouldn\u0027t matter, as\n\n- only ACTION_MEDIA_BUTTON intents will be sent through this anyway and\n- the broadcast receiver is also checking the action",
+      "parentUuid": "1fa4df85_727d46e6",
+      "revId": "73b3ad830411566a0333f13ea40e06c8e510fe77",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
