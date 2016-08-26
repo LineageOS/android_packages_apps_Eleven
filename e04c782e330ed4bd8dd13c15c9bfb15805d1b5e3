@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_369ec263",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2016-08-26T18:43:56Z",
+      "side": 1,
+      "message": "Eleven is still missing runtime permissions, this will make the app crash",
+      "revId": "e04c782e330ed4bd8dd13c15c9bfb15805d1b5e3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
