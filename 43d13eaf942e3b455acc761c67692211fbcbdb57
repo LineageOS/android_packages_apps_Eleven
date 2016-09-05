@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_ab655147",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/HomeActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2016-09-05T07:53:18Z",
+      "side": 0,
+      "message": "should replace .commit() with .commitAllowingStateLoss() becuse this might be executed after onSavedInstanceState()",
+      "revId": "43d13eaf942e3b455acc761c67692211fbcbdb57",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
