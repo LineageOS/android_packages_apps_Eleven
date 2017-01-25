@@ -59,6 +59,6 @@
   </plurals>
   <!-- Toast confirming that song(s) was/were deleted. -->
   <plurals name="NNNtracksdeleted">
-    <item quantity="other">已删除 <xliff:g id="songs_to_delete">%d</xliff:g>首歌曲。</item>
+    <item quantity="other">已删除 <xliff:g id="songs_to_delete">%d</xliff:g> 首歌曲。</item>
   </plurals>
 </resources>

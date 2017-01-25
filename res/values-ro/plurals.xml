@@ -36,6 +36,11 @@
     <item quantity="other"><xliff:g id="count">%d</xliff:g> melodii</item>
   </plurals>
   <!-- Used to indicate the number of genres -->
+  <plurals name="Ngenres">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> gen</item>
+    <item quantity="few"><xliff:g id="count">%d</xliff:g> genuri</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> genuri</item>
+  </plurals>
   <!-- Used to show a shortened version of hours-->
   <plurals name="Nhours">
     <item quantity="one"><xliff:g id="hours">%d</xliff:g>o</item>
@@ -49,6 +54,11 @@
     <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
   </plurals>
   <!-- Toasts after adding song(s) to playlists -->
+  <plurals name="NNNtrackstoplaylist">
+    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> cântec adăugat la lista de redare.</item>
+    <item quantity="few"><xliff:g id="number" example="1">%d</xliff:g> (de) cântece adăugate la lista de redare.</item>
+    <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> (de) cântece adăugate la lista de redare.</item>
+  </plurals>
   <!-- Toasts after removing song(s) from playlists -->
   <plurals name="NNNtracksfromplaylist">
     <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> melodie ștearsă din lista de redare.</item>
