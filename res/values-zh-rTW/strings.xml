@@ -55,8 +55,8 @@
   <string name="remove_from_recent">從最近播放清單移除</string>
   <string name="remove_from_queue">從佇列移除</string>
   <!-- Sort orders -->
-  <string name="sort_order_entry_az">升冪排序</string>
-  <string name="sort_order_entry_za">降冪排序</string>
+  <string name="sort_order_entry_az">遞增排序</string>
+  <string name="sort_order_entry_za">遞減排序</string>
   <string name="sort_order_entry_artist">演出者</string>
   <string name="sort_order_entry_album">專輯</string>
   <string name="sort_order_entry_year">年份</string>
@@ -78,16 +78,16 @@
   <string name="clear">清除</string>
   <string name="new_playlist_name_template">播放清單<xliff:g id="number">%d</xliff:g></string>
   <string name="create_playlist_prompt">播放清單名稱</string>
-  <string name="delete_dialog_title">是否刪除 <xliff:g id="item" example="album">%s</xliff:g>？</string>
-  <string name="clear_top_tracks_title">是否清除熱門曲目？</string>
-  <string name="clear_recent_title">是否清除最近播放？</string>
-  <string name="clear_last_added">是否清除最近新增？</string>
+  <string name="delete_dialog_title">刪除 「<xliff:g id="item" example="album">%s</xliff:g>」？</string>
+  <string name="clear_top_tracks_title">清除熱門曲目?</string>
+  <string name="clear_recent_title">清除最近播放？</string>
+  <string name="clear_last_added">清除最近新增？</string>
   <string name="cannot_be_undone">這將無法復原</string>
   <string name="delete_warning">這將永久刪除已快取的影像</string>
-  <string name="new_photo">從相簿選擇照片</string>
+  <string name="new_photo">從相簿選擇相片</string>
   <string name="google_search">Google 搜尋</string>
-  <string name="use_default">使用預設照片</string>
-  <string name="old_photo">使用舊的照片</string>
+  <string name="use_default">使用預設相片</string>
+  <string name="old_photo">使用舊的相片</string>
   <!-- Context menu items -->
   <string name="context_menu_play_selection">播放</string>
   <string name="context_menu_play_next">播放下一首</string>
@@ -100,7 +100,7 @@
   <string name="context_menu_remove_from_recent">從最近移除</string>
   <string name="context_menu_use_as_ringtone">設定為鈴聲</string>
   <string name="context_menu_remove_from_playlist">從播放清單移除</string>
-  <string name="context_menu_change_image">更改圖片</string>
+  <string name="context_menu_change_image">變更圖片</string>
   <!-- Content descriptions -->
   <string name="accessibility_play">播放</string>
   <string name="accessibility_pause">暫停</string>
@@ -114,7 +114,7 @@
   <string name="accessibility_queue">開啟佇列</string>
   <string name="accessibility_browse">瀏覽音樂</string>
   <!-- Toast messages -->
-  <string name="set_as_ringtone">將\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\"設為鈴聲</string>
+  <string name="set_as_ringtone">將「<xliff:g id="name" example="Alarm Bell">%s</xliff:g>」設為鈴聲</string>
   <string name="playlist_renamed">已重新命名播放清單</string>
   <!-- Settings -->
   <string name="settings_ui_category">介面</string>
@@ -132,8 +132,8 @@
   <string name="settings_show_lyrics_summary">有 srt 檔的樂曲</string>
   <string name="settings_shake_to_play">搖動播放</string>
   <string name="settings_shake_to_play_summary">搖動您的裝置即可播放下一首樂曲</string>
-  <string name="settings_lockscreen_album_art">鎖定螢幕專輯封面</string>
-  <string name="settings_lockscreen_album_art_summary">在鎖定螢幕背景顯示專輯封面</string>
+  <string name="settings_lockscreen_album_art">鎖定畫面專輯封面</string>
+  <string name="settings_lockscreen_album_art_summary">在鎖定畫面背景顯示專輯封面</string>
   <!-- App widget -->
   <string name="app_widget_small">音樂：4 \u00d7 1</string>
   <string name="app_widget_large">音樂：4 \u00d7 2</string>
@@ -148,7 +148,7 @@
   <string name="empty_recent_main">沒有最近播放的樂曲</string>
   <string name="empty_recent">最近聽過的樂曲將會顯示在這裡。</string>
   <string name="empty_playlist_main">播放清單中沒有樂曲</string>
-  <string name="empty_playlist_secondary">要新增樂曲至此播放清單，請於樂曲、專輯或演出者輕觸功能選單，並選擇「新增至播放清單」。</string>
+  <string name="empty_playlist_secondary">要新增樂曲至此播放清單，請於樂曲、專輯或演出者輕觸功能選單，並選擇 [新增至播放清單] 。</string>
   <string name="empty_top_tracks_main">沒有熱門曲目</string>
   <string name="empty_top_tracks_secondary">您最常聽的樂曲將新增至此清單。</string>
   <string name="empty_last_added_main">沒有最近新增的樂曲</string>
@@ -156,7 +156,7 @@
   <string name="empty_generic_main">找不到音樂</string>
   <string name="empty_generic_secondary">請透過 USB 傳輸線從您的電腦複製音樂至您的裝置。</string>
   <string name="empty_queue_main">播放佇列中沒有樂曲</string>
-  <string name="empty_queue_secondary">要新增樂曲至播放佇列，請輕觸樂曲、專輯或演出者，並在功能選單中選擇「新增至佇列」。</string>
+  <string name="empty_queue_secondary">要新增樂曲至播放佇列，請輕觸樂曲、專輯或演出者，並在功能選單中選擇 [新增至佇列] 。</string>
   <string name="error_playing_track">無法播放曲目 %1$s</string>
   <!-- Section Headers -->
   <string name="header_unknown_year">未知年份</string>

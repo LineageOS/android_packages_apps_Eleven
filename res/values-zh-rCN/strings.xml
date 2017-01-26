@@ -78,7 +78,7 @@
   <string name="clear">清空</string>
   <string name="new_playlist_name_template">播放列表 <xliff:g id="number">%d</xliff:g></string>
   <string name="create_playlist_prompt">播放列表名称</string>
-  <string name="delete_dialog_title">删除 <xliff:g id="item" example="album">%s</xliff:g> ？</string>
+  <string name="delete_dialog_title">删除 <xliff:g id="item" example="album">%s</xliff:g>？</string>
   <string name="clear_top_tracks_title">清空热门曲目？</string>
   <string name="clear_recent_title">清空最近播放？</string>
   <string name="clear_last_added">清空最后添加？</string>
@@ -114,7 +114,7 @@
   <string name="accessibility_queue">打开队列</string>
   <string name="accessibility_browse">浏览音乐</string>
   <!-- Toast messages -->
-  <string name="set_as_ringtone">设置 \"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" 为铃声</string>
+  <string name="set_as_ringtone">设置“<xliff:g id="name" example="Alarm Bell">%s</xliff:g>”为铃声</string>
   <string name="playlist_renamed">播放列表已被重命名</string>
   <!-- Settings -->
   <string name="settings_ui_category">界面</string>
@@ -137,7 +137,7 @@
   <!-- App widget -->
   <string name="app_widget_small">音乐：4 \u00d7 1</string>
   <string name="app_widget_large">音乐：4 \u00d7 1</string>
-  <string name="app_widget_large_alt">音乐： 4 \u00d7 2 (交替)</string>
+  <string name="app_widget_large_alt">音乐：4 \u00d7 2 (交替)</string>
   <string name="app_widget_recent">最近听过的音乐</string>
   <!-- Empty list / error messages -->
   <string name="no_effects_for_you">无法打开均衡器。</string>
@@ -148,7 +148,7 @@
   <string name="empty_recent_main">没有最近的歌曲</string>
   <string name="empty_recent">这里会显示您最近听过的歌曲。</string>
   <string name="empty_playlist_main">播放列表中没有歌曲</string>
-  <string name="empty_playlist_secondary">要向此播放列表中添加歌曲，请点击选项菜单上的歌曲、 唱片集或艺术家，并选择“添加到播放列表”。</string>
+  <string name="empty_playlist_secondary">要向此播放列表添加歌曲，请点击歌曲、唱片集或艺术家上的选项菜单，选择“添加到播放列表”。</string>
   <string name="empty_top_tracks_main">没有热门的曲目</string>
   <string name="empty_top_tracks_secondary">您最常听的歌曲将添加到此列表中。</string>
   <string name="empty_last_added_main">最近没有添加歌曲</string>
@@ -156,7 +156,7 @@
   <string name="empty_generic_main">没有找到音乐</string>
   <string name="empty_generic_secondary">请使用 USB 数据线把音乐从您的计算机复制到您的设备中。</string>
   <string name="empty_queue_main">播放队列中没有音乐</string>
-  <string name="empty_queue_secondary">要向您的播放队列中添加歌曲，请点击歌曲、 唱片集或艺术家在选项菜单并选择“添加到队列”。</string>
+  <string name="empty_queue_secondary">要向您的播放队列添加歌曲，请点击歌曲、唱片集或艺术家上的选项菜单，选择“添加到队列”。</string>
   <string name="error_playing_track">无法播放音轨 %1$s</string>
   <!-- Section Headers -->
   <string name="header_unknown_year">未知年份</string>

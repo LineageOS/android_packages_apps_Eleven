@@ -132,6 +132,8 @@
   <string name="settings_show_lyrics_summary">Pentru melodii care au un fișier srt</string>
   <string name="settings_shake_to_play">Scuturați pentru a reda</string>
   <string name="settings_shake_to_play_summary">Se agită dispozitivul pentru a reda melodia următoare</string>
+  <string name="settings_lockscreen_album_art">Coperta albumului pe ecranul de blocare</string>
+  <string name="settings_lockscreen_album_art_summary">Înlocuiți fundalul ecranului de blocare cu coperta albumului</string>
   <!-- App widget -->
   <string name="app_widget_small">Muzică: 4 \u00d7 1</string>
   <string name="app_widget_large">Muzică: 4 \u00d7 2</string>
@@ -153,6 +155,7 @@
   <string name="empty_last_added">Melodiile adăugate de dvs în ultima lună vor fi afișate aici.</string>
   <string name="empty_generic_main">Nicio melodie nu a fost găsită</string>
   <string name="empty_generic_secondary">Pentru a copia muzică de pe computer în dispozitivul dvs, folosiți un cablu USB.</string>
+  <string name="empty_queue_main">Nicio melodie în coada de redare</string>
   <string name="empty_queue_secondary">Pentru a adăuga melodii în coada de redare, atingeți meniul de opțiuni pe un cântec, album sau artist și selectați \"Adăugați la coadă\".</string>
   <string name="error_playing_track">Melodia %1$s nu poate fi redată</string>
   <!-- Section Headers -->
