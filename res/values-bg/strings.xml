@@ -143,7 +143,7 @@
   <string name="no_effects_for_you">Еквалайзера не може да бъде отворен.</string>
   <string name="empty_music">За да копирате музика от вашия компютър към вашето устройство, използвайте USB кабел.</string>
   <string name="empty_search">Няма резултати от търсенето</string>
-  <string name="empty_search_check">Проверете дали е изписано правилно или опитайте друга ключова дума.</string>
+  <string name="empty_search_check">Проверете дали е изписана правилно или опитайте с друга ключова дума.</string>
   <string name="empty_favorite">Песните маркирани като любими ще бъдат показани тук.</string>
   <string name="empty_recent_main">Няма скорошни песни</string>
   <string name="empty_recent">Песните който сте слушали последно ще се покажат тук.</string>
