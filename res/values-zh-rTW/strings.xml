@@ -133,7 +133,7 @@
   <string name="settings_shake_to_play">搖動播放</string>
   <string name="settings_shake_to_play_summary">搖動您的裝置即可播放下一首樂曲</string>
   <string name="settings_lockscreen_album_art">鎖定畫面專輯封面</string>
-  <string name="settings_lockscreen_album_art_summary">在鎖定畫面背景顯示專輯封面</string>
+  <string name="settings_lockscreen_album_art_summary">鎖定畫面背景替換為專輯封面</string>
   <!-- App widget -->
   <string name="app_widget_small">音樂：4 \u00d7 1</string>
   <string name="app_widget_large">音樂：4 \u00d7 2</string>
