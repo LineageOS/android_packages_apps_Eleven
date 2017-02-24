@@ -19,8 +19,18 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Music</string>
   <!-- Page titles -->
+  <string name="page_recent">Recent</string>
+  <string name="page_artists">Artists</string>
+  <string name="page_albums">Albums</string>
+  <string name="page_songs">Songs</string>
+  <string name="page_playlists">Playlists</string>
+  <string name="page_genres">Genres</string>
+  <string name="page_now_playing">Now Playing</string>
+  <string name="page_play_queue">Play Queue</string>
   <!-- Section Headers -->
   <!-- Option menu items -->
+  <string name="menu_settings">Settings</string>
+  <string name="menu_equalizer">Equaliser</string>
   <!-- Playlist items -->
   <!-- Sort orders -->
   <!-- Default playlist names -->
@@ -31,5 +41,6 @@
   <!-- Settings -->
   <!-- App widget -->
   <!-- Empty list / error messages -->
+  <string name="empty_favorite">Songs you mark as favourites will be shown here.</string>
   <!-- Section Headers -->
 </resources>
