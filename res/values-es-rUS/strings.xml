@@ -78,7 +78,7 @@
   <string name="clear">Borrar</string>
   <string name="new_playlist_name_template">Lista de reproducción <xliff:g id="number">%d </xliff:g></string>
   <string name="create_playlist_prompt">Nombre de lista</string>
-  <string name="delete_dialog_title">¿Eliminar <xliff:g id="item" example="album">%s</xliff:g>?</string>
+  <string name="delete_dialog_title">¿Borrar <xliff:g id="item" example="album">%s</xliff:g>?</string>
   <string name="clear_top_tracks_title">¿Borrar las canciones más reproducidas?</string>
   <string name="clear_recent_title">¿Borrar reproducidas recientemente?</string>
   <string name="clear_last_added">¿Borrar últimos añadidos?</string>
@@ -94,7 +94,7 @@
   <string name="context_menu_play_album">Reproducir álbum</string>
   <string name="context_menu_more_by_artist">Más del artista</string>
   <string name="context_menu_rename_playlist">Cambiar nombre</string>
-  <string name="context_menu_delete">Eliminar</string>
+  <string name="context_menu_delete">Borrar</string>
   <string name="context_menu_fetch_album_art">Obtener carátula del álbum</string>
   <string name="context_menu_fetch_artist_image">Obtener foto del artista</string>
   <string name="context_menu_remove_from_recent">Quitar de recientes</string>
@@ -120,8 +120,8 @@
   <string name="settings_ui_category">Interfaz</string>
   <string name="settings_storage_category">Almacenamiento</string>
   <string name="settings_data_category">Datos</string>
-  <string name="settings_delete_cache_title">Eliminar caché</string>
-  <string name="settings_delete_cache_summary">Eliminar todas las imágenes almacenadas</string>
+  <string name="settings_delete_cache_title">Borrar caché</string>
+  <string name="settings_delete_cache_summary">Quitar todas las imágenes almacenadas</string>
   <string name="settings_download_only_on_wifi_title">Descargar solo vía Wi-Fi</string>
   <string name="settings_download_only_on_wifi_summary">Para reducir los cargos del proveedor no descargar a través de redes móviles</string>
   <string name="settings_download_missing_artwork_title">Descargar carátulas faltantes</string>
