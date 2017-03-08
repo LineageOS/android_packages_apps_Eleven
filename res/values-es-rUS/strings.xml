@@ -32,7 +32,7 @@
   <string name="header_top_songs">Canciones más escuchadas</string>
   <string name="header_all_songs">Todas las canciones</string>
   <!-- Option menu items -->
-  <string name="menu_settings">Opciones</string>
+  <string name="menu_settings">Ajustes</string>
   <string name="menu_search">Buscar</string>
   <string name="menu_shuffle_item">Orden aleatorio</string>
   <string name="menu_shuffle_all">Reproducción aleatoria</string>
