@@ -51,19 +51,28 @@
   <string name="menu_equalizer">Equaliser</string>
   <!-- Playlist items -->
   <string name="add_to_playlist">Add to playlist</string>
+  <string name="add_to_queue">Add to queue</string>
   <string name="remove_from_recent">Remove from recent</string>
+  <string name="remove_from_queue">Remove from queue</string>
   <!-- Sort orders -->
+  <string name="sort_order_entry_az">A-Z</string>
+  <string name="sort_order_entry_za">Z-A</string>
+  <string name="sort_order_entry_artist">Artist</string>
+  <string name="sort_order_entry_album">Album</string>
   <string name="sort_order_entry_year">Year</string>
   <string name="sort_order_entry_duration">Duration</string>
   <string name="sort_order_entry_date_added">Date added</string>
   <string name="sort_order_entry_track_list">Track list</string>
   <string name="sort_order_entry_number_of_songs">Number of songs</string>
+  <string name="sort_order_entry_filename">Filename</string>
   <!-- Default playlist names -->
+  <string name="playlist_last_added">Last added</string>
   <!-- AlertDialog items -->
   <!-- Context menu items -->
   <!-- Content descriptions -->
   <!-- Toast messages -->
   <!-- Settings -->
+  <string name="settings_show_music_visualization_title">Show music visualisation</string>
   <!-- App widget -->
   <!-- Empty list / error messages -->
   <string name="empty_favorite">Songs you mark as favourites will be shown here.</string>

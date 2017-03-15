@@ -39,7 +39,7 @@
   <plurals name="Ngenres">
     <item quantity="one"><xliff:g id="count">%d</xliff:g> жанр</item>
     <item quantity="few"><xliff:g id="count"> %d </xliff:g> жанри</item>
-    <item quantity="other"><xliff:g id="count"> %d </xliff:g> жанри</item>
+    <item quantity="other"><xliff:g id="count"> %d </xliff:g> жанрів</item>
   </plurals>
   <!-- Used to show a shortened version of hours-->
   <plurals name="Nhours">
@@ -56,31 +56,31 @@
   <!-- Toasts after adding song(s) to playlists -->
   <plurals name="NNNtrackstoplaylist">
     <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> композиція додана в список.</item>
-    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композицій додано в список.</item>
+    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композиції додано в список.</item>
     <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> композицій додано в список.</item>
   </plurals>
   <!-- Toasts after removing song(s) from playlists -->
   <plurals name="NNNtracksfromplaylist">
     <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> композиція вилучена зі списку відтворення.</item>
-    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композицій вилучено зі списку відтворення.</item>
+    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композиції вилучено зі списку відтворення.</item>
     <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> композицій вилучено зі списку відтворення.</item>
   </plurals>
   <!-- Toasts after adding song(s) to queue -->
   <plurals name="NNNtrackstoqueue">
     <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> композиція додана в чергу.</item>
-    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композицій додано в чергу.</item>
+    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композиції додано в чергу.</item>
     <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> композицій додано в чергу.</item>
   </plurals>
   <!-- Toasts after adding song(s) to the favorites list -->
   <plurals name="NNNtrackstofavorites">
     <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> композиція додана в Улюблене.</item>
-    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композицій додано в Улюблене.</item>
+    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композиції додано в Улюблене.</item>
     <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> композицій додано в Улюблене.</item>
   </plurals>
   <!-- Toast confirming that song(s) was/were deleted. -->
   <plurals name="NNNtracksdeleted">
     <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> композиція видалена.</item>
-    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композицій видалено.</item>
+    <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> композиції видалено.</item>
     <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> пісні були видалені.</item>
   </plurals>
 </resources>

@@ -32,7 +32,7 @@
   <string name="header_top_songs">Cançons més escoltades</string>
   <string name="header_all_songs">Totes les cançons</string>
   <!-- Option menu items -->
-  <string name="menu_settings">Ajustaments</string>
+  <string name="menu_settings">Configuració</string>
   <string name="menu_search">Cerca</string>
   <string name="menu_shuffle_item">Barreja</string>
   <string name="menu_shuffle_all">Barreja-ho tot</string>
