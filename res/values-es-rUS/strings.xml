@@ -86,7 +86,7 @@
   <string name="delete_warning">Esta operación borrará todas las imágenes almacenadas en caché</string>
   <string name="new_photo">Elegir imagen de la galería</string>
   <string name="google_search">Buscar en Google</string>
-  <string name="use_default">Usar imagen predeterminada</string>
+  <string name="use_default">Usar imagen predefinida</string>
   <string name="old_photo">Usar imagen previa</string>
   <!-- Context menu items -->
   <string name="context_menu_play_selection">Reproducir</string>

@@ -40,4 +40,8 @@
   <!-- Toasts after adding song(s) to queue -->
   <!-- Toasts after adding song(s) to the favorites list -->
   <!-- Toast confirming that song(s) was/were deleted. -->
+  <plurals name="NNNtracksdeleted">
+    <item quantity="one">Desanicióse <xliff:g id="songs_to_delete" example="1">%d</xliff:g> canción.</item>
+    <item quantity="other">Desaniciáronse <xliff:g id="songs_to_delete" example="1">%d</xliff:g> canciones.</item>
+  </plurals>
 </resources>
