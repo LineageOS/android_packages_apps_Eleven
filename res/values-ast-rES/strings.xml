@@ -19,19 +19,27 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">Música</string>
   <!-- Page titles -->
+  <string name="page_recent">Reciente</string>
   <string name="page_artists">Artistes</string>
   <string name="page_albums">Álbumes</string>
   <string name="page_songs">Canciones</string>
   <string name="page_playlists">Llistes de reproducción</string>
   <string name="page_genres">Xéneros</string>
+  <string name="page_now_playing">Reproduciendo agora</string>
   <string name="page_play_queue">Cola de reproducción</string>
   <!-- Section Headers -->
   <string name="header_albums">Álbumes</string>
+  <string name="header_top_songs">Canciones más escuchaes</string>
   <string name="header_all_songs">Toles canciones</string>
   <!-- Option menu items -->
   <string name="menu_settings">Axustes</string>
+  <string name="menu_search">Guetar</string>
+  <string name="menu_shuffle_item">Al debalu</string>
   <string name="menu_shuffle_all">Too al debalu</string>
+  <string name="menu_shuffle_playlist">Llista de reproducción aleatoria</string>
   <string name="menu_shuffle_album">Álbum al debalu</string>
+  <string name="menu_shuffle_artist">Artistes aleatorios</string>
+  <string name="menu_shuffle_top_tracks">Canciones más escuchaes aleatories</string>
   <!-- Playlist items -->
   <!-- Sort orders -->
   <string name="sort_order_entry_az">A-Z</string>
