@@ -17,18 +17,97 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Muzika</string>
   <!-- Page titles -->
+  <string name="page_recent">Së fundmi</string>
+  <string name="page_artists">Artistët</string>
+  <string name="page_albums">Albumet</string>
+  <string name="page_songs">Këngët</string>
+  <string name="page_playlists">Listat e Këngëve</string>
+  <string name="page_genres">Zhanret</string>
   <!-- Section Headers -->
+  <string name="header_albums">Albumet</string>
+  <string name="header_all_songs">Të gjitha këngët</string>
   <!-- Option menu items -->
+  <string name="menu_search">Kërko</string>
+  <string name="menu_sort_by">Rendit sipas</string>
+  <string name="menu_clear_list">Hiqe listën</string>
   <!-- Playlist items -->
+  <string name="add_to_queue">Shto në radhë</string>
+  <string name="remove_from_queue">Hiq nga radha</string>
   <!-- Sort orders -->
+  <string name="sort_order_entry_az">A-ZH</string>
+  <string name="sort_order_entry_za">ZH-A</string>
+  <string name="sort_order_entry_artist">Artisti</string>
+  <string name="sort_order_entry_album">Albumi</string>
+  <string name="sort_order_entry_year">Viti</string>
+  <string name="sort_order_entry_number_of_songs">Numri i këngëve</string>
+  <string name="sort_order_entry_number_of_albums">Numri i albumeve</string>
+  <string name="sort_order_entry_filename">Emri i skedarit</string>
   <!-- Default playlist names -->
+  <string name="playlist_last_added">Shtuar së fundmi</string>
   <!-- AlertDialog items -->
+  <string name="new_playlist">Listë e re</string>
+  <string name="save">Ruaj</string>
+  <string name="cancel">Anullo</string>
+  <string name="overwrite">Mbishkruaj</string>
+  <string name="clear">Hiq</string>
+  <string name="new_playlist_name_template">Lista <xliff:g id="number">%d</xliff:g></string>
+  <string name="create_playlist_prompt">Emri i listës së këngëve</string>
+  <string name="delete_dialog_title">Dëshiron ta fshish <xliff:g id="item" example="album">%s</xliff:g>?</string>
+  <string name="new_photo">Zgjidh një foto nga Galeria</string>
+  <string name="google_search">Kërkimi në Google</string>
+  <string name="use_default">Përdor foton e paracaktuar</string>
+  <string name="old_photo">Përdor foto të vjetër</string>
   <!-- Context menu items -->
+  <string name="context_menu_rename_playlist">Riemërto</string>
+  <string name="context_menu_delete">Fshi</string>
+  <string name="context_menu_change_image">Ndërro imazhin</string>
   <!-- Content descriptions -->
+  <string name="accessibility_pause">Vë në pauzë</string>
+  <string name="accessibility_repeat">Përsërit</string>
+  <string name="accessibility_repeat_all">Përsëriti të gjitha</string>
   <!-- Toast messages -->
+  <string name="playlist_renamed">Lista u riemërtua</string>
   <!-- Settings -->
+  <string name="settings_ui_category">Ndërfaqe</string>
+  <string name="settings_storage_category">Memoria</string>
+  <string name="settings_download_only_on_wifi_title">Shkarko vetëm me Wi-Fi</string>
+  <string name="settings_download_only_on_wifi_summary">Për të reduktuar pagesat ndaj operatorit, mos shkarkoni mbi rrjetet celulare</string>
+  <string name="settings_download_missing_artwork_title">Shkarko kopertinën e munguar të albumit</string>
+  <string name="settings_lockscreen_album_art">Kopertina e albumit në ekranin bllokues</string>
+  <string name="settings_lockscreen_album_art_summary">Zëvendëso sfondin e ekranit bllokues me kopertinat e albumeve</string>
   <!-- App widget -->
+  <string name="app_widget_small">Muzika: 4\u00d7 1</string>
+  <string name="app_widget_large">Muzika: 4\u00d7 2</string>
+  <string name="app_widget_large_alt">Muzika: 4 \u00d7 2 (alternative)</string>
+  <string name="app_widget_recent">Muzika: dëgjuar së fundmi</string>
   <!-- Empty list / error messages -->
   <!-- Section Headers -->
+  <string name="header_unknown_year">Viti i panjohur</string>
+  <string name="header_less_than_30s">Më pak se 30 sekonda</string>
+  <string name="header_30_to_60_seconds">30 - 60 sekonda</string>
+  <string name="header_1_to_2_minutes">1 - 2 minuta</string>
+  <string name="header_2_to_3_minutes">2 - 3 minuta</string>
+  <string name="header_3_to_4_minutes">3 - 4 minuta</string>
+  <string name="header_4_to_5_minutes">4 - 5 minuta</string>
+  <string name="header_5_to_10_minutes">5 - 10 minuta</string>
+  <string name="header_10_to_30_minutes">10 - 30 minuta</string>
+  <string name="header_30_to_60_minutes">30 - 60 minuta</string>
+  <string name="header_greater_than_60_minutes">Më shumë se 60 minuta</string>
+  <string name="header_1_song">1 këngë</string>
+  <string name="header_2_to_4_songs">2 - 4 këngë</string>
+  <string name="header_5_to_9_songs">5 - 9 këngë</string>
+  <string name="header_10_plus_songs">10+ këngë</string>
+  <string name="header_5_plus_albums">5+ albume</string>
+  <string name="footer_search_artists">Trego të gjithë artistët</string>
+  <string name="footer_search_albums">Trego të gjithë albumet</string>
+  <string name="footer_search_songs">Trego të gjitha këngët</string>
+  <string name="footer_search_playlists">Trego të gjitha listat e këngëve</string>
+  <string name="searchHint">Kërko muzikë</string>
+  <string name="search_title_artists">Të gjithë artistët \"%s\"</string>
+  <string name="search_title_albums">Të gjithë albumet \"%s\"</string>
+  <string name="search_title_songs">Të gjitha këngët \"%s\"</string>
+  <string name="search_title_playlists">Të gjitha listat e këngëve \"%s\"</string>
+  <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

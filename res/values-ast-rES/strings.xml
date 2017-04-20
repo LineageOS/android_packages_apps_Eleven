@@ -38,8 +38,9 @@
   <string name="menu_shuffle_all">Too al debalu</string>
   <string name="menu_shuffle_playlist">Llista de reproducción aleatoria</string>
   <string name="menu_shuffle_album">Álbum al debalu</string>
-  <string name="menu_shuffle_artist">Artistes aleatorios</string>
-  <string name="menu_shuffle_top_tracks">Canciones más escuchaes aleatories</string>
+  <string name="menu_shuffle_artist">Artistes al debalu</string>
+  <string name="menu_shuffle_top_tracks">Canciones más sentíes al debalu</string>
+  <string name="menu_equalizer">Ecualizador</string>
   <!-- Playlist items -->
   <!-- Sort orders -->
   <string name="sort_order_entry_az">A-Z</string>
@@ -48,9 +49,11 @@
   <string name="sort_order_entry_album">Álbum</string>
   <string name="sort_order_entry_year">Añu</string>
   <string name="sort_order_entry_duration">Duración</string>
+  <string name="sort_order_entry_number_of_songs">Númberu de canciones</string>
   <string name="sort_order_entry_number_of_albums">Númberu d\'álbumes</string>
   <string name="sort_order_entry_filename">Nome de ficheru</string>
   <!-- Default playlist names -->
+  <string name="playlist_recently_played">Reproducío apocayá</string>
   <!-- AlertDialog items -->
   <string name="save">Guardar</string>
   <string name="cancel">Encaboxar</string>

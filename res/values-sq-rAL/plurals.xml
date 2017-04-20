@@ -18,14 +18,58 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- Used to indicate the number of artists -->
+  <plurals name="Nartists">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> artist</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> artistë</item>
+  </plurals>
   <!-- Used to indicate the number of albums for an artist -->
+  <plurals name="Nalbums">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> album</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> albume</item>
+  </plurals>
   <!-- Used to indicate the number of songs for an album -->
+  <plurals name="Nsongs">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> këngë</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> këngë</item>
+  </plurals>
   <!-- Used to indicate the number of genres -->
+  <plurals name="Ngenres">
+    <item quantity="one"><xliff:g id="count">%d</xliff:g> zhanër</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> zhanre</item>
+  </plurals>
   <!-- Used to show a shortened version of hours-->
+  <plurals name="Nhours">
+    <item quantity="one"><xliff:g id="hours">%d</xliff:g>h</item>
+    <item quantity="other"><xliff:g id="hours">%d</xliff:g>h</item>
+  </plurals>
   <!-- Used to show a shortened version of minutes -->
+  <plurals name="Nminutes">
+    <item quantity="one"><xliff:g id="minutes">%d</xliff:g>m</item>
+    <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
+  </plurals>
   <!-- Toasts after adding song(s) to playlists -->
+  <plurals name="NNNtrackstoplaylist">
+    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> këngë u shtua në listën e këngëve.</item>
+    <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> këngë u shtuan në listën e këngëve.</item>
+  </plurals>
   <!-- Toasts after removing song(s) from playlists -->
+  <plurals name="NNNtracksfromplaylist">
+    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> këngë u hoq nga lista e këngëve.</item>
+    <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> këngë u hoqën nga lista e këngëve.</item>
+  </plurals>
   <!-- Toasts after adding song(s) to queue -->
+  <plurals name="NNNtrackstoqueue">
+    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> këngë u shtua në radhë.</item>
+    <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> këngë u shtuan në radhë.</item>
+  </plurals>
   <!-- Toasts after adding song(s) to the favorites list -->
+  <plurals name="NNNtrackstofavorites">
+    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> këngë u shtua në listën e këngëve të preferuara.</item>
+    <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> këngë u shtuan në listën e këngëve të preferuara.</item>
+  </plurals>
   <!-- Toast confirming that song(s) was/were deleted. -->
+  <plurals name="NNNtracksdeleted">
+    <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> këngë u fshi.</item>
+    <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> këngë u fshinë.</item>
+  </plurals>
 </resources>

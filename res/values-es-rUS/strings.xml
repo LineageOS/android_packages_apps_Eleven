@@ -93,7 +93,7 @@
   <string name="context_menu_play_next">Siguiente</string>
   <string name="context_menu_play_album">Reproducir álbum</string>
   <string name="context_menu_more_by_artist">Más del artista</string>
-  <string name="context_menu_rename_playlist">Cambiar nombre</string>
+  <string name="context_menu_rename_playlist">Renombrar</string>
   <string name="context_menu_delete">Borrar</string>
   <string name="context_menu_fetch_album_art">Obtener carátula del álbum</string>
   <string name="context_menu_fetch_artist_image">Obtener foto del artista</string>
