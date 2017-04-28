@@ -44,9 +44,9 @@
   <string name="menu_shuffle_last_added">Перемішати останні додані</string>
   <string name="menu_play_all">Відтворити усе</string>
   <string name="menu_sort_by">Сортувати за</string>
-  <string name="menu_clear_list">Відчистити список</string>
-  <string name="menu_clear_recents">Відчистити нещодавні</string>
-  <string name="menu_clear_queue">Відчистити чергу</string>
+  <string name="menu_clear_list">Очистити список</string>
+  <string name="menu_clear_recents">Очистити нещодавні</string>
+  <string name="menu_clear_queue">Очистити чергу</string>
   <string name="menu_save_queue">Зберегти чергу до списку відтворення</string>
   <string name="menu_equalizer">Еквалайзер</string>
   <!-- Playlist items -->
