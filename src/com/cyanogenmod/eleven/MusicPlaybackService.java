@@ -665,6 +665,9 @@ public class MusicPlaybackService extends Service {
                 PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN, true);
         setShakeToPlayEnabled(mPreferences.getBoolean(PreferenceUtils.SHAKE_TO_PLAY, false));
 
+        mRepeatMode = mPreferences.getInt("repeatmode", REPEAT_NONE);
+        mShuffleMode = mPreferences.getInt("shufflemode", SHUFFLE_NONE);
+
         registerExternalStorageListener();
 
         // Initialize the media player
