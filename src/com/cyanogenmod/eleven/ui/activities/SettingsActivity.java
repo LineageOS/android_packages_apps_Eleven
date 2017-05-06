@@ -109,6 +109,8 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
             MusicUtils.setShakeToPlayEnabled(sharedPreferences.getBoolean(key, false));
         } else if (key.equals(PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN)) {
             MusicUtils.setShowAlbumArtOnLockscreen(sharedPreferences.getBoolean(key, true));
+        } else if (key.equals(PreferenceUtils.SHOW_VISUALIZER)) {
+            MusicUtils.setShowVisualizer(sharedPreferences.getBoolean(key, true));
         }
     }
 }

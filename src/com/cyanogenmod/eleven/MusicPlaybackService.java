@@ -665,6 +665,9 @@ public class MusicPlaybackService extends Service {
                 PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN, true);
         setShakeToPlayEnabled(mPreferences.getBoolean(PreferenceUtils.SHAKE_TO_PLAY, false));
 
+        mRepeatMode = mPreferences.getInt("repeatmode", REPEAT_NONE);
+        mShuffleMode = mPreferences.getInt("shufflemode", SHUFFLE_NONE);
+
         registerExternalStorageListener();
 
         // Initialize the media player
@@ -2866,6 +2869,9 @@ public class MusicPlaybackService extends Service {
         if (D) {
             Log.d(TAG, "ShakeToPlay status: " + enabled);
         }
+        final SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putBoolean(PreferenceUtils.SHAKE_TO_PLAY, enabled);
+        editor.apply();
         if (enabled) {
             if (mShakeDetector == null) {
                 mShakeDetector = new ShakeDetector(mShakeDetectorListener);
@@ -2885,7 +2891,19 @@ public class MusicPlaybackService extends Service {
      */
     public void setLockscreenAlbumArt(boolean enabled) {
         mShowAlbumArtOnLockscreen = enabled;
+        final SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putBoolean(PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN, enabled);
+        editor.apply();
         notifyChange(META_CHANGED);
+    }
+
+    /**
+     * Called to save visibility of visualizer in app
+     */
+    public void setVisualizer(boolean enabled) {
+        final SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putBoolean(PreferenceUtils.SHOW_VISUALIZER, enabled);
+        editor.apply();
     }
 
     /**
@@ -3849,6 +3867,14 @@ public class MusicPlaybackService extends Service {
         @Override
         public void setLockscreenAlbumArt(boolean enabled) {
             mService.get().setLockscreenAlbumArt(enabled);
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public void setVisualizer(boolean enabled) {
+            mService.get().setVisualizer(enabled);
         }
 
     }

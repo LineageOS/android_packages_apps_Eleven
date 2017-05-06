@@ -50,4 +50,5 @@ interface IElevenService
     int getAudioSessionId();
     void setShakeToPlayEnabled(boolean enabled);
     void setLockscreenAlbumArt(boolean enabled);
+    void setVisualizer(boolean enabled);
 }

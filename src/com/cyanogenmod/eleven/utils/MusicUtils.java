@@ -299,6 +299,18 @@ public final class MusicUtils {
     }
 
     /**
+     * Set show visualizer in app
+     */
+    public static void setShowVisualizer(final boolean enabled) {
+        try {
+            if (mService != null) {
+                mService.setVisualizer(enabled);
+            }
+        } catch (final RemoteException ignored) {
+        }
+    }
+
+    /**
      * Changes to the next track asynchronously
      */
     public static void asyncNext(final Context context) {
