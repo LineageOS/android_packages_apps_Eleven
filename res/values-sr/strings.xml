@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Преузми омот албума који недостаје</string>
   <string name="settings_download_artist_images_title">Преузми слике аутора које недостају</string>
   <string name="settings_general_category">Опште</string>
-  <string name="settings_show_music_visualization_title">Прикажи визуализацију музике</string>
   <string name="settings_show_lyrics_title">Прикажи текст песме</string>
   <string name="settings_show_lyrics_summary">За песме које имају srt фајл</string>
   <string name="settings_shake_to_play">Протреси да пустиш</string>

@@ -252,8 +252,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         if (mTargetNavigatePanel == getCurrentPanel()) {
             mTargetNavigatePanel = Panel.None;
         }
-
-        getAudioPlayerFragment().setVisualizerVisible(getCurrentPanel() == Panel.MusicPlayer);
     }
 
     public Panel getCurrentPanel() {

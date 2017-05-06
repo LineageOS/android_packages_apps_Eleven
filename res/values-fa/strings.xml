@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">دانلود تصویر آلبوم‌ها</string>
   <string name="settings_download_artist_images_title">دانلود تصویر هنرمندان</string>
   <string name="settings_general_category">عمومي</string>
-  <string name="settings_show_music_visualization_title">نمایش رقص نور موسیقی</string>
   <string name="settings_show_lyrics_title">نمایش متن آهنگ</string>
   <string name="settings_show_lyrics_summary">برای آهنگ‌های دارای فایل srt</string>
   <string name="settings_shake_to_play">برای پخش بلرزانید</string>

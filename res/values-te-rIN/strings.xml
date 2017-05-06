@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">కనిపించకుండా పోయిన ఆల్బమ్ ఆర్టును డౌన్లోడ్ చేయుము</string>
   <string name="settings_download_artist_images_title">కనిపించకుండా పోయిన కళాకారుని చిత్రాలు డౌన్లోడ్ చేయుము</string>
   <string name="settings_general_category">సాధారణం</string>
-  <string name="settings_show_music_visualization_title">సంగీత విజువలైజేషనును చూపుము</string>
   <string name="settings_show_lyrics_title">పాట సాహిత్యాన్ని చూపుము</string>
   <string name="settings_show_lyrics_summary">srt ఫైల్ కలిగిన పాటల కొరకు</string>
   <string name="settings_shake_to_play">ప్లే చేసేందుకు కదపండి</string>

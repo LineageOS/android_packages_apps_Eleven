@@ -68,7 +68,6 @@ import com.cyanogenmod.eleven.widgets.QueueButton;
 import com.cyanogenmod.eleven.widgets.RepeatButton;
 import com.cyanogenmod.eleven.widgets.RepeatingImageButton;
 import com.cyanogenmod.eleven.widgets.ShuffleButton;
-import com.cyanogenmod.eleven.widgets.VisualizerView;
 
 import java.lang.ref.WeakReference;
 
@@ -128,9 +127,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     // Total time
     private TextView mTotalTime;
 
-    // Visualizer View
-    private VisualizerView mVisualizerView;
-
     // Broadcast receiver
     private PlaybackStatus mPlaybackStatus;
 
@@ -183,10 +179,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         initHeaderBar();
 
         initPlaybackControls();
-
-        mVisualizerView = (VisualizerView) mRootView.findViewById(R.id.visualizerView);
-        mVisualizerView.initialize(getActivity());
-        updateVisualizerPowerSaveMode();
 
         mLyricsText = (TextView) mRootView.findViewById(R.id.audio_player_lyrics);
 
@@ -711,23 +703,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         }
     }
 
-    public void setVisualizerVisible(boolean visible) {
-        if (visible && PreferenceUtils.getInstance(getActivity()).getShowVisualizer()) {
-            mVisualizerView.setVisible(true);
-        } else {
-            mVisualizerView.setVisible(false);
-        }
-    }
-
-    public void updateVisualizerPowerSaveMode() {
-        PowerManager pm = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
-        mVisualizerView.setPowerSaveMode(pm.isPowerSaveMode());
-    }
-
-    public void setVisualizerColor(int color) {
-        mVisualizerView.setColor(color);
-    }
-
     /**
      * Used to update the current time string
      */
@@ -788,7 +763,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             } else if (action.equals(MusicPlaybackService.PLAYSTATE_CHANGED)) {
                 // Set the play and pause image
                 audioPlayerFragment.mPlayPauseProgressButton.getPlayPauseButton().updateState();
-                audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
             } else if (action.equals(MusicPlaybackService.REPEATMODE_CHANGED)
                     || action.equals(MusicPlaybackService.SHUFFLEMODE_CHANGED)) {
                 // Set the repeat image
@@ -802,8 +776,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 audioPlayerFragment.createAndSetAdapter();
             } else if (action.equals(MusicPlaybackService.NEW_LYRICS)) {
                 audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
-            } else if (action.equals(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED)) {
-                audioPlayerFragment.updateVisualizerPowerSaveMode();
             }
         }
     }

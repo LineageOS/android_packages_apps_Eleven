@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Descargar a cuberta do álbum que falta</string>
   <string name="settings_download_artist_images_title">Descargar as imaxes do artista que faltan</string>
   <string name="settings_general_category">Xeral</string>
-  <string name="settings_show_music_visualization_title">Amosar visualización da música</string>
   <string name="settings_show_lyrics_title">Amosar as letras das cancións</string>
   <string name="settings_show_lyrics_summary">Para cancións que teñen un ficheiro srt</string>
   <string name="settings_shake_to_play">Abanear para reproducir</string>

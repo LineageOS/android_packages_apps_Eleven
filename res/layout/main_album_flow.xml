@@ -25,14 +25,6 @@
         android:layout_height="match_parent" />
     <include layout="@layout/loading_empty_container" />
 
-    <com.cyanogenmod.eleven.widgets.VisualizerView
-        android:id="@+id/visualizerView"
-        android:gravity="bottom"
-        android:layout_gravity="bottom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible" />
-
     <TextView
         android:id="@+id/audio_player_lyrics"
         android:layout_gravity="center"

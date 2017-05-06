@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Deskargatu falta diren karatulak</string>
   <string name="settings_download_artist_images_title">Deskargatu falta diren artisten argazkiak</string>
   <string name="settings_general_category">Orokorra</string>
-  <string name="settings_show_music_visualization_title">Erakutsi musika irudikatzea</string>
   <string name="settings_show_lyrics_title">Erakutsi abestien letrak</string>
   <string name="settings_show_lyrics_summary">str fitxategia duten abestientzat</string>
   <string name="settings_shake_to_play">Astindu erreproduzitzeko</string>

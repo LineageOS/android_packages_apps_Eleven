@@ -141,9 +141,6 @@
         <item>@color/letter_tile_brown_color_dark</item>
     </array>
 
-    <!-- Color for the visualizer bars -->
-    <color name="visualizer_fill_color">#bffafafa</color>
-
     <!-- Separated and exposed values for themes -->
     <color name="widget_background_color">@color/black</color>
     <color name="list_base_container_background_color">@color/white</color>

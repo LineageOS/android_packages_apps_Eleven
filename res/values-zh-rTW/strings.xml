@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">下載缺少的專輯封面</string>
   <string name="settings_download_artist_images_title">下載缺少的演出者圖片</string>
   <string name="settings_general_category">一般</string>
-  <string name="settings_show_music_visualization_title">顯示音樂視覺效果</string>
   <string name="settings_show_lyrics_title">顯示歌詞</string>
   <string name="settings_show_lyrics_summary">有 srt 檔的樂曲</string>
   <string name="settings_shake_to_play">搖動播放</string>

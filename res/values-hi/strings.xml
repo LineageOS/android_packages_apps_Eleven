@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">अनुपस्थित एल्बम कला को डाउनलोड करें</string>
   <string name="settings_download_artist_images_title">कलाकार की अनुपस्थित छवियों को डाउनलोड करें</string>
   <string name="settings_general_category">सामान्य</string>
-  <string name="settings_show_music_visualization_title">संगीत दृश्यांकन दिखाएँ</string>
   <string name="settings_show_lyrics_title">गाने के लिरिक दिखाएँ</string>
   <string name="settings_show_lyrics_summary">एसआरटी फ़ाइल वाले गानों के लिए</string>
   <string name="settings_shake_to_play">बजाने के लिए हिलाएँ</string>

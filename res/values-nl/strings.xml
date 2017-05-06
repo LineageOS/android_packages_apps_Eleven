@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Albumhoezen downloaden</string>
   <string name="settings_download_artist_images_title">Artiestenafbeeldingen downloaden</string>
   <string name="settings_general_category">Algemeen</string>
-  <string name="settings_show_music_visualization_title">Muziekvisualisaties weergeven</string>
   <string name="settings_show_lyrics_title">Songteksten weergeven</string>
   <string name="settings_show_lyrics_summary">Voor nummers met een srt-bestand</string>
   <string name="settings_shake_to_play">Schudden voor afspelen</string>

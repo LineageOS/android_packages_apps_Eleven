@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Descărcare copertă album absentă</string>
   <string name="settings_download_artist_images_title">Descărcare imagine artist absentă</string>
   <string name="settings_general_category">General</string>
-  <string name="settings_show_music_visualization_title">Arată vizualizarea muzicală</string>
   <string name="settings_show_lyrics_title">Arată versurile</string>
   <string name="settings_show_lyrics_summary">Pentru melodii care au un fișier srt</string>
   <string name="settings_shake_to_play">Scuturați pentru a reda</string>

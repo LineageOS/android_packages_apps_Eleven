@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">ಕಾಣೆಯಾದ ಆಲ್ಬಂ ಆರ್ಟ್ ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
   <string name="settings_download_artist_images_title">ಕಾಣೆಯಾಗಿರುವ ಕಾಲಾವಿದನ ಚಿತ್ರಗಳನ್ನು ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
   <string name="settings_general_category">ಸಾಮಾನ್ಯ</string>
-  <string name="settings_show_music_visualization_title">ಸಂಗೀತ ದೃಶ್ಯೀಕರಣವನ್ನು ಪ್ರದರ್ಶಿಸು</string>
   <string name="settings_show_lyrics_title">ಹಾಡಿನ ಸಾಹಿತ್ಯವನ್ನು ಪ್ರದರ್ಶಿಸು</string>
   <string name="settings_show_lyrics_summary">srt ಕಡತ ಹೊಂದಿರುವ ಹಾಡುಗಳಿಗಾಗಿ</string>
   <string name="settings_shake_to_play">ಪ್ಲೇ ಮಾಡಲು ಕುಲುಕಿ</string>

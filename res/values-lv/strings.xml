@@ -125,7 +125,6 @@
   <string name="settings_download_missing_artwork_title">Lejuplādēt trūkstošo albuma noformējumu</string>
   <string name="settings_download_artist_images_title">Lejuplādēt trūkstošos izpildītāju attēlus</string>
   <string name="settings_general_category">Vispārīgi</string>
-  <string name="settings_show_music_visualization_title">Rādīt mūzikas vizualizāciju</string>
   <string name="settings_show_lyrics_title">Rādīt dziesmu vārdus</string>
   <string name="settings_show_lyrics_summary">Dziesmām kam ir srt fails</string>
   <!-- App widget -->

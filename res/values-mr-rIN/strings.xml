@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">गहाळ अल्बमकला डाउनलोड करा</string>
   <string name="settings_download_artist_images_title">गहाळ कलाकार प्रतिमा डाउनलोड करा</string>
   <string name="settings_general_category">सामान्य</string>
-  <string name="settings_show_music_visualization_title">संगीत व्हिज्युअलायझेशन दर्शवा</string>
   <string name="settings_show_lyrics_title">गाण्याच्या शब्दरचना दर्शवा</string>
   <string name="settings_show_lyrics_summary">srt फाइल असलेल्या गाण्यांसाठी</string>
   <string name="settings_shake_to_play">प्ले करण्यासाठी हलवा</string>

@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">ગૂમ આલ્બમ આર્ટ ડાઉનલોડ કરો</string>
   <string name="settings_download_artist_images_title">ગૂમ આર્ટિસ્ટ ઇમેજ ડાઉનલોડ કરો</string>
   <string name="settings_general_category">સામાન્ય</string>
-  <string name="settings_show_music_visualization_title">મ્યુઝિક વિઝ્યુઅલાઇઝેશન દર્શાવો</string>
   <string name="settings_show_lyrics_title">ગીત લિરિક્સ દર્શાવો</string>
   <string name="settings_show_lyrics_summary">srt ફાઇલ હોય તેવા ગીતો માટે</string>
   <string name="settings_shake_to_play">પ્લે કરવા હલાવો</string>

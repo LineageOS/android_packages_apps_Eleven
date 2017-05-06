@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Tải xuống ảnh bìa album còn thiếu</string>
   <string name="settings_download_artist_images_title">Tải xuống ảnh nghệ sỹ còn thiếu</string>
   <string name="settings_general_category">Tổng quát</string>
-  <string name="settings_show_music_visualization_title">Hiện trực quan hoá nhạc</string>
   <string name="settings_show_lyrics_title">Hiện lời bài hát</string>
   <string name="settings_show_lyrics_summary">Đối với bài hát có tập tin srt</string>
   <string name="settings_shake_to_play">Lắc để phát</string>

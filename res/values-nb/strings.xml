@@ -127,7 +127,6 @@
   <string name="settings_download_missing_artwork_title">Last ned manglende albumcover</string>
   <string name="settings_download_artist_images_title">Last ned manglende artistbilder</string>
   <string name="settings_general_category">Generelt</string>
-  <string name="settings_show_music_visualization_title">Vis musikk visualisering</string>
   <string name="settings_show_lyrics_title">Vis sangtekst</string>
   <string name="settings_show_lyrics_summary">For sanger som har en srt fil</string>
   <string name="settings_shake_to_play">Rist for å spille</string>
