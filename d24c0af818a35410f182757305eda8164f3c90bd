@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a486d77_9040b957",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2874,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-07T21:59:24Z",
+      "side": 1,
+      "message": "Yes, I mean precisely that. If the XML doesn\u0027t specify persistent\u003dfalse for the respective prefs (which I\u0027d be surprised about, although I admittedly didn\u0027t check the XML), the preference framework saves it. The service methods are just there for notifying the service about the pref change.",
+      "parentUuid": "1a486d77_107e09af",
+      "revId": "d24c0af818a35410f182757305eda8164f3c90bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a486d77_70777dd5",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 3
