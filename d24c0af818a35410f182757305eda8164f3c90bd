@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a486d77_107e09af",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2874,
+      "author": {
+        "id": 7254
+      },
+      "writtenOn": "2017-05-07T20:41:10Z",
+      "side": 1,
+      "message": "This is the function eventually called from SettingsActivity. I don\u0027t see where the SHAKE_TO_PLAY setting is being saved, if you mean that SettingsActivity is saving it for us.",
+      "parentUuid": "1a486d77_9072f9e3",
+      "revId": "d24c0af818a35410f182757305eda8164f3c90bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a486d77_70777dd5",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 3
