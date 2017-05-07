@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_9072f9e3",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2874,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-07T20:33:52Z",
+      "side": 1,
+      "message": "Why do this here? This is already done in SettingsActivity.",
+      "revId": "d24c0af818a35410f182757305eda8164f3c90bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_70777dd5",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2907,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-07T20:33:52Z",
+      "side": 1,
+      "message": "As above.",
+      "revId": "d24c0af818a35410f182757305eda8164f3c90bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
