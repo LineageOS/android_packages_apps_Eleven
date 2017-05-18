@@ -142,20 +142,20 @@
   <!-- Empty list / error messages -->
   <string name="no_effects_for_you">No se pudo abrir el ecualizador.</string>
   <string name="empty_music">Para copiar música del ordenador al dispositivo, utiliza un cable USB.</string>
-  <string name="empty_search">No hay resultados que mostrar</string>
+  <string name="empty_search">Sin resultados que mostrar</string>
   <string name="empty_search_check">Comprueba que lo has escrito correctamente o intenta una palabra clave diferente.</string>
   <string name="empty_favorite">Las canciones marcadas como favoritas aparecerán aquí.</string>
-  <string name="empty_recent_main">No hay canciones recientes</string>
+  <string name="empty_recent_main">Sin canciones recientes</string>
   <string name="empty_recent">Las canciones que hayas escuchado recientemente aparecerán aquí.</string>
-  <string name="empty_playlist_main">No hay canciones en la lista de reproducción</string>
+  <string name="empty_playlist_main">Sin canciones en la lista de reproducción</string>
   <string name="empty_playlist_secondary">Para añadir canciones a esta lista de reproducción, pulsa en el menú de opciones de una canción, álbum o artista y selecciona \"Añadir a la lista\".</string>
-  <string name="empty_top_tracks_main">No hay canciones más escuchadas</string>
+  <string name="empty_top_tracks_main">Sin canciones más escuchadas</string>
   <string name="empty_top_tracks_secondary">Las canciones que más escuches se añadirán a esta lista.</string>
   <string name="empty_last_added_main">No se añadieron canciones recientemente</string>
   <string name="empty_last_added">Las canciones que añadiste en el último mes aparecerán aquí.</string>
   <string name="empty_generic_main">No se encontró música</string>
   <string name="empty_generic_secondary">Para copiar música del ordenador al dispositivo utiliza un cable USB.</string>
-  <string name="empty_queue_main">No hay canciones en la cola</string>
+  <string name="empty_queue_main">Sin canciones en la cola</string>
   <string name="empty_queue_secondary">Para añadir canciones a la cola, pulsa en el menú de opciones de una canción, álbum o artista y selecciona \"Añadir a la cola\".</string>
   <string name="error_playing_track">No se pudo reproducir la pista %1$s</string>
   <!-- Section Headers -->
