@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2014 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:innerRadiusRatio="@dimen/circular_progress_bar_inner_radius_ratio"
-    android:thicknessRatio="@dimen/circular_progress_bar_thickness_ratio"
     android:shape="ring"
+    android:thicknessRatio="@dimen/circular_progress_bar_thickness_ratio"
     android:useLevel="true">
     <solid android:color="@color/circular_progress_bar_background" />
 </shape>
