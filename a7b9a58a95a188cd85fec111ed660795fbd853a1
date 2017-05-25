@@ -1,0 +1,56 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa82b9bf_76b698de",
+        "filename": "res/layout/activity_player_fragment.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-25T03:58:37Z",
+      "side": 1,
+      "message": "This change seems unneeded.",
+      "revId": "a7b9a58a95a188cd85fec111ed660795fbd853a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_96bb1cc4",
+        "filename": "res/layout/activity_player_fragment.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-25T03:58:37Z",
+      "side": 1,
+      "message": "Why not use FrameLayouts as containers? In fact, I even think you can get away without any additional containers by assigning the height and weight attributes to the include tag.",
+      "parentUuid": "",
+      "revId": "a7b9a58a95a188cd85fec111ed660795fbd853a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa82b9bf_36b010dd",
+        "filename": "res/layout/activity_player_fragment.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2017-05-25T03:58:37Z",
+      "side": 1,
+      "message": "I don\u0027t think RelativeLayout groks the gravity attribute, so this likely is unneeded.",
+      "revId": "a7b9a58a95a188cd85fec111ed660795fbd853a1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
