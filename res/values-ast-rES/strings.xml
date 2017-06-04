@@ -40,6 +40,7 @@
   <string name="menu_shuffle_album">Álbum al debalu</string>
   <string name="menu_shuffle_artist">Artistes al debalu</string>
   <string name="menu_shuffle_top_tracks">Canciones más sentíes al debalu</string>
+  <string name="menu_clear_queue">Llimpiar cola</string>
   <string name="menu_equalizer">Ecualizador</string>
   <!-- Playlist items -->
   <!-- Sort orders -->
