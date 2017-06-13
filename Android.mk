@@ -17,7 +17,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-common \
     android-support-v4 \
     android-support-v7-recyclerview \
-    guava
+    guava \
+    junit
 
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
