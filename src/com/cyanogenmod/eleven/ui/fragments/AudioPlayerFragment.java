@@ -713,7 +713,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     public void setVisualizerVisible(boolean visible) {
         if (visible && PreferenceUtils.getInstance(getActivity()).getShowVisualizer()) {
-            mVisualizerView.setVisible(true);
+            if (PreferenceUtils.canRecordAudio(getActivity())) {
+                mVisualizerView.setVisible(true);
+            } else {
+                PreferenceUtils.requestRecordAudio(getActivity());
+            }
         } else {
             mVisualizerView.setVisible(false);
         }
