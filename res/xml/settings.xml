@@ -41,7 +41,7 @@
 
         <!-- Music visualizer -->
         <SwitchPreference
-            android:defaultValue="true"
+            android:defaultValue="false"
             android:key="music_visualization"
             android:title="@string/settings_show_music_visualization_title" />
 
