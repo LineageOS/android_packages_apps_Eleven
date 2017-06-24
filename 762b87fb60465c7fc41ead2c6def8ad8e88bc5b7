@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_9458c857",
+        "filename": "src/com/cyanogenmod/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-24T09:04:59Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "762b87fb60465c7fc41ead2c6def8ad8e88bc5b7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
