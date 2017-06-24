@@ -202,8 +202,9 @@ public class HomeActivity extends SlidingPanelActivity implements
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        getAudioPlayerFragment().setVisualizerVisible(hasFocus
-                && getCurrentPanel() == Panel.MusicPlayer);
+        if (getCurrentPanel() == Panel.MusicPlayer) {
+            getAudioPlayerFragment().setVisualizerVisible(hasFocus);
+        }
     }
 
     private void updateStatusBarColor() {
