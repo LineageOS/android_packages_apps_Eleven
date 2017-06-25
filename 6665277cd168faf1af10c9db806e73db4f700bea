@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da87b5cf_da1d1711",
+        "filename": "src/com/cyanogenmod/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2017-06-25T08:45:31Z",
+      "side": 0,
+      "message": "unnecessary change",
+      "revId": "6665277cd168faf1af10c9db806e73db4f700bea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
