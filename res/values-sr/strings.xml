@@ -122,7 +122,7 @@
   <string name="settings_data_category">Податак</string>
   <string name="settings_delete_cache_title">Избриши кеш</string>
   <string name="settings_delete_cache_summary">Уклони све кеширане слике</string>
-  <string name="settings_download_only_on_wifi_title">Преузимање само преко Wi-Fi</string>
+  <string name="settings_download_only_on_wifi_title">Преузимај само преко Wi-Fi-а</string>
   <string name="settings_download_only_on_wifi_summary">Да би смањио трошкове од оператера, не преузимај преко мобилних мрежа</string>
   <string name="settings_download_missing_artwork_title">Преузми омот албума који недостаје</string>
   <string name="settings_download_artist_images_title">Преузми слике аутора које недостају</string>
