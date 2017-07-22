@@ -48,7 +48,7 @@
   <string name="menu_clear_recents">Sonkileri temizle</string>
   <string name="menu_clear_queue">Kuyruğu sil</string>
   <string name="menu_save_queue">Kuyruğu çalma listesine kaydet</string>
-  <string name="menu_equalizer">Equalizer / Dengeleyici</string>
+  <string name="menu_equalizer">Ekolayzer</string>
   <!-- Playlist items -->
   <string name="add_to_playlist">Çalma listesine ekle</string>
   <string name="add_to_queue">Kuyruğa ekle</string>
@@ -140,7 +140,7 @@
   <string name="app_widget_large_alt">Müzik: 4 \u00d7 2 (değiştir)</string>
   <string name="app_widget_recent">Müzik: son zamanlarda dinlenen</string>
   <!-- Empty list / error messages -->
-  <string name="no_effects_for_you">Equalizer açılamadı.</string>
+  <string name="no_effects_for_you">Ekolayzer açılamadı.</string>
   <string name="empty_music">Bilgisayarınızdan cihazınıza müzik kopyalamak için USB kablo kullanın.</string>
   <string name="empty_search">Arama sonucu bulunamadı</string>
   <string name="empty_search_check">Lütfen doğru kelime girdiğinizi kontrol edin ya da farklı bir kelime deneyin.</string>

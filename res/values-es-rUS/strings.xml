@@ -115,14 +115,14 @@
   <string name="accessibility_browse">Buscar música</string>
   <!-- Toast messages -->
   <string name="set_as_ringtone">\' <xliff:g id="name" example="Alarm Bell">%s\' </xliff:g> establecer como tono de llamada</string>
-  <string name="playlist_renamed">Lista con nombre nuevo</string>
+  <string name="playlist_renamed">Lista renombrada</string>
   <!-- Settings -->
   <string name="settings_ui_category">Interfaz</string>
   <string name="settings_storage_category">Almacenamiento</string>
   <string name="settings_data_category">Datos</string>
   <string name="settings_delete_cache_title">Borrar caché</string>
   <string name="settings_delete_cache_summary">Quitar todas las imágenes almacenadas</string>
-  <string name="settings_download_only_on_wifi_title">Descargar solo vía Wi-Fi</string>
+  <string name="settings_download_only_on_wifi_title">Sólo descargar vía Wi-Fi</string>
   <string name="settings_download_only_on_wifi_summary">Para reducir los cargos del proveedor no descargar a través de redes móviles</string>
   <string name="settings_download_missing_artwork_title">Descargar carátulas faltantes</string>
   <string name="settings_download_artist_images_title">Obtener fotos faltantes de artistas</string>
