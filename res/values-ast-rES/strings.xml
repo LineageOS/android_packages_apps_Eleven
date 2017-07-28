@@ -77,6 +77,7 @@
   <!-- App widget -->
   <!-- Empty list / error messages -->
   <!-- Section Headers -->
+  <string name="header_unknown_year">Añu desconocíu</string>
   <string name="header_less_than_30s">Menos de 30 segundos</string>
   <string name="header_30_to_60_seconds">30 - 60 segundos</string>
   <string name="header_1_to_2_minutes">1 - 2 minutos</string>
