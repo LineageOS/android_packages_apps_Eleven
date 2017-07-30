@@ -42,6 +42,9 @@
     <!-- Allows Eleven to read from External Storage -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
+    <!-- Allows Eleven to modify media files on external storage -->
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+
     <!-- Audio Visualizer Permissions -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
