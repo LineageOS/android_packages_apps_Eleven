@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d8795d4_d7b4c2da",
+        "filename": "src/com/cyanogenmod/eleven/utils/MusicUtils.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 1610,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2017-07-30T17:16:08Z",
+      "side": 1,
+      "message": "Now it\u0027s if else, maybe this logic is best inverted to be more readable?",
+      "range": {
+        "startLine": 1610,
+        "startChar": 20,
+        "endLine": 1610,
+        "endChar": 38
+      },
+      "revId": "988332db14dacac9611e6cc2a6f6dfbb54ff4e29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
