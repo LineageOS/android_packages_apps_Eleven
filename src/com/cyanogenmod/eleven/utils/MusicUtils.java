@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2017 The LineageOS Project
  * Licensed under the Apache License, Version 2.0
  * (the "License"); you may not use this file except in compliance with the
  * License. You may obtain a copy of the License at
@@ -1600,11 +1601,7 @@ public final class MusicUtils {
                 c.moveToNext();
             }
 
-            // Step 2: Remove selected tracks from the database
-            context.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                    selection.toString(), null);
-
-            // Step 3: Remove files from card
+            // Step 2: Remove files from card
             c.moveToFirst();
             while (!c.isAfterLast()) {
                 final String name = c.getString(1);
@@ -1613,7 +1610,12 @@ public final class MusicUtils {
                     if (!f.delete()) {
                         // I'm not sure if we'd ever get here (deletion would
                         // have to fail, but no exception thrown)
-                        Log.e("MusicUtils", "Failed to delete file " + name);
+                        Log.e("MusicUtils", "Failed to delete file " + name +
+                              ", so not deleting from database");
+                    } else {
+                        // Step 3: Remove selected tracks from the database
+                        context.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                                selection.toString(), null);
                     }
                     c.moveToNext();
                 } catch (final SecurityException ex) {
