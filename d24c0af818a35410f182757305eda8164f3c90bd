@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9744aa81_3abe74d0",
+        "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2874,
+      "author": {
+        "id": 13897
+      },
+      "writtenOn": "2017-08-01T17:52:44Z",
+      "side": 1,
+      "message": "Yes, both SHAKE_TO_PLAY and SHOW_VISUALIZER don\u0027t have persistent\u003dfalse and they are saved even without these changes.\n\nIn addition to that, it seems that the music visualizer preference is already respected. The visibility of the visualizer is continuously changed and on every change request, the code checks the user preference. So technically we don\u0027t change its visibility right away, but it\u0027s as if we did it.",
+      "parentUuid": "1a486d77_9040b957",
+      "revId": "d24c0af818a35410f182757305eda8164f3c90bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a486d77_70777dd5",
         "filename": "src/com/cyanogenmod/eleven/MusicPlaybackService.java",
         "patchSetId": 3
