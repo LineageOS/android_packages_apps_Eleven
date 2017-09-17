@@ -42,11 +42,6 @@ public class PlaylistLoader extends WrappedAsyncTaskLoader<List<Playlist>> {
     private final ArrayList<Playlist> mPlaylistList = Lists.newArrayList();
 
     /**
-     * The {@link Cursor} used to run the query.
-     */
-    private Cursor mCursor;
-
-    /**
      * Constructor of <code>PlaylistLoader</code>
      *
      * @param context The {@link Context} to use
@@ -64,15 +59,15 @@ public class PlaylistLoader extends WrappedAsyncTaskLoader<List<Playlist>> {
         makeDefaultPlaylists();
 
         // Create the Cursor
-        mCursor = makePlaylistCursor(getContext());
+        Cursor cursor = makePlaylistCursor(getContext());
         // Gather the data
-        if (mCursor != null && mCursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 // Copy the playlist id
-                final long id = mCursor.getLong(0);
+                final long id = cursor.getLong(0);
 
                 // Copy the playlist name
-                final String name = mCursor.getString(1);
+                final String name = cursor.getString(1);
 
                 final int songCount = MusicUtils.getSongCountForPlaylist(getContext(), id);
 
@@ -81,12 +76,12 @@ public class PlaylistLoader extends WrappedAsyncTaskLoader<List<Playlist>> {
 
                 // Add everything up
                 mPlaylistList.add(playlist);
-            } while (mCursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (mCursor != null) {
-            mCursor.close();
-            mCursor = null;
+        if (cursor != null) {
+            cursor.close();
+            cursor = null;
         }
         return mPlaylistList;
     }

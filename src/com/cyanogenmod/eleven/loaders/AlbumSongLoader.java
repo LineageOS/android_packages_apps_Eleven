@@ -40,11 +40,6 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
     private final ArrayList<Song> mSongList = Lists.newArrayList();
 
     /**
-     * The {@link Cursor} used to run the query.
-     */
-    private Cursor mCursor;
-
-    /**
      * The Id of the album the songs belong to.
      */
     private final Long mAlbumID;
@@ -66,42 +61,42 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
     @Override
     public List<Song> loadInBackground() {
         // Create the Cursor
-        mCursor = makeAlbumSongCursor(getContext(), mAlbumID);
+        Cursor cursor = makeAlbumSongCursor(getContext(), mAlbumID);
         // Gather the data
-        if (mCursor != null && mCursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 // Copy the song Id
-                final long id = mCursor.getLong(0);
+                final long id = cursor.getLong(0);
 
                 // Copy the song name
-                final String songName = mCursor.getString(1);
+                final String songName = cursor.getString(1);
 
                 // Copy the artist name
-                final String artist = mCursor.getString(2);
+                final String artist = cursor.getString(2);
 
                 // Copy the album name
-                final String album = mCursor.getString(3);
+                final String album = cursor.getString(3);
 
                 // Copy the duration
-                final long duration = mCursor.getLong(4);
+                final long duration = cursor.getLong(4);
 
                 // Make the duration label
                 final int seconds = (int) (duration / 1000);
 
                 // Grab the Song Year
-                final int year = mCursor.getInt(5);
+                final int year = cursor.getInt(5);
 
                 // Create a new song
                 final Song song = new Song(id, songName, artist, album, mAlbumID, seconds, year);
 
                 // Add everything up
                 mSongList.add(song);
-            } while (mCursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (mCursor != null) {
-            mCursor.close();
-            mCursor = null;
+        if (cursor != null) {
+            cursor.close();
+            cursor = null;
         }
         return mSongList;
     }

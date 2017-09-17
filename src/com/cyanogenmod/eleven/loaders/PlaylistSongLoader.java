@@ -45,11 +45,6 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
     private final ArrayList<Song> mSongList = Lists.newArrayList();
 
     /**
-     * The {@link Cursor} used to run the query.
-     */
-    private Cursor mCursor;
-
-    /**
      * The Id of the playlist the songs belong to.
      */
     private final long mPlaylistID;
@@ -73,84 +68,84 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         final int playlistCount = countPlaylist(getContext(), mPlaylistID);
 
         // Create the Cursor
-        mCursor = makePlaylistSongCursor(getContext(), mPlaylistID);
+        Cursor cursor = makePlaylistSongCursor(getContext(), mPlaylistID);
 
-        if (mCursor != null) {
+        if (cursor != null) {
             boolean runCleanup = false;
 
             // if the raw playlist count differs from the mapped playlist count (ie the raw mapping
             // table vs the mapping table join the audio table) that means the playlist mapping table
             // is messed up
-            if (mCursor.getCount() != playlistCount) {
+            if (cursor.getCount() != playlistCount) {
                 Log.w(TAG, "Count Differs - raw is: " + playlistCount + " while cursor is " +
-                        mCursor.getCount());
+                        cursor.getCount());
 
                 runCleanup = true;
             }
 
             // check if the play order is already messed up by duplicates
-            if (!runCleanup && mCursor.moveToFirst()) {
-                final int playOrderCol = mCursor.getColumnIndexOrThrow(Playlists.Members.PLAY_ORDER);
+            if (!runCleanup && cursor.moveToFirst()) {
+                final int playOrderCol = cursor.getColumnIndexOrThrow(Playlists.Members.PLAY_ORDER);
 
                 int lastPlayOrder = -1;
                 do {
-                    int playOrder = mCursor.getInt(playOrderCol);
+                    int playOrder = cursor.getInt(playOrderCol);
                     // if we have duplicate play orders, we need to recreate the playlist
                     if (playOrder == lastPlayOrder) {
                         runCleanup = true;
                         break;
                     }
                     lastPlayOrder = playOrder;
-                } while (mCursor.moveToNext());
+                } while (cursor.moveToNext());
             }
 
             if (runCleanup) {
                 Log.w(TAG, "Playlist order has flaws - recreating playlist");
 
                 // cleanup the playlist
-                cleanupPlaylist(getContext(), mPlaylistID, mCursor);
+                cleanupPlaylist(getContext(), mPlaylistID, cursor);
 
                 // create a new cursor
-                mCursor.close();
-                mCursor = makePlaylistSongCursor(getContext(), mPlaylistID);
-                if (mCursor != null) {
-                    Log.d(TAG, "New Count is: " + mCursor.getCount());
+                cursor.close();
+                cursor = makePlaylistSongCursor(getContext(), mPlaylistID);
+                if (cursor != null) {
+                    Log.d(TAG, "New Count is: " + cursor.getCount());
                 }
             }
         }
 
         // Gather the data
-        if (mCursor != null && mCursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 // Copy the song Id
-                final long id = mCursor.getLong(mCursor
+                final long id = cursor.getLong(cursor
                         .getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID));
 
                 // Copy the song name
-                final String songName = mCursor.getString(mCursor
+                final String songName = cursor.getString(cursor
                         .getColumnIndexOrThrow(AudioColumns.TITLE));
 
                 // Copy the artist name
-                final String artist = mCursor.getString(mCursor
+                final String artist = cursor.getString(cursor
                         .getColumnIndexOrThrow(AudioColumns.ARTIST));
 
                 // Copy the album id
-                final long albumId = mCursor.getLong(mCursor
+                final long albumId = cursor.getLong(cursor
                         .getColumnIndexOrThrow(AudioColumns.ALBUM_ID));
 
                 // Copy the album name
-                final String album = mCursor.getString(mCursor
+                final String album = cursor.getString(cursor
                         .getColumnIndexOrThrow(AudioColumns.ALBUM));
 
                 // Copy the duration
-                final long duration = mCursor.getLong(mCursor
+                final long duration = cursor.getLong(cursor
                         .getColumnIndexOrThrow(AudioColumns.DURATION));
 
                 // Convert the duration into seconds
                 final int durationInSecs = (int) duration / 1000;
 
                 // Grab the Song Year
-                final int year = mCursor.getInt(mCursor
+                final int year = cursor.getInt(cursor
                         .getColumnIndexOrThrow(AudioColumns.YEAR));
 
                 // Create a new song
@@ -158,12 +153,12 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
 
                 // Add everything up
                 mSongList.add(song);
-            } while (mCursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (mCursor != null) {
-            mCursor.close();
-            mCursor = null;
+        if (cursor != null) {
+            cursor.close();
+            cursor = null;
         }
         return mSongList;
     }
