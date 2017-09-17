@@ -37,9 +37,9 @@ public class SearchLoader extends WrappedAsyncTaskLoader<List<Song>> {
     private final ArrayList<Song> mSongList = Lists.newArrayList();
 
     /**
-     * The {@link Cursor} used to run the query.
+     * The query
      */
-    private Cursor mCursor;
+    private String mQuery;
 
     /**
      * Constructor of <code>SongLoader</code>
@@ -49,8 +49,7 @@ public class SearchLoader extends WrappedAsyncTaskLoader<List<Song>> {
      */
     public SearchLoader(final Context context, final String query) {
         super(context);
-        // Create the Cursor
-        mCursor = makeSearchCursor(context, query);
+        mQuery = query;
     }
 
     /**
@@ -59,42 +58,43 @@ public class SearchLoader extends WrappedAsyncTaskLoader<List<Song>> {
     @Override
     public List<Song> loadInBackground() {
         // Gather the data
-        if (mCursor != null && mCursor.moveToFirst()) {
+        Cursor cursor = makeSearchCursor(getContext(), mQuery);
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 // Copy the song Id
                 long id = -1;
 
                 // Copy the song name
-                final String songName = mCursor.getString(mCursor
+                final String songName = cursor.getString(cursor
                         .getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE));
 
                 // Check for a song Id
                 if (!TextUtils.isEmpty(songName)) {
-                    id = mCursor.getLong(mCursor
+                    id = cursor.getLong(cursor
                             .getColumnIndexOrThrow(MediaStore.Audio.Media._ID));
                 }
 
                 // Copy the album name
-                final String album = mCursor.getString(mCursor
+                final String album = cursor.getString(cursor
                         .getColumnIndexOrThrow(MediaStore.Audio.Albums.ALBUM));
 
                 // Copy the album id
-                final long albumId = mCursor.getLong(mCursor
+                final long albumId = cursor.getLong(cursor
                         .getColumnIndexOrThrow(MediaStore.Audio.Albums.ALBUM_ID));
 
                 // Check for a album Id
                 if (id < 0 && !TextUtils.isEmpty(album)) {
-                    id = mCursor.getLong(mCursor
+                    id = cursor.getLong(cursor
                             .getColumnIndexOrThrow(MediaStore.Audio.Albums._ID));
                 }
 
                 // Copy the artist name
-                final String artist = mCursor.getString(mCursor
+                final String artist = cursor.getString(cursor
                         .getColumnIndexOrThrow(MediaStore.Audio.Artists.ARTIST));
 
                 // Check for a artist Id
                 if (id < 0 && !TextUtils.isEmpty(artist)) {
-                    id = mCursor.getLong(mCursor
+                    id = cursor.getLong(cursor
                             .getColumnIndexOrThrow(MediaStore.Audio.Artists._ID));
                 }
 
@@ -103,12 +103,12 @@ public class SearchLoader extends WrappedAsyncTaskLoader<List<Song>> {
 
                 // Add everything up
                 mSongList.add(song);
-            } while (mCursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (mCursor != null) {
-            mCursor.close();
-            mCursor = null;
+        if (cursor != null) {
+            cursor.close();
+            cursor = null;
         }
         return mSongList;
     }

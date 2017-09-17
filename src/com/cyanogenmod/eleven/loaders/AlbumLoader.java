@@ -46,11 +46,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     private ArrayList<Album> mAlbumsList = Lists.newArrayList();
 
     /**
-     * The {@link Cursor} used to run the query.
-     */
-    private Cursor mCursor;
-
-    /**
      * Additional selection filter
      */
     protected Long mArtistId;
@@ -78,24 +73,24 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     @Override
     public List<Album> loadInBackground() {
         // Create the Cursor
-        mCursor = makeAlbumCursor(getContext(), mArtistId);
+        Cursor cursor = makeAlbumCursor(getContext(), mArtistId);
         // Gather the data
-        if (mCursor != null && mCursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 // Copy the album id
-                final long id = mCursor.getLong(0);
+                final long id = cursor.getLong(0);
 
                 // Copy the album name
-                final String albumName = mCursor.getString(1);
+                final String albumName = cursor.getString(1);
 
                 // Copy the artist name
-                final String artist = mCursor.getString(2);
+                final String artist = cursor.getString(2);
 
                 // Copy the number of songs
-                final int songCount = mCursor.getInt(3);
+                final int songCount = cursor.getInt(3);
 
                 // Copy the release year
-                final String year = mCursor.getString(4);
+                final String year = cursor.getString(4);
 
                 // as per designer's request, don't show unknown albums
                 if (MediaStore.UNKNOWN_STRING.equals(albumName)) {
@@ -105,18 +100,18 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
                 // Create a new album
                 final Album album = new Album(id, albumName, artist, songCount, year);
 
-                if (mCursor instanceof SortedCursor) {
-                    album.mBucketLabel = (String)((SortedCursor)mCursor).getExtraData();
+                if (cursor instanceof SortedCursor) {
+                    album.mBucketLabel = (String)((SortedCursor) cursor).getExtraData();
                 }
 
                 // Add everything up
                 mAlbumsList.add(album);
-            } while (mCursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (mCursor != null) {
-            mCursor.close();
-            mCursor = null;
+        if (cursor != null) {
+            cursor.close();
+            cursor = null;
         }
 
         return mAlbumsList;

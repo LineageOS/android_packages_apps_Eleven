@@ -44,11 +44,6 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
     private ArrayList<Artist> mArtistsList = Lists.newArrayList();
 
     /**
-     * The {@link Cursor} used to run the query.
-     */
-    private Cursor mCursor;
-
-    /**
      * Constructor of <code>ArtistLoader</code>
      *
      * @param context The {@link Context} to use
@@ -63,21 +58,21 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
     @Override
     public List<Artist> loadInBackground() {
         // Create the Cursor
-        mCursor = makeArtistCursor(getContext());
+        Cursor cursor = makeArtistCursor(getContext());
         // Gather the data
-        if (mCursor != null && mCursor.moveToFirst()) {
+        if (cursor != null && cursor.moveToFirst()) {
             do {
                 // Copy the artist id
-                final long id = mCursor.getLong(0);
+                final long id = cursor.getLong(0);
 
                 // Copy the artist name
-                final String artistName = mCursor.getString(1);
+                final String artistName = cursor.getString(1);
 
                 // Copy the number of albums
-                final int albumCount = mCursor.getInt(2);
+                final int albumCount = cursor.getInt(2);
 
                 // Copy the number of songs
-                final int songCount = mCursor.getInt(3);
+                final int songCount = cursor.getInt(3);
 
                 // as per designer's request, don't show unknown artist
                 if (MediaStore.UNKNOWN_STRING.equals(artistName)) {
@@ -87,17 +82,17 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
                 // Create a new artist
                 final Artist artist = new Artist(id, artistName, songCount, albumCount);
 
-                if (mCursor instanceof SortedCursor) {
-                    artist.mBucketLabel = (String)((SortedCursor)mCursor).getExtraData();
+                if (cursor instanceof SortedCursor) {
+                    artist.mBucketLabel = (String)((SortedCursor) cursor).getExtraData();
                 }
 
                 mArtistsList.add(artist);
-            } while (mCursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (mCursor != null) {
-            mCursor.close();
-            mCursor = null;
+        if (cursor != null) {
+            cursor.close();
+            cursor = null;
         }
 
         return mArtistsList;
