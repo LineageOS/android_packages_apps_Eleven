@@ -40,6 +40,7 @@
   <string name="menu_shuffle_album">Álbum al debalu</string>
   <string name="menu_shuffle_artist">Artistes al debalu</string>
   <string name="menu_shuffle_top_tracks">Canciones más sentíes al debalu</string>
+  <string name="menu_play_all">Reproducir too</string>
   <string name="menu_clear_queue">Llimpiar cola</string>
   <string name="menu_equalizer">Ecualizador</string>
   <!-- Playlist items -->
@@ -61,11 +62,28 @@
   <string name="overwrite">Sobrescribir</string>
   <string name="delete_dialog_title">¿Desaniciar <xliff:g id="item" example="album">%s</xliff:g>?</string>
   <string name="cannot_be_undone">Esto nun pue desafacese</string>
+  <string name="delete_warning">Esto desaniciará dafechu toles imáxenes na caché</string>
+  <string name="google_search">Gueta de Google</string>
   <!-- Context menu items -->
+  <string name="context_menu_play_selection">Reproducir</string>
+  <string name="context_menu_play_next">Siguiente</string>
   <string name="context_menu_play_album">Reproducir álbum</string>
+  <string name="context_menu_more_by_artist">Más del artista</string>
   <string name="context_menu_rename_playlist">Renomar</string>
+  <string name="context_menu_delete">Desaniciar</string>
   <string name="context_menu_use_as_ringtone">Usar como timbre</string>
+  <string name="context_menu_change_image">Camudar imaxe</string>
   <!-- Content descriptions -->
+  <string name="accessibility_play">Reproducir</string>
+  <string name="accessibility_pause">Posar</string>
+  <string name="accessibility_next">Siguiente</string>
+  <string name="accessibility_prev">Anterior</string>
+  <string name="accessibility_shuffle">Al debalu</string>
+  <string name="accessibility_shuffle_all">Too al debalu</string>
+  <string name="accessibility_repeat">Repitir</string>
+  <string name="accessibility_repeat_all">Repitilo too</string>
+  <string name="accessibility_repeat_one">Repitir una</string>
+  <string name="accessibility_queue">Abrir cola</string>
   <!-- Toast messages -->
   <string name="set_as_ringtone">«<xliff:g id="name" example="Alarm Bell">%s</xliff:g>» afitóse como timbre</string>
   <!-- Settings -->
@@ -73,9 +91,20 @@
   <string name="settings_storage_category">Almacenamientu</string>
   <string name="settings_data_category">Datos</string>
   <string name="settings_delete_cache_title">Desanciar caché</string>
+  <string name="settings_delete_cache_summary">Desanicia toles imáxenes na caché</string>
+  <string name="settings_download_only_on_wifi_title">Baxar namái per Wi-fi</string>
+  <string name="settings_download_only_on_wifi_summary">P\'amenorgar los cargos de la operadora, nun baxar conteníu en rede móviles</string>
   <string name="settings_general_category">Xeneral</string>
+  <string name="settings_show_lyrics_summary">Pa canciones que tengan un ficheru srt</string>
   <!-- App widget -->
+  <string name="app_widget_small">Música: 4 \u00d7 1</string>
+  <string name="app_widget_large">Música: 4 \u00d7 2</string>
   <!-- Empty list / error messages -->
+  <string name="empty_search">Nun s\'alcontraron resultaos de gueta</string>
+  <string name="empty_recent_main">Nun hai canciones recientes</string>
+  <string name="empty_generic_main">Nun s\'alcontró música</string>
+  <string name="empty_queue_main">Nun hai canciones na cola</string>
+  <string name="error_playing_track">Nun pue reproducise la pista %1$s</string>
   <!-- Section Headers -->
   <string name="header_unknown_year">Añu desconocíu</string>
   <string name="header_less_than_30s">Menos de 30 segundos</string>
@@ -88,7 +117,19 @@
   <string name="header_10_to_30_minutes">10 - 30 minutos</string>
   <string name="header_30_to_60_minutes">30 - 60 minutos</string>
   <string name="header_greater_than_60_minutes">Más de 60 minutos</string>
+  <string name="header_1_song">1 canción</string>
+  <string name="header_2_to_4_songs">2 - 4 canciones</string>
+  <string name="header_5_to_9_songs">5 - 9 canciones</string>
+  <string name="header_10_plus_songs">10+ canciones</string>
+  <string name="header_5_plus_albums">5+ álbumes</string>
+  <string name="footer_search_artists">Amosar tolos artistes</string>
   <string name="footer_search_albums">Amosar tolos álbumes</string>
+  <string name="footer_search_songs">Amosar toles canciones</string>
+  <string name="footer_search_playlists">Amosar toles llistes</string>
+  <string name="searchHint">Guetar música</string>
+  <string name="search_title_artists">Tolos artistes de «%s»</string>
   <string name="search_title_albums">Tolos álbumes de «%s»</string>
+  <string name="search_title_songs">Toles canciones de «%s»</string>
+  <string name="search_title_playlists">Toles llistes de «%s»</string>
   <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

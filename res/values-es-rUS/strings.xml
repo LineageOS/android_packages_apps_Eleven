@@ -114,7 +114,7 @@
   <string name="accessibility_queue">Abrir cola</string>
   <string name="accessibility_browse">Buscar música</string>
   <!-- Toast messages -->
-  <string name="set_as_ringtone">\' <xliff:g id="name" example="Alarm Bell">%s\' </xliff:g> establecer como tono de llamada</string>
+  <string name="set_as_ringtone">Se estableció «<xliff:g id="name" example="Alarm Bell">%s </xliff:g>» como tono de llamada</string>
   <string name="playlist_renamed">Lista renombrada</string>
   <!-- Settings -->
   <string name="settings_ui_category">Interfaz</string>
@@ -148,7 +148,7 @@
   <string name="empty_recent_main">Sin canciones recientes</string>
   <string name="empty_recent">Las canciones que hayas escuchado recientemente aparecerán aquí.</string>
   <string name="empty_playlist_main">Sin canciones en la lista de reproducción</string>
-  <string name="empty_playlist_secondary">Para añadir canciones a esta lista de reproducción, pulsa en el menú de opciones de una canción, álbum o artista y selecciona \"Añadir a la lista\".</string>
+  <string name="empty_playlist_secondary">Para añadir canciones a esta lista de reproducción, pulsa en el menú de opciones de una canción, álbum o artista y selecciona «Añadir a la lista».</string>
   <string name="empty_top_tracks_main">Sin canciones más escuchadas</string>
   <string name="empty_top_tracks_secondary">Las canciones que más escuches se añadirán a esta lista.</string>
   <string name="empty_last_added_main">No se añadieron canciones recientemente</string>
@@ -156,7 +156,7 @@
   <string name="empty_generic_main">No se encontró música</string>
   <string name="empty_generic_secondary">Para copiar música del ordenador al dispositivo utiliza un cable USB.</string>
   <string name="empty_queue_main">Sin canciones en la cola</string>
-  <string name="empty_queue_secondary">Para añadir canciones a la cola, pulsa en el menú de opciones de una canción, álbum o artista y selecciona \"Añadir a la cola\".</string>
+  <string name="empty_queue_secondary">Para añadir canciones a la cola, pulsa en el menú de opciones de una canción, álbum o artista y selecciona «Añadir a la cola».</string>
   <string name="error_playing_track">No se pudo reproducir la pista %1$s</string>
   <!-- Section Headers -->
   <string name="header_unknown_year">Año desconocido</string>
@@ -181,9 +181,9 @@
   <string name="footer_search_songs">Mostrar todas las canciones</string>
   <string name="footer_search_playlists">Mostrar todas las listas de reproducción</string>
   <string name="searchHint">Buscar música</string>
-  <string name="search_title_artists">Todos los artistas \"%s\"</string>
-  <string name="search_title_albums">Todos los álbumes \"%s\"</string>
-  <string name="search_title_songs">Todas las canciones \"%s\"</string>
-  <string name="search_title_playlists">Todas las listas de reproducción \"%s\"</string>
+  <string name="search_title_artists">Todos los artistas «%s»</string>
+  <string name="search_title_albums">Todos los álbumes «%s»</string>
+  <string name="search_title_songs">Todas las canciones «%s»</string>
+  <string name="search_title_playlists">Todas las listas de reproducción «%s»</string>
   <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>
