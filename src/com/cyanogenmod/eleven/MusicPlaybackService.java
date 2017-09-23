@@ -848,7 +848,7 @@ public class MusicPlaybackService extends Service {
             MediaButtonIntentReceiver.completeWakefulIntent(intent);
         }
 
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     private void releaseServiceUiAndStop() {
