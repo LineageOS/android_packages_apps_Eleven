@@ -3442,6 +3442,9 @@ public class MusicPlaybackService extends Service {
             switch (what) {
                 case MediaPlayer.MEDIA_ERROR_SERVER_DIED:
                     final MusicPlaybackService service = mService.get();
+                    if (service == null) {
+                        return false;
+                    }
                     final TrackErrorInfo errorInfo = new TrackErrorInfo(service.getAudioId(),
                             service.getTrackName());
 
