@@ -148,7 +148,7 @@
   <string name="empty_recent_main">Ni nedavnih skladb</string>
   <string name="empty_recent">Skladbe, ki ste jih nedavno poslušali, bodo prikazane tukaj.</string>
   <string name="empty_playlist_main">Na seznamu predvajanja ni skladb</string>
-  <string name="empty_playlist_secondary">Za dodajanje skladb na ta seznam predvajanja tapnite meni možnosti na skladbi, albumu ali izvajalcu in izberite \"Dodaj na seznam predvajanja\".</string>
+  <string name="empty_playlist_secondary">Za dodajanje skladb na ta seznam predvajanja tapnite meni možnosti na skladbi, albumu ali izvajalcu in izberite »Dodaj na seznam predvajanja«.</string>
   <string name="empty_top_tracks_main">Ni največkrat predvajanih</string>
   <string name="empty_top_tracks_secondary">Skladbe, ki ste jih največkrat poslušali, bodo dodane na ta seznam.</string>
   <string name="empty_last_added_main">Ni nedavno dodanih skladb</string>
@@ -156,7 +156,7 @@
   <string name="empty_generic_main">Glasbe ni bilo najdene</string>
   <string name="empty_generic_secondary">Za kopiranje glasbe iz vašega računalnika na vašo napravo uporabite kabel USB.</string>
   <string name="empty_queue_main">Ni skladb v čakalni vrsti predvajanja</string>
-  <string name="empty_queue_secondary">Za dodajanje skladb v čakalno vrsto predvajanja tapnite meni možnosti na skladbi, albumu ali izvajalcu in izberite \"Dodaj v čakalno vrsto\".</string>
+  <string name="empty_queue_secondary">Za dodajanje skladb v čakalno vrsto predvajanja tapnite meni možnosti na skladbi, albumu ali izvajalcu in izberite »Dodaj v čakalno vrsto«.</string>
   <string name="error_playing_track">Skladbe %1$s ni mogoče predvajati</string>
   <!-- Section Headers -->
   <string name="header_unknown_year">Neznano leto</string>
