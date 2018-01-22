@@ -61,7 +61,7 @@ import org.lineageos.eleven.sectionadapter.SectionAdapter;
 import org.lineageos.eleven.sectionadapter.SectionCreator;
 import org.lineageos.eleven.sectionadapter.SectionCreator.SimpleListLoader;
 import org.lineageos.eleven.sectionadapter.SectionListContainer;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
 import org.lineageos.eleven.utils.NavUtils;
@@ -81,7 +81,7 @@ import static android.view.View.OnTouchListener;
 import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
- * Provides the search interface for Apollo.
+ * Provides the search interface for Eleven.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -259,7 +259,7 @@ public class SearchActivity extends FragmentActivity implements
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Apollo's service
+        // Bind Eleven's service
         mToken = MusicUtils.bindToService(this, this);
 
         // Set the layout
@@ -762,7 +762,7 @@ public class SearchActivity extends FragmentActivity implements
                 if (mSearchType == ResultType.Playlist) {
                     cursor = makePlaylistSearchCursor(getContext(), mQuery);
                 } else {
-                    cursor = ApolloUtils.createSearchQueryCursor(getContext(), mQuery);
+                    cursor = ElevenUtils.createSearchQueryCursor(getContext(), mQuery);
                 }
 
                 // pre-cache this index
@@ -838,7 +838,7 @@ public class SearchActivity extends FragmentActivity implements
             }
 
             // do fancy audio search
-            Cursor cursor = ApolloUtils.createSearchQueryCursor(getContext(), mQuery);
+            Cursor cursor = ElevenUtils.createSearchQueryCursor(getContext(), mQuery);
 
             // pre-cache this index
             final int mimeTypeIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.MIME_TYPE);

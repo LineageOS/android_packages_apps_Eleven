@@ -14,7 +14,7 @@
 package org.lineageos.eleven.menu;
 
 /**
- * Several of the context menu items used in Apollo are reused. This class helps
+ * Several of the context menu items used in Eleven are reused. This class helps
  * keep things tidy. The integer values of the items are used both as the menu IDs
  * _and_ to determine the sort order of the items.
  */

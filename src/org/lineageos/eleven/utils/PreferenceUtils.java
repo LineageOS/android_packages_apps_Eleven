@@ -30,7 +30,7 @@ import org.lineageos.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
 
 /**
  * A collection of helpers designed to get and set various preferences across
- * Apollo.
+ * Eleven.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -120,7 +120,7 @@ public final class PreferenceUtils {
      *            in {@link MusicBrowserPhoneFragment}.
      */
     public void setStartPage(final int value) {
-        ApolloUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... unused) {
                 final SharedPreferences.Editor editor = mPreferences.edit();
@@ -155,7 +155,7 @@ public final class PreferenceUtils {
      * @param value The new theme color to use.
      */
     public void setDefaultThemeColor(final int value) {
-        ApolloUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... unused) {
                 final SharedPreferences.Editor editor = mPreferences.edit();
@@ -209,7 +209,7 @@ public final class PreferenceUtils {
      * @param value The new sort order
      */
     private void setSortOrder(final String key, final String value) {
-        ApolloUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
             @Override
             protected Void doInBackground(final Void... unused) {
                 final SharedPreferences.Editor editor = mPreferences.edit();

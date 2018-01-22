@@ -21,7 +21,7 @@ import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
@@ -87,7 +87,7 @@ public class RepeatingImageButton extends ImageButton implements OnClickListener
     @Override
     public boolean performLongClick() {
         if (mListener == null) {
-            ApolloUtils.showCheatSheet(this);
+            ElevenUtils.showCheatSheet(this);
         }
         mStartTime = SystemClock.elapsedRealtime();
         mRepeatCount = 0;

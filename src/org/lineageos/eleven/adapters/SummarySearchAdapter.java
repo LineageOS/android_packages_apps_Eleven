@@ -29,7 +29,7 @@ import org.lineageos.eleven.format.PrefixHighlighter;
 import org.lineageos.eleven.model.SearchResult;
 import org.lineageos.eleven.sectionadapter.SectionAdapter;
 import org.lineageos.eleven.ui.MusicHolder;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
@@ -69,7 +69,7 @@ public final class SummarySearchAdapter extends ArrayAdapter<SearchResult>
     public SummarySearchAdapter(final Activity context) {
         super(context, 0);
         // Initialize the cache & image fetcher
-        mImageFetcher = ApolloUtils.getImageFetcher(context);
+        mImageFetcher = ElevenUtils.getImageFetcher(context);
         // Create the prefix highlighter
         mHighlighter = new PrefixHighlighter(context);
     }

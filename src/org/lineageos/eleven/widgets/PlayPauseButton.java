@@ -26,7 +26,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
@@ -88,7 +88,7 @@ public class PlayPauseButton extends ImageButton implements OnClickListener, OnL
         if (TextUtils.isEmpty(view.getContentDescription())) {
             return false;
         } else {
-            ApolloUtils.showCheatSheet(view);
+            ElevenUtils.showCheatSheet(view);
             return true;
         }
     }

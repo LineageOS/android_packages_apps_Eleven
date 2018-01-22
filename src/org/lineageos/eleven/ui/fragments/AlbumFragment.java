@@ -38,7 +38,7 @@ import org.lineageos.eleven.sectionadapter.SectionListContainer;
 import org.lineageos.eleven.ui.activities.BaseActivity;
 import org.lineageos.eleven.ui.fragments.phone.MusicBrowserFragment;
 import org.lineageos.eleven.utils.AlbumPopupMenuHelper;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
@@ -306,7 +306,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
      * Sets up the grid view
      */
     private void initGridView() {
-        int columns = ApolloUtils.isLandscape(getActivity()) ? FOUR : TWO;
+        int columns = ElevenUtils.isLandscape(getActivity()) ? FOUR : TWO;
         mAdapter.setNumColumns(columns);
         // Initialize the grid
         mGridView = (GridView)mRootView.findViewById(R.id.grid_base);

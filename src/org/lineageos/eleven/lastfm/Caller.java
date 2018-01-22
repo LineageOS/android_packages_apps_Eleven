@@ -76,7 +76,7 @@ public class Caller {
 
     private final String apiRootUrl = DEFAULT_API_ROOT;
 
-    private final String userAgent = "Apollo";
+    private final String userAgent = "Eleven";
 
     private Result lastResult;
 

@@ -90,7 +90,7 @@ import java.util.TreeSet;
 
 /**
  * A backbround {@link Service} used to keep music playing between activities
- * and when the user moves Apollo into the background.
+ * and when the user moves Eleven into the background.
  */
 @SuppressLint("NewApi")
 public class MusicPlaybackService extends Service {
@@ -1710,7 +1710,7 @@ public class MusicPlaybackService extends Service {
 
     /**
      * Reloads the queue as the user left it the last time they stopped using
-     * Apollo
+     * Eleven
      */
     private void reloadQueue() {
         int id = mCardId;

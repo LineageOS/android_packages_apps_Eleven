@@ -30,7 +30,7 @@ import org.lineageos.eleven.ui.MusicHolder;
 import org.lineageos.eleven.ui.MusicHolder.DataHolder;
 import org.lineageos.eleven.ui.fragments.QueueFragment;
 import org.lineageos.eleven.ui.fragments.SongFragment;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.PlayPauseProgressButton;
@@ -102,7 +102,7 @@ public class SongAdapter extends ArrayAdapter<Song>
         // Get the layout Id
         mLayoutId = layoutId;
         // Initialize the cache & image fetcher
-        mImageFetcher = ApolloUtils.getImageFetcher(context);
+        mImageFetcher = ElevenUtils.getImageFetcher(context);
         // set the source id and type
         mSourceId = sourceId;
         mSourceType = sourceType;

@@ -31,7 +31,7 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.loaders.AlbumLoader;
 import org.lineageos.eleven.model.Album;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.PopupMenuButton;
@@ -55,7 +55,7 @@ implements LoaderCallbacks<List<Album>>, IPopupMenuCallback {
 
     public ArtistDetailAlbumAdapter(final Activity activity) {
         mActivity = activity;
-        mImageFetcher = ApolloUtils.getImageFetcher(activity);
+        mImageFetcher = ElevenUtils.getImageFetcher(activity);
         mInflater = LayoutInflater.from(activity);
         mListMargin = activity.getResources().
             getDimensionPixelSize(R.dimen.list_item_general_margin);

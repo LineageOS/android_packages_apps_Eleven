@@ -56,7 +56,7 @@ import org.lineageos.eleven.menu.CreateNewPlaylist;
 import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.ui.activities.HomeActivity;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
@@ -157,11 +157,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Control the media volume
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Apollo's service
+        // Bind Eleven's service
         mToken = MusicUtils.bindToService(getActivity(), this);
 
         // Initialize the image fetcher/cache
-        mImageFetcher = ApolloUtils.getImageFetcher(getActivity());
+        mImageFetcher = ElevenUtils.getImageFetcher(getActivity());
 
         // Initialize the handler used to update the current time
         mTimeHandler = new TimeHandler(this);

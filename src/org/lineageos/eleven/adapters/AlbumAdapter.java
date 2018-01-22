@@ -26,7 +26,7 @@ import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.ui.MusicHolder;
 import org.lineageos.eleven.ui.MusicHolder.DataHolder;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
 import java.util.Collections;
@@ -80,7 +80,7 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         // Get the layout Id
         mLayoutId = layoutId;
         // Initialize the cache & image fetcher
-        mImageFetcher = ApolloUtils.getImageFetcher(context);
+        mImageFetcher = ElevenUtils.getImageFetcher(context);
         mPadding = context.getResources().getDimensionPixelSize(R.dimen.list_item_general_margin);
     }
 

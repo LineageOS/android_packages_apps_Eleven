@@ -49,7 +49,7 @@ import org.lineageos.eleven.ui.fragments.RecentFragment;
 import org.lineageos.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
 import org.lineageos.eleven.ui.fragments.profile.LastAddedFragment;
 import org.lineageos.eleven.ui.fragments.profile.TopTracksFragment;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.BitmapWithColors;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
@@ -330,7 +330,7 @@ public class HomeActivity extends SlidingPanelActivity implements
                         Bitmap bitmap = ImageFetcher.decodeSampledBitmapFromUri(getContentResolver(),
                                 selectedImage);
 
-                        ImageFetcher imageFetcher = ApolloUtils.getImageFetcher(HomeActivity.this);
+                        ImageFetcher imageFetcher = ElevenUtils.getImageFetcher(HomeActivity.this);
                         imageFetcher.addBitmapToCache(mKey, bitmap);
 
                         MusicUtils.refresh();

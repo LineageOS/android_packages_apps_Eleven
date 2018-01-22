@@ -250,7 +250,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         // Initialize the broadcast receiver
         mQueueUpdateListener = new QueueUpdateListener(this);
 
-        // Bind Apollo's service
+        // Bind Eleven's service
         mToken = MusicUtils.bindToService(getActivity(), this);
     }
 

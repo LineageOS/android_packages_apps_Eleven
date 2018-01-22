@@ -69,7 +69,7 @@ import java.util.Iterator;
 import java.util.WeakHashMap;
 
 /**
- * A collection of helpers directly related to music or Apollo's service.
+ * A collection of helpers directly related to music or Eleven's service.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -1711,7 +1711,7 @@ public final class MusicUtils {
      * Removes the header image from the cache.
      */
     public static void removeFromCache(Activity activity, String key) {
-        ImageFetcher imageFetcher = ApolloUtils.getImageFetcher(activity);
+        ImageFetcher imageFetcher = ElevenUtils.getImageFetcher(activity);
         imageFetcher.removeFromCache(key);
         // Give the disk cache a little time before requesting a new image.
         SystemClock.sleep(80);

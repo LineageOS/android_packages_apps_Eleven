@@ -17,7 +17,7 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.model.Song;
 import org.lineageos.eleven.service.MusicPlaybackTrack;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.PopupMenuButton;
@@ -37,7 +37,7 @@ public abstract class DetailSongAdapter extends BaseAdapter
 
     public DetailSongAdapter(final Activity activity) {
         mActivity = activity;
-        mImageFetcher = ApolloUtils.getImageFetcher(activity);
+        mImageFetcher = ElevenUtils.getImageFetcher(activity);
         mInflater = LayoutInflater.from(activity);
     }
 
