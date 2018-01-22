@@ -9,7 +9,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;

@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -20,10 +20,10 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.PlaylistsColumns;
 
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.model.Playlist;
-import com.cyanogenmod.eleven.utils.Lists;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.model.Playlist;
+import org.lineageos.eleven.utils.Lists;
+import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.ArrayList;
 import java.util.List;

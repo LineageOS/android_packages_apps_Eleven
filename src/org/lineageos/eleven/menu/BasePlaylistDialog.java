@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.menu;
+package org.lineageos.eleven.menu;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -26,8 +26,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * A simple base class for the playlist dialogs.

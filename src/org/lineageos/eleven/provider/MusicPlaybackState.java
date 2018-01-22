@@ -13,16 +13,16 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.provider;
+package org.lineageos.eleven.provider;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.service.MusicPlaybackTrack;
-import com.cyanogenmod.eleven.utils.Lists;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.utils.Lists;
 
 import java.util.ArrayList;
 import java.util.Iterator;

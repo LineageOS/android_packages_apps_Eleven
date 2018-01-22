@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.Manifest.permission;
 import android.app.Activity;
@@ -22,11 +22,11 @@ import android.os.AsyncTask;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.preference.PreferenceManager;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.fragments.AlbumFragment;
-import com.cyanogenmod.eleven.ui.fragments.ArtistFragment;
-import com.cyanogenmod.eleven.ui.fragments.SongFragment;
-import com.cyanogenmod.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.fragments.AlbumFragment;
+import org.lineageos.eleven.ui.fragments.ArtistFragment;
+import org.lineageos.eleven.ui.fragments.SongFragment;
+import org.lineageos.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
 
 /**
  * A collection of helpers designed to get and set various preferences across
@@ -266,7 +266,7 @@ public final class PreferenceUtils {
 
     /**
      * @return The sort order used for the artist album list in
-     *         {@link com.cyanogenmod.eleven.ui.fragments.ArtistDetailFragment}
+     *         {@link org.lineageos.eleven.ui.fragments.ArtistDetailFragment}
      */
     public final String getArtistAlbumSortOrder() {
         return mPreferences.getString(ARTIST_ALBUM_SORT_ORDER,

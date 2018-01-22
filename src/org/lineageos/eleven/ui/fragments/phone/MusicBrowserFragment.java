@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments.phone;
+package org.lineageos.eleven.ui.fragments.phone;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

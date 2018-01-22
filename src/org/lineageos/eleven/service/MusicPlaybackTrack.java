@@ -13,12 +13,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.service;
+package org.lineageos.eleven.service;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.cyanogenmod.eleven.Config;
+import org.lineageos.eleven.Config;
 
 /**
  * This is used by the music playback service to track the music tracks it is playing

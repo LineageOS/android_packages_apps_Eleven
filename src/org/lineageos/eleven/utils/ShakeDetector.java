@@ -1,5 +1,5 @@
 
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 /*
  * Copyright 2012 Square, Inc.

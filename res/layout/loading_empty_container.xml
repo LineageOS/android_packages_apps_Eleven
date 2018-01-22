@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 
-<com.cyanogenmod.eleven.widgets.LoadingEmptyContainer
+<org.lineageos.eleven.widgets.LoadingEmptyContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/loading_empty_container"
     android:gravity="center"
@@ -32,4 +32,4 @@
 
     <include
         layout="@layout/no_results_message" />
-</com.cyanogenmod.eleven.widgets.LoadingEmptyContainer>
+</org.lineageos.eleven.widgets.LoadingEmptyContainer>

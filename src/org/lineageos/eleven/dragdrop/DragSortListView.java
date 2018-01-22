@@ -10,7 +10,7 @@
  * language governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.dragdrop;
+package org.lineageos.eleven.dragdrop;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -30,7 +30,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 import java.io.File;
 import java.io.FileWriter;

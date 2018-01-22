@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,11 +23,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.loaders.SongLoader;
-import com.cyanogenmod.eleven.model.Song;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.loaders.SongLoader;
+import org.lineageos.eleven.model.Song;
 
 import java.util.List;
 

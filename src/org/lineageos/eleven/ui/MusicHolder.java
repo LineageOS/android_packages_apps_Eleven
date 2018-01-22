@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui;
+package org.lineageos.eleven.ui;
 
 import android.content.Context;
 import android.view.View;
@@ -19,9 +19,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.widgets.PlayPauseProgressButton;
-import com.cyanogenmod.eleven.widgets.PopupMenuButton;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PopupMenuButton;
 
 import java.lang.ref.WeakReference;
 

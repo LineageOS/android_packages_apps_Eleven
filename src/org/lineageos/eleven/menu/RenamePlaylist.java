@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.menu;
+package org.lineageos.eleven.menu;
 
 import android.app.Dialog;
 import android.content.ContentResolver;
@@ -21,9 +21,9 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.format.Capitalize;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.format.Capitalize;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * Alert dialog used to rename playlits.

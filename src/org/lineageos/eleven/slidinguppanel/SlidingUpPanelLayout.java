@@ -1,4 +1,4 @@
-package com.cyanogenmod.eleven.slidinguppanel;
+package org.lineageos.eleven.slidinguppanel;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -18,7 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 public class SlidingUpPanelLayout extends ViewGroup {
 

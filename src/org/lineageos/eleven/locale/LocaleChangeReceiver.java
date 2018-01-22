@@ -14,13 +14,13 @@
  * limitations under the License
  */
 
-package com.cyanogenmod.eleven.locale;
+package org.lineageos.eleven.locale;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import com.cyanogenmod.eleven.provider.LocalizedStore;
+import org.lineageos.eleven.provider.LocalizedStore;
 
 /**
  * Locale change intent receiver that invokes {@link LocalizedStore} to update

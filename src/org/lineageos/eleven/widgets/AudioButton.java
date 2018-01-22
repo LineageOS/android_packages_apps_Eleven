@@ -1,4 +1,4 @@
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -8,8 +8,8 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.ImageButton;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.utils.ApolloUtils;
 
 public abstract class AudioButton extends ImageButton implements OnClickListener, OnLongClickListener {
     public static float ACTIVE_ALPHA = 1.0f;

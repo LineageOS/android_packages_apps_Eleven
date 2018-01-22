@@ -1,3 +1,3 @@
-package com.cyanogenmod.eleven.service;
+package org.lineageos.eleven.service;
 
 parcelable MusicPlaybackTrack;

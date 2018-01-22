@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-package com.cyanogenmod.eleven.provider;
+package org.lineageos.eleven.provider;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -28,11 +28,11 @@ import android.provider.MediaStore.Audio.AudioColumns;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.cyanogenmod.eleven.loaders.SortedCursor;
-import com.cyanogenmod.eleven.locale.LocaleSet;
-import com.cyanogenmod.eleven.locale.LocaleSetManager;
-import com.cyanogenmod.eleven.locale.LocaleUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.loaders.SortedCursor;
+import org.lineageos.eleven.locale.LocaleSet;
+import org.lineageos.eleven.locale.LocaleSetManager;
+import org.lineageos.eleven.locale.LocaleUtils;
+import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;

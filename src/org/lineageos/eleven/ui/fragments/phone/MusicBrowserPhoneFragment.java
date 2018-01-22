@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments.phone;
+package org.lineageos.eleven.ui.fragments.phone;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -20,18 +20,18 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.adapters.PagerAdapter.MusicFragments;
-import com.cyanogenmod.eleven.menu.CreateNewPlaylist;
-import com.cyanogenmod.eleven.ui.fragments.AlbumFragment;
-import com.cyanogenmod.eleven.ui.fragments.ArtistFragment;
-import com.cyanogenmod.eleven.ui.fragments.BaseFragment;
-import com.cyanogenmod.eleven.ui.fragments.SongFragment;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PreferenceUtils;
-import com.cyanogenmod.eleven.utils.SortOrder;
-import com.cyanogenmod.eleven.widgets.ViewPagerTabs;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.adapters.PagerAdapter.MusicFragments;
+import org.lineageos.eleven.menu.CreateNewPlaylist;
+import org.lineageos.eleven.ui.fragments.AlbumFragment;
+import org.lineageos.eleven.ui.fragments.ArtistFragment;
+import org.lineageos.eleven.ui.fragments.BaseFragment;
+import org.lineageos.eleven.ui.fragments.SongFragment;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.utils.SortOrder;
+import org.lineageos.eleven.widgets.ViewPagerTabs;
 
 /**
  * This class is used to hold the {@link ViewPager} used for swiping between the
@@ -40,9 +40,7 @@ import com.cyanogenmod.eleven.widgets.ViewPagerTabs;
  * 
  * @NOTE: The reason the sort orders are taken care of in this fragment rather
  *        than the individual fragments is to keep from showing all of the menu
- *        items on tablet interfaces. That being said, I have a tablet interface
- *        worked out, but I'm going to keep it in the Play Store version of
- *        Apollo for a couple of weeks or so before merging it with CM.
+ *        items on tablet interfaces.
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class MusicBrowserPhoneFragment extends BaseFragment {

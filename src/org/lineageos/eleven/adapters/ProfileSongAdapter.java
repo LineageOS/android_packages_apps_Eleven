@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -19,14 +19,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.model.Song;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.model.Song;
 
 import java.util.Collection;
 
 /**
  * This {@link ArrayAdapter} is used to display the songs for a particular playlist
- * {@link com.cyanogenmod.eleven.ui.fragments.PlaylistDetailFragment}
+ * {@link org.lineageos.eleven.ui.fragments.PlaylistDetailFragment}
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */

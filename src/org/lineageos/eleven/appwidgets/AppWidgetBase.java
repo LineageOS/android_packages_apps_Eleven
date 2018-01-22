@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.appwidgets;
+package org.lineageos.eleven.appwidgets;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetProvider;
@@ -19,7 +19,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 
-import com.cyanogenmod.eleven.MusicPlaybackService;
+import org.lineageos.eleven.MusicPlaybackService;
 
 public abstract class AppWidgetBase extends AppWidgetProvider {
 

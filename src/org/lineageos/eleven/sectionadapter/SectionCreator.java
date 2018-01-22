@@ -13,12 +13,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.sectionadapter;
+package org.lineageos.eleven.sectionadapter;
 
 import android.content.Context;
 
-import com.cyanogenmod.eleven.loaders.WrappedAsyncTaskLoader;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils;
+import org.lineageos.eleven.loaders.WrappedAsyncTaskLoader;
+import org.lineageos.eleven.utils.SectionCreatorUtils;
 
 import java.util.List;
 import java.util.TreeMap;

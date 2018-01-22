@@ -14,7 +14,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -24,8 +24,8 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * This class handles the playpause button as well as the circular progress bar

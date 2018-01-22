@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

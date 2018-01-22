@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments.profile;
+package org.lineageos.eleven.ui.fragments.profile;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,18 +21,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.SongAdapter;
-import com.cyanogenmod.eleven.loaders.TopTracksLoader;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator;
-import com.cyanogenmod.eleven.sectionadapter.SectionListContainer;
-import com.cyanogenmod.eleven.ui.activities.BaseActivity;
-import com.cyanogenmod.eleven.ui.fragments.ISetupActionBar;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.NoResultsContainer;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.SongAdapter;
+import org.lineageos.eleven.loaders.TopTracksLoader;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.ui.activities.BaseActivity;
+import org.lineageos.eleven.ui.fragments.ISetupActionBar;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.NoResultsContainer;
 
 /**
  * This class is used to display all of the songs the user put on their device

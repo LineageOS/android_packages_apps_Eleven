@@ -18,7 +18,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.cyanogenmod.eleven.widgets.SquareImageView
+    <org.lineageos.eleven.widgets.SquareImageView
         android:id="@+id/audio_player_album_art"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,4 +1,4 @@
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;

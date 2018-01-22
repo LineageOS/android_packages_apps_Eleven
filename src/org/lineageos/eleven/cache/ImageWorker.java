@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -26,13 +26,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.provider.PlaylistArtworkStore;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.ImageUtils;
-import com.cyanogenmod.eleven.widgets.BlurScrimImage;
-import com.cyanogenmod.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
-import com.cyanogenmod.eleven.widgets.LetterTileDrawable;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.provider.PlaylistArtworkStore;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ImageUtils;
+import org.lineageos.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
+import org.lineageos.eleven.widgets.LetterTileDrawable;
 
 import java.lang.ref.WeakReference;
 import java.util.Collections;

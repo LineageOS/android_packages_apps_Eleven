@@ -19,7 +19,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.cyanogenmod.eleven.lastfm;
+package org.lineageos.eleven.lastfm;
 
 /**
  * An <code>ItemFactory</code> can be used to instantiate a value object - such
@@ -27,7 +27,7 @@ package com.cyanogenmod.eleven.lastfm;
  * {@link ItemFactoryBuilder} to obtain item factories for a specific type.
  *
  * @author Janni Kovacs
- * @see com.cyanogenmod.eleven.lastfm.api.ItemFactoryBuilder
+ * @see org.lineageos.eleven.lastfm.api.ItemFactoryBuilder
  * @see ResponseBuilder
  */
 interface ItemFactory<T> {

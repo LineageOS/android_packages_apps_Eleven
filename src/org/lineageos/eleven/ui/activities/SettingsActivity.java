@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.activities;
+package org.lineageos.eleven.ui.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -25,10 +25,10 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PreferenceUtils;
 
 /**
  * Settings.

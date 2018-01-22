@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -19,15 +19,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.model.Playlist;
-import com.cyanogenmod.eleven.ui.MusicHolder;
-import com.cyanogenmod.eleven.ui.MusicHolder.DataHolder;
-import com.cyanogenmod.eleven.ui.fragments.PlaylistFragment;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.model.Playlist;
+import org.lineageos.eleven.ui.MusicHolder;
+import org.lineageos.eleven.ui.MusicHolder.DataHolder;
+import org.lineageos.eleven.ui.fragments.PlaylistFragment;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the playlists on a user's

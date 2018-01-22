@@ -9,7 +9,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven;
+package org.lineageos.eleven;
 
 import android.content.Context;
 import android.content.Intent;

@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,13 +21,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.model.Album;
-import com.cyanogenmod.eleven.ui.MusicHolder;
-import com.cyanogenmod.eleven.ui.MusicHolder.DataHolder;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.model.Album;
+import org.lineageos.eleven.ui.MusicHolder;
+import org.lineageos.eleven.ui.MusicHolder.DataHolder;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
 import java.util.Collections;
 import java.util.List;

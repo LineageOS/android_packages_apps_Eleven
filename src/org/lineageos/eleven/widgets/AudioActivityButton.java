@@ -13,12 +13,12 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.util.AttributeSet;
 
-import com.cyanogenmod.eleven.ui.activities.SlidingPanelActivity;
+import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
 
 public abstract class AudioActivityButton extends AudioButton {
     protected SlidingPanelActivity mActivity;

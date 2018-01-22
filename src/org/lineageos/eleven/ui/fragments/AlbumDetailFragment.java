@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
@@ -21,21 +21,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.AlbumDetailSongAdapter;
-import com.cyanogenmod.eleven.adapters.DetailSongAdapter;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.model.Album;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.utils.AlbumPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.GenreFetcher;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.SongPopupMenuHelper;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.AlbumDetailSongAdapter;
+import org.lineageos.eleven.adapters.DetailSongAdapter;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.model.Album;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.utils.AlbumPopupMenuHelper;
+import org.lineageos.eleven.utils.GenreFetcher;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.SongPopupMenuHelper;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 import java.util.List;
 

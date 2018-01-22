@@ -13,17 +13,17 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.support.v4.app.FragmentManager;
 
 import android.view.MenuItem;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.menu.DeleteDialog;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.menu.PhotoSelectionDialog;
-import com.cyanogenmod.eleven.model.Artist;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.menu.DeleteDialog;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.menu.PhotoSelectionDialog;
+import org.lineageos.eleven.model.Artist;
 
 public abstract class ArtistPopupMenuHelper extends PopupMenuHelper {
     private Artist mArtist;

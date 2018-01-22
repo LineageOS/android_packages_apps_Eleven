@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -46,33 +46,33 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.AlbumArtPagerAdapter;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.loaders.NowPlayingCursor;
-import com.cyanogenmod.eleven.loaders.QueueLoader;
-import com.cyanogenmod.eleven.menu.CreateNewPlaylist;
-import com.cyanogenmod.eleven.menu.DeleteDialog;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.ui.activities.HomeActivity;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.NavUtils;
-import com.cyanogenmod.eleven.utils.PreferenceUtils;
-import com.cyanogenmod.eleven.widgets.BrowseButton;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
-import com.cyanogenmod.eleven.widgets.NoResultsContainer;
-import com.cyanogenmod.eleven.widgets.PlayPauseProgressButton;
-import com.cyanogenmod.eleven.widgets.QueueButton;
-import com.cyanogenmod.eleven.widgets.RepeatButton;
-import com.cyanogenmod.eleven.widgets.RepeatingImageButton;
-import com.cyanogenmod.eleven.widgets.ShuffleButton;
-import com.cyanogenmod.eleven.widgets.VisualizerView;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.AlbumArtPagerAdapter;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.loaders.NowPlayingCursor;
+import org.lineageos.eleven.loaders.QueueLoader;
+import org.lineageos.eleven.menu.CreateNewPlaylist;
+import org.lineageos.eleven.menu.DeleteDialog;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.ui.activities.HomeActivity;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.widgets.BrowseButton;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.widgets.NoResultsContainer;
+import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.QueueButton;
+import org.lineageos.eleven.widgets.RepeatButton;
+import org.lineageos.eleven.widgets.RepeatingImageButton;
+import org.lineageos.eleven.widgets.ShuffleButton;
+import org.lineageos.eleven.widgets.VisualizerView;
 
 import java.lang.ref.WeakReference;
 
-import static com.cyanogenmod.eleven.utils.MusicUtils.mService;
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     private static final String TAG = AudioPlayerFragment.class.getSimpleName();

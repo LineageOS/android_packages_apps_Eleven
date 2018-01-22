@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven;
+package org.lineageos.eleven;
 
 import android.Manifest.permission;
 import android.annotation.NonNull;
@@ -61,21 +61,21 @@ import android.util.Log;
 import android.util.LongSparseArray;
 import android.view.KeyEvent;
 
-import com.cyanogenmod.eleven.Config.IdType;
-import com.cyanogenmod.eleven.appwidgets.AppWidgetLarge;
-import com.cyanogenmod.eleven.appwidgets.AppWidgetLargeAlternate;
-import com.cyanogenmod.eleven.appwidgets.AppWidgetSmall;
-import com.cyanogenmod.eleven.cache.ImageCache;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.provider.MusicPlaybackState;
-import com.cyanogenmod.eleven.provider.RecentStore;
-import com.cyanogenmod.eleven.provider.SongPlayCount;
-import com.cyanogenmod.eleven.service.MusicPlaybackTrack;
-import com.cyanogenmod.eleven.utils.BitmapWithColors;
-import com.cyanogenmod.eleven.utils.Lists;
-import com.cyanogenmod.eleven.utils.PreferenceUtils;
-import com.cyanogenmod.eleven.utils.ShakeDetector;
-import com.cyanogenmod.eleven.utils.SrtManager;
+import org.lineageos.eleven.Config.IdType;
+import org.lineageos.eleven.appwidgets.AppWidgetLarge;
+import org.lineageos.eleven.appwidgets.AppWidgetLargeAlternate;
+import org.lineageos.eleven.appwidgets.AppWidgetSmall;
+import org.lineageos.eleven.cache.ImageCache;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.provider.MusicPlaybackState;
+import org.lineageos.eleven.provider.RecentStore;
+import org.lineageos.eleven.provider.SongPlayCount;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.utils.BitmapWithColors;
+import org.lineageos.eleven.utils.Lists;
+import org.lineageos.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.utils.ShakeDetector;
+import org.lineageos.eleven.utils.SrtManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -100,96 +100,96 @@ public class MusicPlaybackService extends Service {
     /**
      * Indicates that the music has paused or resumed
      */
-    public static final String PLAYSTATE_CHANGED = "com.cyanogenmod.eleven.playstatechanged";
+    public static final String PLAYSTATE_CHANGED = "org.lineageos.eleven.playstatechanged";
 
     /**
      * Indicates that music playback position within
      * a title was changed
      */
-    public static final String POSITION_CHANGED = "com.cyanogenmod.eleven.positionchanged";
+    public static final String POSITION_CHANGED = "org.lineageos.eleven.positionchanged";
 
     /**
      * Indicates the meta data has changed in some way, like a track change
      */
-    public static final String META_CHANGED = "com.cyanogenmod.eleven.metachanged";
+    public static final String META_CHANGED = "org.lineageos.eleven.metachanged";
 
     /**
      * Indicates the queue has been updated
      */
-    public static final String QUEUE_CHANGED = "com.cyanogenmod.eleven.queuechanged";
+    public static final String QUEUE_CHANGED = "org.lineageos.eleven.queuechanged";
 
     /**
      * Indicates the queue has been updated
      */
-    public static final String PLAYLIST_CHANGED = "com.cyanogenmod.eleven.playlistchanged";
+    public static final String PLAYLIST_CHANGED = "org.lineageos.eleven.playlistchanged";
 
     /**
      * Indicates the repeat mode changed
      */
-    public static final String REPEATMODE_CHANGED = "com.cyanogenmod.eleven.repeatmodechanged";
+    public static final String REPEATMODE_CHANGED = "org.lineageos.eleven.repeatmodechanged";
 
     /**
      * Indicates the shuffle mode changed
      */
-    public static final String SHUFFLEMODE_CHANGED = "com.cyanogenmod.eleven.shufflemodechanged";
+    public static final String SHUFFLEMODE_CHANGED = "org.lineageos.eleven.shufflemodechanged";
 
     /**
      * Indicates the track fails to play
      */
-    public static final String TRACK_ERROR = "com.cyanogenmod.eleven.trackerror";
+    public static final String TRACK_ERROR = "org.lineageos.eleven.trackerror";
 
     /**
      * For backwards compatibility reasons, also provide sticky
      * broadcasts under the music package
      */
-    public static final String ELEVEN_PACKAGE_NAME = "com.cyanogenmod.eleven";
+    public static final String ELEVEN_PACKAGE_NAME = "org.lineageos.eleven";
     public static final String MUSIC_PACKAGE_NAME = "com.android.music";
 
     /**
      * Called to indicate a general service commmand. Used in
      * {@link MediaButtonIntentReceiver}
      */
-    public static final String SERVICECMD = "com.cyanogenmod.eleven.musicservicecommand";
+    public static final String SERVICECMD = "org.lineageos.eleven.musicservicecommand";
 
     /**
      * Called to go toggle between pausing and playing the music
      */
-    public static final String TOGGLEPAUSE_ACTION = "com.cyanogenmod.eleven.togglepause";
+    public static final String TOGGLEPAUSE_ACTION = "org.lineageos.eleven.togglepause";
 
     /**
      * Called to go to pause the playback
      */
-    public static final String PAUSE_ACTION = "com.cyanogenmod.eleven.pause";
+    public static final String PAUSE_ACTION = "org.lineageos.eleven.pause";
 
     /**
      * Called to go to stop the playback
      */
-    public static final String STOP_ACTION = "com.cyanogenmod.eleven.stop";
+    public static final String STOP_ACTION = "org.lineageos.eleven.stop";
 
     /**
      * Called to go to the previous track or the beginning of the track if partway through the track
      */
-    public static final String PREVIOUS_ACTION = "com.cyanogenmod.eleven.previous";
+    public static final String PREVIOUS_ACTION = "org.lineageos.eleven.previous";
 
     /**
      * Called to go to the previous track regardless of how far in the current track the playback is
      */
-    public static final String PREVIOUS_FORCE_ACTION = "com.cyanogenmod.eleven.previous.force";
+    public static final String PREVIOUS_FORCE_ACTION = "org.lineageos.eleven.previous.force";
 
     /**
      * Called to go to the next track
      */
-    public static final String NEXT_ACTION = "com.cyanogenmod.eleven.next";
+    public static final String NEXT_ACTION = "org.lineageos.eleven.next";
 
     /**
      * Called to change the repeat mode
      */
-    public static final String REPEAT_ACTION = "com.cyanogenmod.eleven.repeat";
+    public static final String REPEAT_ACTION = "org.lineageos.eleven.repeat";
 
     /**
      * Called to change the shuffle mode
      */
-    public static final String SHUFFLE_ACTION = "com.cyanogenmod.eleven.shuffle";
+    public static final String SHUFFLE_ACTION = "org.lineageos.eleven.shuffle";
 
     public static final String FROM_MEDIA_BUTTON = "frommediabutton";
 
@@ -199,22 +199,22 @@ public class MusicPlaybackService extends Service {
      * Used to easily notify a list that it should refresh. i.e. A playlist
      * changes
      */
-    public static final String REFRESH = "com.cyanogenmod.eleven.refresh";
+    public static final String REFRESH = "org.lineageos.eleven.refresh";
 
     /**
      * Used by the alarm intent to shutdown the service after being idle
      */
-    private static final String SHUTDOWN = "com.cyanogenmod.eleven.shutdown";
+    private static final String SHUTDOWN = "org.lineageos.eleven.shutdown";
 
     /**
      * Called to notify of a timed text
      */
-    public static final String NEW_LYRICS = "com.cyanogenmod.eleven.lyrics";
+    public static final String NEW_LYRICS = "org.lineageos.eleven.lyrics";
 
     /**
      * Called to update the remote control client
      */
-    public static final String UPDATE_LOCKSCREEN = "com.cyanogenmod.eleven.updatelockscreen";
+    public static final String UPDATE_LOCKSCREEN = "org.lineageos.eleven.updatelockscreen";
 
     public static final String CMDNAME = "command";
 
@@ -1642,7 +1642,7 @@ public class MusicPlaybackService extends Service {
                 .setMediaSession(mSession.getSessionToken())
                 .setShowActionsInCompactView(0, 1, 2);
 
-        Intent nowPlayingIntent = new Intent("com.cyanogenmod.eleven.AUDIO_PLAYER")
+        Intent nowPlayingIntent = new Intent("org.lineageos.eleven.AUDIO_PLAYER")
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent clickIntent = PendingIntent.getActivity(this, 0, nowPlayingIntent, 0);
         BitmapWithColors artwork = getAlbumArt(false);

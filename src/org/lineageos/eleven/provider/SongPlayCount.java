@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.provider;
+package org.lineageos.eleven.provider;
 
 import android.content.ContentValues;
 import android.content.Context;

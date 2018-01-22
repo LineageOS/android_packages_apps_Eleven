@@ -13,14 +13,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.provider;
+package org.lineageos.eleven.provider;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * This db stores the details to generate the playlist artwork including when it was

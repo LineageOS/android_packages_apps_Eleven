@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -26,7 +26,7 @@ import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 public class VisualizerView extends View {
     private Paint mPaint;

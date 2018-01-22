@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -33,7 +33,7 @@ import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-import com.cyanogenmod.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ApolloUtils;
 
 import java.io.File;
 import java.io.FileDescriptor;

@@ -13,14 +13,14 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.utils.PopupMenuHelper;
 
 public abstract class DetailFragment extends BaseFragment {
     protected PopupMenuHelper mActionMenuHelper;

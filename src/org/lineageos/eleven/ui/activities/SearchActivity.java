@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.activities;
+package org.lineageos.eleven.ui.activities;
 
 import android.app.ActionBar;
 import android.app.SearchManager;
@@ -46,31 +46,31 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.IElevenService;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.SummarySearchAdapter;
-import com.cyanogenmod.eleven.loaders.WrappedAsyncTaskLoader;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.model.AlbumArtistDetails;
-import com.cyanogenmod.eleven.model.SearchResult;
-import com.cyanogenmod.eleven.model.SearchResult.ResultType;
-import com.cyanogenmod.eleven.provider.SearchHistory;
-import com.cyanogenmod.eleven.recycler.RecycleHolder;
-import com.cyanogenmod.eleven.sectionadapter.SectionAdapter;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator.SimpleListLoader;
-import com.cyanogenmod.eleven.sectionadapter.SectionListContainer;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils.ServiceToken;
-import com.cyanogenmod.eleven.utils.NavUtils;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils.IItemCompare;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
-import com.cyanogenmod.eleven.widgets.NoResultsContainer;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.IElevenService;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.SummarySearchAdapter;
+import org.lineageos.eleven.loaders.WrappedAsyncTaskLoader;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.model.AlbumArtistDetails;
+import org.lineageos.eleven.model.SearchResult;
+import org.lineageos.eleven.model.SearchResult.ResultType;
+import org.lineageos.eleven.provider.SearchHistory;
+import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.sectionadapter.SectionAdapter;
+import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.sectionadapter.SectionCreator.SimpleListLoader;
+import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
+import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.SectionCreatorUtils;
+import org.lineageos.eleven.utils.SectionCreatorUtils.IItemCompare;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.widgets.NoResultsContainer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -78,7 +78,7 @@ import java.util.List;
 import java.util.TreeSet;
 
 import static android.view.View.OnTouchListener;
-import static com.cyanogenmod.eleven.utils.MusicUtils.mService;
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
  * Provides the search interface for Apollo.

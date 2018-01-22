@@ -58,7 +58,7 @@
                 android:textSize="@dimen/audio_player_time_text_size"
                 android:textStyle="bold"/>
 
-            <com.cyanogenmod.eleven.widgets.RepeatingImageButton
+            <org.lineageos.eleven.widgets.RepeatingImageButton
                 android:id="@+id/action_button_previous"
                 android:layout_width="@dimen/audio_player_controls_end_button_width"
                 android:layout_height="@dimen/audio_player_controls_end_button_height"
@@ -77,7 +77,7 @@
                 android:layout_below="@id/audio_player_current_time"
                 android:background="@color/now_playing_divider" />
 
-            <com.cyanogenmod.eleven.widgets.ShuffleButton
+            <org.lineageos.eleven.widgets.ShuffleButton
                 android:id="@+id/action_button_shuffle"
                 android:layout_width="@dimen/audio_player_controls_end_button_width"
                 android:layout_height="@dimen/audio_player_controls_end_button_height"
@@ -108,7 +108,7 @@
                 android:textSize="@dimen/audio_player_time_text_size"
                 android:textStyle="bold"/>
 
-            <com.cyanogenmod.eleven.widgets.RepeatingImageButton
+            <org.lineageos.eleven.widgets.RepeatingImageButton
                 android:id="@+id/action_button_next"
                 android:layout_width="@dimen/audio_player_controls_end_button_width"
                 android:layout_height="@dimen/audio_player_controls_end_button_height"
@@ -126,7 +126,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_below="@id/audio_player_total_time" />
 
-            <com.cyanogenmod.eleven.widgets.RepeatButton
+            <org.lineageos.eleven.widgets.RepeatButton
                 android:id="@+id/action_button_repeat"
                 android:layout_width="@dimen/audio_player_controls_end_button_width"
                 android:layout_height="@dimen/audio_player_controls_end_button_height"

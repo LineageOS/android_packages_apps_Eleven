@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.database.AbstractCursor;
 import android.database.Cursor;

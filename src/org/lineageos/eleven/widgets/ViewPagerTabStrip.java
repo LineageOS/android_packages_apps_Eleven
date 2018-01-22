@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -24,7 +24,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 public class ViewPagerTabStrip extends LinearLayout {
     private int mSelectedUnderlineThickness;

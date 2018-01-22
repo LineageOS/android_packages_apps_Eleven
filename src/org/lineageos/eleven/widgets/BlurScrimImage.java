@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -25,9 +25,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.cache.ImageWorker;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.cache.ImageWorker;
 
 public class BlurScrimImage extends FrameLayout {
     private ImageView mImageView;

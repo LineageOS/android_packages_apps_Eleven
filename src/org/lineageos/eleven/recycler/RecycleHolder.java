@@ -11,13 +11,13 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.recycler;
+package org.lineageos.eleven.recycler;
 
 import android.view.View;
 import android.widget.AbsListView.RecyclerListener;
 
-import com.cyanogenmod.eleven.cache.ImageWorker;
-import com.cyanogenmod.eleven.ui.MusicHolder;
+import org.lineageos.eleven.cache.ImageWorker;
+import org.lineageos.eleven.ui.MusicHolder;
 
 /**
  * A @ {@link RecyclerListener} for {@link MusicHolder}'s views.

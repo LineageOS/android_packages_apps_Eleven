@@ -9,7 +9,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.format;
+package org.lineageos.eleven.format;
 
 import android.content.Context;
 import android.text.SpannableString;
@@ -17,7 +17,7 @@ import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.utils.PreferenceUtils;
 
 /**
  * Highlights the text in a text field.

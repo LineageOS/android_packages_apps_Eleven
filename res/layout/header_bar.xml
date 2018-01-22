@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<com.cyanogenmod.eleven.ui.HeaderBar xmlns:android="http://schemas.android.com/apk/res/android"
+<org.lineageos.eleven.ui.HeaderBar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="@dimen/header_bar_height"
     android:enabled="false"
@@ -67,4 +67,4 @@
         android:background="@drawable/selectable_background"
         android:src="@drawable/menu_button_light"/>
 
-</com.cyanogenmod.eleven.ui.HeaderBar>
+</org.lineageos.eleven.ui.HeaderBar>

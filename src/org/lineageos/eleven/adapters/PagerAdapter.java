@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -21,12 +21,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.fragments.AlbumFragment;
-import com.cyanogenmod.eleven.ui.fragments.ArtistFragment;
-import com.cyanogenmod.eleven.ui.fragments.PlaylistFragment;
-import com.cyanogenmod.eleven.ui.fragments.SongFragment;
-import com.cyanogenmod.eleven.utils.Lists;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.fragments.AlbumFragment;
+import org.lineageos.eleven.ui.fragments.ArtistFragment;
+import org.lineageos.eleven.ui.fragments.PlaylistFragment;
+import org.lineageos.eleven.ui.fragments.SongFragment;
+import org.lineageos.eleven.utils.Lists;
 
 import java.lang.ref.WeakReference;
 import java.util.List;

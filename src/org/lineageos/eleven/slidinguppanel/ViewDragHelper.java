@@ -15,7 +15,7 @@
  */
 
 
-package com.cyanogenmod.eleven.slidinguppanel;
+package org.lineageos.eleven.slidinguppanel;
 
 import java.util.Arrays;
 

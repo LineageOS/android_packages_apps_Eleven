@@ -11,9 +11,9 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.activities;
+package org.lineageos.eleven.ui.activities;
 
-import static com.cyanogenmod.eleven.utils.MusicUtils.mService;
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 import android.app.ActionBar;
 import android.content.BroadcastReceiver;
@@ -37,18 +37,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.cyanogenmod.eleven.IElevenService;
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.MusicStateListener;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ICacheListener;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.Lists;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils.ServiceToken;
-import com.cyanogenmod.eleven.utils.NavUtils;
-import com.cyanogenmod.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.IElevenService;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.MusicStateListener;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ICacheListener;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.Lists;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
+import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.widgets.PlayPauseProgressButton;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

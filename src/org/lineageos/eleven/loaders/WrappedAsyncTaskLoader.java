@@ -1,5 +1,5 @@
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;

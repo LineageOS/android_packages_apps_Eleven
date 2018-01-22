@@ -19,11 +19,11 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.cyanogenmod.eleven.lastfm;
+package org.lineageos.eleven.lastfm;
 
 import android.content.Context;
 
-import com.cyanogenmod.eleven.Config;
+import org.lineageos.eleven.Config;
 
 import java.util.HashMap;
 import java.util.Map;
