@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -21,7 +21,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 /**
  * This class is the default empty state view for most listviews/fragments

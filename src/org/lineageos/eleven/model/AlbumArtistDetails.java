@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.model;
+package org.lineageos.eleven.model;
 
 /**
  * Simple containing class to query for album art

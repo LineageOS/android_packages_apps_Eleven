@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -32,10 +32,10 @@ import android.text.TextUtils;
 
 import junit.framework.Assert;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageWorker.ImageType;
-import com.cyanogenmod.eleven.utils.BitmapWithColors;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageWorker.ImageType;
+import org.lineageos.eleven.utils.BitmapWithColors;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * A drawable that encapsulates all the functionality needed to display a letter tile to

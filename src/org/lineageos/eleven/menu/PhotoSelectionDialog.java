@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.menu;
+package org.lineageos.eleven.menu;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -21,12 +21,12 @@ import android.support.v4.app.DialogFragment;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.activities.HomeActivity;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.Lists;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.activities.HomeActivity;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.Lists;
+import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.ArrayList;
 

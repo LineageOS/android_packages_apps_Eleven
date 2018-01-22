@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -24,21 +24,21 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.MusicStateListener;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.adapters.PlaylistAdapter;
-import com.cyanogenmod.eleven.loaders.PlaylistLoader;
-import com.cyanogenmod.eleven.model.Playlist;
-import com.cyanogenmod.eleven.recycler.RecycleHolder;
-import com.cyanogenmod.eleven.ui.activities.BaseActivity;
-import com.cyanogenmod.eleven.ui.fragments.phone.MusicBrowserFragment;
-import com.cyanogenmod.eleven.utils.NavUtils;
-import com.cyanogenmod.eleven.utils.PlaylistPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.MusicStateListener;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.adapters.PlaylistAdapter;
+import org.lineageos.eleven.loaders.PlaylistLoader;
+import org.lineageos.eleven.model.Playlist;
+import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.ui.activities.BaseActivity;
+import org.lineageos.eleven.ui.fragments.phone.MusicBrowserFragment;
+import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.utils.PlaylistPopupMenuHelper;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 import java.util.List;
 

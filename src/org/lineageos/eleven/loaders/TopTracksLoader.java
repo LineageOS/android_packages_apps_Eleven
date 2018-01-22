@@ -14,15 +14,15 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.BaseColumns;
 
-import com.cyanogenmod.eleven.provider.RecentStore;
-import com.cyanogenmod.eleven.provider.SongPlayCount;
-import com.cyanogenmod.eleven.provider.SongPlayCount.SongPlayCountColumns;
+import org.lineageos.eleven.provider.RecentStore;
+import org.lineageos.eleven.provider.SongPlayCount;
+import org.lineageos.eleven.provider.SongPlayCount.SongPlayCountColumns;
 
 import java.util.ArrayList;
 

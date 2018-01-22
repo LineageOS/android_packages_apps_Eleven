@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -26,23 +26,23 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.ListView;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.ArtistDetailAlbumAdapter;
-import com.cyanogenmod.eleven.adapters.ArtistDetailSongAdapter;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.model.Album;
-import com.cyanogenmod.eleven.model.Artist;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.utils.AlbumPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.ArtistPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.SongPopupMenuHelper;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.ArtistDetailAlbumAdapter;
+import org.lineageos.eleven.adapters.ArtistDetailSongAdapter;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.model.Album;
+import org.lineageos.eleven.model.Artist;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.utils.AlbumPopupMenuHelper;
+import org.lineageos.eleven.utils.ArtistPopupMenuHelper;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.SongPopupMenuHelper;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 import java.util.TreeSet;
 

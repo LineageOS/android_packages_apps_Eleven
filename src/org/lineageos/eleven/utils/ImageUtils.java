@@ -13,17 +13,17 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.cache.ImageCache;
-import com.cyanogenmod.eleven.cache.ImageWorker;
-import com.cyanogenmod.eleven.lastfm.ImageSize;
-import com.cyanogenmod.eleven.lastfm.MusicEntry;
+import org.lineageos.eleven.cache.ImageCache;
+import org.lineageos.eleven.cache.ImageWorker;
+import org.lineageos.eleven.lastfm.ImageSize;
+import org.lineageos.eleven.lastfm.MusicEntry;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.provider;
+package org.lineageos.eleven.provider;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

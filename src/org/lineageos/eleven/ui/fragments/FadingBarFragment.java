@@ -13,13 +13,13 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 
-import com.cyanogenmod.eleven.ui.activities.HomeActivity;
+import org.lineageos.eleven.ui.activities.HomeActivity;
 
 public abstract class FadingBarFragment extends DetailFragment implements OnScrollListener {
     protected static final int ACTION_BAR_DEFAULT_OPACITY = 100;

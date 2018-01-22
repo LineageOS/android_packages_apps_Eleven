@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.ui.activities.preview;
+package org.lineageos.eleven.ui.activities.preview;
 
 import android.app.Activity;
 import android.content.AsyncQueryHandler;
@@ -47,8 +47,8 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.activities.preview.util.Logger;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.activities.preview.util.Logger;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;

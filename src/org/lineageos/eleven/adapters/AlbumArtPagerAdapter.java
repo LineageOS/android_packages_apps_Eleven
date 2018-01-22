@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -27,14 +27,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ICacheListener;
-import com.cyanogenmod.eleven.cache.ImageCache;
-import com.cyanogenmod.eleven.model.AlbumArtistDetails;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.SquareImageView;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ICacheListener;
+import org.lineageos.eleven.cache.ImageCache;
+import org.lineageos.eleven.model.AlbumArtistDetails;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.SquareImageView;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -152,7 +152,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
      * and handles loading the album art for a given audio id
      */
     public static class AlbumArtFragment extends Fragment implements ICacheListener {
-        private static final String ID = "com.cyanogenmod.eleven.adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
+        private static final String ID = "org.lineageos.eleven.adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
 
         private View mRootView;
         private AlbumArtistLoader mTask;

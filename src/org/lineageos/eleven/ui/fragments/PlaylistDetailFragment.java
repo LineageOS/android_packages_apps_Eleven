@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.database.Cursor;
 import android.net.Uri;
@@ -28,28 +28,28 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.adapters.ProfileSongAdapter;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.dragdrop.DragSortListView;
-import com.cyanogenmod.eleven.dragdrop.DragSortListView.DragScrollProfile;
-import com.cyanogenmod.eleven.dragdrop.DragSortListView.DropListener;
-import com.cyanogenmod.eleven.dragdrop.DragSortListView.RemoveListener;
-import com.cyanogenmod.eleven.loaders.PlaylistSongLoader;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.model.Playlist;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.recycler.RecycleHolder;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PlaylistPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper.PopupMenuType;
-import com.cyanogenmod.eleven.utils.SongPopupMenuHelper;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
-import com.cyanogenmod.eleven.widgets.NoResultsContainer;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.adapters.ProfileSongAdapter;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.dragdrop.DragSortListView;
+import org.lineageos.eleven.dragdrop.DragSortListView.DragScrollProfile;
+import org.lineageos.eleven.dragdrop.DragSortListView.DropListener;
+import org.lineageos.eleven.dragdrop.DragSortListView.RemoveListener;
+import org.lineageos.eleven.loaders.PlaylistSongLoader;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.model.Playlist;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PlaylistPopupMenuHelper;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.PopupMenuHelper.PopupMenuType;
+import org.lineageos.eleven.utils.SongPopupMenuHelper;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.widgets.NoResultsContainer;
 
 import java.util.List;
 import java.util.TreeSet;

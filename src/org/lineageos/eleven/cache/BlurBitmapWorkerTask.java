@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -25,8 +25,8 @@ import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.cache.ImageWorker.ImageType;
-import com.cyanogenmod.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.cache.ImageWorker.ImageType;
+import org.lineageos.eleven.widgets.BlurScrimImage;
 
 import java.lang.ref.WeakReference;
 
@@ -50,7 +50,7 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
     }
 
     /**
-     * The {@link com.cyanogenmod.eleven.widgets.BlurScrimImage} used to set the result
+     * The {@link org.lineageos.eleven.widgets.BlurScrimImage} used to set the result
      */
     private final WeakReference<BlurScrimImage> mBlurScrimImage;
 

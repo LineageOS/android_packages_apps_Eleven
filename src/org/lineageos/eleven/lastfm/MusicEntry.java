@@ -19,7 +19,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.cyanogenmod.eleven.lastfm;
+package org.lineageos.eleven.lastfm;
 
 /**
  * <code>MusicEntry</code> is the abstract superclass for {@link Track},

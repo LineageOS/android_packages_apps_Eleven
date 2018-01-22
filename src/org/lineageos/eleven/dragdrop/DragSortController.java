@@ -1,5 +1,5 @@
 
-package com.cyanogenmod.eleven.dragdrop;
+package org.lineageos.eleven.dragdrop;
 
 import android.graphics.Point;
 import android.view.GestureDetector;

@@ -13,13 +13,13 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.model;
+package org.lineageos.eleven.model;
 
 import android.database.Cursor;
 import android.provider.MediaStore;
 import android.util.Log;
 
-import com.cyanogenmod.eleven.Config;
+import org.lineageos.eleven.Config;
 
 import java.util.Comparator;
 

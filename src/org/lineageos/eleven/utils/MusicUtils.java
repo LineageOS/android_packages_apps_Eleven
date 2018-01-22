@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -41,26 +41,26 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
-import com.cyanogenmod.eleven.Config.IdType;
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.IElevenService;
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.loaders.LastAddedLoader;
-import com.cyanogenmod.eleven.loaders.PlaylistLoader;
-import com.cyanogenmod.eleven.loaders.PlaylistSongLoader;
-import com.cyanogenmod.eleven.loaders.SongLoader;
-import com.cyanogenmod.eleven.loaders.TopTracksLoader;
-import com.cyanogenmod.eleven.locale.LocaleUtils;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.model.Album;
-import com.cyanogenmod.eleven.model.AlbumArtistDetails;
-import com.cyanogenmod.eleven.model.Artist;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.provider.RecentStore;
-import com.cyanogenmod.eleven.provider.SongPlayCount;
-import com.cyanogenmod.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.Config.IdType;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.IElevenService;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.loaders.LastAddedLoader;
+import org.lineageos.eleven.loaders.PlaylistLoader;
+import org.lineageos.eleven.loaders.PlaylistSongLoader;
+import org.lineageos.eleven.loaders.SongLoader;
+import org.lineageos.eleven.loaders.TopTracksLoader;
+import org.lineageos.eleven.locale.LocaleUtils;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.model.Album;
+import org.lineageos.eleven.model.AlbumArtistDetails;
+import org.lineageos.eleven.model.Artist;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.provider.RecentStore;
+import org.lineageos.eleven.provider.SongPlayCount;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
 
 import java.io.File;
 import java.util.Arrays;

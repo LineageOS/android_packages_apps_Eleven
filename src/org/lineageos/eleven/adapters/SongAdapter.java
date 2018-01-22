@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,20 +20,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.model.Artist;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.sectionadapter.SectionAdapter;
-import com.cyanogenmod.eleven.service.MusicPlaybackTrack;
-import com.cyanogenmod.eleven.ui.MusicHolder;
-import com.cyanogenmod.eleven.ui.MusicHolder.DataHolder;
-import com.cyanogenmod.eleven.ui.fragments.QueueFragment;
-import com.cyanogenmod.eleven.ui.fragments.SongFragment;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.model.Artist;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.sectionadapter.SectionAdapter;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.ui.MusicHolder;
+import org.lineageos.eleven.ui.MusicHolder.DataHolder;
+import org.lineageos.eleven.ui.fragments.QueueFragment;
+import org.lineageos.eleven.ui.fragments.SongFragment;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.PlayPauseProgressButton;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the songs on a user's

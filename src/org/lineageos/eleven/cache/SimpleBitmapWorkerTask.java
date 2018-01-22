@@ -13,15 +13,15 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.widget.ImageView;
-import com.cyanogenmod.eleven.cache.ImageWorker.ImageType;
-import com.cyanogenmod.eleven.utils.ImageUtils;
+import org.lineageos.eleven.cache.ImageWorker.ImageType;
+import org.lineageos.eleven.utils.ImageUtils;
 
 /**
  * The actual {@link android.os.AsyncTask} that will process the image.

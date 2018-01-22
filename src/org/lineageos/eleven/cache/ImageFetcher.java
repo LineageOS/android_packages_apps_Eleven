@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -19,13 +19,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.widget.ImageView;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
-import com.cyanogenmod.eleven.utils.BitmapWithColors;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.BlurScrimImage;
-import com.cyanogenmod.eleven.widgets.LetterTileDrawable;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
+import org.lineageos.eleven.utils.BitmapWithColors;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.widgets.LetterTileDrawable;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

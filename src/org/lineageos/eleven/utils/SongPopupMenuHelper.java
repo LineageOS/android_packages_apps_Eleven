@@ -13,16 +13,16 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 
 import android.app.Activity;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentManager;
 
-import com.cyanogenmod.eleven.menu.DeleteDialog;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.model.Song;
+import org.lineageos.eleven.menu.DeleteDialog;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.model.Song;
 
 import java.util.TreeSet;
 

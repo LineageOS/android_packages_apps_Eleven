@@ -1,5 +1,5 @@
 
-package com.cyanogenmod.eleven.format;
+package org.lineageos.eleven.format;
 
 import android.text.TextUtils;
 

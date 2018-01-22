@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.activities;
+package org.lineageos.eleven.ui.activities;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,15 +20,15 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.slidinguppanel.SlidingUpPanelLayout;
-import com.cyanogenmod.eleven.slidinguppanel.SlidingUpPanelLayout.SimplePanelSlideListener;
-import com.cyanogenmod.eleven.ui.HeaderBar;
-import com.cyanogenmod.eleven.ui.fragments.AudioPlayerFragment;
-import com.cyanogenmod.eleven.ui.fragments.QueueFragment;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout;
+import org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout.SimplePanelSlideListener;
+import org.lineageos.eleven.ui.HeaderBar;
+import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
+import org.lineageos.eleven.ui.fragments.QueueFragment;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.BlurScrimImage;
 
 /**
  * This class is used to display the {@link ViewPager} used to swipe between the

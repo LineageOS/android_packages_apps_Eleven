@@ -11,21 +11,21 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.Artists;
 
-import com.cyanogenmod.eleven.model.Artist;
-import com.cyanogenmod.eleven.provider.LocalizedStore;
-import com.cyanogenmod.eleven.provider.LocalizedStore.SortParameter;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator;
-import com.cyanogenmod.eleven.utils.Lists;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PreferenceUtils;
-import com.cyanogenmod.eleven.utils.SortOrder;
+import org.lineageos.eleven.model.Artist;
+import org.lineageos.eleven.provider.LocalizedStore;
+import org.lineageos.eleven.provider.LocalizedStore.SortParameter;
+import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.utils.Lists;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.utils.SortOrder;
 
 import java.util.ArrayList;
 import java.util.List;

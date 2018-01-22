@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -25,12 +25,12 @@ import android.graphics.drawable.TransitionDrawable;
 import android.provider.MediaStore;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageWorker.ImageType;
-import com.cyanogenmod.eleven.loaders.PlaylistSongLoader;
-import com.cyanogenmod.eleven.loaders.SortedCursor;
-import com.cyanogenmod.eleven.provider.PlaylistArtworkStore;
-import com.cyanogenmod.eleven.provider.SongPlayCount;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageWorker.ImageType;
+import org.lineageos.eleven.loaders.PlaylistSongLoader;
+import org.lineageos.eleven.loaders.SortedCursor;
+import org.lineageos.eleven.provider.PlaylistArtworkStore;
+import org.lineageos.eleven.provider.SongPlayCount;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven;
+package org.lineageos.eleven;
 
 /**
  * App-wide constants.

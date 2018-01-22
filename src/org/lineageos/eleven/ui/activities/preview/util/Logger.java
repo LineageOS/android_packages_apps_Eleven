@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.activities.preview.util;
+package org.lineageos.eleven.ui.activities.preview.util;
 
 import android.text.TextUtils;
 import android.util.Log;

@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.menu;
+package org.lineageos.eleven.menu;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -24,7 +24,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 /** Dialog to confirm a non-reversible action */
 public class ConfirmDialog extends DialogFragment {

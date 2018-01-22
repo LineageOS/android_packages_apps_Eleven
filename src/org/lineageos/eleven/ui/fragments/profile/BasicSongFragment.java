@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments.profile;
+package org.lineageos.eleven.ui.fragments.profile;
 
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -27,22 +27,22 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.MusicStateListener;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.SongAdapter;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.recycler.RecycleHolder;
-import com.cyanogenmod.eleven.sectionadapter.SectionAdapter;
-import com.cyanogenmod.eleven.sectionadapter.SectionListContainer;
-import com.cyanogenmod.eleven.service.MusicPlaybackTrack;
-import com.cyanogenmod.eleven.ui.activities.BaseActivity;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.SongPopupMenuHelper;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
-import com.cyanogenmod.eleven.widgets.NoResultsContainer;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.MusicStateListener;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.SongAdapter;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.sectionadapter.SectionAdapter;
+import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.ui.activities.BaseActivity;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.SongPopupMenuHelper;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.widgets.NoResultsContainer;
 
 import java.util.TreeSet;
 

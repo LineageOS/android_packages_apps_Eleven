@@ -14,13 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-package com.cyanogenmod.eleven.locale;
+package org.lineageos.eleven.locale;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.cyanogenmod.eleven.provider.PropertiesStore;
+import org.lineageos.eleven.provider.PropertiesStore;
 import com.google.common.annotations.VisibleForTesting;
 
 import java.util.Locale;

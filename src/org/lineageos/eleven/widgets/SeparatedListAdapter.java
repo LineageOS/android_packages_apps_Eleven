@@ -1,5 +1,5 @@
 
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.view.View;
@@ -8,7 +8,7 @@ import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

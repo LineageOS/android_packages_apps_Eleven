@@ -19,15 +19,15 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.cyanogenmod.eleven.lastfm;
+package org.lineageos.eleven.lastfm;
 
-import static com.cyanogenmod.eleven.lastfm.StringUtilities.encode;
-import static com.cyanogenmod.eleven.lastfm.StringUtilities.map;
+import static org.lineageos.eleven.lastfm.StringUtilities.encode;
+import static org.lineageos.eleven.lastfm.StringUtilities.map;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.cyanogenmod.eleven.lastfm.Result.Status;
+import org.lineageos.eleven.lastfm.Result.Status;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

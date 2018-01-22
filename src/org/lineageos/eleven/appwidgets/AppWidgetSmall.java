@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.appwidgets;
+package org.lineageos.eleven.appwidgets;
 
 import android.annotation.SuppressLint;
 import android.app.PendingIntent;
@@ -24,10 +24,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.RemoteViews;
 
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.activities.HomeActivity;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.activities.HomeActivity;
+import org.lineageos.eleven.utils.ApolloUtils;
 
 /**
  * 4x1 App-Widget

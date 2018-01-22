@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.sectionadapter;
+package org.lineageos.eleven.sectionadapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,11 +24,11 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.MusicHolder;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils.Section;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils.SectionType;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.MusicHolder;
+import org.lineageos.eleven.utils.SectionCreatorUtils.Section;
+import org.lineageos.eleven.utils.SectionCreatorUtils.SectionType;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
 import java.util.TreeMap;
 

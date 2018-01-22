@@ -11,13 +11,13 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
 
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.utils.Lists;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.utils.Lists;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.cyanogenmod.eleven;
+package org.lineageos.eleven;
 
-import com.cyanogenmod.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
 
 interface IElevenService
 {

@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 
-<com.cyanogenmod.eleven.widgets.NoResultsContainer
+<org.lineageos.eleven.widgets.NoResultsContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/no_results_container"
     android:gravity="center_horizontal"
@@ -75,4 +75,4 @@
         android:textColor="@color/no_results"
         android:textSize="@dimen/no_results_text_secondary"
         android:text="@string/empty_generic_secondary" />
-</com.cyanogenmod.eleven.widgets.NoResultsContainer>
+</org.lineageos.eleven.widgets.NoResultsContainer>

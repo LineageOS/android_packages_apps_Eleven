@@ -9,7 +9,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
 import android.os.Handler;
 import android.os.HandlerThread;

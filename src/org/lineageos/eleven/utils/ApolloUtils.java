@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -34,8 +34,8 @@ import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Toast;
 
-import com.cyanogenmod.eleven.cache.ImageCache;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.cache.ImageCache;
+import org.lineageos.eleven.cache.ImageFetcher;
 
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;

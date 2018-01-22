@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.ui.activities.preview;
+package org.lineageos.eleven.ui.activities.preview;
 
 import android.net.Uri;
 

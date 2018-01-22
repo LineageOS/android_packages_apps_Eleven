@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -22,9 +22,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cyanogenmod.eleven.MusicStateListener;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.activities.HomeActivity;
+import org.lineageos.eleven.MusicStateListener;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.activities.HomeActivity;
 
 public abstract class BaseFragment extends Fragment implements MusicStateListener,
     ISetupActionBar {

@@ -11,22 +11,22 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.loaders.SongLoader;
-import com.cyanogenmod.eleven.model.Song;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator;
-import com.cyanogenmod.eleven.sectionadapter.SectionListContainer;
-import com.cyanogenmod.eleven.ui.fragments.profile.BasicSongFragment;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.loaders.SongLoader;
+import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.ui.fragments.profile.BasicSongFragment;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.SectionCreatorUtils;
 
 /**
  * This class is used to display all of the songs on a user's device.

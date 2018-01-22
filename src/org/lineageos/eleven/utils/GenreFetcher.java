@@ -1,4 +1,4 @@
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.content.Context;
 import android.database.Cursor;

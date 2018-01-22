@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cyanogenmod.eleven.ui.activities;
+package org.lineageos.eleven.ui.activities;
 
 import android.Manifest;
 import android.animation.ArgbEvaluator;
@@ -36,23 +36,23 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.ui.fragments.AlbumDetailFragment;
-import com.cyanogenmod.eleven.ui.fragments.ArtistDetailFragment;
-import com.cyanogenmod.eleven.ui.fragments.AudioPlayerFragment;
-import com.cyanogenmod.eleven.ui.fragments.IChildFragment;
-import com.cyanogenmod.eleven.ui.fragments.ISetupActionBar;
-import com.cyanogenmod.eleven.ui.fragments.PlaylistDetailFragment;
-import com.cyanogenmod.eleven.ui.fragments.RecentFragment;
-import com.cyanogenmod.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
-import com.cyanogenmod.eleven.ui.fragments.profile.LastAddedFragment;
-import com.cyanogenmod.eleven.ui.fragments.profile.TopTracksFragment;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.BitmapWithColors;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.NavUtils;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.ui.fragments.AlbumDetailFragment;
+import org.lineageos.eleven.ui.fragments.ArtistDetailFragment;
+import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
+import org.lineageos.eleven.ui.fragments.IChildFragment;
+import org.lineageos.eleven.ui.fragments.ISetupActionBar;
+import org.lineageos.eleven.ui.fragments.PlaylistDetailFragment;
+import org.lineageos.eleven.ui.fragments.RecentFragment;
+import org.lineageos.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
+import org.lineageos.eleven.ui.fragments.profile.LastAddedFragment;
+import org.lineageos.eleven.ui.fragments.profile.TopTracksFragment;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.BitmapWithColors;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.NavUtils;
 
 import java.util.ArrayList;
 

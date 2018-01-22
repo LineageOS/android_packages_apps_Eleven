@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.eleven.locale;
+package org.lineageos.eleven.locale;
 
 import android.text.TextUtils;
 import android.util.Log;

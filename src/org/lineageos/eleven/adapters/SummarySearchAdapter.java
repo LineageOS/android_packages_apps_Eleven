@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.adapters;
+package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.text.TextUtils;
@@ -23,15 +23,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.cache.ImageFetcher;
-import com.cyanogenmod.eleven.format.PrefixHighlighter;
-import com.cyanogenmod.eleven.model.SearchResult;
-import com.cyanogenmod.eleven.sectionadapter.SectionAdapter;
-import com.cyanogenmod.eleven.ui.MusicHolder;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.format.PrefixHighlighter;
+import org.lineageos.eleven.model.SearchResult;
+import org.lineageos.eleven.sectionadapter.SectionAdapter;
+import org.lineageos.eleven.ui.MusicHolder;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
 import java.util.Locale;
 

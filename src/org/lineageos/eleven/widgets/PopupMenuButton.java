@@ -14,14 +14,14 @@
 * limitations under the License.
 */
 
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.R;
+import org.lineageos.eleven.R;
 
 public class PopupMenuButton extends ImageView implements IPopupMenuCallback,
         View.OnClickListener {

@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.support.v4.app.FragmentManager;
@@ -24,12 +24,12 @@ import android.widget.PopupMenu;
 
 import com.android.internal.view.menu.ContextMenuBuilder;
 import com.android.internal.view.menu.MenuBuilder;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.menu.CreateNewPlaylist;
-import com.cyanogenmod.eleven.menu.FragmentMenuItems;
-import com.cyanogenmod.eleven.menu.RenamePlaylist;
-import com.cyanogenmod.eleven.provider.RecentStore;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.menu.CreateNewPlaylist;
+import org.lineageos.eleven.menu.FragmentMenuItems;
+import org.lineageos.eleven.menu.RenamePlaylist;
+import org.lineageos.eleven.provider.RecentStore;
 
 import java.util.TreeSet;
 

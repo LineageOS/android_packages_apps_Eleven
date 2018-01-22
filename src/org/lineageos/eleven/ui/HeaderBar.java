@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui;
+package org.lineageos.eleven.ui;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -27,12 +27,12 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.loaders.NowPlayingCursor;
-import com.cyanogenmod.eleven.loaders.QueueLoader;
-import com.cyanogenmod.eleven.menu.CreateNewPlaylist;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.NavUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.loaders.NowPlayingCursor;
+import org.lineageos.eleven.loaders.QueueLoader;
+import org.lineageos.eleven.menu.CreateNewPlaylist;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.NavUtils;
 
 /**
  * Simple Header bar wrapper class that also has its own menu bar button.

@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.ui.fragments.profile;
+package org.lineageos.eleven.ui.fragments.profile;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,17 +23,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.menu.ConfirmDialog;
-import com.cyanogenmod.eleven.model.Playlist;
-import com.cyanogenmod.eleven.ui.fragments.IChildFragment;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.PlaylistPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper.PopupMenuType;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.menu.ConfirmDialog;
+import org.lineageos.eleven.model.Playlist;
+import org.lineageos.eleven.ui.fragments.IChildFragment;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.PlaylistPopupMenuHelper;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.PopupMenuHelper.PopupMenuType;
 
 public abstract class SmartPlaylistFragment extends BasicSongFragment
         implements ConfirmDialog.ConfirmCallback, IChildFragment {

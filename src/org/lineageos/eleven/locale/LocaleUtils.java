@@ -14,14 +14,14 @@
  * limitations under the License
  */
 
-package com.cyanogenmod.eleven.locale;
+package org.lineageos.eleven.locale;
 
 import android.provider.ContactsContract.FullNameStyle;
 import android.provider.ContactsContract.PhoneticNameStyle;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.cyanogenmod.eleven.locale.HanziToPinyin.Token;
+import org.lineageos.eleven.locale.HanziToPinyin.Token;
 
 import com.google.common.annotations.VisibleForTesting;
 

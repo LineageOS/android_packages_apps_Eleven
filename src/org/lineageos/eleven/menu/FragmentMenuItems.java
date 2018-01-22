@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.menu;
+package org.lineageos.eleven.menu;
 
 /**
  * Several of the context menu items used in Apollo are reused. This class helps

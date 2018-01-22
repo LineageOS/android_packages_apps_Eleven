@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -28,26 +28,26 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.cyanogenmod.eleven.MusicStateListener;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.ArtistAdapter;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.loaders.ArtistLoader;
-import com.cyanogenmod.eleven.model.Artist;
-import com.cyanogenmod.eleven.recycler.RecycleHolder;
-import com.cyanogenmod.eleven.sectionadapter.SectionAdapter;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator;
-import com.cyanogenmod.eleven.sectionadapter.SectionListContainer;
-import com.cyanogenmod.eleven.ui.activities.BaseActivity;
-import com.cyanogenmod.eleven.ui.fragments.phone.MusicBrowserFragment;
-import com.cyanogenmod.eleven.utils.ArtistPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.NavUtils;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils;
-import com.cyanogenmod.eleven.utils.SectionCreatorUtils.IItemCompare;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.MusicStateListener;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.ArtistAdapter;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.loaders.ArtistLoader;
+import org.lineageos.eleven.model.Artist;
+import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.sectionadapter.SectionAdapter;
+import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.ui.activities.BaseActivity;
+import org.lineageos.eleven.ui.fragments.phone.MusicBrowserFragment;
+import org.lineageos.eleven.utils.ArtistPopupMenuHelper;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.SectionCreatorUtils;
+import org.lineageos.eleven.utils.SectionCreatorUtils.IItemCompare;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 /**
  * This class is used to display all of the artists on a user's device.

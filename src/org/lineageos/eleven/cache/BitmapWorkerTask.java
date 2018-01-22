@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -23,7 +23,7 @@ import android.graphics.drawable.TransitionDrawable;
 import android.os.AsyncTask;
 import android.widget.ImageView;
 
-import com.cyanogenmod.eleven.cache.ImageWorker.ImageType;
+import org.lineageos.eleven.cache.ImageWorker.ImageType;
 
 import java.lang.ref.WeakReference;
 

@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.ui.fragments;
+package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -26,24 +26,24 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
-import com.cyanogenmod.eleven.MusicStateListener;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.adapters.AlbumAdapter;
-import com.cyanogenmod.eleven.adapters.PagerAdapter;
-import com.cyanogenmod.eleven.loaders.AlbumLoader;
-import com.cyanogenmod.eleven.model.Album;
-import com.cyanogenmod.eleven.recycler.RecycleHolder;
-import com.cyanogenmod.eleven.sectionadapter.SectionCreator;
-import com.cyanogenmod.eleven.sectionadapter.SectionListContainer;
-import com.cyanogenmod.eleven.ui.activities.BaseActivity;
-import com.cyanogenmod.eleven.ui.fragments.phone.MusicBrowserFragment;
-import com.cyanogenmod.eleven.utils.AlbumPopupMenuHelper;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
-import com.cyanogenmod.eleven.utils.NavUtils;
-import com.cyanogenmod.eleven.utils.PopupMenuHelper;
-import com.cyanogenmod.eleven.widgets.IPopupMenuCallback;
-import com.cyanogenmod.eleven.widgets.LoadingEmptyContainer;
+import org.lineageos.eleven.MusicStateListener;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.adapters.AlbumAdapter;
+import org.lineageos.eleven.adapters.PagerAdapter;
+import org.lineageos.eleven.loaders.AlbumLoader;
+import org.lineageos.eleven.model.Album;
+import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.ui.activities.BaseActivity;
+import org.lineageos.eleven.ui.fragments.phone.MusicBrowserFragment;
+import org.lineageos.eleven.utils.AlbumPopupMenuHelper;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
+import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 /**
  * This class is used to display all of the albums on a user's device.

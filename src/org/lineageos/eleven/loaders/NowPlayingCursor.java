@@ -1,7 +1,7 @@
 
-package com.cyanogenmod.eleven.loaders;
+package org.lineageos.eleven.loaders;
 
-import static com.cyanogenmod.eleven.utils.MusicUtils.mService;
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AudioColumns;
 
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.Arrays;
 

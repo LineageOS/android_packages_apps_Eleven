@@ -9,7 +9,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.os.SystemClock;
@@ -20,9 +20,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.utils.ApolloUtils;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * A {@link ImageButton} that will repeatedly call a 'listener' method as long

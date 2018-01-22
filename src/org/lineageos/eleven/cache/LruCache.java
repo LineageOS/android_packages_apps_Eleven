@@ -9,7 +9,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.cache;
+package org.lineageos.eleven.cache;
 
 // NOTE: upstream of this class is android.util.LruCache, changes below
 // expose trimToSize() to be called externally.

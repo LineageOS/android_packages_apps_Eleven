@@ -11,7 +11,7 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.app.SearchManager;
@@ -25,11 +25,11 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.ui.activities.HomeActivity;
-import com.cyanogenmod.eleven.ui.activities.SearchActivity;
-import com.cyanogenmod.eleven.ui.activities.SettingsActivity;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.ui.activities.HomeActivity;
+import org.lineageos.eleven.ui.activities.SearchActivity;
+import org.lineageos.eleven.ui.activities.SettingsActivity;
 
 import java.util.List;
 
@@ -126,7 +126,7 @@ public final class NavUtils {
     }
 
     /**
-     * Opens the sound effects panel or DSP manager in CM
+     * Opens the sound effects panel AudioFX in LineageOS
      *
      * @param context The {@link Activity} to use.
      * @param requestCode The request code passed into startActivityForResult
@@ -161,7 +161,7 @@ public final class NavUtils {
     }
 
     /**
-     * Opens to {@link com.cyanogenmod.eleven.ui.activities.SearchActivity}.
+     * Opens to {@link org.lineageos.eleven.ui.activities.SearchActivity}.
      *
      * @param activity The {@link Activity} to use.
      * @param query The search query.
@@ -175,7 +175,7 @@ public final class NavUtils {
     }
 
     /**
-     * Opens to {@link com.cyanogenmod.eleven.ui.activities.HomeActivity}.
+     * Opens to {@link org.lineageos.eleven.ui.activities.HomeActivity}.
      *
      * @param activity The {@link Activity} to use.
      */

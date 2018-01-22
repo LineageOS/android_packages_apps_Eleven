@@ -11,15 +11,15 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven.widgets;
+package org.lineageos.eleven.widgets;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.cyanogenmod.eleven.MusicPlaybackService;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.utils.MusicUtils;
+import org.lineageos.eleven.MusicPlaybackService;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.utils.MusicUtils;
 
 /**
  * @author Andrew Neal (andrewdneal@gmail.com)

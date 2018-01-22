@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -24,10 +24,10 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentManager;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.Config.SmartPlaylistType;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.model.Playlist;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.Config.SmartPlaylistType;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.model.Playlist;
 
 public abstract class PlaylistPopupMenuHelper extends PopupMenuHelper {
     private Playlist mPlaylist;

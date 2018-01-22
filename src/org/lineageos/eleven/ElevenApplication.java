@@ -11,12 +11,12 @@
  * governing permissions and limitations under the License.
  */
 
-package com.cyanogenmod.eleven;
+package org.lineageos.eleven;
 
 import android.app.Application;
 import android.os.StrictMode;
 
-import com.cyanogenmod.eleven.cache.ImageCache;
+import org.lineageos.eleven.cache.ImageCache;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -13,17 +13,17 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.cyanogenmod.eleven.utils;
+package org.lineageos.eleven.utils;
 
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.cyanogenmod.eleven.Config;
-import com.cyanogenmod.eleven.R;
-import com.cyanogenmod.eleven.model.Album;
-import com.cyanogenmod.eleven.model.Artist;
-import com.cyanogenmod.eleven.model.SearchResult;
-import com.cyanogenmod.eleven.model.Song;
+import org.lineageos.eleven.Config;
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.model.Album;
+import org.lineageos.eleven.model.Artist;
+import org.lineageos.eleven.model.SearchResult;
+import org.lineageos.eleven.model.Song;
 
 import java.util.List;
 import java.util.TreeMap;
