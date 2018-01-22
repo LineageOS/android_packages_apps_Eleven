@@ -334,8 +334,6 @@ public class MusicPlaybackService extends Service {
     /**
      * The max size allowed for the track history
      * TODO: Comeback and rewrite/fix all the whole queue code bugs after demo
-     * https://cyanogen.atlassian.net/browse/MUSIC-175
-     * https://cyanogen.atlassian.net/browse/MUSIC-44
      */
     public static final int MAX_HISTORY_SIZE = 1000;
 
@@ -1098,9 +1096,7 @@ public class MusicPlaybackService extends Service {
                 // remove the items from the history
                 // this is not ideal as the history shouldn't be impacted by this
                 // but since we are removing items from the array, it will throw
-                // an exception if we keep it around.  Idealistically with the queue
-                // rewrite this should be all be fixed
-                // https://cyanogen.atlassian.net/browse/MUSIC-44
+                // an exception if we keep it around.
                 ListIterator<Integer> positionIterator = mHistory.listIterator();
                 while (positionIterator.hasNext()) {
                     int pos = positionIterator.next();
@@ -1541,8 +1537,6 @@ public class MusicPlaybackService extends Service {
                 // if we are in shuffle mode and our next track is still valid,
                 // try to re-use the track
                 // We need to reimplement the queue to prevent hacky solutions like this
-                // https://cyanogen.atlassian.net/browse/MUSIC-175
-                // https://cyanogen.atlassian.net/browse/MUSIC-44
                 if (mNextPlayPos >= 0 && mNextPlayPos < mPlaylist.size()
                         && getShuffleMode() != SHUFFLE_NONE) {
                     setNextTrack(mNextPlayPos);
