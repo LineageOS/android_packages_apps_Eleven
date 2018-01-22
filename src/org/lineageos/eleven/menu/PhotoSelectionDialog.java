@@ -24,7 +24,7 @@ import android.widget.ListAdapter;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 
@@ -121,7 +121,7 @@ public class PhotoSelectionDialog extends DialogFragment {
         // Select a photo from the gallery
         mChoices.add(NEW_PHOTO, getString(R.string.new_photo));
         /* Disable fetching image until we find a last.fm replacement
-        if (ApolloUtils.isOnline(getActivity())) {
+        if (ElevenUtils.isOnline(getActivity())) {
             // Option to fetch the old artist image
             mChoices.add(OLD_PHOTO, getString(R.string.context_menu_fetch_artist_image));
         }*/
@@ -135,7 +135,7 @@ public class PhotoSelectionDialog extends DialogFragment {
         mChoices.add(NEW_PHOTO, getString(R.string.new_photo));
         /* Disable fetching image until we find a last.fm replacement
         // Option to fetch the old album image
-        if (ApolloUtils.isOnline(getActivity())) {
+        if (ElevenUtils.isOnline(getActivity())) {
             // Option to fetch the old artist image
             mChoices.add(OLD_PHOTO, getString(R.string.context_menu_fetch_album_art));
         }*/

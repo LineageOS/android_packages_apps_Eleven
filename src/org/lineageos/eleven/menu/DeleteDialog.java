@@ -23,7 +23,7 @@ import android.support.v4.app.DialogFragment;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
@@ -86,7 +86,7 @@ public class DeleteDialog extends DialogFragment {
         final String title = arguments.getString(Config.NAME);
         final String dialogTitle = getString(R.string.delete_dialog_title, title);
         // Initialize the image cache
-        mFetcher = ApolloUtils.getImageFetcher(getActivity());
+        mFetcher = ElevenUtils.getImageFetcher(getActivity());
         // Build the dialog
         return new AlertDialog.Builder(getActivity()).setTitle(dialogTitle)
                 .setMessage(R.string.cannot_be_undone)

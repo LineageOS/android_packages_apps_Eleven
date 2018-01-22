@@ -43,7 +43,7 @@ import org.lineageos.eleven.MusicStateListener;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ICacheListener;
 import org.lineageos.eleven.cache.ImageFetcher;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
@@ -55,7 +55,7 @@ import java.util.ArrayList;
 
 /**
  * A base {@link FragmentActivity} used to update the bottom bar and
- * bind to Apollo's service.
+ * bind to Eleven's service.
  * <p>
  * {@link SlidingPanelActivity} extends from this skeleton.
  *
@@ -118,7 +118,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Apollo's service
+        // Bind Eleven's service
         mToken = MusicUtils.bindToService(this, this);
 
         // Initialize the broadcast receiver
@@ -341,7 +341,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         // Set the artist name
         mArtistName.setText(MusicUtils.getArtistName());
         // Set the album art
-        ApolloUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
+        ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
     }
 
     /**
@@ -469,7 +469,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     @Override
     public void onCacheUnpaused() {
         // Set the album art
-        ApolloUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
+        ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
     }
 
     /**

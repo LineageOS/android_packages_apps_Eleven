@@ -32,7 +32,7 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ICacheListener;
 import org.lineageos.eleven.cache.ImageCache;
 import org.lineageos.eleven.model.AlbumArtistDetails;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.SquareImageView;
 
@@ -227,7 +227,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
                 }
 
                 mTask = new AlbumArtistLoader(this, getActivity());
-                ApolloUtils.execute(false, mTask, mAudioId);
+                ElevenUtils.execute(false, mTask, mAudioId);
             }
 
         }
@@ -238,7 +238,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
          */
         private void loadImageAsync(AlbumArtistDetails details) {
             // load the actual image
-            ApolloUtils.getImageFetcher(getActivity()).loadAlbumImage(
+            ElevenUtils.getImageFetcher(getActivity()).loadAlbumImage(
                     details.mArtistName,
                     details.mAlbumName,
                     details.mAlbumId,

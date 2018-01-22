@@ -45,7 +45,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public final class ApolloUtils {
+public final class ElevenUtils {
 
     /**
      * The threshold used calculate if a color is light or dark
@@ -75,7 +75,7 @@ public final class ApolloUtils {
     }
 
     /* This class is never initiated */
-    public ApolloUtils() {
+    public ElevenUtils() {
     }
 
     /**

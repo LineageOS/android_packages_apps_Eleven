@@ -26,7 +26,7 @@ import org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout.SimplePanelSlide
 import org.lineageos.eleven.ui.HeaderBar;
 import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
 import org.lineageos.eleven.ui.fragments.QueueFragment;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.BlurScrimImage;
 
@@ -175,7 +175,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         // since the previous view's is hiding the slide offset, we need to subtract that
         // from action bat height
         int slideOffset = getResources().getDimensionPixelOffset(R.dimen.sliding_panel_indicator_height);
-        slideOffset -= ApolloUtils.getActionBarHeight(this);
+        slideOffset -= ElevenUtils.getActionBarHeight(this);
         mSecondPanel.setSlidePanelOffset(slideOffset);
     }
 
@@ -276,7 +276,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onMetaChanged();
 
         // load the blurred image
-        mBlurScrimImage.loadBlurImage(ApolloUtils.getImageFetcher(this));
+        mBlurScrimImage.loadBlurImage(ElevenUtils.getImageFetcher(this));
     }
 
     @Override
@@ -284,7 +284,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onCacheUnpaused();
 
         // load the blurred image
-        mBlurScrimImage.loadBlurImage(ApolloUtils.getImageFetcher(this));
+        mBlurScrimImage.loadBlurImage(ElevenUtils.getImageFetcher(this));
     }
 
     protected AudioPlayerFragment getAudioPlayerFragment() {

@@ -26,7 +26,7 @@ import org.lineageos.eleven.model.Artist;
 import org.lineageos.eleven.sectionadapter.SectionAdapter.BasicAdapter;
 import org.lineageos.eleven.ui.MusicHolder;
 import org.lineageos.eleven.ui.MusicHolder.DataHolder;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
@@ -82,7 +82,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
         // Get the layout Id
         mLayoutId = layoutId;
         // Initialize the cache & image fetcher
-        mImageFetcher = ApolloUtils.getImageFetcher(context);
+        mImageFetcher = ElevenUtils.getImageFetcher(context);
         // Cache the transparent overlay
         mOverlay = context.getResources().getColor(R.color.list_item_background);
     }

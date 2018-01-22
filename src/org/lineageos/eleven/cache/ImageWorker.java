@@ -28,7 +28,7 @@ import android.widget.ImageView;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.provider.PlaylistArtworkStore;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.ImageUtils;
 import org.lineageos.eleven.widgets.BlurScrimImage;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
@@ -177,7 +177,7 @@ public abstract class ImageWorker {
         }
 
         // Third, by now we need to download the image
-        if (bitmap == null && ApolloUtils.isOnline(context) && !sKeys.contains(key)) {
+        if (bitmap == null && ElevenUtils.isOnline(context) && !sKeys.contains(key)) {
             // Now define what the artist name, album name, and url are.
             String url = ImageUtils.processImageUrl(context, artistName, albumName, imageType);
             if (url != null) {
@@ -477,7 +477,7 @@ public abstract class ImageWorker {
                 final AsyncTaskContainer asyncTaskContainer = new AsyncTaskContainer(bitmapWorkerTask);
                 imageView.setTag(asyncTaskContainer);
                 try {
-                    ApolloUtils.execute(false, bitmapWorkerTask,
+                    ElevenUtils.execute(false, bitmapWorkerTask,
                             artistName, albumName, String.valueOf(albumId));
                 } catch (RejectedExecutionException e) {
                     // Executor has exhausted queue space
@@ -537,7 +537,7 @@ public abstract class ImageWorker {
             final AsyncTaskContainer asyncTaskContainer = new AsyncTaskContainer(bitmapWorkerTask);
             imageView.setTag(asyncTaskContainer);
             try {
-                ApolloUtils.execute(false, bitmapWorkerTask);
+                ElevenUtils.execute(false, bitmapWorkerTask);
             } catch (RejectedExecutionException e) {
                 // Executor has exhausted queue space
             }
@@ -569,7 +569,7 @@ public abstract class ImageWorker {
             blurScrimImage.setTag(asyncTaskContainer);
 
             try {
-                ApolloUtils.execute(false, blurWorkerTask, artistName, albumName, String.valueOf(albumId));
+                ElevenUtils.execute(false, blurWorkerTask, artistName, albumName, String.valueOf(albumId));
             } catch (RejectedExecutionException e) {
                 // Executor has exhausted queue space, show default artwork
                 blurScrimImage.transitionToDefaultState();

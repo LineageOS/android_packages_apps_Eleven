@@ -9,7 +9,7 @@ import android.view.View.OnLongClickListener;
 import android.widget.ImageButton;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.utils.ApolloUtils;
+import org.lineageos.eleven.utils.ElevenUtils;
 
 public abstract class AudioButton extends ImageButton implements OnClickListener, OnLongClickListener {
     public static float ACTIVE_ALPHA = 1.0f;
@@ -31,7 +31,7 @@ public abstract class AudioButton extends ImageButton implements OnClickListener
         if (TextUtils.isEmpty(view.getContentDescription())) {
             return false;
         } else {
-            ApolloUtils.showCheatSheet(view);
+            ElevenUtils.showCheatSheet(view);
             return true;
         }
     }
