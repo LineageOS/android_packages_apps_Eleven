@@ -31,7 +31,4 @@
   <!-- App widget -->
   <!-- Empty list / error messages -->
   <!-- Section Headers -->
-  <string name="header_1_to_2_minutes">1 - 2 munud</string>
-  <string name="header_10_to_30_minutes">10 - 30 munud</string>
-  <string name="header_1_song">1 cân</string>
 </resources>

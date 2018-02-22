@@ -138,7 +138,7 @@
   <string name="app_widget_small">Musiikki: 4 \u00d7 1</string>
   <string name="app_widget_large">Musiikki: 4 \u00d7 2</string>
   <string name="app_widget_large_alt">Musiikki: 4 \u00d7 2 (vaihtoehtoinen)</string>
-  <string name="app_widget_recent">Eleven: äskettäin kuunneltu</string>
+  <string name="app_widget_recent">Musiikki: äskettäin kuunneltu</string>
   <!-- Empty list / error messages -->
   <string name="no_effects_for_you">Taajuuskorjainta ei voitu avata.</string>
   <string name="empty_music">Kopioi musiikkia tietokoneelta laitteeseen käyttämällä USB-kaapelia.</string>
