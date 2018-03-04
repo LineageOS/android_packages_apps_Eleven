@@ -112,9 +112,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Fade it in
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
