@@ -284,14 +284,14 @@ public class HomeActivity extends SlidingPanelActivity implements
 
             if (targetFragment != null) {
                 targetFragment.setArguments(intent.getExtras());
-                transaction.setCustomAnimations(0, 0, 0, R.anim.fade_out);
+                transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
                 // If we ever come back to this because of memory concerns because
                 // none of the fragments are being removed from memory, we can fix this
                 // by using "replace" instead of "add".  The caveat is that the performance of
                 // returning to previous fragments is a bit more sluggish because the fragment
                 // view needs to be recreated. If we do remove that, we can remove the back stack
                 // change listener code above
-                transaction.add(R.id.activity_base_content, targetFragment);
+                transaction.replace(R.id.activity_base_content, targetFragment);
                 if (mLoadedBaseFragment) {
                     transaction.addToBackStack(null);
                     showPanel(Panel.Browse);
