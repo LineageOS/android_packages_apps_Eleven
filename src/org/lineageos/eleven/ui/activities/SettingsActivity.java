@@ -44,8 +44,6 @@ public class SettingsActivity extends PreferenceActivity implements OnSharedPref
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Fade it in
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         // UP
         getActionBar().setDisplayHomeAsUpEnabled(true);
