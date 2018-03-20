@@ -21,7 +21,7 @@ public class GenreFetcher implements LoaderCallbacks<Cursor> {
 
     public static void fetch(FragmentActivity activity, int songId, TextView textView) {
         LoaderManager lm = activity.getSupportLoaderManager();
-        lm.initLoader(0, null, new GenreFetcher(activity, songId, textView));
+        lm.restartLoader(0, null, new GenreFetcher(activity, songId, textView));
     }
 
     private GenreFetcher(Context context, int songId, TextView textView) {
