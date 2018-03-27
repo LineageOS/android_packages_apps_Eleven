@@ -119,7 +119,6 @@
   <string name="settings_download_missing_artwork_title">دابه‌زاندنی ئه‌لبومه‌ هونه‌رییه‌ ونبوه‌کان</string>
   <string name="settings_download_artist_images_title">دابه‌زاندنی وێنه‌ هونه‌رمه‌نده‌ ونبوه‌کان</string>
   <!-- App widget -->
-  <string name="app_widget_large_alt">Apollo: 4×2 (alternate)</string>
   <string name="app_widget_recent">ئه‌پۆڵۆ:تازه‌ترین که‌ گوێلێگیراون</string>
   <!-- Empty list / error messages -->
   <string name="no_effects_for_you">یه‌کسانکه‌ری ده‌نگ ناکرێته‌وه‌.</string>
