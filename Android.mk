@@ -6,24 +6,21 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := src/org/lineageos/eleven/IElevenService.aidl
 LOCAL_SRC_FILES += $(call all-java-files-under, src)
 
-LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res) \
-    $(TOP)/frameworks/support/v7/cardview/res \
-    $(TOP)/frameworks/support/v7/recyclerview/res
+LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v8-renderscript \
-    android-support-v7-palette \
-    android-support-v7-cardview \
     android-common \
-    android-support-v4 \
-    android-support-v7-recyclerview \
     guava \
     junit
 
-LOCAL_AAPT_FLAGS := \
-    --auto-add-overlay \
-    --extra-packages android.support.v7.cardview \
-    --extra-packages android.support.v7.recyclerview
+LOCAL_STATIC_ANDROID_LIBRARIES := \
+    android-support-v4 \
+    android-support-v7-cardview \
+    android-support-v7-palette \
+    android-support-v7-recyclerview
+
+LOCAL_USE_AAPT2 := true
 
 LOCAL_PACKAGE_NAME := Eleven
 LOCAL_OVERRIDES_PACKAGES := Music
