@@ -20,11 +20,10 @@
     android:layout_width="156dp"
     android:layout_height="222dp"
     android:layout_marginRight="8dp"
-    android:paddingBottom="8dp"
     android:foreground="@drawable/selectable_background"
     android:elevation="3dp"
     card_view:cardElevation="4dp"
-    card_view:cardCornerRadius="2dp"
+    card_view:cardCornerRadius="4dp"
     card_view:cardBackgroundColor="@color/cards_bg_color">
 
     <RelativeLayout
@@ -47,7 +46,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="1dp"
             android:gravity="center_vertical"
-            android:src="@drawable/menu_button_light" />
+            android:src="@drawable/menu_button" />
 
         <LinearLayout
             android:layout_width="match_parent"

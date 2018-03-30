@@ -49,9 +49,9 @@
     <color name="default_text_color_light">@color/white</color>
 
     <!-- Cards -->
-    <color name="cards_bg_color">#273139</color>
-    <color name="cardOne">@color/white</color>
-    <color name="cardTwo">#e0e0e0</color>
+    <color name="cards_bg_color">#fefefe</color>
+    <color name="cardOne">@color/black</color>
+    <color name="cardTwo">#424242</color>
 
     <!-- Transparent colors -->
     <color name="transparent">#00000000</color>
