@@ -114,19 +114,23 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
 
             // run the blur multiple times
             for (int i = 0; i < NUM_BLUR_RUNS; i++) {
-                final Allocation inputAlloc = Allocation.createFromBitmap(mRenderScript, input);
-                final Allocation outputAlloc = Allocation.createTyped(mRenderScript,
-                        inputAlloc.getType());
-                final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(mRenderScript,
-                        Element.U8_4(mRenderScript));
+                try {
+                    final Allocation inputAlloc = Allocation.createFromBitmap(mRenderScript, input);
+                    final Allocation outputAlloc = Allocation.createTyped(mRenderScript,
+                            inputAlloc.getType());
+                    final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(mRenderScript,
+                            Element.U8_4(mRenderScript));
 
-                script.setRadius(BLUR_RADIUS);
-                script.setInput(inputAlloc);
-                script.forEach(outputAlloc);
-                outputAlloc.copyTo(output);
+                    script.setRadius(BLUR_RADIUS);
+                    script.setInput(inputAlloc);
+                    script.forEach(outputAlloc);
+                    outputAlloc.copyTo(output);
 
-                // if we run more than 1 blur, the new input should be the old output
-                input = output;
+                    // if we run more than 1 blur, the new input should be the old output
+                    input = output;
+                } catch (RuntimeException e) {
+                    // unsupported bitmap type
+                }
             }
 
             // Set the scrim color to be 50% gray
