@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e854cc67_16351f09",
+        "filename": "src/org/lineageos/eleven/cache/BlurBitmapWorkerTask.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 11221
+      },
+      "writtenOn": "2018-04-06T08:30:51Z",
+      "side": 1,
+      "message": "Could probably get away by only enclosing this in try-catch, and using continue/break in the catch block.",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 100
+      },
+      "revId": "fd9ab846a7939304a9ebaf47bf1f1656947fd651",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
