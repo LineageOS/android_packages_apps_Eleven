@@ -23,6 +23,7 @@ import android.support.v8.renderscript.Allocation;
 import android.support.v8.renderscript.Element;
 import android.support.v8.renderscript.RenderScript;
 import android.support.v8.renderscript.ScriptIntrinsicBlur;
+import android.util.Log;
 import android.widget.ImageView;
 
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
@@ -35,6 +36,9 @@ import java.lang.ref.WeakReference;
  * BlurScrimImage
  */
 public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBitmapWorkerTask.ResultContainer> {
+
+    private static final String TAG = BlurBitmapWorkerTask.class.getSimpleName();
+
     // if the image is too small, the blur will look bad post scale up so we use the min size
     // to scale up before bluring
     private static final int MIN_BITMAP_SIZE = 500;
@@ -114,19 +118,24 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
 
             // run the blur multiple times
             for (int i = 0; i < NUM_BLUR_RUNS; i++) {
-                final Allocation inputAlloc = Allocation.createFromBitmap(mRenderScript, input);
-                final Allocation outputAlloc = Allocation.createTyped(mRenderScript,
-                        inputAlloc.getType());
-                final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(mRenderScript,
-                        Element.U8_4(mRenderScript));
+                try {
+                    final Allocation inputAlloc = Allocation.createFromBitmap(mRenderScript, input);
+                    final Allocation outputAlloc = Allocation.createTyped(mRenderScript,
+                            inputAlloc.getType());
+                    final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(mRenderScript,
+                            Element.U8_4(mRenderScript));
 
-                script.setRadius(BLUR_RADIUS);
-                script.setInput(inputAlloc);
-                script.forEach(outputAlloc);
-                outputAlloc.copyTo(output);
+                    script.setRadius(BLUR_RADIUS);
+                    script.setInput(inputAlloc);
+                    script.forEach(outputAlloc);
+                    outputAlloc.copyTo(output);
 
-                // if we run more than 1 blur, the new input should be the old output
-                input = output;
+                    // if we run more than 1 blur, the new input should be the old output
+                    input = output;
+                } catch (RuntimeException e) {
+                    Log.w(TAG, "Cannot blur image. " + e.getMessage());
+                    break;
+                }
             }
 
             // Set the scrim color to be 50% gray
