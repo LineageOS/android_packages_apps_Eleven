@@ -17,18 +17,42 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="app_name">Mùsica</string>
   <!-- Page titles -->
   <!-- Section Headers -->
   <!-- Option menu items -->
+  <string name="menu_settings">Cunfiguratziones</string>
+  <string name="menu_search">Chirca</string>
   <!-- Playlist items -->
   <!-- Sort orders -->
+  <string name="sort_order_entry_artist">Artista</string>
+  <string name="sort_order_entry_year">Annu</string>
+  <string name="sort_order_entry_duration">Longària</string>
   <!-- Default playlist names -->
   <!-- AlertDialog items -->
+  <string name="save">Sarva</string>
+  <string name="cancel">Annulla</string>
+  <string name="overwrite">Subraiscrie</string>
+  <string name="clear">Isbòida</string>
   <!-- Context menu items -->
+  <string name="context_menu_delete">Iscantzella</string>
   <!-- Content descriptions -->
   <!-- Toast messages -->
   <!-- Settings -->
+  <string name="settings_data_category">Datos</string>
+  <string name="settings_general_category">Generale</string>
   <!-- App widget -->
   <!-- Empty list / error messages -->
   <!-- Section Headers -->
+  <string name="header_less_than_30s">Prus pagu de 30 segundos</string>
+  <string name="header_30_to_60_seconds">30 - 60 segundos</string>
+  <string name="header_1_to_2_minutes">1 - 2 minutos</string>
+  <string name="header_2_to_3_minutes">2 - 3 minutos</string>
+  <string name="header_3_to_4_minutes">3 - 4 minutos</string>
+  <string name="header_4_to_5_minutes">4 - 5 minutos</string>
+  <string name="header_5_to_10_minutes">5 - 10 minutos</string>
+  <string name="header_10_to_30_minutes">10 - 30 minutos</string>
+  <string name="header_30_to_60_minutes">30 - 60 minutos</string>
+  <string name="header_greater_than_60_minutes">Prus de 60 minutos</string>
+  <string name="header_other">"Àteru"</string>
 </resources>
