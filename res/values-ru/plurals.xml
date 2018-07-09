@@ -68,7 +68,7 @@
   </plurals>
   <!-- Toasts after removing song(s) from playlists -->
   <plurals name="NNNtracksfromplaylist">
-    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> трек удалён из плейлиста.</item>
+    <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> трек удален из плейлиста.</item>
     <item quantity="few"><xliff:g id="number" example="1">%d</xliff:g> трека удалены из плейлиста.</item>
     <item quantity="many"><xliff:g id="number" example="1">%d</xliff:g> треков удалены из плейлиста.</item>
     <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> треков удалены из плейлиста.</item>
