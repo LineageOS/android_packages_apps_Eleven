@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "592048f2_99da1406",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1679,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2018-07-29T16:00:19Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 1679,
+        "startChar": 0,
+        "endLine": 1679,
+        "endChar": 16
+      },
+      "revId": "11c00e75b84bb7a3228e4077dff609b75f61267b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
