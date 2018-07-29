@@ -18,6 +18,7 @@ import android.annotation.NonNull;
 import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -56,6 +57,7 @@ import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
+import android.support.v4.os.BuildCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
@@ -336,6 +338,8 @@ public class MusicPlaybackService extends Service {
      * TODO: Comeback and rewrite/fix all the whole queue code bugs after demo
      */
     public static final int MAX_HISTORY_SIZE = 1000;
+
+    private static final String CHANNEL_NAME = "eleven_playback";
 
     public interface TrackErrorExtra {
         /**
@@ -1645,7 +1649,7 @@ public class MusicPlaybackService extends Service {
             mNotificationPostTime = System.currentTimeMillis();
         }
 
-        Notification.Builder builder = new Notification.Builder(this)
+        Notification.Builder builder = new Notification.Builder(this, CHANNEL_NAME)
                 .setSmallIcon(R.drawable.ic_notification)
                 .setLargeIcon(artwork.getBitmap())
                 .setContentIntent(clickIntent)
@@ -1665,6 +1669,24 @@ public class MusicPlaybackService extends Service {
                         retrievePlaybackAction(NEXT_ACTION));
 
         builder.setColor(artwork.getVibrantDarkColor());
+
+        if (BuildCompat.isAtLeastO()) {
+            NotificationChannel channel = mNotificationManager
+                    .getNotificationChannel(CHANNEL_NAME);
+
+            if (channel == null) {
+                String name = getString(R.string.channel_music);
+
+                channel = new NotificationChannel(CHANNEL_NAME, name,
+                        mNotificationManager.IMPORTANCE_DEFAULT);
+                channel.setShowBadge(false);
+                channel.enableVibration(false);
+                channel.setSound(null, null);
+                mNotificationManager.createNotificationChannel(channel);
+            }
+
+            builder.setChannelId(channel.getId());
+        }
 
         return builder.build();
     }
