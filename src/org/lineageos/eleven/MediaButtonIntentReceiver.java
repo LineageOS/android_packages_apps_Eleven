@@ -76,6 +76,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
         i.putExtra(MusicPlaybackService.CMDNAME, command);
         i.putExtra(MusicPlaybackService.FROM_MEDIA_BUTTON, true);
         i.putExtra(MusicPlaybackService.TIMESTAMP, timestamp);
-        startWakefulService(context, i);
+        context.startForegroundService(i);
     }
 }
