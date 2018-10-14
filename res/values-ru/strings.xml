@@ -40,7 +40,7 @@
   <string name="menu_shuffle_album">Перемешать альбом</string>
   <string name="menu_shuffle_artist">Перемешать исполнителя</string>
   <string name="menu_shuffle_top_tracks">Перемешать топ-треки</string>
-  <string name="menu_shuffle_recent">Перемешать недавно воспроизведённые</string>
+  <string name="menu_shuffle_recent">Перемешать недавно воспроизведенные</string>
   <string name="menu_shuffle_last_added">Перемешать последние добавленные</string>
   <string name="menu_play_all">Воспроизвести все</string>
   <string name="menu_sort_by">Сортировать по</string>
@@ -68,7 +68,7 @@
   <string name="sort_order_entry_filename">Имени файла</string>
   <!-- Default playlist names -->
   <string name="playlist_last_added">Недавно добавленные</string>
-  <string name="playlist_recently_played">Недавно воспроизведённые</string>
+  <string name="playlist_recently_played">Недавно воспроизведенные</string>
   <string name="playlist_top_tracks">Мои топ-треки</string>
   <!-- AlertDialog items -->
   <string name="new_playlist">Новый плейлист</string>
