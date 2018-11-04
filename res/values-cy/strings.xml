@@ -17,22 +17,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Page titles -->
-  <!-- Section Headers -->
-  <!-- Option menu items -->
-  <!-- Playlist items -->
-  <!-- Sort orders -->
-  <!-- Default playlist names -->
-  <!-- AlertDialog items -->
-  <string name="cancel">Diddymu</string>
-  <!-- Context menu items -->
-  <!-- Content descriptions -->
-  <!-- Toast messages -->
-  <!-- Settings -->
-  <!-- App widget -->
-  <!-- Empty list / error messages -->
-  <!-- Section Headers -->
-  <string name="header_1_to_2_minutes">1 - 2 munud</string>
-  <string name="header_10_to_30_minutes">10 - 30 munud</string>
-  <string name="header_1_song">1 cân</string>
+    <!-- Page titles -->
+    <!-- Section Headers -->
+    <!-- Option menu items -->
+    <!-- Playlist items -->
+    <!-- Sort orders -->
+    <!-- Default playlist names -->
+    <!-- AlertDialog items -->
+    <string name="cancel">Diddymu</string>
+    <!-- Context menu items -->
+    <!-- Content descriptions -->
+    <!-- Toast messages -->
+    <!-- Settings -->
+    <!-- App widget -->
+    <!-- Empty list / error messages -->
+    <!-- Section Headers -->
+    <string name="header_1_to_2_minutes">1 - 2 munud</string>
+    <string name="header_10_to_30_minutes">10 - 30 munud</string>
+    <string name="header_1_song">1 cân</string>
 </resources>
