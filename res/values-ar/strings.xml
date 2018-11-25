@@ -79,7 +79,7 @@
     <string name="new_playlist_name_template">قائمة التشغيل <xliff:g id="number">%d</xliff:g></string>
     <string name="create_playlist_prompt">اسم قائمة التشغيل</string>
     <string name="delete_dialog_title">حذف <xliff:g id="item" example="album">%s</xliff:g>؟</string>
-    <string name="clear_top_tracks_title">مسح الأغاني الأعلى</string>
+    <string name="clear_top_tracks_title">مسح الأغاني الأعلى </string>
     <string name="clear_recent_title">مسح الأغاني التي أذيعت مؤخراً؟</string>
     <string name="clear_last_added">مسح آخر أغاني أضيفت؟</string>
     <string name="cannot_be_undone">لا يمكن التراجع عن هذا</string>
@@ -149,7 +149,7 @@
     <string name="empty_recent">الأغاني التي استمعت إليها مؤخراً ستظهر هنا.</string>
     <string name="empty_playlist_main">لا توجد أغاني في قائمة التشغيل</string>
     <string name="empty_playlist_secondary">لإضافة الأغاني إلى قائمة التشغيل هذه، انقر فوق قائمة خيارات أي أغنية أو ألبوم أو الفنان وحدد \"إضافة إلى قائمة التشغيل\".</string>
-    <string name="empty_top_tracks_main">لا توجد أغاني أعلى</string>
+    <string name="empty_top_tracks_main">لا توجد أغاني أعلى </string>
     <string name="empty_top_tracks_secondary">ستُضاف الأغاني التي تسمعها كثيراً إلى هذه القائمة.</string>
     <string name="empty_last_added_main">لم تُضف أغاني مؤخراً</string>
     <string name="empty_last_added">هنا ستظهر الأغاني التي قمت بإضافتها خلال الشهر الماضي.</string>
@@ -170,7 +170,7 @@
     <string name="header_10_to_30_minutes">10 - 30 دقيقة</string>
     <string name="header_30_to_60_minutes">30 - 60 دقيقة</string>
     <string name="header_greater_than_60_minutes">أكثر من 60 دقيقة</string>
-    <string name="header_1_song">١ أغنية</string>
+    <string name="header_1_song">١ أغنية </string>
     <string name="header_2_to_4_songs">2-4 أغاني</string>
     <string name="header_5_to_9_songs">5-9 أغاني</string>
     <string name="header_10_plus_songs">10 + أغاني</string>
