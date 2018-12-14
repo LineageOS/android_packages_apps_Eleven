@@ -18,21 +18,38 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Page titles -->
+    <string name="page_albums">Casgliadau</string>
     <!-- Section Headers -->
+    <string name="header_albums">Casgliadau</string>
     <!-- Option menu items -->
     <!-- Playlist items -->
     <!-- Sort orders -->
+    <string name="sort_order_entry_za">Y i A</string>
+    <string name="sort_order_entry_year">Blwyddyn</string>
+    <string name="sort_order_entry_number_of_albums">Nifer o gasgliadau</string>
     <!-- Default playlist names -->
     <!-- AlertDialog items -->
     <string name="cancel">Diddymu</string>
+    <string name="cannot_be_undone">Nid yw\'n bosib dadwneud hyn.</string>
+    <string name="old_photo">Defnyddio hen lun</string>
     <!-- Context menu items -->
+    <string name="context_menu_use_as_ringtone">Defnyddio fel tôn canu</string>
     <!-- Content descriptions -->
     <!-- Toast messages -->
     <!-- Settings -->
     <!-- App widget -->
     <!-- Empty list / error messages -->
+    <string name="empty_music">I gopïo cerddoriaeth o dy gyfrifiadur i dy ddyfais, defnyddia gebl USB.</string>
+    <string name="empty_playlist_secondary">I ychwanegu traciau at y rhestr chwarae hon, tara dewislen opsiynau trac, casgliad neu artist a dewis \"Ychwanegu i\'r rhestr chwarae\".</string>
+    <string name="empty_top_tracks_secondary">Caiff y traciau wyt yn eu chwarae amlaf eu hychwanegu i\'r rhestr hon.</string>
+    <string name="empty_generic_secondary">I gopïo cerddoriaeth o dy gyfrifiadur i dy ddyfais, defnyddia gebl USB.</string>
+    <string name="error_playing_track">Methu â chwarae trac %1$s</string>
     <!-- Section Headers -->
+    <string name="header_unknown_year">Blwyddyn anhysbys</string>
     <string name="header_1_to_2_minutes">1 - 2 munud</string>
     <string name="header_10_to_30_minutes">10 - 30 munud</string>
     <string name="header_1_song">1 cân</string>
+    <string name="header_5_plus_albums">5+ casgliad</string>
+    <string name="footer_search_albums">Dangos pob casgliad</string>
+    <string name="search_title_albums">Pob \"%s\" casgliad</string>
 </resources>
