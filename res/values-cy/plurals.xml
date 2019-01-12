@@ -17,15 +17,71 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Used to indicate the number of artists -->
-  <!-- Used to indicate the number of albums for an artist -->
-  <!-- Used to indicate the number of songs for an album -->
-  <!-- Used to indicate the number of genres -->
-  <!-- Used to show a shortened version of hours-->
-  <!-- Used to show a shortened version of minutes -->
-  <!-- Toasts after adding song(s) to playlists -->
-  <!-- Toasts after removing song(s) from playlists -->
-  <!-- Toasts after adding song(s) to queue -->
-  <!-- Toasts after adding song(s) to the favorites list -->
-  <!-- Toast confirming that song(s) was/were deleted. -->
+    <!-- Used to indicate the number of artists -->
+    <plurals name="Nartists">
+        <item quantity="zero"><xliff:g id="count">%d</xliff:g> artistiaid</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> artist</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> artist</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> artist</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> artist</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> artist</item>
+    </plurals>
+    <!-- Used to indicate the number of albums for an artist -->
+    <plurals name="Nalbums">
+        <item quantity="zero"><xliff:g id="count">%d</xliff:g> casgliadau</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> casgliad</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> gasgliad</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> casgliad</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> chasgliad</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> casgliad</item>
+    </plurals>
+    <!-- Used to indicate the number of songs for an album -->
+    <plurals name="Nsongs">
+        <item quantity="zero"><xliff:g id="count">%d</xliff:g> traciau</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> trac</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> drac</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> trac</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> thrac</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> trac</item>
+    </plurals>
+    <!-- Used to indicate the number of genres -->
+    <plurals name="Ngenres">
+        <item quantity="zero"><xliff:g id="count">%d</xliff:g> genres</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> genre</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> genres</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> genres</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> genres</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> genres</item>
+    </plurals>
+    <!-- Used to show a shortened version of hours-->
+    <plurals name="Nhours">
+        <item quantity="zero"><xliff:g id="hours">%d</xliff:g>a</item>
+        <item quantity="one"><xliff:g id="hours">%d</xliff:g>a</item>
+        <item quantity="two"><xliff:g id="hours">%d</xliff:g>a</item>
+        <item quantity="few"><xliff:g id="hours">%d</xliff:g>a</item>
+        <item quantity="many"><xliff:g id="hours">%d</xliff:g>a</item>
+        <item quantity="other"><xliff:g id="hours">%d</xliff:g>a</item>
+    </plurals>
+    <!-- Used to show a shortened version of minutes -->
+    <plurals name="Nminutes">
+        <item quantity="zero"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="two"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="few"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="many"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
+    </plurals>
+    <!-- Toasts after adding song(s) to playlists -->
+    <!-- Toasts after removing song(s) from playlists -->
+    <!-- Toasts after adding song(s) to queue -->
+    <!-- Toasts after adding song(s) to the favorites list -->
+    <plurals name="NNNtrackstofavorites">
+        <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> traciau wedi\'u hychwanegu at ffefrynnau.</item>
+        <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'i ychwanegu at ffefrynnau.</item>
+        <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> drac wedi\'u hychwanegu at ffefrynnau.</item>
+        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u hychwanegu at ffefrynnau.</item>
+        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> thrac wedi\'u hychwanegu at ffefrynnau.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u hychwanegu at ffefrynnau.</item>
+    </plurals>
+    <!-- Toast confirming that song(s) was/were deleted. -->
 </resources>
