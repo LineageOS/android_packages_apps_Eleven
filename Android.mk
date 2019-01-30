@@ -11,8 +11,7 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v8-renderscript \
     android-common \
-    guava \
-    junit
+    guava
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \
