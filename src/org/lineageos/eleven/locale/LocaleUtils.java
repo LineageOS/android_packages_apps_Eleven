@@ -18,12 +18,11 @@ package org.lineageos.eleven.locale;
 
 import android.provider.ContactsContract.FullNameStyle;
 import android.provider.ContactsContract.PhoneticNameStyle;
+import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.util.Log;
 
 import org.lineageos.eleven.locale.HanziToPinyin.Token;
-
-import com.google.common.annotations.VisibleForTesting;
 
 import java.lang.Character.UnicodeBlock;
 import java.util.ArrayList;

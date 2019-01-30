@@ -17,11 +17,11 @@
 package org.lineageos.eleven.locale;
 
 import android.content.Context;
+import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
 import android.util.Log;
 
 import org.lineageos.eleven.provider.PropertiesStore;
-import com.google.common.annotations.VisibleForTesting;
 
 import java.util.Locale;
 
