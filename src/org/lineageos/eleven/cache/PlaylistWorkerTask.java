@@ -345,7 +345,6 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
                 combinedCanvas.drawBitmap(loadedBitmaps.get(3), null,
                         new Rect(width / 2, height / 2, width, height), null);
 
-                combinedCanvas.release();
                 combinedCanvas = null;
                 bitmap = combinedBitmap;
             }
