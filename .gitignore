@@ -1,6 +1,10 @@
-bin/
-gen/
+/bin/
+/build/
+/gen/
+/local.properties
+
 *.iml
 **~
 **.DS_Store
+.gradle/
 .idea/

@@ -14,6 +14,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \
+    android-support-v7-appcompat \
     android-support-v7-cardview \
     android-support-v7-palette \
     android-support-v7-recyclerview
@@ -39,5 +40,4 @@ endif
 include $(BUILD_PACKAGE)
 
 include $(CLEAR_VARS)
-
 include $(BUILD_MULTI_PREBUILT)
