@@ -18,14 +18,13 @@ package org.lineageos.eleven.locale;
 
 import android.content.Context;
 import android.support.annotation.VisibleForTesting;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
 import org.lineageos.eleven.provider.PropertiesStore;
 
 import java.util.Locale;
-
-import libcore.icu.ICU;
 
 public class LocaleSetManager {
     private static final String TAG = LocaleSetManager.class.getSimpleName();
@@ -57,9 +56,9 @@ public class LocaleSetManager {
         // if our icu version has changed, return true
         final String storedICUversion = PropertiesStore.getInstance(mContext)
                 .getProperty(PropertiesStore.DbProperties.ICU_VERSION);
-        if (!ICU.getIcuVersion().equals(storedICUversion)) {
+        if (!String.valueOf(Build.VERSION.SDK_INT).equals(storedICUversion)) {
             Log.d(TAG, "ICU version has changed from: " + storedICUversion + " to "
-                    + ICU.getIcuVersion());
+                    + String.valueOf(Build.VERSION.SDK_INT));
             return true;
         }
 
