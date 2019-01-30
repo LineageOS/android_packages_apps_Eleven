@@ -90,6 +90,11 @@ public class SearchActivity extends FragmentActivity implements
         OnScrollListener, OnQueryTextListener, OnItemClickListener, ServiceConnection,
         OnTouchListener {
     /**
+     * Intent extra for identifying the search type to filter for
+     */
+    public static String EXTRA_SEARCH_MODE = "search_mode";
+
+    /**
      * Loading delay of 500ms so we don't flash the screen too much when loading new searches
      */
     private static int LOADING_DELAY = 500;
@@ -308,7 +313,7 @@ public class SearchActivity extends FragmentActivity implements
             mTopLevelSearch = false;
 
             // get the search type to filter by
-            int type = getIntent().getIntExtra(SearchManager.SEARCH_MODE, -1);
+            int type = getIntent().getIntExtra(SearchActivity.EXTRA_SEARCH_MODE, -1);
             if (type >= 0 && type < ResultType.values().length) {
                 mSearchType = ResultType.values()[type];
             }
@@ -554,9 +559,8 @@ public class SearchActivity extends FragmentActivity implements
      */
     public void setLoading() {
         if (mCurrentState != VisibleState.Loading) {
-            if (!mHandler.hasCallbacks(mLoadingRunnable)) {
-                mHandler.postDelayed(mLoadingRunnable, LOADING_DELAY);
-            }
+            mHandler.removeCallbacks(mLoadingRunnable);
+            mHandler.postDelayed(mLoadingRunnable, LOADING_DELAY);
         }
     }
 
@@ -646,7 +650,7 @@ public class SearchActivity extends FragmentActivity implements
             SearchResult item = mAdapter.getTItem(position - 1);
             Intent intent = new Intent(this, SearchActivity.class);
             intent.putExtra(SearchManager.QUERY, mFilterString);
-            intent.putExtra(SearchManager.SEARCH_MODE, item.mType.ordinal());
+            intent.putExtra(SearchActivity.EXTRA_SEARCH_MODE, item.mType.ordinal());
             startActivity(intent);
         } else {
             SearchResult item = mAdapter.getTItem(position);

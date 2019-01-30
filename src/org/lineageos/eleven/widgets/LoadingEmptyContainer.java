@@ -63,9 +63,9 @@ public class LoadingEmptyContainer extends FrameLayout {
     public void showLoading() {
         hideAll();
 
-        if (!mHandler.hasCallbacks(mShowLoadingRunnable)) {
-            mHandler.postDelayed(mShowLoadingRunnable, LOADING_DELAY);
-        }
+        mHandler.removeCallbacks(mShowLoadingRunnable);
+
+        mHandler.postDelayed(mShowLoadingRunnable, LOADING_DELAY);
     }
 
     public void showNoResults() {
