@@ -63,9 +63,11 @@ import org.lineageos.eleven.provider.SongPlayCount;
 import org.lineageos.eleven.service.MusicPlaybackTrack;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.WeakHashMap;
 
 /**
@@ -1417,7 +1419,32 @@ public final class MusicUtils {
     }
 
     /**
-     * Creates a sub menu used to add items to a new playlist or an existsing
+     * Creates a map used to add items to a new playlist or an existing one.
+     *
+     * @param context The {@link Context} to use.
+     */
+    public static List<String> makePlaylist(final Context context) {
+        final List<String> menuItemMap = new ArrayList<>();
+        menuItemMap.add(context.getString(R.string.new_playlist));
+
+        final Cursor cursor = PlaylistLoader.makePlaylistCursor(context);
+        if (cursor != null && cursor.getCount() > 0 && cursor.moveToFirst()) {
+            while (!cursor.isAfterLast()) {
+                final String name = cursor.getString(1);
+                if (name != null) {
+                    menuItemMap.add(name);
+                }
+                cursor.moveToNext();
+            }
+        }
+        if (cursor != null) {
+            cursor.close();
+        }
+        return menuItemMap;
+    }
+
+    /**
+     * Creates a sub menu used to add items to a new playlist or an existing
      * one.
      *
      * @param context The {@link Context} to use.
@@ -1425,25 +1452,15 @@ public final class MusicUtils {
      * @param menu The {@link Menu} to add to.
      */
     public static void makePlaylistMenu(final Context context, final int groupId,
-            final Menu menu) {
+                                        final Menu menu) {
         menu.clear();
-        menu.add(groupId, FragmentMenuItems.NEW_PLAYLIST, Menu.NONE, R.string.new_playlist);
-        Cursor cursor = PlaylistLoader.makePlaylistCursor(context);
-        if (cursor != null && cursor.getCount() > 0 && cursor.moveToFirst()) {
-            while (!cursor.isAfterLast()) {
-                final Intent intent = new Intent();
-                String name = cursor.getString(1);
-                if (name != null) {
-                    intent.putExtra("playlist", getIdForPlaylist(context, name));
-                    menu.add(groupId, FragmentMenuItems.PLAYLIST_SELECTED, Menu.NONE,
-                            name).setIntent(intent);
-                }
-                cursor.moveToNext();
-            }
-        }
-        if (cursor != null) {
-            cursor.close();
-            cursor = null;
+
+        final List<String> menuItemList = makePlaylist(context);
+        for (final String name : menuItemList) {
+            final Intent intent = new Intent();
+            intent.putExtra("playlist", getIdForPlaylist(context, name));
+            menu.add(groupId, FragmentMenuItems.PLAYLIST_SELECTED, Menu.NONE, name)
+                    .setIntent(intent);
         }
     }
 
