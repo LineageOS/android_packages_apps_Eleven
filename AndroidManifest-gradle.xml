@@ -19,10 +19,6 @@
     android:versionCode="3"
     android:versionName="3.0">
 
-    <uses-sdk
-        android:minSdkVersion="26"
-        android:targetSdkVersion="28" />
-
     <original-package android:name="com.cyanogenmod.eleven" />
 
     <!-- Used for caching and creating new playlists -->
