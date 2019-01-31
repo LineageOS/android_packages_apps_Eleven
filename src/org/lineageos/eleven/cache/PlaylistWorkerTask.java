@@ -25,7 +25,6 @@ import android.graphics.drawable.TransitionDrawable;
 import android.provider.MediaStore;
 import android.widget.ImageView;
 
-import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
 import org.lineageos.eleven.loaders.PlaylistSongLoader;
 import org.lineageos.eleven.loaders.SortedCursor;
@@ -125,11 +124,8 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
         }
 
         // otherwise re-run the logic to get the bitmap
-        Cursor sortedCursor = null;
-
-        try {
+        try (Cursor sortedCursor = getTopSongsForPlaylist()) {
             // get the top songs for our playlist
-            sortedCursor = getTopSongsForPlaylist();
 
             if (isCancelled()) {
                 return null;
@@ -157,10 +153,6 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
                 bitmap = loadTopArtist(sortedCursor);
             } else {
                 bitmap = loadTopSongs(sortedCursor);
-            }
-        } finally {
-            if (sortedCursor != null) {
-                sortedCursor.close();
             }
         }
 
@@ -276,7 +268,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             return null;
         }
 
-        ArrayList<Bitmap> loadedBitmaps = new ArrayList<Bitmap>(MAX_NUM_BITMAPS_TO_LOAD);
+        ArrayList<Bitmap> loadedBitmaps = new ArrayList<>(MAX_NUM_BITMAPS_TO_LOAD);
 
         final int artistIdx = sortedCursor.getColumnIndex(MediaStore.Audio.AudioColumns.ARTIST);
         final int albumIdIdx = sortedCursor.getColumnIndex(MediaStore.Audio.AudioColumns.ALBUM_ID);
@@ -288,7 +280,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
         long albumId = -1;
 
         // create a hashset of the keys so we don't load images from the same album multiple times
-        HashSet<String> keys = new HashSet<String>(sortedCursor.getCount());
+        HashSet<String> keys = new HashSet<>(sortedCursor.getCount());
 
         do {
             if (isCancelled()) {
