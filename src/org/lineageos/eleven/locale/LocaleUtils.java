@@ -199,7 +199,7 @@ public class LocaleUtils {
 
         public ArrayList<String> getLabels() {
             final int bucketCount = getBucketCount();
-            final ArrayList<String> labels = new ArrayList<String>(bucketCount);
+            final ArrayList<String> labels = new ArrayList<>(bucketCount);
             for(int i = 0; i < bucketCount; ++i) {
                 labels.add(getBucketLabel(i));
             }
@@ -236,7 +236,7 @@ public class LocaleUtils {
         // blocks are included but Korean Hangul and jamo are not).
         private static final Set<Character.UnicodeBlock> CJ_BLOCKS;
         static {
-            Set<UnicodeBlock> set = new HashSet<UnicodeBlock>();
+            Set<UnicodeBlock> set = new HashSet<>();
             set.add(UnicodeBlock.HIRAGANA);
             set.add(UnicodeBlock.KATAKANA);
             set.add(UnicodeBlock.KATAKANA_PHONETIC_EXTENSIONS);
@@ -344,7 +344,7 @@ public class LocaleUtils {
                     TextUtils.equals(name, romajiName)) {
                 return null;
             }
-            final HashSet<String> keys = new HashSet<String>();
+            final HashSet<String> keys = new HashSet<>();
             keys.add(romajiName);
             return keys.iterator();
         }
@@ -378,7 +378,7 @@ public class LocaleUtils {
 
         public static Iterator<String> getPinyinNameLookupKeys(String name) {
             // TODO : Reduce the object allocation.
-            HashSet<String> keys = new HashSet<String>();
+            HashSet<String> keys = new HashSet<>();
             ArrayList<Token> tokens = HanziToPinyin.getInstance().getTokens(name);
             final int tokenCount = tokens.size();
             final StringBuilder keyPinyin = new StringBuilder();
