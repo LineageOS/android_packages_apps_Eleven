@@ -50,7 +50,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
     private static final int MAX_ALBUM_ARTIST_SIZE = 10;
 
     // This helps with flickering and jumping and reloading the same tracks
-    private final static LinkedList<AlbumArtistDetails> sCacheAlbumArtistDetails = new LinkedList<AlbumArtistDetails>();
+    private final static LinkedList<AlbumArtistDetails> sCacheAlbumArtistDetails = new LinkedList<>();
 
     /**
      * Adds the album artist details to the cache
