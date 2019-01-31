@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.lineageos.eleven.BuildConstants;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ICacheListener;
@@ -152,7 +153,8 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
      * and handles loading the album art for a given audio id
      */
     public static class AlbumArtFragment extends Fragment implements ICacheListener {
-        private static final String ID = "org.lineageos.eleven.adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
+        private static final String ID = BuildConstants.PACKAGE_NAME +
+                ".adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
 
         private View mRootView;
         private AlbumArtistLoader mTask;
