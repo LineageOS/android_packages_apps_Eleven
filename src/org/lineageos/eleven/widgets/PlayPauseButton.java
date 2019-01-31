@@ -21,8 +21,6 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 import org.lineageos.eleven.R;

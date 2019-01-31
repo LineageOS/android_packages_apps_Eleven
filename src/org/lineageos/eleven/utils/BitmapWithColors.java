@@ -19,7 +19,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Looper;
 import android.support.v7.graphics.Palette;
-import android.support.v7.graphics.Target;
 import android.util.LruCache;
 
 public class BitmapWithColors {
@@ -68,7 +67,7 @@ public class BitmapWithColors {
 
     private static final int CACHE_SIZE_MAX = 20;
     private static final LruCache<Integer, BitmapColors> sCachedColors =
-            new LruCache<Integer, BitmapColors>(CACHE_SIZE_MAX);
+            new LruCache<>(CACHE_SIZE_MAX);
 
     private Bitmap mBitmap;
     private int mBitmapKey;

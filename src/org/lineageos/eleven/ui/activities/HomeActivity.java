@@ -500,14 +500,12 @@ public class HomeActivity extends SlidingPanelActivity implements
     }
 
     private boolean needRequestStoragePermission() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) return false;
-
         boolean needRequest = false;
         String[] permissions = {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE
         };
-        ArrayList<String> permissionList = new ArrayList<String>();
+        ArrayList<String> permissionList = new ArrayList<>();
         for (String permission : permissions) {
             if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
                 permissionList.add(permission);

@@ -115,7 +115,7 @@ public abstract class BasicSongFragment extends Fragment implements
         };
 
         // Create the adapter
-        mAdapter = new SectionAdapter<Song, SongAdapter>(getActivity(), createAdapter());
+        mAdapter = new SectionAdapter<>(getActivity(), createAdapter());
         mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
             @Override
             public void onPopupMenuClicked(View v, int position) {

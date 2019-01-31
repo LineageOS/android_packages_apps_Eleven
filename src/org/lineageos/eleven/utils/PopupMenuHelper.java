@@ -164,7 +164,7 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
      * @param menu Menu to use for adding to
      */
     public void createPopupMenu(final Menu menu) {
-        TreeSet<Integer> menuItems = new TreeSet<Integer>();
+        TreeSet<Integer> menuItems = new TreeSet<>();
 
         // get the default items and add them
         int[] defaultItems = getIdsForType(mType);
