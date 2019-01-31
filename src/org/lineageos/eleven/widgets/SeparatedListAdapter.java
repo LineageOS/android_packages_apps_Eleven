@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class SeparatedListAdapter extends BaseAdapter {
 
-    public final Map<String, Adapter> mSections = new LinkedHashMap<String, Adapter>();
+    public final Map<String, Adapter> mSections = new LinkedHashMap<>();
 
     public final ArrayAdapter<String> mHeaders;
 
@@ -27,7 +27,7 @@ public class SeparatedListAdapter extends BaseAdapter {
      * @param context The {@link Context} to use.
      */
     public SeparatedListAdapter(final Context context) {
-        mHeaders = new ArrayAdapter<String>(context, R.layout.list_header);
+        mHeaders = new ArrayAdapter<>(context, R.layout.list_header);
     }
 
     /**

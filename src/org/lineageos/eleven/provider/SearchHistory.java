@@ -139,7 +139,7 @@ public class SearchHistory {
     public ArrayList<String> getRecentSearches() {
         Cursor searches = queryRecentSearches(String.valueOf(MAX_ITEMS_IN_DB));
 
-        ArrayList<String> results = new ArrayList<String>(MAX_ITEMS_IN_DB);
+        ArrayList<String> results = new ArrayList<>(MAX_ITEMS_IN_DB);
 
         try {
             if (searches != null && searches.moveToFirst()) {
