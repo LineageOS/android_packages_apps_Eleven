@@ -30,6 +30,9 @@ public class LocaleChangeReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        LocalizedStore.getInstance(context).onLocaleChanged();
+        final String action = intent.getAction();
+        if (Intent.ACTION_LOCALE_CHANGED.equals(action)) {
+            LocalizedStore.getInstance(context).onLocaleChanged();
+        }
     }
 }
