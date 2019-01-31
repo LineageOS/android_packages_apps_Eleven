@@ -24,7 +24,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -84,7 +83,7 @@ public final class ElevenUtils {
      * @param context The {@link Context} to use.
      * @return True if the device is a tablet, false otherwise.
      */
-    public static final boolean isTablet(final Context context) {
+    public static boolean isTablet(final Context context) {
         final int layout = context.getResources().getConfiguration().screenLayout;
         return (layout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
@@ -95,7 +94,7 @@ public final class ElevenUtils {
      * @param context The {@link Context} to use.
      * @return True if the device is in landscape mode, false otherwise.
      */
-    public static final boolean isLandscape(final Context context) {
+    public static boolean isLandscape(final Context context) {
         final int orientation = context.getResources().getConfiguration().orientation;
         return orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
@@ -109,14 +108,9 @@ public final class ElevenUtils {
      *            {@link AsyncTask#execute(Object[])}
      * @param <T> Task argument type
      */
-    @SuppressLint("NewApi")
     public static <T> void execute(final boolean forceSerial, final AsyncTask<T, ?, ?> task,
             final T... args) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.DONUT) {
-            throw new UnsupportedOperationException(
-                    "This class can only be used on API 4 and newer.");
-        }
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB || forceSerial) {
+        if (forceSerial) {
             task.execute(args);
         } else {
             task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, args);
@@ -133,7 +127,7 @@ public final class ElevenUtils {
      *         settings, the mobile data and other network connections aren't
      *         returned at all
      */
-    public static final boolean isOnline(final Context context) {
+    public static boolean isOnline(final Context context) {
         /*
          * This sort of handles a sudden configuration change, but I think it
          * should be dealt with in a more professional way.

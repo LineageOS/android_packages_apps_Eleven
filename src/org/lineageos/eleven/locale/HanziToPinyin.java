@@ -133,7 +133,7 @@ public class HanziToPinyin {
      * Token. If there is no Chinese transliterator, the empty token array is returned.
      */
     public ArrayList<Token> getTokens(final String input) {
-        ArrayList<Token> tokens = new ArrayList<Token>();
+        ArrayList<Token> tokens = new ArrayList<>();
         if (!hasChineseTransliterator() || TextUtils.isEmpty(input)) {
             // return empty tokens.
             return tokens;

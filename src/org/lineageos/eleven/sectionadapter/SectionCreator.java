@@ -73,6 +73,6 @@ public class SectionCreator<T> extends WrappedAsyncTaskLoader<SectionListContain
             sections = SectionCreatorUtils.createSections(results, mComparator);
         }
 
-        return new SectionListContainer<T>(sections, results);
+        return new SectionListContainer<>(sections, results);
     }
 }
