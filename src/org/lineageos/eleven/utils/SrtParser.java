@@ -70,7 +70,7 @@ public class SrtParser {
                 entry.mStartTimeMs = parseMs(startEnd[0]);
                 entry.mEndTimeMs = parseMs(startEnd[1]);
 
-                StringBuilder subtitleBuilder = new StringBuilder("");
+                StringBuilder subtitleBuilder = new StringBuilder();
                 String s = br.readLine();
 
                 if (!TextUtils.isEmpty(s)) {
@@ -84,7 +84,7 @@ public class SrtParser {
                 entry.mLine = subtitleBuilder.toString();
 
                 if (ret == null) {
-                    ret = new ArrayList<SrtEntry>();
+                    ret = new ArrayList<>();
                 }
 
                 ret.add(entry);

@@ -176,7 +176,7 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         final int idCol = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID);
         final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
 
-        ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();
+        ArrayList<ContentProviderOperation> ops = new ArrayList<>();
 
         // Delete all results in the playlist
         ops.add(ContentProviderOperation.newDelete(uri).build());

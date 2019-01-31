@@ -34,7 +34,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore.Audio.Media;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -714,7 +713,7 @@ public class AudioPreviewActivity extends Activity implements MediaPlayer.OnComp
             if (activity == null) {
                 throw new IllegalArgumentException("'activity' cannot be null!");
             }
-            mActivityReference = new WeakReference<AudioPreviewActivity>(activity);
+            mActivityReference = new WeakReference<>(activity);
             setOnErrorListener(activity);
             setOnCompletionListener(activity);
         }

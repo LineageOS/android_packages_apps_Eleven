@@ -272,7 +272,7 @@ public class SearchActivity extends FragmentActivity implements
 
         // Initialize the adapter
         SummarySearchAdapter adapter = new SummarySearchAdapter(this);
-        mAdapter = new SectionAdapter<SearchResult, SummarySearchAdapter>(this, adapter);
+        mAdapter = new SectionAdapter<>(this, adapter);
         // Set the prefix
         mAdapter.getUnderlyingAdapter().setPrefix(mFilterString);
         mAdapter.setupHeaderParameters(R.layout.list_search_header, false);
@@ -400,7 +400,7 @@ public class SearchActivity extends FragmentActivity implements
             comparator = SectionCreatorUtils.createSearchResultComparison(this);
         }
 
-        return new SectionCreator<SearchResult>(this,
+        return new SectionCreator<>(this,
                 new SummarySearchLoader(this, mFilterString, mSearchType),
                 comparator);
     }
@@ -757,7 +757,7 @@ public class SearchActivity extends FragmentActivity implements
          * @return the results for that search
          */
         protected List<SearchResult> runSearchForType() {
-            ArrayList<SearchResult> results = new ArrayList<SearchResult>();
+            ArrayList<SearchResult> results = new ArrayList<>();
             Cursor cursor = null;
             try {
                 if (mSearchType == ResultType.Playlist) {
@@ -803,7 +803,7 @@ public class SearchActivity extends FragmentActivity implements
          * @return the results for that search
          */
         public List<SearchResult> runGenericSearch() {
-            ArrayList<SearchResult> results = new ArrayList<SearchResult>();
+            ArrayList<SearchResult> results = new ArrayList<>();
             // number of types to query for
             final int numTypes = ResultType.getNumTypes();
 
@@ -899,14 +899,12 @@ public class SearchActivity extends FragmentActivity implements
                 keywords[i] = "%" + keywords[i] + "%";
             }
 
-            String where = "";
-
-            // make the where clause
+            final StringBuilder where = new StringBuilder();
             for (int i = 0; i < keywords.length; i++) {
                 if (i == 0) {
-                    where = "name LIKE ?";
+                    where.append("name LIKE ?");
                 } else {
-                    where += " AND name LIKE ?";
+                    where.append(" AND name LIKE ?");
                 }
             }
 
@@ -917,7 +915,7 @@ public class SearchActivity extends FragmentActivity implements
                             BaseColumns._ID,
                         /* 1 */
                             MediaStore.Audio.PlaylistsColumns.NAME
-                    }, where, keywords, MediaStore.Audio.Playlists.DEFAULT_SORT_ORDER);
+                    }, where.toString(), keywords, MediaStore.Audio.Playlists.DEFAULT_SORT_ORDER);
         }
     }
 
@@ -932,7 +930,7 @@ public class SearchActivity extends FragmentActivity implements
         @Override
         public ArrayAdapter<String> loadInBackground() {
             ArrayList<String> strings = SearchHistory.getInstance(getContext()).getRecentSearches();
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
                     R.layout.list_item_search_history, R.id.line_one);
             adapter.addAll(strings);
             return adapter;

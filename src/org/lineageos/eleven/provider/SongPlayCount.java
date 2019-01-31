@@ -285,7 +285,7 @@ public class SongPlayCount {
             return null;
         }
 
-        HashSet<Long> uniqueIds = new HashSet<Long>(ids.length);
+        HashSet<Long> uniqueIds = new HashSet<>(ids.length);
 
         // create the list of ids to select against
         StringBuilder selection = new StringBuilder();
@@ -344,9 +344,8 @@ public class SongPlayCount {
         }
 
         // append the remaining items - these are songs that haven't been played recently
-        Iterator<Long> iter = uniqueIds.iterator();
-        while (iter.hasNext()) {
-            sortedList[idx++] = iter.next();
+        for (final Long uniqueId : uniqueIds) {
+            sortedList[idx++] = uniqueId;
         }
 
         return sortedList;

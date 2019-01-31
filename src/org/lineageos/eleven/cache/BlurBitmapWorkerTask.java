@@ -74,7 +74,7 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
                                 final ImageType imageType, final Drawable fromDrawable,
                                 final Context context, final RenderScript renderScript) {
         super(key, blurScrimImage.getImageView(), imageType, fromDrawable, context);
-        mBlurScrimImage = new WeakReference<BlurScrimImage>(blurScrimImage);
+        mBlurScrimImage = new WeakReference<>(blurScrimImage);
         mRenderScript = renderScript;
 
         // use the existing image as the drawable and if it doesn't exist fallback to transparent

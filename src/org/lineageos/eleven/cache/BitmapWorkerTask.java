@@ -88,7 +88,7 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
         mImageCache = ImageCache.getInstance(mContext);
         mResources = mContext.getResources();
 
-        mImageReference = new WeakReference<ImageView>(imageView);
+        mImageReference = new WeakReference<>(imageView);
         mImageType = imageType;
 
         // A transparent image (layer 0) and the new result (layer 1)

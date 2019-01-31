@@ -456,7 +456,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
          * Constructor of <code>PlaybackStatus</code>
          */
         public QueueUpdateListener(final QueueFragment fragment) {
-            mReference = new WeakReference<QueueFragment>(fragment);
+            mReference = new WeakReference<>(fragment);
         }
 
         /**
@@ -466,12 +466,20 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         public void onReceive(final Context context, final Intent intent) {
             // TODO: Invalid options menu if opened?
             final String action = intent.getAction();
-            if (action.equals(MusicPlaybackService.META_CHANGED)) {
-                mReference.get().mAdapter.setCurrentQueuePosition(MusicUtils.getQueuePosition());
-            } else if (action.equals(MusicPlaybackService.PLAYSTATE_CHANGED)) {
-                mReference.get().mAdapter.notifyDataSetChanged();
-            } else if (action.equals(MusicPlaybackService.QUEUE_CHANGED)) {
-                mReference.get().refreshQueue();
+            if (action == null || action.isEmpty()) {
+                return;
+            }
+
+            switch (action) {
+                case MusicPlaybackService.META_CHANGED:
+                    mReference.get().mAdapter.setCurrentQueuePosition(MusicUtils.getQueuePosition());
+                    break;
+                case MusicPlaybackService.PLAYSTATE_CHANGED:
+                    mReference.get().mAdapter.notifyDataSetChanged();
+                    break;
+                case MusicPlaybackService.QUEUE_CHANGED:
+                    mReference.get().refreshQueue();
+                    break;
             }
         }
     }

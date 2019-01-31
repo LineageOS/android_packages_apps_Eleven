@@ -15,14 +15,12 @@
 */
 package org.lineageos.eleven.ui.fragments;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -125,11 +123,7 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
         mHero.getViewTreeObserver().addOnGlobalLayoutListener( new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    mHero.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                } else {
-                    mHero.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                }
+                mHero.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 ImageFetcher.getInstance(getActivity()).loadArtistImage(mArtistName, mHero, true);
             }
         });

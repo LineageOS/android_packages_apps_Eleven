@@ -496,7 +496,7 @@ public class MusicPlaybackService extends Service {
 
     private String mLyrics;
 
-    private ArrayList<MusicPlaybackTrack> mPlaylist = new ArrayList<MusicPlaybackTrack>(100);
+    private ArrayList<MusicPlaybackTrack> mPlaylist = new ArrayList<>(100);
 
     private long[] mAutoShuffleList = null;
 
@@ -914,7 +914,7 @@ public class MusicPlaybackService extends Service {
         // Make sure we don't indefinitely hold the wake lock under any circumstances
         mHeadsetHookWakeLock.acquire(10000);
 
-        Message msg = mPlayerHandler.obtainMessage(HEADSET_HOOK_EVENT, Long.valueOf(timestamp));
+        Message msg = mPlayerHandler.obtainMessage(HEADSET_HOOK_EVENT, timestamp);
         msg.sendToTarget();
     }
 
@@ -1153,7 +1153,7 @@ public class MusicPlaybackService extends Service {
             position = mPlaylist.size();
         }
 
-        final ArrayList<MusicPlaybackTrack> arrayList = new ArrayList<MusicPlaybackTrack>(addlen);
+        final ArrayList<MusicPlaybackTrack> arrayList = new ArrayList<>(addlen);
         for (int i = 0; i < list.length; i++) {
             arrayList.add(new MusicPlaybackTrack(list[i], sourceId, sourceType, i));
         }
@@ -1330,7 +1330,7 @@ public class MusicPlaybackService extends Service {
             // has been played
             final int numHistory = mHistory.size();
             for (int i = 0; i < numHistory; i++) {
-                final int idx = mHistory.get(i).intValue();
+                final int idx = mHistory.get(i);
                 if (idx >= 0 && idx < numTracks) {
                     trackNumPlays[idx]++;
                 }
@@ -1345,12 +1345,12 @@ public class MusicPlaybackService extends Service {
             // how many tracks share that count
             int minNumPlays = Integer.MAX_VALUE;
             int numTracksWithMinNumPlays = 0;
-            for (int i = 0; i < trackNumPlays.length; i++) {
+            for (final int trackNumPlay : trackNumPlays) {
                 // if we found a new track that has less number of plays, reset the counters
-                if (trackNumPlays[i] < minNumPlays) {
-                    minNumPlays = trackNumPlays[i];
+                if (trackNumPlay < minNumPlays) {
+                    minNumPlays = trackNumPlay;
                     numTracksWithMinNumPlays = 1;
-                } else if (trackNumPlays[i] == minNumPlays) {
+                } else if (trackNumPlay == minNumPlays) {
                     // increment this track shares the # of tracks
                     numTracksWithMinNumPlays++;
                 }
@@ -1530,26 +1530,30 @@ public class MusicPlaybackService extends Service {
         musicIntent.setAction(what.replace(ELEVEN_PACKAGE_NAME, MUSIC_PACKAGE_NAME));
         sendStickyBroadcast(musicIntent);
 
-        if (what.equals(META_CHANGED)) {
-            // Add the track to the recently played list.
-            mRecentsCache.addSongId(getAudioId());
+        switch (what) {
+            case META_CHANGED:
+                // Add the track to the recently played list.
+                mRecentsCache.addSongId(getAudioId());
 
-            mSongPlayCountCache.bumpSongCount(getAudioId());
-        } else if (what.equals(QUEUE_CHANGED)) {
-            saveQueue(true);
-            if (isPlaying()) {
-                // if we are in shuffle mode and our next track is still valid,
-                // try to re-use the track
-                // We need to reimplement the queue to prevent hacky solutions like this
-                if (mNextPlayPos >= 0 && mNextPlayPos < mPlaylist.size()
-                        && getShuffleMode() != SHUFFLE_NONE) {
-                    setNextTrack(mNextPlayPos);
-                } else {
-                    setNextTrack();
+                mSongPlayCountCache.bumpSongCount(getAudioId());
+                break;
+            case QUEUE_CHANGED:
+                saveQueue(true);
+                if (isPlaying()) {
+                    // if we are in shuffle mode and our next track is still valid,
+                    // try to re-use the track
+                    // We need to reimplement the queue to prevent hacky solutions like this
+                    if (mNextPlayPos >= 0 && mNextPlayPos < mPlaylist.size()
+                            && getShuffleMode() != SHUFFLE_NONE) {
+                        setNextTrack(mNextPlayPos);
+                    } else {
+                        setNextTrack();
+                    }
                 }
-            }
-        } else {
-            saveQueue(false);
+                break;
+            default:
+                saveQueue(false);
+                break;
         }
 
         if (what.equals(PLAYSTATE_CHANGED)) {
@@ -1928,19 +1932,12 @@ public class MusicPlaybackService extends Service {
      */
     private String getValueForDownloadedFile(Context context, Uri uri, String column) {
 
-        Cursor cursor = null;
         final String[] projection = {
                 column
         };
-
-        try {
-            cursor = context.getContentResolver().query(uri, projection, null, null, null);
+        try (Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null)) {
             if (cursor != null && cursor.moveToFirst()) {
                 return cursor.getString(0);
-            }
-        } finally {
-            if (cursor != null) {
-                cursor.close();
             }
         }
         return null;
@@ -2652,7 +2649,7 @@ public class MusicPlaybackService extends Service {
                 if (removeFromHistory) {
                     mHistory.remove(histsize - 1);
                 }
-                return pos.intValue();
+                return pos;
             } else {
                 if (mPlayPos > 0) {
                     return mPlayPos - 1;
@@ -3009,7 +3006,7 @@ public class MusicPlaybackService extends Service {
          */
         public MusicPlayerHandler(final MusicPlaybackService service, final Looper looper) {
             super(looper);
-            mService = new WeakReference<MusicPlaybackService>(service);
+            mService = new WeakReference<>(service);
         }
 
         /**
@@ -3141,9 +3138,9 @@ public class MusicPlaybackService extends Service {
 
     private static final class Shuffler {
 
-        private final LinkedList<Integer> mHistoryOfNumbers = new LinkedList<Integer>();
+        private final LinkedList<Integer> mHistoryOfNumbers = new LinkedList<>();
 
-        private final TreeSet<Integer> mPreviousNumbers = new TreeSet<Integer>();
+        private final TreeSet<Integer> mPreviousNumbers = new TreeSet<>();
 
         private final Random mRandom = new Random();
 
@@ -3164,8 +3161,7 @@ public class MusicPlaybackService extends Service {
             int next;
             do {
                 next = mRandom.nextInt(interval);
-            } while (next == mPrevious && interval > 1
-                    && !mPreviousNumbers.contains(Integer.valueOf(next)));
+            } while (next == mPrevious && interval > 1 && !mPreviousNumbers.contains(next));
             mPrevious = next;
             mHistoryOfNumbers.add(mPrevious);
             mPreviousNumbers.add(mPrevious);
@@ -3217,7 +3213,7 @@ public class MusicPlaybackService extends Service {
          * Constructor of <code>MultiPlayer</code>
          */
         public MultiPlayer(final MusicPlaybackService service) {
-            mService = new WeakReference<MusicPlaybackService>(service);
+            mService = new WeakReference<>(service);
             mSrtManager = new SrtManager() {
                 @Override
                 public void onTimedText(String text) {
@@ -3499,7 +3495,7 @@ public class MusicPlaybackService extends Service {
         private final WeakReference<MusicPlaybackService> mService;
 
         private ServiceStub(final MusicPlaybackService service) {
-            mService = new WeakReference<MusicPlaybackService>(service);
+            mService = new WeakReference<>(service);
         }
 
         /**

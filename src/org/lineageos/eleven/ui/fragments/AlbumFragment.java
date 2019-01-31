@@ -189,7 +189,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
         mLoadingEmptyContainer.showLoading();
         // if we ever decide to add section headers for grid items, we can pass a compartor
         // instead of null
-        return new SectionCreator<Album>(getActivity(), new AlbumLoader(getActivity()), null);
+        return new SectionCreator<>(getActivity(), new AlbumLoader(getActivity()), null);
     }
 
     /**

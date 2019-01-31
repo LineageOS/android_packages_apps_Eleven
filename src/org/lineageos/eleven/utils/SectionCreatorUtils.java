@@ -344,7 +344,7 @@ public class SectionCreatorUtils {
     public static <T> TreeMap<Integer, Section> createSections(final List<T> list,
                                                               final IItemCompare<T> comparator) {
         if (list != null && list.size() > 0) {
-            TreeMap<Integer, Section> sections = new TreeMap<Integer, Section>();
+            TreeMap<Integer, Section> sections = new TreeMap<>();
             for (int i = 0; i < list.size() + 1; i++) {
                 T first = (i == 0 ? null : list.get(i - 1));
                 T second = (i == list.size() ? null : list.get(i));
@@ -386,38 +386,42 @@ public class SectionCreatorUtils {
     public static IItemCompare<Artist> createArtistComparison(final Context context) {
         IItemCompare<Artist> sectionCreator = null;
 
-        String sortOrder = PreferenceUtils.getInstance(context).getArtistSortOrder();
-        if (sortOrder.equals(SortOrder.ArtistSortOrder.ARTIST_A_Z)
-                || sortOrder.equals(SortOrder.ArtistSortOrder.ARTIST_Z_A)) {
-            sectionCreator = new SectionCreatorUtils.LocalizedCompare<Artist>(context) {
-                @Override
-                public String getString(Artist item) {
-                    return item.mArtistName;
-                }
-
-                @Override
-                public String createHeaderLabel(Artist item) {
-                    if (item.mBucketLabel != null) {
-                        return super.createHeaderLabel(item.mBucketLabel);
+        final String sortOrder = PreferenceUtils.getInstance(context).getArtistSortOrder();
+        switch (sortOrder) {
+            case SortOrder.ArtistSortOrder.ARTIST_A_Z:
+            case SortOrder.ArtistSortOrder.ARTIST_Z_A:
+                sectionCreator = new LocalizedCompare<Artist>(context) {
+                    @Override
+                    public String getString(Artist item) {
+                        return item.mArtistName;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.ArtistSortOrder.ARTIST_NUMBER_OF_ALBUMS)) {
-            sectionCreator = new SectionCreatorUtils.NumberOfAlbumsCompare<Artist>(context) {
-                @Override
-                public int getInt(Artist item) {
-                    return item.mAlbumNumber;
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.ArtistSortOrder.ARTIST_NUMBER_OF_SONGS)) {
-            sectionCreator = new NumberOfSongsCompare<Artist>(context) {
-                @Override
-                public int getInt(Artist item) {
-                    return item.mSongNumber;
-                }
-            };
+                    @Override
+                    public String createHeaderLabel(Artist item) {
+                        if (item.mBucketLabel != null) {
+                            return super.createHeaderLabel(item.mBucketLabel);
+                        }
+
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
+            case SortOrder.ArtistSortOrder.ARTIST_NUMBER_OF_ALBUMS:
+                sectionCreator = new NumberOfAlbumsCompare<Artist>(context) {
+                    @Override
+                    public int getInt(Artist item) {
+                        return item.mAlbumNumber;
+                    }
+                };
+                break;
+            case SortOrder.ArtistSortOrder.ARTIST_NUMBER_OF_SONGS:
+                sectionCreator = new NumberOfSongsCompare<Artist>(context) {
+                    @Override
+                    public int getInt(Artist item) {
+                        return item.mSongNumber;
+                    }
+                };
+                break;
         }
 
         return sectionCreator;
@@ -431,77 +435,82 @@ public class SectionCreatorUtils {
     public static IItemCompare<Album> createAlbumComparison(final Context context) {
         IItemCompare<Album> sectionCreator = null;
 
-        String sortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
-        if (sortOrder.equals(SortOrder.AlbumSortOrder.ALBUM_A_Z)
-                || sortOrder.equals(SortOrder.AlbumSortOrder.ALBUM_Z_A)) {
-            sectionCreator = new LocalizedCompare<Album>(context) {
-                @Override
-                public String getString(Album item) {
-                    return item.mAlbumName;
-                }
-
-                @Override
-                public String createHeaderLabel(Album item) {
-                    if (item.mBucketLabel != null) {
-                        return super.createHeaderLabel(item.mBucketLabel);
+        final String sortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
+        switch (sortOrder) {
+            case SortOrder.AlbumSortOrder.ALBUM_A_Z:
+            case SortOrder.AlbumSortOrder.ALBUM_Z_A:
+                sectionCreator = new LocalizedCompare<Album>(context) {
+                    @Override
+                    public String getString(Album item) {
+                        return item.mAlbumName;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.AlbumSortOrder.ALBUM_ARTIST)) {
-            sectionCreator = new LocalizedCompare<Album>(context) {
-                @Override
-                public String getString(Album item) {
-                    return item.mArtistName;
-                }
+                    @Override
+                    public String createHeaderLabel(Album item) {
+                        if (item.mBucketLabel != null) {
+                            return super.createHeaderLabel(item.mBucketLabel);
+                        }
 
-                @Override
-                public String createHeaderLabel(Album item) {
-                    if (item.mBucketLabel != null) {
-                        return super.createHeaderLabel(item.mBucketLabel);
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
+            case SortOrder.AlbumSortOrder.ALBUM_ARTIST:
+                sectionCreator = new LocalizedCompare<Album>(context) {
+                    @Override
+                    public String getString(Album item) {
+                        return item.mArtistName;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.AlbumSortOrder.ALBUM_NUMBER_OF_SONGS)) {
-            sectionCreator = new NumberOfSongsCompare<Album>(context) {
-                @Override
-                public int getInt(Album item) {
-                    return item.mSongNumber;
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.AlbumSortOrder.ALBUM_YEAR)) {
-            sectionCreator = new IntCompare<Album>() {
-                private static final int INVALID_YEAR = -1;
+                    @Override
+                    public String createHeaderLabel(Album item) {
+                        if (item.mBucketLabel != null) {
+                            return super.createHeaderLabel(item.mBucketLabel);
+                        }
 
-                @Override
-                public int getInt(Album item) {
-                    // if we don't have a year, treat it as invalid
-                    if (item.mYear == null) {
-                        return INVALID_YEAR;
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
+            case SortOrder.AlbumSortOrder.ALBUM_NUMBER_OF_SONGS:
+                sectionCreator = new NumberOfSongsCompare<Album>(context) {
+                    @Override
+                    public int getInt(Album item) {
+                        return item.mSongNumber;
+                    }
+                };
+                break;
+            case SortOrder.AlbumSortOrder.ALBUM_YEAR:
+                sectionCreator = new IntCompare<Album>() {
+                    private static final int INVALID_YEAR = -1;
+
+                    @Override
+                    public int getInt(Album item) {
+                        // if we don't have a year, treat it as invalid
+                        if (item.mYear == null) {
+                            return INVALID_YEAR;
+                        }
+
+                        int year = Integer.valueOf(item.mYear);
+
+                        // if the year is extremely low, treat it as invalid too
+                        if (MusicUtils.isInvalidYear(year)) {
+                            return INVALID_YEAR;
+                        }
+
+                        return year;
                     }
 
-                    int year = Integer.valueOf(item.mYear);
+                    @Override
+                    public String createHeaderLabel(Album item) {
+                        if (MusicUtils.isInvalidYear(getInt(item))) {
+                            return context.getString(R.string.header_unknown_year);
+                        }
 
-                    // if the year is extremely low, treat it as invalid too
-                    if (MusicUtils.isInvalidYear(year)) {
-                        return INVALID_YEAR;
+                        return item.mYear;
                     }
-
-                    return year;
-                }
-
-                @Override
-                public String createHeaderLabel(Album item) {
-                    if (MusicUtils.isInvalidYear(getInt(item))) {
-                        return context.getString(R.string.header_unknown_year);
-                    }
-
-                    return item.mYear;
-                }
-            };
+                };
+                break;
         }
 
         return sectionCreator;
@@ -515,84 +524,90 @@ public class SectionCreatorUtils {
     public static IItemCompare<Song> createSongComparison(final Context context) {
         IItemCompare<Song> sectionCreator = null;
 
-        String sortOrder = PreferenceUtils.getInstance(context).getSongSortOrder();
+        final String sortOrder = PreferenceUtils.getInstance(context).getSongSortOrder();
 
         // doesn't make sense to have headers for SONG_FILENAME
         // so we will not return a sectionCreator for that one
-        if (sortOrder.equals(SortOrder.SongSortOrder.SONG_A_Z)
-                || sortOrder.equals(SortOrder.SongSortOrder.SONG_Z_A)) {
-            sectionCreator = new LocalizedCompare<Song>(context) {
-                @Override
-                public String getString(Song item) {
-                    return item.mSongName;
-                }
-
-                @Override
-                public String createHeaderLabel(Song item) {
-                    if (item.mBucketLabel != null) {
-                        return super.createHeaderLabel(item.mBucketLabel);
+        switch (sortOrder) {
+            case SortOrder.SongSortOrder.SONG_A_Z:
+            case SortOrder.SongSortOrder.SONG_Z_A:
+                sectionCreator = new LocalizedCompare<Song>(context) {
+                    @Override
+                    public String getString(Song item) {
+                        return item.mSongName;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.SongSortOrder.SONG_ALBUM)) {
-            sectionCreator = new LocalizedCompare<Song>(context) {
-                @Override
-                public String getString(Song item) {
-                    return item.mAlbumName;
-                }
+                    @Override
+                    public String createHeaderLabel(Song item) {
+                        if (item.mBucketLabel != null) {
+                            return super.createHeaderLabel(item.mBucketLabel);
+                        }
 
-                @Override
-                public String createHeaderLabel(Song item) {
-                    if (item.mBucketLabel != null) {
-                        return super.createHeaderLabel(item.mBucketLabel);
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
+            case SortOrder.SongSortOrder.SONG_ALBUM:
+                sectionCreator = new LocalizedCompare<Song>(context) {
+                    @Override
+                    public String getString(Song item) {
+                        return item.mAlbumName;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.SongSortOrder.SONG_ARTIST)) {
-            sectionCreator = new LocalizedCompare<Song>(context) {
-                @Override
-                public String getString(Song item) {
-                    return item.mArtistName;
-                }
+                    @Override
+                    public String createHeaderLabel(Song item) {
+                        if (item.mBucketLabel != null) {
+                            return super.createHeaderLabel(item.mBucketLabel);
+                        }
 
-                @Override
-                public String createHeaderLabel(Song item) {
-                    if (item.mBucketLabel != null) {
-                        return super.createHeaderLabel(item.mBucketLabel);
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
+            case SortOrder.SongSortOrder.SONG_ARTIST:
+                sectionCreator = new LocalizedCompare<Song>(context) {
+                    @Override
+                    public String getString(Song item) {
+                        return item.mArtistName;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.SongSortOrder.SONG_DURATION)) {
-            sectionCreator = new DurationCompare<Song>(context) {
-                @Override
-                public int getInt(Song item) {
-                    return item.mDuration;
-                }
-            };
-        } else if (sortOrder.equals(SortOrder.SongSortOrder.SONG_YEAR)) {
-            sectionCreator = new SectionCreatorUtils.IntCompare<Song>() {
-                @Override
-                public int getInt(Song item) {
-                    return item.mYear;
-                }
+                    @Override
+                    public String createHeaderLabel(Song item) {
+                        if (item.mBucketLabel != null) {
+                            return super.createHeaderLabel(item.mBucketLabel);
+                        }
 
-                @Override
-                public String createHeaderLabel(Song item) {
-                    // I have seen tracks in my library where it would return 0 or 2
-                    // so have this check to return a more friendly label in that case
-                    if (MusicUtils.isInvalidYear(item.mYear)) {
-                        return context.getString(R.string.header_unknown_year);
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
+            case SortOrder.SongSortOrder.SONG_DURATION:
+                sectionCreator = new DurationCompare<Song>(context) {
+                    @Override
+                    public int getInt(Song item) {
+                        return item.mDuration;
+                    }
+                };
+                break;
+            case SortOrder.SongSortOrder.SONG_YEAR:
+                sectionCreator = new IntCompare<Song>() {
+                    @Override
+                    public int getInt(Song item) {
+                        return item.mYear;
                     }
 
-                    return super.createHeaderLabel(item);
-                }
-            };
+                    @Override
+                    public String createHeaderLabel(Song item) {
+                        // I have seen tracks in my library where it would return 0 or 2
+                        // so have this check to return a more friendly label in that case
+                        if (MusicUtils.isInvalidYear(item.mYear)) {
+                            return context.getString(R.string.header_unknown_year);
+                        }
+
+                        return super.createHeaderLabel(item);
+                    }
+                };
+                break;
         }
 
         return sectionCreator;

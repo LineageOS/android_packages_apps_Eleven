@@ -100,34 +100,34 @@ public class MusicHolder {
     public MusicHolder(final View view) {
         super();
         // Initialize mImage
-        mImage = new WeakReference<ImageView>((ImageView)view.findViewById(R.id.image));
+        mImage = new WeakReference<>((ImageView) view.findViewById(R.id.image));
 
         // Initialize mLineOne
-        mLineOne = new WeakReference<TextView>((TextView)view.findViewById(R.id.line_one));
+        mLineOne = new WeakReference<>((TextView) view.findViewById(R.id.line_one));
 
         // Initialize mLineOneRight
-        mLineOneRight = new WeakReference<TextView>(
-                (TextView)view.findViewById(R.id.line_one_right));
+        mLineOneRight = new WeakReference<>(
+                (TextView) view.findViewById(R.id.line_one_right));
 
         // Initialize mLineTwo
-        mLineTwo = new WeakReference<TextView>((TextView)view.findViewById(R.id.line_two));
+        mLineTwo = new WeakReference<>((TextView) view.findViewById(R.id.line_two));
 
         // Initialize Circular progress bar container
-        mPlayPauseProgressButton = new WeakReference<PlayPauseProgressButton>(
-                (PlayPauseProgressButton)view.findViewById(R.id.playPauseProgressButton));
+        mPlayPauseProgressButton = new WeakReference<>(
+                (PlayPauseProgressButton) view.findViewById(R.id.playPauseProgressButton));
 
         // Get the padding container for the progress bar
-        mPlayPauseProgressContainer = new WeakReference<View>(
+        mPlayPauseProgressContainer = new WeakReference<>(
                 view.findViewById(R.id.play_pause_container));
 
-        mNowPlayingIndicator = new WeakReference<View>(view.findViewById(R.id.now_playing));
+        mNowPlayingIndicator = new WeakReference<>(view.findViewById(R.id.now_playing));
 
         // Get the divider for the list item
-        mDivider = new WeakReference<View>(view.findViewById(R.id.divider));
+        mDivider = new WeakReference<>(view.findViewById(R.id.divider));
 
         // Get the pop up menu button
-        mPopupMenuButton = new WeakReference<PopupMenuButton>(
-                (PopupMenuButton)view.findViewById(R.id.popup_menu_button));
+        mPopupMenuButton = new WeakReference<>(
+                (PopupMenuButton) view.findViewById(R.id.popup_menu_button));
     }
 
     /**

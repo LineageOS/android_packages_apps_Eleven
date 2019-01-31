@@ -38,7 +38,7 @@ import java.util.Locale;
  */
 public class PagerAdapter extends FragmentPagerAdapter {
 
-    private final SparseArray<WeakReference<Fragment>> mFragmentArray = new SparseArray<WeakReference<Fragment>>();
+    private final SparseArray<WeakReference<Fragment>> mFragmentArray = new SparseArray<>();
 
     private final List<Holder> mHolderList = Lists.newArrayList();
 
@@ -99,7 +99,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
         if (mWeakFragment != null) {
             mWeakFragment.clear();
         }
-        mFragmentArray.put(position, new WeakReference<Fragment>(mFragment));
+        mFragmentArray.put(position, new WeakReference<>(mFragment));
         return mFragment;
     }
 

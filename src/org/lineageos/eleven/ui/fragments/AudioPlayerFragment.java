@@ -60,11 +60,9 @@ import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
-import org.lineageos.eleven.widgets.BrowseButton;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 import org.lineageos.eleven.widgets.PlayPauseProgressButton;
-import org.lineageos.eleven.widgets.QueueButton;
 import org.lineageos.eleven.widgets.RepeatButton;
 import org.lineageos.eleven.widgets.RepeatingImageButton;
 import org.lineageos.eleven.widgets.ShuffleButton;
@@ -743,7 +741,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
          * Constructor of <code>TimeHandler</code>
          */
         public TimeHandler(final AudioPlayerFragment player) {
-            mAudioPlayer = new WeakReference<AudioPlayerFragment>(player);
+            mAudioPlayer = new WeakReference<>(player);
         }
 
         @Override
@@ -770,7 +768,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
          * Constructor of <code>PlaybackStatus</code>
          */
         public PlaybackStatus(final AudioPlayerFragment fragment) {
-            mReference = new WeakReference<AudioPlayerFragment>(fragment);
+            mReference = new WeakReference<>(fragment);
         }
 
         /**
@@ -778,36 +776,47 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
          */
         @Override
         public void onReceive(final Context context, final Intent intent) {
-            final AudioPlayerFragment audioPlayerFragment = mReference.get();
             final String action = intent.getAction();
-            if (action.equals(MusicPlaybackService.META_CHANGED)) {
-                // if we are repeating current and the track has changed, re-create the adapter
-                if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
-                    mReference.get().createAndSetAdapter();
-                }
+            if (action == null || action.isEmpty()) {
+                return;
+            }
 
-                // Current info
-                audioPlayerFragment.updateNowPlayingInfo();
-                audioPlayerFragment.dismissPopupMenu();
-            } else if (action.equals(MusicPlaybackService.PLAYSTATE_CHANGED)) {
-                // Set the play and pause image
-                audioPlayerFragment.mPlayPauseProgressButton.getPlayPauseButton().updateState();
-                audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
-            } else if (action.equals(MusicPlaybackService.REPEATMODE_CHANGED)
-                    || action.equals(MusicPlaybackService.SHUFFLEMODE_CHANGED)) {
-                // Set the repeat image
-                audioPlayerFragment.mRepeatButton.updateRepeatState();
-                // Set the shuffle image
-                audioPlayerFragment.mShuffleButton.updateShuffleState();
+            final AudioPlayerFragment audioPlayerFragment = mReference.get();
+            switch (action) {
+                case MusicPlaybackService.META_CHANGED:
+                    // if we are repeating current and the track has changed, re-create the adapter
+                    if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
+                        mReference.get().createAndSetAdapter();
+                    }
 
-                // Update the queue
-                audioPlayerFragment.createAndSetAdapter();
-            } else if (action.equals(MusicPlaybackService.QUEUE_CHANGED)) {
-                audioPlayerFragment.createAndSetAdapter();
-            } else if (action.equals(MusicPlaybackService.NEW_LYRICS)) {
-                audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
-            } else if (action.equals(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED)) {
-                audioPlayerFragment.updateVisualizerPowerSaveMode();
+                    // Current info
+                    audioPlayerFragment.updateNowPlayingInfo();
+                    audioPlayerFragment.dismissPopupMenu();
+                    break;
+                case MusicPlaybackService.PLAYSTATE_CHANGED:
+                    // Set the play and pause image
+                    audioPlayerFragment.mPlayPauseProgressButton.getPlayPauseButton().updateState();
+                    audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
+                    break;
+                case MusicPlaybackService.REPEATMODE_CHANGED:
+                case MusicPlaybackService.SHUFFLEMODE_CHANGED:
+                    // Set the repeat image
+                    audioPlayerFragment.mRepeatButton.updateRepeatState();
+                    // Set the shuffle image
+                    audioPlayerFragment.mShuffleButton.updateShuffleState();
+
+                    // Update the queue
+                    audioPlayerFragment.createAndSetAdapter();
+                    break;
+                case MusicPlaybackService.QUEUE_CHANGED:
+                    audioPlayerFragment.createAndSetAdapter();
+                    break;
+                case MusicPlaybackService.NEW_LYRICS:
+                    audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
+                    break;
+                case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
+                    audioPlayerFragment.updateVisualizerPowerSaveMode();
+                    break;
             }
         }
     }

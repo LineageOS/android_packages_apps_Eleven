@@ -58,7 +58,7 @@ implements ISetupActionBar {
 
         TopTracksLoader loader = new TopTracksLoader(getActivity(),
                 TopTracksLoader.QueryType.TopTracks);
-        return new SectionCreator<Song>(getActivity(), loader, null);
+        return new SectionCreator<>(getActivity(), loader, null);
     }
 
     @Override

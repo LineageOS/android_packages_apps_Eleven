@@ -19,8 +19,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 
-import org.lineageos.eleven.MusicPlaybackService;
-
 public abstract class AppWidgetBase extends AppWidgetProvider {
 
     protected PendingIntent buildPendingIntent(Context context, final String action,

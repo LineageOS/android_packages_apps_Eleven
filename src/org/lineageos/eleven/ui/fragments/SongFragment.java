@@ -64,7 +64,7 @@ public class SongFragment extends BasicSongFragment {
         SectionCreatorUtils.IItemCompare<Song> songComparison = SectionCreatorUtils.createSongComparison(context);
 
         // return the wrapped section creator
-        return new SectionCreator<Song>(context, songLoader, songComparison);
+        return new SectionCreator<>(context, songLoader, songComparison);
     }
 
 

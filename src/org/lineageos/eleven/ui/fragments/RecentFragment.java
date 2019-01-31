@@ -64,7 +64,7 @@ public class RecentFragment extends SmartPlaylistFragment implements ISetupActio
 
         TopTracksLoader loader = new TopTracksLoader(getActivity(),
                 TopTracksLoader.QueryType.RecentSongs);
-        return new SectionCreator<Song>(getActivity(), loader, null);
+        return new SectionCreator<>(getActivity(), loader, null);
     }
 
     /**

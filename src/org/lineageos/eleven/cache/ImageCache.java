@@ -95,7 +95,7 @@ public final class ImageCache {
     /**
      * listeners to the cache state
      */
-    private HashSet<ICacheListener> mListeners = new HashSet<ICacheListener>();
+    private HashSet<ICacheListener> mListeners = new HashSet<>();
 
     private static ImageCache sInstance;
 

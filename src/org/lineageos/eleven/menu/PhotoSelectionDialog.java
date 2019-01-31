@@ -24,7 +24,6 @@ import android.widget.ListAdapter;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
-import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 
@@ -93,7 +92,7 @@ public class PhotoSelectionDialog extends DialogFragment {
         }
         // Dialog item Adapter
         final HomeActivity activity = (HomeActivity) getActivity();
-        final ListAdapter adapter = new ArrayAdapter<String>(activity,
+        final ListAdapter adapter = new ArrayAdapter<>(activity,
                 android.R.layout.select_dialog_item, mChoices);
         return new AlertDialog.Builder(activity).setTitle(title)
                 .setAdapter(adapter, new DialogInterface.OnClickListener() {

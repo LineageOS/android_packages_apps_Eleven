@@ -64,12 +64,12 @@ public class SortedCursor extends AbstractCursor {
      */
     private ArrayList<Long> buildCursorPositionMapping(final long[] order,
             final String columnName, final List<? extends Object> extraData) {
-        ArrayList<Long> missingIds = new ArrayList<Long>();
+        ArrayList<Long> missingIds = new ArrayList<>();
 
-        mOrderedPositions = new ArrayList<Integer>(mCursor.getCount());
-        mExtraData = new ArrayList<Object>();
+        mOrderedPositions = new ArrayList<>(mCursor.getCount());
+        mExtraData = new ArrayList<>();
 
-        mMapCursorPositions = new HashMap<Long, Integer>(mCursor.getCount());
+        mMapCursorPositions = new HashMap<>(mCursor.getCount());
         final int idPosition = mCursor.getColumnIndex(columnName);
 
         if (mCursor.moveToFirst()) {

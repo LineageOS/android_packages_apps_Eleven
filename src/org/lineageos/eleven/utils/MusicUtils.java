@@ -24,7 +24,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.SystemClock;
@@ -54,10 +53,7 @@ import org.lineageos.eleven.loaders.SongLoader;
 import org.lineageos.eleven.loaders.TopTracksLoader;
 import org.lineageos.eleven.locale.LocaleUtils;
 import org.lineageos.eleven.menu.FragmentMenuItems;
-import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.model.AlbumArtistDetails;
-import org.lineageos.eleven.model.Artist;
-import org.lineageos.eleven.model.Song;
 import org.lineageos.eleven.provider.RecentStore;
 import org.lineageos.eleven.provider.SongPlayCount;
 import org.lineageos.eleven.service.MusicPlaybackTrack;
@@ -94,7 +90,7 @@ public final class MusicUtils {
     public static final long UPDATE_FREQUENCY_FAST_MS = 30;
 
     static {
-        mConnectionMap = new WeakHashMap<Context, ServiceBinder>();
+        mConnectionMap = new WeakHashMap<>();
         sEmptyList = new long[0];
     }
 
@@ -314,10 +310,10 @@ public final class MusicUtils {
      *
      * @NOTE The AIDL isn't used here in order to properly use the previous
      *       action. When the user is shuffling, because {@link
-     *       MusicPlaybackService.#openCurrentAndNext()} is used, the user won't
+     *       MusicPlaybackService#openCurrentAndNext()} is used, the user won't
      *       be able to travel to the previously skipped track. To remedy this,
-     *       {@link MusicPlaybackService.#openCurrent()} is called in {@link
-     *       MusicPlaybackService.#prev()}. {@code #startService(Intent intent)}
+     *       {@link MusicPlaybackService#openCurrent()} is called in {@link
+     *       MusicPlaybackService#prev(boolean)}. {@code #startService(Intent intent)}
      *       is called here to specifically invoke the onStartCommand used by
      *       {@link MusicPlaybackService}, which states if the current position
      *       less than 2000 ms, start the track over, otherwise move to the
@@ -807,7 +803,7 @@ public final class MusicUtils {
         };
         String selection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + MediaColumns.TITLE + "!=''";
-        final Uri uri = MediaStore.Audio.Genres.Members.getContentUri("external", Long.valueOf(id));
+        final Uri uri = MediaStore.Audio.Genres.Members.getContentUri("external", id);
         Cursor cursor = context.getContentResolver().query(uri, projection, selection,
                 null, null);
         if (cursor != null) {
@@ -1081,7 +1077,6 @@ public final class MusicUtils {
     public static void clearPlaylist(final Context context, final int playlistId) {
         final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
         context.getContentResolver().delete(uri, null, null);
-        return;
     }
 
     /** remove all backing data for top tracks playlist */

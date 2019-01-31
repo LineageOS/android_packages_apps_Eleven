@@ -25,7 +25,6 @@ import android.widget.RemoteViews;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
-import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.widgets.RepeatButton;
 import org.lineageos.eleven.widgets.ShuffleButton;
 
