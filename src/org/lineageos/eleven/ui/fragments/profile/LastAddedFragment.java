@@ -48,7 +48,7 @@ public class LastAddedFragment extends SmartPlaylistFragment implements ISetupAc
         mLoadingEmptyContainer.showLoading();
 
         LastAddedLoader loader = new LastAddedLoader(getActivity());
-        return new SectionCreator<Song>(getActivity(), loader, null);
+        return new SectionCreator<>(getActivity(), loader, null);
     }
 
     @Override

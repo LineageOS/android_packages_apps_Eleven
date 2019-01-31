@@ -18,11 +18,9 @@ import android.app.SearchManager;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.media.audiofx.AudioEffect;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.widget.Toast;
 
 import org.lineageos.eleven.Config;
@@ -30,8 +28,6 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
 import org.lineageos.eleven.ui.activities.SearchActivity;
 import org.lineageos.eleven.ui.activities.SettingsActivity;
-
-import java.util.List;
 
 /**
  * Various navigation helpers.

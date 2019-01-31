@@ -379,7 +379,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
          * Constructor of <code>PlaybackStatus</code>
          */
         public PlaybackStatus(final BaseActivity activity) {
-            mReference = new WeakReference<BaseActivity>(activity);
+            mReference = new WeakReference<>(activity);
         }
 
         /**
@@ -388,21 +388,31 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         @Override
         public void onReceive(final Context context, final Intent intent) {
             final String action = intent.getAction();
-            BaseActivity baseActivity = mReference.get();
+            if (action == null || action.isEmpty()) {
+                return;
+            }
+
+            final BaseActivity baseActivity = mReference.get();
             if (baseActivity != null) {
-                if (action.equals(MusicPlaybackService.META_CHANGED)) {
-                    baseActivity.onMetaChanged();
-                } else if (action.equals(MusicPlaybackService.PLAYSTATE_CHANGED)) {
-                    // Set the play and pause image
-                    baseActivity.mPlayPauseProgressButton.getPlayPauseButton().updateState();
-                } else if (action.equals(MusicPlaybackService.REFRESH)) {
-                    baseActivity.restartLoader();
-                } else if (action.equals(MusicPlaybackService.PLAYLIST_CHANGED)) {
-                    baseActivity.onPlaylistChanged();
-                } else if (action.equals(MusicPlaybackService.TRACK_ERROR)) {
-                    final String errorMsg = context.getString(R.string.error_playing_track,
-                            intent.getStringExtra(MusicPlaybackService.TrackErrorExtra.TRACK_NAME));
-                    Toast.makeText(baseActivity, errorMsg, Toast.LENGTH_SHORT).show();
+                switch (action) {
+                    case MusicPlaybackService.META_CHANGED:
+                        baseActivity.onMetaChanged();
+                        break;
+                    case MusicPlaybackService.PLAYSTATE_CHANGED:
+                        // Set the play and pause image
+                        baseActivity.mPlayPauseProgressButton.getPlayPauseButton().updateState();
+                        break;
+                    case MusicPlaybackService.REFRESH:
+                        baseActivity.restartLoader();
+                        break;
+                    case MusicPlaybackService.PLAYLIST_CHANGED:
+                        baseActivity.onPlaylistChanged();
+                        break;
+                    case MusicPlaybackService.TRACK_ERROR:
+                        final String errorMsg = context.getString(R.string.error_playing_track,
+                                intent.getStringExtra(MusicPlaybackService.TrackErrorExtra.TRACK_NAME));
+                        Toast.makeText(baseActivity, errorMsg, Toast.LENGTH_SHORT).show();
+                        break;
                 }
             }
         }

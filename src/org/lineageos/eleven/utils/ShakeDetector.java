@@ -213,7 +213,7 @@ public class ShakeDetector implements SensorEventListener {
 
         /** Copies the samples into a list, with the oldest entry at index 0. */
         List<Sample> asList() {
-            List<Sample> list = new ArrayList<Sample>();
+            List<Sample> list = new ArrayList<>();
             Sample s = oldest;
             while (s != null) {
                 list.add(s);
