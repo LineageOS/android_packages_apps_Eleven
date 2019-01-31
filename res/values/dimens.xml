@@ -205,7 +205,7 @@
     partial scaled up values for different resolutions -->
     <dimen name="divider_height">1px</dimen>
 
-    <item name="letter_to_tile_ratio" type="dimen">53%</item>
+    <item name="letter_to_tile_ratio" type="fraction">53%</item>
 
     <!-- Audio preview -->
     <dimen name="preview_layout_height">125dp</dimen>

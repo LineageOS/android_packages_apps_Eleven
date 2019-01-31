@@ -178,7 +178,7 @@ public class LocaleUtils {
 
         public ArrayList<String> getLabels() {
             final int bucketCount = getBucketCount();
-            final ArrayList<String> labels = new ArrayList<String>(bucketCount);
+            final ArrayList<String> labels = new ArrayList<>(bucketCount);
             for(int i = 0; i < bucketCount; ++i) {
                 labels.add(getBucketLabel(i));
             }
