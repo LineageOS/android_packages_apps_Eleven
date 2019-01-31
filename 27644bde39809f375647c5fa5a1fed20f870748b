@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "132ab591_3a31f768",
+        "filename": "src/org/lineageos/eleven/widgets/LoadingEmptyContainer.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-01-31T17:47:37Z",
+      "side": 1,
+      "message": "unnecessary newline between these",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 68,
+        "endChar": 66
+      },
+      "revId": "27644bde39809f375647c5fa5a1fed20f870748b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
