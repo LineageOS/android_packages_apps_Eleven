@@ -134,13 +134,14 @@ public class SongLoader extends SectionCreator.SimpleListLoader<Song> {
      * @param sortOrder the song ordering preference selected by the user
      */
     private static LocalizedStore.SortParameter getSortParameter(String sortOrder) {
-        if (sortOrder.equals(SortOrder.SongSortOrder.SONG_A_Z) ||
-                sortOrder.equals(SortOrder.SongSortOrder.SONG_Z_A)) {
-            return LocalizedStore.SortParameter.Song;
-        } else if (sortOrder.equals(SortOrder.SongSortOrder.SONG_ALBUM)) {
-            return LocalizedStore.SortParameter.Album;
-        } else if (sortOrder.equals(SortOrder.SongSortOrder.SONG_ARTIST)) {
-            return LocalizedStore.SortParameter.Artist;
+        switch (sortOrder) {
+            case SortOrder.SongSortOrder.SONG_A_Z:
+            case SortOrder.SongSortOrder.SONG_Z_A:
+                return SortParameter.Song;
+            case SortOrder.SongSortOrder.SONG_ALBUM:
+                return SortParameter.Album;
+            case SortOrder.SongSortOrder.SONG_ARTIST:
+                return SortParameter.Artist;
         }
 
         return null;

@@ -87,7 +87,7 @@ public class SectionAdapter<TItem,
         mContext = context;
         mUnderlyingAdapter = underlyingAdapter;
         mUnderlyingAdapter.setPopupMenuClickedListener(this);
-        mSections = new TreeMap<Integer, Section>();
+        mSections = new TreeMap<>();
         setupHeaderParameters(R.layout.list_header, false);
         // since we have no good default footer, just re-use the header layout
         setupFooterParameters(R.layout.list_header, false);

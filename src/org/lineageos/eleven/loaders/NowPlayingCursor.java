@@ -266,7 +266,6 @@ public class NowPlayingCursor extends AbstractCursor {
             mSize = mNowPlaying.length;
             if (mSize == 0) {
                 mCursorIndexes = null;
-                return;
             }
         }
     }
