@@ -111,7 +111,7 @@ public class ArtistFragment extends MusicBrowserFragment implements
         // Create the adapter
         final int layout = R.layout.list_item_normal;
         ArtistAdapter adapter = new ArtistAdapter(getActivity(), layout);
-        mAdapter = new SectionAdapter<Artist, ArtistAdapter>(getActivity(), adapter);
+        mAdapter = new SectionAdapter<>(getActivity(), adapter);
         mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
             @Override
             public void onPopupMenuClicked(View v, int position) {
@@ -197,7 +197,7 @@ public class ArtistFragment extends MusicBrowserFragment implements
         mLoadingEmptyContainer.showLoading();
         final Context context = getActivity();
         IItemCompare<Artist> comparator = SectionCreatorUtils.createArtistComparison(context);
-        return new SectionCreator<Artist>(getActivity(), new ArtistLoader(context), comparator);
+        return new SectionCreator<>(getActivity(), new ArtistLoader(context), comparator);
     }
 
     /**
