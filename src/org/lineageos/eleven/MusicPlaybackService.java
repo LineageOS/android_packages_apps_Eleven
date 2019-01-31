@@ -102,96 +102,96 @@ public class MusicPlaybackService extends Service {
     /**
      * Indicates that the music has paused or resumed
      */
-    public static final String PLAYSTATE_CHANGED = "org.lineageos.eleven.playstatechanged";
+    public static final String PLAYSTATE_CHANGED = BuildConstants.PACKAGE_NAME + ".playstatechanged";
 
     /**
      * Indicates that music playback position within
      * a title was changed
      */
-    public static final String POSITION_CHANGED = "org.lineageos.eleven.positionchanged";
+    public static final String POSITION_CHANGED = BuildConstants.PACKAGE_NAME + ".positionchanged";
 
     /**
      * Indicates the meta data has changed in some way, like a track change
      */
-    public static final String META_CHANGED = "org.lineageos.eleven.metachanged";
+    public static final String META_CHANGED = BuildConstants.PACKAGE_NAME + ".metachanged";
 
     /**
      * Indicates the queue has been updated
      */
-    public static final String QUEUE_CHANGED = "org.lineageos.eleven.queuechanged";
+    public static final String QUEUE_CHANGED = BuildConstants.PACKAGE_NAME + ".queuechanged";
 
     /**
      * Indicates the queue has been updated
      */
-    public static final String PLAYLIST_CHANGED = "org.lineageos.eleven.playlistchanged";
+    public static final String PLAYLIST_CHANGED = BuildConstants.PACKAGE_NAME + ".playlistchanged";
 
     /**
      * Indicates the repeat mode changed
      */
-    public static final String REPEATMODE_CHANGED = "org.lineageos.eleven.repeatmodechanged";
+    public static final String REPEATMODE_CHANGED = BuildConstants.PACKAGE_NAME + ".repeatmodechanged";
 
     /**
      * Indicates the shuffle mode changed
      */
-    public static final String SHUFFLEMODE_CHANGED = "org.lineageos.eleven.shufflemodechanged";
+    public static final String SHUFFLEMODE_CHANGED = BuildConstants.PACKAGE_NAME + ".shufflemodechanged";
 
     /**
      * Indicates the track fails to play
      */
-    public static final String TRACK_ERROR = "org.lineageos.eleven.trackerror";
+    public static final String TRACK_ERROR = BuildConstants.PACKAGE_NAME + ".trackerror";
 
     /**
      * For backwards compatibility reasons, also provide sticky
      * broadcasts under the music package
      */
-    public static final String ELEVEN_PACKAGE_NAME = "org.lineageos.eleven";
+    public static final String ELEVEN_PACKAGE_NAME = BuildConstants.PACKAGE_NAME;
     public static final String MUSIC_PACKAGE_NAME = "com.android.music";
 
     /**
      * Called to indicate a general service commmand. Used in
      * {@link MediaButtonIntentReceiver}
      */
-    public static final String SERVICECMD = "org.lineageos.eleven.musicservicecommand";
+    public static final String SERVICECMD = BuildConstants.PACKAGE_NAME + ".musicservicecommand";
 
     /**
      * Called to go toggle between pausing and playing the music
      */
-    public static final String TOGGLEPAUSE_ACTION = "org.lineageos.eleven.togglepause";
+    public static final String TOGGLEPAUSE_ACTION = BuildConstants.PACKAGE_NAME + ".togglepause";
 
     /**
      * Called to go to pause the playback
      */
-    public static final String PAUSE_ACTION = "org.lineageos.eleven.pause";
+    public static final String PAUSE_ACTION = BuildConstants.PACKAGE_NAME + ".pause";
 
     /**
      * Called to go to stop the playback
      */
-    public static final String STOP_ACTION = "org.lineageos.eleven.stop";
+    public static final String STOP_ACTION = BuildConstants.PACKAGE_NAME + ".stop";
 
     /**
      * Called to go to the previous track or the beginning of the track if partway through the track
      */
-    public static final String PREVIOUS_ACTION = "org.lineageos.eleven.previous";
+    public static final String PREVIOUS_ACTION = BuildConstants.PACKAGE_NAME + ".previous";
 
     /**
      * Called to go to the previous track regardless of how far in the current track the playback is
      */
-    public static final String PREVIOUS_FORCE_ACTION = "org.lineageos.eleven.previous.force";
+    public static final String PREVIOUS_FORCE_ACTION = BuildConstants.PACKAGE_NAME + ".previous.force";
 
     /**
      * Called to go to the next track
      */
-    public static final String NEXT_ACTION = "org.lineageos.eleven.next";
+    public static final String NEXT_ACTION = BuildConstants.PACKAGE_NAME + ".next";
 
     /**
      * Called to change the repeat mode
      */
-    public static final String REPEAT_ACTION = "org.lineageos.eleven.repeat";
+    public static final String REPEAT_ACTION = BuildConstants.PACKAGE_NAME + ".repeat";
 
     /**
      * Called to change the shuffle mode
      */
-    public static final String SHUFFLE_ACTION = "org.lineageos.eleven.shuffle";
+    public static final String SHUFFLE_ACTION = BuildConstants.PACKAGE_NAME + ".shuffle";
 
     public static final String FROM_MEDIA_BUTTON = "frommediabutton";
 
@@ -201,22 +201,22 @@ public class MusicPlaybackService extends Service {
      * Used to easily notify a list that it should refresh. i.e. A playlist
      * changes
      */
-    public static final String REFRESH = "org.lineageos.eleven.refresh";
+    public static final String REFRESH = BuildConstants.PACKAGE_NAME + ".refresh";
 
     /**
      * Used by the alarm intent to shutdown the service after being idle
      */
-    private static final String SHUTDOWN = "org.lineageos.eleven.shutdown";
+    private static final String SHUTDOWN = BuildConstants.PACKAGE_NAME + ".shutdown";
 
     /**
      * Called to notify of a timed text
      */
-    public static final String NEW_LYRICS = "org.lineageos.eleven.lyrics";
+    public static final String NEW_LYRICS = BuildConstants.PACKAGE_NAME + ".lyrics";
 
     /**
      * Called to update the remote control client
      */
-    public static final String UPDATE_LOCKSCREEN = "org.lineageos.eleven.updatelockscreen";
+    public static final String UPDATE_LOCKSCREEN = BuildConstants.PACKAGE_NAME + ".updatelockscreen";
 
     public static final String CMDNAME = "command";
 
@@ -338,6 +338,8 @@ public class MusicPlaybackService extends Service {
      * TODO: Comeback and rewrite/fix all the whole queue code bugs after demo
      */
     public static final int MAX_HISTORY_SIZE = 1000;
+
+    private static final String ACTION_AUDIO_PLAYER = BuildConstants.PACKAGE_NAME + ".AUDIO_PLAYER";
 
     private static final String CHANNEL_NAME = "eleven_playback";
 
@@ -1644,7 +1646,7 @@ public class MusicPlaybackService extends Service {
                 .setMediaSession(mSession.getSessionToken())
                 .setShowActionsInCompactView(0, 1, 2);
 
-        Intent nowPlayingIntent = new Intent("org.lineageos.eleven.AUDIO_PLAYER")
+        Intent nowPlayingIntent = new Intent(ACTION_AUDIO_PLAYER)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         PendingIntent clickIntent = PendingIntent.getActivity(this, 0, nowPlayingIntent, 0);
         BitmapWithColors artwork = getAlbumArt(false);

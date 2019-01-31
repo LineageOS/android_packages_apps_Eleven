@@ -92,7 +92,7 @@
                 <data android:mimeType="vnd.android.cursor.dir/artists" />
             </intent-filter>
             <intent-filter>
-                <action android:name="org.lineageos.eleven.AUDIO_PLAYER" />
+                <action android:name="${applicationId}.AUDIO_PLAYER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

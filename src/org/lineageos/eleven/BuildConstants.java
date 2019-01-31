@@ -13,10 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.lineageos.eleven;
 
-public final class BuildConfig {
-    public static final String APPLICATION_ID = "org.lineageos.eleven";
-
-    public static final boolean DEBUG = Boolean.parseBoolean("false");
+public class BuildConstants {
+    public static final String PACKAGE_NAME = BuildConfig.APPLICATION_ID;
 }
