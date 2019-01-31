@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a302ec40_7d5d656a",
+        "filename": "src/org/lineageos/eleven/utils/PopupMenuHelper.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-01-31T17:37:10Z",
+      "side": 1,
+      "message": "Use a lambda instead?\nfinal AlertDialog.Builder builder \u003d new AlertDialog.Builder(mActivity);\n                    builder.setTitle(R.string.add_to_playlist);\n                    final List\u003cString\u003e menuItemList \u003d MusicUtils.makePlaylist(mActivity);\n                    builder.setItems(menuItemList.toArray(new String[0]), (dialog, which) -\u003e {\n                        if (which \u003d\u003d 0) {\n                            CreateNewPlaylist.getInstance(getIdList()).show(\n                                    mFragmentManager, \"CreatePlaylist\");\n                            return;\n                        }\n                        final String name \u003d menuItemList.get(which);\n\n                        final long playListId \u003d MusicUtils.getIdForPlaylist(mActivity, name);\n\n                        MusicUtils.addToPlaylist(mActivity, getIdList(), playListId);\n                    });\n                    builder.show();",
+      "range": {
+        "startLine": 339,
+        "startChar": 20,
+        "endLine": 355,
+        "endChar": 35
+      },
+      "revId": "2db6485774a9f4334598743aead124651269f4e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
