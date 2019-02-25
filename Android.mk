@@ -10,7 +10,11 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v8-renderscript \
-    android-common
+    android-common \
+    constraint-layout-solver
+
+LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
+    constraint-layout
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \

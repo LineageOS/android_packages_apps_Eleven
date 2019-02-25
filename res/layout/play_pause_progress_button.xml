@@ -14,35 +14,25 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<org.lineageos.eleven.widgets.PlayPauseProgressButton
+<org.lineageos.eleven.widgets.PlayPauseButtonContainer
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/playPauseProgressButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:visibility="gone">
+    android:visibility="gone"
+    tools:visibility="visible">
 
-    <!-- TODO: Figure out why scaleType: centerInside isn't properly scaling up -->
     <org.lineageos.eleven.widgets.PlayPauseButton
         android:id="@+id/action_button_play"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
+        android:background="@color/accent"
         android:contentDescription="@string/accessibility_play"
         android:focusable="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/btn_playback_play"
-        android:background="@color/accent" />
-
-    <ProgressBar
-        android:id="@+id/progressBarBackground"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="false"
-        android:indeterminate="false"
-        android:max="1000"
-        android:progress="1000"
-        android:progressDrawable="@drawable/circular_drawable_background" />
+        android:src="@drawable/btn_playback_play" />
 
     <ProgressBar
         android:id="@+id/circularProgressBar"
@@ -51,7 +41,8 @@
         android:layout_height="match_parent"
         android:clickable="false"
         android:indeterminate="false"
-        android:max="1000"
+        android:max="100"
+        android:progress="100"
         android:progressDrawable="@drawable/circular_drawable" />
 
-</org.lineageos.eleven.widgets.PlayPauseProgressButton>
+</org.lineageos.eleven.widgets.PlayPauseButtonContainer>
