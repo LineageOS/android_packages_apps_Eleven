@@ -121,11 +121,20 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.core:core:1.1.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.palette:palette:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-}
+    // AndroidX - https://developer.android.com/jetpack/androidx/releases
 
+    // see https://developer.android.com/jetpack/androidx/releases/appcompat
+    implementation "androidx.appcompat:appcompat:1.0.2"
+
+    // see https://developer.android.com/jetpack/androidx/releases/cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    // see https://developer.android.com/jetpack/androidx/releases/palette
+    implementation "androidx.palette:palette:1.0.0"
+
+    // see https://developer.android.com/jetpack/androidx/releases/recyclerview
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    // see https://developer.android.com/jetpack/androidx/releases/constraintlayout
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+}
