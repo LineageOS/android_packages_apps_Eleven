@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.adapters;
@@ -33,7 +38,7 @@ import org.lineageos.eleven.ui.fragments.SongFragment;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the songs on a user's
@@ -144,17 +149,17 @@ public class SongAdapter extends ArrayAdapter<Song>
 
         // padding doesn't apply to included layouts, so we need
         // to wrap it in a container and show/hide with the container
-        PlayPauseProgressButton playPauseProgressButton = holder.mPlayPauseProgressButton.get();
-        if (playPauseProgressButton != null) {
+        PlayPauseButtonContainer playPauseButtonContainer = holder.mPlayPauseProgressButton.get();
+        if (playPauseButtonContainer != null) {
             View playPauseContainer = holder.mPlayPauseProgressContainer.get();
 
             if (mCurrentQueuePosition == position) {
                 // make it visible
-                playPauseProgressButton.enableAndShow();
+                playPauseButtonContainer.enableAndShow();
                 playPauseContainer.setVisibility(View.VISIBLE);
             } else {
                 // hide it
-                playPauseProgressButton.disableAndHide();
+                playPauseButtonContainer.disableAndHide();
                 playPauseContainer.setVisibility(View.GONE);
             }
         }

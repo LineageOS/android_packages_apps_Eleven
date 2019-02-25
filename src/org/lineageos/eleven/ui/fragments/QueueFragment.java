@@ -53,7 +53,6 @@ import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -278,17 +277,11 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         filter.addAction(MusicPlaybackService.META_CHANGED);
 
         getActivity().registerReceiver(mQueueUpdateListener, filter);
-
-        // resume the progress listeners
-        setPlayPauseProgressButtonStates(false);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-
-        // stops the progress listeners
-        setPlayPauseProgressButtonStates(true);
 
         try {
             getActivity().unregisterReceiver(mQueueUpdateListener);
@@ -298,32 +291,6 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
 
         MusicUtils.unbindFromService(mToken);
         mToken = null;
-    }
-
-    /**
-     * Sets the state for any play pause progress buttons under the listview
-     * This is neede because the buttons update themselves so if the activity
-     * is hidden, we want to pause those handlers
-     * @param pause the state to set it to
-     */
-    public void setPlayPauseProgressButtonStates(boolean pause) {
-        if (mListView != null) {
-            // walk through the visible list items
-            for (int i = mListView.getFirstVisiblePosition();
-                 i <= mListView.getLastVisiblePosition(); i++) {
-                View childView = mListView.getChildAt(i);
-                if (childView != null) {
-                    PlayPauseProgressButton button =
-                            (PlayPauseProgressButton) childView.findViewById(R.id.playPauseProgressButton);
-                    // pause or resume based on the flag
-                    if (pause) {
-                        button.pause();
-                    } else {
-                        button.resume();
-                    }
-                }
-            }
-        }
     }
 
     /**
