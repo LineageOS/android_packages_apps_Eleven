@@ -112,10 +112,9 @@
     <dimen name="playlist_detail_header_bottom_height">40.0dip</dimen>
 
     <!-- Audio player Buttons (play/pause/shuffle/repeat/next/previous)-->
-    <dimen name="audio_player_controls_end_button_width">50.0dip</dimen>
-    <dimen name="audio_player_controls_end_button_height">50.0dip</dimen>
-    <dimen name="audio_player_controls_end_button_half_width">25.0dip</dimen>
-    <dimen name="audio_player_controls_end_button_padding">8.0dip</dimen>
+    <dimen name="audio_player_controls_end_button_width">36.0dip</dimen>
+    <dimen name="audio_player_controls_end_button_height">36.0dip</dimen>
+    <dimen name="audio_player_controls_end_button_margin">18.0dip</dimen>
     <dimen name="audio_player_controls_main_button_width">100.0dip</dimen>
     <dimen name="audio_player_controls_main_button_height">100.0dip</dimen>
     <dimen name="audio_player_controls_top_button_width">26.0dip</dimen>
