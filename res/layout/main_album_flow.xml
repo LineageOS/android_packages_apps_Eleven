@@ -17,35 +17,42 @@
 -->
 <org.lineageos.eleven.widgets.SquareFrame
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    tools:background="@drawable/default_artwork">
+
     <org.lineageos.eleven.widgets.SquareViewPager
         android:id="@+id/audio_player_album_art_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <include layout="@layout/loading_empty_container" />
+
+    <include
+        layout="@layout/loading_empty_container"
+        tools:visibility="gone" />
 
     <org.lineageos.eleven.widgets.VisualizerView
         android:id="@+id/visualizerView"
-        android:gravity="bottom"
-        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible" />
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:visibility="visible"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/audio_player_lyrics"
-        android:layout_gravity="center"
-        android:gravity="center"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alpha="0.0"
+        android:background="@color/lyrics_background_color"
+        android:gravity="center"
         android:minHeight="66dp"
+        android:paddingBottom="6dp"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingTop="6dp"
-        android:paddingBottom="6dp"
-        android:background="@color/lyrics_background_color"
         android:textColor="@color/audio_player_lyrics_text_color"
-        android:textSize="@dimen/text_size_small"
-        android:alpha="0.0"/>
+        android:textSize="@dimen/text_size_small" />
 </org.lineageos.eleven.widgets.SquareFrame>

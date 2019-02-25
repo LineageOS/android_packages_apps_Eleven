@@ -12,6 +12,7 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.appcompat_appcompat \
     androidx.cardview_cardview \
+    androidx-constraintlayout_constraintlayout \
     androidx.core_core \
     androidx.legacy_legacy-support-v4 \
     androidx.palette_palette \
