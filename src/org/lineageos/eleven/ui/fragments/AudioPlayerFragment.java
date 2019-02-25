@@ -29,7 +29,9 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.PowerManager;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.AppCompatSeekBar;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -44,6 +46,7 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import org.lineageos.eleven.MusicPlaybackService;
@@ -62,7 +65,7 @@ import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 import org.lineageos.eleven.widgets.RepeatButton;
 import org.lineageos.eleven.widgets.RepeatingImageButton;
 import org.lineageos.eleven.widgets.ShuffleButton;
@@ -100,7 +103,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     private MusicUtils.ServiceToken mToken;
 
     // Play pause and progress button
-    private PlayPauseProgressButton mPlayPauseProgressButton;
+    private PlayPauseButtonContainer mPlayPauseButtonContainer;
 
     // Repeat button
     private RepeatButton mRepeatButton;
@@ -125,6 +128,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     // Total time
     private TextView mTotalTime;
+
+    private AppCompatSeekBar mSeeker;
 
     // Visualizer View
     private VisualizerView mVisualizerView;
@@ -175,18 +180,18 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        mRootView = (ViewGroup) inflater.inflate(R.layout.activity_player_fragment, null);
+        mRootView = (ViewGroup) inflater.inflate(R.layout.activity_player_fragment, container, false);
 
         // Header title values
         initHeaderBar();
 
         initPlaybackControls();
 
-        mVisualizerView = (VisualizerView) mRootView.findViewById(R.id.visualizerView);
+        mVisualizerView = mRootView.findViewById(R.id.visualizerView);
         mVisualizerView.initialize(getActivity());
         updateVisualizerPowerSaveMode();
 
-        mLyricsText = (TextView) mRootView.findViewById(R.id.audio_player_lyrics);
+        mLyricsText = mRootView.findViewById(R.id.audio_player_lyrics);
 
         return mRootView;
     }
@@ -206,6 +211,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
+        // empty
     }
 
     @Override
@@ -233,17 +239,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Refresh the current time
         final long next = refreshCurrentTime();
         queueNextRefresh(next);
-
-        // resumes the update callback for the play pause progress button
-        mPlayPauseProgressButton.resume();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-
-        // pause the update callback for the play pause progress button
-        mPlayPauseProgressButton.pause();
 
         mImageFetcher.flush();
     }
@@ -288,8 +288,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         });
 
         // Title text
-        mSongTitle = (TextView) mRootView.findViewById(R.id.header_bar_song_title);
-        mArtistName = (TextView) mRootView.findViewById(R.id.header_bar_artist_title);
+        mSongTitle = mRootView.findViewById(R.id.header_bar_song_title);
+        mArtistName = mRootView.findViewById(R.id.header_bar_artist_title);
 
         // Buttons
         // Search Button
@@ -303,7 +303,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         // Add to Playlist Button
         // Setup the playlist button - add a click listener to show the context
-        mAddToPlaylistButton = (ImageView) mRootView.findViewById(R.id.header_bar_add_button);
+        mAddToPlaylistButton = mRootView.findViewById(R.id.header_bar_add_button);
 
         // Create the context menu when requested
         mAddToPlaylistButton.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
@@ -326,7 +326,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         // Add the menu button
         // menu button
-        mMenuButton = (ImageView) mRootView.findViewById(R.id.header_bar_menu_button);
+        mMenuButton = mRootView.findViewById(R.id.header_bar_menu_button);
         mMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -339,15 +339,14 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
      * Initializes the items in the now playing screen
      */
     private void initPlaybackControls() {
-        mPlayPauseProgressButton = (PlayPauseProgressButton)mRootView.findViewById(R.id.playPauseProgressButton);
-        mPlayPauseProgressButton.setDragEnabled(true);
-        mShuffleButton = (ShuffleButton)mRootView.findViewById(R.id.action_button_shuffle);
-        mRepeatButton = (RepeatButton)mRootView.findViewById(R.id.action_button_repeat);
-        mPreviousButton = (RepeatingImageButton)mRootView.findViewById(R.id.action_button_previous);
-        mNextButton = (RepeatingImageButton)mRootView.findViewById(R.id.action_button_next);
+        mPlayPauseButtonContainer = mRootView.findViewById(R.id.playPauseProgressButton);
+        mShuffleButton = mRootView.findViewById(R.id.action_button_shuffle);
+        mRepeatButton = mRootView.findViewById(R.id.action_button_repeat);
+        mPreviousButton = mRootView.findViewById(R.id.action_button_previous);
+        mNextButton = mRootView.findViewById(R.id.action_button_next);
 
         // Album art view pager
-        mAlbumArtViewPager = (ViewPager)mRootView.findViewById(R.id.audio_player_album_art_viewpager);
+        mAlbumArtViewPager = mRootView.findViewById(R.id.audio_player_album_art_viewpager);
         mAlbumArtViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override
             public void onPageSelected(int position) {
@@ -374,24 +373,27 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             }
         });
         // view to show in place of album art if queue is empty
-        mQueueEmpty = (LoadingEmptyContainer)mRootView.findViewById(R.id.loading_empty_container);
+        mQueueEmpty = mRootView.findViewById(R.id.loading_empty_container);
         setupNoResultsContainer(mQueueEmpty.getNoResultsContainer());
 
         // Current time
-        mCurrentTime = (TextView)mRootView.findViewById(R.id.audio_player_current_time);
+        mCurrentTime = mRootView.findViewById(R.id.audio_player_current_time);
         // Total time
-        mTotalTime = (TextView)mRootView.findViewById(R.id.audio_player_total_time);
+        mTotalTime = mRootView.findViewById(R.id.audio_player_total_time);
+
+        mSeeker = mRootView.findViewById(R.id.audio_player_seeker);
+        mSeeker.setOnSeekBarChangeListener(mSeekerListener);
 
         // Set the repeat listener for the previous button
         mPreviousButton.setRepeatListener(mRewindListener);
         // Set the repeat listener for the next button
         mNextButton.setRepeatListener(mFastForwardListener);
 
-        mPlayPauseProgressButton.enableAndShow();
+        mPlayPauseButtonContainer.enableAndShow();
     }
 
     private void setupNoResultsContainer(NoResultsContainer empty) {
-        int color = getResources().getColor(R.color.no_results_light);
+        int color = ContextCompat.getColor(getContext(), R.color.no_results_light);
         empty.setTextColor(color);
         empty.setMainText(R.string.empty_queue_main);
         empty.setSecondaryText(R.string.empty_queue_secondary);
@@ -405,8 +407,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mSongTitle.setText(MusicUtils.getTrackName());
         mArtistName.setText(MusicUtils.getArtistName());
 
+        final int durationInSeconds = MusicUtils.durationInSeconds();
+        mSeeker.setMax(durationInSeconds);
+
         // Set the total time
-        String totalTime = MusicUtils.makeShortTimeString(getActivity(), MusicUtils.duration() / 1000);
+        String totalTime = MusicUtils.makeShortTimeString(getActivity(), durationInSeconds);
         if (!mTotalTime.getText().equals(totalTime)) {
             mTotalTime.setText(totalTime);
         }
@@ -471,7 +476,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
      */
     private void updatePlaybackControls() {
         // Set the play and pause image
-        mPlayPauseProgressButton.getPlayPauseButton().updateState();
+        mPlayPauseButtonContainer.updateState();
         // Set the shuffle image
         mShuffleButton.updateShuffleState();
         // Set the repeat image
@@ -516,13 +521,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         }
     }
 
-    private void refreshCurrentTimeText(final long pos) {
-        if (mPlayPauseProgressButton.isDragging()) {
-            mCurrentTime.setText(MusicUtils.makeShortTimeString(getActivity(),
-                    mPlayPauseProgressButton.getDragProgressInMs() / 1000));
-        } else {
-            mCurrentTime.setText(MusicUtils.makeShortTimeString(getActivity(), pos / 1000));
-        }
+    private void refreshCurrentTimeText(final long posInSeconds) {
+        mCurrentTime.setText(MusicUtils.makeShortTimeString(getActivity(), posInSeconds));
     }
 
     /* Used to update the current time string */
@@ -533,29 +533,23 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         try {
             final long pos = MusicUtils.position();
             if (pos >= 0 && MusicUtils.duration() > 0) {
-                refreshCurrentTimeText(pos);
+                final int posInSeconds = ((int) (pos / 1000));
+                refreshCurrentTimeText(posInSeconds);
+                mSeeker.setProgress(posInSeconds);
 
-                if (mPlayPauseProgressButton.isDragging()) {
-                    mCurrentTime.setVisibility(View.VISIBLE);
-                    return MusicUtils.UPDATE_FREQUENCY_FAST_MS;
-                } else if (MusicUtils.isPlaying()) {
+                if (MusicUtils.isPlaying()) {
                     mCurrentTime.setVisibility(View.VISIBLE);
 
                     // calculate the number of milliseconds until the next full second,
                     // so the counter can be updated at just the right time
                     return Math.max(20, 1000 - pos % 1000);
-                } else {
-                    // blink the counter
-                    final int vis = mCurrentTime.getVisibility();
-                    mCurrentTime.setVisibility(vis == View.INVISIBLE ? View.VISIBLE
-                            : View.INVISIBLE);
                 }
             } else {
                 mCurrentTime.setText("--:--");
             }
-        } catch (final Exception ignored) {
-            if (ignored.getMessage() != null) {
-                Log.e(TAG, ignored.getMessage());
+        } catch (final Exception exc) {
+            if (exc.getMessage() != null) {
+                Log.e(TAG, exc.getMessage());
             }
         }
         return MusicUtils.UPDATE_FREQUENCY_MS;
@@ -584,6 +578,27 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         @Override
         public void onRepeat(final View v, final long howlong, final int repcnt) {
             seekRelative(repcnt, howlong, true);
+        }
+    };
+
+    private final SeekBar.OnSeekBarChangeListener mSeekerListener = new SeekBar.OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            if (fromUser) {
+                refreshCurrentTimeText(progress);
+            }
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            // ignore
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            final long wantedDurationInMs = seekBar.getProgress() * 1000L;
+            MusicUtils.seek(wantedDurationInMs);
         }
     };
 
@@ -794,8 +809,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                     audioPlayerFragment.dismissPopupMenu();
                     break;
                 case MusicPlaybackService.PLAYSTATE_CHANGED:
-                    // Set the play and pause image
-                    audioPlayerFragment.mPlayPauseProgressButton.getPlayPauseButton().updateState();
+                    audioPlayerFragment.mPlayPauseButtonContainer.updateState();
                     audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
                     break;
                 case MusicPlaybackService.REPEATMODE_CHANGED:
