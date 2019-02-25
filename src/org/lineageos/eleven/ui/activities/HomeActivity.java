@@ -52,6 +52,7 @@ import org.lineageos.eleven.utils.NavUtils;
 
 import java.util.ArrayList;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -232,7 +233,7 @@ public class HomeActivity extends SlidingPanelActivity implements
 
     private void updateVisualizerColor(int color) {
         if (color == Color.TRANSPARENT) {
-            color = getResources().getColor(R.color.visualizer_fill_color);
+            color = ContextCompat.getColor(this, R.color.visualizer_fill_color);
         }
 
         // check for null since updatestatusBarColor is a async task

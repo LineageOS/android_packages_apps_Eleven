@@ -134,5 +134,8 @@ dependencies {
 
     // see https://developer.android.com/jetpack/androidx/releases/recyclerview
     implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    // see https://developer.android.com/jetpack/androidx/releases/constraintlayout
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
 }
 
