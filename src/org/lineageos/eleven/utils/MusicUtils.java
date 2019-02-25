@@ -42,6 +42,7 @@ import android.provider.MediaStore.Audio.Playlists;
 import android.provider.MediaStore.Audio.PlaylistsColumns;
 import android.provider.MediaStore.MediaColumns;
 import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.support.annotation.WorkerThread;
 import android.util.Log;
 import android.view.Menu;
@@ -216,6 +217,7 @@ public final class MusicUtils {
      * @param secs The track in seconds.
      * @return Duration of a track that's properly formatted.
      */
+    @NonNull
     public static String makeShortTimeString(final Context context, long secs) {
         long hours, mins;
 
@@ -1556,6 +1558,13 @@ public final class MusicUtils {
             }
         }
         return 0;
+    }
+
+    /**
+     * @return The total length of the current track in seconds
+     */
+    public static int durationInSeconds() {
+        return ((int) duration() / 1000);
     }
 
     /**
