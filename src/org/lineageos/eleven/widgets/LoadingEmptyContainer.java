@@ -39,12 +39,9 @@ public class LoadingEmptyContainer extends FrameLayout {
         super(context, attrs);
 
         mHandler = new Handler();
-        mShowLoadingRunnable = new Runnable() {
-            @Override
-            public void run() {
-                findViewById(R.id.progressbar).setVisibility(View.VISIBLE);
-                getNoResultsContainer().setVisibility(View.INVISIBLE);
-            }
+        mShowLoadingRunnable = () -> {
+            findViewById(R.id.progressbar).setVisibility(View.VISIBLE);
+            getNoResultsContainer().setVisibility(View.INVISIBLE);
         };
     }
 
@@ -52,7 +49,9 @@ public class LoadingEmptyContainer extends FrameLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        hideAll();
+        if (!isInEditMode()) {
+            hideAll();
+        }
     }
 
     public void hideAll() {

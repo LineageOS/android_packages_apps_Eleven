@@ -168,4 +168,9 @@
     <color name="audio_player_total_time_color">@color/white</color>
     <color name="number_of_songs_text_color">@color/white</color>
     <color name="duration_text_color">@color/white</color>
+
+    <!-- audio player main controls -->
+    <color name="audio_player_seeker_progress_color">@color/white</color>
+    <color name="audio_player_seeker_progress_background_color">@color/white</color>
+    <color name="audio_player_seeker_thumb_color">@color/white</color>
 </resources>
