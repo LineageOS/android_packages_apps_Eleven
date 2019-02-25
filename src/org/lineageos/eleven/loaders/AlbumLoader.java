@@ -92,6 +92,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
                 // Copy the release year
                 final String year = cursor.getString(4);
 
+                android.util.Log.d("OHAI", "  -> Album " + albumName + " by " + artist);
                 // as per designer's request, don't show unknown albums
                 if (MediaStore.UNKNOWN_STRING.equals(albumName)) {
                     continue;

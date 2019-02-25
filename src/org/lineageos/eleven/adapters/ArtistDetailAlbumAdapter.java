@@ -55,6 +55,7 @@ implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
     private int mListMargin;
 
     public ArtistDetailAlbumAdapter(final Activity activity) {
+        android.util.Log.d("OHAI", "HELLO THERE");
         mActivity = activity;
         mImageFetcher = ElevenUtils.getImageFetcher(activity);
         mInflater = LayoutInflater.from(activity);
@@ -84,6 +85,7 @@ implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Album a = mAlbums.get(position);
+        android.util.Log.d("OHAI", "Binding @" + position + ": " + a.mAlbumName);
         holder.title.setText(a.mAlbumName);
         holder.year.setText(a.mYear);
         mImageFetcher.loadAlbumImage(
@@ -131,11 +133,13 @@ implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
 
     @Override // LoaderCallbacks
     public Loader<List<Album>> onCreateLoader(int id, Bundle args) {
+        android.util.Log.d("OHAI", "Welcome loader");
         return new AlbumLoader(mActivity, args.getLong(Config.ID));
     }
 
     @Override // LoaderCallbacks
     public void onLoadFinished(Loader<List<Album>> loader, List<Album> albums) {
+        android.util.Log.d("OHAI", "LOADED ALBUMS");
         if (albums.isEmpty()) { return; }
         mAlbums = albums;
         notifyDataSetChanged();
@@ -144,6 +148,7 @@ implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
     @Override // LoaderCallbacks
     public void onLoaderReset(Loader<List<Album>> loader) {
         mAlbums = Collections.emptyList();
+        android.util.Log.d("OHAI", "RESET ALBUMS");
         notifyDataSetChanged();
         mImageFetcher.flush();
     }

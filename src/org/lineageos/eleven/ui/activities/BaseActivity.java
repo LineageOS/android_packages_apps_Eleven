@@ -46,7 +46,7 @@ import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
 import org.lineageos.eleven.utils.NavUtils;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     /**
      * Play pause progress button
      */
-    private PlayPauseProgressButton mPlayPauseProgressButton;
+    private PlayPauseButtonContainer mPlayPauseButtonContainer;
 
     /**
      * Track name (BAB)
@@ -230,8 +230,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         // If there is an error playing a track
         filter.addAction(MusicPlaybackService.TRACK_ERROR);
         registerReceiver(mPlaybackStatus, filter);
-
-        mPlayPauseProgressButton.resume();
     }
 
     /**
@@ -251,8 +249,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         } catch (final Throwable e) {
             //$FALL-THROUGH$
         }
-
-        mPlayPauseProgressButton.pause();
     }
 
     /**
@@ -308,15 +304,15 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
      */
     protected void initBottomActionBar() {
         // Play and pause button
-        mPlayPauseProgressButton = (PlayPauseProgressButton)findViewById(R.id.playPauseProgressButton);
-        mPlayPauseProgressButton.enableAndShow();
+        mPlayPauseButtonContainer = findViewById(R.id.playPauseProgressButton);
+        mPlayPauseButtonContainer.enableAndShow();
 
         // Track name
-        mTrackName = (TextView)findViewById(R.id.bottom_action_bar_line_one);
+        mTrackName = findViewById(R.id.bottom_action_bar_line_one);
         // Artist name
-        mArtistName = (TextView)findViewById(R.id.bottom_action_bar_line_two);
+        mArtistName = findViewById(R.id.bottom_action_bar_line_two);
         // Album art
-        mAlbumArt = (ImageView)findViewById(R.id.bottom_action_bar_album_art);
+        mAlbumArt = findViewById(R.id.bottom_action_bar_album_art);
         // Open to the currently playing album profile
         mAlbumArt.setOnClickListener(mOpenCurrentAlbumProfile);
     }
@@ -342,7 +338,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
      */
     private void updatePlaybackControls() {
         // Set the play and pause image
-        mPlayPauseProgressButton.getPlayPauseButton().updateState();
+        mPlayPauseButtonContainer.updateState();
     }
 
     /**
@@ -395,8 +391,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
                         baseActivity.onMetaChanged();
                         break;
                     case MusicPlaybackService.PLAYSTATE_CHANGED:
-                        // Set the play and pause image
-                        baseActivity.mPlayPauseProgressButton.getPlayPauseButton().updateState();
+                        baseActivity.mPlayPauseButtonContainer.updateState();
                         break;
                     case MusicPlaybackService.REFRESH:
                         baseActivity.restartLoader();
