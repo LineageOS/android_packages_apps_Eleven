@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.cache;
@@ -28,8 +33,8 @@ import android.widget.ImageView;
 import org.lineageos.eleven.provider.PlaylistArtworkStore;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.ImageUtils;
-import org.lineageos.eleven.widgets.BlurScrimImage;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
+import org.lineageos.eleven.widgets.AlbumScrimImage;
 import org.lineageos.eleven.widgets.LetterTileDrawable;
 
 import java.lang.ref.WeakReference;
@@ -259,7 +264,8 @@ public abstract class ImageWorker {
      * @param color the color to transition to
      * @return the transition to run
      */
-    public static TransitionDrawable createPaletteTransition(BlurScrimImage scrimImage, int color) {
+    public static TransitionDrawable createPaletteTransition(AlbumScrimImage scrimImage,
+            int color) {
         final Drawable[] arrayDrawable = new Drawable[2];
         arrayDrawable[0] = getTopDrawable(scrimImage.getBackground());
 
@@ -549,28 +555,28 @@ public abstract class ImageWorker {
      * @param artistName The artist name for the Last.fm API.
      * @param albumName The album name for the Last.fm API.
      * @param albumId The album art index, to check for missing artwork.
-     * @param blurScrimImage The {@link BlurScrimImage} used to set the cached
+     * @param albumScrimImage The {@link AlbumScrimImage} used to set the cached
      *            {@link Bitmap}.
      * @param imageType The type of image URL to fetch for.
      */
     protected void loadBlurImage(final String key, final String artistName, final String albumName,
-                             final long albumId, final BlurScrimImage blurScrimImage, final ImageType imageType) {
-        if (key == null || mImageCache == null || blurScrimImage == null) {
+            final long albumId, final AlbumScrimImage albumScrimImage, final ImageType imageType) {
+        if (key == null || mImageCache == null || albumScrimImage == null) {
             return;
         }
 
-        if (executePotentialWork(key, blurScrimImage) && !mImageCache.isDiskCachePaused()) {
+        if (executePotentialWork(key, albumScrimImage) && !mImageCache.isDiskCachePaused()) {
             // Otherwise run the worker task
-            final BlurBitmapWorkerTask blurWorkerTask = new BlurBitmapWorkerTask(key, blurScrimImage,
-                    imageType, mTransparentDrawable, mContext, sRenderScript);
+            final BlurBitmapWorkerTask blurWorkerTask = new BlurBitmapWorkerTask(key,
+                    albumScrimImage, imageType, mTransparentDrawable, mContext, sRenderScript);
             final AsyncTaskContainer asyncTaskContainer = new AsyncTaskContainer(blurWorkerTask);
-            blurScrimImage.setTag(asyncTaskContainer);
+            albumScrimImage.setTag(asyncTaskContainer);
 
             try {
                 ElevenUtils.execute(false, blurWorkerTask, artistName, albumName, String.valueOf(albumId));
             } catch (RejectedExecutionException e) {
                 // Executor has exhausted queue space, show default artwork
-                blurScrimImage.transitionToDefaultState();
+                albumScrimImage.transitionToDefaultState();
             }
         }
     }

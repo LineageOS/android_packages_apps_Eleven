@@ -52,9 +52,9 @@ import org.lineageos.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
 import org.lineageos.eleven.ui.fragments.profile.LastAddedFragment;
 import org.lineageos.eleven.ui.fragments.profile.TopTracksFragment;
 import org.lineageos.eleven.utils.ElevenUtils;
-import org.lineageos.eleven.utils.BitmapWithColors;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
+import org.lineageos.eleven.utils.colors.BitmapWithColors;
 
 import java.util.ArrayList;
 
