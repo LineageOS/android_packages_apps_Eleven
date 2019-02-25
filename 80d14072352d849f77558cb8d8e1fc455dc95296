@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "669b0bfe_e5bdc84f",
+        "filename": "proguard-debug.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2019-02-25T16:21:15Z",
+      "side": 1,
+      "message": "i think we can turn off obfuscation all the time as well",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "80d14072352d849f77558cb8d8e1fc455dc95296",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
