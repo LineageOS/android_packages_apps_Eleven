@@ -23,6 +23,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.media.audiofx.Visualizer;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -139,7 +140,7 @@ public class VisualizerView extends View {
     }
 
     public void initialize(Context context) {
-        mColor = context.getResources().getColor(R.color.visualizer_fill_color);
+        mColor = ContextCompat.getColor(context, R.color.visualizer_fill_color);
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
