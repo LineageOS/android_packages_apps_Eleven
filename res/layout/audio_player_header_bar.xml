@@ -16,9 +16,11 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="@dimen/header_bar_height"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
     android:orientation="horizontal"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
     android:paddingStart="@dimen/header_bar_padding_left"
     android:elevation="@dimen/action_bar_elevation"
     android:background="@android:color/transparent">
