@@ -1554,6 +1554,13 @@ public final class MusicUtils {
     }
 
     /**
+     * @return The total length of the current track in seconds
+     */
+    public static int durationInSeconds() {
+        return ((int) duration() / 1000);
+    }
+
+    /**
      * @param position The position to move the queue to
      */
     public static void setQueuePosition(final int position) {

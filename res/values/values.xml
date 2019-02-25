@@ -2,5 +2,5 @@
 <resources>
     <!-- Circular Progress Bar Sizes -->
     <item format="float" type="dimen" name="circular_progress_bar_inner_radius_ratio">3</item>
-    <item format="float" type="dimen" name="circular_progress_bar_thickness_ratio">10</item>
+    <item format="float" type="dimen" name="circular_progress_bar_thickness_ratio">20</item>
 </resources>
