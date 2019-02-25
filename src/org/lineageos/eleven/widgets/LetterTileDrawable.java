@@ -33,7 +33,7 @@ import android.text.TextUtils;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
-import org.lineageos.eleven.utils.BitmapWithColors;
+import org.lineageos.eleven.utils.colors.BitmapWithColors;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
