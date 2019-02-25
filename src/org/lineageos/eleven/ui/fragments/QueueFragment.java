@@ -13,8 +13,6 @@
 
 package org.lineageos.eleven.ui.fragments;
 
-import static org.lineageos.eleven.utils.MusicUtils.mService;
-
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -59,6 +57,8 @@ import org.lineageos.eleven.widgets.NoResultsContainer;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.TreeSet;
+
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
  * This class is used to display all of the songs in the queue.
