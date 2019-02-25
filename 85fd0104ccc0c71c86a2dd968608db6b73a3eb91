@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94cfdbed_1eb51943",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-02-25T16:36:40Z",
+      "side": 1,
+      "message": "BuildConstants.PACKAGE_NAME + \".AUDIO_PLAYER\"",
+      "range": {
+        "startLine": 342,
+        "startChar": 54,
+        "endLine": 342,
+        "endChar": 89
+      },
+      "revId": "85fd0104ccc0c71c86a2dd968608db6b73a3eb91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
