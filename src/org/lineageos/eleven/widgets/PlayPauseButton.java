@@ -15,6 +15,7 @@ package org.lineageos.eleven.widgets;
 
 import android.animation.Animator;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -33,16 +34,6 @@ import org.lineageos.eleven.utils.MusicUtils;
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class PlayPauseButton extends ImageButton implements OnClickListener, OnLongClickListener {
-
-    /**
-     * Play button theme resource
-     */
-    private static final String PLAY = "btn_playback_play";
-
-    /**
-     * Pause button theme resource
-     */
-    private static final String PAUSE = "btn_playback_pause";
 
     /**
      * @param context The {@link Context} to use
@@ -97,10 +88,10 @@ public class PlayPauseButton extends ImageButton implements OnClickListener, OnL
     public void updateState() {
         if (MusicUtils.isPlaying()) {
             setContentDescription(getResources().getString(R.string.accessibility_pause));
-            setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_pause));
+            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_pause));
         } else {
             setContentDescription(getResources().getString(R.string.accessibility_play));
-            setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_play));
+            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_play));
         }
     }
 
