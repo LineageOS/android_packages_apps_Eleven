@@ -14,6 +14,7 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -29,7 +30,9 @@ import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
 import org.lineageos.eleven.ui.fragments.QueueFragment;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
-import org.lineageos.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.utils.colors.ColorExtractor;
+import org.lineageos.eleven.widgets.AlbumScrimImage;
 
 /**
  * This class is used to display the {@link ViewPager} used to swipe between the
@@ -55,7 +58,9 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
     // this is the blurred image that goes behind the now playing and queue fragments
-    private BlurScrimImage mBlurScrimImage;
+    private AlbumScrimImage mAlbumScrimImage;
+
+    private boolean mUseBlur;
 
     /**
      * Opens the now playing screen
@@ -91,6 +96,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mUseBlur = PreferenceUtils.getInstance(this).getUseBlur();
 
         mTargetNavigatePanel = Panel.None;
 
@@ -98,7 +104,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         setupSecondPanel();
 
         // get the blur scrim image
-        mBlurScrimImage = (BlurScrimImage)findViewById(R.id.blurScrimImage);
+        mAlbumScrimImage = findViewById(R.id.blurScrimImage);
 
         if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
@@ -182,6 +188,16 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override protected void onResume() {
+        super.onResume();
+
+        // recreate activity if blur preference has changed to apply changes
+        final boolean useBlur = PreferenceUtils.getInstance(this).getUseBlur();
+        if (mUseBlur != useBlur) {
+            recreate();
+        }
     }
 
     /**
@@ -268,35 +284,52 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
     public void clearMetaInfo() {
         super.clearMetaInfo();
-        mBlurScrimImage.transitionToDefaultState();
+        mAlbumScrimImage.transitionToDefaultState();
     }
 
     @Override
     public void onMetaChanged() {
         super.onMetaChanged();
 
-        // load the blurred image
-        mBlurScrimImage.loadBlurImage(ElevenUtils.getImageFetcher(this));
+        updateScrimImage();
     }
 
     @Override
     public void onCacheUnpaused() {
         super.onCacheUnpaused();
 
-        // load the blurred image
-        mBlurScrimImage.loadBlurImage(ElevenUtils.getImageFetcher(this));
+        updateScrimImage();
+    }
+
+    private void updateScrimImage() {
+        ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage, mColorExtractorCallback);
     }
 
     protected AudioPlayerFragment getAudioPlayerFragment() {
-        return (AudioPlayerFragment)getSupportFragmentManager().findFragmentById(R.id.audioPlayerFragment);
+        return (AudioPlayerFragment) getSupportFragmentManager().findFragmentById(R.id.audioPlayerFragment);
     }
 
     protected QueueFragment getQueueFragment() {
-        return (QueueFragment)getSupportFragmentManager().findFragmentById(R.id.queueFragment);
+        return (QueueFragment) getSupportFragmentManager().findFragmentById(R.id.queueFragment);
     }
 
+    private final ColorExtractor.Callback mColorExtractorCallback = (bitmapWithColors) -> {
+        if (bitmapWithColors == null) {
+            return;
+        }
+
+        // update scrim image
+        final int[] gradientColors = new int[]{
+                bitmapWithColors.getVibrantColor(), bitmapWithColors.getVibrantDarkColor()
+        };
+
+        final GradientDrawable gradientDrawable = new GradientDrawable();
+        gradientDrawable.setColors(gradientColors);
+        mAlbumScrimImage.setGradientDrawable(gradientDrawable);
+    };
+
     protected void setupQueueHeaderBar(final int containerId, final int textId,
-                                       final View.OnClickListener headerClickListener) {
+            final View.OnClickListener headerClickListener) {
         final HeaderBar headerBar = findViewById(containerId);
         headerBar.setFragment(getQueueFragment());
         headerBar.setTitleText(textId);
