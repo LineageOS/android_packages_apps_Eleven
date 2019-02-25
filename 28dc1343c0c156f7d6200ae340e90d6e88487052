@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9c676c7_1121ae4b",
+        "filename": "build.gradle",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2019-02-25T20:59:30Z",
+      "side": 1,
+      "message": "debug flavor has proguard disabled, incremental builds take 1 second on my machine whereas proguard takes a lot of time.\n\nso if you do lots of changes -\u003e debug\nif you want to debug and test proguard behavior too -\u003e debugProguard",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 13
+      },
+      "revId": "28dc1343c0c156f7d6200ae340e90d6e88487052",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
