@@ -74,6 +74,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 
 /**
@@ -217,6 +218,7 @@ public final class MusicUtils {
      * @param secs The track in seconds.
      * @return Duration of a track that's properly formatted.
      */
+    @NonNull
     public static String makeShortTimeString(final Context context, long secs) {
         long hours, mins;
 
@@ -1557,6 +1559,13 @@ public final class MusicUtils {
             }
         }
         return 0;
+    }
+
+    /**
+     * @return The total length of the current track in seconds
+     */
+    public static int durationInSeconds() {
+        return ((int) duration() / 1000);
     }
 
     /**

@@ -20,7 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 import org.lineageos.eleven.widgets.PopupMenuButton;
 
 import java.lang.ref.WeakReference;
@@ -70,7 +70,7 @@ public class MusicHolder {
      *
      * @see {@code #getView()} of a specific adapter for more detailed info
      */
-    public WeakReference<PlayPauseProgressButton> mPlayPauseProgressButton;
+    public WeakReference<PlayPauseButtonContainer> mPlayPauseProgressButton;
 
     /**
      * The Padding container for the circular progress bar
@@ -114,7 +114,7 @@ public class MusicHolder {
 
         // Initialize Circular progress bar container
         mPlayPauseProgressButton = new WeakReference<>(
-                (PlayPauseProgressButton) view.findViewById(R.id.playPauseProgressButton));
+                (PlayPauseButtonContainer) view.findViewById(R.id.playPauseProgressButton));
 
         // Get the padding container for the progress bar
         mPlayPauseProgressContainer = new WeakReference<>(
