@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.ui.activities;
@@ -46,7 +51,7 @@ import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
 import org.lineageos.eleven.utils.NavUtils;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -79,7 +84,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     /**
      * Play pause progress button
      */
-    private PlayPauseProgressButton mPlayPauseProgressButton;
+    private PlayPauseButtonContainer mPlayPauseButtonContainer;
 
     /**
      * Track name (BAB)
@@ -230,8 +235,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         // If there is an error playing a track
         filter.addAction(MusicPlaybackService.TRACK_ERROR);
         registerReceiver(mPlaybackStatus, filter);
-
-        mPlayPauseProgressButton.resume();
     }
 
     /**
@@ -251,8 +254,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         } catch (final Throwable e) {
             //$FALL-THROUGH$
         }
-
-        mPlayPauseProgressButton.pause();
     }
 
     /**
@@ -308,15 +309,15 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
      */
     protected void initBottomActionBar() {
         // Play and pause button
-        mPlayPauseProgressButton = (PlayPauseProgressButton)findViewById(R.id.playPauseProgressButton);
-        mPlayPauseProgressButton.enableAndShow();
+        mPlayPauseButtonContainer = findViewById(R.id.playPauseProgressButton);
+        mPlayPauseButtonContainer.enableAndShow();
 
         // Track name
-        mTrackName = (TextView)findViewById(R.id.bottom_action_bar_line_one);
+        mTrackName = findViewById(R.id.bottom_action_bar_line_one);
         // Artist name
-        mArtistName = (TextView)findViewById(R.id.bottom_action_bar_line_two);
+        mArtistName = findViewById(R.id.bottom_action_bar_line_two);
         // Album art
-        mAlbumArt = (ImageView)findViewById(R.id.bottom_action_bar_album_art);
+        mAlbumArt = findViewById(R.id.bottom_action_bar_album_art);
         // Open to the currently playing album profile
         mAlbumArt.setOnClickListener(mOpenCurrentAlbumProfile);
     }
@@ -342,7 +343,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
      */
     private void updatePlaybackControls() {
         // Set the play and pause image
-        mPlayPauseProgressButton.getPlayPauseButton().updateState();
+        mPlayPauseButtonContainer.updateState();
     }
 
     /**
@@ -395,8 +396,7 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
                         baseActivity.onMetaChanged();
                         break;
                     case MusicPlaybackService.PLAYSTATE_CHANGED:
-                        // Set the play and pause image
-                        baseActivity.mPlayPauseProgressButton.getPlayPauseButton().updateState();
+                        baseActivity.mPlayPauseButtonContainer.updateState();
                         break;
                     case MusicPlaybackService.REFRESH:
                         baseActivity.restartLoader();

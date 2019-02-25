@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.ui;
@@ -20,7 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 import org.lineageos.eleven.widgets.PopupMenuButton;
 
 import java.lang.ref.WeakReference;
@@ -70,7 +75,7 @@ public class MusicHolder {
      *
      * @see {@code #getView()} of a specific adapter for more detailed info
      */
-    public WeakReference<PlayPauseProgressButton> mPlayPauseProgressButton;
+    public WeakReference<PlayPauseButtonContainer> mPlayPauseProgressButton;
 
     /**
      * The Padding container for the circular progress bar
@@ -114,7 +119,7 @@ public class MusicHolder {
 
         // Initialize Circular progress bar container
         mPlayPauseProgressButton = new WeakReference<>(
-                (PlayPauseProgressButton) view.findViewById(R.id.playPauseProgressButton));
+                (PlayPauseButtonContainer) view.findViewById(R.id.playPauseProgressButton));
 
         // Get the padding container for the progress bar
         mPlayPauseProgressContainer = new WeakReference<>(
