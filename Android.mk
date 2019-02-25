@@ -15,7 +15,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.core_core \
     androidx.legacy_legacy-support-v4 \
     androidx.palette_palette \
-    androidx.recyclerview_recyclerview
+    androidx.recyclerview_recyclerview \
+    androidx-constraintlayout_constraintlayout
 
 LOCAL_USE_AAPT2 := true
 

@@ -46,6 +46,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
 
 import org.lineageos.eleven.Config.IdType;
@@ -75,6 +76,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
+
 
 /**
  * A collection of helpers directly related to music or Eleven's service.
@@ -217,6 +219,7 @@ public final class MusicUtils {
      * @param secs The track in seconds.
      * @return Duration of a track that's properly formatted.
      */
+    @NonNull
     public static String makeShortTimeString(final Context context, long secs) {
         long hours, mins;
 
@@ -1559,6 +1562,13 @@ public final class MusicUtils {
             }
         }
         return 0;
+    }
+
+    /**
+     * @return The total length of the current track in seconds
+     */
+    public static int durationInSeconds() {
+        return ((int) duration() / 1000);
     }
 
     /**

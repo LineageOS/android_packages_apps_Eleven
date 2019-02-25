@@ -27,22 +27,15 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.core.content.ContextCompat;
+
 /**
  * A custom {@link ImageButton} that represents the "play and pause" button.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class PlayPauseButton extends ImageButton implements OnClickListener, OnLongClickListener {
-
-    /**
-     * Play button theme resource
-     */
-    private static final String PLAY = "btn_playback_play";
-
-    /**
-     * Pause button theme resource
-     */
-    private static final String PAUSE = "btn_playback_pause";
+public class PlayPauseButton extends AppCompatImageButton implements OnClickListener, OnLongClickListener {
 
     /**
      * @param context The {@link Context} to use
@@ -58,9 +51,6 @@ public class PlayPauseButton extends ImageButton implements OnClickListener, OnL
         setOnLongClickListener(this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onClick(final View v) {
         MusicUtils.playOrPause();
@@ -78,9 +68,6 @@ public class PlayPauseButton extends ImageButton implements OnClickListener, OnL
         updateState();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onLongClick(final View view) {
         if (TextUtils.isEmpty(view.getContentDescription())) {
@@ -97,11 +84,10 @@ public class PlayPauseButton extends ImageButton implements OnClickListener, OnL
     public void updateState() {
         if (MusicUtils.isPlaying()) {
             setContentDescription(getResources().getString(R.string.accessibility_pause));
-            setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_pause));
+            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_pause));
         } else {
             setContentDescription(getResources().getString(R.string.accessibility_play));
-            setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_play));
+            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_play));
         }
     }
-
 }

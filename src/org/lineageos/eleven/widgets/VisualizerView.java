@@ -29,6 +29,8 @@ import android.view.View;
 
 import org.lineageos.eleven.R;
 
+import androidx.core.content.ContextCompat;
+
 public class VisualizerView extends View {
     private static final String TAG = VisualizerView.class.getSimpleName();
 
@@ -162,7 +164,7 @@ public class VisualizerView extends View {
     }
 
     public void initialize(Context context) {
-        mColor = context.getResources().getColor(R.color.visualizer_fill_color);
+        mColor = ContextCompat.getColor(context, R.color.visualizer_fill_color);
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);

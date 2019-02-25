@@ -33,7 +33,7 @@ import org.lineageos.eleven.ui.fragments.SongFragment;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
-import org.lineageos.eleven.widgets.PlayPauseProgressButton;
+import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the songs on a user's
@@ -144,17 +144,17 @@ public class SongAdapter extends ArrayAdapter<Song>
 
         // padding doesn't apply to included layouts, so we need
         // to wrap it in a container and show/hide with the container
-        PlayPauseProgressButton playPauseProgressButton = holder.mPlayPauseProgressButton.get();
-        if (playPauseProgressButton != null) {
+        PlayPauseButtonContainer playPauseButtonContainer = holder.mPlayPauseProgressButton.get();
+        if (playPauseButtonContainer != null) {
             View playPauseContainer = holder.mPlayPauseProgressContainer.get();
 
             if (mCurrentQueuePosition == position) {
                 // make it visible
-                playPauseProgressButton.enableAndShow();
+                playPauseButtonContainer.enableAndShow();
                 playPauseContainer.setVisibility(View.VISIBLE);
             } else {
                 // hide it
-                playPauseProgressButton.disableAndHide();
+                playPauseButtonContainer.disableAndHide();
                 playPauseContainer.setVisibility(View.GONE);
             }
         }
