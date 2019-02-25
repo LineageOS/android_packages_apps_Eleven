@@ -28,7 +28,7 @@ import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
 import org.lineageos.eleven.ui.fragments.QueueFragment;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
-import org.lineageos.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.widgets.AlbumScrimImage;
 
 /**
  * This class is used to display the {@link ViewPager} used to swipe between the
@@ -55,7 +55,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
     // this is the blurred image that goes behind the now playing and queue fragments
-    private BlurScrimImage mBlurScrimImage;
+    private AlbumScrimImage mAlbumScrimImage;
 
     /**
      * Opens the now playing screen
@@ -98,7 +98,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         setupSecondPanel();
 
         // get the blur scrim image
-        mBlurScrimImage = (BlurScrimImage)findViewById(R.id.blurScrimImage);
+        mAlbumScrimImage = (AlbumScrimImage)findViewById(R.id.blurScrimImage);
 
         if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
@@ -268,7 +268,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
     public void clearMetaInfo() {
         super.clearMetaInfo();
-        mBlurScrimImage.transitionToDefaultState();
+        mAlbumScrimImage.transitionToDefaultState();
     }
 
     @Override
@@ -276,7 +276,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onMetaChanged();
 
         // load the blurred image
-        mBlurScrimImage.loadBlurImage(ElevenUtils.getImageFetcher(this));
+        mAlbumScrimImage.loadImage(ElevenUtils.getImageFetcher(this));
     }
 
     @Override
@@ -284,7 +284,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onCacheUnpaused();
 
         // load the blurred image
-        mBlurScrimImage.loadBlurImage(ElevenUtils.getImageFetcher(this));
+        mAlbumScrimImage.loadImage(ElevenUtils.getImageFetcher(this));
     }
 
     protected AudioPlayerFragment getAudioPlayerFragment() {

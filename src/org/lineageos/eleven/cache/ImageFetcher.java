@@ -17,6 +17,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.widget.ImageView;
 import org.lineageos.eleven.Config;
@@ -24,7 +25,7 @@ import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
 import org.lineageos.eleven.utils.BitmapWithColors;
 import org.lineageos.eleven.utils.MusicUtils;
-import org.lineageos.eleven.widgets.BlurScrimImage;
+import org.lineageos.eleven.widgets.AlbumScrimImage;
 import org.lineageos.eleven.widgets.LetterTileDrawable;
 
 import java.io.FileNotFoundException;
@@ -103,10 +104,22 @@ public class ImageFetcher extends ImageWorker {
     /**
      * Used to fetch the current artwork blurred.
      */
-    public void loadCurrentBlurredArtwork(final BlurScrimImage image) {
+    public void loadCurrentBlurredArtwork(final AlbumScrimImage image) {
         loadBlurImage(getCurrentCacheKey(),
                 MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
                 image, ImageType.ALBUM);
+    }
+
+    public void loadCurrentGradientArtwork(final AlbumScrimImage image) {
+        final BitmapWithColors bitmapWithColors = getArtwork(MusicUtils.getAlbumName(),
+                MusicUtils.getCurrentAlbumId(), MusicUtils.getArtistName(), true);
+        final int[] gradientColors = new int[] {
+                bitmapWithColors.getVibrantColor(), bitmapWithColors.getVibrantDarkColor()
+        };
+        final GradientDrawable gradientDrawable = new GradientDrawable();
+        gradientDrawable.setColors(gradientColors);
+
+        image.setGradientDrawable(gradientDrawable);
     }
 
     public static String getCurrentCacheKey() {
