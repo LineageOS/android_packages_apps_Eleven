@@ -43,17 +43,17 @@ public class RepeatButton extends AudioButton {
         switch (MusicUtils.getRepeatMode()) {
             case MusicPlaybackService.REPEAT_ALL:
                 setContentDescription(getResources().getString(R.string.accessibility_repeat_all));
-                setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_repeat_all));
+                setImageResource(R.drawable.btn_playback_repeat_all);
                 setAlpha(ACTIVE_ALPHA);
                 break;
             case MusicPlaybackService.REPEAT_CURRENT:
                 setContentDescription(getResources().getString(R.string.accessibility_repeat_one));
-                setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_repeat_one));
+                setImageResource(R.drawable.btn_playback_repeat_one);
                 setAlpha(ACTIVE_ALPHA);
                 break;
             case MusicPlaybackService.REPEAT_NONE:
                 setContentDescription(getResources().getString(R.string.accessibility_repeat));
-                setImageDrawable(getResources().getDrawable(R.drawable.btn_playback_repeat_all));
+                setImageResource(R.drawable.btn_playback_repeat_all);
                 setAlpha(INACTIVE_ALPHA);
                 break;
             default:
