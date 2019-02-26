@@ -5,6 +5,7 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := src/org/lineageos/eleven/IElevenService.aidl
 LOCAL_SRC_FILES += $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, src_aosp)
 
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
