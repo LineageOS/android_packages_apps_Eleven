@@ -324,17 +324,14 @@ public class HomeActivity extends SlidingPanelActivity implements
                 MusicUtils.removeFromCache(this, mKey);
                 final Uri selectedImage = data.getData();
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Bitmap bitmap = ImageFetcher.decodeSampledBitmapFromUri(getContentResolver(),
-                                selectedImage);
+                new Thread(() -> {
+                    Bitmap bitmap = ImageFetcher.decodeSampledBitmapFromUri(getContentResolver(),
+                            selectedImage);
 
-                        ImageFetcher imageFetcher = ElevenUtils.getImageFetcher(HomeActivity.this);
-                        imageFetcher.addBitmapToCache(mKey, bitmap);
+                    ImageFetcher imageFetcher = ElevenUtils.getImageFetcher(HomeActivity.this);
+                    imageFetcher.addBitmapToCache(mKey, bitmap);
 
-                        MusicUtils.refresh();
-                    }
+                    MusicUtils.refresh();
                 }).start();
             }
         }
