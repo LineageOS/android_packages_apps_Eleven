@@ -33,6 +33,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore.Audio.Media;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -66,8 +67,9 @@ import java.lang.ref.WeakReference;
  * @see {@link OnAudioFocusChangeListener}
  * @see {@link OnSeekBarChangeListener}
  */
-public class AudioPreviewActivity extends Activity implements MediaPlayer.OnCompletionListener,
-        MediaPlayer.OnErrorListener, MediaPlayer.OnPreparedListener, OnClickListener,
+public class AudioPreviewActivity extends AppCompatActivity implements
+        MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener,
+        MediaPlayer.OnPreparedListener, OnClickListener,
         OnAudioFocusChangeListener, OnSeekBarChangeListener, OnTouchListener {
 
     // Constants
@@ -196,7 +198,7 @@ public class AudioPreviewActivity extends Activity implements MediaPlayer.OnComp
         }
         Logger.logd(TAG, "URI: " + uri);
         mPreviewSong.URI = uri;
-        PreviewPlayer localPlayer = (PreviewPlayer) getLastNonConfigurationInstance();
+        PreviewPlayer localPlayer = (PreviewPlayer) getLastCustomNonConfigurationInstance();
         if (localPlayer == null) {
             mPreviewPlayer = new PreviewPlayer();
             mPreviewPlayer.setCallbackActivity(this);
@@ -248,7 +250,7 @@ public class AudioPreviewActivity extends Activity implements MediaPlayer.OnComp
     }
 
     @Override
-    public Object onRetainNonConfigurationInstance() {
+    public Object onRetainCustomNonConfigurationInstance() {
         mPreviewPlayer.clearCallbackActivity();
         PreviewPlayer localPlayer = mPreviewPlayer;
         mPreviewPlayer = null;

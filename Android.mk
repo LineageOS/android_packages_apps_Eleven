@@ -18,6 +18,8 @@ LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
     constraint-layout
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
+    android-support-design \
+    android-support-transition \
     android-support-v4 \
     android-support-v7-appcompat \
     android-support-v7-cardview \
