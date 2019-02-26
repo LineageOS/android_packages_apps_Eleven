@@ -15,27 +15,28 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/menu_audio_player_equalizer"
-        android:showAsAction="never"
         android:orderInCategory="41"
-        android:title="@string/menu_equalizer"/>
+        android:title="@string/menu_equalizer"
+        app:showAsAction="never" />
     <item
         android:id="@+id/menu_audio_player_ringtone"
-        android:showAsAction="never"
         android:orderInCategory="42"
-        android:title="@string/context_menu_use_as_ringtone"/>
+        android:title="@string/context_menu_use_as_ringtone"
+        app:showAsAction="never" />
     <item
         android:id="@+id/menu_audio_player_more_by_artist"
-        android:showAsAction="never"
         android:orderInCategory="43"
-        android:title="@string/context_menu_more_by_artist"/>
+        android:title="@string/context_menu_more_by_artist"
+        app:showAsAction="never" />
     <item
         android:id="@+id/menu_audio_player_delete"
-        android:showAsAction="never"
         android:orderInCategory="44"
-        android:title="@string/context_menu_delete"/>
+        android:title="@string/context_menu_delete"
+        app:showAsAction="never" />
 
 </menu>
