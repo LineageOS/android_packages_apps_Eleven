@@ -33,6 +33,7 @@ import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
+import org.lineageos.eleven.cache.disklrucache.DiskLruCache;
 import org.lineageos.eleven.utils.ElevenUtils;
 
 import java.io.File;
