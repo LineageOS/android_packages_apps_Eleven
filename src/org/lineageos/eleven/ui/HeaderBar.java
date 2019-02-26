@@ -60,7 +60,7 @@ public class HeaderBar extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mMenuButton = (ImageView)findViewById(R.id.header_bar_menu_button);
+        mMenuButton = findViewById(R.id.header_bar_menu_button);
         mMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +68,7 @@ public class HeaderBar extends LinearLayout {
             }
         });
 
-        mSearchButton = (ImageView)findViewById(R.id.header_bar_search_button);
+        mSearchButton = findViewById(R.id.header_bar_search_button);
         mSearchButton.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View v) {
@@ -76,10 +76,25 @@ public class HeaderBar extends LinearLayout {
             }
         });
 
+        mBackButton = findViewById(R.id.header_bar_up);
 
-        mBackButton = (ImageView)findViewById(R.id.header_bar_up);
+        mTitleText = findViewById(R.id.header_bar_title);
+    }
 
-        mTitleText = (TextView)findViewById(R.id.header_bar_title);
+    public void hideBackButton() {
+        mBackButton.setVisibility(View.GONE);
+    }
+
+    public void showBackButton() {
+        mBackButton.setVisibility(View.VISIBLE);
+    }
+
+    public void hideSearchButton() {
+        mSearchButton.setVisibility(View.GONE);
+    }
+
+    public void showSearchButton() {
+        mSearchButton.setVisibility(View.VISIBLE);
     }
 
     /**
