@@ -22,9 +22,6 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "MediaButtonIntentReceiver";
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onReceive(final Context context, final Intent intent) {
         if (DEBUG) Log.v(TAG, "Received intent: " + intent);
