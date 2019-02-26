@@ -15,12 +15,13 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/menu_new_playlist"
-        android:showAsAction="never"
         android:orderInCategory="130"
-        android:title="@string/new_playlist"/>
+        android:title="@string/new_playlist"
+        app:showAsAction="never" />
 
 </menu>
