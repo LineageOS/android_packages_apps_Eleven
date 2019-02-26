@@ -50,6 +50,9 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
+    <!-- Allows Eleven to start services in foreground -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <!-- Accelerometer feature for shake to play -->
     <uses-feature android:name="android.hardware.sensor.accelerometer" />
 
