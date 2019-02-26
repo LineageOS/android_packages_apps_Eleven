@@ -13,7 +13,6 @@
 
 package org.lineageos.eleven.ui.activities;
 
-import android.app.ActionBar;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -32,7 +31,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.MusicPlaybackService;
@@ -50,6 +48,10 @@ import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import static org.lineageos.eleven.utils.MusicUtils.mService;
@@ -62,7 +64,7 @@ import static org.lineageos.eleven.utils.MusicUtils.mService;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public abstract class BaseActivity extends FragmentActivity implements ServiceConnection,
+public abstract class BaseActivity extends AppCompatActivity implements ServiceConnection,
         MusicStateListener, ICacheListener {
 
     /**
@@ -133,14 +135,14 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         // Set the layout
         setContentView(setContentView());
 
-        mToolBar = (Toolbar) findViewById(R.id.toolbar);
-        setActionBar(mToolBar);
+        mToolBar = findViewById(R.id.toolbar);
+        setSupportActionBar(mToolBar);
 
         setActionBarTitle(getString(R.string.app_name));
 
         // set the background on the root view
         getWindow().getDecorView().getRootView().setBackgroundColor(
-                getResources().getColor(R.color.background_color));
+                ContextCompat.getColor(this, R.color.background_color));
         // Initialze the bottom action bar
         initBottomActionBar();
 
@@ -270,15 +272,18 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         setActionBarTitle(title);
 
         if (mActionBarBackground == null) {
-            final int actionBarColor = getResources().getColor(R.color.header_action_bar_color);
+            final int actionBarColor = ContextCompat.getColor(this,
+                    R.color.header_action_bar_color);
             mActionBarBackground = new ColorDrawable(actionBarColor);
-            mToolBar.setBackgroundDrawable(mActionBarBackground);
+            mToolBar.setBackground(mActionBarBackground);
         }
     }
 
     public void setActionBarTitle(String title) {
-        ActionBar actionBar = getActionBar();
-        actionBar.setTitle(title);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle(title);
+        }
     }
 
     public void setActionBarAlpha(int alpha) {
