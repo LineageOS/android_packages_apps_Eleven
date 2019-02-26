@@ -85,7 +85,7 @@
         android:focusable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/app_widget_small_info_container_padding_left"
+        android:paddingStart="@dimen/app_widget_small_info_container_padding_left"
         android:paddingRight="@dimen/app_widget_small_info_container_padding_right" >
 
         <TextView
