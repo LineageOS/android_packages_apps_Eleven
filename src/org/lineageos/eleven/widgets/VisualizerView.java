@@ -24,11 +24,19 @@ import android.graphics.Paint;
 import android.media.audiofx.Visualizer;
 import android.os.AsyncTask;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import org.lineageos.eleven.R;
 
 public class VisualizerView extends View {
+    private static final String TAG = VisualizerView.class.getSimpleName();
+
+    private static final int DEFAULT_ALPHA = 140;
+
+    private static final long DURATION_LINK = 800;
+    private static final long DURATION_UNLINK = 600;
+
     private Paint mPaint;
     private Visualizer mVisualizer;
     private ObjectAnimator mVisualizerColorAnimator;
@@ -39,6 +47,8 @@ public class VisualizerView extends View {
     private boolean mVisible = false;
     private boolean mPlaying = false;
     private boolean mPowerSaveMode = false;
+    private boolean mDisplaying = false; // the state we're animating to
+
     private int mColor;
 
     private Visualizer.OnDataCaptureListener mVisualizerListener =
@@ -49,6 +59,7 @@ public class VisualizerView extends View {
 
         @Override
         public void onWaveFormDataCapture(Visualizer visualizer, byte[] bytes, int samplingRate) {
+            // empty
         }
 
         @Override
@@ -61,7 +72,8 @@ public class VisualizerView extends View {
                 magnitude = rfk * rfk + ifk * ifk;
                 dbValue = magnitude > 0 ? (int) (10 * Math.log10(magnitude)) : 0;
 
-                mValueAnimators[i].setFloatValues(mFFTPoints[i * 4 + 1],
+                mValueAnimators[i].setFloatValues(
+                        mFFTPoints[i * 4 + 1],
                         mFFTPoints[3] - (dbValue * 16f));
                 mValueAnimators[i].start();
             }
@@ -74,6 +86,7 @@ public class VisualizerView extends View {
             try {
                 mVisualizer = new Visualizer(0);
             } catch (Exception e) {
+                Log.e(TAG, "error initializing visualizer", e);
                 return;
             }
 
@@ -85,12 +98,21 @@ public class VisualizerView extends View {
         }
     };
 
+    private final Runnable mAsyncUnlinkVisualizer = new Runnable() {
+        @Override
+        public void run() {
+            AsyncTask.execute(mUnlinkVisualizer);
+        }
+    };
+
     private final Runnable mUnlinkVisualizer = new Runnable() {
         @Override
         public void run() {
-            mVisualizer.setEnabled(false);
-            mVisualizer.release();
-            mVisualizer = null;
+            if (mVisualizer != null) {
+                mVisualizer.setEnabled(false);
+                mVisualizer.release();
+                mVisualizer = null;
+            }
         }
     };
 
@@ -125,6 +147,7 @@ public class VisualizerView extends View {
 
         for (int i = 0; i < 32; i++) {
             mFFTPoints[i * 4] = mFFTPoints[i * 4 + 2] = i * barUnit + (barWidth / 2);
+            mFFTPoints[i * 4 + 1] = h;
             mFFTPoints[i * 4 + 3] = h;
         }
     }
@@ -149,20 +172,11 @@ public class VisualizerView extends View {
             final int j = i * 4 + 1;
             mValueAnimators[i] = new ValueAnimator();
             mValueAnimators[i].setDuration(128);
-            mValueAnimators[i].addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    mFFTPoints[j] = (float) animation.getAnimatedValue();
-                }
-            });
+            mValueAnimators[i].addUpdateListener(animation ->
+                    mFFTPoints[j] = (float) animation.getAnimatedValue());
         }
 
-        mValueAnimators[31].addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                postInvalidate();
-            }
-        });
+        mValueAnimators[31].addUpdateListener(animation -> postInvalidate());
     }
 
     public void setVisible(boolean visible) {
@@ -187,7 +201,11 @@ public class VisualizerView extends View {
     }
 
     public void setColor(int color) {
-        color = Color.argb(191, Color.red(color), Color.green(color), Color.blue(color));
+        if (color == Color.TRANSPARENT) {
+            color = Color.WHITE;
+        }
+
+        color = Color.argb(DEFAULT_ALPHA, Color.red(color), Color.green(color), Color.blue(color));
 
         if (mColor != color) {
             mColor = color;
@@ -210,14 +228,23 @@ public class VisualizerView extends View {
 
     private void checkStateChanged() {
         if (mVisible && mPlaying && !mPowerSaveMode) {
-            if (mVisualizer == null) {
+            if (!mDisplaying) {
+                mDisplaying = true;
+
                 AsyncTask.execute(mLinkVisualizer);
-                animate().alpha(1f).setDuration(300);
+                animate()
+                        .alpha(1f)
+                        .setDuration(DURATION_LINK);
             }
         } else {
-            if (mVisualizer != null) {
-                animate().alpha(0f).setDuration(0);
-                AsyncTask.execute(mUnlinkVisualizer);
+            if (mDisplaying) {
+                mDisplaying = false;
+
+                final long unlinkDuration = (mVisible ? DURATION_UNLINK : 0);
+                animate()
+                        .alpha(0f)
+                        .withEndAction(mAsyncUnlinkVisualizer)
+                        .setDuration(unlinkDuration);
             }
         }
     }
