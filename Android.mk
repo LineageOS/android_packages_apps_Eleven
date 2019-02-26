@@ -5,16 +5,19 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := src/org/lineageos/eleven/IElevenService.aidl
 LOCAL_SRC_FILES += $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, src_aosp)
 
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v8-renderscript \
     android-common \
-    constraint-layout-solver
+    constraint-layout-solver \
+    jetbrains-annotations
 
 LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
-    constraint-layout
+    constraint-layout \
+    timber
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v4 \
@@ -42,6 +45,10 @@ endif
 include $(BUILD_PACKAGE)
 
 include $(CLEAR_VARS)
+
+LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES += \
+    jetbrains-annotations:libs/jetbrains-annotations-16.0.1.jar \
+    timber:libs/timber-4.7.1.aar
 
 include $(BUILD_MULTI_PREBUILT)
 
