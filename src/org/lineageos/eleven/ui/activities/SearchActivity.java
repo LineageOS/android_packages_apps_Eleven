@@ -13,7 +13,6 @@
 
 package org.lineageos.eleven.ui.activities;
 
-import android.app.ActionBar;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -43,6 +42,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
@@ -85,7 +87,7 @@ import static android.view.View.OnTouchListener;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class SearchActivity extends FragmentActivity implements
+public class SearchActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<SectionListContainer<SearchResult>>,
         OnScrollListener, OnQueryTextListener, OnItemClickListener, OnTouchListener {
     /**
@@ -280,7 +282,7 @@ public class SearchActivity extends FragmentActivity implements
             }
         });
 
-        mLoadingEmptyContainer = (LoadingEmptyContainer) findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = findViewById(R.id.loading_empty_container);
         // setup the no results container
         NoResultsContainer noResults = mLoadingEmptyContainer.getNoResultsContainer();
         noResults.setMainText(R.string.empty_search);
@@ -298,8 +300,10 @@ public class SearchActivity extends FragmentActivity implements
         };
 
         // Theme the action bar
-        final ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
         // Get the query String
         mFilterString = getIntent().getStringExtra(SearchManager.QUERY);
@@ -433,7 +437,7 @@ public class SearchActivity extends FragmentActivity implements
 
         // Filter the list the user is looking it via SearchView
         MenuItem searchItem = menu.findItem(R.id.menu_search);
-        mSearchView = (SearchView)searchItem.getActionView();
+        mSearchView = (SearchView) searchItem.getActionView();
         mSearchView.setOnQueryTextListener(this);
         mSearchView.setQueryHint(getString(R.string.searchHint));
 
@@ -751,9 +755,10 @@ public class SearchActivity extends FragmentActivity implements
                 }
 
                 // pre-cache this index
-                final int mimeTypeIndex = cursor.getColumnIndex(MediaStore.Audio.Media.MIME_TYPE);
-
                 if (cursor != null && cursor.moveToFirst()) {
+                    final int mimeTypeIndex = cursor.getColumnIndex(
+                            MediaStore.Audio.Media.MIME_TYPE);
+
                     do {
                         boolean addResult = true;
 
@@ -825,11 +830,12 @@ public class SearchActivity extends FragmentActivity implements
             // do fancy audio search
             Cursor cursor = ElevenUtils.createSearchQueryCursor(getContext(), mQuery);
 
-            // pre-cache this index
-            final int mimeTypeIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.MIME_TYPE);
-
             // walk through the cursor
             if (cursor != null && cursor.moveToFirst()) {
+                // pre-cache this index
+                final int mimeTypeIndex = cursor.getColumnIndexOrThrow(
+                        MediaStore.Audio.Media.MIME_TYPE);
+
                 do {
                     // get the result type
                     ResultType type = ResultType.getResultType(cursor, mimeTypeIndex);
@@ -925,6 +931,7 @@ public class SearchActivity extends FragmentActivity implements
      * This handles the Loader callbacks for the search history
      */
     public class SearchHistoryCallback implements LoaderManager.LoaderCallbacks<ArrayAdapter<String>> {
+        @NonNull
         @Override
         public Loader<ArrayAdapter<String>> onCreateLoader(int i, Bundle bundle) {
             // prep the loader in case the query takes a long time
@@ -934,8 +941,8 @@ public class SearchActivity extends FragmentActivity implements
         }
 
         @Override
-        public void onLoadFinished(Loader<ArrayAdapter<String>> searchHistoryAdapterLoader,
-                                   ArrayAdapter<String> searchHistoryAdapter) {
+        public void onLoadFinished(@NonNull Loader<ArrayAdapter<String>> searchHistoryAdapterLoader,
+                ArrayAdapter<String> searchHistoryAdapter) {
             // show the search history
             setState(VisibleState.SearchHistory);
 
@@ -943,7 +950,7 @@ public class SearchActivity extends FragmentActivity implements
         }
 
         @Override
-        public void onLoaderReset(Loader<ArrayAdapter<String>> cursorAdapterLoader) {
+        public void onLoaderReset(@NonNull Loader<ArrayAdapter<String>> cursorAdapterLoader) {
             ((ArrayAdapter)mSearchHistoryListView.getAdapter()).clear();
         }
     }

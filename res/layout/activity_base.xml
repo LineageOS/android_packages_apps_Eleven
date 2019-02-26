@@ -19,30 +19,30 @@
  -->
 <org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:sothree="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    sothree:dragView="@+id/firstPanelDragArea"
-    sothree:dragViewClickable="false"
-    sothree:panelHeight="@dimen/bottom_action_bar_height"
-    sothree:shadowHeight="@dimen/sliding_panel_shadow_height"
-    sothree:slidePanelOffset="@dimen/bottom_action_bar_height">
+    app:dragView="@+id/firstPanelDragArea"
+    app:dragViewClickable="false"
+    app:panelHeight="@dimen/bottom_action_bar_height"
+    app:shadowHeight="@dimen/sliding_panel_shadow_height"
+    app:slidePanelOffset="@dimen/bottom_action_bar_height">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:visibility="gone">
 
-        <Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
             android:elevation="@dimen/action_bar_elevation"
-            android:popupTheme="@style/ToolBarPopupTheme"
-            android:theme="@style/ToolBarTheme" />
+            android:theme="@style/ToolBarTheme"
+            app:popupTheme="@style/ToolBarPopupTheme" />
 
         <FrameLayout
             android:id="@+id/activity_base_content"
@@ -57,11 +57,11 @@
         android:layout_height="match_parent"
         android:background="@color/activity_base_background_color"
         android:gravity="bottom"
-        sothree:directOffset="true"
-        sothree:dragView="@+id/secondPanelDragArea"
-        sothree:fadeColor="@color/transparent"
-        sothree:panelHeight="@dimen/sliding_panel_indicator_height"
-        sothree:shadowHeight="@dimen/sliding_panel_shadow_height">
+        app:directOffset="true"
+        app:dragView="@+id/secondPanelDragArea"
+        app:fadeColor="@color/transparent"
+        app:panelHeight="@dimen/sliding_panel_indicator_height"
+        app:shadowHeight="@dimen/sliding_panel_shadow_height">
 
         <include
             layout="@layout/blur_scrim_image"
