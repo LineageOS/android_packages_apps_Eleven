@@ -15,25 +15,24 @@ package org.lineageos.eleven.widgets;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.AppCompatImageButton;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.ImageButton;
+import android.view.ViewAnimationUtils;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
- * A custom {@link ImageButton} that represents the "play and pause" button.
+ * A custom {@link AppCompatImageButton} that represents the "play and pause" button.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class PlayPauseButton extends ImageButton implements OnClickListener, OnLongClickListener {
+public class PlayPauseButton extends AppCompatImageButton implements OnClickListener, OnLongClickListener {
 
     /**
      * @param context The {@link Context} to use
@@ -88,11 +87,10 @@ public class PlayPauseButton extends ImageButton implements OnClickListener, OnL
     public void updateState() {
         if (MusicUtils.isPlaying()) {
             setContentDescription(getResources().getString(R.string.accessibility_pause));
-            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_pause));
+            setImageResource(R.drawable.btn_playback_pause);
         } else {
             setContentDescription(getResources().getString(R.string.accessibility_play));
-            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_play));
+            setImageResource(R.drawable.btn_playback_play);
         }
     }
-
 }
