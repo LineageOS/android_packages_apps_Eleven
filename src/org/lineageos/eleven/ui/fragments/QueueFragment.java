@@ -26,6 +26,7 @@ import android.os.IBinder;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -213,9 +214,9 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
             final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        mRootView = (ViewGroup)inflater.inflate(R.layout.list_base, null);
+        mRootView = (ViewGroup) inflater.inflate(R.layout.list_base, container, false);
         // Initialize the list
-        mListView = (DragSortListView)mRootView.findViewById(R.id.list_base);
+        mListView = mRootView.findViewById(R.id.list_base);
         // Set the data behind the list
         mListView.setAdapter(mAdapter);
         // Release any references to the recycled Views
@@ -231,8 +232,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         // Enable fast scroll bars
         mListView.setFastScrollEnabled(true);
         // Setup the loading and empty state
-        mLoadingEmptyContainer =
-                (LoadingEmptyContainer)mRootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
         // Setup the container strings
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
         mListView.setEmptyView(mLoadingEmptyContainer);
@@ -263,6 +263,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
+        // empty
     }
 
     @Override
@@ -401,7 +402,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
     }
 
     private void setupNoResultsContainer(NoResultsContainer empty) {
-        int color = getResources().getColor(R.color.no_results_light);
+        int color = ContextCompat.getColor(getContext(), R.color.no_results_light);
         empty.setTextColor(color);
         empty.setMainText(R.string.empty_queue_main);
         empty.setSecondaryText(R.string.empty_queue_secondary);
