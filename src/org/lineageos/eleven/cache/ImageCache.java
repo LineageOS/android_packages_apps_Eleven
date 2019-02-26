@@ -13,7 +13,6 @@
 
 package org.lineageos.eleven.cache;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Fragment;
@@ -31,9 +30,9 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
 import android.os.ParcelFileDescriptor;
-import android.util.Log;
 
 import org.lineageos.eleven.utils.ElevenUtils;
+import org.lineageos.eleven.utils.IoUtils;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -45,11 +44,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 
+import timber.log.Timber;
+
 /**
  * This class holds the memory and disk bitmap caches.
  */
 public final class ImageCache {
-
     private static final String TAG = ImageCache.class.getSimpleName();
 
     /**
@@ -183,7 +183,6 @@ public final class ImageCache {
      *
      * @param context The {@link Context} to use
      */
-    @SuppressLint("NewApi")
     public void initLruCache(final Context context) {
         final ActivityManager activityManager = (ActivityManager)context
                 .getSystemService(Context.ACTIVITY_SERVICE);
@@ -194,9 +193,6 @@ public final class ImageCache {
         // Release some memory as needed
         context.registerComponentCallbacks(new ComponentCallbacks2() {
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public void onTrimMemory(final int level) {
                 if (level >= TRIM_MEMORY_MODERATE) {
@@ -206,17 +202,11 @@ public final class ImageCache {
                 }
             }
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public void onLowMemory() {
                 // Nothing to do
             }
 
-            /**
-             * {@inheritDoc}
-             */
             @Override
             public void onConfigurationChanged(final Configuration newConfig) {
                 // Nothing to do
@@ -233,7 +223,7 @@ public final class ImageCache {
      * @return An existing retained ImageCache object or a new one if one did
      *         not exist
      */
-    public static final ImageCache findOrCreateCache(final Activity activity) {
+    public static ImageCache findOrCreateCache(final Activity activity) {
 
         // Search for, or create an instance of the non-UI RetainFragment
         final RetainFragment retainFragment = findOrCreateRetainFragment(
@@ -258,7 +248,7 @@ public final class ImageCache {
      * @return The existing instance of the {@link Fragment} or the new instance
      *         if just created
      */
-    public static final RetainFragment findOrCreateRetainFragment(final FragmentManager fm) {
+    public static RetainFragment findOrCreateRetainFragment(final FragmentManager fm) {
         // Check to see if we have retained the worker fragment
         RetainFragment retainFragment = (RetainFragment)fm.findFragmentByTag(TAG);
 
@@ -316,23 +306,14 @@ public final class ImageCache {
                     }
                 }
             } catch (final IOException e) {
-                Log.e(TAG, "addBitmapToCache - " + e);
+                Timber.e(e, "addBitmapToCache");
             } catch (final IllegalStateException e) {
                 // if the user clears the cache while we have an async task going we could try
                 // writing to the disk cache while it isn't ready. Catching here will silently
                 // fail instead
-                Log.e(TAG, "addBitmapToCache - " + e);
+                Timber.e(e, "addBitmapToCache");
             } finally {
-                try {
-                    if (out != null) {
-                        out.close();
-                        out = null;
-                    }
-                } catch (final IOException e) {
-                    Log.e(TAG, "addBitmapToCache - " + e);
-                } catch (final IllegalStateException e) {
-                    Log.e(TAG, "addBitmapToCache - " + e);
-                }
+                IoUtils.closeQuietly(out);
             }
         }
     }
@@ -416,14 +397,9 @@ public final class ImageCache {
                     }
                 }
             } catch (final IOException e) {
-                Log.e(TAG, "getBitmapFromDiskCache - " + e);
+                Timber.e(e, "getBitmapFromDiskCache");
             } finally {
-                try {
-                    if (inputStream != null) {
-                        inputStream.close();
-                    }
-                } catch (final IOException e) {
-                }
+                IoUtils.closeQuietly(inputStream);
             }
         }
         return null;
@@ -488,10 +464,11 @@ public final class ImageCache {
         }
         Bitmap artwork = null;
         waitUntilUnpaused();
+
+        ParcelFileDescriptor parcelFileDescriptor = null;
         try {
             final Uri uri = ContentUris.withAppendedId(mArtworkUri, albumId);
-            final ParcelFileDescriptor parcelFileDescriptor = context.getContentResolver()
-                    .openFileDescriptor(uri, "r");
+            parcelFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r");
             if (parcelFileDescriptor != null) {
                 final FileDescriptor fileDescriptor = parcelFileDescriptor.getFileDescriptor();
                 artwork = BitmapFactory.decodeFileDescriptor(fileDescriptor);
@@ -503,6 +480,8 @@ public final class ImageCache {
         } catch (final OutOfMemoryError evict) {
             // Log.e(TAG, "OutOfMemoryError - getArtworkFromFile - ", evict);
             evictAll();
+        } finally {
+            IoUtils.closeQuietly(parcelFileDescriptor);
         }
         return artwork;
     }
@@ -522,12 +501,12 @@ public final class ImageCache {
                             mDiskCache.flush();
                         }
                     } catch (final IOException e) {
-                        Log.e(TAG, "flush - " + e);
+                        Timber.e(e, "flush");
                     }
                 }
                 return null;
             }
-        }, (Void[])null);
+        });
     }
 
     /**
@@ -545,13 +524,13 @@ public final class ImageCache {
                         mDiskCache = null;
                     }
                 } catch (final IOException e) {
-                    Log.e(TAG, "clearCaches - " + e);
+                    Timber.e(e, "clearCaches");
                 }
                 // Clear the memory cache
                 evictAll();
                 return null;
             }
-        }, (Void[])null);
+        });
     }
 
     /**
@@ -571,12 +550,12 @@ public final class ImageCache {
                             mDiskCache = null;
                         }
                     } catch (final IOException e) {
-                        Log.e(TAG, "close - " + e);
+                        Timber.e(e, "close");
                     }
                 }
                 return null;
             }
-        }, (Void[]) null);
+        });
     }
 
     /**
@@ -608,7 +587,7 @@ public final class ImageCache {
                 mDiskCache.remove(hashKeyForDisk(key));
             }
         } catch (final IOException e) {
-            Log.e(TAG, "remove - " + e);
+            Timber.e(e, "removeFromCache(%s)", key);
         }
         flush();
     }
@@ -671,7 +650,7 @@ public final class ImageCache {
      *            directory
      * @return The cache directory
      */
-    public static final File getDiskCacheDir(final Context context, final String uniqueName) {
+    public static File getDiskCacheDir(final Context context, final String uniqueName) {
         // getExternalCacheDir(context) returns null if external storage is not ready
         final String cachePath = getExternalCacheDir(context) != null
                                     ? getExternalCacheDir(context).getPath()
@@ -685,7 +664,7 @@ public final class ImageCache {
      * @return True if external storage is removable (like an SD card), false
      *         otherwise
      */
-    public static final boolean isExternalStorageRemovable() {
+    public static boolean isExternalStorageRemovable() {
         return Environment.isExternalStorageRemovable();
     }
 
@@ -695,7 +674,7 @@ public final class ImageCache {
      * @param context The {@link Context} to use
      * @return The external cache directory
      */
-    public static final File getExternalCacheDir(final Context context) {
+    public static File getExternalCacheDir(final Context context) {
         return context.getExternalCacheDir();
     }
 
@@ -705,7 +684,7 @@ public final class ImageCache {
      * @param path The path to check
      * @return The space available in bytes
      */
-    public static final long getUsableSpace(final File path) {
+    public static long getUsableSpace(final File path) {
         return path.getUsableSpace();
     }
 
@@ -715,7 +694,7 @@ public final class ImageCache {
      *
      * @param key The key used to store the file
      */
-    public static final String hashKeyForDisk(final String key) {
+    public static String hashKeyForDisk(final String key) {
         String cacheKey;
         try {
             final MessageDigest digest = MessageDigest.getInstance("MD5");
@@ -734,7 +713,7 @@ public final class ImageCache {
      * @return A {@link String} converted from the bytes of a hashable key used
      *         to store a filename on the disk, to hex digits.
      */
-    private static final String bytesToHexString(final byte[] bytes) {
+    private static String bytesToHexString(final byte[] bytes) {
         final StringBuilder builder = new StringBuilder();
         for (final byte b : bytes) {
             final String hex = Integer.toHexString(0xFF & b);
@@ -764,9 +743,6 @@ public final class ImageCache {
         public RetainFragment() {
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -810,18 +786,13 @@ public final class ImageCache {
         /**
          * Get the size in bytes of a bitmap.
          */
-        public static final int getBitmapSize(final Bitmap bitmap) {
+        public static int getBitmapSize(final Bitmap bitmap) {
             return bitmap.getByteCount();
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         protected int sizeOf(final String paramString, final Bitmap paramBitmap) {
             return getBitmapSize(paramBitmap);
         }
-
     }
-
 }
