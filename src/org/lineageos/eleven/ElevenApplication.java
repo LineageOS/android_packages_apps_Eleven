@@ -22,6 +22,9 @@ import android.app.Application;
 import android.os.StrictMode;
 
 import org.lineageos.eleven.cache.ImageCache;
+import org.lineageos.eleven.debug.Planter;
+
+import timber.log.Timber;
 
 public class ElevenApplication extends Application {
     @Override
@@ -31,6 +34,14 @@ public class ElevenApplication extends Application {
         if (BuildConfig.DEBUG) {
             enableStrictMode();
         }
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Planter.buildDefaultDebugTree(this));
+        } else {
+            Timber.plant(Planter.buildDefaultProductionTree(this));
+        }
+
+        Timber.d("Enabled debug -> %s", BuildConfig.DEBUG);
     }
 
     @Override
