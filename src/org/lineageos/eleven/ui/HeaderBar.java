@@ -77,10 +77,25 @@ public class HeaderBar extends LinearLayout {
             }
         });
 
-
         mBackButton = (ImageView)findViewById(R.id.header_bar_up);
 
         mTitleText = (TextView)findViewById(R.id.header_bar_title);
+    }
+
+    public void hideBackButton() {
+        mBackButton.setVisibility(View.GONE);
+    }
+
+    public void showBackButton() {
+        mBackButton.setVisibility(View.VISIBLE);
+    }
+
+    public void hideSearchButton() {
+        mSearchButton.setVisibility(View.GONE);
+    }
+
+    public void showSearchButton() {
+        mSearchButton.setVisibility(View.VISIBLE);
     }
 
     /**
