@@ -107,7 +107,8 @@ public final class MusicUtils {
     }
 
     /* This class is never initiated */
-    public MusicUtils() {
+    private MusicUtils() {
+        // empty
     }
 
     /**
@@ -117,15 +118,16 @@ public final class MusicUtils {
      */
     public static ServiceToken bindToService(final Context context,
             final ServiceConnection callback) {
-        Activity realActivity = ((Activity)context).getParent();
+        Activity realActivity = ((Activity) context).getParent();
         if (realActivity == null) {
-            realActivity = (Activity)context;
+            realActivity = (Activity) context;
         }
         final ContextWrapper contextWrapper = new ContextWrapper(realActivity);
-        contextWrapper.startService(new Intent(contextWrapper, MusicPlaybackService.class));
+        final Intent serviceIntent = new Intent(contextWrapper, MusicPlaybackService.class);
+        contextWrapper.startService(serviceIntent);
+
         final ServiceBinder binder = new ServiceBinder(callback);
-        if (contextWrapper.bindService(
-                new Intent().setClass(contextWrapper, MusicPlaybackService.class), binder, 0)) {
+        if (contextWrapper.bindService(serviceIntent, binder, 0)) {
             mConnectionMap.put(contextWrapper, binder);
             return new ServiceToken(contextWrapper);
         }
@@ -316,9 +318,9 @@ public final class MusicUtils {
      * Changes to the next track asynchronously
      */
     public static void asyncNext(final Context context) {
-        final Intent previous = new Intent(context, MusicPlaybackService.class);
-        previous.setAction(MusicPlaybackService.NEXT_ACTION);
-        context.startService(previous);
+        final Intent serviceIntentNext = new Intent(context, MusicPlaybackService.class);
+        serviceIntentNext.setAction(MusicPlaybackService.NEXT_ACTION);
+        context.startService(serviceIntentNext);
     }
 
     /**
@@ -336,13 +338,13 @@ public final class MusicUtils {
      *       previously listened track.
      */
     public static void previous(final Context context, final boolean force) {
-        final Intent previous = new Intent(context, MusicPlaybackService.class);
+        final Intent serviceIntentPrevious = new Intent(context, MusicPlaybackService.class);
         if (force) {
-            previous.setAction(MusicPlaybackService.PREVIOUS_FORCE_ACTION);
+            serviceIntentPrevious.setAction(MusicPlaybackService.PREVIOUS_FORCE_ACTION);
         } else {
-            previous.setAction(MusicPlaybackService.PREVIOUS_ACTION);
+            serviceIntentPrevious.setAction(MusicPlaybackService.PREVIOUS_ACTION);
         }
-        context.startService(previous);
+        context.startService(serviceIntentPrevious);
     }
 
     /**
