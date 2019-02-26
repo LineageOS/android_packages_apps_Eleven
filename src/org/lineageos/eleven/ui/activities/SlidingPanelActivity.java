@@ -51,7 +51,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private SlidingUpPanelLayout mSecondPanel;
     protected Panel mTargetNavigatePanel;
 
-    private final ShowPanelClickListener mShowBrowse = new ShowPanelClickListener(Panel.Browse);
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
     // this is the blurred image that goes behind the now playing and queue fragments
@@ -122,7 +121,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     private void setupFirstPanel() {
-        mFirstPanel = (SlidingUpPanelLayout)findViewById(R.id.sliding_layout);
+        mFirstPanel = findViewById(R.id.sliding_layout);
         mFirstPanel.setPanelSlideListener(new SimplePanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
@@ -142,7 +141,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     private void setupSecondPanel() {
-        mSecondPanel = (SlidingUpPanelLayout)findViewById(R.id.sliding_layout2);
+        mSecondPanel = findViewById(R.id.sliding_layout2);
         mSecondPanel.setPanelSlideListener(new SimplePanelSlideListener() {
             @Override
             public void onPanelSlide(View panel, float slideOffset) {
@@ -169,7 +168,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         });
 
         // setup the header bar
-        setupHeaderBar(R.id.secondHeaderBar, R.string.page_play_queue, mShowMusicPlayer);
+        setupQueueHeaderBar(R.id.secondHeaderBar, R.string.page_play_queue, mShowMusicPlayer);
 
         // set the drag view offset to allow the panel to go past the top of the viewport
         // since the previous view's is hiding the slide offset, we need to subtract that
@@ -295,16 +294,16 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         return (QueueFragment)getSupportFragmentManager().findFragmentById(R.id.queueFragment);
     }
 
-    protected HeaderBar setupHeaderBar(final int containerId, final int textId,
+    protected void setupQueueHeaderBar(final int containerId, final int textId,
                                        final View.OnClickListener headerClickListener) {
-        final HeaderBar headerBar = (HeaderBar) findViewById(containerId);
+        final HeaderBar headerBar = findViewById(containerId);
         headerBar.setFragment(getQueueFragment());
         headerBar.setTitleText(textId);
         headerBar.setBackgroundColor(Color.TRANSPARENT);
-        headerBar.setBackListener(mShowBrowse);
         headerBar.setHeaderClickListener(headerClickListener);
 
-        return headerBar;
+        headerBar.hideBackButton();
+        headerBar.hideSearchButton();
     }
 
     private class ShowPanelClickListener implements View.OnClickListener {
