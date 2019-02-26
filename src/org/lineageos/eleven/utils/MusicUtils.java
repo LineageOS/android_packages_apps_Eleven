@@ -111,7 +111,7 @@ public final class MusicUtils {
      * @param callback The {@link ServiceConnection} to use
      * @return The new instance of {@link ServiceToken}
      */
-    public static final ServiceToken bindToService(final Context context,
+    public static ServiceToken bindToService(final Context context,
             final ServiceConnection callback) {
         Activity realActivity = ((Activity)context).getParent();
         if (realActivity == null) {

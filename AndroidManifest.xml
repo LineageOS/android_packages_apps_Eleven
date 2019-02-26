@@ -227,8 +227,15 @@
         <!-- Music service -->
         <service
             android:name="org.lineageos.eleven.MusicPlaybackService"
+            android:enabled="true"
+            android:exported="true"
             android:label="@string/app_name"
-            android:process=":main" />
+            android:process=":main">
+
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

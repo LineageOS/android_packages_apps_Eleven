@@ -46,6 +46,7 @@ import android.media.MediaPlayer;
 import android.media.audiofx.AudioEffect;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -57,7 +58,10 @@ import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.media.MediaBrowserCompat;
+import android.support.v4.media.MediaBrowserServiceCompat;
 import android.support.v4.media.MediaDescriptionCompat;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaSessionCompat;
@@ -99,7 +103,7 @@ import java.util.TreeSet;
  * A backbround {@link Service} used to keep music playing between activities
  * and when the user moves Eleven into the background.
  */
-public class MusicPlaybackService extends Service {
+public class MusicPlaybackService extends MediaBrowserServiceCompat {
     private static final String TAG = "MusicPlaybackService";
     private static final boolean D = false;
 
@@ -558,6 +562,18 @@ public class MusicPlaybackService extends Service {
         gotoNext(true);
     };
 
+    @Nullable
+    @Override
+    public BrowserRoot onGetRoot(@NonNull String s, int i, @Nullable Bundle bundle) {
+        // TODO: restrict?
+        return new BrowserRoot(getString(R.string.app_name), null);
+    }
+
+    @Override
+    public void onLoadChildren(@NonNull String s, @NonNull Result<List<MediaBrowserCompat.MediaItem>> result) {
+        result.sendResult(null);
+    }
+
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
@@ -705,9 +721,17 @@ public class MusicPlaybackService extends Service {
                 new ComponentName(this, MediaButtonIntentReceiver.class);
         mSession = new MediaSessionCompat(this, MusicPlaybackService.class.getSimpleName(),
                 mediaButtonReceiver, null);
+
+        final Intent sessionIntent = getPackageManager().getLaunchIntentForPackage(getPackageName());
+        final PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, sessionIntent, 0);
+        mSession.setSessionActivity(pendingIntent);
+
         mSession.setFlags(MediaSessionCompat.FLAG_HANDLES_TRANSPORT_CONTROLS
                 | MediaSessionCompat.FLAG_HANDLES_MEDIA_BUTTONS);
         mSession.setCallback(mMediaSessionCallback);
+        mSession.setActive(true);
+
+        setSessionToken(mSession.getSessionToken());
     }
 
     private final MediaSessionCompat.Callback mMediaSessionCallback = new MediaSessionCompat.Callback() {
@@ -2484,8 +2508,6 @@ public class MusicPlaybackService extends Service {
         intent.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, getAudioSessionId());
         intent.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, getPackageName());
         sendBroadcast(intent);
-
-        mSession.setActive(true);
 
         if (createNewNextTrack) {
             setNextTrack();
