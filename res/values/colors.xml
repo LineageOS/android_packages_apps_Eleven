@@ -93,7 +93,7 @@
     <color name="tab_selected_underline_color">@color/white</color>
 
     <!-- Search Colors -->
-    <color name="search_hint_color">@color/white</color>
+    <color name="search_hint_color">@color/black</color>
 
     <!-- Color for the text on the audio player -->
     <color name="audio_player_text_color">@color/default_text_color_light</color>
