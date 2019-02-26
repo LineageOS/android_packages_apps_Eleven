@@ -2,7 +2,6 @@
 /build/
 /gen/
 /local.properties
-/system_libs/
 
 *.iml
 **~
