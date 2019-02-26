@@ -40,7 +40,7 @@
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> traciau</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> trac</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> drac</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> trac</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> thrac</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> thrac</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> trac</item>
     </plurals>
@@ -79,7 +79,7 @@
         <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> traciau wedi\'u hychwanegu at ffefrynnau.</item>
         <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'i ychwanegu at ffefrynnau.</item>
         <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> drac wedi\'u hychwanegu at ffefrynnau.</item>
-        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u hychwanegu at ffefrynnau.</item>
+        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> thrac wedi\'u hychwanegu at ffefrynnau.</item>
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> thrac wedi\'u hychwanegu at ffefrynnau.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u hychwanegu at ffefrynnau.</item>
     </plurals>
