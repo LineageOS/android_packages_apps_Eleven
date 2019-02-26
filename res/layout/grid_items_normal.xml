@@ -67,7 +67,7 @@
                 android:id="@+id/popup_menu_button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/grid_item_padding_right"
+                android:layout_marginEnd="@dimen/grid_item_padding_right"
                 android:src="@drawable/menu_button" />
 
         </LinearLayout>
