@@ -15,13 +15,14 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/menu_sort_by"
-        android:showAsAction="never"
         android:orderInCategory="200"
-        android:title="@string/menu_sort_by">
+        android:title="@string/menu_sort_by"
+        app:showAsAction="never">
         <menu>
             <item
                 android:id="@+id/menu_sort_by_az"
