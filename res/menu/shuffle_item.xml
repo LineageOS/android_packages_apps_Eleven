@@ -15,12 +15,13 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/menu_shuffle_item"
-        android:showAsAction="never"
         android:orderInCategory="30"
-        android:title="@string/menu_shuffle_item"/>
+        android:title="@string/menu_shuffle_item"
+        app:showAsAction="never" />
 
 </menu>
