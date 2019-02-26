@@ -53,22 +53,17 @@ import org.lineageos.eleven.ui.activities.preview.util.Logger;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * AudioPreview
  * <pre>
  *     Preview plays external audio files in a dialog over the application
  * </pre>
- *
- * @see {@link Activity}
- * @see {@link android.media.MediaPlayer.OnCompletionListener}
- * @see {@link android.media.MediaPlayer.OnErrorListener}
- * @see {@link android.media.MediaPlayer.OnPreparedListener}
- * @see {@link OnClickListener}
- * @see {@link OnAudioFocusChangeListener}
- * @see {@link OnSeekBarChangeListener}
  */
-public class AudioPreviewActivity extends Activity implements MediaPlayer.OnCompletionListener,
-        MediaPlayer.OnErrorListener, MediaPlayer.OnPreparedListener, OnClickListener,
+public class AudioPreviewActivity extends AppCompatActivity implements
+        MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener,
+        MediaPlayer.OnPreparedListener, OnClickListener,
         OnAudioFocusChangeListener, OnSeekBarChangeListener, OnTouchListener {
 
     // Constants
@@ -197,7 +192,7 @@ public class AudioPreviewActivity extends Activity implements MediaPlayer.OnComp
         }
         Logger.logd(TAG, "URI: " + uri);
         mPreviewSong.URI = uri;
-        PreviewPlayer localPlayer = (PreviewPlayer) getLastNonConfigurationInstance();
+        PreviewPlayer localPlayer = (PreviewPlayer) getLastCustomNonConfigurationInstance();
         if (localPlayer == null) {
             mPreviewPlayer = new PreviewPlayer();
             mPreviewPlayer.setCallbackActivity(this);
@@ -249,7 +244,7 @@ public class AudioPreviewActivity extends Activity implements MediaPlayer.OnComp
     }
 
     @Override
-    public Object onRetainNonConfigurationInstance() {
+    public Object onRetainCustomNonConfigurationInstance() {
         mPreviewPlayer.clearCallbackActivity();
         PreviewPlayer localPlayer = mPreviewPlayer;
         mPreviewPlayer = null;
