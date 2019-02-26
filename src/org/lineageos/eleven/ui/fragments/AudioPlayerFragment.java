@@ -291,17 +291,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mSongTitle = mRootView.findViewById(R.id.header_bar_song_title);
         mArtistName = mRootView.findViewById(R.id.header_bar_artist_title);
 
-        // Buttons
-        // Search Button
-        View v = mRootView.findViewById(R.id.header_bar_search_button);
-        v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavUtils.openSearch(getActivity(), "");
-            }
-        });
-
-        // Add to Playlist Button
         // Setup the playlist button - add a click listener to show the context
         mAddToPlaylistButton = mRootView.findViewById(R.id.header_bar_add_button);
 
@@ -325,7 +314,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         });
 
         // Add the menu button
-        // menu button
         mMenuButton = mRootView.findViewById(R.id.header_bar_menu_button);
         mMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
