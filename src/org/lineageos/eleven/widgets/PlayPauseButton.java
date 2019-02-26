@@ -26,17 +26,17 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
+import android.view.ViewAnimationUtils;
 import android.widget.ImageButton;
 
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.core.content.ContextCompat;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
- * A custom {@link ImageButton} that represents the "play and pause" button.
+ * A custom {@link AppCompatImageButton} that represents the "play and pause" button.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -47,10 +47,9 @@ public class PlayPauseButton extends AppCompatImageButton
      * @param context The {@link Context} to use
      * @param attrs The attributes of the XML tag that is inflating the view.
      */
-    @SuppressWarnings("deprecation")
     public PlayPauseButton(final Context context, final AttributeSet attrs) {
         super(context, attrs);
-        setBackground(getResources().getDrawable(R.drawable.selectable_background));
+        setBackgroundResource(R.drawable.selectable_background);
         // Control playback (play/pause)
         setOnClickListener(this);
         // Show the cheat sheet
@@ -90,10 +89,10 @@ public class PlayPauseButton extends AppCompatImageButton
     public void updateState() {
         if (MusicUtils.isPlaying()) {
             setContentDescription(getResources().getString(R.string.accessibility_pause));
-            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_pause));
+            setImageResource(R.drawable.btn_playback_pause);
         } else {
             setContentDescription(getResources().getString(R.string.accessibility_play));
-            setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.btn_playback_play));
+            setImageResource(R.drawable.btn_playback_play);
         }
     }
 }
