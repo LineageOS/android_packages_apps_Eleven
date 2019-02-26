@@ -20,6 +20,7 @@ import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -66,10 +67,25 @@ public class HeaderBar extends LinearLayout {
         mSearchButton = findViewById(R.id.header_bar_search_button);
         mSearchButton.setOnClickListener(v -> NavUtils.openSearch(mFragment.getActivity(), ""));
 
-
         mBackButton = findViewById(R.id.header_bar_up);
 
         mTitleText = findViewById(R.id.header_bar_title);
+    }
+
+    public void hideBackButton() {
+        mBackButton.setVisibility(View.GONE);
+    }
+
+    public void showBackButton() {
+        mBackButton.setVisibility(View.VISIBLE);
+    }
+
+    public void hideSearchButton() {
+        mSearchButton.setVisibility(View.GONE);
+    }
+
+    public void showSearchButton() {
+        mSearchButton.setVisibility(View.VISIBLE);
     }
 
     /**
