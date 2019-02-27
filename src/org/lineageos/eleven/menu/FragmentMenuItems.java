@@ -31,7 +31,7 @@ public interface FragmentMenuItems {
     int RENAME_PLAYLIST     =  90; // change name of playlist
     int MORE_BY_ARTIST      = 100; // jump to artist detail page
     int USE_AS_RINGTONE     = 110; // set track as ringtone
-    int DELETE              = 120; // delete track from device
+    int DELETE              = 120; // delete playlist
     int NEW_PLAYLIST        = 130; // create new playlist - also in res/menu!
     int PLAYLIST_SELECTED   = 140; // this is used for existing playlists
     int CHANGE_IMAGE        = 150; // set new art for artist/album

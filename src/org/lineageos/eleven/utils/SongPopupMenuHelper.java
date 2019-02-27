@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentManager;
 
-import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.model.Song;
 
@@ -59,12 +58,6 @@ public abstract class SongPopupMenuHelper extends PopupMenuHelper {
     @Override
     protected String getArtistName() {
         return mSong.mArtistName;
-    }
-
-    @Override
-    protected void onDeleteClicked() {
-        DeleteDialog.newInstance(mSong.mSongName, getIdList(), null)
-                .show(mFragmentManager, "DeleteDialog");
     }
 
     @Override

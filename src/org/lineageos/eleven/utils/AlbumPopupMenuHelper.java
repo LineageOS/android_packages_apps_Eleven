@@ -18,11 +18,10 @@ package org.lineageos.eleven.utils;
 import android.app.Activity;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentManager;
-
 import android.view.MenuItem;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.cache.ImageFetcher;
-import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.menu.PhotoSelectionDialog;
 import org.lineageos.eleven.model.Album;
@@ -63,14 +62,6 @@ public abstract class AlbumPopupMenuHelper extends PopupMenuHelper {
     @Override
     protected Config.IdType getSourceType() {
         return Config.IdType.Album;
-    }
-
-    @Override
-    protected void onDeleteClicked() {
-        final String album = mAlbum.mAlbumName;
-        DeleteDialog.newInstance(album, getIdList(),
-                ImageFetcher.generateAlbumCacheKey(album, mAlbum.mArtistName))
-                .show(mFragmentManager, "DeleteDialog");
     }
 
     @Override
