@@ -69,6 +69,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.WeakHashMap;
@@ -111,7 +113,7 @@ public final class MusicUtils {
      * @param callback The {@link ServiceConnection} to use
      * @return The new instance of {@link ServiceToken}
      */
-    public static final ServiceToken bindToService(final Context context,
+    public static ServiceToken bindToService(final Context context,
             final ServiceConnection callback) {
         Activity realActivity = ((Activity)context).getParent();
         if (realActivity == null) {
@@ -1438,6 +1440,9 @@ public final class MusicUtils {
                 }
             }
         }
+
+        // sort the list but ignore case
+        Collections.sort(menuItemMap, new IgnoreCaseComparator());
         return menuItemMap;
     }
 
@@ -1770,5 +1775,12 @@ public final class MusicUtils {
         }
 
         return str.toString();
+    }
+
+    public static class IgnoreCaseComparator implements Comparator<String> {
+        @Override
+        public int compare(String s1, String s2) {
+            return s1.compareToIgnoreCase(s2);
+        }
     }
 }
