@@ -16,8 +16,10 @@
 package org.lineageos.eleven.widgets;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -43,7 +45,7 @@ public class NoResultsContainer extends LinearLayout {
     }
 
     public void setMainHighlightText(final String text) {
-        final TextView hightlightText = (TextView)findViewById(R.id.no_results_main_highlight_text);
+        final TextView hightlightText = findViewById(R.id.no_results_main_highlight_text);
 
         if (text == null || text.isEmpty()) {
             hightlightText.setVisibility(View.GONE);
@@ -58,6 +60,7 @@ public class NoResultsContainer extends LinearLayout {
     }
 
     public void setTextColor(int color) {
+        ((ImageView)findViewById(R.id.no_results_image)).setColorFilter(color, PorterDuff.Mode.SRC_IN);
         ((TextView)findViewById(R.id.no_results_main_text)).setTextColor(color);
         ((TextView)findViewById(R.id.no_results_main_highlight_text)).setTextColor(color);
         ((TextView)findViewById(R.id.no_results_secondary_text)).setTextColor(color);
