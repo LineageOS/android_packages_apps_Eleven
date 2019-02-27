@@ -74,7 +74,7 @@ public class CreateNewPlaylist extends BasePlaylistDialog {
     public void onSaveClick() {
         final String playlistName = mPlaylist.getText().toString();
         if (playlistName != null && playlistName.length() > 0) {
-            final int playlistId = (int)MusicUtils.getIdForPlaylist(getActivity(),
+            final int playlistId = (int) MusicUtils.getIdForPlaylist(getActivity(),
                     playlistName);
             if (playlistId >= 0) {
                 MusicUtils.clearPlaylist(getActivity(), playlistId);
