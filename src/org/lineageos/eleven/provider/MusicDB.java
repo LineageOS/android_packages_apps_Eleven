@@ -55,8 +55,10 @@ public class MusicDB extends SQLiteOpenHelper {
         return sInstance;
     }
 
-    public MusicDB(final Context context) {
+    private MusicDB(final Context context) {
         super(context, DATABASENAME, null, VERSION);
+        setWriteAheadLoggingEnabled(true);
+
         mContext = context;
     }
 
