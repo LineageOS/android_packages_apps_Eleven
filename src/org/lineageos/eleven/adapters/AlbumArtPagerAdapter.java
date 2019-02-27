@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.lineageos.eleven.BuildConfig;
 import org.lineageos.eleven.BuildConstants;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.R;
@@ -44,7 +45,7 @@ import java.util.LinkedList;
  * A {@link android.support.v4.app.FragmentStatePagerAdapter} class for swiping between album art
  */
 public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
-    private static boolean DEBUG = false;
+    private static boolean DEBUG = BuildConfig.DEBUG;
     private static final String TAG = AlbumArtPagerAdapter.class.getSimpleName();
 
     public static final long NO_TRACK_ID = -1;
