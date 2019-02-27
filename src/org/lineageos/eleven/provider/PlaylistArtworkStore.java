@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.provider;
 
 import android.content.ContentValues;
@@ -31,13 +32,14 @@ public class PlaylistArtworkStore {
 
     private static PlaylistArtworkStore sInstance = null;
 
-    private MusicDB mMusicDatabase = null;
+    private final Context mContext;
+    private final MusicDB mMusicDatabase;
 
     /**
      * @param context The {@link android.content.Context} to use
      * @return A new instance of this class.
      */
-    public static final synchronized PlaylistArtworkStore getInstance(final Context context) {
+    public static synchronized PlaylistArtworkStore getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new PlaylistArtworkStore(context.getApplicationContext());
         }
@@ -48,7 +50,7 @@ public class PlaylistArtworkStore {
      * @param playlistId playlist identifier
      * @return the key used for the imagae cache for the cover art
      */
-    public static final String getCoverCacheKey(final long playlistId) {
+    public static String getCoverCacheKey(final long playlistId) {
         return "playlist_cover_" + playlistId;
     }
 
@@ -56,11 +58,9 @@ public class PlaylistArtworkStore {
      * @param playlistId playlist identifier
      * @return the key used for the imagae cache for the top artist image
      */
-    public static final String getArtistCacheKey(final long playlistId) {
+    public static String getArtistCacheKey(final long playlistId) {
         return "playlist_artist_" + playlistId;
     }
-
-    private final Context mContext;
 
     /**
      * Constructor of <code>RecentStore</code>
@@ -68,9 +68,8 @@ public class PlaylistArtworkStore {
      * @param context The {@link android.content.Context} to use
      */
     public PlaylistArtworkStore(final Context context) {
-        mMusicDatabase = MusicDB.getInstance(context);
-
         mContext = context;
+        mMusicDatabase = MusicDB.getInstance(context);
     }
 
     public void onCreate(final SQLiteDatabase db) {
@@ -127,7 +126,8 @@ public class PlaylistArtworkStore {
      * @param playlistId playlist identifier
      */
     public void updateArtistArt(final long playlistId) {
-        updateOrInsertTime(playlistId, PlaylistArtworkStoreColumns.LAST_UPDATE_ARTIST,
+        updateOrInsertTime(playlistId,
+                PlaylistArtworkStoreColumns.LAST_UPDATE_ARTIST,
                 PlaylistArtworkStoreColumns.NUM_SONGS_LAST_UPDATE_ARTIST);
     }
 
@@ -136,7 +136,8 @@ public class PlaylistArtworkStore {
      * @param playlistId playlist identifier
      */
     public void updateCoverArt(final long playlistId) {
-        updateOrInsertTime(playlistId, PlaylistArtworkStoreColumns.LAST_UPDATE_COVER,
+        updateOrInsertTime(playlistId,
+                PlaylistArtworkStoreColumns.LAST_UPDATE_COVER,
                 PlaylistArtworkStoreColumns.NUM_SONGS_LAST_UPDATE_COVER);
     }
 
@@ -147,12 +148,11 @@ public class PlaylistArtworkStore {
      * @param countColumnName the column to set the # of songs to based on the playlist
      */
     private void updateOrInsertTime(final long playlistId, final String columnName, final String countColumnName) {
-        SQLiteDatabase database = mMusicDatabase.getWritableDatabase();
-
+        final SQLiteDatabase database = mMusicDatabase.getWritableDatabase();
         database.beginTransaction();
 
         // gets the existing values for the entry if it exists
-        ContentValues values = getExistingContentValues(playlistId);
+        ContentValues values = getExistingContentValues(database, playlistId);
         boolean existingEntry = values.size() > 0;
         // update the values
         values.put(PlaylistArtworkStoreColumns.ID, playlistId);
@@ -176,17 +176,16 @@ public class PlaylistArtworkStore {
      * @param playlistId playlist identifier
      * @return the content values
      */
-    private ContentValues getExistingContentValues(final long playlistId) {
-        ContentValues values = new ContentValues(4);
-        Cursor c = getEntry(playlistId);
-        if (c != null && c.moveToFirst()) {
-            values.put(PlaylistArtworkStoreColumns.ID, c.getLong(0));
-            values.put(PlaylistArtworkStoreColumns.LAST_UPDATE_ARTIST, c.getLong(1));
-            values.put(PlaylistArtworkStoreColumns.NUM_SONGS_LAST_UPDATE_ARTIST, c.getInt(2));
-            values.put(PlaylistArtworkStoreColumns.LAST_UPDATE_COVER, c.getLong(3));
-            values.put(PlaylistArtworkStoreColumns.NUM_SONGS_LAST_UPDATE_COVER, c.getInt(4));
-            c.close();
-            c = null;
+    private ContentValues getExistingContentValues(final SQLiteDatabase database, final long playlistId) {
+        final ContentValues values = new ContentValues(5);
+        try (final Cursor c = getEntry(database, playlistId)) {
+            if (c != null && c.moveToFirst()) {
+                values.put(PlaylistArtworkStoreColumns.ID, c.getLong(0));
+                values.put(PlaylistArtworkStoreColumns.LAST_UPDATE_ARTIST, c.getLong(1));
+                values.put(PlaylistArtworkStoreColumns.NUM_SONGS_LAST_UPDATE_ARTIST, c.getInt(2));
+                values.put(PlaylistArtworkStoreColumns.LAST_UPDATE_COVER, c.getLong(3));
+                values.put(PlaylistArtworkStoreColumns.NUM_SONGS_LAST_UPDATE_COVER, c.getInt(4));
+            }
         }
 
         return values;
@@ -200,26 +199,22 @@ public class PlaylistArtworkStore {
      * @return
      */
     private boolean needsUpdate(final long playlistId, final String columnName, final String countColumnName) {
-        // get the entry
-        Cursor c = getEntry(playlistId);
+        final SQLiteDatabase database = mMusicDatabase.getReadableDatabase();
+        try (final Cursor c = getEntry(database, playlistId)) {
+            if (c != null && c.moveToFirst()) {
+                final long lastUpdate = c.getLong(c.getColumnIndex(columnName));
+                final long msSinceEpoch = System.currentTimeMillis();
+                final int songCount = MusicUtils.getSongCountForPlaylist(mContext, playlistId);
+                final int lastUpdatedSongCount = c.getInt(c.getColumnIndex(countColumnName));
 
-        if (c != null && c.moveToFirst()) {
-            final long lastUpdate = c.getLong(c.getColumnIndex(columnName));
-            final long msSinceEpoch = System.currentTimeMillis();
-            final int songCount = MusicUtils.getSongCountForPlaylist(mContext, playlistId);
-            final int lastUpdatedSongCount = c.getInt(c.getColumnIndex(countColumnName));
-
-            c.close();
-            c = null;
-
-            // if the elapsed time since our last update is less than a day and the
-            // number of songs in the playlist hasn't changed, then don't update
-            if (msSinceEpoch - lastUpdate < ONE_DAY_IN_MS &&
-                    songCount == lastUpdatedSongCount) {
-                return false;
+                // if the elapsed time since our last update is less than a day and the
+                // number of songs in the playlist hasn't changed, then don't update
+                if (msSinceEpoch - lastUpdate < ONE_DAY_IN_MS &&
+                        songCount == lastUpdatedSongCount) {
+                    return false;
+                }
             }
         }
-
         return true;
     }
 
@@ -228,9 +223,8 @@ public class PlaylistArtworkStore {
      * @param playlistId playlist identifier
      * @return cursor
      */
-    private Cursor getEntry(final long playlistId) {
-        SQLiteDatabase db = mMusicDatabase.getReadableDatabase();
-        return db.query(PlaylistArtworkStoreColumns.NAME, null,
+    private Cursor getEntry(final SQLiteDatabase database, final long playlistId) {
+        return database.query(PlaylistArtworkStoreColumns.NAME, null,
                 PlaylistArtworkStoreColumns.ID + "=" + playlistId, null, null, null, null);
     }
 

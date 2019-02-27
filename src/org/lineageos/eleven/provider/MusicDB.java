@@ -38,7 +38,7 @@ public class MusicDB extends SQLiteOpenHelper {
     private static final int VERSION = 4;
 
     /* Name of database file */
-    public static final String DATABASENAME = "musicdb.db";
+    private static final String DATABASENAME = "musicdb.db";
 
     private static MusicDB sInstance = null;
 
@@ -48,7 +48,7 @@ public class MusicDB extends SQLiteOpenHelper {
      * @param context The {@link android.content.Context} to use
      * @return A new instance of this class.
      */
-    public static final synchronized MusicDB getInstance(final Context context) {
+    public static synchronized MusicDB getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new MusicDB(context.getApplicationContext());
         }
@@ -57,7 +57,6 @@ public class MusicDB extends SQLiteOpenHelper {
 
     public MusicDB(final Context context) {
         super(context, DATABASENAME, null, VERSION);
-
         mContext = context;
     }
 
