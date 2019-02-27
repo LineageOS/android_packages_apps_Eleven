@@ -372,6 +372,9 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             mAlbumArtViewPager.setCurrentItem(MusicUtils.getQueueHistorySize(), true);
         }
 
+        // invalidate options menu as it dynamically adds/removes items depending on state
+        getActivity().invalidateOptionsMenu();
+
         // Update the current time
         queueNextRefresh(1);
     }
