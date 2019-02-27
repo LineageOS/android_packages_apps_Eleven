@@ -17,12 +17,13 @@ package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 
+import org.lineageos.eleven.BuildConfig;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.menu.CreateNewPlaylist;
@@ -41,6 +42,8 @@ import androidx.fragment.app.FragmentManager;
  * without changing this class too much
  */
 public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListener {
+    public static final String TAG = PopupMenuHelper.class.getSimpleName();
+
     // the different types of pop up menus
     public static enum PopupMenuType {
         Artist,
@@ -318,6 +321,9 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
      * Simple helper function for adding an item to the menu
      */
     public void addToMenu(final Menu menu, final int id, final int resourceId) {
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "addToMenu(menu, " + id + ", " + resourceId + ")");
+        }
         menu.add(getGroupId(), id, id /*as order*/, mActivity.getString(resourceId));
     }
 

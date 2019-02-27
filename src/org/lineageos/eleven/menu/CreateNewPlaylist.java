@@ -24,12 +24,13 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextUtils;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.MusicUtils;
+
+import androidx.annotation.NonNull;
 
 public class CreateNewPlaylist extends BasePlaylistDialog {
     private long[] mPlaylistList = new long[]{};
