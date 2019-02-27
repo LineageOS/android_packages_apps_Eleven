@@ -132,6 +132,9 @@ dependencies {
     // see https://developer.android.com/jetpack/androidx/releases/palette
     implementation "androidx.palette:palette:1.0.0"
 
+    // see https://developer.android.com/jetpack/androidx/releases/preference
+    implementation "androidx.preference:preference:1.0.0"
+
     // see https://developer.android.com/jetpack/androidx/releases/recyclerview
     implementation "androidx.recyclerview:recyclerview:1.0.0"
 
