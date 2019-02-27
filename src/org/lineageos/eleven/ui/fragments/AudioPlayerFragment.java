@@ -119,9 +119,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Control the media volume
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(getActivity(), this);
-
         // Initialize the image fetcher/cache
         mImageFetcher = ElevenUtils.getImageFetcher(getActivity());
 
@@ -154,6 +151,23 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        mToken = MusicUtils.bindToService(getActivity(), this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        if (mToken != null) {
+            MusicUtils.unbindFromService(mToken);
+            mToken = null;
+        }
     }
 
     @Override
@@ -224,17 +238,16 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
-        // Set the playback drawables
         mMainPlaybackControls.updatePlaybackControls();
-        // Setup the adapter
         createAndSetAdapter();
-        // Current info
         updateNowPlayingInfo();
     }
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
-        // empty
+        mMainPlaybackControls.updatePlaybackControls();
+        createAndSetAdapter();
+        updateNowPlayingInfo();
     }
 
     @Override
@@ -281,11 +294,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         mIsPaused = false;
         mTimeHandler.removeMessages(REFRESH_TIME);
-        // Unbind from the service
-        if (MusicUtils.isPlaybackServiceConnected()) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
 
         // Unregister the receiver
         try {
