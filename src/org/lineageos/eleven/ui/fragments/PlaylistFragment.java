@@ -1,19 +1,25 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
@@ -40,6 +46,7 @@ import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -75,6 +82,7 @@ public class PlaylistFragment extends MusicBrowserFragment implements
      * Empty constructor as per the {@link Fragment} documentation
      */
     public PlaylistFragment() {
+        // empty
     }
 
     @Override
@@ -82,9 +90,6 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         return PagerAdapter.MusicFragments.PLAYLIST.ordinal();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,24 +102,16 @@ public class PlaylistFragment extends MusicBrowserFragment implements
 
         // Create the adapter
         mAdapter = new PlaylistAdapter(getActivity());
-        mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
+        mAdapter.setPopupMenuClickedListener((v, position) -> mPopupMenuHelper.showPopupMenu(v, position));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
             final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        final ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.list_base, null);
+        final ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.list_base, container, false);
         // Initialize the list
-        mListView = (ListView)rootView.findViewById(R.id.list_base);
+        mListView = rootView.findViewById(R.id.list_base);
         // Set the data behind the grid
         mListView.setAdapter(mAdapter);
         // Release any references to the recycled Views
@@ -122,8 +119,7 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         // Play the selected song
         mListView.setOnItemClickListener(this);
         // Setup the loading and empty state
-        mLoadingEmptyContainer =
-                (LoadingEmptyContainer)rootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = rootView.findViewById(R.id.loading_empty_container);
         mListView.setEmptyView(mLoadingEmptyContainer);
 
         // Register the music status listener
@@ -139,10 +135,6 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         ((BaseActivity)getActivity()).removeMusicStateListenerListener(this);
     }
 
-
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -152,9 +144,6 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         initLoader(null, this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
             final long id) {
@@ -168,9 +157,7 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @NonNull
     @Override
     public Loader<List<Playlist>> onCreateLoader(final int id, final Bundle args) {
         // show the loading progress bar
@@ -178,39 +165,28 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         return new PlaylistLoader(getActivity());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoadFinished(final Loader<List<Playlist>> loader, final List<Playlist> data) {
-        // Check for any errors
+    public void onLoadFinished(@NonNull final Loader<List<Playlist>> loader, final List<Playlist> data) {
         if (data.isEmpty()) {
             mLoadingEmptyContainer.showNoResults();
             return;
         }
 
-        // Start fresh
+        // Start fresh, fill adapter with new data and create cache
         mAdapter.unload();
-        // Add the data to the adpater
+        Collections.sort(data, new Playlist.IgnoreCaseComparator());
         for (final Playlist playlist : data) {
             mAdapter.add(playlist);
         }
-        // Build the cache
         mAdapter.buildCache();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoaderReset(final Loader<List<Playlist>> loader) {
+    public void onLoaderReset(@NonNull final Loader<List<Playlist>> loader) {
         // Clear the data in the adapter
         mAdapter.unload();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void restartLoader() {
         restartLoader(null, this);
@@ -221,9 +197,6 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         restartLoader();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onMetaChanged() {
         // Nothing to do
