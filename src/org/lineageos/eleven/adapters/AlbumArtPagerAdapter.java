@@ -33,6 +33,7 @@ import org.lineageos.eleven.cache.ImageCache;
 import org.lineageos.eleven.model.AlbumArtistDetails;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.widgets.SquareImageView;
 
 import java.util.Iterator;
@@ -206,7 +207,14 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         @Override
         public void onActivityCreated(final Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            mImageView = (SquareImageView)mRootView.findViewById(R.id.audio_player_album_art);
+            mImageView = mRootView.findViewById(R.id.audio_player_album_art);
+            mImageView.setOnLongClickListener(v -> {
+                final String artistName = MusicUtils.getArtistName();
+                if (artistName != null) {
+                    NavUtils.openArtistProfile(getActivity(), artistName);
+                }
+                return true;
+            });
             loadImageAsync();
         }
 

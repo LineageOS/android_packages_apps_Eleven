@@ -216,9 +216,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 // Settings
                 NavUtils.openSettings(getActivity());
                 return true;
-            case R.id.menu_audio_player_more_by_artist:
-                NavUtils.openArtistProfile(getActivity(), MusicUtils.getArtistName());
-                return true;
             case R.id.menu_audio_player_delete:
                 // Delete current song
                 DeleteDialog.newInstance(MusicUtils.getTrackName(), new long[]{

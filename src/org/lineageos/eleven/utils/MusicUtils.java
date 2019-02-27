@@ -74,6 +74,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.WorkerThread;
 
 /**
@@ -460,6 +461,7 @@ public final class MusicUtils {
     /**
      * @return The current track name.
      */
+    @Nullable
     public static String getTrackName() {
         if (mService != null) {
             try {
@@ -474,6 +476,7 @@ public final class MusicUtils {
     /**
      * @return The current artist name.
      */
+    @Nullable
     public static String getArtistName() {
         if (mService != null) {
             try {
@@ -488,6 +491,7 @@ public final class MusicUtils {
     /**
      * @return The current album name.
      */
+    @Nullable
     public static String getAlbumName() {
         if (mService != null) {
             try {
@@ -998,6 +1002,9 @@ public final class MusicUtils {
      * @return The ID for an artist.
      */
     public static long getIdForArtist(final Context context, final String name) {
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "getIdForArtist(" + name + ")");
+        }
         try (Cursor cursor = context.getContentResolver().query(
                 MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI, new String[]{BaseColumns._ID},
                 ArtistColumns.ARTIST + "=?", new String[]{name}, ArtistColumns.ARTIST)) {
