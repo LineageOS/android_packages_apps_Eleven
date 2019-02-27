@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui;
 
 import android.content.Context;
@@ -28,10 +29,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.loaders.NowPlayingCursor;
-import org.lineageos.eleven.loaders.QueueLoader;
-import org.lineageos.eleven.menu.CreateNewPlaylist;
-import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
 
 /**
@@ -61,20 +58,10 @@ public class HeaderBar extends LinearLayout {
         super.onFinishInflate();
 
         mMenuButton = findViewById(R.id.header_bar_menu_button);
-        mMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupMenu();
-            }
-        });
+        mMenuButton.setOnClickListener(v -> showPopupMenu());
 
         mSearchButton = findViewById(R.id.header_bar_search_button);
-        mSearchButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-            public void onClick(View v) {
-                NavUtils.openSearch(mFragment.getActivity(), "");
-            }
-        });
+        mSearchButton.setOnClickListener(v -> NavUtils.openSearch(mFragment.getActivity(), ""));
 
         mBackButton = findViewById(R.id.header_bar_up);
 
@@ -132,12 +119,7 @@ public class HeaderBar extends LinearLayout {
         // create the popup menu
         if (mPopupMenu == null) {
             mPopupMenu = new PopupMenu(mFragment.getActivity(), mMenuButton);
-            mPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    return onPopupMenuItemClick(item);
-                }
-            });
+            mPopupMenu.setOnMenuItemClickListener(this::onPopupMenuItemClick);
         }
 
         final Menu menu = mPopupMenu.getMenu();
@@ -145,12 +127,6 @@ public class HeaderBar extends LinearLayout {
 
         menu.clear();
 
-        // Shuffle all
-        inflater.inflate(R.menu.shuffle_all, menu);
-        if (MusicUtils.getQueueSize() > 0) {
-            // save queue/clear queue
-            inflater.inflate(R.menu.queue, menu);
-        }
         // Settings
         inflater.inflate(R.menu.activity_base, menu);
 
@@ -160,23 +136,9 @@ public class HeaderBar extends LinearLayout {
 
     public boolean onPopupMenuItemClick(final MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_shuffle_all:
-                // Shuffle all the songs
-                MusicUtils.shuffleAll(mFragment.getActivity());
-                return true;
             case R.id.menu_settings:
                 // Settings
                 NavUtils.openSettings(mFragment.getActivity());
-                return true;
-            case R.id.menu_save_queue:
-                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
-                        .makeQueueCursor(mFragment.getActivity());
-                CreateNewPlaylist.getInstance(MusicUtils.getSongListForCursor(queue)).show(
-                        mFragment.getFragmentManager(), "CreatePlaylist");
-                queue.close();
-                return true;
-            case R.id.menu_clear_queue:
-                MusicUtils.clearQueue();
                 return true;
             default:
                 break;
