@@ -36,11 +36,6 @@
         android:title="@string/context_menu_use_as_ringtone"
         app:showAsAction="never" />
     <item
-        android:id="@+id/menu_audio_player_more_by_artist"
-        android:orderInCategory="43"
-        android:title="@string/context_menu_more_by_artist"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/menu_audio_player_delete"
         android:orderInCategory="44"
         android:title="@string/context_menu_delete"
