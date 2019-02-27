@@ -197,7 +197,6 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
                     FragmentMenuItems.PLAY_SELECTION,
                     FragmentMenuItems.ADD_TO_QUEUE,
                     FragmentMenuItems.ADD_TO_PLAYLIST,
-                    FragmentMenuItems.DELETE,
                     FragmentMenuItems.CHANGE_IMAGE,
                 };
             case Album:
@@ -206,7 +205,6 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
                         FragmentMenuItems.ADD_TO_QUEUE,
                         FragmentMenuItems.ADD_TO_PLAYLIST,
                         FragmentMenuItems.MORE_BY_ARTIST,
-                        FragmentMenuItems.DELETE,
                         FragmentMenuItems.CHANGE_IMAGE,
                 };
             case Song:
@@ -218,7 +216,6 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
                         FragmentMenuItems.ADD_TO_PLAYLIST,
                         FragmentMenuItems.MORE_BY_ARTIST,
                         FragmentMenuItems.USE_AS_RINGTONE,
-                        FragmentMenuItems.DELETE,
                 };
             case Playlist:
                 return new int[] {
@@ -245,7 +242,6 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
                         FragmentMenuItems.REMOVE_FROM_QUEUE,
                         FragmentMenuItems.MORE_BY_ARTIST,
                         FragmentMenuItems.USE_AS_RINGTONE,
-                        FragmentMenuItems.DELETE,
                 };
         }
 

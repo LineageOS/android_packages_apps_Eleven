@@ -47,7 +47,6 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.AlbumArtPagerAdapter;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.menu.CreateNewPlaylist;
-import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.ui.activities.HomeActivity;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
@@ -215,12 +214,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             case R.id.menu_settings:
                 // Settings
                 NavUtils.openSettings(getActivity());
-                return true;
-            case R.id.menu_audio_player_delete:
-                // Delete current song
-                DeleteDialog.newInstance(MusicUtils.getTrackName(), new long[]{
-                        MusicUtils.getCurrentAudioId()
-                }, null).show(getActivity().getSupportFragmentManager(), "DeleteDialog");
                 return true;
             default:
                 break;
