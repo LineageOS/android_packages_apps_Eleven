@@ -45,7 +45,6 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.WorkerThread;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.Toast;
 
 import org.lineageos.eleven.BuildConfig;
@@ -61,7 +60,6 @@ import org.lineageos.eleven.loaders.PlaylistSongLoader;
 import org.lineageos.eleven.loaders.SongLoader;
 import org.lineageos.eleven.loaders.TopTracksLoader;
 import org.lineageos.eleven.locale.LocaleUtils;
-import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.model.AlbumArtistDetails;
 import org.lineageos.eleven.provider.RecentStore;
 import org.lineageos.eleven.provider.SongPlayCount;
