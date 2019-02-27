@@ -46,8 +46,6 @@ import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.AlbumArtPagerAdapter;
 import org.lineageos.eleven.cache.ImageFetcher;
-import org.lineageos.eleven.loaders.NowPlayingCursor;
-import org.lineageos.eleven.loaders.QueueLoader;
 import org.lineageos.eleven.menu.CreateNewPlaylist;
 import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.ui.activities.HomeActivity;
@@ -166,8 +164,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         final Menu playerMenu = mPlayerToolBar.getMenu();
         playerMenu.clear();
 
-        // Shuffle all
-        inflater.inflate(R.menu.shuffle_all, playerMenu);
         if (MusicUtils.getQueueSize() > 0) {
             // ringtone, and equalizer
             inflater.inflate(R.menu.audio_player, playerMenu);
@@ -175,9 +171,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             if (!NavUtils.hasEffectsPanel(getActivity())) {
                 playerMenu.removeItem(R.id.menu_audio_player_equalizer);
             }
-
-            // save queue/clear queue
-            inflater.inflate(R.menu.queue, playerMenu);
         }
         // Settings
         inflater.inflate(R.menu.activity_base, playerMenu);
@@ -211,10 +204,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 mAlertDialog = builder.show();
                 return true;
             }
-            case R.id.menu_shuffle_all:
-                // Shuffle all the songs
-                MusicUtils.shuffleAll(getActivity());
-                return true;
             case R.id.menu_audio_player_ringtone:
                 // Set the current track as a ringtone
                 MusicUtils.setRingtone(getActivity(), MusicUtils.getCurrentAudioId());
@@ -235,16 +224,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 DeleteDialog.newInstance(MusicUtils.getTrackName(), new long[]{
                         MusicUtils.getCurrentAudioId()
                 }, null).show(getActivity().getSupportFragmentManager(), "DeleteDialog");
-                return true;
-            case R.id.menu_save_queue:
-                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
-                        .makeQueueCursor(getActivity());
-                CreateNewPlaylist.getInstance(MusicUtils.getSongListForCursor(queue)).show(
-                        getFragmentManager(), "CreatePlaylist");
-                queue.close();
-                return true;
-            case R.id.menu_clear_queue:
-                MusicUtils.clearQueue();
                 return true;
             default:
                 break;
@@ -544,9 +523,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         private final WeakReference<AudioPlayerFragment> mReference;
 
-        /**
-         * Constructor of <code>PlaybackStatus</code>
-         */
         public PlaybackStatus(final AudioPlayerFragment fragment) {
             mReference = new WeakReference<>(fragment);
         }
@@ -563,7 +539,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 case MusicPlaybackService.META_CHANGED:
                     // if we are repeating current and the track has changed, re-create the adapter
                     if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
-                        mReference.get().createAndSetAdapter();
+                        audioPlayerFragment.createAndSetAdapter();
                     }
 
                     // Current info
@@ -575,12 +551,9 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                     break;
                 case MusicPlaybackService.REPEATMODE_CHANGED:
                 case MusicPlaybackService.SHUFFLEMODE_CHANGED:
-                    // Set the repeat image
                     audioPlayerFragment.mMainPlaybackControls.updateRepeatState();
-                    // Set the shuffle image
                     audioPlayerFragment.mMainPlaybackControls.updateShuffleState();
 
-                    // Update the queue
                     audioPlayerFragment.createAndSetAdapter();
                     break;
                 case MusicPlaybackService.QUEUE_CHANGED:

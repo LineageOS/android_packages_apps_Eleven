@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui;
 
 import android.content.Context;
@@ -27,10 +28,6 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.loaders.NowPlayingCursor;
-import org.lineageos.eleven.loaders.QueueLoader;
-import org.lineageos.eleven.menu.CreateNewPlaylist;
-import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
 
 import androidx.fragment.app.Fragment;
@@ -131,12 +128,6 @@ public class HeaderBar extends LinearLayout {
 
         menu.clear();
 
-        // Shuffle all
-        inflater.inflate(R.menu.shuffle_all, menu);
-        if (MusicUtils.getQueueSize() > 0) {
-            // save queue/clear queue
-            inflater.inflate(R.menu.queue, menu);
-        }
         // Settings
         inflater.inflate(R.menu.activity_base, menu);
 
@@ -146,23 +137,9 @@ public class HeaderBar extends LinearLayout {
 
     public boolean onPopupMenuItemClick(final MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_shuffle_all:
-                // Shuffle all the songs
-                MusicUtils.shuffleAll(mFragment.getActivity());
-                return true;
             case R.id.menu_settings:
                 // Settings
                 NavUtils.openSettings(mFragment.getActivity());
-                return true;
-            case R.id.menu_save_queue:
-                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
-                        .makeQueueCursor(mFragment.getActivity());
-                CreateNewPlaylist.getInstance(MusicUtils.getSongListForCursor(queue)).show(
-                        mFragment.getFragmentManager(), "CreatePlaylist");
-                queue.close();
-                return true;
-            case R.id.menu_clear_queue:
-                MusicUtils.clearQueue();
                 return true;
             default:
                 break;

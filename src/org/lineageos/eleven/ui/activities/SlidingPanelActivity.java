@@ -13,6 +13,7 @@
 
 package org.lineageos.eleven.ui.activities;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.colors.ColorExtractor;
 import org.lineageos.eleven.widgets.AlbumScrimImage;
+
+import androidx.annotation.Nullable;
 
 /**
  * This class is used to display the {@link androidx.viewpager.widget.ViewPager} used to swipe between the
@@ -62,20 +65,21 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     /**
      * Opens the now playing screen
      */
-    private final View.OnClickListener mOpenNowPlaying = new View.OnClickListener() {
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public void onClick(final View v) {
-            if (MusicUtils.getCurrentAudioId() != -1) {
-                openAudioPlayer();
-            } else {
-                MusicUtils.shuffleAll(SlidingPanelActivity.this);
-            }
+    private final View.OnClickListener mOpenNowPlaying = v -> {
+        if (MusicUtils.getCurrentAudioId() != -1) {
+            openAudioPlayer();
+        } else {
+            MusicUtils.shuffleAll(SlidingPanelActivity.this);
         }
     };
+
+    @Nullable
+    public static SlidingPanelActivity get(final Activity activity) {
+        if (activity instanceof SlidingPanelActivity) {
+            return (SlidingPanelActivity) activity;
+        }
+        return null;
+    }
 
     @Override
     protected void initBottomActionBar() {
@@ -87,9 +91,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -197,9 +198,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int setContentView() {
         return R.layout.activity_base;
@@ -256,6 +254,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     protected void onSlide(float slideOffset) {
+        // empty
     }
 
     /**
