@@ -26,7 +26,6 @@ import org.lineageos.eleven.ui.fragments.AlbumFragment;
 import org.lineageos.eleven.ui.fragments.ArtistFragment;
 import org.lineageos.eleven.ui.fragments.BaseFragment;
 import org.lineageos.eleven.ui.fragments.SongFragment;
-import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.SortOrder;
 import org.lineageos.eleven.widgets.ViewPagerTabs;
@@ -79,9 +78,6 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         return getString(R.string.app_name);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -135,9 +131,6 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -145,9 +138,6 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         setHasOptionsMenu(true);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onPause() {
         super.onPause();
@@ -155,22 +145,15 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         mPreferences.setStartPage(mViewPager.getCurrentItem());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onPrepareOptionsMenu(final Menu menu) {
         super.onPrepareOptionsMenu(menu);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        inflater.inflate(R.menu.shuffle_all, menu); // Shuffle all
         if (isArtistPage()) {
             inflater.inflate(R.menu.artist_sort_by, menu);
         } else if (isAlbumPage()) {
@@ -182,16 +165,9 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_shuffle_all:
-                // Shuffle all the songs
-                MusicUtils.shuffleAll(getActivity());
-                return true;
             case R.id.menu_sort_by_az:
                 if (isArtistPage()) {
                     mPreferences.setArtistSortOrder(SortOrder.ArtistSortOrder.ARTIST_A_Z);
