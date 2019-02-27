@@ -40,6 +40,8 @@ import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.Bitmap;
 import android.hardware.SensorManager;
+import android.media.AudioAttributes;
+import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer;
@@ -560,6 +562,21 @@ public class MusicPlaybackService extends Service {
         gotoNext(true);
     };
 
+    private final OnAudioFocusChangeListener mAudioFocusListener = new OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(final int focusChange) {
+            mPlayerHandler.obtainMessage(FOCUSCHANGE, focusChange, 0).sendToTarget();
+        }
+    };
+    private final AudioAttributes mAudioAttributes = new AudioAttributes.Builder()
+            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+            .setUsage(AudioAttributes.USAGE_MEDIA)
+            .build();
+    private final AudioFocusRequest mAudioFocusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
+            .setOnAudioFocusChangeListener(mAudioFocusListener)
+            .setAudioAttributes(mAudioAttributes)
+            .build();
+
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
@@ -794,7 +811,7 @@ public class MusicPlaybackService extends Service {
         mPlayer = null;
 
         // Remove the audio focus listener and lock screen controls
-        mAudioManager.abandonAudioFocus(mAudioFocusListener);
+        mAudioManager.abandonAudioFocusRequest(mAudioFocusRequest);
         mSession.release();
 
         // remove the media store observer
@@ -2471,11 +2488,8 @@ public class MusicPlaybackService extends Service {
      *                           if you want to re-use the existing next track (used for going back)
      */
     public void play(boolean createNewNextTrack) {
-        int status = mAudioManager.requestAudioFocus(mAudioFocusListener,
-                AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
-
+        int status = mAudioManager.requestAudioFocus(mAudioFocusRequest);
         if (D) Log.d(TAG, "Starting playback: audio focus request status = " + status);
-
         if (status != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
             return;
         }
@@ -2961,14 +2975,7 @@ public class MusicPlaybackService extends Service {
             Log.e("ELEVEN", "calling refresh!");
             refresh();
         }
-    };
-
-    private final OnAudioFocusChangeListener mAudioFocusListener = new OnAudioFocusChangeListener() {
-        @Override
-        public void onAudioFocusChange(final int focusChange) {
-            mPlayerHandler.obtainMessage(FOCUSCHANGE, focusChange, 0).sendToTarget();
-        }
-    };
+    }
 
     private static final class MusicPlayerHandler extends Handler {
         private final WeakReference<MusicPlaybackService> mService;
@@ -3263,7 +3270,7 @@ public class MusicPlaybackService extends Service {
                 } else {
                     player.setDataSource(path);
                 }
-                player.setAudioStreamType(AudioManager.STREAM_MUSIC);
+                player.setAudioAttributes(mService.get().mAudioAttributes);
 
                 player.prepare();
             } catch (final IOException todo) {
