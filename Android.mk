@@ -16,6 +16,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     androidx.core_core \
     androidx.legacy_legacy-support-v4 \
     androidx.palette_palette \
+    androidx.preference_preference \
     androidx.recyclerview_recyclerview
 
 LOCAL_USE_AAPT2 := true
