@@ -42,7 +42,6 @@ import org.lineageos.eleven.dragdrop.DragSortListView.DropListener;
 import org.lineageos.eleven.dragdrop.DragSortListView.RemoveListener;
 import org.lineageos.eleven.loaders.NowPlayingCursor;
 import org.lineageos.eleven.loaders.QueueLoader;
-import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.model.Song;
 import org.lineageos.eleven.recycler.RecycleHolder;
@@ -160,12 +159,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
             @Override
             protected String getArtistName() {
                 return mSong.mArtistName;
-            }
-
-            @Override
-            protected void onDeleteClicked() {
-                DeleteDialog.newInstance(mSong.mSongName,
-                        new long[] { getId() }, null).show(getFragmentManager(), "DeleteDialog");
             }
 
             @Override

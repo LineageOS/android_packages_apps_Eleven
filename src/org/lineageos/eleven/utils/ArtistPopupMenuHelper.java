@@ -17,10 +17,9 @@ package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.support.v4.app.FragmentManager;
-
 import android.view.MenuItem;
+
 import org.lineageos.eleven.Config;
-import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.menu.PhotoSelectionDialog;
 import org.lineageos.eleven.model.Artist;
@@ -54,13 +53,6 @@ public abstract class ArtistPopupMenuHelper extends PopupMenuHelper {
     @Override
     protected long[] getIdList() {
         return MusicUtils.getSongListForArtist(mActivity, mArtist.mArtistId);
-    }
-
-    @Override
-    protected void onDeleteClicked() {
-        final String artist = mArtist.mArtistName;
-        DeleteDialog.newInstance(artist, getIdList(), artist)
-            .show(mFragmentManager, "DeleteDialog");
     }
 
     @Override
