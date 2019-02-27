@@ -340,18 +340,15 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
                     final AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
                     builder.setTitle(R.string.add_to_playlist);
                     final List<String> menuItemList = MusicUtils.makePlaylist(mActivity);
-                    builder.setItems(menuItemList.toArray(new String[0]), new DialogInterface.OnClickListener() {
-                        @Override public void onClick(DialogInterface dialog, int which) {
-                            if (which == 0) {
-                                CreateNewPlaylist.getInstance(getIdList()).show(
-                                        mFragmentManager, "CreatePlaylist");
-                                return;
-                            }
-
-                            final String name = menuItemList.get(which);
-                            final long playListId = MusicUtils.getIdForPlaylist(mActivity, name);
-                            MusicUtils.addToPlaylist(mActivity, getIdList(), playListId);
-                        }
+                    builder.setItems(menuItemList.toArray(new String[0]), (dialog, which) -> {
+                        final String name = menuItemList.get(which);
+                        final long playListId = MusicUtils.getIdForPlaylist(mActivity, name);
+                        MusicUtils.addToPlaylist(mActivity, getIdList(), playListId);
+                    });
+                    builder.setPositiveButton(R.string.new_playlist, (dialog, which) -> {
+                        dialog.dismiss();
+                        CreateNewPlaylist.getInstance(getIdList())
+                                .show(mFragmentManager, "CreatePlaylist");
                     });
                     builder.show();
                     return true;
