@@ -20,6 +20,7 @@
 package org.lineageos.eleven;
 
 import android.Manifest.permission;
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -790,21 +791,24 @@ public class MusicPlaybackService extends Service {
         if (!mReadGranted) {
             return;
         }
-        super.onDestroy();
+
+        // remove the media store observer
+        getContentResolver().unregisterContentObserver(mMediaStoreObserver);
+
+        // Remove any callbacks from the handler
+        mPlayerHandler.removeCallbacksAndMessages(null);
+        // quit the thread so that anything that gets posted won't run
+        mHandlerThread.quitSafely();
+
+        // remove any pending alarms
+        mAlarmManager.cancel(mShutdownIntent);
+
         // Remove any sound effects
         final Intent audioEffectsIntent = new Intent(
                 AudioEffect.ACTION_CLOSE_AUDIO_EFFECT_CONTROL_SESSION);
         audioEffectsIntent.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, getAudioSessionId());
         audioEffectsIntent.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, getPackageName());
         sendBroadcast(audioEffectsIntent);
-
-        // remove any pending alarms
-        mAlarmManager.cancel(mShutdownIntent);
-
-        // Remove any callbacks from the handler
-        mPlayerHandler.removeCallbacksAndMessages(null);
-        // quit the thread so that anything that gets posted won't run
-        mHandlerThread.quitSafely();
 
         // Release the player
         mPlayer.release();
@@ -813,12 +817,6 @@ public class MusicPlaybackService extends Service {
         // Remove the audio focus listener and lock screen controls
         mAudioManager.abandonAudioFocusRequest(mAudioFocusRequest);
         mSession.release();
-
-        // remove the media store observer
-        getContentResolver().unregisterContentObserver(mMediaStoreObserver);
-
-        // Close the cursor
-        closeCursor();
 
         // Unregister the mount listener
         unregisterReceiver(mIntentReceiver);
@@ -829,6 +827,13 @@ public class MusicPlaybackService extends Service {
 
         // deinitialize shake detector
         stopShakeDetector(true);
+
+        // Close the cursor
+        synchronized (this) {
+            closeCursor();
+        }
+
+        super.onDestroy();
     }
 
     @Override
@@ -1217,7 +1222,7 @@ public class MusicPlaybackService extends Service {
         return c;
      }
 
-    private synchronized void closeCursor() {
+    private void closeCursor() {
         if (mCursor != null) {
             mCursor.close();
             mCursor = null;
@@ -1710,6 +1715,7 @@ public class MusicPlaybackService extends Service {
      *
      * @param full True if the queue is full
      */
+    @SuppressLint("ApplySharedPref")
     private void saveQueue(final boolean full) {
         if (!mQueueIsSaveable || mPreferences == null) {
             return;
@@ -1727,7 +1733,9 @@ public class MusicPlaybackService extends Service {
         }
         editor.putInt("repeatmode", mRepeatMode);
         editor.putInt("shufflemode", mShuffleMode);
-        editor.apply();
+
+        // commit instead of applying to ensure data is written
+        editor.commit();
     }
 
     /**

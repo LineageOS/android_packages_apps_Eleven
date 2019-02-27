@@ -94,7 +94,7 @@ public class MusicPlaybackState {
      * @param context The {@link android.content.Context} to use
      * @return A new instance of this class.
      */
-    public static final synchronized MusicPlaybackState getInstance(final Context context) {
+    public static synchronized MusicPlaybackState getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new MusicPlaybackState(context.getApplicationContext());
         }
