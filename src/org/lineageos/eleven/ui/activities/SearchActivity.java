@@ -14,15 +14,12 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.app.SearchManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.database.Cursor;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -43,7 +40,6 @@ import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
 import org.lineageos.eleven.Config;
-import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.SummarySearchAdapter;
 import org.lineageos.eleven.loaders.WrappedAsyncTaskLoader;
@@ -79,9 +75,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
-import static android.view.View.OnTouchListener;
-import static org.lineageos.eleven.utils.MusicUtils.mService;
-
 /**
  * Provides the search interface for Eleven.
  *
@@ -89,8 +82,7 @@ import static org.lineageos.eleven.utils.MusicUtils.mService;
  */
 public class SearchActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<SectionListContainer<SearchResult>>,
-        OnScrollListener, OnQueryTextListener, OnItemClickListener, ServiceConnection,
-        OnTouchListener {
+        OnScrollListener, OnQueryTextListener, OnItemClickListener, View.OnTouchListener {
     /**
      * Intent extra for identifying the search type to filter for
      */
@@ -199,9 +191,6 @@ public class SearchActivity extends AppCompatActivity implements
      */
     private PopupMenuHelper mPopupMenuHelper;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -263,9 +252,6 @@ public class SearchActivity extends AppCompatActivity implements
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
-
         // Set the layout
         setContentView(R.layout.activity_search);
 
@@ -296,12 +282,7 @@ public class SearchActivity extends AppCompatActivity implements
 
         // setup handler and runnable
         mHandler = new Handler();
-        mLoadingRunnable = new Runnable() {
-            @Override
-            public void run() {
-                setState(VisibleState.Loading);
-            }
-        };
+        mLoadingRunnable = () -> setState(VisibleState.Loading);
 
         // Theme the action bar
         final ActionBar actionBar = getSupportActionBar();
@@ -351,6 +332,23 @@ public class SearchActivity extends AppCompatActivity implements
 
             // Start the loader for the search history
             getSupportLoaderManager().initLoader(HISTORY_LOADER, null, mSearchHistoryCallback);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mToken = MusicUtils.bindToService(this, null);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (mToken != null) {
+            MusicUtils.unbindFromService(mToken);
+            mToken = null;
         }
     }
 
@@ -458,19 +456,6 @@ public class SearchActivity extends AppCompatActivity implements
     private void quit() {
         mQuitting = true;
         finish();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Unbind from the service
-        if (mService != null) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
     }
 
     /**
@@ -677,22 +662,6 @@ public class SearchActivity extends AppCompatActivity implements
                     break;
             }
         }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void onServiceConnected(final ComponentName name, final IBinder service) {
-        mService = IElevenService.Stub.asInterface(service);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void onServiceDisconnected(final ComponentName name) {
-        mService = null;
     }
 
     /**
