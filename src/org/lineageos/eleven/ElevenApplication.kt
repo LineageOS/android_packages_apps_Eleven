@@ -19,14 +19,18 @@
 package org.lineageos.eleven
 
 import android.app.Application
+import android.content.Context
 import android.os.StrictMode
 import android.util.Log
-
 import org.lineageos.eleven.cache.ImageCache
 
 class ElevenApplication : Application() {
     companion object {
         private const val TAG = "ElevenApplication"
+
+        fun get(context: Context): ElevenApplication {
+            return context.applicationContext as ElevenApplication
+        }
     }
 
     override fun onCreate() {

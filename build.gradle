@@ -59,6 +59,12 @@ android {
 
         renderscriptTargetApi 26
         renderscriptSupportModeEnabled true
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas".toString())
+            }
+        }
     }
 
     buildTypes {
@@ -159,5 +165,10 @@ dependencies {
 
     // see https://github.com/material-components/material-components-android/releases
     implementation "com.google.android.material:material:1.0.0"
+
+    // see https://developer.android.com/jetpack/androidx/releases/room
+    implementation "androidx.room:room-runtime:2.0.0"
+    //implementation "androidx.room:room-ktx:2.0.0"
+    kapt "androidx.room:room-compiler:2.0.0"
 }
 

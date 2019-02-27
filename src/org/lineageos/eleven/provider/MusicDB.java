@@ -64,7 +64,6 @@ public class MusicDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        PropertiesStore.getInstance(mContext).onCreate(db);
         PlaylistArtworkStore.getInstance(mContext).onCreate(db);
         RecentStore.getInstance(mContext).onCreate(db);
         SongPlayCount.getInstance(mContext).onCreate(db);
@@ -75,7 +74,6 @@ public class MusicDB extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        PropertiesStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         PlaylistArtworkStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         RecentStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         SongPlayCount.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
@@ -88,7 +86,6 @@ public class MusicDB extends SQLiteOpenHelper {
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w(MusicDB.class.getSimpleName(),
                 "Downgrading from: " + oldVersion + " to " + newVersion + ". Dropping tables");
-        PropertiesStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         PlaylistArtworkStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         RecentStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         SongPlayCount.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);

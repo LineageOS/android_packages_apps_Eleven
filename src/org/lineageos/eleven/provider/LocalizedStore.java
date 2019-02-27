@@ -19,6 +19,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -33,6 +34,8 @@ import org.lineageos.eleven.loaders.SortedCursor;
 import org.lineageos.eleven.locale.LocaleSet;
 import org.lineageos.eleven.locale.LocaleSetManager;
 import org.lineageos.eleven.locale.LocaleUtils;
+import org.lineageos.eleven.room.ElevenRepository;
+import org.lineageos.eleven.room.Property;
 import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.ArrayList;
@@ -175,19 +178,23 @@ public class LocalizedStore {
 
             updateLocalizedStore(db, null);
 
-            // Update the ICU version used to generate the locale derived data
-            // so we can tell when we need to rebuild with new ICU versions.
-            // But assume that ICU versions are only able to change on Android version upgrades and
-            // use SDK INT as identifier.
-            PropertiesStore.getInstance(mContext).storeProperty(
-                    PropertiesStore.DbProperties.ICU_VERSION, String.valueOf(Build.VERSION.SDK_INT));
-            PropertiesStore.getInstance(mContext).storeProperty(PropertiesStore.DbProperties.LOCALE,
-                    locales.toString());
-
             db.setTransactionSuccessful();
         } finally {
             db.endTransaction();
         }
+
+        final ElevenRepository repo = ElevenRepository.Companion.getInstance(mContext);
+        final Property icuVersionProperty = new Property(Property.ICU_VERSION,
+                String.valueOf(Build.VERSION.SDK_INT));
+        final Property localeProperty = new Property(Property.LOCALE, locales.toString());
+        // Update the ICU version used to generate the locale derived data
+        // so we can tell when we need to rebuild with new ICU versions.
+        // But assume that ICU versions are only able to change on Android version upgrades and
+        // use SDK INT as identifier.
+        AsyncTask.execute(() -> {
+            repo.storeProperty(icuVersionProperty);
+            repo.storeProperty(localeProperty);
+        });
 
         if (DEBUG) {
             Log.i(TAG, "Locale change completed in " + (SystemClock.elapsedRealtime() - start) + "ms");

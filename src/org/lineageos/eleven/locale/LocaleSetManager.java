@@ -21,7 +21,9 @@ import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
-import org.lineageos.eleven.provider.PropertiesStore;
+import org.lineageos.eleven.BuildConfig;
+import org.lineageos.eleven.room.ElevenRepository;
+import org.lineageos.eleven.room.Property;
 
 import java.util.Locale;
 
@@ -52,16 +54,18 @@ public class LocaleSetManager {
             return true;
         }
 
-        // if our icu version has changed, return true
-        final String storedICUversion = PropertiesStore.getInstance(mContext)
-                .getProperty(PropertiesStore.DbProperties.ICU_VERSION);
+        final ElevenRepository repo = ElevenRepository.Companion.getInstance(mContext);
+        final Property property = repo.getProperty(Property.ICU_VERSION);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "localeSetNeedsUpdate(): got property -> " + property);
+        }
+
+        final String storedICUversion = (property != null ? property.getValue() : "");
         if (!String.valueOf(Build.VERSION.SDK_INT).equals(storedICUversion)) {
             Log.d(TAG, "ICU version has changed from: " + storedICUversion + " to "
                     + String.valueOf(Build.VERSION.SDK_INT));
             return true;
         }
-
-
         return false;
     }
 
@@ -72,7 +76,7 @@ public class LocaleSetManager {
     public void updateLocaleSet(LocaleSet localeSet) {
         Log.d(TAG, "Locale Changed from: " + mCurrentLocales + " to " + localeSet);
         mCurrentLocales = localeSet;
-        LocaleUtils.getInstance().setLocales(mCurrentLocales);
+        LocaleUtils.setLocales(mCurrentLocales);
     }
 
     /**
@@ -108,9 +112,13 @@ public class LocaleSetManager {
      * @return the stored locale set
      */
     public LocaleSet getStoredLocaleSet() {
-        final String providerLocaleString = PropertiesStore.getInstance(mContext)
-                .getProperty(PropertiesStore.DbProperties.LOCALE);
+        final ElevenRepository repo = ElevenRepository.Companion.getInstance(mContext);
+        final Property property = repo.getProperty(Property.LOCALE);
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "getStoredLocaleSet(): got property -> " + property);
+        }
 
+        final String providerLocaleString = (property != null ? property.getValue() : "");
         if (TextUtils.isEmpty(providerLocaleString)) {
             return null;
         }
