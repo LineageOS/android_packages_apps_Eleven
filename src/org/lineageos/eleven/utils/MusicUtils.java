@@ -46,6 +46,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
+import org.lineageos.eleven.BuildConfig;
 import org.lineageos.eleven.Config.IdType;
 import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.IElevenService;
@@ -957,8 +958,11 @@ public final class MusicUtils {
      * @return The ID for a playlist.
      */
     public static long getIdForPlaylist(final Context context, final String name) {
-        try (Cursor cursor = context.getContentResolver().query(
-                Playlists.EXTERNAL_CONTENT_URI,
+        if (BuildConfig.DEBUG) {
+            Log.d(TAG, "getIdForPlaylist(" + name + ")");
+        }
+
+        try (Cursor cursor = context.getContentResolver().query(Playlists.EXTERNAL_CONTENT_URI,
                 new String[]{BaseColumns._ID}, PlaylistsColumns.NAME + "=?",
                 new String[]{name}, PlaylistsColumns.NAME)) {
             if (cursor != null) {
@@ -1430,8 +1434,6 @@ public final class MusicUtils {
      */
     public static List<String> makePlaylist(final Context context) {
         final List<String> menuItemMap = new ArrayList<>();
-        menuItemMap.add(context.getString(R.string.new_playlist));
-
         try (final Cursor cursor = PlaylistLoader.makePlaylistCursor(context)) {
             if (cursor != null && cursor.getCount() > 0 && cursor.moveToFirst()) {
                 while (!cursor.isAfterLast()) {
@@ -1447,27 +1449,6 @@ public final class MusicUtils {
         // sort the list but ignore case
         Collections.sort(menuItemMap, new IgnoreCaseComparator());
         return menuItemMap;
-    }
-
-    /**
-     * Creates a sub menu used to add items to a new playlist or an existing
-     * one.
-     *
-     * @param context The {@link Context} to use.
-     * @param groupId The group Id of the menu.
-     * @param menu The {@link Menu} to add to.
-     */
-    public static void makePlaylistMenu(final Context context, final int groupId,
-                                        final Menu menu) {
-        menu.clear();
-
-        final List<String> menuItemList = makePlaylist(context);
-        for (final String name : menuItemList) {
-            final Intent intent = new Intent();
-            intent.putExtra("playlist", getIdForPlaylist(context, name));
-            menu.add(groupId, FragmentMenuItems.PLAYLIST_SELECTED, Menu.NONE, name)
-                    .setIntent(intent);
-        }
     }
 
     /**
