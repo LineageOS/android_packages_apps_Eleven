@@ -16,13 +16,13 @@
  */
 package org.lineageos.eleven.ui.fragments;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
-import android.graphics.Outline;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -39,12 +39,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
-import android.widget.ImageView;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -57,7 +56,6 @@ import org.lineageos.eleven.loaders.NowPlayingCursor;
 import org.lineageos.eleven.loaders.QueueLoader;
 import org.lineageos.eleven.menu.CreateNewPlaylist;
 import org.lineageos.eleven.menu.DeleteDialog;
-import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.ui.activities.HomeActivity;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
@@ -69,27 +67,21 @@ import org.lineageos.eleven.widgets.NoResultsContainer;
 import org.lineageos.eleven.widgets.VisualizerView;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
 
 public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     private static final String TAG = AudioPlayerFragment.class.getSimpleName();
 
-    /**
-     * Used to keep context menu items from bleeding into other fragments
-     */
-    private static final int GROUP_ID = 15;
+    private AlertDialog mAlertDialog;
 
     // fragment view
     private ViewGroup mRootView;
 
+    private Toolbar mPlayerToolBar;
+
     // Header views
     private TextView mSongTitle;
     private TextView mArtistName;
-
-    // Playlist Button
-    private ImageView mAddToPlaylistButton;
-
-    // Menu Button
-    private ImageView mMenuButton;
 
     // Message to refresh the time
     private static final int REFRESH_TIME = 1;
@@ -115,9 +107,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     // Image cache
     private ImageFetcher mImageFetcher;
 
-    // popup menu for pressing the menu icon
-    private PopupMenu mPopupMenu;
-
     // Lyrics text view
     private TextView mLyricsText;
 
@@ -142,14 +131,12 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
-                             final Bundle savedInstanceState) {
+                final Bundle savedInstanceState) {
         // The View for the fragment's UI
         mRootView = (ViewGroup) inflater.inflate(R.layout.activity_player_fragment, container,
                 false);
 
-        // Header title values
         initHeaderBar();
-
         initPlaybackControls();
 
         mVisualizerView = mRootView.findViewById(R.id.visualizerView);
@@ -159,6 +146,107 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mLyricsText = mRootView.findViewById(R.id.audio_player_lyrics);
 
         return mRootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+
+        final Menu playerMenu = mPlayerToolBar.getMenu();
+        playerMenu.clear();
+
+        // Shuffle all
+        inflater.inflate(R.menu.shuffle_all, playerMenu);
+        if (MusicUtils.getQueueSize() > 0) {
+            // ringtone, and equalizer
+            inflater.inflate(R.menu.audio_player, playerMenu);
+
+            if (!NavUtils.hasEffectsPanel(getActivity())) {
+                playerMenu.removeItem(R.id.menu_audio_player_equalizer);
+            }
+
+            // save queue/clear queue
+            inflater.inflate(R.menu.queue, playerMenu);
+        }
+        // Settings
+        inflater.inflate(R.menu.activity_base, playerMenu);
+
+        final int playerMenuSize = playerMenu.size();
+        for (int i = 0; i < playerMenuSize; i++) {
+            playerMenu.getItem(i).setOnMenuItemClickListener(this::onOptionsItemSelected);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_audio_player_add_to_playlist: {
+                // save the current track id
+                mSelectedId = MusicUtils.getCurrentAudioId();
+                final List<String> menuItemList = MusicUtils.makePlaylist(getActivity());
+
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setTitle(R.string.add_to_playlist)
+                        .setItems(menuItemList.toArray(new String[0]), (dialog, which) -> {
+                            final long playListId = MusicUtils.getIdForPlaylist(getActivity(),
+                                    menuItemList.get(which));
+                            MusicUtils.addToPlaylist(getActivity(), new long[]{mSelectedId},
+                                    playListId);
+                        })
+                        .setPositiveButton(R.string.new_playlist, (dialog, which) -> {
+                            dialog.dismiss();
+                            CreateNewPlaylist.getInstance(new long[]{mSelectedId})
+                                    .show(getFragmentManager(), "CreatePlaylist");
+                        });
+                mAlertDialog = builder.show();
+                return true;
+            }
+            case R.id.menu_shuffle_all:
+                // Shuffle all the songs
+                MusicUtils.shuffleAll(getActivity());
+                return true;
+            case R.id.menu_audio_player_ringtone:
+                // Set the current track as a ringtone
+                MusicUtils.setRingtone(getActivity(), MusicUtils.getCurrentAudioId());
+                return true;
+            case R.id.menu_audio_player_equalizer:
+                // Sound effects
+                NavUtils.openEffectsPanel(getActivity(), HomeActivity.EQUALIZER);
+                return true;
+            case R.id.menu_settings:
+                // Settings
+                NavUtils.openSettings(getActivity());
+                return true;
+            case R.id.menu_audio_player_more_by_artist:
+                NavUtils.openArtistProfile(getActivity(), MusicUtils.getArtistName());
+                return true;
+            case R.id.menu_audio_player_delete:
+                // Delete current song
+                DeleteDialog.newInstance(MusicUtils.getTrackName(), new long[]{
+                        MusicUtils.getCurrentAudioId()
+                }, null).show(getActivity().getSupportFragmentManager(), "DeleteDialog");
+                return true;
+            case R.id.menu_save_queue:
+                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
+                        .makeQueueCursor(getActivity());
+                CreateNewPlaylist.getInstance(MusicUtils.getSongListForCursor(queue)).show(
+                        getFragmentManager(), "CreatePlaylist");
+                queue.close();
+                return true;
+            case R.id.menu_clear_queue:
+                MusicUtils.clearQueue();
+                return true;
+            default:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -213,6 +301,10 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // pause the update callback for the play pause progress button
         mTimeHandler.removeMessages(REFRESH_TIME);
 
+        if (mAlertDialog != null) {
+            mAlertDialog.dismiss();
+        }
+
         mImageFetcher.flush();
 
         // Unbind from the service
@@ -231,44 +323,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
      * Initializes the header bar
      */
     private void initHeaderBar() {
-        final View headerBar = mRootView.findViewById(R.id.audio_player_header);
-        final int bottomActionBarHeight =
-                getResources().getDimensionPixelSize(R.dimen.bottom_action_bar_height);
-
-        headerBar.setOutlineProvider(new ViewOutlineProvider() {
-            @Override
-            public void getOutline(View view, Outline outline) {
-                // since we only want the top and bottom shadows, pad the horizontal width
-                // to hide the shadows. Can't seem to find a better way to do this
-                int padWidth = (int)(0.2f * view.getWidth());
-                outline.setRect(-padWidth, -bottomActionBarHeight, view.getWidth() + padWidth,
-                        view.getHeight());
-            }
-        });
+        mPlayerToolBar = mRootView.findViewById(R.id.audio_player_header);
 
         // Title text
         mSongTitle = mRootView.findViewById(R.id.header_bar_song_title);
         mArtistName = mRootView.findViewById(R.id.header_bar_artist_title);
-
-        // Setup the playlist button - add a click listener to show the context
-        mAddToPlaylistButton = mRootView.findViewById(R.id.header_bar_add_button);
-
-        // Create the context menu when requested
-        mAddToPlaylistButton.setOnCreateContextMenuListener((menu, v, menuInfo) -> {
-            MusicUtils.makePlaylistMenu(getActivity(), GROUP_ID, menu);
-            menu.setHeaderTitle(R.string.add_to_playlist);
-        });
-
-        // add a click listener to show the context
-        mAddToPlaylistButton.setOnClickListener(v -> {
-            // save the current track id
-            mSelectedId = MusicUtils.getCurrentAudioId();
-            mAddToPlaylistButton.showContextMenu();
-        });
-
-        // Add the menu button
-        mMenuButton = mRootView.findViewById(R.id.header_bar_menu_button);
-        mMenuButton.setOnClickListener(v -> showPopupMenu());
     }
 
     /**
@@ -374,11 +433,9 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         if(queueSize == 0) {
             mAlbumArtViewPager.setVisibility(View.GONE);
             mQueueEmpty.showNoResults();
-            mAddToPlaylistButton.setVisibility(View.GONE);
         } else {
             mAlbumArtViewPager.setVisibility(View.VISIBLE);
             mQueueEmpty.hideAll();
-            mAddToPlaylistButton.setVisibility(View.VISIBLE);
         }
     }
 
@@ -408,110 +465,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             return Math.max(20, 1000 - position % 1000);
         }
         return MusicUtils.UPDATE_FREQUENCY_MS;
-    }
-
-    public void showPopupMenu() {
-        // create the popup menu
-        if (mPopupMenu == null) {
-            mPopupMenu = new PopupMenu(getActivity(), mMenuButton);
-            mPopupMenu.setOnMenuItemClickListener(this::onPopupMenuItemClick);
-        }
-
-        final Menu menu = mPopupMenu.getMenu();
-        final MenuInflater inflater = mPopupMenu.getMenuInflater();
-        menu.clear();
-
-        // Shuffle all
-        inflater.inflate(R.menu.shuffle_all, menu);
-        if (MusicUtils.getQueueSize() > 0) {
-            // ringtone, and equalizer
-            inflater.inflate(R.menu.audio_player, menu);
-
-            if (!NavUtils.hasEffectsPanel(getActivity())) {
-                menu.removeItem(R.id.menu_audio_player_equalizer);
-            }
-
-            // save queue/clear queue
-            inflater.inflate(R.menu.queue, menu);
-        }
-        // Settings
-        inflater.inflate(R.menu.activity_base, menu);
-
-        // show the popup
-        mPopupMenu.show();
-    }
-
-    public boolean onPopupMenuItemClick(final MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_shuffle_all:
-                // Shuffle all the songs
-                MusicUtils.shuffleAll(getActivity());
-                return true;
-            case R.id.menu_audio_player_ringtone:
-                // Set the current track as a ringtone
-                MusicUtils.setRingtone(getActivity(), MusicUtils.getCurrentAudioId());
-                return true;
-            case R.id.menu_audio_player_equalizer:
-                // Sound effects
-                NavUtils.openEffectsPanel(getActivity(), HomeActivity.EQUALIZER);
-                return true;
-            case R.id.menu_settings:
-                // Settings
-                NavUtils.openSettings(getActivity());
-                return true;
-            case R.id.menu_audio_player_more_by_artist:
-                NavUtils.openArtistProfile(getActivity(), MusicUtils.getArtistName());
-                return true;
-            case R.id.menu_audio_player_delete:
-                // Delete current song
-                DeleteDialog.newInstance(MusicUtils.getTrackName(), new long[]{
-                        MusicUtils.getCurrentAudioId()
-                }, null).show(getActivity().getSupportFragmentManager(), "DeleteDialog");
-                return true;
-            case R.id.menu_save_queue:
-                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
-                        .makeQueueCursor(getActivity());
-                CreateNewPlaylist.getInstance(MusicUtils.getSongListForCursor(queue)).show(
-                        getFragmentManager(), "CreatePlaylist");
-                queue.close();
-                return true;
-            case R.id.menu_clear_queue:
-                MusicUtils.clearQueue();
-                return true;
-            default:
-                break;
-        }
-
-        return false;
-    }
-
-    public void dismissPopupMenu() {
-        if (mPopupMenu != null) {
-            mPopupMenu.dismiss();
-        }
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        if (item.getGroupId() == GROUP_ID) {
-            switch (item.getItemId()) {
-                case FragmentMenuItems.NEW_PLAYLIST:
-                    CreateNewPlaylist.getInstance(new long[]{
-                            mSelectedId
-                    }).show(getFragmentManager(), "CreatePlaylist");
-                    return true;
-                case FragmentMenuItems.PLAYLIST_SELECTED:
-                    final long mPlaylistId = item.getIntent().getLongExtra("playlist", 0);
-                    MusicUtils.addToPlaylist(getActivity(), new long[]{
-                            mSelectedId
-                    }, mPlaylistId);
-                    return true;
-                default:
-                    break;
-            }
-        }
-
-        return super.onContextItemSelected(item);
     }
 
     public void onLyrics(String lyrics) {
@@ -606,7 +559,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
                     // Current info
                     audioPlayerFragment.updateNowPlayingInfo();
-                    audioPlayerFragment.dismissPopupMenu();
                     break;
                 case MusicPlaybackService.PLAYSTATE_CHANGED:
                     audioPlayerFragment.mMainPlaybackControls.updatePlayPauseState();
