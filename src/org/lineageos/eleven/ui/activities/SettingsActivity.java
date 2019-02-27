@@ -2,6 +2,7 @@
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,46 +20,33 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceActivity;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 
-/**
- * Settings.
- *
- * @author Andrew Neal (andrewdneal@gmail.com)
- */
-@SuppressWarnings("deprecation")
-public class SettingsActivity extends PreferenceActivity
-        implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
 
-        // Add the preferences
-        addPreferencesFromResource(R.xml.settings);
-
-        final Preference deleteCache = findPreference("delete_cache");
-        deleteCache.setOnPreferenceClickListener(preference -> {
-            new AlertDialog.Builder(SettingsActivity.this).setMessage(R.string.delete_warning)
-                    .setPositiveButton(android.R.string.ok, (dialog, which) ->
-                            ImageFetcher.getInstance(SettingsActivity.this).clearCaches())
-                    .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss())
-                    .create().show();
-            return true;
-        });
-
-        PreferenceUtils.getInstance(this).setOnSharedPreferenceChangeListener(this);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -74,31 +62,63 @@ public class SettingsActivity extends PreferenceActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        switch (key) {
-            case PreferenceUtils.SHOW_VISUALIZER: {
-                final boolean showVisualizer = sharedPreferences.getBoolean(key, false);
-                if (showVisualizer && !PreferenceUtils.canRecordAudio(this)) {
-                    PreferenceUtils.requestRecordAudio(this);
+    public static class SettingsFragment extends PreferenceFragmentCompat implements
+            SharedPreferences.OnSharedPreferenceChangeListener {
+        @Override
+        public void onCreate(final Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            final Preference deleteCache = findPreference("delete_cache");
+            deleteCache.setOnPreferenceClickListener(preference -> {
+                new AlertDialog.Builder(getContext())
+                        .setMessage(R.string.delete_warning)
+                        .setPositiveButton(android.R.string.ok, (dialog, which) ->
+                                ImageFetcher.getInstance(getContext()).clearCaches())
+                        .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss())
+                        .show();
+                return true;
+            });
+
+            PreferenceUtils.getInstance(getContext()).setOnSharedPreferenceChangeListener(this);
+        }
+
+        @Override
+        public void onDestroy() {
+            PreferenceUtils.getInstance(getContext()).removeOnSharedPreferenceChangeListener(this);
+            super.onDestroy();
+        }
+
+        @Override
+        public void onCreatePreferences(Bundle bundle, String rootKey) {
+            setPreferencesFromResource(R.xml.settings, rootKey);
+        }
+
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            switch (key) {
+                case PreferenceUtils.SHOW_VISUALIZER: {
+                    final boolean showVisualizer = sharedPreferences.getBoolean(key, false);
+                    if (showVisualizer && !PreferenceUtils.canRecordAudio(getActivity())) {
+                        PreferenceUtils.requestRecordAudio(getActivity());
+                    }
+                    break;
                 }
-                break;
-            }
-            case PreferenceUtils.USE_BLUR: {
-                final boolean useBlur = sharedPreferences.getBoolean(key, false);
-                ImageFetcher.getInstance(SettingsActivity.this).setUseBlur(useBlur);
-                ImageFetcher.getInstance(SettingsActivity.this).clearCaches();
-                break;
-            }
-            case PreferenceUtils.SHAKE_TO_PLAY: {
-                final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
-                MusicUtils.setShakeToPlayEnabled(enableShakeToPlay);
-                break;
-            }
-            case PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN: {
-                final boolean showAlbumArtOnLockscreen = sharedPreferences.getBoolean(key, true);
-                MusicUtils.setShowAlbumArtOnLockscreen(showAlbumArtOnLockscreen);
-                break;
+                case PreferenceUtils.USE_BLUR: {
+                    final boolean useBlur = sharedPreferences.getBoolean(key, false);
+                    ImageFetcher.getInstance(getActivity()).setUseBlur(useBlur);
+                    ImageFetcher.getInstance(getActivity()).clearCaches();
+                    break;
+                }
+                case PreferenceUtils.SHAKE_TO_PLAY: {
+                    final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
+                    MusicUtils.setShakeToPlayEnabled(enableShakeToPlay);
+                    break;
+                }
+                case PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN: {
+                    final boolean showAlbumArtOnLockscreen = sharedPreferences.getBoolean(key, true);
+                    MusicUtils.setShowAlbumArtOnLockscreen(showAlbumArtOnLockscreen);
+                    break;
+                }
             }
         }
     }

@@ -144,6 +144,15 @@ public final class PreferenceUtils {
     }
 
     /**
+     * Set the listener for preference change
+     * @param listener
+     */
+    public void removeOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener){
+        mPreferences.unregisterOnSharedPreferenceChangeListener(listener);
+    }
+
+
+    /**
      * Returns the last page the user was on when the app was exited.
      *
      * @return The page to start on when the app is opened.
