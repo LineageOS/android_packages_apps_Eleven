@@ -74,10 +74,4 @@
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> song added to favorites.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> songs added to favorites.</item>
     </plurals>
-
-    <!-- Toast confirming that song(s) was/were deleted. -->
-    <plurals name="NNNtracksdeleted">
-        <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> song was deleted.</item>
-        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> songs were deleted.</item>
-    </plurals>
 </resources>
