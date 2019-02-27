@@ -27,6 +27,7 @@
     android:visibility="gone">
 
     <ImageView
+        android:id="@+id/no_results_image"
         android:layout_width="@dimen/white_note_width"
         android:layout_height="@dimen/white_note_height"
         android:layout_gravity="center_horizontal"
