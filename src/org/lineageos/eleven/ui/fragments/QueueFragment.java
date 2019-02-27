@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.ui.fragments;
@@ -22,6 +27,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.ContextCompat;
@@ -49,15 +55,12 @@ import org.lineageos.eleven.service.MusicPlaybackTrack;
 import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.TreeSet;
-
-import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
  * This class is used to display all of the songs in the queue.
@@ -111,11 +114,9 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
      * Empty constructor as per the {@link Fragment} documentation
      */
     public QueueFragment() {
+        // empty
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -192,19 +193,11 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         // Create the adapter
         mAdapter = new SongAdapter(getActivity(), R.layout.edit_queue_list_item,
                 -1, Config.IdType.NA);
-        mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
+        mAdapter.setPopupMenuClickedListener((v, position) -> mPopupMenuHelper.showPopupMenu(v, position));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
             final Bundle savedInstanceState) {
         // The View for the fragment's UI
         mRootView = (ViewGroup) inflater.inflate(R.layout.list_base, container, false);
@@ -232,23 +225,31 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         return mRootView;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         // Initialize the broadcast receiver
         mQueueUpdateListener = new QueueUpdateListener(this);
+    }
 
-        // Bind Eleven's service
+    @Override
+    public void onResume() {
+        super.onResume();
+
         mToken = MusicUtils.bindToService(getActivity(), this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        if (mToken != null) {
+            MusicUtils.unbindFromService(mToken);
+            mToken = null;
+        }
+    }
+
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
         refreshQueue();
@@ -256,7 +257,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
-        // empty
+        refreshQueue();
     }
 
     @Override
@@ -276,23 +277,15 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
-
         try {
             getActivity().unregisterReceiver(mQueueUpdateListener);
         } catch (final Throwable e) {
             //$FALL-THROUGH$
         }
 
-        if (mService != null) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
+        super.onDestroy();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
             final long id) {
@@ -302,20 +295,15 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         MusicUtils.setQueuePosition(position);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @NonNull
     @Override
     public Loader<List<Song>> onCreateLoader(final int id, final Bundle args) {
         mLoadingEmptyContainer.showLoading();
         return new QueueLoader(getActivity());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoadFinished(final Loader<List<Song>> loader, final List<Song> data) {
+    public void onLoadFinished(@NonNull final Loader<List<Song>> loader, final List<Song> data) {
         // pause notifying the adapter and make changes before re-enabling it so that the list
         // view doesn't reset to the top of the list
         mAdapter.setNotifyOnChange(false);
@@ -337,18 +325,12 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         mAdapter.notifyDataSetChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onLoaderReset(final Loader<List<Song>> loader) {
         // Clear the data in the adapter
         mAdapter.unload();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public float getSpeed(final float w, final long t) {
         if (w > 0.8f) {
@@ -358,9 +340,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void remove(final int which) {
         Song song = mAdapter.getItem(which);
@@ -371,9 +350,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         mAdapter.buildCache();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void drop(final int from, final int to) {
         Song song = mAdapter.getItem(from);
@@ -385,9 +361,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         mAdapter.buildCache();
     }
 
-    /**
-     * Called to restart the loader callbacks
-     */
     public void refreshQueue() {
         if (isAdded()) {
             getLoaderManager().restartLoader(LOADER, null, this);
@@ -415,9 +388,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
             mReference = new WeakReference<>(fragment);
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void onReceive(final Context context, final Intent intent) {
             // TODO: Invalid options menu if opened?

@@ -88,7 +88,7 @@ import static org.lineageos.eleven.utils.MusicUtils.mService;
  */
 public class SearchActivity extends AppCompatActivity implements
         LoaderCallbacks<SectionListContainer<SearchResult>>,
-        OnScrollListener, OnQueryTextListener, OnItemClickListener, ServiceConnection,
+        OnScrollListener, OnQueryTextListener, OnItemClickListener,
         OnTouchListener {
     /**
      * Intent extra for identifying the search type to filter for
@@ -198,9 +198,6 @@ public class SearchActivity extends AppCompatActivity implements
      */
     private PopupMenuHelper mPopupMenuHelper;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -262,9 +259,6 @@ public class SearchActivity extends AppCompatActivity implements
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
-
         // Set the layout
         setContentView(R.layout.activity_search);
 
@@ -295,12 +289,7 @@ public class SearchActivity extends AppCompatActivity implements
 
         // setup handler and runnable
         mHandler = new Handler();
-        mLoadingRunnable = new Runnable() {
-            @Override
-            public void run() {
-                setState(VisibleState.Loading);
-            }
-        };
+        mLoadingRunnable = () -> setState(VisibleState.Loading);
 
         // Theme the action bar
         final ActionBar actionBar = getSupportActionBar();
@@ -350,6 +339,23 @@ public class SearchActivity extends AppCompatActivity implements
 
             // Start the loader for the search history
             getSupportLoaderManager().initLoader(HISTORY_LOADER, null, mSearchHistoryCallback);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        mToken = MusicUtils.bindToService(this, null);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (mToken != null) {
+            MusicUtils.unbindFromService(mToken);
+            mToken = null;
         }
     }
 
@@ -457,19 +463,6 @@ public class SearchActivity extends AppCompatActivity implements
     private void quit() {
         mQuitting = true;
         finish();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Unbind from the service
-        if (mService != null) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
     }
 
     /**
@@ -676,22 +669,6 @@ public class SearchActivity extends AppCompatActivity implements
                     break;
             }
         }
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void onServiceConnected(final ComponentName name, final IBinder service) {
-        mService = IElevenService.Stub.asInterface(service);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void onServiceDisconnected(final ComponentName name) {
-        mService = null;
     }
 
     /**

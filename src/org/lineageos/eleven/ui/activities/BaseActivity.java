@@ -117,9 +117,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
-
         // Initialize the broadcast receiver
         mPlaybackStatus = new PlaybackStatus(this);
 
@@ -149,26 +146,18 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         ImageFetcher.getInstance(this).addCacheListener(this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
-        mService = IElevenService.Stub.asInterface(service);
-        // Set the playback drawables
         updatePlaybackControls();
-        // Current info
         onMetaChanged();
         // if there were any pending intents while the service was started
         handlePendingPlaybackRequests();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onServiceDisconnected(final ComponentName name) {
-        mService = null;
+        updatePlaybackControls();
+        onMetaChanged();
     }
 
     /**
@@ -211,15 +200,26 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     @Override
     protected void onResume() {
         super.onResume();
+
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(this, this);
+
         // Set the playback drawables
         updatePlaybackControls();
         // Current info
         onMetaChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        if (mToken != null) {
+            MusicUtils.unbindFromService(mToken);
+            mToken = null;
+        }
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -237,17 +237,9 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         registerReceiver(mPlaybackStatus, filter);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Unbind from the service
-        if (mToken != null) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
 
         // Unregister the receiver
         try {
