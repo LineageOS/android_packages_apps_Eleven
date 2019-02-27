@@ -15,9 +15,16 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item
+        android:id="@+id/menu_audio_player_add_to_playlist"
+        android:icon="@drawable/btn_add_to_playlist"
+        android:orderInCategory="40"
+        android:title="@string/add_to_playlist"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_audio_player_equalizer"
         android:orderInCategory="41"
