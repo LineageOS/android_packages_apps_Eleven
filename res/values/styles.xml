@@ -193,4 +193,11 @@
     <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="ToolBarPopupTheme" parent="@style/Theme.AppCompat.Light" />
+
+    <style name="Eleven.Theme.PopupMenuOverlapAnchor">
+        <item name="android:overlapAnchor">true</item>
+        <item name="android:dropDownVerticalOffset">0dp</item>
+        <item name="android:dropDownHorizontalOffset">0dp</item>
+    </style>
+
 </resources>
