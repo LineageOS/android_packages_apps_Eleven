@@ -18,6 +18,7 @@ package org.lineageos.eleven.room
 
 import android.content.Context
 import android.util.Log
+import androidx.lifecycle.LiveData
 import org.lineageos.eleven.BuildConfig
 import org.lineageos.eleven.utils.kotlin.SingletonHolder
 
@@ -43,18 +44,8 @@ class ElevenRepository private constructor(private val context: Context) : IElev
         addSearchHistory(searchHistory)
     }
 
-    override fun getSearches(): List<SearchHistory> {
+    override fun getSearches(): LiveData<List<SearchHistory>> {
         return ElevenDatabase.getInstance(context).searchHistoryDao().getHistory()
-    }
-
-    override fun getRecentSearches(): List<SearchHistory> {
-        return getSearches().takeLast(SearchHistory.MAX_HISTORY_SIZE)
-    }
-
-    override fun getRecentSearchesAsString(): List<String> {
-        return getRecentSearches().map {
-            it.searchString
-        }
     }
 
     // endregion History

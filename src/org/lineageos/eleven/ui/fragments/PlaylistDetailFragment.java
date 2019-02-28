@@ -295,7 +295,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         Cursor cursor = PlaylistSongLoader.makePlaylistSongCursor(getActivity(),
                 mPlaylistId);
         final long[] list = MusicUtils.getSongListForCursor(cursor);
-        MusicUtils.playAll(getActivity(), list, position - ProfileSongAdapter.NUM_HEADERS,
+        MusicUtils.playAll(list, position - ProfileSongAdapter.NUM_HEADERS,
                 mPlaylistId, Config.IdType.Playlist, false);
         cursor.close();
         cursor = null;

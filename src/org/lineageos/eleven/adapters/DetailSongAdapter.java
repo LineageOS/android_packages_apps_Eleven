@@ -108,7 +108,7 @@ public abstract class DetailSongAdapter extends BaseAdapter
             toPlay[i] = getItem(i).mSongId;
         }
         // specify the song position to start playing
-        MusicUtils.playAll(mActivity, toPlay, position, getSourceId(), getSourceType(), false);
+        MusicUtils.playAll(toPlay, position, getSourceId(), getSourceType(), false);
     }
 
     @Override

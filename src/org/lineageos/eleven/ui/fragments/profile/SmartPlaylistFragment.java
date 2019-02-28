@@ -120,7 +120,7 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
         // enter the page.
         long[] songIds = getSongIdsFromAdapter();
         if (songIds != null) {
-            MusicUtils.playAll(getActivity(), songIds, position, getSmartPlaylistType().mId,
+            MusicUtils.playAll(songIds, position, getSmartPlaylistType().mId,
                     Config.IdType.Playlist, shuffle);
         }
     }

@@ -25,6 +25,16 @@ import androidx.room.PrimaryKey
 class SearchHistory {
     companion object {
         const val MAX_HISTORY_SIZE = 30
+
+        fun getRecentSearches(searchHistoryList: List<SearchHistory>): List<SearchHistory> {
+            return searchHistoryList.takeLast(SearchHistory.MAX_HISTORY_SIZE).reversed()
+        }
+
+        fun getRecentSearchesAsString(searchHistoryList: List<SearchHistory>): List<String> {
+            return getRecentSearches(searchHistoryList).map {
+                it.searchString
+            }
+        }
     }
 
     @PrimaryKey

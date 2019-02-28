@@ -829,7 +829,7 @@ public final class MusicUtils {
     public static void playArtist(final Context context, final long artistId, int position, boolean shuffle) {
         final long[] artistList = getSongListForArtist(context, artistId);
         if (artistList != null) {
-            playAll(context, artistList, position, artistId, IdType.Artist, shuffle);
+            playAll(artistList, position, artistId, IdType.Artist, shuffle);
         }
     }
 
@@ -883,12 +883,11 @@ public final class MusicUtils {
     }
 
     /**
-     * @param context The {@link Context} to use.
      * @param list The list of songs to play.
      * @param position Specify where to start.
      * @param forceShuffle True to force a shuffle, false otherwise.
      */
-    public static void playAll(final Context context, final long[] list, int position,
+    public static void playAll(final long[] list, int position,
                                final long sourceId, final IdType sourceType,
                                final boolean forceShuffle) {
         if (list == null || list.length == 0 || mService == null) {
@@ -1055,7 +1054,7 @@ public final class MusicUtils {
     public static void playAlbum(final Context context, final long albumId, int position, boolean shuffle) {
         final long[] albumList = getSongListForAlbum(context, albumId);
         if (albumList != null) {
-            playAll(context, albumList, position, albumId, IdType.Album, shuffle);
+            playAll(albumList, position, albumId, IdType.Album, shuffle);
         }
     }
 
@@ -1390,7 +1389,7 @@ public final class MusicUtils {
     public static void playPlaylist(final Context context, final long playlistId, boolean shuffle) {
         final long[] playlistList = getSongListForPlaylist(context, playlistId);
         if (playlistList != null) {
-            playAll(context, playlistList, -1, playlistId, IdType.Playlist, shuffle);
+            playAll(playlistList, -1, playlistId, IdType.Playlist, shuffle);
         }
     }
 
@@ -1431,7 +1430,7 @@ public final class MusicUtils {
     public static void playSmartPlaylist(final Context context, final int position,
                                          final SmartPlaylistType type, final boolean shuffle) {
         final long[] list = getSongListForSmartPlaylist(context, type);
-        MusicUtils.playAll(context, list, position, type.mId, IdType.Playlist, shuffle);
+        MusicUtils.playAll(list, position, type.mId, IdType.Playlist, shuffle);
     }
 
     /**
