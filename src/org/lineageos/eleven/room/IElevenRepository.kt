@@ -16,14 +16,14 @@
  */
 package org.lineageos.eleven.room
 
+import androidx.lifecycle.LiveData
+
 interface IElevenRepository {
     // region History
 
     fun addSearchHistory(searchHistory: SearchHistory)
     fun addSearchString(searchString: String)
-    fun getSearches(): List<SearchHistory>
-    fun getRecentSearches(): List<SearchHistory>
-    fun getRecentSearchesAsString(): List<String>
+    fun getSearches(): LiveData<List<SearchHistory>>
 
     // endregion History
 

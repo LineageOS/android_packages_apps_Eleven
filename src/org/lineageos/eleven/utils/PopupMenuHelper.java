@@ -340,8 +340,7 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
                     MusicUtils.refresh();
                     return true;
                 case FragmentMenuItems.PLAY_SELECTION:
-                    MusicUtils.playAll(mActivity, getIdList(), 0, getSourceId(), getSourceType(),
-                            false);
+                    MusicUtils.playAll(getIdList(), 0, getSourceId(), getSourceType(), false);
                     return true;
                 case FragmentMenuItems.ADD_TO_QUEUE:
                     MusicUtils.addToQueue(mActivity, getIdList(), getSourceId(), getSourceType());

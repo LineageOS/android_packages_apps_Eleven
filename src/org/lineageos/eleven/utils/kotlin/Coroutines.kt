@@ -14,25 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lineageos.eleven.room
+package org.lineageos.eleven.utils.kotlin
 
-import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import kotlinx.coroutines.*
 
-@Dao
-interface SearchHistoryDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(searchHistory: SearchHistory)
+object Coroutines {
+    fun io(work: suspend (() -> Unit)): Job =
+            CoroutineScope(Dispatchers.IO).launch {
+                work()
+            }
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(searchHistory: List<SearchHistory>)
-
-    @Query("SELECT * FROM searchHistory ORDER BY searchTime")
-    fun getHistory(): LiveData<List<SearchHistory>>
-
-    @Query("DELETE FROM searchHistory")
-    fun clearHistory()
+    fun <T : Any> ioThenMain(work: suspend (() -> T?), callback: ((T?) -> Unit)): Job =
+            CoroutineScope(Dispatchers.Main).launch {
+                val data = CoroutineScope(Dispatchers.IO).async rt@{
+                    return@rt work()
+                }.await()
+                callback(data)
+            }
 }
