@@ -28,6 +28,37 @@ class ElevenRepository private constructor(private val context: Context) : IElev
         private const val TAG = "ElevenRepository"
     }
 
+    // region History
+
+    override fun addSearchHistory(searchHistory: SearchHistory) {
+        if (searchHistory.searchString.isNotBlank()) {
+            ElevenDatabase.getInstance(context).searchHistoryDao().insert(searchHistory)
+        } else {
+            Log.w(TAG, "Trying to add empty search history entry")
+        }
+    }
+
+    override fun addSearchString(searchString: String) {
+        val searchHistory = SearchHistory(searchString, System.currentTimeMillis())
+        addSearchHistory(searchHistory)
+    }
+
+    override fun getSearches(): List<SearchHistory> {
+        return ElevenDatabase.getInstance(context).searchHistoryDao().getHistory()
+    }
+
+    override fun getRecentSearches(): List<SearchHistory> {
+        return getSearches().takeLast(SearchHistory.MAX_HISTORY_SIZE)
+    }
+
+    override fun getRecentSearchesAsString(): List<String> {
+        return getRecentSearches().map {
+            it.searchString
+        }
+    }
+
+    // endregion History
+
     // region Playback State
 
     override fun getHistory(): List<PlaybackHistory> {

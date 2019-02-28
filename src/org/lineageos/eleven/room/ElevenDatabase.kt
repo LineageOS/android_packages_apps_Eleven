@@ -25,7 +25,8 @@ import org.lineageos.eleven.utils.kotlin.SingletonHolder
 @Database(entities = [
     PlaybackHistory::class,
     PlaybackQueue::class,
-    Property::class
+    Property::class,
+    SearchHistory::class
 ], version = 1)
 abstract class ElevenDatabase : RoomDatabase() {
     companion object : SingletonHolder<ElevenDatabase, Context>({
@@ -39,4 +40,5 @@ abstract class ElevenDatabase : RoomDatabase() {
     abstract fun playbackHistoryDao(): PlaybackHistoryDao
     abstract fun playbackQueueDao(): PlaybackQueueDao
     abstract fun propertyDao(): PropertyDao
+    abstract fun searchHistoryDao(): SearchHistoryDao
 }

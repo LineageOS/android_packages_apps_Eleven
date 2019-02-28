@@ -17,6 +17,16 @@
 package org.lineageos.eleven.room
 
 interface IElevenRepository {
+    // region History
+
+    fun addSearchHistory(searchHistory: SearchHistory)
+    fun addSearchString(searchString: String)
+    fun getSearches(): List<SearchHistory>
+    fun getRecentSearches(): List<SearchHistory>
+    fun getRecentSearchesAsString(): List<String>
+
+    // endregion History
+
     // region Playback State
 
     fun getHistory(): List<PlaybackHistory>
