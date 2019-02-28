@@ -16,6 +16,24 @@
       "revId": "a3b5d35cfd0f48bfed05913106995ec645cc49ad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8215cf30_86571146",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2019-02-28T21:11:47Z",
+      "side": 1,
+      "message": "updating it on any file i touch, because most of them are broken like [1] and i think it also appeals a bit more visually.\n\nTo be honest, i did not check if there are any guidelines from your side. If there are, i will adjust to them.\n\n\n[1] https://github.com/LineageOS/android_packages_apps_Eleven/blob/lineage-15.1/src/org/lineageos/eleven/utils/ElevenUtils.java#L1",
+      "parentUuid": "c198e3a1_5b222dfe",
+      "revId": "a3b5d35cfd0f48bfed05913106995ec645cc49ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
