@@ -16,22 +16,31 @@
  */
 package org.lineageos.eleven.room
 
-interface IElevenRepository {
-    // region Playback State
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Ignore
+import androidx.room.PrimaryKey
 
-    fun getHistory(): List<PlaybackHistory>
-    fun getQueue(): List<PlaybackQueue>
+@Entity(tableName = "playbackHistory")
+class PlaybackHistory {
+    companion object {
+        const val MAX_HISTORY_SIZE = 20
+    }
 
-    fun saveState(historyList: List<PlaybackHistory>, queueList: List<PlaybackQueue>)
+    @PrimaryKey(autoGenerate = true)
+    var uid: Long = 0
 
-    // endregion Playback State
+    @ColumnInfo(name = "position")
+    var position: Int = 0
 
-    // region Property
+    @Ignore
+    constructor()
 
-    fun getProperty(key: String): Property?
+    @Ignore
+    constructor(position: Int) : this(0, position)
 
-    fun storeProperty(key: String, value: String)
-    fun storeProperty(property: Property)
-
-    // endregion Property
+    constructor(uid: Long, position: Int) {
+        this.uid = uid
+        this.position = position
+    }
 }

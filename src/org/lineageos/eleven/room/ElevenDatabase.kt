@@ -22,14 +22,21 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import org.lineageos.eleven.utils.kotlin.SingletonHolder
 
-@Database(entities = [Property::class], version = 1)
+@Database(entities = [
+    PlaybackHistory::class,
+    PlaybackQueue::class,
+    Property::class
+], version = 1)
 abstract class ElevenDatabase : RoomDatabase() {
     companion object : SingletonHolder<ElevenDatabase, Context>({
         Room.databaseBuilder(it.applicationContext, ElevenDatabase::class.java, ElevenDatabase.DATABASE_NAME)
+                .allowMainThreadQueries() // TODO: remove once everything does work in the background
                 .build()
     }) {
         private const val DATABASE_NAME = "eleven"
     }
 
+    abstract fun playbackHistoryDao(): PlaybackHistoryDao
+    abstract fun playbackQueueDao(): PlaybackQueueDao
     abstract fun propertyDao(): PropertyDao
 }
