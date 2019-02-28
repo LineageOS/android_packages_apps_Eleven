@@ -15,13 +15,14 @@
 */
 package org.lineageos.eleven.utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.PopupMenu;
 
 import org.lineageos.eleven.BuildConfig;
 import org.lineageos.eleven.Config;
@@ -34,6 +35,10 @@ import org.lineageos.eleven.provider.RecentStore;
 import java.util.List;
 import java.util.TreeSet;
 
+import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.view.menu.MenuPopupHelper;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.fragment.app.FragmentManager;
 
 /**
@@ -69,22 +74,25 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
      * @param view the view to anchor the popup menu against
      * @param position the item that was clicked in the popup menu (or -1 if not relevant)
      */
+    @SuppressLint("RestrictedApi")
     public void showPopupMenu(final View view, final int position) {
-        // create the popup menu
-        PopupMenu popupMenu = new PopupMenu(mActivity, view);
+        final ContextThemeWrapper wrapper = new ContextThemeWrapper(mActivity,
+                R.style.Eleven_Theme_PopupMenuOverlapAnchor);
+        final PopupMenu popupMenu = new PopupMenu(wrapper, view, Gravity.NO_GRAVITY,
+                R.attr.actionOverflowMenuStyle, 0);
         final Menu menu = popupMenu.getMenu();
-
-        // hook up the click listener
-        popupMenu.setOnMenuItemClickListener(this);
 
         // figure what type of pop up menu it is
         mType = onPreparePopupMenu(position);
         if (mType != null) {
             // inflate the menu
             createPopupMenu(menu);
-            // show it
-            popupMenu.show();
         }
+
+        popupMenu.setOnMenuItemClickListener(this);
+        final MenuPopupHelper helper = new MenuPopupHelper(wrapper,
+                (MenuBuilder) popupMenu.getMenu(), view);
+        helper.show();
     }
 
     /**
