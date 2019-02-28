@@ -47,8 +47,8 @@ import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.model.AlbumArtistDetails;
 import org.lineageos.eleven.model.SearchResult;
 import org.lineageos.eleven.model.SearchResult.ResultType;
-import org.lineageos.eleven.provider.SearchHistory;
 import org.lineageos.eleven.recycler.RecycleHolder;
+import org.lineageos.eleven.room.ElevenRepository;
 import org.lineageos.eleven.sectionadapter.SectionAdapter;
 import org.lineageos.eleven.sectionadapter.SectionCreator;
 import org.lineageos.eleven.sectionadapter.SectionCreator.SimpleListLoader;
@@ -538,7 +538,7 @@ public class SearchActivity extends AppCompatActivity implements
             mSearchView.clearFocus();
 
             // add our search string
-            SearchHistory.getInstance(this).addSearchString(mFilterString);
+            ElevenRepository.Companion.getInstance(this).addSearchString(mFilterString);
         }
     }
 
@@ -904,8 +904,10 @@ public class SearchActivity extends AppCompatActivity implements
 
         @Override
         public ArrayAdapter<String> loadInBackground() {
-            ArrayList<String> strings = SearchHistory.getInstance(getContext()).getRecentSearches();
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
+            final List<String> stringsRaw = ElevenRepository.Companion.getInstance(getContext())
+                    .getRecentSearchesAsString();
+            final ArrayList<String> strings = new ArrayList<>(stringsRaw);
+            final ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),
                     R.layout.list_item_search_history, R.id.line_one);
             adapter.addAll(strings);
             return adapter;
