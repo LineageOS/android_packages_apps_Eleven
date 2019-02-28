@@ -24,9 +24,10 @@ import android.content.ContentResolver;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.TextUtils;
+
+import androidx.annotation.NonNull;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.MusicUtils;
