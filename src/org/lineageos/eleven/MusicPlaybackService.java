@@ -3396,7 +3396,12 @@ public class MusicPlaybackService extends Service {
          * @return The duration in milliseconds
          */
         public long duration() {
-            return mCurrentMediaPlayer.getDuration();
+            try {
+                return mCurrentMediaPlayer.getDuration();
+            } catch (IllegalStateException exc) {
+                Log.e(TAG, "Could not get duration", exc);
+            }
+            return 0L;
         }
 
         /**
@@ -3405,7 +3410,12 @@ public class MusicPlaybackService extends Service {
          * @return The current position in milliseconds
          */
         public long position() {
-            return mCurrentMediaPlayer.getCurrentPosition();
+            try {
+                return mCurrentMediaPlayer.getCurrentPosition();
+            } catch (IllegalStateException exc) {
+                Log.e(TAG, "Could not get current position", exc);
+            }
+            return 0L;
         }
 
         /**
