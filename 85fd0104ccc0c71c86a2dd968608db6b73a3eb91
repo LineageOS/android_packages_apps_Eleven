@@ -22,6 +22,30 @@
       "revId": "85fd0104ccc0c71c86a2dd968608db6b73a3eb91",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73046bb4_a758e588",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2019-02-28T07:42:17Z",
+      "side": 1,
+      "message": "should be done now, thanks and sorry for overlooking it!",
+      "parentUuid": "94cfdbed_1eb51943",
+      "range": {
+        "startLine": 342,
+        "startChar": 54,
+        "endLine": 342,
+        "endChar": 89
+      },
+      "revId": "85fd0104ccc0c71c86a2dd968608db6b73a3eb91",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
