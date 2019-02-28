@@ -16,22 +16,22 @@
  */
 package org.lineageos.eleven.room
 
-interface IElevenRepository {
-    // region Playback State
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 
-    fun getHistory(): List<PlaybackHistory>
+@Dao
+interface PlaybackQueueDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(playbackQueue: PlaybackQueue)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(playbackQueue: List<PlaybackQueue>)
+
+    @Query("SELECT * FROM playbackQueue")
     fun getQueue(): List<PlaybackQueue>
 
-    fun saveState(historyList: List<PlaybackHistory>, queueList: List<PlaybackQueue>)
-
-    // endregion Playback State
-
-    // region Property
-
-    fun getProperty(key: String): Property?
-
-    fun storeProperty(key: String, value: String)
-    fun storeProperty(property: Property)
-
-    // endregion Property
+    @Query("DELETE FROM playbackQueue")
+    fun clearQueue()
 }

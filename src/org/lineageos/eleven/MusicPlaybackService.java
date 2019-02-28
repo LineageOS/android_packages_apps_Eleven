@@ -74,9 +74,11 @@ import org.lineageos.eleven.appwidgets.AppWidgetLargeAlternate;
 import org.lineageos.eleven.appwidgets.AppWidgetSmall;
 import org.lineageos.eleven.cache.ImageCache;
 import org.lineageos.eleven.cache.ImageFetcher;
-import org.lineageos.eleven.provider.MusicPlaybackState;
 import org.lineageos.eleven.provider.RecentStore;
 import org.lineageos.eleven.provider.SongPlayCount;
+import org.lineageos.eleven.room.ElevenRepository;
+import org.lineageos.eleven.room.PlaybackHistory;
+import org.lineageos.eleven.room.PlaybackQueue;
 import org.lineageos.eleven.service.MusicPlaybackTrack;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.PreferenceUtils;
@@ -537,11 +539,6 @@ public class MusicPlaybackService extends Service {
     private SongPlayCount mSongPlayCountCache;
 
     /**
-     * Stores the playback state
-     */
-    private MusicPlaybackState mPlaybackStateStore;
-
-    /**
      * Shake detector class used for shake to switch song feature
      */
     private ShakeDetector mShakeDetector;
@@ -639,9 +636,6 @@ public class MusicPlaybackService extends Service {
 
         // gets the song play count cache
         mSongPlayCountCache = SongPlayCount.getInstance(this);
-
-        // gets a pointer to the playback state store
-        mPlaybackStateStore = MusicPlaybackState.getInstance(this);
 
         // Initialize the image fetcher
         mImageFetcher = ImageFetcher.getInstance(this);
@@ -1729,10 +1723,28 @@ public class MusicPlaybackService extends Service {
 
         final SharedPreferences.Editor editor = mPreferences.edit();
         if (full) {
-            mPlaybackStateStore.saveState(mPlaylist,
-                    mShuffleMode != SHUFFLE_NONE ? mHistory : null);
+            final List<PlaybackHistory> playbackHistoryList = new ArrayList<>();
+            // save history if we are shuffling
+            if (mShuffleMode != SHUFFLE_NONE) {
+                for (final int position : mHistory) {
+                    final PlaybackHistory playbackHistory = new PlaybackHistory(position);
+                    playbackHistoryList.add(playbackHistory);
+                }
+            }
+
+            final List<PlaybackQueue> playbackQueueList = new ArrayList<>();
+            for (final MusicPlaybackTrack track : mPlaylist) {
+                final PlaybackQueue playbackQueue = new PlaybackQueue(
+                        track.mId, track.mSourceId, track.mSourceType.mId, track.mSourcePosition);
+                playbackQueueList.add(playbackQueue);
+            }
+
+            AsyncTask.execute(() -> ElevenRepository.Companion.getInstance(this)
+                    .saveState(playbackHistoryList, playbackQueueList));
+
             editor.putInt("cardid", mCardId);
         }
+
         editor.putInt("curpos", mPlayPos);
         if (mPlayer != null && mPlayer.isInitialized()) {
             editor.putLong("seekpos", mPlayer.position());
@@ -1745,8 +1757,7 @@ public class MusicPlaybackService extends Service {
     }
 
     /**
-     * Reloads the queue as the user left it the last time they stopped using
-     * Eleven
+     * Reloads the queue as the user left it the last time they stopped using the app
      */
     private void reloadQueue() {
         int id = mCardId;
@@ -1754,7 +1765,17 @@ public class MusicPlaybackService extends Service {
             id = mPreferences.getInt("cardid", ~mCardId);
         }
         if (id == mCardId) {
-            mPlaylist = mPlaybackStateStore.getQueue();
+            final List<PlaybackQueue> playbackQueueList =
+                    ElevenRepository.Companion.getInstance(this).getQueue();
+
+            mPlaylist = new ArrayList<>(playbackQueueList.size());
+            for (final PlaybackQueue playbackQueue : playbackQueueList) {
+                final MusicPlaybackTrack track = new MusicPlaybackTrack(
+                        playbackQueue.getTrackId(), playbackQueue.getSourceId(),
+                        Config.IdType.getTypeById(playbackQueue.getSourceType()),
+                        playbackQueue.getSourcePosition());
+                mPlaylist.add(track);
+            }
         }
         if (mPlaylist.size() > 0) {
             final int pos = mPreferences.getInt("curpos", 0);
@@ -1798,7 +1819,17 @@ public class MusicPlaybackService extends Service {
                 shufmode = SHUFFLE_NONE;
             }
             if (shufmode != SHUFFLE_NONE) {
-                mHistory = mPlaybackStateStore.getHistory(mPlaylist.size());
+                final List<PlaybackHistory> playbackHistoryList =
+                        ElevenRepository.Companion.getInstance(this).getHistory();
+
+                mHistory.clear();
+                final int playlistSize = mPlaylist.size();
+                for (final PlaybackHistory playbackHistory : playbackHistoryList) {
+                    final int position = playbackHistory.getPosition();
+                    if (position >= 0 && position < playlistSize) {
+                        mHistory.add(position);
+                    }
+                }
             }
             if (shufmode == SHUFFLE_AUTO) {
                 if (!makeAutoShuffleList()) {

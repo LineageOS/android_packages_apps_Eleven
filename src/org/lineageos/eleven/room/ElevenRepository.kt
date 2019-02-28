@@ -28,6 +28,46 @@ class ElevenRepository private constructor(private val context: Context) : IElev
         private const val TAG = "ElevenRepository"
     }
 
+    // region Playback State
+
+    override fun getHistory(): List<PlaybackHistory> {
+        return ElevenDatabase.getInstance(context).playbackHistoryDao().getHistory()
+    }
+
+    override fun getQueue(): List<PlaybackQueue> {
+        return ElevenDatabase.getInstance(context).playbackQueueDao().getQueue()
+    }
+
+    override fun saveState(historyList: List<PlaybackHistory>, queueList: List<PlaybackQueue>) {
+        // clear history and queue tables to not append to an old state
+        ElevenDatabase.getInstance(context).playbackHistoryDao().clearHistory()
+        ElevenDatabase.getInstance(context).playbackQueueDao().clearQueue()
+
+        // only save last MAX_HISTORY_SIZE count of history entries
+        if (historyList.size > PlaybackHistory.MAX_HISTORY_SIZE) {
+            historyList.takeLast(PlaybackHistory.MAX_HISTORY_SIZE)
+        } else {
+            historyList
+        }.let {
+            if (it.isNotEmpty()) {
+                ElevenDatabase.getInstance(context).playbackHistoryDao().insertAll(historyList)
+            }
+        }
+
+        // only save last MAX_QUEUE_SIZE count of queue entries
+        if (queueList.size > PlaybackQueue.MAX_QUEUE_SIZE) {
+            queueList.takeLast(PlaybackQueue.MAX_QUEUE_SIZE)
+        } else {
+            queueList
+        }.let {
+            if (it.isNotEmpty()) {
+                ElevenDatabase.getInstance(context).playbackQueueDao().insertAll(queueList)
+            }
+        }
+    }
+
+    // endregion Playback State
+
     // region Property
 
     override fun storeProperty(key: String, value: String) {
