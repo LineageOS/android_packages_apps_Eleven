@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c198e3a1_5b222dfe",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-02-28T19:45:55Z",
+      "side": 1,
+      "message": "Why the copyright header style change?",
+      "revId": "a3b5d35cfd0f48bfed05913106995ec645cc49ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
