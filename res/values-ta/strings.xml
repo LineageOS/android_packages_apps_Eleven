@@ -18,7 +18,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">இசை</string>
-    <!-- Page titles -->
     <string name="page_recent">சமீபத்தியவை</string>
     <string name="page_artists">கலைஞர்கள்</string>
     <string name="page_albums">ஆல்பங்கள்</string>
@@ -27,11 +26,9 @@
     <string name="page_genres">வகைகள்</string>
     <string name="page_now_playing">இப்போது இயங்குகிறது</string>
     <string name="page_play_queue">இயக்க சாரை</string>
-    <!-- Section Headers -->
     <string name="header_albums">ஆல்பங்கள்</string>
     <string name="header_top_songs">முதன்மையான பாடல்கள்</string>
     <string name="header_all_songs">அனைத்து பாடல்கள்</string>
-    <!-- Option menu items -->
     <string name="menu_settings">அமைப்புகள்</string>
     <string name="menu_search">தேடு</string>
     <string name="menu_shuffle_item">குலை</string>
@@ -49,12 +46,10 @@
     <string name="menu_clear_queue">சாரை அழி</string>
     <string name="menu_save_queue">சாரை இசைப்பட்டியலில் சேமி</string>
     <string name="menu_equalizer">ஈக்வலைசர்</string>
-    <!-- Playlist items -->
     <string name="add_to_playlist">இசைப்பட்டியலுக்குச் சேர்</string>
     <string name="add_to_queue">சாரையுடன் சேர்</string>
     <string name="remove_from_recent">சமீபத்தியதில் இருந்து நீக்கு</string>
     <string name="remove_from_queue">சாரையில் இருந்து நீக்கு</string>
-    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
     <string name="sort_order_entry_artist">கலைஞர்</string>
@@ -66,11 +61,9 @@
     <string name="sort_order_entry_number_of_songs">பாடல்களின் எண்ணிக்கை</string>
     <string name="sort_order_entry_number_of_albums">ஆல்பங்களின் எண்ணிக்கை</string>
     <string name="sort_order_entry_filename">கோப்புப்பெயர்</string>
-    <!-- Default playlist names -->
     <string name="playlist_last_added">கடைசியாக சேர்க்கப்பட்டது</string>
     <string name="playlist_recently_played">சமீபத்தில் இயக்கப்பட்டது</string>
     <string name="playlist_top_tracks">என் முதன்மையான தடங்கள்</string>
-    <!-- AlertDialog items -->
     <string name="new_playlist">புதிய இசைப்பட்டியல்</string>
     <string name="save">சேமி</string>
     <string name="cancel">ரத்துசெய்</string>
@@ -88,7 +81,6 @@
     <string name="google_search">Google தேடல்</string>
     <string name="use_default">இயல்புநிலை புகைப்படத்தை பயன்படுத்தவும்</string>
     <string name="old_photo">பழைய புகைப்படத்தை பயன்படுத்தவும்</string>
-    <!-- Context menu items -->
     <string name="context_menu_play_selection">இயக்கு</string>
     <string name="context_menu_play_next">அடுத்ததை இயக்கு</string>
     <string name="context_menu_play_album">ஆல்பத்தை இயக்கு</string>
@@ -101,7 +93,6 @@
     <string name="context_menu_use_as_ringtone">வளையமாகப் பயன்படுத்து</string>
     <string name="context_menu_remove_from_playlist">இசைப்பட்டியலிலிருந்து அகற்று</string>
     <string name="context_menu_change_image">படத்தை மாற்று</string>
-    <!-- Content descriptions -->
     <string name="accessibility_play">இயக்கு</string>
     <string name="accessibility_pause">இடைநிறுத்து</string>
     <string name="accessibility_next">அடுத்து</string>
@@ -113,10 +104,8 @@
     <string name="accessibility_repeat_one">ஒன்றை மீண்டும் இயக்கு</string>
     <string name="accessibility_queue">சாரையை திற</string>
     <string name="accessibility_browse">இசையை உலாவு</string>
-    <!-- Toast messages -->
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ஐ ரிங்டோனாக அமை</string>
     <string name="playlist_renamed">இசைப்பட்டியல் மறுபெயரிடப்பட்டது</string>
-    <!-- Settings -->
     <string name="settings_ui_category">இடைமுகம்</string>
     <string name="settings_storage_category">சேமிப்பிடம்</string>
     <string name="settings_data_category">தரவு</string>
@@ -134,12 +123,10 @@
     <string name="settings_shake_to_play_summary">அடுத்த பாடலை இயக்குவதற்கு உங்கள் சாதனத்தை அசைக்கவும்</string>
     <string name="settings_lockscreen_album_art">பூட்டுத் திரை ஆல்பம் கலை</string>
     <string name="settings_lockscreen_album_art_summary">பூட்டுத்திரை பின்னணியை ஆல்பம் கலையால் மாற்றிடவும்</string>
-    <!-- App widget -->
     <string name="app_widget_small">இசை: 4 \u00d7 1</string>
     <string name="app_widget_large">இசை: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">இசை: 4 \u00d7 2 (மாற்று)</string>
     <string name="app_widget_recent">இசை:சமீபத்தில் கேட்டது</string>
-    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">சமமாக்கியை திறக்க முடியவில்லை.</string>
     <string name="empty_music">உங்கள் கணினியில் இருந்து உங்கள் கருவிக்கு இசையை நகலெடுக்க, ஒரு USB கம்பி இழையை பயன்படுத்தவும்</string>
     <string name="empty_search">தேடல் முடிவுகள் எதுவும் கண்டுபிடிக்கப்படவில்லை</string>
@@ -148,7 +135,7 @@
     <string name="empty_recent_main">சமீபத்திய பாடல்கள் இல்லை</string>
     <string name="empty_recent">நீங்கள் சமீபத்தில் கேட்ட பாடல்கள் இங்கே காட்டப்படும்.</string>
     <string name="empty_playlist_main">இசைப்பட்டியலில் பாடல்கள் இல்லை.</string>
-    <string name="empty_playlist_secondary">இந்த இசைப்பட்டியலில் பாடல்களை சேர்க்க, ஒரு பாடல், ஆல்பம் அல்லது கலைஞரில் உள்ள விருப்பங்கள் மெனுவை தட்டி \&quot;இசைப்பட்டியலில் சேர்\&quot;ஐ தேர்வுசெய்</string>
+    <string name="empty_playlist_secondary">இந்த இசைப்பட்டியலில் பாடல்களை சேர்க்க, ஒரு பாடல், ஆல்பம் அல்லது கலைஞரில் உள்ள விருப்பங்கள் மெனுவை தட்டி \"இசைப்பட்டியலில் சேர்\"ஐ தேர்வுசெய்</string>
     <string name="empty_top_tracks_main">முதன்மையான தடங்கள் இல்லை</string>
     <string name="empty_top_tracks_secondary">நீங்கள் அதிகமாக கேட்கும் பாடல்கள் இந்த பட்டியலில் சேர்க்கப்படும்.</string>
     <string name="empty_last_added_main">சமீபத்தில் பாடல்கள் எதுவும் சேர்க்கப்படவில்லை.</string>
@@ -156,9 +143,8 @@
     <string name="empty_generic_main">இசை எதுவும் கண்டுபிடிக்கப்படவில்லை</string>
     <string name="empty_generic_secondary">உங்கள் கணினியில் இருந்து உங்கள் கருவிக்கு இசையை நகலெடுக்க, ஒரு USB கம்பி இழையை பயன்படுத்தவும்</string>
     <string name="empty_queue_main">இயக்க சாரத்தில் பாடல்கள் எதுவும் இல்லை.</string>
-    <string name="empty_queue_secondary">இந்த சாரையில் பாடல்களை சேர்க்க, ஒரு பாடல், ஆல்பம் அல்லது கலைஞரில் உள்ள விருப்பங்கள் மெனுவை தட்டி \&quot;வரிசையில் சேர்\&quot;ஐ தேர்வுசெய்.</string>
+    <string name="empty_queue_secondary">இந்த சாரையில் பாடல்களை சேர்க்க, ஒரு பாடல், ஆல்பம் அல்லது கலைஞரில் உள்ள விருப்பங்கள் மெனுவை தட்டி \"வரிசையில் சேர்\"ஐ தேர்வுசெய்.</string>
     <string name="error_playing_track">%1$s தடத்தை இயக்க முடியவில்லை</string>
-    <!-- Section Headers -->
     <string name="header_unknown_year">அறியப்படாத ஆண்டு</string>
     <string name="header_less_than_30s">30 வினாடிகளுக்கும் குறைவாக</string>
     <string name="header_30_to_60_seconds">30-60 வினாடிகள்</string>
@@ -175,15 +161,15 @@
     <string name="header_5_to_9_songs">5 - 9 பாடல்கள்</string>
     <string name="header_10_plus_songs">10+ பாடல்கள்</string>
     <string name="header_5_plus_albums">5+ ஆல்பம்கள்</string>
-    <string name="header_other">"&quot;மற்றவை&quot;"</string>
+    <string name="header_other">""மற்றவை""</string>
     <string name="footer_search_artists">அனைத்து கலைஞர்களையும் காண்பி</string>
     <string name="footer_search_albums">அனைத்து ஆல்பங்களையும் காண்பி</string>
     <string name="footer_search_songs">அனைத்து பாடல்களையும் காண்பி</string>
     <string name="footer_search_playlists">அனைத்து இசைப்பட்டியல்களையும் காண்பி</string>
     <string name="searchHint">இசையை தேடு</string>
-    <string name="search_title_artists">அனைத்து \”%s\&quot; கலைஞர்கள்</string>
-    <string name="search_title_albums">அனைத்து \”%s\&quot;  ஆல்பங்கள்</string>
-    <string name="search_title_songs">அனைத்து \”%s\&quot; பாடல்கள்</string>
-    <string name="search_title_playlists">அனைத்து \”%s\&quot; இசைப்பட்டியல்கள்</string>
+    <string name="search_title_artists">அனைத்து \”%s\" கலைஞர்கள்</string>
+    <string name="search_title_albums">அனைத்து \”%s\"  ஆல்பங்கள்</string>
+    <string name="search_title_songs">அனைத்து \”%s\" பாடல்கள்</string>
+    <string name="search_title_playlists">அனைத்து \”%s\" இசைப்பட்டியல்கள்</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>
