@@ -18,7 +18,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Ceòl</string>
-    <!-- Page titles -->
     <string name="page_recent">O chionn goirid</string>
     <string name="page_artists">Luchd-ciùil</string>
     <string name="page_albums">Albaman</string>
@@ -27,11 +26,9 @@
     <string name="page_genres">Gnèithean</string>
     <string name="page_now_playing">’Ga chluich an-dràsta</string>
     <string name="page_play_queue">Cluich an ciutha</string>
-    <!-- Section Headers -->
     <string name="header_albums">Albaman</string>
     <string name="header_top_songs">Brod nan òran</string>
     <string name="header_all_songs">A h-uile òran</string>
-    <!-- Option menu items -->
     <string name="menu_settings">Roghainnean</string>
     <string name="menu_search">Lorg</string>
     <string name="menu_shuffle_item">Air thuaiream</string>
@@ -49,12 +46,10 @@
     <string name="menu_clear_queue">Falamhaich an ciutha</string>
     <string name="menu_save_queue">Sàbhail an ciutha san liosta-chluich</string>
     <string name="menu_equalizer">Cothromaiche</string>
-    <!-- Playlist items -->
     <string name="add_to_playlist">Cuir ris an liosta-chluich</string>
     <string name="add_to_queue">Cuir ris a\' chiutha</string>
     <string name="remove_from_recent">Thoir air falbh o na chluich thu o chionn goirid</string>
     <string name="remove_from_queue">Thoir air falbh on chiutha</string>
-    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
     <string name="sort_order_entry_artist">Neach-ciùil</string>
@@ -66,11 +61,9 @@
     <string name="sort_order_entry_number_of_songs">Co mheud òran</string>
     <string name="sort_order_entry_number_of_albums">Co mheud albam</string>
     <string name="sort_order_entry_filename">Ainm an fhaidhle</string>
-    <!-- Default playlist names -->
     <string name="playlist_last_added">Fear mu dheireadh a chuir thu ris</string>
     <string name="playlist_recently_played">Air a chluich o chionn goirid</string>
     <string name="playlist_top_tracks">Brod nan traca agam</string>
-    <!-- AlertDialog items -->
     <string name="new_playlist">Liosta-chluich ùr</string>
     <string name="save">Sàbhail</string>
     <string name="cancel">Sguir dheth</string>
@@ -88,7 +81,6 @@
     <string name="google_search">Lorg Google</string>
     <string name="use_default">Cleachd dealbh bunaiteach</string>
     <string name="old_photo">Cleachd seann-dealbh</string>
-    <!-- Context menu items -->
     <string name="context_menu_play_selection">Cluich</string>
     <string name="context_menu_play_next">Cluich an ath-fhear</string>
     <string name="context_menu_play_album">Cluich an t-albam</string>
@@ -101,7 +93,6 @@
     <string name="context_menu_use_as_ringtone">Cleachd mar sheirm</string>
     <string name="context_menu_remove_from_playlist">Thoir air falbh on liosta-chluich</string>
     <string name="context_menu_change_image">Atharraich an dealbh</string>
-    <!-- Content descriptions -->
     <string name="accessibility_play">Cluich</string>
     <string name="accessibility_pause">Cuir ’na stad</string>
     <string name="accessibility_next">Air adhart</string>
@@ -113,10 +104,8 @@
     <string name="accessibility_repeat_one">Ath-chluich aonan</string>
     <string name="accessibility_queue">Fosgail an ciutha</string>
     <string name="accessibility_browse">Rùraich an ceòl</string>
-    <!-- Toast messages -->
     <string name="set_as_ringtone">Suidhich “<xliff:g id="name" example="Alarm Bell">%s</xliff:g>” mar sheirm</string>
     <string name="playlist_renamed">Chaidh ainm ùr a thoirt air an liosta-chluich</string>
-    <!-- Settings -->
     <string name="settings_ui_category">Eadar-aghaidh</string>
     <string name="settings_storage_category">Stòras</string>
     <string name="settings_data_category">Dàta</string>
@@ -134,12 +123,10 @@
     <string name="settings_shake_to_play_summary">Crath an t-uidheam agad airson an ath-òran a chluich</string>
     <string name="settings_lockscreen_album_art">Obair-ealain albaman air an sgrìn-ghlasaidh</string>
     <string name="settings_lockscreen_album_art_summary">Cuir obair-ealain an albaim an àite cùlaibh na sgrìn-ghlasaidh</string>
-    <!-- App widget -->
     <string name="app_widget_small">Ceòl: 4 \u00d7 1</string>
     <string name="app_widget_large">Ceòl: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Ceòl: 4 \u00d7 2 (roghainn eile)</string>
     <string name="app_widget_recent">Ceòl: Air èisteachd o chionn goirid</string>
-    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">Cha b’ urrainn dhuinn an cothromaiche fhosgladh.</string>
     <string name="empty_music">Cleachd càball USB airson lethbhreac dhen cheòl air a’ choimpiutair agad a chur air an uidheam agad.</string>
     <string name="empty_search">Cha deach toradh luirg a lorg</string>
@@ -158,7 +145,6 @@
     <string name="empty_queue_main">Chan eil òran sam bith sa chiutha</string>
     <string name="empty_queue_secondary">Airson òrain a chur ris a’ chiutha chluich, thoir gnogag air clàr-taice nan roghainnean aig òran, albam no neach-ciùil agus tagh “Cuir ris a’ chiutha chluich”.</string>
     <string name="error_playing_track">Cha ghabh an traca %1$s a chluich</string>
-    <!-- Section Headers -->
     <string name="header_unknown_year">Bliadhna neo-aithnichte</string>
     <string name="header_less_than_30s">Nas lugha na 30 diog</string>
     <string name="header_30_to_60_seconds">Eadar 30 is 60 diog</string>
