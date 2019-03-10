@@ -47,7 +47,7 @@
     <string name="menu_save_queue">ಸರದಿಯನ್ನು ಪ್ಲೇಪಟ್ಟಿಗೆ ಉಳಿಸಿ</string>
     <string name="menu_equalizer">ಸಮಕಾರಕ</string>
     <string name="add_to_playlist">ಪ್ಲೇಪಟ್ಟಿಗೆ ಸೇರಿಸಿ</string>
-    <string name="add_to_queue">ಸರದಿಗೆ ಸೇರಿಸಿ</string>
+    <string name="add_to_queue">ಸರದಿಗೆ ಸೇರಿಸು</string>
     <string name="remove_from_recent">ಇತ್ತೀಚಿನವುಗಳಿಂದ ತೆಗೆ</string>
     <string name="remove_from_queue">ಸರದಿಯಿಂದ ತೆಗೆ</string>
     <string name="sort_order_entry_az">ಅ-ಅಃ</string>
@@ -87,8 +87,8 @@
     <string name="context_menu_more_by_artist">ಕಲಾವಿದನಿಂದ ಇನ್ನಷ್ಟು</string>
     <string name="context_menu_rename_playlist">ಮರುಹೆಸರಿಸಿ</string>
     <string name="context_menu_delete">ಅಳಿಸಿ</string>
-    <string name="context_menu_fetch_album_art">ಆಲ್ಬಂ ಆರ್ಟ್ ಪಡೆದುಕೊ</string>
-    <string name="context_menu_fetch_artist_image">ಕಲಾವಿದ ಚಿತ್ರ ಪಡೆದುಕೊ</string>
+    <string name="context_menu_fetch_album_art">ಇಡುವಹಿಯ ಚಿತ್ರಕಲೆ ಕರೆತರು</string>
+    <string name="context_menu_fetch_artist_image">ಕಲಾವಿದನ ಚಿತ್ರ ಕರೆತರು</string>
     <string name="context_menu_remove_from_recent">ಇತ್ತೀಚಿನವುಗಳಿಂದ ತೆಗೆ</string>
     <string name="context_menu_use_as_ringtone">ರಿಂಗ್‍ಟೋನ್‍ ಆಗಿ ಉಪಯೋಗಿಸಿ</string>
     <string name="context_menu_remove_from_playlist">ಪ್ಲೇಪಟ್ಟಿಯಿಂದ ತೆಗೆ</string>
@@ -111,10 +111,10 @@
     <string name="settings_data_category">ಡೇಟಾ</string>
     <string name="settings_delete_cache_title">ನಗದನ್ನು ಅಳಿಸು</string>
     <string name="settings_delete_cache_summary">ಎಲ್ಲಾ ನಗದು ಮಾಡಿದ ಚಿತ್ರಗಳನ್ನು ತೆಗೆ</string>
-    <string name="settings_download_only_on_wifi_title">ವೈ-ಫೈ ಮೂಲಕ ಮಾತ್ರ ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
+    <string name="settings_download_only_on_wifi_title">Wi-Fi ಮೂಲಕ ಮಾತ್ರ ಇಳಿಸು</string>
     <string name="settings_download_only_on_wifi_summary">ವಾಹಕ ಶುಲ್ಕಗಳನ್ನು ಕಡಿಮೆಮಾಡಲು, ಮೊಬೈಲ್ ನೆಟ್‍ವರ್ಕ್‍ಗಳಿಂದ ಡೌನ್‍ಲೋಡ್ ಮಾಡಬೇಡಿ</string>
-    <string name="settings_download_missing_artwork_title">ಕಾಣೆಯಾದ ಆಲ್ಬಂ ಆರ್ಟ್ ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
-    <string name="settings_download_artist_images_title">ಕಾಣೆಯಾಗಿರುವ ಕಾಲಾವಿದನ ಚಿತ್ರಗಳನ್ನು ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
+    <string name="settings_download_missing_artwork_title">ಇಡುವಹಿಯ ಚಿತ್ರಕಲೆ ಇಳಿಸು</string>
+    <string name="settings_download_artist_images_title">ಕಾಲಾವಿದನ ಚಿತ್ರಗಳನ್ನು ಇಳಿಸು</string>
     <string name="settings_general_category">ಸಾಮಾನ್ಯ</string>
     <string name="settings_show_music_visualization_title">ಸಂಗೀತ ದೃಶ್ಯೀಕರಣವನ್ನು ಪ್ರದರ್ಶಿಸು</string>
     <string name="settings_show_lyrics_title">ಹಾಡಿನ ಸಾಹಿತ್ಯವನ್ನು ಪ್ರದರ್ಶಿಸು</string>
@@ -172,4 +172,5 @@
     <string name="search_title_songs">ಎಲ್ಲಾ \"%s\" ಹಾಡುಗಳು</string>
     <string name="search_title_playlists">ಎಲ್ಲಾ \"%s\" ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">ಸಂಗೀತ ಪುನರಾಡಿಸು</string>
 </resources>
