@@ -57,7 +57,7 @@ android {
         versionCode 3
         versionName '3.0'
 
-        renderscriptTargetApi 19
+        renderscriptTargetApi 26
         renderscriptSupportModeEnabled true
     }
 
