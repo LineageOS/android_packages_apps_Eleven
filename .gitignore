@@ -8,3 +8,7 @@
 **.DS_Store
 .gradle/
 .idea/
+
+# apk export folders
+/debug/
+/release/
