@@ -21,14 +21,10 @@
 
 package org.lineageos.eleven.lastfm;
 
-import static org.lineageos.eleven.lastfm.StringUtilities.encode;
-import static org.lineageos.eleven.lastfm.StringUtilities.map;
-
 import android.content.Context;
 import android.util.Log;
 
 import org.lineageos.eleven.lastfm.Result.Status;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.InputSource;
@@ -51,6 +47,9 @@ import java.util.WeakHashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+
+import static org.lineageos.eleven.lastfm.StringUtilities.encode;
+import static org.lineageos.eleven.lastfm.StringUtilities.map;
 
 /**
  * The <code>Caller</code> class handles the low-level communication between the

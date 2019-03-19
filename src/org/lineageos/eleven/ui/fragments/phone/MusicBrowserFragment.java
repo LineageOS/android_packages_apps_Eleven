@@ -16,9 +16,9 @@
 package org.lineageos.eleven.ui.fragments.phone;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
+
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
 
 /**
  * This class is used for fragments under the {@link MusicBrowserFragment}
@@ -33,11 +33,11 @@ public abstract class MusicBrowserFragment extends Fragment {
         return getParentFragment().getLoaderManager();
     }
 
-    protected void initLoader(Bundle args, LoaderCallbacks<? extends Object> callback) {
+    protected void initLoader(Bundle args, LoaderManager.LoaderCallbacks<?> callback) {
         getContainingLoaderManager().initLoader(getLoaderId(), args, callback);
     }
 
-    protected void restartLoader(Bundle args, LoaderCallbacks<? extends Object> callback) {
+    protected void restartLoader(Bundle args, LoaderManager.LoaderCallbacks<?> callback) {
         getContainingLoaderManager().restartLoader(getLoaderId(), args, callback);
     }
 }

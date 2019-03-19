@@ -15,8 +15,6 @@ package org.lineageos.eleven.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.Loader;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.adapters.PagerAdapter;
@@ -27,6 +25,9 @@ import org.lineageos.eleven.sectionadapter.SectionListContainer;
 import org.lineageos.eleven.ui.fragments.profile.BasicSongFragment;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.SectionCreatorUtils;
+
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 /**
  * This class is used to display all of the songs on a user's device.

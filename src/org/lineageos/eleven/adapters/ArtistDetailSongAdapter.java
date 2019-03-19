@@ -18,7 +18,6 @@ package org.lineageos.eleven.adapters;
 import android.app.Activity;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,6 +30,8 @@ import org.lineageos.eleven.model.Song;
 
 import java.util.List;
 
+import androidx.loader.content.Loader;
+
 public abstract class ArtistDetailSongAdapter extends DetailSongAdapter {
     public ArtistDetailSongAdapter(Activity activity) {
         super(activity);
@@ -42,7 +43,7 @@ public abstract class ArtistDetailSongAdapter extends DetailSongAdapter {
         return Config.IdType.Artist;
     }
 
-    @Override // LoaderCallbacks
+    @Override
     public Loader<List<Song>> onCreateLoader(int id, Bundle args) {
         onLoading();
         setSourceId(args.getLong(Config.ID));
@@ -60,8 +61,8 @@ public abstract class ArtistDetailSongAdapter extends DetailSongAdapter {
 
         protected ArtistHolder(View root, ImageFetcher fetcher) {
             super(root, fetcher);
-            art = (ImageView)root.findViewById(R.id.album_art);
-            album = (TextView)root.findViewById(R.id.album);
+            art = root.findViewById(R.id.album_art);
+            album = root.findViewById(R.id.album);
         }
 
         protected void update(Song song) {

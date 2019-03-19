@@ -19,10 +19,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
-import android.support.v8.renderscript.Allocation;
-import android.support.v8.renderscript.Element;
-import android.support.v8.renderscript.RenderScript;
-import android.support.v8.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -30,6 +26,11 @@ import org.lineageos.eleven.cache.ImageWorker.ImageType;
 import org.lineageos.eleven.widgets.BlurScrimImage;
 
 import java.lang.ref.WeakReference;
+
+import androidx.renderscript.Allocation;
+import androidx.renderscript.Element;
+import androidx.renderscript.RenderScript;
+import androidx.renderscript.ScriptIntrinsicBlur;
 
 /**
  * This will download the image (if needed) and create a blur and set the scrim as well on the

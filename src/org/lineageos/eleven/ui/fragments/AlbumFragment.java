@@ -15,8 +15,6 @@ package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,13 +43,16 @@ import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 /**
  * This class is used to display all of the albums on a user's device.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class AlbumFragment extends MusicBrowserFragment implements
-        LoaderCallbacks<SectionListContainer<Album>>, OnScrollListener,
+        LoaderManager.LoaderCallbacks<SectionListContainer<Album>>, OnScrollListener,
         OnItemClickListener, MusicStateListener {
 
     /**

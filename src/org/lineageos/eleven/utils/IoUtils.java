@@ -16,10 +16,10 @@
  */
 package org.lineageos.eleven.utils;
 
-import android.support.annotation.Nullable;
-
 import java.io.Closeable;
 import java.net.Socket;
+
+import androidx.annotation.Nullable;
 
 public class IoUtils {
     public static void closeQuietly(@Nullable final Object object) {

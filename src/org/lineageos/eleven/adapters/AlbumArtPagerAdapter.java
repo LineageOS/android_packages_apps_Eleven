@@ -19,9 +19,6 @@ package org.lineageos.eleven.adapters;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,8 +37,12 @@ import org.lineageos.eleven.widgets.SquareImageView;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+
 /**
- * A {@link android.support.v4.app.FragmentStatePagerAdapter} class for swiping between album art
+ * A {@link FragmentStatePagerAdapter} class for swiping between album art
  */
 public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
     private static boolean DEBUG = false;

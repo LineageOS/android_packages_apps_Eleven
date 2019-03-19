@@ -18,7 +18,6 @@ package org.lineageos.eleven.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.TextView;
 
@@ -31,6 +30,8 @@ import org.lineageos.eleven.ui.fragments.AlbumDetailFragment;
 import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.List;
+
+import androidx.loader.content.Loader;
 
 public abstract class AlbumDetailSongAdapter extends DetailSongAdapter {
     private AlbumDetailFragment mFragment;

@@ -46,6 +46,7 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.preview.util.Logger;
 

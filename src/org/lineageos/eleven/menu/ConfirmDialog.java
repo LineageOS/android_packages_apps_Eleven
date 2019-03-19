@@ -21,10 +21,11 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.Fragment;
 
 import org.lineageos.eleven.R;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 
 /** Dialog to confirm a non-reversible action */
 public class ConfirmDialog extends DialogFragment {
@@ -37,7 +38,7 @@ public class ConfirmDialog extends DialogFragment {
 
     public ConfirmDialog() {}
 
-    /** @param title describes action user is confirming
+    /** @param titleId describes action user is confirming
      *  @param okId text for Ok button */
     public static void show(Fragment target, int requestCode, int titleId, int okId) {
         final ConfirmDialog frag = new ConfirmDialog();

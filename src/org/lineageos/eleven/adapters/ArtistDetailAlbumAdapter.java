@@ -17,9 +17,6 @@ package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,9 +36,14 @@ import org.lineageos.eleven.widgets.PopupMenuButton;
 import java.util.Collections;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
+
 public class ArtistDetailAlbumAdapter
 extends RecyclerView.Adapter<ArtistDetailAlbumAdapter.ViewHolder>
-implements LoaderCallbacks<List<Album>>, IPopupMenuCallback {
+implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
     private static final int TYPE_FIRST = 1;
     private static final int TYPE_MIDDLE = 2;
     private static final int TYPE_LAST = 3;
@@ -128,7 +130,8 @@ implements LoaderCallbacks<List<Album>>, IPopupMenuCallback {
         }
     }
 
-    @Override // LoaderCallbacks
+    @NonNull
+    @Override
     public Loader<List<Album>> onCreateLoader(int id, Bundle args) {
         return new AlbumLoader(mActivity, args.getLong(Config.ID));
     }

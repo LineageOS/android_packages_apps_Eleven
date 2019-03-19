@@ -16,8 +16,8 @@
 
 package org.lineageos.eleven.locale;
 
-import android.support.annotation.VisibleForTesting;
 import android.text.TextUtils;
+
 import java.util.Locale;
 
 public class LocaleSet {
@@ -167,7 +167,6 @@ public class LocaleSet {
     private static final String SCRIPT_SIMPLIFIED_CHINESE = "Hans";
     private static final String SCRIPT_TRADITIONAL_CHINESE = "Hant";
 
-    @VisibleForTesting
     public static boolean isLocaleSimplifiedChinese(Locale locale) {
         // language must match
         if (locale == null || !TextUtils.equals(locale.getLanguage(), CHINESE_LANGUAGE)) {
@@ -189,7 +188,6 @@ public class LocaleSet {
         return isLocaleSimplifiedChinese(getSecondaryLocale());
     }
 
-    @VisibleForTesting
     public static boolean isLocaleTraditionalChinese(Locale locale) {
         // language must match
         if (locale == null || !TextUtils.equals(locale.getLanguage(), CHINESE_LANGUAGE)) {

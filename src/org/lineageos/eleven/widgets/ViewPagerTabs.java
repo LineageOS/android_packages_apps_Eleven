@@ -19,8 +19,6 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Outline;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -34,10 +32,13 @@ import android.widget.Toast;
 
 import org.lineageos.eleven.R;
 
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 /**
  * Lightweight implementation of ViewPager tabs. This looks similar to traditional actionBar tabs,
  * but allows for the view containing the tabs to be placed anywhere on screen. Text-related
- * attributes can also be assigned in XML - these will get propogated to the child TextViews
+ * attributes can also be assigned in XML - these will get propagated to the child TextViews
  * automatically.
  */
 public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnPageChangeListener {

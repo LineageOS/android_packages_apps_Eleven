@@ -17,7 +17,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 
@@ -28,6 +27,8 @@ import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.ArrayList;
+
+import androidx.fragment.app.DialogFragment;
 
 /**
  * Used when the user requests to modify Album art or Artist image

@@ -20,6 +20,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.widget.ImageView;
+
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
 import org.lineageos.eleven.utils.ImageUtils;
 

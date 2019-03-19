@@ -15,10 +15,6 @@ package org.lineageos.eleven.ui.fragments.profile;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,13 +42,18 @@ import org.lineageos.eleven.widgets.NoResultsContainer;
 
 import java.util.TreeSet;
 
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 /**
  * This class is used to display all of the songs
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public abstract class BasicSongFragment extends Fragment implements
-        LoaderCallbacks<SectionListContainer<Song>>, OnItemClickListener, MusicStateListener {
+        LoaderManager.LoaderCallbacks<SectionListContainer<Song>>, OnItemClickListener,
+        MusicStateListener {
 
     /**
      * Fragment UI

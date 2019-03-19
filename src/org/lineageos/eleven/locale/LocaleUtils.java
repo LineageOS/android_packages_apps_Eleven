@@ -17,7 +17,6 @@
 package org.lineageos.eleven.locale;
 
 import android.icu.text.AlphabeticIndex;
-import android.support.annotation.VisibleForTesting;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -214,7 +213,6 @@ public class LocaleUtils {
         return sSingleton;
     }
 
-    @VisibleForTesting
     public static synchronized void setLocale(Locale locale) {
         setLocales(new LocaleSet(locale));
     }

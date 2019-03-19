@@ -16,14 +16,15 @@
 package org.lineageos.eleven.utils;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentManager;
-
 import android.view.MenuItem;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.menu.PhotoSelectionDialog;
 import org.lineageos.eleven.model.Artist;
+
+import androidx.fragment.app.FragmentManager;
 
 public abstract class ArtistPopupMenuHelper extends PopupMenuHelper {
     private Artist mArtist;

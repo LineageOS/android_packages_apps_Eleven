@@ -21,15 +21,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
-import android.support.v8.renderscript.RenderScript;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
 import org.lineageos.eleven.provider.PlaylistArtworkStore;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.ImageUtils;
 import org.lineageos.eleven.widgets.BlurScrimImage;
-import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
 import org.lineageos.eleven.widgets.LetterTileDrawable;
 
 import java.lang.ref.WeakReference;
@@ -37,6 +36,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.RejectedExecutionException;
+
+import androidx.renderscript.RenderScript;
 
 /**
  * This class wraps up completing some arbitrary long running work when loading

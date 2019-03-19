@@ -23,8 +23,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.Config;
+import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.menu.ConfirmDialog;

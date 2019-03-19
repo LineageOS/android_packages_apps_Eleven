@@ -17,7 +17,6 @@
 package org.lineageos.eleven.locale;
 
 import android.content.Context;
-import android.support.annotation.VisibleForTesting;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
@@ -119,7 +118,6 @@ public class LocaleSetManager {
         return LocaleSet.getLocaleSet(providerLocaleString);
     }
 
-    @VisibleForTesting
     protected Locale getLocale() {
         return Locale.getDefault();
     }

@@ -16,9 +16,6 @@ package org.lineageos.eleven.ui.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,13 +46,16 @@ import org.lineageos.eleven.utils.SectionCreatorUtils.IItemCompare;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 /**
  * This class is used to display all of the artists on a user's device.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class ArtistFragment extends MusicBrowserFragment implements
-        LoaderCallbacks<SectionListContainer<Artist>>,
+        LoaderManager.LoaderCallbacks<SectionListContainer<Artist>>,
         OnScrollListener, OnItemClickListener, MusicStateListener {
 
     /**
@@ -84,9 +84,10 @@ public class ArtistFragment extends MusicBrowserFragment implements
     private LoadingEmptyContainer mLoadingEmptyContainer;
 
     /**
-     * Empty constructor as per the {@link Fragment} documentation
+     * Empty constructor as per the {@link androidx.fragment.app.Fragment} documentation
      */
     public ArtistFragment() {
+        // empty
     }
 
     @Override
