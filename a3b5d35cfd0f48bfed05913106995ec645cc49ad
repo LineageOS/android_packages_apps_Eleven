@@ -52,6 +52,24 @@
       "revId": "a3b5d35cfd0f48bfed05913106995ec645cc49ad",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2245eea4_efbc7c2e",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2019-03-19T19:17:35Z",
+      "side": 1,
+      "message": "/**/ copyright for java, \u003c!-- --\u003e for xml",
+      "parentUuid": "e38b99c1_318ba525",
+      "revId": "a3b5d35cfd0f48bfed05913106995ec645cc49ad",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
