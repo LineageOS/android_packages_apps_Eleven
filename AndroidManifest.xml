@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012 Andrew Neal
-     Copyright (C) 2014 The CyanogenMod Project
-     Copyright (C) 2019 The LineageOS Project
+<!--
+  Copyright (C) 2012 Andrew Neal
+  Copyright (C) 2014 The CyanogenMod Project
+  Copyright (C) 2019 The LineageOS Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+       http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
- -->
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="org.lineageos.eleven"
-    android:versionCode="3"
-    android:versionName="3.0"
-    tools:ignore="GradleOverrides">
-
-    <uses-sdk
-        android:minSdkVersion="26"
-        android:targetSdkVersion="28" />
-
-    <original-package android:name="com.cyanogenmod.eleven" />
+    package="org.lineageos.eleven">
 
     <!-- Used for caching and creating new playlists -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -41,13 +33,15 @@
     <!-- Lower or raise the music based on the phone state -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- Used to set the devices's ringtone -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+            tools:ignore="ProtectedPermissions" />
     <!-- Used to create launcher shortcuts -->
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
     <!-- Allows Eleven to read from External Storage -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!-- Allows Eleven to modify media files on external storage -->
-    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE"
+            tools:ignore="ProtectedPermissions" />
 
     <!-- Audio Visualizer Permissions -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -100,7 +94,7 @@
                 <data android:mimeType="vnd.android.cursor.dir/artists" />
             </intent-filter>
             <intent-filter>
-                <action android:name="org.lineageos.eleven.AUDIO_PLAYER" />
+                <action android:name="${applicationId}.AUDIO_PLAYER" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
