@@ -18,10 +18,11 @@
 
 package org.lineageos.eleven.model;
 
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
 import java.util.Comparator;
+
+import androidx.annotation.NonNull;
 
 /**
  * A class that represents a playlist.

@@ -14,8 +14,6 @@
 package org.lineageos.eleven.ui.fragments.phone;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -33,9 +31,11 @@ import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.SortOrder;
 import org.lineageos.eleven.widgets.ViewPagerTabs;
 
+import androidx.viewpager.widget.ViewPager;
+
 /**
  * This class is used to hold the {@link ViewPager} used for swiping between the
- * playlists, recent, artists, albums, songs, and genre {@link Fragment}
+ * playlists, recent, artists, albums, songs, and genre {@link androidx.fragment.app.Fragment}
  * s for phones.
  * 
  * @NOTE: The reason the sort orders are taken care of in this fragment rather
@@ -64,7 +64,7 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
     private int mDefaultPageIdx = INVALID_PAGE_INDEX;
 
     /**
-     * Empty constructor as per the {@link Fragment} documentation
+     * Empty constructor as per the {@link androidx.fragment.app.Fragment} documentation
      */
     public MusicBrowserPhoneFragment() {
     }

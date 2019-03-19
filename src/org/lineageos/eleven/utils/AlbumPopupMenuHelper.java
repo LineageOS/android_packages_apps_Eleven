@@ -17,9 +17,8 @@ package org.lineageos.eleven.utils;
 
 import android.app.Activity;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentManager;
-
 import android.view.MenuItem;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.menu.DeleteDialog;
@@ -28,6 +27,8 @@ import org.lineageos.eleven.menu.PhotoSelectionDialog;
 import org.lineageos.eleven.model.Album;
 
 import java.util.TreeSet;
+
+import androidx.fragment.app.FragmentManager;
 
 public abstract class AlbumPopupMenuHelper extends PopupMenuHelper {
     protected Album mAlbum;

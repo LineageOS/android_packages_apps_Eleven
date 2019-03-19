@@ -14,7 +14,6 @@
 package org.lineageos.eleven.ui.fragments.profile;
 
 import android.os.Bundle;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +29,8 @@ import org.lineageos.eleven.ui.activities.BaseActivity;
 import org.lineageos.eleven.ui.fragments.ISetupActionBar;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.NoResultsContainer;
+
+import androidx.loader.content.Loader;
 
 /**
  * This class is used to display all of the songs the user put on their device

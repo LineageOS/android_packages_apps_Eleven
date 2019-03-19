@@ -13,8 +13,6 @@
 
 package org.lineageos.eleven.ui.fragments;
 
-import static org.lineageos.eleven.utils.MusicUtils.mService;
-
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -24,9 +22,6 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.MediaStore;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +46,6 @@ import org.lineageos.eleven.service.MusicPlaybackTrack;
 import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 import org.lineageos.eleven.widgets.PlayPauseProgressButton;
@@ -60,12 +54,20 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.TreeSet;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
+import static org.lineageos.eleven.utils.MusicUtils.mService;
+
 /**
  * This class is used to display all of the songs in the queue.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song>>,
+public class QueueFragment extends Fragment implements LoaderManager.LoaderCallbacks<List<Song>>,
         OnItemClickListener, DropListener, RemoveListener, DragScrollProfile, ServiceConnection {
 
     /**
@@ -99,11 +101,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
     private PopupMenuHelper mPopupMenuHelper;
 
     /**
-     * Root view
-     */
-    private ViewGroup mRootView;
-
-    /**
      * This holds the loading progress bar as well as the no results message
      */
     private LoadingEmptyContainer mLoadingEmptyContainer;
@@ -112,11 +109,9 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
      * Empty constructor as per the {@link Fragment} documentation
      */
     public QueueFragment() {
+        // empty
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -199,24 +194,17 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         // Create the adapter
         mAdapter = new SongAdapter(getActivity(), R.layout.edit_queue_list_item,
                 -1, Config.IdType.NA);
-        mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
+        mAdapter.setPopupMenuClickedListener((v, position) -> mPopupMenuHelper.showPopupMenu(v, position));
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
             final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        mRootView = (ViewGroup)inflater.inflate(R.layout.list_base, null);
+        final ViewGroup rootView = (ViewGroup) inflater.inflate(
+                R.layout.list_base, container, false);
         // Initialize the list
-        mListView = (DragSortListView)mRootView.findViewById(R.id.list_base);
+        mListView = rootView.findViewById(R.id.list_base);
         // Set the data behind the list
         mListView.setAdapter(mAdapter);
         // Release any references to the recycled Views
@@ -232,17 +220,13 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         // Enable fast scroll bars
         mListView.setFastScrollEnabled(true);
         // Setup the loading and empty state
-        mLoadingEmptyContainer =
-                (LoadingEmptyContainer)mRootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = rootView.findViewById(R.id.loading_empty_container);
         // Setup the container strings
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
         mListView.setEmptyView(mLoadingEmptyContainer);
-        return mRootView;
+        return rootView;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -254,9 +238,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         mToken = MusicUtils.bindToService(getActivity(), this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
         refreshQueue();
@@ -264,6 +245,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
+        // empty
     }
 
     @Override
@@ -303,10 +285,10 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
             // walk through the visible list items
             for (int i = mListView.getFirstVisiblePosition();
                  i <= mListView.getLastVisiblePosition(); i++) {
-                View childView = mListView.getChildAt(i);
+                final View childView = mListView.getChildAt(i);
                 if (childView != null) {
-                    PlayPauseProgressButton button =
-                            (PlayPauseProgressButton) childView.findViewById(R.id.playPauseProgressButton);
+                    final PlayPauseProgressButton button =
+                            childView.findViewById(R.id.playPauseProgressButton);
                     // pause or resume based on the flag
                     if (pause) {
                         button.pause();
@@ -334,9 +316,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
             final long id) {
@@ -346,20 +325,15 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         MusicUtils.setQueuePosition(position);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @NonNull
     @Override
     public Loader<List<Song>> onCreateLoader(final int id, final Bundle args) {
         mLoadingEmptyContainer.showLoading();
         return new QueueLoader(getActivity());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoadFinished(final Loader<List<Song>> loader, final List<Song> data) {
+    public void onLoadFinished(@NonNull final Loader<List<Song>> loader, final List<Song> data) {
         // pause notifying the adapter and make changes before re-enabling it so that the list
         // view doesn't reset to the top of the list
         mAdapter.setNotifyOnChange(false);
@@ -381,18 +355,12 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         mAdapter.notifyDataSetChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoaderReset(final Loader<List<Song>> loader) {
+    public void onLoaderReset(@NonNull final Loader<List<Song>> loader) {
         // Clear the data in the adapter
         mAdapter.unload();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public float getSpeed(final float w, final long t) {
         if (w > 0.8f) {
@@ -402,9 +370,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void remove(final int which) {
         Song song = mAdapter.getItem(which);
@@ -415,9 +380,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
         mAdapter.buildCache();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void drop(final int from, final int to) {
         Song song = mAdapter.getItem(from);
@@ -439,7 +401,7 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
     }
 
     private void setupNoResultsContainer(NoResultsContainer empty) {
-        int color = getResources().getColor(R.color.no_results_light);
+        int color = ContextCompat.getColor(getContext(), R.color.no_results_light);
         empty.setTextColor(color);
         empty.setMainText(R.string.empty_queue_main);
         empty.setSecondaryText(R.string.empty_queue_secondary);
@@ -459,9 +421,6 @@ public class QueueFragment extends Fragment implements LoaderCallbacks<List<Song
             mReference = new WeakReference<>(fragment);
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void onReceive(final Context context, final Intent intent) {
             // TODO: Invalid options menu if opened?

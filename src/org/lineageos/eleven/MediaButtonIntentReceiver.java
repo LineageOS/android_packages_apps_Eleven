@@ -14,17 +14,15 @@ package org.lineageos.eleven;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
-import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 import android.view.KeyEvent;
+
+import androidx.legacy.content.WakefulBroadcastReceiver;
 
 public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "MediaButtonIntentReceiver";
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onReceive(final Context context, final Intent intent) {
         if (DEBUG) Log.v(TAG, "Received intent: " + intent);

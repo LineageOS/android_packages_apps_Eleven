@@ -4,15 +4,16 @@ import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.TextView;
 
-public class GenreFetcher implements LoaderCallbacks<Cursor> {
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
+import androidx.loader.content.Loader;
+
+public class GenreFetcher implements LoaderManager.LoaderCallbacks<Cursor> {
     private static final String[] GENRE_PROJECTION = new String[] { MediaStore.Audio.Genres.NAME };
 
     private Context mContext;
@@ -30,6 +31,7 @@ public class GenreFetcher implements LoaderCallbacks<Cursor> {
         mTextView = textView;
     }
 
+    @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         return new CursorLoader(mContext,
@@ -38,8 +40,8 @@ public class GenreFetcher implements LoaderCallbacks<Cursor> {
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
-        if(mTextView != null && cursor.moveToFirst()) {
+    public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor cursor) {
+        if (mTextView != null && cursor.moveToFirst()) {
             String genre = cursor.getString(0);
             if(!MusicUtils.isBlank(genre)) {
                 mTextView.setText(genre);
@@ -47,10 +49,13 @@ public class GenreFetcher implements LoaderCallbacks<Cursor> {
                 return;
             }
         }
+
         // no displayable genre found
-        mTextView.setVisibility(View.GONE);
+        if (mTextView != null) {
+            mTextView.setVisibility(View.GONE);
+        }
     }
 
     @Override
-    public void onLoaderReset(Loader<Cursor> loader) {}
+    public void onLoaderReset(@NonNull Loader<Cursor> loader) {}
 }

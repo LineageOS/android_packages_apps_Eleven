@@ -24,7 +24,6 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Interpolator;
 
 import java.util.HashSet;
-import java.util.Iterator;
 
 /**
  * This database tracks the number of play counts for an individual song.  This is used to drive

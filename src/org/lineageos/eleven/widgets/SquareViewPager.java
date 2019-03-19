@@ -16,8 +16,9 @@
 package org.lineageos.eleven.widgets;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * A custom {@link ViewPager} that is sized to be a perfect square, otherwise
@@ -33,9 +34,6 @@ public class SquareViewPager extends ViewPager {
         super(context, attrs);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);

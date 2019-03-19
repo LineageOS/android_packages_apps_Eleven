@@ -56,8 +56,6 @@ import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
-import android.support.annotation.NonNull;
-import android.support.v4.os.BuildCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
@@ -89,6 +87,9 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Random;
 import java.util.TreeSet;
+
+import androidx.annotation.NonNull;
+import androidx.core.os.BuildCompat;
 
 /**
  * A backbround {@link Service} used to keep music playing between activities

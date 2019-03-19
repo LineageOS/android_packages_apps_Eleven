@@ -14,11 +14,13 @@
 * limitations under the License.
 */
 package org.lineageos.eleven.widgets;
+
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
 import android.util.AttributeSet;
 
 import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
+
+import androidx.fragment.app.FragmentActivity;
 
 public abstract class AudioActivityButton extends AudioButton {
     protected SlidingPanelActivity mActivity;

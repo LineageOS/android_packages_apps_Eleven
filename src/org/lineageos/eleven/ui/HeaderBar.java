@@ -16,12 +16,10 @@
 package org.lineageos.eleven.ui;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -33,6 +31,8 @@ import org.lineageos.eleven.loaders.QueueLoader;
 import org.lineageos.eleven.menu.CreateNewPlaylist;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * Simple Header bar wrapper class that also has its own menu bar button.
@@ -60,26 +60,16 @@ public class HeaderBar extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mMenuButton = (ImageView)findViewById(R.id.header_bar_menu_button);
-        mMenuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupMenu();
-            }
-        });
+        mMenuButton = findViewById(R.id.header_bar_menu_button);
+        mMenuButton.setOnClickListener(v -> showPopupMenu());
 
-        mSearchButton = (ImageView)findViewById(R.id.header_bar_search_button);
-        mSearchButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-            public void onClick(View v) {
-                NavUtils.openSearch(mFragment.getActivity(), "");
-            }
-        });
+        mSearchButton = findViewById(R.id.header_bar_search_button);
+        mSearchButton.setOnClickListener(v -> NavUtils.openSearch(mFragment.getActivity(), ""));
 
 
-        mBackButton = (ImageView)findViewById(R.id.header_bar_up);
+        mBackButton = findViewById(R.id.header_bar_up);
 
-        mTitleText = (TextView)findViewById(R.id.header_bar_title);
+        mTitleText = findViewById(R.id.header_bar_title);
     }
 
     /**
@@ -117,12 +107,7 @@ public class HeaderBar extends LinearLayout {
         // create the popup menu
         if (mPopupMenu == null) {
             mPopupMenu = new PopupMenu(mFragment.getActivity(), mMenuButton);
-            mPopupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem item) {
-                    return onPopupMenuItemClick(item);
-                }
-            });
+            mPopupMenu.setOnMenuItemClickListener(this::onPopupMenuItemClick);
         }
 
         final Menu menu = mPopupMenu.getMenu();

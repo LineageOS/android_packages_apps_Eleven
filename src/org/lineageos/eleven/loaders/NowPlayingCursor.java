@@ -1,8 +1,6 @@
 
 package org.lineageos.eleven.loaders;
 
-import static org.lineageos.eleven.utils.MusicUtils.mService;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.AbstractCursor;
@@ -15,6 +13,8 @@ import android.provider.MediaStore.Audio.AudioColumns;
 import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.Arrays;
+
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
  * A custom {@link Cursor} used to return the queue and allow for easy dragging

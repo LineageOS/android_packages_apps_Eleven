@@ -18,7 +18,6 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
@@ -28,6 +27,8 @@ import android.widget.EditText;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.MusicUtils;
+
+import androidx.fragment.app.DialogFragment;
 
 /**
  * A simple base class for the playlist dialogs.

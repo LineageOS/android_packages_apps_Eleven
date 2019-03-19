@@ -28,8 +28,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.PowerManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -69,6 +67,9 @@ import org.lineageos.eleven.widgets.ShuffleButton;
 import org.lineageos.eleven.widgets.VisualizerView;
 
 import java.lang.ref.WeakReference;
+
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import static org.lineageos.eleven.utils.MusicUtils.mService;
 

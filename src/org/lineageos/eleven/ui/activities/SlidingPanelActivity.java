@@ -15,8 +15,6 @@ package org.lineageos.eleven.ui.activities;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -31,8 +29,8 @@ import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.BlurScrimImage;
 
 /**
- * This class is used to display the {@link ViewPager} used to swipe between the
- * main {@link Fragment}s used to browse the user's music.
+ * This class is used to display the {@link androidx.viewpager.widget.ViewPager} used to swipe between the
+ * main {@link androidx.fragment.app.Fragment}s used to browse the user's music.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */

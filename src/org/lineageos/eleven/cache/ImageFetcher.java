@@ -19,6 +19,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.widget.ImageView;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;

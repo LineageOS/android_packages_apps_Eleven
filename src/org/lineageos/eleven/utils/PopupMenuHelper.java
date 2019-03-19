@@ -18,7 +18,6 @@ package org.lineageos.eleven.utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,6 +32,8 @@ import org.lineageos.eleven.provider.RecentStore;
 
 import java.util.List;
 import java.util.TreeSet;
+
+import androidx.fragment.app.FragmentManager;
 
 /**
  * Simple helper class that does most of the popup menu inflating and handling

@@ -1,8 +1,6 @@
 package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +23,12 @@ import org.lineageos.eleven.widgets.PopupMenuButton;
 import java.util.Collections;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 public abstract class DetailSongAdapter extends BaseAdapter
-        implements LoaderCallbacks<List<Song>>, OnItemClickListener, IPopupMenuCallback {
+        implements LoaderManager.LoaderCallbacks<List<Song>>, OnItemClickListener, IPopupMenuCallback {
     protected final Activity mActivity;
     private final ImageFetcher mImageFetcher;
     private final LayoutInflater mInflater;
@@ -91,7 +93,7 @@ public abstract class DetailSongAdapter extends BaseAdapter
     protected abstract void onNoResults();
     protected abstract Config.IdType getSourceType();
 
-    @Override // OnItemClickListener
+    @Override
     public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
         // id is in this case the index in the underlying collection,
         // which is what we are interested in here -- so use as position
@@ -109,8 +111,8 @@ public abstract class DetailSongAdapter extends BaseAdapter
         MusicUtils.playAll(mActivity, toPlay, position, getSourceId(), getSourceType(), false);
     }
 
-    @Override // LoaderCallbacks
-    public void onLoadFinished(Loader<List<Song>> loader, List<Song> songs) {
+    @Override
+    public void onLoadFinished(@NonNull Loader<List<Song>> loader, List<Song> songs) {
         if (songs.isEmpty()) {
             onNoResults();
             return;
@@ -119,8 +121,8 @@ public abstract class DetailSongAdapter extends BaseAdapter
         notifyDataSetChanged();
     }
 
-    @Override // LoaderCallbacks
-    public void onLoaderReset(Loader<List<Song>> loader) {
+    @Override
+    public void onLoaderReset(@NonNull Loader<List<Song>> loader) {
         mSongs = Collections.emptyList();
         notifyDataSetChanged();
         mImageFetcher.flush();

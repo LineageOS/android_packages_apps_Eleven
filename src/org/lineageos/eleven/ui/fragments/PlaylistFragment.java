@@ -19,10 +19,6 @@
 package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,12 +39,15 @@ import org.lineageos.eleven.ui.fragments.phone.MusicBrowserFragment;
 import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.PlaylistPopupMenuHelper;
 import org.lineageos.eleven.utils.PopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 /**
  * This class is used to display all of the playlists on a user's device.
@@ -56,7 +55,7 @@ import java.util.List;
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class PlaylistFragment extends MusicBrowserFragment implements
-        LoaderCallbacks<List<Playlist>>,
+        LoaderManager.LoaderCallbacks<List<Playlist>>,
         OnItemClickListener, MusicStateListener {
 
     /**

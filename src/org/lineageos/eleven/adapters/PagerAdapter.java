@@ -15,9 +15,6 @@ package org.lineageos.eleven.adapters;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
@@ -31,6 +28,10 @@ import org.lineageos.eleven.utils.Lists;
 import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.Locale;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 /**
  * A {@link FragmentPagerAdapter} class for swiping between playlists, recent,
