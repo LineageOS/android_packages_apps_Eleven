@@ -20,7 +20,6 @@
     <string name="app_name">ಸಂಗೀತ</string>
     <string name="page_recent">ಇತ್ತೀಚಿನ</string>
     <string name="page_artists">ಕಲಾವಿದರು</string>
-    <string name="page_albums">ಆಲ್ಬಂಗಳು</string>
     <string name="page_songs">ಹಾಡುಗಳು</string>
     <string name="page_playlists">ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
     <string name="page_genres">ಪ್ರಕಾರಗಳು</string>
@@ -166,4 +165,5 @@
     <string name="search_title_songs">ಎಲ್ಲಾ \"%s\" ಹಾಡುಗಳು</string>
     <string name="search_title_playlists">ಎಲ್ಲಾ \"%s\" ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">ಸಂಗೀತ ಪುನರಾಡಿಸು</string>
 </resources>

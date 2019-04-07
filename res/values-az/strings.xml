@@ -22,10 +22,10 @@
     <string name="page_artists">Sənətkarlar</string>
     <string name="page_albums">Albomlar</string>
     <string name="page_songs">Mahnılar</string>
-    <string name="page_playlists">Çalma siyahıları</string>
+    <string name="page_playlists">Oynatma siyahıları</string>
     <string name="page_genres">Janrlar</string>
-    <string name="page_now_playing">İndi Çalınan</string>
-    <string name="page_play_queue">Növbədəkini Çal</string>
+    <string name="page_now_playing">İndi Oynadılan</string>
+    <string name="page_play_queue">Növbədəkini Oynat</string>
     <string name="header_albums">Albomlar</string>
     <string name="header_top_songs">Top Mahnılar</string>
     <string name="header_all_songs">Bütün Mahnılar</string>
@@ -33,20 +33,20 @@
     <string name="menu_search">Axtar</string>
     <string name="menu_shuffle_item">Qarışdır</string>
     <string name="menu_shuffle_all">Hamısını qarışdır</string>
-    <string name="menu_shuffle_playlist">Çalma siyahısını qarışdır</string>
+    <string name="menu_shuffle_playlist">Oynatma siyahısını qarışdır</string>
     <string name="menu_shuffle_album">Albomu qarışdır</string>
     <string name="menu_shuffle_artist">Sənətkarı qarışdır</string>
     <string name="menu_shuffle_top_tracks">Ən çox dinlənənləri qarışdır</string>
     <string name="menu_shuffle_recent">Son çalınanları qarışdır</string>
     <string name="menu_shuffle_last_added">Son əlavə edilənləri qarışdır</string>
-    <string name="menu_play_all">Hamısını çal</string>
+    <string name="menu_play_all">Hamısını oynat</string>
     <string name="menu_sort_by">Sıralama:</string>
     <string name="menu_clear_list">Siyahını təmizlə</string>
     <string name="menu_clear_recents">Son çalınanları təmizlə</string>
     <string name="menu_clear_queue">Növbədəkini sil</string>
-    <string name="menu_save_queue">Növbəni çalma siyahısında saxla</string>
+    <string name="menu_save_queue">Növbəni oynatma siyahısında saxla</string>
     <string name="menu_equalizer">Ekvalayzer</string>
-    <string name="add_to_playlist">Çalma siyahısına əlavə et</string>
+    <string name="add_to_playlist">Oynatma siyahısına əlavə et</string>
     <string name="add_to_queue">Növbəyə əlavə et</string>
     <string name="remove_from_recent">Son çalınanlardan çıxart</string>
     <string name="remove_from_queue">Növbədən çıxart</string>
@@ -64,14 +64,15 @@
     <string name="playlist_last_added">Son əlavə edilənlər</string>
     <string name="playlist_recently_played">Son çalınan</string>
     <string name="playlist_top_tracks">Top musiqilərim</string>
-    <string name="new_playlist">Yeni çalma siyahısı</string>
+    <string name="new_playlist">Yeni oynatma siyahısı</string>
     <string name="save">Saxla</string>
     <string name="cancel">İmtina</string>
     <string name="overwrite">Üzərinə yaz</string>
     <string name="clear">Təmizlə</string>
-    <string name="new_playlist_name_template">Çalma siyahısı <xliff:g id="number">%d</xliff:g></string>
-    <string name="create_playlist_prompt">Çalma siyahısı adı</string>
+    <string name="new_playlist_name_template">Oynatma siyahısı <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">Oynatma siyahısı adı</string>
     <string name="delete_dialog_title"><xliff:g id="item" example="album">%s</xliff:g> silinsin?</string>
+    <string name="clear_top_tracks_title">Top mahnılar təmizlənsin?</string>
     <string name="clear_recent_title">Son çalınanlar təmizlənsin?</string>
     <string name="clear_last_added">Son əlavə edilənlər təmizlənsin?</string>
     <string name="cannot_be_undone">Bu əməliyyat geri alına bilməz</string>
@@ -80,7 +81,7 @@
     <string name="google_search">Google axtarışı</string>
     <string name="use_default">İlkin fotodan istifadə et</string>
     <string name="old_photo">Köhnə fotodan istifadə et</string>
-    <string name="context_menu_play_selection">Çal</string>
+    <string name="context_menu_play_selection">Oynat</string>
     <string name="context_menu_play_next">Sonrakını çal</string>
     <string name="context_menu_play_album">Albomu oynat</string>
     <string name="context_menu_more_by_artist">Sənətçidən daha çox</string>
@@ -90,9 +91,9 @@
     <string name="context_menu_fetch_artist_image">Sənətçinin şəklini endir</string>
     <string name="context_menu_remove_from_recent">Son çalınanlardan çıxart</string>
     <string name="context_menu_use_as_ringtone">Zəng səsi kimi istifadə et</string>
-    <string name="context_menu_remove_from_playlist">Çalma siyahısından çıxart</string>
-    <string name="context_menu_change_image">Şəkli dəyişdir</string>
-    <string name="accessibility_play">Çal</string>
+    <string name="context_menu_remove_from_playlist">Oynatma siyahısından çıxart</string>
+    <string name="context_menu_change_image">Təsviri dəyişdir</string>
+    <string name="accessibility_play">Oynat</string>
     <string name="accessibility_pause">Fasilə</string>
     <string name="accessibility_next">Sonrakı</string>
     <string name="accessibility_prev">Əvvəlki</string>
@@ -104,9 +105,9 @@
     <string name="accessibility_queue">Növbəni aç</string>
     <string name="accessibility_browse">Musiqini gözdən keçir</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' zəng səsi kimi tənzimləndi</string>
-    <string name="playlist_renamed">Çalma siyahısını yenidən adlandır</string>
+    <string name="playlist_renamed">Siyahı yenidən adlandırıldı</string>
     <string name="settings_ui_category">İnterfeys</string>
-    <string name="settings_storage_category">Saxlama</string>
+    <string name="settings_storage_category">Anbar</string>
     <string name="settings_data_category">Verilənlər</string>
     <string name="settings_delete_cache_title">Gizli yaddaşı sil</string>
     <string name="settings_delete_cache_summary">Gizli yaddaşdakı bütün təsvirləri sil</string>
@@ -129,20 +130,21 @@
     <string name="no_effects_for_you">Ekvalayzer açılmadı.</string>
     <string name="empty_music">Komputerinizdən cihazınıza musiqi kopyalamaq üçün USB kabeldən istifadə edin.</string>
     <string name="empty_search">Axtarış nəticə vermədi</string>
-    <string name="empty_search_check">Zəhmət olmasa düzgün söz daxil etdiyinizi yoxlayın və ya fərqli bir söz yoxlayın.</string>
+    <string name="empty_search_check">Zəhmət olmasa düzgün söz daxil etdiyinizi yoxlayın və ya fərqli bir söz sınayın.</string>
     <string name="empty_favorite">Seçilmiş kimi işarələdiyiniz mahnılar burada görünəcək.</string>
     <string name="empty_recent_main">Son çalınan mahnı yoxdur</string>
-    <string name="empty_recent">Son vaxtlar dinlədiyiniz mahnılar burada görünəcək.</string>
-    <string name="empty_playlist_main">Çalma siyahısında mahnı yoxdur</string>
-    <string name="empty_playlist_secondary">Bu çalma siyahısına mahnı əlavə etmək üçün seçimlərdən \"Çalma siyahısına əlavə et\"ə toxunun.</string>
+    <string name="empty_recent">Təzəlikcə dinlədiyiniz mahnılar burada görünəcək.</string>
+    <string name="empty_playlist_main">Oynatma siyahısında mahnı yoxdur</string>
+    <string name="empty_playlist_secondary">Bu oynatma siyahısına mahnı əlavə etmək üçün seçimlərdən \"Oynatma siyahısına əlavə et\"ə toxunun.</string>
     <string name="empty_top_tracks_main">Top musiqilər yoxdur</string>
     <string name="empty_top_tracks_secondary">Çox vaxt dinlədiyiniz mahnılar bu siyahıya əlavə olunacaq.</string>
     <string name="empty_last_added_main">Son vaxtlar mahnı əlavə edilməyib</string>
     <string name="empty_last_added">Keçən ay əlavə edilmiş mahnılar burada göstəriləcək.</string>
     <string name="empty_generic_main">Musiqi tapılmadı</string>
-    <string name="empty_generic_secondary">Komputerinizdən cihazınıza musiqi kopyalamaq üçün USB kabeldən istifadə edin.</string>
+    <string name="empty_generic_secondary">Kompüterinizdən cihazınıza musiqi kopyalamaq üçün USB naqildən istifadə edin.</string>
     <string name="empty_queue_main">Çalma növbəsində mahnı yoxdur</string>
     <string name="empty_queue_secondary">Çalma Növbəsinə mahnı əlavə etmək üçün, seçimlərdən \"Növbəyə əlavə et\"i seçin.</string>
+    <string name="error_playing_track">%1$s mahnısı oynadıla bilmir</string>
     <string name="header_unknown_year">Bilinməyən il</string>
     <string name="header_less_than_30s">30 saniyədən az</string>
     <string name="header_30_to_60_seconds">30 - 60 saniyə</string>
@@ -168,6 +170,7 @@
     <string name="search_title_artists">Bütün \"%s\" sənətkarları</string>
     <string name="search_title_albums">Bütün \"%s\" albomları</string>
     <string name="search_title_songs">Bütün \"%s\" mahnıları</string>
-    <string name="search_title_playlists">Bütün \"%s\" çalma siyahıları</string>
+    <string name="search_title_playlists">Bütün \"%s\" oynatma siyahıları</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Musiqi oynatma</string>
 </resources>

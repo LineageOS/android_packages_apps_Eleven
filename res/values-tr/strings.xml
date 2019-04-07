@@ -172,4 +172,5 @@
     <string name="search_title_songs">Tüm \"%s\" şarkıları</string>
     <string name="search_title_playlists">Tüm \"%s\" çalma listeleri</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Müzik çalma</string>
 </resources>

@@ -96,4 +96,5 @@
     <string name="search_title_songs">Të gjitha këngët \"%s\"</string>
     <string name="search_title_playlists">Të gjitha listat e këngëve \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Luaj muzikë</string>
 </resources>
