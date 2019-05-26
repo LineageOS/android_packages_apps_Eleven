@@ -22,16 +22,16 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ಕಲಾವಿದರು</item>
     </plurals>
     <plurals name="Nalbums">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> ಆಲ್ಬಂ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಆಲ್ಬಂಗಳು</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> ಇಡುವಹಿ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಇಡುವಹಿಗಳು</item>
     </plurals>
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ಹಾಡು</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ಹಾಡುಗಳು</item>
     </plurals>
     <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> ಶೈಲಿ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಶೈಲಿಗಳು</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> ಪ್ರಕಾರ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಪ್ರಕಾರಗಳು</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>ಗ</item>
@@ -54,8 +54,8 @@
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> ಹಾಡುಗಳನ್ನು ಸರದಿಗೆ ಸೇರಿಸಲಾಗಿದೆ.</item>
     </plurals>
     <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> ಹಾಡನ್ನು ಫೇವರಿಟ್ಸ್ ಗೆ ಸೇರಿಸಲಾಗಿದೆ.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> ಹಾಡುಗಳನ್ನು ಫೇವರಿಟ್ಸ್ ಗೆ ಸೇರಿಸಲಾಗಿದೆ.</item>
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> ಹಾಡನ್ನು ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಲಾಗಿದೆ.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> ಹಾಡುಗಳನ್ನು ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಲಾಗಿದೆ.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> ಹಾಡನ್ನು ಅಳಿಸಲಾಗಿದೆ.</item>
