@@ -76,7 +76,7 @@
     <string name="clear_recent_title">Garbitu berriki entzundakoak?</string>
     <string name="clear_last_added">Garbitu gehitutako azkenak?</string>
     <string name="cannot_be_undone">Hau ezin da desegin</string>
-    <string name="delete_warning">Honek katxean gordetako irudi guztiak behin betiko ezabatuko ditu</string>
+    <string name="delete_warning">Honek cachean gordetako irudi guztiak behin betiko ezabatuko ditu</string>
     <string name="new_photo">Hautatu galeriako argazkia</string>
     <string name="google_search">Google bilaketa</string>
     <string name="use_default">Erabili argazki lehenetsia</string>
@@ -109,8 +109,8 @@
     <string name="settings_ui_category">Interfazea</string>
     <string name="settings_storage_category">Biltegiratzea</string>
     <string name="settings_data_category">Datuak</string>
-    <string name="settings_delete_cache_title">Ezabatu katxea</string>
-    <string name="settings_delete_cache_summary">Ezabatu katxean gordetako irudi guztiak</string>
+    <string name="settings_delete_cache_title">Ezabatu cachea</string>
+    <string name="settings_delete_cache_summary">Ezabatu cachean gordetako irudi guztiak</string>
     <string name="settings_download_only_on_wifi_title">Deskargatu Wi-Fi bidez soilik</string>
     <string name="settings_download_only_on_wifi_summary">Ez deskargatu datu mugikorren bidez operadorearen zordunketa murrizteko</string>
     <string name="settings_download_missing_artwork_title">Deskargatu falta diren karatulak</string>
