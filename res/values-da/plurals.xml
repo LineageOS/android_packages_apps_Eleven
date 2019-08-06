@@ -23,7 +23,7 @@
     </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> album</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> albums</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> album</item>
     </plurals>
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> sang</item>
@@ -42,20 +42,20 @@
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> sang føjet til spillelisten.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> sange føjet til spillelisten.</item>
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> sang føjet til afspilningsliste.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> sange føjet til afspilningsliste.</item>
     </plurals>
     <plurals name="NNNtracksfromplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> sang fjernet fra spillelisten.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> sange fjernet fra spillelisten.</item>
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> sang fjernet fra afspilningsliste.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> sange fjernet fra afspilningsliste.</item>
     </plurals>
     <plurals name="NNNtrackstoqueue">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> sang føjet til køen.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> sange føjet til køen.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> sange føjet til køen.</item>
     </plurals>
     <plurals name="NNNtrackstofavorites">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> sang føjet til favoritter.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> sange føjet til favoritter.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> sange føjet til favoritter.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> sang blev slettet.</item>
