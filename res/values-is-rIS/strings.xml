@@ -17,18 +17,5 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Page titles -->
-  <!-- Section Headers -->
-  <!-- Option menu items -->
-  <!-- Playlist items -->
-  <!-- Sort orders -->
-  <!-- Default playlist names -->
-  <!-- AlertDialog items -->
-  <!-- Context menu items -->
-  <!-- Content descriptions -->
-  <!-- Toast messages -->
-  <!-- Settings -->
-  <!-- App widget -->
-  <!-- Empty list / error messages -->
-  <!-- Section Headers -->
+    <string name="no_effects_for_you">Ekki var hægt að opna tónjafnarann.</string>
 </resources>
