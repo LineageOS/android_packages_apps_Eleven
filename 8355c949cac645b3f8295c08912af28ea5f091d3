@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6610677e_5b16e65a",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "space after \"if\"",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 86
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0af1bef_6ddc3cf7",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "needs spaces after \"if\" and before \"{\"",
+      "range": {
+        "startLine": 37,
+        "startChar": 12,
+        "endLine": 37,
+        "endChar": 73
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15016f2a_dbd84362",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 109
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09e84089_b38fbf7c",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "space after \"if\"",
+      "range": {
+        "startLine": 40,
+        "startChar": 16,
+        "endLine": 40,
+        "endChar": 125
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1376b03b_ecc1150b",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "space after \"if\" and before \"{\"",
+      "range": {
+        "startLine": 47,
+        "startChar": 23,
+        "endLine": 47,
+        "endChar": 33
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99c6e612_1edfeb8a",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 127
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09e4fb9a_68f7ca25",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-08-19T16:43:40Z",
+      "side": 1,
+      "message": "two unnecessary empty lines",
+      "range": {
+        "startLine": 49,
+        "startChar": 16,
+        "endLine": 53,
+        "endChar": 9
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
