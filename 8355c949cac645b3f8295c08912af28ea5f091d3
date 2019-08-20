@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "25a495e7_17b9b7f3",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6610677e_5b16e65a",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 86
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0af1bef_6ddc3cf7",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32b13796_7623dac6",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0af1bef_6ddc3cf7",
+      "range": {
+        "startLine": 37,
+        "startChar": 12,
+        "endLine": 37,
+        "endChar": 73
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "967d33ec_183b1b0c",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15016f2a_dbd84362",
+      "range": {
+        "startLine": 38,
+        "startChar": 16,
+        "endLine": 38,
+        "endChar": 109
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "09e84089_b38fbf7c",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 2
@@ -91,6 +163,30 @@
       "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ec96382_a7154ce7",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09e84089_b38fbf7c",
+      "range": {
+        "startLine": 40,
+        "startChar": 16,
+        "endLine": 40,
+        "endChar": 125
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "7ab7d19e_eb44017b",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1376b03b_ecc1150b",
+      "range": {
+        "startLine": 47,
+        "startChar": 23,
+        "endLine": 47,
+        "endChar": 33
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "99c6e612_1edfeb8a",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 2
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "c22ac687_45ffb46f",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "99c6e612_1edfeb8a",
+      "range": {
+        "startLine": 48,
+        "startChar": 20,
+        "endLine": 48,
+        "endChar": 127
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "09e4fb9a_68f7ca25",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 2
@@ -160,6 +304,30 @@
       "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01913d3f_b1ed035c",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-08-20T16:58:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "09e4fb9a_68f7ca25",
+      "range": {
+        "startLine": 49,
+        "startChar": 16,
+        "endLine": 53,
+        "endChar": 9
+      },
+      "revId": "8355c949cac645b3f8295c08912af28ea5f091d3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
