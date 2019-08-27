@@ -197,7 +197,7 @@
     <style name="ToolBarPopupTheme" parent="android:style/Theme.Material.Light" />
 
     <!-- Splash Theme -->
-    <style name="SplashTheme" parent="@style/Theme.AppCompat">
+    <style name="SplashTheme" parent="@android:style/Theme.NoTitleBar">
         <item name="android:windowBackground">@drawable/screen_splash</item>
     </style>
 </resources>
