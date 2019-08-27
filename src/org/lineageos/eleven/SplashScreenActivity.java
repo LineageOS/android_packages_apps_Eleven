@@ -8,8 +8,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.SplashTheme);
         super.onCreate(savedInstanceState);
-        setContentView(R.drawable.screen_splash);
 
         Intent intent = new Intent(getApplicationContext(),
                 org.lineageos.eleven.ui.activities.HomeActivity.class);
