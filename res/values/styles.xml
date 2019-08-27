@@ -195,4 +195,9 @@
     <style name="ToolBarTheme" parent="android:style/ThemeOverlay.Material.Dark.ActionBar" />
 
     <style name="ToolBarPopupTheme" parent="android:style/Theme.Material.Light" />
+
+    <!-- Splash Theme -->
+    <style name="SplashTheme" parent="@style/Theme.AppCompat">
+        <item name="android:windowBackground">@drawable/screen_splash</item>
+    </style>
 </resources>
