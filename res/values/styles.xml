@@ -200,8 +200,8 @@
     <style name="SplashTheme" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/screen_splash</item>
         <item name="android:windowFullscreen">false</item>
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/background_color</item>
+        <item name="android:navigationBarColor">@color/background_color</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
         <item name="windowActionBar">false</item>
