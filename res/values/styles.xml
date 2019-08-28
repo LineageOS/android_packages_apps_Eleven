@@ -197,7 +197,14 @@
     <style name="ToolBarPopupTheme" parent="android:style/Theme.Material.Light" />
 
     <!-- Splash Theme -->
-    <style name="SplashTheme" parent="@android:style/Theme.NoTitleBar">
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@drawable/screen_splash</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>
