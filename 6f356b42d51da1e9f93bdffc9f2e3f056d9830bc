@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "572674ea_97e6c866",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-09-05T16:12:32Z",
+      "side": 1,
+      "message": "+1 for skipping the null check, but I can\u0027t find BluetoothDevice.ACTION_DEVICE_DISCONNECTED, do you mean ACTION_ACL_DISCONNECTED?",
+      "parentUuid": "f51c42f4_f695b45a",
+      "revId": "6f356b42d51da1e9f93bdffc9f2e3f056d9830bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51358c15_b62798d7",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 4
