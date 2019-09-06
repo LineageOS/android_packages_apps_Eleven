@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "6e42cc8e_9e309c11",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-09-06T10:51:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "310fee6a_063367ef",
+      "revId": "6f356b42d51da1e9f93bdffc9f2e3f056d9830bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51358c15_b62798d7",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 4
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "d9136c6d_fd27f0fd",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-09-06T10:51:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51358c15_b62798d7",
+      "revId": "6f356b42d51da1e9f93bdffc9f2e3f056d9830bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a8fbcbe_cee55f1e",
         "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
         "patchSetId": 4
@@ -86,6 +122,24 @@
       "revId": "6f356b42d51da1e9f93bdffc9f2e3f056d9830bc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a8cdadf_a4f72c75",
+        "filename": "src/org/lineageos/eleven/BluetoothDisconnectReceiver.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 23126
+      },
+      "writtenOn": "2019-09-06T10:51:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a8fbcbe_cee55f1e",
+      "revId": "6f356b42d51da1e9f93bdffc9f2e3f056d9830bc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
