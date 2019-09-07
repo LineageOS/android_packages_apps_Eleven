@@ -16,9 +16,11 @@
 package org.lineageos.eleven.utils;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentManager;
 
 import android.view.MenuItem;
+
+import androidx.fragment.app.FragmentManager;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.menu.DeleteDialog;
 import org.lineageos.eleven.menu.FragmentMenuItems;

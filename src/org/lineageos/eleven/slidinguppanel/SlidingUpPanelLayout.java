@@ -10,14 +10,16 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.MotionEventCompat;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
+
+import androidx.core.view.MotionEventCompat;
+import androidx.core.view.ViewCompat;
+
 import org.lineageos.eleven.R;
 
 public class SlidingUpPanelLayout extends ViewGroup {

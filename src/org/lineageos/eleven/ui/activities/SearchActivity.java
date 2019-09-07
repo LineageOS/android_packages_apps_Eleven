@@ -26,9 +26,6 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,6 +42,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.IElevenService;
@@ -86,7 +87,7 @@ import static org.lineageos.eleven.utils.MusicUtils.mService;
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class SearchActivity extends FragmentActivity implements
-        LoaderCallbacks<SectionListContainer<SearchResult>>,
+        LoaderManager.LoaderCallbacks<SectionListContainer<SearchResult>>,
         OnScrollListener, OnQueryTextListener, OnItemClickListener, ServiceConnection,
         OnTouchListener {
     /**
@@ -940,7 +941,7 @@ public class SearchActivity extends FragmentActivity implements
     /**
      * This handles the Loader callbacks for the search history
      */
-    public class SearchHistoryCallback implements LoaderCallbacks<ArrayAdapter<String>> {
+    public class SearchHistoryCallback implements LoaderManager.LoaderCallbacks<ArrayAdapter<String>> {
         @Override
         public Loader<ArrayAdapter<String>> onCreateLoader(int i, Bundle bundle) {
             // prep the loader in case the query takes a long time

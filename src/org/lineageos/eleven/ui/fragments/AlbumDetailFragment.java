@@ -16,11 +16,13 @@
 package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.loader.app.LoaderManager;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.AlbumDetailSongAdapter;

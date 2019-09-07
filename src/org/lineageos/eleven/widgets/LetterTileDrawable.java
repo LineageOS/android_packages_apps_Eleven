@@ -28,8 +28,9 @@ import android.graphics.Paint.Align;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
+
+import androidx.core.content.ContextCompat;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
