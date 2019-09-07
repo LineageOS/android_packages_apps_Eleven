@@ -17,8 +17,9 @@
 package org.lineageos.eleven.locale;
 
 import android.icu.text.AlphabeticIndex;
-import android.support.annotation.VisibleForTesting;
 import android.util.Log;
+
+import androidx.annotation.VisibleForTesting;
 
 import java.util.ArrayList;
 import java.util.Iterator;

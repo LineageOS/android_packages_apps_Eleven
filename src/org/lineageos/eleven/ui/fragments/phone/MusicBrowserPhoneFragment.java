@@ -14,11 +14,12 @@
 package org.lineageos.eleven.ui.fragments.phone;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.PagerAdapter;

@@ -17,14 +17,15 @@ package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
@@ -41,7 +42,7 @@ import java.util.List;
 
 public class ArtistDetailAlbumAdapter
 extends RecyclerView.Adapter<ArtistDetailAlbumAdapter.ViewHolder>
-implements LoaderCallbacks<List<Album>>, IPopupMenuCallback {
+implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
     private static final int TYPE_FIRST = 1;
     private static final int TYPE_MIDDLE = 2;
     private static final int TYPE_LAST = 3;

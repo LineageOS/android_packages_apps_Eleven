@@ -1,8 +1,6 @@
 package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +9,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
@@ -25,8 +26,8 @@ import org.lineageos.eleven.widgets.PopupMenuButton;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class DetailSongAdapter extends BaseAdapter
-        implements LoaderCallbacks<List<Song>>, OnItemClickListener, IPopupMenuCallback {
+public abstract class DetailSongAdapter extends BaseAdapter implements
+        LoaderManager.LoaderCallbacks<List<Song>>, OnItemClickListener, IPopupMenuCallback {
     protected final Activity mActivity;
     private final ImageFetcher mImageFetcher;
     private final LayoutInflater mInflater;

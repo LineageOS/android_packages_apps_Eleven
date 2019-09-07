@@ -9,16 +9,13 @@ LOCAL_SRC_FILES += $(call all-java-files-under, src_aosp)
 
 LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, res)
 
-LOCAL_STATIC_JAVA_LIBRARIES := \
-    android-support-v8-renderscript \
-    android-common
-
 LOCAL_STATIC_ANDROID_LIBRARIES := \
-    android-support-v4 \
-    android-support-v7-appcompat \
-    android-support-v7-cardview \
-    android-support-v7-palette \
-    android-support-v7-recyclerview
+    androidx.appcompat_appcompat \
+    androidx.cardview_cardview \
+    androidx.core_core \
+    androidx.legacy_legacy-support-v4 \
+    androidx.palette_palette \
+    androidx.recyclerview_recyclerview
 
 LOCAL_USE_AAPT2 := true
 

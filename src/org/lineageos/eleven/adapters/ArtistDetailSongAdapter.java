@@ -18,10 +18,11 @@ package org.lineageos.eleven.adapters;
 import android.app.Activity;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;

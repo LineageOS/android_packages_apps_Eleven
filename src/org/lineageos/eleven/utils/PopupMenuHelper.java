@@ -18,11 +18,12 @@ package org.lineageos.eleven.utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v4.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
+
+import androidx.fragment.app.FragmentManager;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;

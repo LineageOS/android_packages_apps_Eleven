@@ -42,10 +42,11 @@ import android.provider.MediaStore.Audio.Playlists;
 import android.provider.MediaStore.Audio.PlaylistsColumns;
 import android.provider.MediaStore.MediaColumns;
 import android.provider.Settings;
-import android.support.annotation.WorkerThread;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
+
+import androidx.annotation.WorkerThread;
 
 import org.lineageos.eleven.Config.IdType;
 import org.lineageos.eleven.Config.SmartPlaylistType;
