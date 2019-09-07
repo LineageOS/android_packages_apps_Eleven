@@ -19,15 +19,16 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.LoaderManager.LoaderCallbacks;
-import android.support.v4.content.Loader;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.PagerAdapter;
@@ -55,7 +56,7 @@ import java.util.List;
 import java.util.TreeSet;
 
 public class PlaylistDetailFragment extends FadingBarFragment implements
-        LoaderCallbacks<List<Song>>, OnItemClickListener, DropListener,
+        LoaderManager.LoaderCallbacks<List<Song>>, OnItemClickListener, DropListener,
         RemoveListener, DragScrollProfile, IChildFragment {
 
     /**

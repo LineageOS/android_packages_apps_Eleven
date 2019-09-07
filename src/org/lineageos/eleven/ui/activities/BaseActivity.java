@@ -13,8 +13,6 @@
 
 package org.lineageos.eleven.ui.activities;
 
-import static org.lineageos.eleven.utils.MusicUtils.mService;
-
 import android.app.ActionBar;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -27,7 +25,6 @@ import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v4.app.FragmentActivity;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,6 +33,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import androidx.fragment.app.FragmentActivity;
 
 import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.MusicPlaybackService;
@@ -52,6 +51,8 @@ import org.lineageos.eleven.widgets.PlayPauseProgressButton;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+
+import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
  * A base {@link FragmentActivity} used to update the bottom bar and

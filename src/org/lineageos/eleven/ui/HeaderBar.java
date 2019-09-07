@@ -16,7 +16,6 @@
 package org.lineageos.eleven.ui;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
 import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +25,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.loaders.NowPlayingCursor;

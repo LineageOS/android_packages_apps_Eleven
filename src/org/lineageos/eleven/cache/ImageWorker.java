@@ -21,7 +21,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
-import android.support.v8.renderscript.RenderScript;
+import android.renderscript.RenderScript;
 import android.view.View;
 import android.widget.ImageView;
 
