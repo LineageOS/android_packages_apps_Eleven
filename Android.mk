@@ -29,11 +29,7 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_JNI_SHARED_LIBRARIES := librsjni
 
 LOCAL_PROGUARD_FLAGS := -include $(LOCAL_PATH)/proguard.cfg
-ifeq ($(TARGET_BUILD_VARIANT),user)
-    LOCAL_PROGUARD_ENABLED := obfuscation
-else
-    LOCAL_PROGUARD_ENABLED := disabled
-endif
+LOCAL_PROGUARD_ENABLED := disabled
 
 include $(BUILD_PACKAGE)
 
