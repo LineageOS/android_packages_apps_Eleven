@@ -36,7 +36,6 @@ import android.widget.Toolbar;
 
 import androidx.fragment.app.FragmentActivity;
 
-import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.MusicStateListener;
 import org.lineageos.eleven.R;
@@ -51,8 +50,6 @@ import org.lineageos.eleven.widgets.PlayPauseProgressButton;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-
-import static org.lineageos.eleven.utils.MusicUtils.mService;
 
 /**
  * A base {@link FragmentActivity} used to update the bottom bar and
@@ -153,7 +150,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
      */
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
-        mService = IElevenService.Stub.asInterface(service);
         // Set the playback drawables
         updatePlaybackControls();
         // Current info
@@ -167,7 +163,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
      */
     @Override
     public void onServiceDisconnected(final ComponentName name) {
-        mService = null;
     }
 
     /**

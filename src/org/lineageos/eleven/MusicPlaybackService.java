@@ -445,7 +445,7 @@ public class MusicPlaybackService extends Service {
     /**
      * Used to know when the service is active
      */
-    private boolean mServiceInUse = false;
+    private boolean mIsBound = false;
 
     /**
      * Used to know if something should be playing or not
@@ -568,8 +568,7 @@ public class MusicPlaybackService extends Service {
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
-        cancelShutdown();
-        mServiceInUse = true;
+        mIsBound = true;
         return mBinder;
     }
 
@@ -579,7 +578,7 @@ public class MusicPlaybackService extends Service {
     @Override
     public boolean onUnbind(final Intent intent) {
         if (D) Log.d(TAG, "Service unbound");
-        mServiceInUse = false;
+        mIsBound = false;
         saveQueue(true);
 
         if (mReadGranted) {
@@ -594,11 +593,9 @@ public class MusicPlaybackService extends Service {
                 // Also delay stopping the service if we're transitioning between
                 // tracks.
             } else if (mPlaylist.size() > 0 || mPlayerHandler.hasMessages(TRACK_ENDED)) {
-                scheduleDelayedShutdown();
                 return true;
             }
         }
-        stopSelf(mServiceStartId);
 
         return true;
     }
@@ -608,8 +605,7 @@ public class MusicPlaybackService extends Service {
      */
     @Override
     public void onRebind(final Intent intent) {
-        cancelShutdown();
-        mServiceInUse = true;
+        mIsBound = true;
     }
 
     /**
@@ -706,9 +702,6 @@ public class MusicPlaybackService extends Service {
 
         mAlarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent, 0);
-
-        // Listen for the idle state
-        scheduleDelayedShutdown();
 
         // Bring the queue back
         reloadQueue();
@@ -839,7 +832,6 @@ public class MusicPlaybackService extends Service {
             if (SHUTDOWN.equals(action)) {
                 mShutdownScheduled = false;
                 releaseServiceUiAndStop();
-                return START_NOT_STICKY;
             }
 
             handleCommandIntent(intent);
@@ -853,7 +845,8 @@ public class MusicPlaybackService extends Service {
             MediaButtonIntentReceiver.completeWakefulIntent(intent);
         }
 
-        return START_NOT_STICKY;
+        return mIsSupposedToBePlaying || mPausedByTransientLossOfFocus
+                ? START_STICKY : START_NOT_STICKY;
     }
 
     private void releaseServiceUiAndStop() {
@@ -868,10 +861,10 @@ public class MusicPlaybackService extends Service {
         mAudioManager.abandonAudioFocus(mAudioFocusListener);
         mSession.setActive(false);
 
-        if (!mServiceInUse) {
+        if (!mIsBound) {
             saveQueue(true);
-            stopSelf(mServiceStartId);
         }
+        stopSelf(mServiceStartId);
     }
 
     private void handleCommandIntent(Intent intent) {
@@ -2409,7 +2402,12 @@ public class MusicPlaybackService extends Service {
             // Update mLastPlayed time first and notify afterwards, as
             // the notification listener method needs the up-to-date value
             // for the recentlyPlayed() method to work
-            if (!mIsSupposedToBePlaying) {
+            if (mIsSupposedToBePlaying) {
+                cancelShutdown();
+                // Make sure we're started explicitly, so that we aren't killed when
+                // the player activity unbinds
+                startForegroundService(new Intent(this, MusicPlaybackService.class));
+            } else {
                 scheduleDelayedShutdown();
                 mLastPlayedTime = System.currentTimeMillis();
             }
@@ -2524,7 +2522,6 @@ public class MusicPlaybackService extends Service {
 
             setIsSupposedToBePlaying(true, true);
 
-            cancelShutdown();
             updateNotification();
         } else if (mPlaylist.size() <= 0) {
             setShuffleMode(SHUFFLE_AUTO);
