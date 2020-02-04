@@ -152,9 +152,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Control the media volume
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(getActivity(), this);
-
         // Initialize the image fetcher/cache
         mImageFetcher = ElevenUtils.getImageFetcher(getActivity());
 
@@ -209,6 +206,9 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     public void onStart() {
         super.onStart();
 
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(getActivity(), this);
+
         final IntentFilter filter = new IntentFilter();
         // Play and pause changes
         filter.addAction(MusicPlaybackService.PLAYSTATE_CHANGED);
@@ -245,21 +245,16 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         mImageFetcher.flush();
 
+        // Unbind from the service
+        MusicUtils.unbindFromService(mToken);
+        mToken = null;
+
         // Unregister the receiver
         try {
             getActivity().unregisterReceiver(mPlaybackStatus);
         } catch (final Throwable e) {
             //$FALL-THROUGH$
         }
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        // Unbind from the service
-        MusicUtils.unbindFromService(mToken);
-        mToken = null;
     }
 
     /**
