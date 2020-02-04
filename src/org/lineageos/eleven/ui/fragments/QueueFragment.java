@@ -13,8 +13,6 @@
 
 package org.lineageos.eleven.ui.fragments;
 
-import static org.lineageos.eleven.utils.MusicUtils.mService;
-
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -329,10 +327,8 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
             //$FALL-THROUGH$
         }
 
-        if (mService != null) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
+        MusicUtils.unbindFromService(mToken);
+        mToken = null;
     }
 
     /**
