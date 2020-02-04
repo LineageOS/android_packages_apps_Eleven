@@ -260,9 +260,6 @@ public class SearchActivity extends FragmentActivity implements
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, null);
-
         // Set the layout
         setContentView(R.layout.activity_search);
 
@@ -347,6 +344,23 @@ public class SearchActivity extends FragmentActivity implements
             // Start the loader for the search history
             getSupportLoaderManager().initLoader(HISTORY_LOADER, null, mSearchHistoryCallback);
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(this, null);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        // Unbind from the service
+        MusicUtils.unbindFromService(mToken);
+        mToken = null;
     }
 
     /**
@@ -453,17 +467,6 @@ public class SearchActivity extends FragmentActivity implements
     private void quit() {
         mQuitting = true;
         finish();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Unbind from the service
-        MusicUtils.unbindFromService(mToken);
-        mToken = null;
     }
 
     /**
