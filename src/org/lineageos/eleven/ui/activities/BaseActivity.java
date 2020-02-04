@@ -113,9 +113,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
-
         // Initialize the broadcast receiver
         mPlaybackStatus = new PlaybackStatus(this);
 
@@ -217,6 +214,10 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     @Override
     protected void onStart() {
         super.onStart();
+
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(this, this);
+
         final IntentFilter filter = new IntentFilter();
         // Play and pause changes
         filter.addAction(MusicPlaybackService.PLAYSTATE_CHANGED);
@@ -240,6 +241,17 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     protected void onStop() {
         super.onStop();
 
+        // Unbind from the service
+        MusicUtils.unbindFromService(mToken);
+        mToken = null;
+
+        // Unregister the receiver
+        try {
+            unregisterReceiver(mPlaybackStatus);
+        } catch (final Throwable e) {
+            //$FALL-THROUGH$
+        }
+
         mPlayPauseProgressButton.pause();
     }
 
@@ -249,18 +261,6 @@ public abstract class BaseActivity extends FragmentActivity implements ServiceCo
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Unbind from the service
-        if (mToken != null) {
-            MusicUtils.unbindFromService(mToken);
-            mToken = null;
-        }
-
-        // Unregister the receiver
-        try {
-            unregisterReceiver(mPlaybackStatus);
-        } catch (final Throwable e) {
-            //$FALL-THROUGH$
-        }
 
         // Remove any music status listeners
         mMusicStateListener.clear();
