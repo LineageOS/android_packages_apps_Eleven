@@ -1159,6 +1159,7 @@ public class MusicPlaybackService extends Service {
             closeCursor();
             notifyChange(META_CHANGED);
         }
+        notifyChange(QUEUE_CHANGED);
     }
 
     /**
@@ -2449,7 +2450,6 @@ public class MusicPlaybackService extends Service {
             }
             if (newlist) {
                 addToPlayList(list, -1, sourceId, sourceType);
-                notifyChange(QUEUE_CHANGED);
             }
             if (position >= 0) {
                 mPlayPos = position;
@@ -2782,10 +2782,8 @@ public class MusicPlaybackService extends Service {
             if (action == NEXT && mPlayPos + 1 < mPlaylist.size()) {
                 addToPlayList(list, mPlayPos + 1, sourceId, sourceType);
                 mNextPlayPos = mPlayPos + 1;
-                notifyChange(QUEUE_CHANGED);
             } else {
                 addToPlayList(list, Integer.MAX_VALUE, sourceId, sourceType);
-                notifyChange(QUEUE_CHANGED);
             }
 
             if (mPlayPos < 0) {
