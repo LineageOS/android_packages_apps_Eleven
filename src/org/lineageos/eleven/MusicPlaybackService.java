@@ -686,6 +686,7 @@ public class MusicPlaybackService extends Service {
         filter.addAction(PREVIOUS_FORCE_ACTION);
         filter.addAction(REPEAT_ACTION);
         filter.addAction(SHUFFLE_ACTION);
+        filter.addAction(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
         // Attach the broadcast listener
         registerReceiver(mIntentReceiver, filter);
 
@@ -881,7 +882,8 @@ public class MusicPlaybackService extends Service {
             prev(PREVIOUS_FORCE_ACTION.equals(action));
         } else if (CMDTOGGLEPAUSE.equals(command) || TOGGLEPAUSE_ACTION.equals(action)) {
             togglePlayPause();
-        } else if (CMDPAUSE.equals(command) || PAUSE_ACTION.equals(action)) {
+        } else if (CMDPAUSE.equals(command) || PAUSE_ACTION.equals(action)
+                || AudioManager.ACTION_AUDIO_BECOMING_NOISY.equals(action)) {
             pause(false);
         } else if (CMDPLAY.equals(command)) {
             play();
