@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b2d95ef_efce9f1b",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-02-05T10:51:24Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like this needs to be a member variable?",
+      "revId": "46ac65e5bf9e835154e617d2c4b10d712ac71c52",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5778037f_6e6ac573",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-02-05T10:51:24Z",
+      "side": 1,
+      "message": "Why not set this in XML?",
+      "revId": "46ac65e5bf9e835154e617d2c4b10d712ac71c52",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3c1683b_fdd430f7",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-02-05T10:51:24Z",
+      "side": 1,
+      "message": "- .setMessage() on new line\n- .create() is redundant\n\n(I know it used to be like this)",
+      "revId": "46ac65e5bf9e835154e617d2c4b10d712ac71c52",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d628d94d_aed1e1e1",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-02-05T10:51:24Z",
+      "side": 1,
+      "message": "This listener likely needs to be removed in onDestroy()",
+      "revId": "46ac65e5bf9e835154e617d2c4b10d712ac71c52",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
