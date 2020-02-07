@@ -52,7 +52,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
-import android.os.RemoteException;
 import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
@@ -214,11 +213,6 @@ public class MusicPlaybackService extends Service
      */
     public static final String NEW_LYRICS = BuildConstants.PACKAGE_NAME + ".lyrics";
 
-    /**
-     * Called to update the remote control client
-     */
-    public static final String UPDATE_LOCKSCREEN = BuildConstants.PACKAGE_NAME + ".updatelockscreen";
-
     public static final String CMDNAME = "command";
 
     public static final String CMDTOGGLEPAUSE = "togglepause";
@@ -343,7 +337,7 @@ public class MusicPlaybackService extends Service
         /**
          * Name of the track that was unable to play
          */
-        public static final String TRACK_NAME = "trackname";
+        String TRACK_NAME = "trackname";
     }
 
     /**
@@ -508,7 +502,7 @@ public class MusicPlaybackService extends Service
 
     // to improve perf, instead of hitting the disk cache or file cache, store the bitmaps in memory
     private String mCachedKey;
-    private BitmapWithColors[] mCachedBitmapWithColors = new BitmapWithColors[2];
+    private final BitmapWithColors[] mCachedBitmapWithColors = new BitmapWithColors[2];
 
     private QueueUpdateTask mQueueUpdateTask;
 
@@ -545,20 +539,6 @@ public class MusicPlaybackService extends Service
     private boolean mReadGranted = false;
 
     private PowerManager.WakeLock mHeadsetHookWakeLock;
-
-    private ShakeDetector.Listener mShakeDetectorListener=new ShakeDetector.Listener() {
-
-        @Override
-        public void hearShake() {
-            /*
-             * on shake detect, play next song
-             */
-            if (D) {
-                Log.d(TAG,"Shake detected!!!");
-            }
-            gotoNext(true);
-        }
-    };
 
     /**
      * {@inheritDoc}
@@ -909,7 +889,7 @@ public class MusicPlaybackService extends Service
         if (mHeadsetHookWakeLock == null) {
             PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
             mHeadsetHookWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                    "Eleven headset button");
+                    "eleven:headsethook");
             mHeadsetHookWakeLock.setReferenceCounted(false);
         }
         // Make sure we don't indefinitely hold the wake lock under any circumstances
@@ -969,17 +949,14 @@ public class MusicPlaybackService extends Service
         if (cursor != null && cursor.moveToFirst()) {
             mCardId = cursor.getInt(0);
             cursor.close();
-            cursor = null;
         }
         return mCardId;
     }
 
     /**
      * Called when we receive a ACTION_MEDIA_EJECT notification.
-     *
-     * @param storagePath The path to mount point for the removed media
      */
-    public void closeExternalStorageFiles(final String storagePath) {
+    public void closeExternalStorageFiles() {
         stop(true);
         notifyChange(QUEUE_CHANGED);
         notifyChange(META_CHANGED);
@@ -1001,10 +978,10 @@ public class MusicPlaybackService extends Service
                 @Override
                 public void onReceive(final Context context, final Intent intent) {
                     final String action = intent.getAction();
-                    if (action.equals(Intent.ACTION_MEDIA_EJECT)) {
+                    if (Intent.ACTION_MEDIA_EJECT.equals(action)) {
                         saveQueue(true);
                         mQueueIsSaveable = false;
-                        closeExternalStorageFiles(intent.getData().getPath());
+                        closeExternalStorageFiles();
                     } else if (action.equals(Intent.ACTION_MEDIA_MOUNTED)) {
                         mMediaMountedCount++;
                         mCardId = getCardId();
@@ -1304,7 +1281,6 @@ public class MusicPlaybackService extends Service
     /**
      * @param force True to force the player onto the track next, false
      *            otherwise.
-     * @param saveToHistory True to save the mPlayPos to the history
      * @return The next position to play.
      */
     private int getNextPosition(final boolean force) {
@@ -1445,7 +1421,6 @@ public class MusicPlaybackService extends Service
         } finally {
             if (cursor != null) {
                 cursor.close();
-                cursor = null;
             }
         }
         return false;
@@ -1462,8 +1437,7 @@ public class MusicPlaybackService extends Service
         }
         final int toAdd = 7 - (mPlaylist.size() - (mPlayPos < 0 ? -1 : mPlayPos));
         for (int i = 0; i < toAdd; i++) {
-            int lookback = mHistory.size();
-            int idx = -1;
+            int idx, lookback = mHistory.size();
             while (true) {
                 idx = mShuffler.nextInt(mAutoShuffleList.length);
                 if (!wasRecentlyUsed(idx, lookback)) {
@@ -1660,7 +1634,7 @@ public class MusicPlaybackService extends Service
             String name = getString(R.string.channel_music);
 
             channel = new NotificationChannel(CHANNEL_NAME, name,
-                    mNotificationManager.IMPORTANCE_DEFAULT);
+                    NotificationManager.IMPORTANCE_DEFAULT);
             channel.setShowBadge(false);
             channel.enableVibration(false);
             channel.setSound(null, null);
@@ -1701,7 +1675,7 @@ public class MusicPlaybackService extends Service
                 .build();
     }
 
-    private final PendingIntent retrievePlaybackAction(final String action) {
+    private PendingIntent retrievePlaybackAction(final String action) {
         final ComponentName serviceName = new ComponentName(this, MusicPlaybackService.class);
         Intent intent = new Intent(action);
         intent.setComponent(serviceName);
@@ -1848,7 +1822,7 @@ public class MusicPlaybackService extends Service
                         }
                     } else {
                         // create phantom cursor with download info, if a MP uri wasn't found
-                        updateCursorForDownloadedFile(this, uri);
+                        updateCursorForDownloadedFile(uri);
                         shouldAddToPlaylist = false;    // song info isn't available in MediaStore
                     }
 
@@ -1904,10 +1878,9 @@ public class MusicPlaybackService extends Service
 
     /**
      * Creates a pseudo cursor for downloaded audio files with minimal info
-     * @param context needed to query the download uri
      * @param uri the uri of the downloaded file
      */
-    private void updateCursorForDownloadedFile(Context context, Uri uri) {
+    private void updateCursorForDownloadedFile(Uri uri) {
         synchronized (this) {
             closeCursor();  // clear mCursor
             MatrixCursor cursor = new MatrixCursor(PROJECTION_MATRIX);
@@ -1915,13 +1888,13 @@ public class MusicPlaybackService extends Service
             String title = getValueForDownloadedFile(this, uri, "title" );
             // populating the cursor with bare minimum info
             cursor.addRow(new Object[] {
-                    null ,
-                    null ,
-                    null ,
-                    title ,
-                    null ,
-                    null ,
-                    null ,
+                    null,
+                    null,
+                    null,
+                    title,
+                    null,
+                    null,
+                    null,
                     null
             });
             mCursor = cursor;
@@ -2710,8 +2683,8 @@ public class MusicPlaybackService extends Service
     /**
      * Moves an item in the queue from one position to another
      *
-     * @param from The position the item is currently at
-     * @param to The position the item is being moved to
+     * @param index1 The position the item is currently at
+     * @param index2 The position the item is being moved to
      */
     public void moveQueueItem(int index1, int index2) {
         synchronized (this) {
@@ -2727,15 +2700,14 @@ public class MusicPlaybackService extends Service
             }
 
             final MusicPlaybackTrack track = mPlaylist.remove(index1);
+            mPlaylist.add(index2, track);
             if (index1 < index2) {
-                mPlaylist.add(index2, track);
                 if (mPlayPos == index1) {
                     mPlayPos = index2;
                 } else if (mPlayPos >= index1 && mPlayPos <= index2) {
                     mPlayPos--;
                 }
-            } else if (index2 < index1) {
-                mPlaylist.add(index2, track);
+            } else {
                 if (mPlayPos == index1) {
                     mPlayPos = index2;
                 } else if (mPlayPos >= index2 && mPlayPos <= index1) {
@@ -2920,7 +2892,10 @@ public class MusicPlaybackService extends Service
         }
         if (enabled) {
             if (mShakeDetector == null) {
-                mShakeDetector = new ShakeDetector(mShakeDetectorListener);
+                mShakeDetector = new ShakeDetector(() -> {
+                    if (D) Log.d(TAG,"Shake detected");
+                    gotoNext(true);
+                });
             }
             // if song is already playing, start listening immediately
             if (isPlaying()) {
@@ -2993,7 +2968,7 @@ public class MusicPlaybackService extends Service
     private class MediaStoreObserver extends ContentObserver implements Runnable {
         // milliseconds to delay before calling refresh to aggregate events
         private static final long REFRESH_DELAY = 500;
-        private Handler mHandler;
+        private final Handler mHandler;
 
         public MediaStoreObserver(Handler handler) {
             super(handler);
@@ -3015,7 +2990,7 @@ public class MusicPlaybackService extends Service
             Log.e("ELEVEN", "calling refresh!");
             refresh();
         }
-    };
+    }
 
     private static final class MusicPlayerHandler extends Handler {
         private final WeakReference<MusicPlaybackService> mService;
@@ -3176,11 +3151,11 @@ public class MusicPlaybackService extends Service
                 }
             }
         }
-    };
+    }
 
     private static final class TrackErrorInfo {
-        public long mId;
-        public String mTrackName;
+        public final long mId;
+        public final String mTrackName;
 
         public TrackErrorInfo(long id, String trackName) {
             mId = id;
@@ -3253,7 +3228,6 @@ public class MusicPlaybackService extends Service
                 } finally {
                     if (cursor != null) {
                         cursor.close();
-                        cursor = null;
                     }
                 }
             } else {
@@ -3289,10 +3263,7 @@ public class MusicPlaybackService extends Service
                 }
                 player.setAudioAttributes(mAudioAttributes);
                 player.prepare();
-            } catch (final IOException todo) {
-                // TODO: notify the user why the file couldn't be opened
-                return false;
-            } catch (final IllegalArgumentException todo) {
+            } catch (final IOException | IllegalArgumentException todo) {
                 // TODO: notify the user why the file couldn't be opened
                 return false;
             }
@@ -3428,15 +3399,6 @@ public class MusicPlaybackService extends Service
         }
 
         /**
-         * Sets the audio session ID.
-         *
-         * @param sessionId The audio session ID
-         */
-        public void setAudioSessionId(final int sessionId) {
-            mCurrentMediaPlayer.setAudioSessionId(sessionId);
-        }
-
-        /**
          * Returns the audio session ID.
          *
          * @return The current audio session ID.
@@ -3451,23 +3413,20 @@ public class MusicPlaybackService extends Service
         @Override
         public boolean onError(final MediaPlayer mp, final int what, final int extra) {
             Log.w(TAG, "Music Server Error what: " + what + " extra: " + extra);
-            switch (what) {
-                case MediaPlayer.MEDIA_ERROR_SERVER_DIED:
-                    final MusicPlaybackService service = mService.get();
-                    if (service == null) {
-                        return false;
-                    }
-                    final TrackErrorInfo errorInfo = new TrackErrorInfo(service.getAudioId(),
-                            service.getTrackName());
+            if (what == MediaPlayer.MEDIA_ERROR_SERVER_DIED) {
+                final MusicPlaybackService service = mService.get();
+                if (service == null) {
+                    return false;
+                }
+                final TrackErrorInfo errorInfo = new TrackErrorInfo(service.getAudioId(),
+                        service.getTrackName());
 
-                    mIsInitialized = false;
-                    mCurrentMediaPlayer.release();
-                    mCurrentMediaPlayer = new MediaPlayer();
-                    Message msg = mHandler.obtainMessage(SERVER_DIED, errorInfo);
-                    mHandler.sendMessageDelayed(msg, 2000);
-                    return true;
-                default:
-                    break;
+                mIsInitialized = false;
+                mCurrentMediaPlayer.release();
+                mCurrentMediaPlayer = new MediaPlayer();
+                Message msg = mHandler.obtainMessage(SERVER_DIED, errorInfo);
+                mHandler.sendMessageDelayed(msg, 2000);
+                return true;
             }
             return false;
         }
@@ -3502,7 +3461,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void openFile(final String path) throws RemoteException {
+        public void openFile(final String path) {
             mService.get().openFile(path);
         }
 
@@ -3510,8 +3469,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void open(final long[] list, final int position, long sourceId, int sourceType)
-                throws RemoteException {
+        public void open(final long[] list, final int position, long sourceId, int sourceType) {
             mService.get().open(list, position, sourceId, IdType.getTypeById(sourceType));
         }
 
@@ -3519,7 +3477,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void stop() throws RemoteException {
+        public void stop() {
             mService.get().stop();
         }
 
@@ -3527,7 +3485,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void pause() throws RemoteException {
+        public void pause() {
             mService.get().pause();
         }
 
@@ -3535,7 +3493,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void play() throws RemoteException {
+        public void play() {
             mService.get().play();
         }
 
@@ -3543,7 +3501,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void prev(boolean forcePrevious) throws RemoteException {
+        public void prev(boolean forcePrevious) {
             mService.get().prev(forcePrevious);
         }
 
@@ -3551,7 +3509,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void next() throws RemoteException {
+        public void next() {
             mService.get().gotoNext(true);
         }
 
@@ -3559,8 +3517,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void enqueue(final long[] list, final int action, long sourceId, int sourceType)
-                throws RemoteException {
+        public void enqueue(final long[] list, final int action, long sourceId, int sourceType) {
             mService.get().enqueue(list, action, sourceId, IdType.getTypeById(sourceType));
         }
 
@@ -3568,7 +3525,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void setQueuePosition(final int index) throws RemoteException {
+        public void setQueuePosition(final int index) {
             mService.get().setQueuePosition(index);
         }
 
@@ -3576,7 +3533,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void setShuffleMode(final int shufflemode) throws RemoteException {
+        public void setShuffleMode(final int shufflemode) {
             mService.get().setShuffleMode(shufflemode);
         }
 
@@ -3584,7 +3541,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void setRepeatMode(final int repeatmode) throws RemoteException {
+        public void setRepeatMode(final int repeatmode) {
             mService.get().setRepeatMode(repeatmode);
         }
 
@@ -3592,7 +3549,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void moveQueueItem(final int from, final int to) throws RemoteException {
+        public void moveQueueItem(final int from, final int to) {
             mService.get().moveQueueItem(from, to);
         }
 
@@ -3600,7 +3557,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void refresh() throws RemoteException {
+        public void refresh() {
             mService.get().refresh();
         }
 
@@ -3608,7 +3565,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void playlistChanged() throws RemoteException {
+        public void playlistChanged() {
             mService.get().playlistChanged();
         }
 
@@ -3616,7 +3573,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public boolean isPlaying() throws RemoteException {
+        public boolean isPlaying() {
             return mService.get().isPlaying();
         }
 
@@ -3624,7 +3581,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long[] getQueue() throws RemoteException {
+        public long[] getQueue() {
             return mService.get().getQueue();
         }
 
@@ -3632,7 +3589,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long getQueueItemAtPosition(int position) throws RemoteException {
+        public long getQueueItemAtPosition(int position) {
             return mService.get().getQueueItemAtPosition(position);
         }
 
@@ -3640,7 +3597,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getQueueSize() throws RemoteException {
+        public int getQueueSize() {
             return mService.get().getQueueSize();
         }
 
@@ -3648,7 +3605,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getQueueHistoryPosition(int position) throws RemoteException {
+        public int getQueueHistoryPosition(int position) {
             return mService.get().getQueueHistoryPosition(position);
         }
 
@@ -3656,7 +3613,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getQueueHistorySize() throws RemoteException {
+        public int getQueueHistorySize() {
             return mService.get().getQueueHistorySize();
         }
 
@@ -3664,7 +3621,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int[] getQueueHistoryList() throws RemoteException {
+        public int[] getQueueHistoryList() {
             return mService.get().getQueueHistoryList();
         }
 
@@ -3672,7 +3629,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long duration() throws RemoteException {
+        public long duration() {
             return mService.get().duration();
         }
 
@@ -3680,7 +3637,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long position() throws RemoteException {
+        public long position() {
             return mService.get().position();
         }
 
@@ -3688,7 +3645,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long seek(final long position) throws RemoteException {
+        public long seek(final long position) {
             return mService.get().seek(position);
         }
 
@@ -3696,7 +3653,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public void seekRelative(final long deltaInMs) throws RemoteException {
+        public void seekRelative(final long deltaInMs) {
             mService.get().seekRelative(deltaInMs);
         }
 
@@ -3704,7 +3661,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long getAudioId() throws RemoteException {
+        public long getAudioId() {
             return mService.get().getAudioId();
         }
 
@@ -3712,7 +3669,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public MusicPlaybackTrack getCurrentTrack() throws RemoteException {
+        public MusicPlaybackTrack getCurrentTrack() {
             return mService.get().getCurrentTrack();
         }
 
@@ -3720,7 +3677,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public MusicPlaybackTrack getTrack(int index) throws RemoteException {
+        public MusicPlaybackTrack getTrack(int index) {
             return mService.get().getTrack(index);
         }
 
@@ -3728,7 +3685,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long getNextAudioId() throws RemoteException {
+        public long getNextAudioId() {
             return mService.get().getNextAudioId();
         }
 
@@ -3736,7 +3693,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long getPreviousAudioId() throws RemoteException {
+        public long getPreviousAudioId() {
             return mService.get().getPreviousAudioId();
         }
 
@@ -3744,7 +3701,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long getArtistId() throws RemoteException {
+        public long getArtistId() {
             return mService.get().getArtistId();
         }
 
@@ -3752,7 +3709,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public long getAlbumId() throws RemoteException {
+        public long getAlbumId() {
             return mService.get().getAlbumId();
         }
 
@@ -3760,7 +3717,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public String getArtistName() throws RemoteException {
+        public String getArtistName() {
             return mService.get().getArtistName();
         }
 
@@ -3768,7 +3725,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public String getTrackName() throws RemoteException {
+        public String getTrackName() {
             return mService.get().getTrackName();
         }
 
@@ -3776,7 +3733,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public String getAlbumName() throws RemoteException {
+        public String getAlbumName() {
             return mService.get().getAlbumName();
         }
 
@@ -3784,7 +3741,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public String getPath() throws RemoteException {
+        public String getPath() {
             return mService.get().getPath();
         }
 
@@ -3792,7 +3749,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getQueuePosition() throws RemoteException {
+        public int getQueuePosition() {
             return mService.get().getQueuePosition();
         }
 
@@ -3800,7 +3757,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getShuffleMode() throws RemoteException {
+        public int getShuffleMode() {
             return mService.get().getShuffleMode();
         }
 
@@ -3808,7 +3765,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getRepeatMode() throws RemoteException {
+        public int getRepeatMode() {
             return mService.get().getRepeatMode();
         }
 
@@ -3816,7 +3773,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int removeTracks(final int first, final int last) throws RemoteException {
+        public int removeTracks(final int first, final int last) {
             return mService.get().removeTracks(first, last);
         }
 
@@ -3824,7 +3781,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int removeTrack(final long id) throws RemoteException {
+        public int removeTrack(final long id) {
             return mService.get().removeTrack(id);
         }
 
@@ -3832,8 +3789,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public boolean removeTrackAtPosition(final long id, final int position)
-                throws RemoteException {
+        public boolean removeTrackAtPosition(final long id, final int position) {
             return mService.get().removeTrackAtPosition(id, position);
         }
 
@@ -3841,7 +3797,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getMediaMountedCount() throws RemoteException {
+        public int getMediaMountedCount() {
             return mService.get().getMediaMountedCount();
         }
 
@@ -3849,7 +3805,7 @@ public class MusicPlaybackService extends Service
          * {@inheritDoc}
          */
         @Override
-        public int getAudioSessionId() throws RemoteException {
+        public int getAudioSessionId() {
             return mService.get().getAudioSessionId();
         }
 
@@ -3872,7 +3828,7 @@ public class MusicPlaybackService extends Service
     }
 
     private class QueueUpdateTask extends AsyncTask<Void, Void, List<MediaSession.QueueItem>> {
-        private long[] mQueue;
+        private final long[] mQueue;
 
         public QueueUpdateTask(long[] queue) {
             mQueue = queue != null ? Arrays.copyOf(queue, queue.length) : null;
