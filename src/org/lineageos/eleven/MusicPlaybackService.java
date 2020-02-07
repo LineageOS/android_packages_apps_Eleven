@@ -34,9 +34,11 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.graphics.Bitmap;
+import android.graphics.drawable.Icon;
 import android.hardware.SensorManager;
+import android.media.AudioAttributes;
+import android.media.AudioFocusRequest;
 import android.media.AudioManager;
-import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaDescription;
 import android.media.MediaMetadata;
 import android.media.MediaPlayer;
@@ -62,7 +64,6 @@ import android.util.LongSparseArray;
 import android.view.KeyEvent;
 
 import androidx.annotation.NonNull;
-import androidx.core.os.BuildCompat;
 
 import org.lineageos.eleven.Config.IdType;
 import org.lineageos.eleven.appwidgets.AppWidgetLarge;
@@ -96,7 +97,8 @@ import java.util.TreeSet;
  * and when the user moves Eleven into the background.
  */
 @SuppressLint("NewApi")
-public class MusicPlaybackService extends Service {
+public class MusicPlaybackService extends Service
+        implements AudioManager.OnAudioFocusChangeListener {
     private static final String TAG = "MusicPlaybackService";
     private static final boolean D = false;
 
@@ -293,11 +295,6 @@ public class MusicPlaybackService extends Service {
     private static final int SERVER_DIED = 3;
 
     /**
-     * Indicates some sort of focus change, maybe a phone call
-     */
-    private static final int FOCUSCHANGE = 4;
-
-    /**
      * Indicates to fade the volume down
      */
     private static final int FADEDOWN = 5;
@@ -436,6 +433,9 @@ public class MusicPlaybackService extends Service {
      * Monitors the audio state
      */
     private AudioManager mAudioManager;
+
+    private AudioAttributes mAudioAttributes;
+    private AudioFocusRequest mAudioFocusRequest;
 
     /**
      * Settings used to save and retrieve the queue and history
@@ -672,8 +672,7 @@ public class MusicPlaybackService extends Service {
         registerExternalStorageListener();
 
         // Initialize the media player
-        mPlayer = new MultiPlayer(this);
-        mPlayer.setHandler(mPlayerHandler);
+        mPlayer = new MultiPlayer(this, mPlayerHandler, mAudioAttributes);
 
         // Initialize the intent filter and each action
         final IntentFilter filter = new IntentFilter();
@@ -711,7 +710,16 @@ public class MusicPlaybackService extends Service {
     }
 
     private void setUpMediaSession() {
+        mAudioAttributes = new AudioAttributes.Builder()
+                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .build();
+        mAudioFocusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
+                .setAudioAttributes(mAudioAttributes)
+                .setOnAudioFocusChangeListener(this, mPlayerHandler)
+                .build();
+
         mSession = new MediaSession(this, "Eleven");
+        mSession.setPlaybackToLocal(mAudioAttributes);
         mSession.setCallback(new MediaSession.Callback() {
             @Override
             public void onPause() {
@@ -764,9 +772,6 @@ public class MusicPlaybackService extends Service {
                 new Intent(this, MediaButtonIntentReceiver.class),
                 PendingIntent.FLAG_UPDATE_CURRENT);
         mSession.setMediaButtonReceiver(pi);
-
-        mSession.setFlags(MediaSession.FLAG_HANDLES_TRANSPORT_CONTROLS
-                | MediaSession.FLAG_HANDLES_MEDIA_BUTTONS);
     }
 
     /**
@@ -799,7 +804,7 @@ public class MusicPlaybackService extends Service {
         mPlayer = null;
 
         // Remove the audio focus listener and lock screen controls
-        mAudioManager.abandonAudioFocus(mAudioFocusListener);
+        mAudioManager.abandonAudioFocusRequest(mAudioFocusRequest);
         mSession.release();
 
         // remove the media store observer
@@ -859,7 +864,7 @@ public class MusicPlaybackService extends Service {
 
         if (D) Log.d(TAG, "Nothing is playing anymore, releasing notification");
         cancelNotification();
-        mAudioManager.abandonAudioFocus(mAudioFocusListener);
+        mAudioManager.abandonAudioFocusRequest(mAudioFocusRequest);
         mSession.setActive(false);
 
         if (!mIsBound) {
@@ -1652,46 +1657,50 @@ public class MusicPlaybackService extends Service {
             mNotificationPostTime = System.currentTimeMillis();
         }
 
-        Notification.Builder builder = new Notification.Builder(this, CHANNEL_NAME)
+        NotificationChannel channel = mNotificationManager.getNotificationChannel(CHANNEL_NAME);
+        if (channel == null) {
+            String name = getString(R.string.channel_music);
+
+            channel = new NotificationChannel(CHANNEL_NAME, name,
+                    mNotificationManager.IMPORTANCE_DEFAULT);
+            channel.setShowBadge(false);
+            channel.enableVibration(false);
+            channel.setSound(null, null);
+            mNotificationManager.createNotificationChannel(channel);
+        }
+
+        final Notification.Action prevAction = new Notification.Action.Builder(
+                Icon.createWithResource(this, R.drawable.btn_playback_previous),
+                getString(R.string.accessibility_prev),
+                retrievePlaybackAction(PREVIOUS_ACTION))
+                .build();
+        final Notification.Action togglePauseAction = new Notification.Action.Builder(
+                Icon.createWithResource(this, playButtonResId),
+                getString(playButtonTitleResId),
+                retrievePlaybackAction(TOGGLEPAUSE_ACTION))
+                .build();
+        final Notification.Action nextAction = new Notification.Action.Builder(
+                Icon.createWithResource(this, R.drawable.btn_playback_next),
+                getString(R.string.accessibility_next),
+                retrievePlaybackAction(NEXT_ACTION))
+                .build();
+
+        return new Notification.Builder(this, CHANNEL_NAME)
+                .setChannelId(channel.getId())
                 .setSmallIcon(R.drawable.ic_notification)
                 .setLargeIcon(artwork.getBitmap())
                 .setContentIntent(clickIntent)
                 .setContentTitle(getTrackName())
                 .setContentText(text)
+                .setColor(artwork.getVibrantColor())
                 .setWhen(mNotificationPostTime)
                 .setShowWhen(false)
                 .setStyle(style)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
-                .addAction(R.drawable.btn_playback_previous,
-                        getString(R.string.accessibility_prev),
-                        retrievePlaybackAction(PREVIOUS_ACTION))
-                .addAction(playButtonResId, getString(playButtonTitleResId),
-                        retrievePlaybackAction(TOGGLEPAUSE_ACTION))
-                .addAction(R.drawable.btn_playback_next,
-                        getString(R.string.accessibility_next),
-                        retrievePlaybackAction(NEXT_ACTION));
-
-        builder.setColor(artwork.getVibrantDarkColor());
-
-        if (BuildCompat.isAtLeastO()) {
-            NotificationChannel channel = mNotificationManager
-                    .getNotificationChannel(CHANNEL_NAME);
-
-            if (channel == null) {
-                String name = getString(R.string.channel_music);
-
-                channel = new NotificationChannel(CHANNEL_NAME, name,
-                        mNotificationManager.IMPORTANCE_DEFAULT);
-                channel.setShowBadge(false);
-                channel.enableVibration(false);
-                channel.setSound(null, null);
-                mNotificationManager.createNotificationChannel(channel);
-            }
-
-            builder.setChannelId(channel.getId());
-        }
-
-        return builder.build();
+                .addAction(prevAction)
+                .addAction(togglePauseAction)
+                .addAction(nextAction)
+                .build();
     }
 
     private final PendingIntent retrievePlaybackAction(final String action) {
@@ -2489,8 +2498,7 @@ public class MusicPlaybackService extends Service {
      *                           if you want to re-use the existing next track (used for going back)
      */
     public void play(boolean createNewNextTrack) {
-        int status = mAudioManager.requestAudioFocus(mAudioFocusListener,
-                AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
+        int status = mAudioManager.requestAudioFocus(mAudioFocusRequest);
 
         if (D) Log.d(TAG, "Starting playback: audio focus request status = " + status);
 
@@ -2536,6 +2544,38 @@ public class MusicPlaybackService extends Service {
             mPausedByTransientLossOfFocus = false;
         } else {
             play();
+        }
+    }
+
+    @Override
+    public void onAudioFocusChange(int focusChange) {
+        if (D) Log.d(TAG, "Received audio focus change event " + focusChange);
+        switch (focusChange) {
+            case AudioManager.AUDIOFOCUS_LOSS:
+            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
+                if (isPlaying()) {
+                    mPausedByTransientLossOfFocus =
+                            focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT;
+                }
+                pause();
+                break;
+            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                mPlayerHandler.removeMessages(FADEUP);
+                mPlayerHandler.sendEmptyMessage(FADEDOWN);
+                break;
+            case AudioManager.AUDIOFOCUS_GAIN:
+                if (!isPlaying() && mPausedByTransientLossOfFocus) {
+                    mPausedByTransientLossOfFocus = false;
+                    mPlayerHandler.mCurrentVolume = 0f;
+                    mPlayer.setVolume(0f);
+                    play();
+                } else {
+                    mPlayerHandler.removeMessages(FADEDOWN);
+                    mPlayerHandler.sendEmptyMessage(FADEUP);
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -2981,16 +3021,6 @@ public class MusicPlaybackService extends Service {
         }
     };
 
-    private final OnAudioFocusChangeListener mAudioFocusListener = new OnAudioFocusChangeListener() {
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public void onAudioFocusChange(final int focusChange) {
-            mPlayerHandler.obtainMessage(FOCUSCHANGE, focusChange, 0).sendToTarget();
-        }
-    };
-
     private static final class MusicPlayerHandler extends Handler {
         private final WeakReference<MusicPlaybackService> mService;
         private float mCurrentVolume = 1.0f;
@@ -3073,36 +3103,6 @@ public class MusicPlaybackService extends Service {
                     case LYRICS:
                         service.mLyrics = (String) msg.obj;
                         service.notifyChange(NEW_LYRICS);
-                        break;
-                    case FOCUSCHANGE:
-                        if (D) Log.d(TAG, "Received audio focus change event " + msg.arg1);
-                        switch (msg.arg1) {
-                            case AudioManager.AUDIOFOCUS_LOSS:
-                            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
-                                if (service.isPlaying()) {
-                                    service.mPausedByTransientLossOfFocus =
-                                            msg.arg1 == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT;
-                                }
-                                service.pause();
-                                break;
-                            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-                                removeMessages(FADEUP);
-                                sendEmptyMessage(FADEDOWN);
-                                break;
-                            case AudioManager.AUDIOFOCUS_GAIN:
-                                if (!service.isPlaying()
-                                        && service.mPausedByTransientLossOfFocus) {
-                                    service.mPausedByTransientLossOfFocus = false;
-                                    mCurrentVolume = 0f;
-                                    service.mPlayer.setVolume(mCurrentVolume);
-                                    service.play();
-                                } else {
-                                    removeMessages(FADEDOWN);
-                                    sendEmptyMessage(FADEUP);
-                                }
-                                break;
-                            default:
-                        }
                         break;
                     case HEADSET_HOOK_EVENT: {
                         long eventTime = (Long) msg.obj;
@@ -3201,7 +3201,8 @@ public class MusicPlaybackService extends Service {
 
         private MediaPlayer mNextMediaPlayer;
 
-        private Handler mHandler;
+        private final Handler mHandler;
+        private final AudioAttributes mAudioAttributes;
 
         private boolean mIsInitialized = false;
 
@@ -3212,8 +3213,11 @@ public class MusicPlaybackService extends Service {
         /**
          * Constructor of <code>MultiPlayer</code>
          */
-        public MultiPlayer(final MusicPlaybackService service) {
+        public MultiPlayer(final MusicPlaybackService service, final Handler handler,
+                           final AudioAttributes attrs) {
             mService = new WeakReference<>(service);
+            mHandler = handler;
+            mAudioAttributes = attrs;
             mSrtManager = new SrtManager() {
                 @Override
                 public void onTimedText(String text) {
@@ -3287,8 +3291,7 @@ public class MusicPlaybackService extends Service {
                 } else {
                     player.setDataSource(path);
                 }
-                player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-
+                player.setAudioAttributes(mAudioAttributes);
                 player.prepare();
             } catch (final IOException todo) {
                 // TODO: notify the user why the file couldn't be opened
@@ -3336,15 +3339,6 @@ public class MusicPlaybackService extends Service {
                     mNextMediaPlayer = null;
                 }
             }
-        }
-
-        /**
-         * Sets the handler
-         *
-         * @param handler The handler to use
-         */
-        public void setHandler(final Handler handler) {
-            mHandler = handler;
         }
 
         /**
