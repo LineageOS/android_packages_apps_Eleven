@@ -2528,8 +2528,6 @@ public class MusicPlaybackService extends Service
             mPlayerHandler.sendEmptyMessage(FADEUP);
 
             setIsSupposedToBePlaying(true, true);
-
-            updateNotification();
         } else if (mPlaylist.size() <= 0) {
             setShuffleMode(SHUFFLE_AUTO);
         }
