@@ -1649,7 +1649,7 @@ public class MusicPlaybackService extends Service {
         BitmapWithColors artwork = getAlbumArt(false);
 
         if (mNotificationPostTime == 0) {
-            mNotificationPostTime = System.currentTimeMillis();
+            mNotificationPostTime = SystemClock.elapsedRealtime();
         }
 
         Notification.Builder builder = new Notification.Builder(this, CHANNEL_NAME)
@@ -2412,7 +2412,7 @@ public class MusicPlaybackService extends Service {
                 startForegroundService(new Intent(this, MusicPlaybackService.class));
             } else {
                 scheduleDelayedShutdown();
-                mLastPlayedTime = System.currentTimeMillis();
+                mLastPlayedTime = SystemClock.elapsedRealtime();
             }
 
             if (notify) {
@@ -2425,7 +2425,7 @@ public class MusicPlaybackService extends Service {
      * @return true if is playing or has played within the last IDLE_DELAY time
      */
     private boolean recentlyPlayed() {
-        return isPlaying() || System.currentTimeMillis() - mLastPlayedTime < IDLE_DELAY;
+        return isPlaying() || SystemClock.elapsedRealtime() - mLastPlayedTime < IDLE_DELAY;
     }
 
     /**
