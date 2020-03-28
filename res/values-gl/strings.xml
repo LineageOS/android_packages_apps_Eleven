@@ -30,7 +30,6 @@
     <string name="header_top_songs">Cancións máis escoitadas</string>
     <string name="header_all_songs">Todas as cancións</string>
     <string name="menu_settings">Configuración</string>
-    <string name="menu_search">Buscar</string>
     <string name="menu_shuffle_item">Ao chou</string>
     <string name="menu_shuffle_all">Todo ao chou</string>
     <string name="menu_shuffle_playlist">Lista de reprodución ao chou</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Música: escoitadas recentemente</string>
     <string name="no_effects_for_you">Non foi posíbel abrir o ecualizador.</string>
     <string name="empty_music">Para copiar a música do seu computador ao seu dispositivo, empregue un cable USB.</string>
-    <string name="empty_search">Non se atoparon resultados para esta busca</string>
-    <string name="empty_search_check">Comprobe que o escribiu correctamente ou tente con outra palabra clave.</string>
     <string name="empty_favorite">Aquí aparecerán as cancións que marque como favoritas.</string>
     <string name="empty_recent_main">Sen cancións recentes</string>
     <string name="empty_recent">Aquí aparecerán as cancións que teña escoitado ultimamente.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Amosar todos os álbums</string>
     <string name="footer_search_songs">Amosar todas as cancións</string>
     <string name="footer_search_playlists">Amosar todas as listas de reprodución</string>
-    <string name="searchHint">Buscar música</string>
     <string name="search_title_artists">Todos os artistas \"%s\"</string>
     <string name="search_title_albums">Todos os álbums \"%s\"</string>
     <string name="search_title_songs">Todas as cancións \"%s\"</string>

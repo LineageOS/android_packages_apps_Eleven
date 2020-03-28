@@ -30,7 +30,6 @@
     <string name="header_top_songs">सर्वोच्च गाणी</string>
     <string name="header_all_songs">सर्व गाणी</string>
     <string name="menu_settings">सेटिंग्ज</string>
-    <string name="menu_search">शोधा</string>
     <string name="menu_shuffle_item">शफल</string>
     <string name="menu_shuffle_all">सर्व शफल करा</string>
     <string name="menu_shuffle_playlist">प्लेलिस्ट शफल करा</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">संगीत: अलीकडेच ऐकलेले</string>
     <string name="no_effects_for_you">इक्वेलायझर उघडता आला नाही.</string>
     <string name="empty_music">तुमच्या कॉम्प्युटरवरून तुमच्या डिव्हाइसला कॉपी करण्यासाठी, एक USB केबल वापरा.</string>
-    <string name="empty_search">शोध निकाल आढळले नाहीत</string>
-    <string name="empty_search_check">तुमचे स्पेलिंग अचूक असल्याचे कृपया तपासा किंवा भिन्न कळशब्द वापरून पाहा.</string>
     <string name="empty_favorite">तुम्ही मनपसंत म्हणून खूण केलेली गाणी इथे दाखवली जातील.</string>
     <string name="empty_recent_main">हल्लीची गाणी नाहीत</string>
     <string name="empty_recent">तुम्ही अलीकडेच ऐकलेली गाणी इथे दाखवली जातील.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">सर्व अल्बम्स दर्शवा</string>
     <string name="footer_search_songs">सर्व गाणी दर्शवा</string>
     <string name="footer_search_playlists">सर्व प्लेलिस्ट दर्शवा</string>
-    <string name="searchHint">संगीत शोधा</string>
     <string name="search_title_artists">सर्व \"%s\" कलाकार</string>
     <string name="search_title_albums">सर्व \"%s\" अल्बम्स</string>
     <string name="search_title_songs">सर्व \"%s\" गाणी</string>

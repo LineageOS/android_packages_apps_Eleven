@@ -30,7 +30,6 @@
     <string name="header_top_songs">Топ-трэкі</string>
     <string name="header_all_songs">Усе трэкі</string>
     <string name="menu_settings">Налады</string>
-    <string name="menu_search">Пошук</string>
     <string name="menu_shuffle_item">Перамяшаць</string>
     <string name="menu_shuffle_all">Перамяшаць усё</string>
     <string name="menu_shuffle_playlist">Перамяшаць плэйліст</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Музыка: нядаўна праслуханыя</string>
     <string name="no_effects_for_you">Эквалайзер не можа быць адчынены.</string>
     <string name="empty_music">Каб скапіяваць музыку з ПК, выкарыстайце USB-кабель.</string>
-    <string name="empty_search">Пошук не даў вынікаў</string>
-    <string name="empty_search_check">Праверце правільнасць уводу ці паспрабуйце пошук па іншым ключавым слове.</string>
     <string name="empty_favorite">Тут будуць трэкі, якія вы дадалі ў абранае.</string>
     <string name="empty_recent_main">Няма нядаўніх трэкаў</string>
     <string name="empty_recent">Трэкі, якія вы слухалі нядаўна, будуць знаходзіцца тут.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Паказаць усе альбомы</string>
     <string name="footer_search_songs">Паказаць усе трэкі</string>
     <string name="footer_search_playlists">Паказаць усе плэйлісты</string>
-    <string name="searchHint">Пошук музыкі</string>
     <string name="search_title_artists">Усе выканаўцы \"%s\"</string>
     <string name="search_title_albums">Усе альбомы \"%s\"</string>
     <string name="search_title_songs">Усе трэкі \"%s\"</string>

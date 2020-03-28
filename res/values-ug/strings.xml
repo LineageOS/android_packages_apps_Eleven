@@ -30,7 +30,6 @@
     <string name="header_top_songs">مودا ناخشىلار</string>
     <string name="header_all_songs">ھەممە ناخشا</string>
     <string name="menu_settings">تەڭشەكلەر</string>
-    <string name="menu_search">ئىزدە</string>
     <string name="menu_shuffle_item">تەرتىپسىز</string>
     <string name="menu_shuffle_all">ھەممىنى تەرتىپسىز چال</string>
     <string name="menu_shuffle_playlist">تەرتىپسىز چالىدىغان تىزىم</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">يېقىندا قويۇلغان مۇزىكا</string>
     <string name="no_effects_for_you">تەڭشىگۈچنى ئاچالمىدى.</string>
     <string name="empty_music">سىز USB سىمى ئارقىلىق نەغمىنى كومپيۇتېرىڭىزدىن ئۈسكۈنىگە كۆچۈرۈڭ.</string>
-    <string name="empty_search">ئىزدەش نەتىجىسى تېپىلمىدى</string>
-    <string name="empty_search_check">ئىملايىڭىز توغرىمۇ تەكشۈرۈڭ، ياكى باشقا ھالىقىلىق سۆزنى ئىزدەڭ.</string>
     <string name="empty_favorite">سىز يىغقۇچقا قوشقان ناخشا بۇ جايدا كۆرۈنىدۇ.</string>
     <string name="empty_recent_main">يېقىنقى مۇزىكا يوق</string>
     <string name="empty_recent">بۇ يەردە سىز يېقىندا قويغان مۇزىكىلار كۆرۈنىدۇ.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">بارلىق پىلاستىنكىنى كۆرسىتىش</string>
     <string name="footer_search_songs">بارلىق ناخشىنى كۆرسىتىش</string>
     <string name="footer_search_playlists">بارلىق قويۇش تىزىملىكىنى كۆرسىتىش</string>
-    <string name="searchHint">مۇزىكا ئىزدەش</string>
     <string name="search_title_artists">بارلىق \"%s\" ئارتىس</string>
     <string name="search_title_albums">بارلىق \"%s\" پىلاستىنكا</string>
     <string name="search_title_songs">بارلىق \"%s\" ناخشا</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">Κορυφαία τραγούδια</string>
     <string name="header_all_songs">Όλα τα τραγούδια</string>
     <string name="menu_settings">Ρυθμίσεις</string>
-    <string name="menu_search">Αναζήτηση</string>
     <string name="menu_shuffle_item">Τυχαία αναπαραγωγή</string>
     <string name="menu_shuffle_all">Τυχαία αναπαραγωγή όλων</string>
     <string name="menu_shuffle_playlist">Τυχαία αναπαραγωγή λίστας</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Μουσική: ακούστηκαν πρόσφατα</string>
     <string name="no_effects_for_you">Δεν ήταν δυνατό το άνοιγμα του ισοσταθμιστή.</string>
     <string name="empty_music">Για να αντιγράψετε μουσική από τον υπολογιστή στη συσκευή σας, χρησιμοποιήστε ένα καλώδιο USB.</string>
-    <string name="empty_search">Δεν βρέθηκαν αποτελέσματα αναζήτησης</string>
-    <string name="empty_search_check">Παρακαλώ ελέγξτε ότι έχετε τη σωστή ορθογραφία ή δοκιμάστε μια διαφορετική λέξη-κλειδί.</string>
     <string name="empty_favorite">Τραγούδια που έχετε επιλέξει ως αγαπημένα θα εμφανίζονται εδώ.</string>
     <string name="empty_recent_main">Δεν υπάρχουν πρόσφατα τραγούδια</string>
     <string name="empty_recent">Τραγούδια που ακούσατε πρόσφατα θα εμφανίζονται εδώ.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Εμφάνιση όλων των άλμπουμ</string>
     <string name="footer_search_songs">Εμφάνιση όλων των τραγουδιών</string>
     <string name="footer_search_playlists">Εμφάνιση όλων των λιστών αναπαραγωγής</string>
-    <string name="searchHint">Αναζήτηση μουσικής</string>
     <string name="search_title_artists">Όλοι οι καλλιτέχνες \"%s\"</string>
     <string name="search_title_albums">Όλα τα άλμπουμ \"%s\"</string>
     <string name="search_title_songs">Όλα τα τραγούδια \"%s\"</string>

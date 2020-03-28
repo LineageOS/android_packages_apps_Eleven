@@ -19,7 +19,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Mùsica</string>
     <string name="menu_settings">Cunfiguratziones</string>
-    <string name="menu_search">Chirca</string>
     <string name="sort_order_entry_artist">Artista</string>
     <string name="sort_order_entry_year">Annu</string>
     <string name="sort_order_entry_duration">Longària</string>

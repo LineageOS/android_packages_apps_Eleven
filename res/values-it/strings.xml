@@ -30,7 +30,6 @@
     <string name="header_top_songs">Canzoni preferite</string>
     <string name="header_all_songs">Tutte le canzoni</string>
     <string name="menu_settings">Impostazioni</string>
-    <string name="menu_search">Cerca</string>
     <string name="menu_shuffle_item">Riproduzione casuale</string>
     <string name="menu_shuffle_all">Riproduzione casuale canzoni</string>
     <string name="menu_shuffle_playlist">Riproduzione casuale playlist</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musica: ascoltati recentemente</string>
     <string name="no_effects_for_you">L\'equalizzazione non può essere aperto.</string>
     <string name="empty_music">Per copiare musica dal tuo computer al tuo dispositivo, utilizza un cavo USB.</string>
-    <string name="empty_search">La ricerca non ha prodotto risultati</string>
-    <string name="empty_search_check">Controlla l\'ortografia oppure prova una parola diversa.</string>
     <string name="empty_favorite">Le canzoni segnate come preferite saranno mostrate qui.</string>
     <string name="empty_recent_main">Nessuna canzone recente</string>
     <string name="empty_recent">Le canzoni che hai ascoltato recentemente saranno mostrate qui.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Visualizza tutti gli album</string>
     <string name="footer_search_songs">Visualizza tutte le canzoni</string>
     <string name="footer_search_playlists">Visualizza tutte le playlist</string>
-    <string name="searchHint">Cerca musica</string>
     <string name="search_title_artists">Tutti gli artisti \"%s\"</string>
     <string name="search_title_albums">Tutti gli album \"%s\"</string>
     <string name="search_title_songs">Tutte le canzoni \"%s\"</string>

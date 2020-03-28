@@ -30,7 +30,6 @@
     <string name="header_top_songs">เพลงยอดนิยม</string>
     <string name="header_all_songs">เพลงทั้งหมด</string>
     <string name="menu_settings">การตั้งค่า</string>
-    <string name="menu_search">ค้นหา</string>
     <string name="menu_shuffle_item">สลับ</string>
     <string name="menu_shuffle_all">สลับทั้งหมด</string>
     <string name="menu_shuffle_playlist">สลับรายการเพลง</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">เพลง: ที่ฟังเมื่อเร็ว ๆ นี้</string>
     <string name="no_effects_for_you">ไม่สามารถเปิด equalizer ได้</string>
     <string name="empty_music">ในการคัดลอกเพลงจากคอมพิวเตอร์ไปยังอุปกรณ์ ให้ใช้สาย USB</string>
-    <string name="empty_search">ไม่พบผลการค้นหา</string>
-    <string name="empty_search_check">กรุณาตรวจสอบว่าการสะกดถูกต้องหรือลองคำอื่น</string>
     <string name="empty_favorite">เพลงที่ทำเป็นรายการโปรดจะแสดงที่นี่</string>
     <string name="empty_recent_main">ไม่มีเพลงล่าสุด</string>
     <string name="empty_recent">เพลงที่ฟังล่าสุดจะแสดงที่นี่</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">แสดงอัลบั้มทั้งหมด</string>
     <string name="footer_search_songs">แสดงเพลงทั้งหมด</string>
     <string name="footer_search_playlists">แสดงรายการที่เล่นทั้งหมด</string>
-    <string name="searchHint">ค้นหาเพลง</string>
     <string name="search_title_artists">ศิลปิน \"%s\" ทั้งหมด</string>
     <string name="search_title_albums">อัลบั้ม \"%s\" ทั้งหมด</string>
     <string name="search_title_songs">เพลง \"%s\" ทั้งหมด</string>

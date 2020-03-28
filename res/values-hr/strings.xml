@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top pjesme</string>
     <string name="header_all_songs">Sve pjesme</string>
     <string name="menu_settings">Postavke</string>
-    <string name="menu_search">Pretraga</string>
     <string name="menu_shuffle_item">Miješaj</string>
     <string name="menu_shuffle_all">Miješaj sve</string>
     <string name="menu_shuffle_playlist">Izmiješaj popis</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Glazba: nedavno slušano</string>
     <string name="no_effects_for_you">Ekvalizer se ne može otvoriti.</string>
     <string name="empty_music">Za kopiranje glazbe s računala na uređaj, koristite USB kabel.</string>
-    <string name="empty_search">Nema rezultata pretraživanja</string>
-    <string name="empty_search_check">Provjerite imate li ispravan pravopis ili pokušajte drugu ključnu riječ.</string>
     <string name="empty_favorite">Pjesme koje označite kao favorite biti će prikazane ovdje.</string>
     <string name="empty_recent_main">Nema nedavnih pjesama</string>
     <string name="empty_recent">Pjesme koje ste slušali će se pojaviti ovdje.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Pokaži sve albume</string>
     <string name="footer_search_songs">Pokaži sve pjesme</string>
     <string name="footer_search_playlists">Pokaži sve popise</string>
-    <string name="searchHint">Pretraživanje glazbe</string>
     <string name="search_title_artists">Sve \"%s\" umjetnika</string>
     <string name="search_title_albums">Svi \"%s\" albuma</string>
     <string name="search_title_songs">Sve \"%s\" pjesme</string>

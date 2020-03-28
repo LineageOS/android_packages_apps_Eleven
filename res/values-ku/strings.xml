@@ -30,7 +30,6 @@
     <string name="header_top_songs">گۆرانیەکانی لوتکە</string>
     <string name="header_all_songs">هەموو گۆرانیەکان</string>
     <string name="menu_settings">ڕێکخستن</string>
-    <string name="menu_search">گه‌ڕان</string>
     <string name="menu_shuffle_item">ڕیزکراو</string>
     <string name="menu_shuffle_all">هه‌ڕه‌مه‌کی</string>
     <string name="menu_shuffle_playlist">لیستیلێدەری ڕیزکراو</string>
@@ -110,7 +109,6 @@
     <string name="app_widget_recent">ئه‌پۆڵۆ:تازه‌ترین که‌ گوێلێگیراون</string>
     <string name="no_effects_for_you">یه‌کسانکه‌ری ده‌نگ ناکرێته‌وه‌.</string>
     <string name="empty_music">بۆ له‌به‌رگرتنه‌وه‌ی گۆرانی له‌ کۆمپیوته‌ر بۆ ئامێره‌که‌ت ، کێبڵی USB به‌کاربهێنه‌.</string>
-    <string name="empty_search">هیچ ئه‌نجامێکی گه‌ڕان نه‌دۆزرایه‌وه‌</string>
     <string name="empty_favorite">ئه‌و گۆرانیانه‌ی په‌سه‌ندن له‌لات لێره‌ نیشان ده‌درێن.</string>
     <string name="empty_recent">ئه‌و ئه‌لبومانه‌ی که‌ گوێت لێگرتوون لێره‌ نیشان ئه‌درێن ، گۆرانی لێبده‌.</string>
     <string name="empty_last_added">ئه‌و گۆرانیانه‌ی که‌ زیادکراون له‌ مانگی پێشوو لێره‌ نیشان ئه‌درێن.</string>

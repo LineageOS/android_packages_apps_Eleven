@@ -30,7 +30,6 @@
     <string name="header_top_songs">Beste Liedjies</string>
     <string name="header_all_songs">Alle Liedjies</string>
     <string name="menu_settings">Instellings</string>
-    <string name="menu_search">Soektog</string>
     <string name="menu_shuffle_item">Skommel</string>
     <string name="menu_shuffle_all">Skommel alles</string>
     <string name="menu_shuffle_playlist">Skommel speellys</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musiek: onlangs geluister</string>
     <string name="no_effects_for_you">Die equalizer kon nie oopgemaak word nie.</string>
     <string name="empty_music">Om musiek van jou rekenaar na jou toestel te kopieer, gebruik \'n USB-kabel.</string>
-    <string name="empty_search">Geen resultate is gevind nie</string>
-    <string name="empty_search_check">Maak seker jy het die korrekte spelling of probeer \'n ander vraag.</string>
     <string name="empty_favorite">Liedjies wat jy gemerk het as gunstelinge word hier vertoon.</string>
     <string name="empty_recent_main">Geen onlangse liedjies</string>
     <string name="empty_recent">Liedjies wat jy onlangs geluister het, sal hier vertoon.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Wys alle albums</string>
     <string name="footer_search_songs">Wys alle liedjies</string>
     <string name="footer_search_playlists">Wys alle speel waglyste</string>
-    <string name="searchHint">Deursoek musiek</string>
     <string name="search_title_artists">Alle \"%s\" kunstenaars</string>
     <string name="search_title_albums">Alle \"%s\" albums</string>
     <string name="search_title_songs">Alle \"%s\" liedjies</string>
