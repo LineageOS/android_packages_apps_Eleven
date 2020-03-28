@@ -24,7 +24,7 @@ public class MusicDB extends SQLiteOpenHelper {
     /**
      * Version History
      * v1 Sept 22 2014  Initial Merge of tables
-     *                  Has PlaylistArtworkstore, RecentStore, SearchHistory, SongPlayCount
+     *                  Has PlaylistArtworkstore, RecentStore, SongPlayCount
      * v2 Oct 7 2014    Added a new class MusicPlaybackState - need to bump version so the new
      *                  tables are created, but need to remove all drops from other classes to
      *                  maintain data
@@ -66,7 +66,6 @@ public class MusicDB extends SQLiteOpenHelper {
         PlaylistArtworkStore.getInstance(mContext).onCreate(db);
         RecentStore.getInstance(mContext).onCreate(db);
         SongPlayCount.getInstance(mContext).onCreate(db);
-        SearchHistory.getInstance(mContext).onCreate(db);
         MusicPlaybackState.getInstance(mContext).onCreate(db);
         LocalizedStore.getInstance(mContext).onCreate(db);
     }
@@ -77,7 +76,6 @@ public class MusicDB extends SQLiteOpenHelper {
         PlaylistArtworkStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         RecentStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         SongPlayCount.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
-        SearchHistory.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         MusicPlaybackState.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         LocalizedStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
     }
@@ -90,7 +88,6 @@ public class MusicDB extends SQLiteOpenHelper {
         PlaylistArtworkStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         RecentStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         SongPlayCount.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
-        SearchHistory.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         MusicPlaybackState.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
         LocalizedStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
     }

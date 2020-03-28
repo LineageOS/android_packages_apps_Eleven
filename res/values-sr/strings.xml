@@ -30,7 +30,6 @@
     <string name="header_top_songs">Најбоље песме</string>
     <string name="header_all_songs">Све песме</string>
     <string name="menu_settings">Подешавања</string>
-    <string name="menu_search">Претражи</string>
     <string name="menu_shuffle_item">Насумично</string>
     <string name="menu_shuffle_all">Насумично све</string>
     <string name="menu_shuffle_playlist">Насумично плејлиста</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Музика: недавно слушано</string>
     <string name="no_effects_for_you">Еквилајзер не може бити отворен.</string>
     <string name="empty_music">Да копираш музику са рачунара на твој уређај, користи USB кабал.</string>
-    <string name="empty_search">Нема пронађених резултата</string>
-    <string name="empty_search_check">Провери да ли си исправно изговорио или пробај другу кључну реч.</string>
     <string name="empty_favorite">Песме које означиш као омиљене ће бити приказане овде.</string>
     <string name="empty_recent_main">Нема недавних песама</string>
     <string name="empty_recent">Песме које си недавно слушао ће бити приказане овде.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Прикажи све албуме</string>
     <string name="footer_search_songs">Прикажи све песме</string>
     <string name="footer_search_playlists">Прикажи све плејлисте</string>
-    <string name="searchHint">Претражи музику</string>
     <string name="search_title_artists">Сви \"%s\" уметници</string>
     <string name="search_title_albums">Сви \"%s\" албуми</string>
     <string name="search_title_songs">Све \"%s\" песме</string>

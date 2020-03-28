@@ -71,10 +71,6 @@
         android:taskAffinity="org.lineageos.eleven.task"
         android:theme="@style/Eleven.Theme">
 
-        <!-- Searchable -->
-        <meta-data
-            android:name="android.app.default_searchable"
-            android:value=".ui.activities.SearchActivity" />
         <!-- Main activity -->
         <activity
             android:name="org.lineageos.eleven.ui.activities.HomeActivity"
@@ -106,23 +102,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Search interface -->
-        <activity
-            android:name="org.lineageos.eleven.ui.activities.SearchActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true"
-            android:theme="@style/Eleven.Theme">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-                <action android:name="android.intent.action.MEDIA_SEARCH" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
-        </activity>
         <!-- Used to set options -->
         <activity
             android:name="org.lineageos.eleven.ui.activities.SettingsActivity"

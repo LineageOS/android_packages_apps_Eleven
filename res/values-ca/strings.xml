@@ -30,7 +30,6 @@
     <string name="header_top_songs">Cançons més escoltades</string>
     <string name="header_all_songs">Totes les cançons</string>
     <string name="menu_settings">Configuració</string>
-    <string name="menu_search">Cerca</string>
     <string name="menu_shuffle_item">Barreja</string>
     <string name="menu_shuffle_all">Barreja-ho tot</string>
     <string name="menu_shuffle_playlist">Barreja la llista de reproducció</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Música: recentment escoltada</string>
     <string name="no_effects_for_you">L\'equalitzador no s\'ha pogut obrir.</string>
     <string name="empty_music">Per copiar música del teu ordenador al teu dispositiu, utilitza un cable USB.</string>
-    <string name="empty_search">No s\'han trobat resultats</string>
-    <string name="empty_search_check">Si us plau comprova que tingui l\'ortografia correcta o prova una altra paraula.</string>
     <string name="empty_favorite">Les cançons que marquis com a preferides es mostraran aquí.</string>
     <string name="empty_recent_main">Cap cançó recent</string>
     <string name="empty_recent">Les cançons que has escoltat recentment apareixeran aquí.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Mostra tots els àlbums</string>
     <string name="footer_search_songs">Mostra totes les cançons</string>
     <string name="footer_search_playlists">Mostra totes les llistes de reproducció</string>
-    <string name="searchHint">Cerca Música</string>
     <string name="search_title_artists">Tots els artistes de \"%s\"</string>
     <string name="search_title_albums">Tots els àlbums de \"%s\"</string>
     <string name="search_title_songs">Totes les cançons de \"%s\"</string>

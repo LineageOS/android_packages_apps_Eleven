@@ -30,7 +30,6 @@
     <string name="header_top_songs">שירים מובילים</string>
     <string name="header_all_songs">כל השירים</string>
     <string name="menu_settings">הגדרות</string>
-    <string name="menu_search">חיפוש</string>
     <string name="menu_shuffle_item">ערבב</string>
     <string name="menu_shuffle_all">ערבב הכל</string>
     <string name="menu_shuffle_playlist">ערבב רשימת השמעה</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">מוזיקה: הושמעו לאחרונה</string>
     <string name="no_effects_for_you">האקולייזר לא הצליח להיפתח.</string>
     <string name="empty_music">כדי להעתיק מוזיקה מהמחשב למכשיר השתמש בכבל USB.</string>
-    <string name="empty_search">לא נמצאו תוצאות חיפוש</string>
-    <string name="empty_search_check">בדוק שהאיות נכון או נסה מילת מפתח שונה.</string>
     <string name="empty_favorite">שירים שסומנו כמועדפים יוצגו כאן.</string>
     <string name="empty_recent_main">אין שירים אחרונים</string>
     <string name="empty_recent">שירים שהאזנת להם לאחרונה יופיעו כאן.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">הצג את כל האלבומים</string>
     <string name="footer_search_songs">הצג את כל השירים</string>
     <string name="footer_search_playlists">הצג את כל רשימות ההשמעה</string>
-    <string name="searchHint">חפש מוזיקה</string>
     <string name="search_title_artists">כל \"%s\" האמנים</string>
     <string name="search_title_albums">כל \"%s\" האלבומים</string>
     <string name="search_title_songs">כל \"%s\" השירים</string>

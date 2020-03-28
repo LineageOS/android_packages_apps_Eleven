@@ -30,7 +30,6 @@
     <string name="header_top_songs">Labākās dziesmas</string>
     <string name="header_all_songs">Visas dziesmas</string>
     <string name="menu_settings">Iestatījumi</string>
-    <string name="menu_search">Meklēt</string>
     <string name="menu_shuffle_item">Jaukt</string>
     <string name="menu_shuffle_all">Jaukt visu</string>
     <string name="menu_shuffle_playlist">Jaukt atskaņošanas sarakstu</string>
@@ -123,8 +122,6 @@
     <string name="app_widget_recent">Mūzika: nesen klaustītie</string>
     <string name="no_effects_for_you">Ekvalaizeru nevar atvērt.</string>
     <string name="empty_music">Lai kopētu mūziku no datora uz šo iekārtu, izmantojiet USB kabeli.</string>
-    <string name="empty_search">Nekas netika atrasts</string>
-    <string name="empty_search_check">Lūdzu, pārbaudiet vārda pareizrakstību vai izmantojiet citu atslēgvārdu.</string>
     <string name="empty_favorite">Izlasei pievienotās dziesmas tiks parādītas šeit.</string>
     <string name="empty_recent_main">Nav neseno dziesmu</string>
     <string name="empty_recent">Nesen klausītās dziesmas tiks parādītas šeit.</string>
@@ -160,7 +157,6 @@
     <string name="footer_search_albums">Parādīt visus albumus</string>
     <string name="footer_search_songs">Rādīt visas dziesmas</string>
     <string name="footer_search_playlists">Parādīt visus atskaņošanas sarakstus</string>
-    <string name="searchHint">Meklēt mūziku</string>
     <string name="search_title_artists">Visi \"%s\" mākslinieki</string>
     <string name="search_title_albums">Visi \"%s\" albumi</string>
     <string name="search_title_songs">Visas \"%s\" dziesmas</string>

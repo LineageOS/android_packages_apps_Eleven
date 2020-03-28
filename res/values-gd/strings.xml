@@ -30,7 +30,6 @@
     <string name="header_top_songs">Brod nan òran</string>
     <string name="header_all_songs">A h-uile òran</string>
     <string name="menu_settings">Roghainnean</string>
-    <string name="menu_search">Lorg</string>
     <string name="menu_shuffle_item">Air thuaiream</string>
     <string name="menu_shuffle_all">Na h-uile air thuaiream</string>
     <string name="menu_shuffle_playlist">Cuir an liosta-chluich air thuaiream</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Ceòl: Air èisteachd o chionn goirid</string>
     <string name="no_effects_for_you">Cha b’ urrainn dhuinn an cothromaiche fhosgladh.</string>
     <string name="empty_music">Cleachd càball USB airson lethbhreac dhen cheòl air a’ choimpiutair agad a chur air an uidheam agad.</string>
-    <string name="empty_search">Cha deach toradh luirg a lorg</string>
-    <string name="empty_search_check">Dèan cinnteach gu bheil e air a litreachadh gun mhearachd no feuch facal-luirg eile.</string>
     <string name="empty_favorite">Nochdaidh òrain a chomharraich thu mar annsachdan an-seo.</string>
     <string name="empty_recent_main">Cha do chluich thu òran o chionn goirid</string>
     <string name="empty_recent">Nochdaidh òrain ris an do dh’èist thu o chionn goirid an-seo.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Seall a h-uile albam</string>
     <string name="footer_search_songs">Seall a h-uile òran</string>
     <string name="footer_search_playlists">Seall a h-uile liosta-chluich</string>
-    <string name="searchHint">Lorg ceòl</string>
     <string name="search_title_artists">A h-uile neach-ciùil “%s”</string>
     <string name="search_title_albums">A h-uile albam “%s”</string>
     <string name="search_title_songs">A h-uile òran “%s”</string>

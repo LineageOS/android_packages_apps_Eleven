@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top Sange</string>
     <string name="header_all_songs">Alle Sange</string>
     <string name="menu_settings">Indstillinger</string>
-    <string name="menu_search">Søg</string>
     <string name="menu_shuffle_item">Bland</string>
     <string name="menu_shuffle_all">Bland alle</string>
     <string name="menu_shuffle_playlist">Bland afspilningsliste</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musik: senest lyttet til</string>
     <string name="no_effects_for_you">Udligneren kunne ikke åbnes.</string>
     <string name="empty_music">Brug et USB-kabel til at kopiere musik, fra din computer til din enhed.</string>
-    <string name="empty_search">Ingen søgeresultater fundet</string>
-    <string name="empty_search_check">Kontrollér venligst at du har den korrekte stavemåde, eller prøv et andet nøgleord.</string>
     <string name="empty_favorite">Sange du markerer som favoritter, vil blive vist her.</string>
     <string name="empty_recent_main">Ingen seneste sange</string>
     <string name="empty_recent">Sange du har lyttet til på det seneste, vil blive vist her.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Vis alle album</string>
     <string name="footer_search_songs">Vis alle sange</string>
     <string name="footer_search_playlists">Vis alle afspilningslister</string>
-    <string name="searchHint">Søg i musik</string>
     <string name="search_title_artists">Alle \"%s\" kunstnere</string>
     <string name="search_title_albums">Alle \"%s\" album</string>
     <string name="search_title_songs">Alle \"%s\" sange</string>

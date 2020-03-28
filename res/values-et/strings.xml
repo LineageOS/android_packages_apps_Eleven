@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top laulud</string>
     <string name="header_all_songs">Kõik laulud</string>
     <string name="menu_settings">Seaded</string>
-    <string name="menu_search">Otsing</string>
     <string name="menu_shuffle_item">Juhuesitus</string>
     <string name="menu_shuffle_all">Juhuesita kõik</string>
     <string name="menu_shuffle_playlist">juhuesitluse esitlusloend</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Muusika: hiljuti kuulatud</string>
     <string name="no_effects_for_you">Ekvalaiserit ei saanud avada.</string>
     <string name="empty_music">Et kopeerida muusikat arvutist seadmesse, kasuta USB-kaablit.</string>
-    <string name="empty_search">Otsing ei andnud tulemusi</string>
-    <string name="empty_search_check">Palun kontrollige, kas teil on õige kirjaviis või proovige mõnda teist märksõna.</string>
     <string name="empty_favorite">Lemmikuteks märgitud laulud kuvatakse siin.</string>
     <string name="empty_recent_main">Puuduvad hiljutised laulud</string>
     <string name="empty_recent">Hiljuti kuulatud laulud kuvatakse siin.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Kuva kõik albumid</string>
     <string name="footer_search_songs">Kuva kõik laulud</string>
     <string name="footer_search_playlists">Kuva kõik esitusloendid</string>
-    <string name="searchHint">Otsi muusikat</string>
     <string name="search_title_artists">Kõik \"%s\" esitajad</string>
     <string name="search_title_albums">Kõik \"%s\" albumid</string>
     <string name="search_title_songs">Kõik \"%s\" laulud</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">Топ песни</string>
     <string name="header_all_songs">Всички песни</string>
     <string name="menu_settings">Настройки</string>
-    <string name="menu_search">Търсене</string>
     <string name="menu_shuffle_item">Разбъркване</string>
     <string name="menu_shuffle_all">Разбъркване на всички</string>
     <string name="menu_shuffle_playlist">Разбъркване на списъка за изпълнение</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Музика: наскоро слушана</string>
     <string name="no_effects_for_you">Еквалайзера не може да бъде отворен.</string>
     <string name="empty_music">За да копирате музика от вашия компютър към вашето устройство, използвайте USB кабел.</string>
-    <string name="empty_search">Няма резултати от търсенето</string>
-    <string name="empty_search_check">Проверете дали е изписана правилно или опитайте с друга ключова дума.</string>
     <string name="empty_favorite">Песните маркирани като любими ще бъдат показани тук.</string>
     <string name="empty_recent_main">Няма скорошни песни</string>
     <string name="empty_recent">Песните който сте слушали последно ще се покажат тук.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Покажи всички албуми</string>
     <string name="footer_search_songs">Покажи всички песни</string>
     <string name="footer_search_playlists">Покажи всички списъци за изпълнение</string>
-    <string name="searchHint">Търсете музика</string>
     <string name="search_title_artists">Всички изпълнители на \"%s\"</string>
     <string name="search_title_albums">Всички албуми на \"%s\"</string>
     <string name="search_title_songs">Всички песни на \"%s\"</string>
