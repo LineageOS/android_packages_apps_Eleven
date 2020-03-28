@@ -30,7 +30,6 @@
     <string name="header_top_songs">Bài hát thường nghe</string>
     <string name="header_all_songs">Tất cả bài hát</string>
     <string name="menu_settings">Cài đặt</string>
-    <string name="menu_search">Tìm kiếm</string>
     <string name="menu_shuffle_item">Phát ngẫu nhiên</string>
     <string name="menu_shuffle_all">Phát ngẫu nhiên tất cả</string>
     <string name="menu_shuffle_playlist">Phát ngẫu nhiên danh sách phát</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Nghe nhạc: đã nghe gần đây</string>
     <string name="no_effects_for_you">Không thể mở bộ chỉnh âm.</string>
     <string name="empty_music">Để chép nhạc từ máy tính sang thiết bị, hãy dùng cáp USB.</string>
-    <string name="empty_search">Không tìm thấy kết quả tìm kiếm</string>
-    <string name="empty_search_check">Hãy kiểm tra xem bạn đã nhập đúng chính tả chưa hoặc thử từ khoá khác.</string>
     <string name="empty_favorite">Bài hát bạn đã đánh dấu là yêu thích sẽ hiện tại đây.</string>
     <string name="empty_recent_main">Không có bài hát nào nghe gần đây</string>
     <string name="empty_recent">Bài hát bạn đã nghe gần đây sẽ hiện tại đây.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Hiện tất cả album</string>
     <string name="footer_search_songs">Hiện tất cả bài hát</string>
     <string name="footer_search_playlists">Hiện tất cả danh sách phát</string>
-    <string name="searchHint">Tìm bài hát</string>
     <string name="search_title_artists">Tất cả về nghệ sĩ \"%s\"</string>
     <string name="search_title_albums">Tất cả về album \"%s\"</string>
     <string name="search_title_songs">Tất cả về bài hát \"%s\"</string>

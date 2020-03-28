@@ -36,7 +36,6 @@
 
     <!-- Option menu items -->
     <string name="menu_settings">Settings</string>
-    <string name="menu_search">Search</string>
     <string name="menu_shuffle_item">Shuffle</string>
     <string name="menu_shuffle_all">Shuffle all</string>
     <string name="menu_shuffle_playlist">Shuffle playlist</string>
@@ -157,8 +156,6 @@
     <!-- Empty list / error messages -->
     <string name="no_effects_for_you">The equalizer could not be opened.</string>
     <string name="empty_music">To copy music from your computer to your device, use a USB cable.</string>
-    <string name="empty_search">No search results found</string>
-    <string name="empty_search_check">Please check that you have the correct spelling or try a different keyword.</string>
     <string name="empty_favorite">Songs you mark as favorites will be shown here.</string>
     <string name="empty_recent_main">No recent songs</string>
     <string name="empty_recent">Songs you have listened to recently will show up here.</string>
@@ -201,7 +198,6 @@
     <string name="footer_search_songs">Show all songs</string>
     <string name="footer_search_playlists">Show all playlists</string>
 
-    <string name="searchHint">Search music</string>
     <string name="search_title_artists">All \"%s\" artists</string>
     <string name="search_title_albums">All \"%s\" albums</string>
     <string name="search_title_songs">All \"%s\" songs</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">शीर्ष गाने</string>
     <string name="header_all_songs">सब गाने</string>
     <string name="menu_settings">सेटिंग</string>
-    <string name="menu_search">खोजें</string>
     <string name="menu_shuffle_item">शफ़ल करें</string>
     <string name="menu_shuffle_all">सबको शफ़ल करें</string>
     <string name="menu_shuffle_playlist">प्लेसूची को शफ़ल करें</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">संगीत: हाल में सुना गया</string>
     <string name="no_effects_for_you">तुल्यकारक को खोला नहीं जा सका।</string>
     <string name="empty_music">अपने कंप्यूटर से अपने उपकरण में संगीत को कॉपी करने के लिए यूएसबी केबल का उपयोग करें।</string>
-    <string name="empty_search">कोई खोज परिणाम नहीं मिला</string>
-    <string name="empty_search_check">कृपया जाँचें कि आपने सही वर्तनी उपयोग की है या कोई अन्य कुंजीशब्द आज़माएँ।</string>
     <string name="empty_favorite">आप जिन गानों को पसंदीदा के रूप में चिह्नित करेंगे, वे यहाँ दिखाई देंगे।</string>
     <string name="empty_recent_main">हाल वाले के गाने नहीं हैं</string>
     <string name="empty_recent">आपने हाल में जो गाने सुने हैं, वे यहाँ दिखाई देंगे।</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">सब एल्बम दिखाएँ</string>
     <string name="footer_search_songs">सब गाने दिखाएँ</string>
     <string name="footer_search_playlists">सब प्लेसूचियाँ दिखाएँ</string>
-    <string name="searchHint">संगीत खोजें</string>
     <string name="search_title_artists">सभी \"%s\" कलाकार</string>
     <string name="search_title_albums">सभी \"%s\" एल्बम</string>
     <string name="search_title_songs">सभी \"%s\" गाने</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">Legtöbbet hallgatottak</string>
     <string name="header_all_songs">Összes zeneszám</string>
     <string name="menu_settings">Beállítások</string>
-    <string name="menu_search">Keresés</string>
     <string name="menu_shuffle_item">Véletlenszerű</string>
     <string name="menu_shuffle_all">Véletlen sorrend</string>
     <string name="menu_shuffle_playlist">Véletlenszerű lejátszási lista</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Zene: nemrégiben hallgatott</string>
     <string name="no_effects_for_you">A hangszínszabályzót nem lehet megnyitni.</string>
     <string name="empty_music">Számítógépről történő zene másoláshoz használjon USB kábelt.</string>
-    <string name="empty_search">Nincs találat</string>
-    <string name="empty_search_check">Ellenőrizze, hogy helyesen írta-e be, vagy próbálkozzon más kulcsszóval.</string>
     <string name="empty_favorite">Itt a kedvencként megjelölt dalok fognak megjelenni.</string>
     <string name="empty_recent_main">Nincsenek előzmények</string>
     <string name="empty_recent">Itt a nemrégiben hallgatott zenéi fognak megjelenni.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Összes album megjelenítése</string>
     <string name="footer_search_songs">Összes dal megjelenítése</string>
     <string name="footer_search_playlists">Összes lejátszási lista megjelenítése</string>
-    <string name="searchHint">Zene keresése</string>
     <string name="search_title_artists">Összes \"%s\" előadó</string>
     <string name="search_title_albums">Összes \"%s\" album</string>
     <string name="search_title_songs">Összes \"%s\" dal</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">Traciau Poblogaidd</string>
     <string name="header_all_songs">Pob Trac</string>
     <string name="menu_settings">Gosodiadau</string>
-    <string name="menu_search">Chwilio</string>
     <string name="menu_shuffle_item">Cymysgu</string>
     <string name="menu_shuffle_all">Cymysgu\'r cwbl</string>
     <string name="menu_shuffle_playlist">Cymysgu\'r rhestr chwarae</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Cerddoriaeth: chwaraewyd yn ddiweddar</string>
     <string name="no_effects_for_you">Methwyd ag agor y cydraddolydd.</string>
     <string name="empty_music">I gopïo cerddoriaeth o dy gyfrifiadur i dy ddyfais, defnyddia gebl USB.</string>
-    <string name="empty_search">Ni chanfuwyd unrhyw ganlyniadau</string>
-    <string name="empty_search_check">Gwiria dy fod wedi sillafu\'n gywir neu rho gynnig ar allweddair arall.</string>
     <string name="empty_favorite">Bydd traciau rwyt yn eu nodi fel ffefrynnau yn ymddangos yma.</string>
     <string name="empty_recent_main">Dim traciau diweddar</string>
     <string name="empty_recent">Bydd traciau rwyt wedi gwrando arnynt yn ddiweddar yn ymddangos yma.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Dangos pob casgliad</string>
     <string name="footer_search_songs">Dangos pob trac</string>
     <string name="footer_search_playlists">Dangos pob rhestr chwarae</string>
-    <string name="searchHint">Chwilio traciau</string>
     <string name="search_title_artists">Pob artist \"%s\"</string>
     <string name="search_title_albums">Pob \"%s\" casgliad</string>
     <string name="search_title_songs">Pob trac \"%s\"</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">الأغاني الأعلى</string>
     <string name="header_all_songs">كل الأغاني</string>
     <string name="menu_settings">إعدادات</string>
-    <string name="menu_search">بحث</string>
     <string name="menu_shuffle_item">خلْط</string>
     <string name="menu_shuffle_all">خلْط الكل</string>
     <string name="menu_shuffle_playlist">خلط قائمة التشغيل</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">الموسيقى: ما استمعت إليه مؤخراً</string>
     <string name="no_effects_for_you">تعذر فتح المعادل.</string>
     <string name="empty_music">لنسخ ملفات الموسيقى من الكمبيوتر إلى الجهاز الخاص بك، استخدم كبل USB.</string>
-    <string name="empty_search">لم يتم العثور على نتائج البحث</string>
-    <string name="empty_search_check">الرجاء التحقق من أن هجاء الكلمات صحيح أو حاول البحث باستخدام كمات دالة مختلفة.</string>
     <string name="empty_favorite">الأغاني التي وضعت عليها علامة المفضلة ستظهر هنا.</string>
     <string name="empty_recent_main">لا توجد أغاني حديثة.</string>
     <string name="empty_recent">الأغاني التي استمعت إليها مؤخراً ستظهر هنا.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">إظهار جميع الألبومات</string>
     <string name="footer_search_songs">إظهار جميع الأغاني</string>
     <string name="footer_search_playlists">إظهار جميع قوائم التشغيل</string>
-    <string name="searchHint">البحث عن موسيقى</string>
     <string name="search_title_artists">جميع الفنانين \"%s\"</string>
     <string name="search_title_albums">جميع ألبومات \"%s\"</string>
     <string name="search_title_songs">جميع أغاني \"%s\"</string>

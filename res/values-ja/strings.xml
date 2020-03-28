@@ -30,7 +30,6 @@
     <string name="header_top_songs">トップ曲</string>
     <string name="header_all_songs">すべての曲</string>
     <string name="menu_settings">設定</string>
-    <string name="menu_search">検索</string>
     <string name="menu_shuffle_item">シャッフル</string>
     <string name="menu_shuffle_all">すべてシャッフル</string>
     <string name="menu_shuffle_playlist">プレイリストでシャッフル</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">音楽: 最近聴いた曲</string>
     <string name="no_effects_for_you">イコライザーを開けませんでした。</string>
     <string name="empty_music">パソコンから端末に音楽をコピーするには、USBケーブルを使用してください。</string>
-    <string name="empty_search">検索結果が見つかりませんでした</string>
-    <string name="empty_search_check">検索語を正しく入力しているか確認してください。または別のキーワードを試してみてください。</string>
     <string name="empty_favorite">お気に入りに追加した曲がここに表示されます。</string>
     <string name="empty_recent_main">最近の曲はありません</string>
     <string name="empty_recent">最近聴いた曲がここに表示されます。</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">すべてのアルバムを表示</string>
     <string name="footer_search_songs">すべての曲を表示</string>
     <string name="footer_search_playlists">すべてのプレイリストを表示</string>
-    <string name="searchHint">音楽を検索</string>
     <string name="search_title_artists">「%s」を含むすべてのアーティスト</string>
     <string name="search_title_albums">[%s]を含むすべてのアルバム</string>
     <string name="search_title_songs">[%s]を含むすべての曲</string>

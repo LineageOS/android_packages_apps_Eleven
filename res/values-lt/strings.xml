@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top dainos</string>
     <string name="header_all_songs">Visos dainos</string>
     <string name="menu_settings">Nustatymai</string>
-    <string name="menu_search">Paieška</string>
     <string name="menu_shuffle_item">Maišyti</string>
     <string name="menu_shuffle_all">Maišyti viską</string>
     <string name="menu_shuffle_playlist">Maišyti grojaraštį</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Muzika: naujausiai klausyta</string>
     <string name="no_effects_for_you">Nepavyko atidaryti vienodintuvo.</string>
     <string name="empty_music">Kad kopijuotumėte muziką iš kompiuterio į savo įrenginį, naudokite USB kabelį.</string>
-    <string name="empty_search">Nerasta jokių paieškos rezultatų</string>
-    <string name="empty_search_check">Patikrinkite, kad turite teisingą rašybą arba bandykite kitą raktažodį.</string>
     <string name="empty_favorite">Dainas, kurias pažymite kaip mėgstamas bus rodomos čia.</string>
     <string name="empty_recent_main">Nėra naujausių dainų</string>
     <string name="empty_recent">Naujausiai klausytos dainos bus rodomos čia.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Rodyti visus albumus</string>
     <string name="footer_search_songs">Rodyti visas dainas</string>
     <string name="footer_search_playlists">Rodyti visus grojaraščius</string>
-    <string name="searchHint">Ieškoti muzikos</string>
     <string name="search_title_artists">Visi \"%s\" atlikėjai</string>
     <string name="search_title_albums">Visi \"%s\" albumai</string>
     <string name="search_title_songs">Visos \"%s\" dainos</string>

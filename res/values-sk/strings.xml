@@ -30,7 +30,6 @@
     <string name="header_top_songs">Najlepšie skladby</string>
     <string name="header_all_songs">Všetky skladby</string>
     <string name="menu_settings">Nastavenia</string>
-    <string name="menu_search">Hľadať</string>
     <string name="menu_shuffle_item">Prehrať náhodne</string>
     <string name="menu_shuffle_all">Prehrať všetky náhodne</string>
     <string name="menu_shuffle_playlist">Prehrať zoznam skladieb náhodne</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Hudba: nedávno počúvané</string>
     <string name="no_effects_for_you">Nedá sa otvoriť ekvalizér.</string>
     <string name="empty_music">Na kopírovanie hudby z vášho počítača do vášho zariadenia použite USB kábel.</string>
-    <string name="empty_search">Žiadne výsledky hľadania</string>
-    <string name="empty_search_check">Skontrolujte, či máte správny pravopis alebo vyskúšajte iné kľúčové slovo.</string>
     <string name="empty_favorite">Tu budú zobrazené skladby, ktoré ste označili ako obľúbené.</string>
     <string name="empty_recent_main">Žiadne nedávne skladby</string>
     <string name="empty_recent">Tu budú zobrazené skladby, ktoré ste nedávno počúvali.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Zobraziť všetky albumy</string>
     <string name="footer_search_songs">Zobraziť všetky skladby</string>
     <string name="footer_search_playlists">Zobraziť všetky zoznamy skladieb</string>
-    <string name="searchHint">Vyhľadávanie hudby</string>
     <string name="search_title_artists">Všetko od interpreta \"%s\"</string>
     <string name="search_title_albums">Všetko v albume \"%s\"</string>
     <string name="search_title_songs">Všetky skladby \"%s\"</string>

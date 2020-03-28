@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top de Músicas</string>
     <string name="header_all_songs">Todas as músicas</string>
     <string name="menu_settings">Definições</string>
-    <string name="menu_search">Procurar</string>
     <string name="menu_shuffle_item">Reproduzir aleatoriamente</string>
     <string name="menu_shuffle_all">Reproduzir todas aleatoriamente</string>
     <string name="menu_shuffle_playlist">Reproduzir lista de reprodução aleatoriamente</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Música: recentemente ouvida</string>
     <string name="no_effects_for_you">O equalizador não pôde ser aberto.</string>
     <string name="empty_music">Para copiar a música do seu computador para o seu dispositivo, utilize um cabo USB.</string>
-    <string name="empty_search">Nenhum resultado encontrado</string>
-    <string name="empty_search_check">Por favor, verifique se está escrito corretamente ou tente uma palavra diferente.</string>
     <string name="empty_favorite">Vão ser mostradas aqui as músicas que você marcou como favoritas.</string>
     <string name="empty_recent_main">Não há músicas recentes</string>
     <string name="empty_recent">Músicas que ouviu recentemente vão ser mostradas aqui.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Mostrar todos os álbuns</string>
     <string name="footer_search_songs">Mostrar todas as músicas</string>
     <string name="footer_search_playlists">Mostrar todas as listas de reprodução</string>
-    <string name="searchHint">Pesquisar músicas</string>
     <string name="search_title_artists">Todos os artistas \"%s\"</string>
     <string name="search_title_albums">Todos os álbuns \"%s\"</string>
     <string name="search_title_songs">Todas as músicas \"%s\"</string>

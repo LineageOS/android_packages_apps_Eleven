@@ -30,7 +30,6 @@
     <string name="header_top_songs">Beste nummers</string>
     <string name="header_all_songs">Alle nummers</string>
     <string name="menu_settings">Instellingen</string>
-    <string name="menu_search">Zoeken</string>
     <string name="menu_shuffle_item">Shuffle</string>
     <string name="menu_shuffle_all">Shuffle alles</string>
     <string name="menu_shuffle_playlist">Shuffle afspeellijst</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Muziek: recent beluisterd</string>
     <string name="no_effects_for_you">Kan equalizer niet openen.</string>
     <string name="empty_music">Om muziek van uw computer te kopiëren naar uw apparaat, kunt u een USB-kabel gebruiken.</string>
-    <string name="empty_search">Geen zoekresultaten gevonden</string>
-    <string name="empty_search_check">Controleer of u de juiste spelling gebruikt of probeer een ander trefwoord.</string>
     <string name="empty_favorite">Uw favoriete nummers worden hier getoond.</string>
     <string name="empty_recent_main">Geen recente nummers</string>
     <string name="empty_recent">Nummers waar u recent naar hebt geluisterd worden hier getoond.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Alle albums tonen</string>
     <string name="footer_search_songs">Alle nummers tonen</string>
     <string name="footer_search_playlists">Alle afspeellijsten tonen</string>
-    <string name="searchHint">Muziek zoeken</string>
     <string name="search_title_artists">Alle \"%s\" artiesten</string>
     <string name="search_title_albums">Alle \"%s\" albums</string>
     <string name="search_title_songs">Alle \"%s\" nummers</string>

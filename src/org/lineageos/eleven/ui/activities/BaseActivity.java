@@ -169,8 +169,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
      */
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
-        // Search view
-        getMenuInflater().inflate(R.menu.search_btn, menu);
         // Settings
         getMenuInflater().inflate(R.menu.activity_base, menu);
 
@@ -186,10 +184,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             case R.id.menu_settings:
                 // Settings
                 NavUtils.openSettings(this);
-                return true;
-
-            case R.id.menu_search:
-                NavUtils.openSearch(BaseActivity.this, "");
                 return true;
 
             default:
