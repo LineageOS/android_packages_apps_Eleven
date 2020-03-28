@@ -48,16 +48,6 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/header_bar_search_button"
-        android:layout_width="@dimen/header_bar_custom_button_width"
-        android:layout_height="@dimen/header_bar_button_height"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="0"
-        android:src="@drawable/ic_action_search"
-        android:background="@drawable/selectable_background"
-        android:scaleType="centerInside" />
-
-    <ImageView
         android:id="@+id/header_bar_menu_button"
         android:layout_width="@dimen/header_bar_menu_button_width"
         android:layout_height="@dimen/header_bar_button_height"

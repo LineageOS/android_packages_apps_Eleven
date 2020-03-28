@@ -26,7 +26,6 @@
     <string name="page_genres">Zhanret</string>
     <string name="header_albums">Albumet</string>
     <string name="header_all_songs">Të gjitha këngët</string>
-    <string name="menu_search">Kërko</string>
     <string name="menu_sort_by">Rendit sipas</string>
     <string name="menu_clear_list">Hiqe listën</string>
     <string name="add_to_queue">Shto në radhë</string>
@@ -90,7 +89,6 @@
     <string name="footer_search_albums">Trego të gjithë albumet</string>
     <string name="footer_search_songs">Trego të gjitha këngët</string>
     <string name="footer_search_playlists">Trego të gjitha listat e këngëve</string>
-    <string name="searchHint">Kërko muzikë</string>
     <string name="search_title_artists">Të gjithë artistët \"%s\"</string>
     <string name="search_title_albums">Të gjithë albumet \"%s\"</string>
     <string name="search_title_songs">Të gjitha këngët \"%s\"</string>

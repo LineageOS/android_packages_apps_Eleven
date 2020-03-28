@@ -30,7 +30,6 @@
     <string name="header_top_songs">ఉత్తమ పాటలు</string>
     <string name="header_all_songs">అన్ని పాటలు</string>
     <string name="menu_settings">సెట్టింగ్‌లు</string>
-    <string name="menu_search">శోధించు</string>
     <string name="menu_shuffle_item">మార్చు</string>
     <string name="menu_shuffle_all">అన్నీ షఫుల్ చేయి</string>
     <string name="menu_shuffle_playlist">ప్లేజాబితాను కలగాపులగం చేయుము</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">సంగీతం: ఇటీవల విన్నవి</string>
     <string name="no_effects_for_you">ఈక్వలైజరును తెరవడం సాధ్యపడలేదు.</string>
     <string name="empty_music">మీ కంప్యూటర్ నుండి మీ యొక్క పరికరానికి సంగీతాన్ని కాపీ చేసేందుకు, USB కేబులును ఉపయోగించండి.</string>
-    <string name="empty_search">శోధన ఫలితాలు ఏవీ దొరకలేదు</string>
-    <string name="empty_search_check">దయచేసి మీరు సరైన అక్షరక్రమాన్ని కలిగి ఉన్నారో లేదో చూడండి లేదా వేరొక కీలకపదంతో ప్రయత్నించండి.</string>
     <string name="empty_favorite">మీరు ఇష్టమైనవిగా గుర్తించిన పాటలు ఇక్కడ చూపించబడతాయి.</string>
     <string name="empty_recent_main">ఇటీవలి పాటలు ఏమీ లేవు</string>
     <string name="empty_recent">మీరు ఇటీవల విన్న పాటలు ఇక్కడ చూపించబడతాయి.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">అన్ని ఆల్బములను చూపుము</string>
     <string name="footer_search_songs">అన్ని పాటలను చూపుము</string>
     <string name="footer_search_playlists">అన్ని ప్లేజాబితాలను చూపుము</string>
-    <string name="searchHint">సంగీతాన్ని శోధించుము</string>
     <string name="search_title_artists">అందరు \"%s\" కళాకారులు</string>
     <string name="search_title_albums">అన్ని \"%s\" ఆల్బములు</string>
     <string name="search_title_songs">అన్ని \"%s\" పాటలు</string>

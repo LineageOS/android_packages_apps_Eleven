@@ -30,7 +30,6 @@
     <string name="header_top_songs">Toptitel</string>
     <string name="header_all_songs">Alle Titel</string>
     <string name="menu_settings">Einstellungen</string>
-    <string name="menu_search">Suche</string>
     <string name="menu_shuffle_item">Zufällige Wiedergabe</string>
     <string name="menu_shuffle_all">Alles zufällig wiedergeben</string>
     <string name="menu_shuffle_playlist">Wiedergabeliste zufällig abspielen</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musik: Kürzlich abgespielt</string>
     <string name="no_effects_for_you">Der Equalizer konnte nicht geöffnet werden.</string>
     <string name="empty_music">Verwenden Sie ein USB-Kabel, um Musik von Ihrem Computer auf Ihr Gerät zu kopieren.</string>
-    <string name="empty_search">Keine Suchergebnisse gefunden</string>
-    <string name="empty_search_check">Bitte vergewissern Sie sich, dass die Schreibweise korrekt ist, oder versuchen Sie es mit einem anderen Stichwort.</string>
     <string name="empty_favorite">Als Favorit markierte Titel werden hier angezeigt.</string>
     <string name="empty_recent_main">Keine kürzlich gespielten Titel</string>
     <string name="empty_recent">Zuletzt gehörte Titel werden hier angezeigt.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Alle Alben anzeigen</string>
     <string name="footer_search_songs">Alle Titel anzeigen</string>
     <string name="footer_search_playlists">Alle Wiedergabelisten anzeigen</string>
-    <string name="searchHint">Musik suchen</string>
     <string name="search_title_artists">Alle \"%s\" Interpreten</string>
     <string name="search_title_albums">Alle \"%s\" Alben</string>
     <string name="search_title_songs">Alle \"%s\" Titel</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">ટોપ ગીતો</string>
     <string name="header_all_songs">તમામ ગીતો</string>
     <string name="menu_settings">સેટિંગ્સ</string>
-    <string name="menu_search">શોધ</string>
     <string name="menu_shuffle_item">પીસો</string>
     <string name="menu_shuffle_all">બધાને પીસો</string>
     <string name="menu_shuffle_playlist">પ્લેલિસ્ટ શફલ કરો</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">મ્યુઝિક: તાજેતરમાં સાંભળેલ</string>
     <string name="no_effects_for_you">ઇક્વલાઇઝર ખોલી શકાયું નહીં.</string>
     <string name="empty_music">તમારા કમ્પ્યુટરમાંથી તમારા ડિવાઇસ પર મ્યુઝિક કૉપિ કરવા USB કેબલનો ઉપયોગ કરો.</string>
-    <string name="empty_search">કોઇ સર્ચ પરિણામો મળ્યાં નહીં</string>
-    <string name="empty_search_check">કૃપા કરી ચકાસો કે તમારી જોડણી સાચી છે અથવા અલગ કીવર્ડ અજમાવો.</string>
     <string name="empty_favorite">ફેવરિટ તરીકે તમે અંકિત કરેલ ગીતો અહીં દર્શાવવામાં આવશે.</string>
     <string name="empty_recent_main">કોઇ તાજેતરનાં ગીતો નહીં</string>
     <string name="empty_recent">તમે તાજેતરમાં સાંભળેલ ગીતો અહીં દેખાશે.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">તમામ આલ્બમો દર્શાવો</string>
     <string name="footer_search_songs">તમામ ગીતો દર્શાવો</string>
     <string name="footer_search_playlists">તમામ પ્લેલિસ્ટો દર્શાવો</string>
-    <string name="searchHint">મ્યુઝિક સર્ચ કરો</string>
     <string name="search_title_artists">તમામ \"%s\" આર્ટિસ્ટો</string>
     <string name="search_title_albums">તમામ \"%s\" આલ્બમો</string>
     <string name="search_title_songs">તમામ \"%s\" ગીતો</string>

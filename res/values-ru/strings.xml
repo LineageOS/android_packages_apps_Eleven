@@ -30,7 +30,6 @@
     <string name="header_top_songs">Топ-треки</string>
     <string name="header_all_songs">Все треки</string>
     <string name="menu_settings">Настройки</string>
-    <string name="menu_search">Поиск</string>
     <string name="menu_shuffle_item">Перемешать</string>
     <string name="menu_shuffle_all">Перемешать все</string>
     <string name="menu_shuffle_playlist">Перемешать плейлист</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Музыка: недавно прослушанные</string>
     <string name="no_effects_for_you">Не удалось открыть эквалайзер.</string>
     <string name="empty_music">Чтобы скопировать музыку с ПК, используйте USB-кабель.</string>
-    <string name="empty_search">Поиск не дал результатов</string>
-    <string name="empty_search_check">Проверьте правильность ввода или попробуйте поиск по другому ключевому слову.</string>
     <string name="empty_favorite">Здесь будут треки, которые вы добавили в избранное.</string>
     <string name="empty_recent_main">Нет недавних треков</string>
     <string name="empty_recent">Здесь появятся треки, которые вы недавно слушали.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Показать все альбомы</string>
     <string name="footer_search_songs">Показать все треки</string>
     <string name="footer_search_playlists">Показать все плейлисты</string>
-    <string name="searchHint">Поиск музыки</string>
     <string name="search_title_artists">Все исполнители «%s»</string>
     <string name="search_title_albums">Все альбомы «%s»</string>
     <string name="search_title_songs">Все треки «%s»</string>

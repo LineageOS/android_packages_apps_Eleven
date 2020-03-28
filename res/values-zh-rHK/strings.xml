@@ -26,7 +26,6 @@
     <string name="header_top_songs">熱門歌曲</string>
     <string name="header_all_songs">所有歌曲</string>
     <string name="menu_settings">設定</string>
-    <string name="menu_search">搜尋</string>
     <string name="menu_shuffle_item">隨機播放</string>
     <string name="menu_shuffle_all">隨機播放所有歌曲</string>
     <string name="menu_shuffle_playlist">隨機播放清單</string>
@@ -119,8 +118,6 @@
     <string name="app_widget_recent">音樂：最近聽過</string>
     <string name="no_effects_for_you">無法打開等化器。</string>
     <string name="empty_music">使用 USB 連接線將音樂從電腦複製至裝置。</string>
-    <string name="empty_search">未找到搜尋結果</string>
-    <string name="empty_search_check">請檢查拼寫是否正確，或嘗試其他關鍵字。</string>
     <string name="empty_favorite">您標記為最愛的歌曲將在這裏顯示。</string>
     <string name="empty_recent_main">無最近播放的歌曲</string>
     <string name="empty_recent">您最近聽過的歌曲將在這裏顯示。</string>
@@ -156,7 +153,6 @@
     <string name="footer_search_albums">顯示所有專輯</string>
     <string name="footer_search_songs">顯示所有歌曲</string>
     <string name="footer_search_playlists">顯示所有播放清單</string>
-    <string name="searchHint">搜尋音樂</string>
     <string name="search_title_artists">所有「%s」演出者</string>
     <string name="search_title_albums">所有「%s」專輯</string>
     <string name="search_title_songs">所有「%s」歌曲</string>

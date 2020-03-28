@@ -30,7 +30,6 @@
     <string name="header_top_songs">Titres populaires</string>
     <string name="header_all_songs">Tous les titres</string>
     <string name="menu_settings">Paramètres</string>
-    <string name="menu_search">Rechercher</string>
     <string name="menu_shuffle_item">Lecture aléatoire</string>
     <string name="menu_shuffle_all">Lecture aléatoire de tous les titres</string>
     <string name="menu_shuffle_playlist">Lecture aléatoire des titres de la liste de lecture</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musique : récemment écouté</string>
     <string name="no_effects_for_you">L\'égaliseur ne peut pas être ouvert.</string>
     <string name="empty_music">Utilisez un câble USB pour copier de la musique depuis votre ordinateur vers votre appareil.</string>
-    <string name="empty_search">Aucun résultat trouvé</string>
-    <string name="empty_search_check">Veuillez vérifier que l\'orthographe est correcte ou essayez un autre mot clé.</string>
     <string name="empty_favorite">Vos titres favoris seront affichés ici.</string>
     <string name="empty_recent_main">Aucun titre récent</string>
     <string name="empty_recent">Les titres écoutés récemment seront affichés ici.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Afficher tous les albums</string>
     <string name="footer_search_songs">Afficher tous les titres</string>
     <string name="footer_search_playlists">Afficher toutes les listes de lecture</string>
-    <string name="searchHint">Rechercher de la musique</string>
     <string name="search_title_artists">Tous les artistes \"%s\"</string>
     <string name="search_title_albums">Tous les albums \"%s\"</string>
     <string name="search_title_songs">Tous les titres \"%s\"</string>

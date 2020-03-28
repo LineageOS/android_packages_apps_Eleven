@@ -30,7 +30,6 @@
     <string name="header_top_songs">Najlepiej oceniane utwory</string>
     <string name="header_all_songs">Wszystkie utwory</string>
     <string name="menu_settings">Ustawienia</string>
-    <string name="menu_search">Szukaj</string>
     <string name="menu_shuffle_item">Losowo</string>
     <string name="menu_shuffle_all">Losuj wszystko</string>
     <string name="menu_shuffle_playlist">Losuj listę odtwarzania</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Muzyka: Ostatnio słuchane</string>
     <string name="no_effects_for_you">Equalizer nie może zostać uruchomiony.</string>
     <string name="empty_music">Aby skopiować muzykę z komputera do urządzenia, użyj kabla USB.</string>
-    <string name="empty_search">Nie znaleziono pasujących wyników</string>
-    <string name="empty_search_check">Proszę sprawdzić, czy masz poprawną pisownię lub spróbuj innego słowa kluczowego.</string>
     <string name="empty_favorite">Tutaj pojawią się utwory oznaczone jako ulubione.</string>
     <string name="empty_recent_main">Brak ostatnio słuchanych utworów</string>
     <string name="empty_recent">Ostatnio przesłuchane albumy pojawią się tutaj. Zobaczysz je po odtworzeniu kilku utworów.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Pokaż wszystkie albumy</string>
     <string name="footer_search_songs">Pokaż wszystkie utwory</string>
     <string name="footer_search_playlists">Pokaż wszystkie playlisty</string>
-    <string name="searchHint">Szukaj Muzyki</string>
     <string name="search_title_artists">Wszyscy artyści \"%s\"</string>
     <string name="search_title_albums">Wszystkie albumy \"%s\"</string>
     <string name="search_title_songs">Wszystkie piosenki \"%s\"</string>
