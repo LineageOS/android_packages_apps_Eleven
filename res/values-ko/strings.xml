@@ -30,7 +30,6 @@
     <string name="header_top_songs">자주 듣는 곡들</string>
     <string name="header_all_songs">모든 노래</string>
     <string name="menu_settings">설정</string>
-    <string name="menu_search">검색</string>
     <string name="menu_shuffle_item">셔플</string>
     <string name="menu_shuffle_all">모두 셔플</string>
     <string name="menu_shuffle_playlist">재생목록 셔플</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">음악: 최근에 들은 곡</string>
     <string name="no_effects_for_you">이퀄라이저를 열 수 없습니다.</string>
     <string name="empty_music">컴퓨터에서 기기로 음악을 복사하려면 USB 케이블을 사용하십시오.</string>
-    <string name="empty_search">검색 결과 없음</string>
-    <string name="empty_search_check">스펠링이 정확한 지 확인해보거나, 다른 키워드를 사용해보십시오.</string>
     <string name="empty_favorite">즐겨찾기에 추가한 음악들이 여기에 표시됩니다.</string>
     <string name="empty_recent_main">최근에 재생된 곡 없음</string>
     <string name="empty_recent">최근에 들은 음악들이 여기에 표시됩니다.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">모든 앨범 보기</string>
     <string name="footer_search_songs">모든 음악 보기</string>
     <string name="footer_search_playlists">모든 재생목록 보기</string>
-    <string name="searchHint">음악 검색</string>
     <string name="search_title_artists">모든 \"%s\" 아티스트</string>
     <string name="search_title_albums">모든 \"%s\" 앨범</string>
     <string name="search_title_songs">모든 \"%s\" 음악</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top-Lidder</string>
     <string name="header_all_songs">All d\'Lidder</string>
     <string name="menu_settings">Astellungen</string>
-    <string name="menu_search">Sichen</string>
     <string name="menu_shuffle_item">Mëschen</string>
     <string name="menu_shuffle_all">All zoufälleg ofspillen</string>
     <string name="menu_shuffle_playlist">Ofspilllëscht mëschen</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musek: viru kuerzem gelauschtert</string>
     <string name="no_effects_for_you">Den Equalizer konnt net opgemaach ginn.</string>
     <string name="empty_music">Benotz en USB-Kabel fir Musek vun dengem Computer op den Apparat z\'iwwerdroen.</string>
-    <string name="empty_search">Keng Sichresultater fonnt</string>
-    <string name="empty_search_check">Iwwerpréif w.e.g., datt s du déi korrekt Schreifweis benotzt hues, oder probéier en anert Stéchwuert.</string>
     <string name="empty_favorite">Lidder, déi s du als Favorit markéiert hues, ginn hei ugewisen.</string>
     <string name="empty_recent_main">Keng rezent Lidder</string>
     <string name="empty_recent">Lidder, déi s du viru kuerzem gelauschtert hues, ginn hei ugewisen.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">All d\'Alben uweisen</string>
     <string name="footer_search_songs">All d\'Lidder uweisen</string>
     <string name="footer_search_playlists">All d\'Ofspilllëschten uweisen</string>
-    <string name="searchHint">Musek sichen</string>
     <string name="search_title_artists">All \"%s\" Interpreten</string>
     <string name="search_title_albums">All \"%s\" Alben</string>
     <string name="search_title_songs">All \"%s\" Lidder</string>

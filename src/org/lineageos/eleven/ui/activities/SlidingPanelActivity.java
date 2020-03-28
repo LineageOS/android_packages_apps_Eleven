@@ -337,7 +337,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         headerBar.setHeaderClickListener(headerClickListener);
 
         headerBar.hideBackButton();
-        headerBar.hideSearchButton();
     }
 
     private class ShowPanelClickListener implements View.OnClickListener {

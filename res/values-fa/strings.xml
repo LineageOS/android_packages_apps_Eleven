@@ -30,7 +30,6 @@
     <string name="header_top_songs">آهنگ‌های عالی</string>
     <string name="header_all_songs">تمام آهنگ‌ها</string>
     <string name="menu_settings">تنظیمات</string>
-    <string name="menu_search">جستجو</string>
     <string name="menu_shuffle_item">تصادفی</string>
     <string name="menu_shuffle_all">تصادفی همه</string>
     <string name="menu_shuffle_playlist">لیست پخش تصادفی</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">موسیقی: شنیده‎شده اخیر</string>
     <string name="no_effects_for_you">اکولایزر باز نمی‌شود.</string>
     <string name="empty_music">برای کپی موسیقی از کامپیوتر به دستگاهتان، از یک کابل USB استفاده کنید.</string>
-    <string name="empty_search">جستجو نتیجه‌ای نداشت</string>
-    <string name="empty_search_check">لطفا املای کلمات را بررسی یا از کلید واژه دیگری استفاده کنید.</string>
     <string name="empty_favorite">آهنگ‌هایی علامت‌گذاری‌شده به عنوان موردعلاقه در اینجا نشان داده می‌شوند.</string>
     <string name="empty_recent_main">آهنگ اخیری وجود ندارد</string>
     <string name="empty_recent">آهنگ‌های تازه شنیده شده در اینجا نمایش داده خواهند شد.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">نمایش همه آلبوم‌ها</string>
     <string name="footer_search_songs">نمایش همه آهنگ‌ها</string>
     <string name="footer_search_playlists">نمایش همه لیست‌های پخش</string>
-    <string name="searchHint">جستجوی موسیقی</string>
     <string name="search_title_artists">تمام «%s» هنرمند</string>
     <string name="search_title_albums">تمام «%s» آلبوم</string>
     <string name="search_title_songs">تمام «%s» آهنگ</string>

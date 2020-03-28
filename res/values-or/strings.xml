@@ -30,7 +30,6 @@
     <string name="header_top_songs">ଶ୍ରେଷ୍ଠ ଗୀତଗୁଡିକ</string>
     <string name="header_all_songs">ସମସ୍ତ ସଂଗୀତ</string>
     <string name="menu_settings">ସେଟିଂସ୍</string>
-    <string name="menu_search">ସନ୍ଧାନ</string>
     <string name="menu_shuffle_item">ସଫଲ୍</string>
     <string name="menu_shuffle_all">ସମସ୍ତ ସଫଲ୍ କରନ୍ତୁ</string>
     <string name="menu_shuffle_playlist">ଚାଳନତାଲିକା ସ୍ଥାନ ବଦଳ କରନ୍ତୁ</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">ସଙ୍ଗୀତ: ସମ୍ପ୍ରତି ଶୁଣାଯାଇଥିବା</string>
     <string name="no_effects_for_you">ଇକ୍ୱାଲାଇଜର୍‍ ଖୋଲାଯାଇପାରିବ ନାହିଁ।</string>
     <string name="empty_music">ସଙ୍ଗୀତ ଆପଣଙ୍କ କମ୍ପ୍ୟୁଟରରୁ ଆପଣଙ୍କ ଡିଭାଇସ୍‍କୁ କପି କରିବା ପାଇଁ, ଏକ USB ତାର ବ୍ୟବହାର କରନ୍ତୁ।</string>
-    <string name="empty_search">କୌଣସି ସନ୍ଧାନ ଫଳାଫଳ ମିଳିଲା ନାହିଁ</string>
-    <string name="empty_search_check">ଆପଣ ବନାନ ଠିକ୍‍ କରିଥିବା ଦୟାକରି ପରୀକ୍ଷିତ କରନ୍ତୁ ବା ଏକ ଭିନ୍ନ କିଓ୍ୱାର୍ଡ ଚେଷ୍ଟା କରନ୍ତୁ।</string>
     <string name="empty_favorite">ଆପଣ ପସନ୍ଦିତାସମୂହ ଚିହ୍ନିତ କରିଥିବା ଗୀତଗୁଡିକ ଏଠାରେ ଦେଖାଯିବ।</string>
     <string name="empty_recent_main">କୌଣସି ସମ୍ପ୍ରତି ଗୀତ ନାହିଁ</string>
     <string name="empty_recent">ସମ୍ପ୍ରତି ଆପଣ ଶୁଣୁଥିବା ଗୀତଗୁଡିକ ଏଠାରେ ପ୍ରଦର୍ଶନ କରିବା।</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">ସମସ୍ତ ଆଲ୍‍ବମ୍‍ ଦେଖାନ୍ତୁ</string>
     <string name="footer_search_songs">ସମସ୍ତ ଗୀତ ଦେଖାନ୍ତୁ</string>
     <string name="footer_search_playlists">ସମସ୍ତ ପ୍ଲେତାଲିକା ପ୍ରଦର୍ଶନ କରନ୍ତୁ</string>
-    <string name="searchHint">ସଙ୍ଗୀତ ସନ୍ଧାନ କରନ୍ତୁ</string>
     <string name="search_title_artists">ସମ୍ସ୍ତ \"%s\" କଳାକାର</string>
     <string name="search_title_albums">ସମ୍ସ୍ତ \"%s\" ଆଲ୍‍ବମ୍‍</string>
     <string name="search_title_songs">ସମ୍ସ୍ତ \"%s\" ଗୀତ</string>

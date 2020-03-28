@@ -30,7 +30,6 @@
     <string name="header_top_songs">Nejlepší skladby</string>
     <string name="header_all_songs">Všechny skladby</string>
     <string name="menu_settings">Nastavení</string>
-    <string name="menu_search">Vyhledat</string>
     <string name="menu_shuffle_item">Náhodně</string>
     <string name="menu_shuffle_all">Vše náhodně</string>
     <string name="menu_shuffle_playlist">Náhodně v seznamu skladeb</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Hudba: nedávno poslouchané</string>
     <string name="no_effects_for_you">Nelze otevřít ekvalizér.</string>
     <string name="empty_music">Pro kopírování hudebních souborů z počítače do zařízení použijte USB kabel.</string>
-    <string name="empty_search">Nenalezeny žádné výsledky</string>
-    <string name="empty_search_check">Zkontrolujte, zda jste výraz napsali správně nebo zkuste jiné klíčové slovo.</string>
     <string name="empty_favorite">Zde budou zobrazeny všechny skladby označené jako oblíbené.</string>
     <string name="empty_recent_main">Žádné naposledy přehrávané</string>
     <string name="empty_recent">Zde budou zobrazeny všechny nedávno přehrávané skladby.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Zobrazit všechna alba</string>
     <string name="footer_search_songs">Zobrazit všechny skladby</string>
     <string name="footer_search_playlists">Zobrazit všechny seznamy skladeb</string>
-    <string name="searchHint">Vyhledávání hudby</string>
     <string name="search_title_artists">Vše od umělce „%s“</string>
     <string name="search_title_albums">Vše v albu „%s“</string>
     <string name="search_title_songs">Všechny skladby \"%s\"</string>

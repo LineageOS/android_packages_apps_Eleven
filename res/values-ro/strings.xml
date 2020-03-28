@@ -30,7 +30,6 @@
     <string name="header_top_songs">Melodii de top</string>
     <string name="header_all_songs">Toate melodiile</string>
     <string name="menu_settings">Setări</string>
-    <string name="menu_search">Căutare</string>
     <string name="menu_shuffle_item">Amestecare</string>
     <string name="menu_shuffle_all">Amestecă toate</string>
     <string name="menu_shuffle_playlist">Amestecă lista de redare</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Muzică: recent ascultate</string>
     <string name="no_effects_for_you">Egalizatorul nu a putut fi deschis.</string>
     <string name="empty_music">Pentru a copia muzică de pe calculator în dispozitivul dvs, folosiți un cablu USB.</string>
-    <string name="empty_search">Nu am găsit rezultate la căutare</string>
-    <string name="empty_search_check">Vă rugăm să verificați că aveți ortografia corectă sau încercați un cuvânt cheie diferit.</string>
     <string name="empty_favorite">Melodiile marcate de dvs ca favorite vor fi afișate aici.</string>
     <string name="empty_recent_main">Nicio melodie recentă</string>
     <string name="empty_recent">Melodiile redate recent vor fi afișate aici.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Arată toate albumele</string>
     <string name="footer_search_songs">Arată toate melodiile</string>
     <string name="footer_search_playlists">Arată toate listele de redare</string>
-    <string name="searchHint">Căutare muzică</string>
     <string name="search_title_artists">Toți \"%s\" artiștii</string>
     <string name="search_title_albums">Toate \"%s\" albumele</string>
     <string name="search_title_songs">Toate \"%s\" melodiile</string>

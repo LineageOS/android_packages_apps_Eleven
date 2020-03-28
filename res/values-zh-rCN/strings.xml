@@ -30,7 +30,6 @@
     <string name="header_top_songs">热门歌曲</string>
     <string name="header_all_songs">所有歌曲</string>
     <string name="menu_settings">设置</string>
-    <string name="menu_search">搜索</string>
     <string name="menu_shuffle_item">随机播放</string>
     <string name="menu_shuffle_all">全部随机播放</string>
     <string name="menu_shuffle_playlist">随机播放列表</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">最近听过的音乐</string>
     <string name="no_effects_for_you">无法打开均衡器。</string>
     <string name="empty_music">请使用 USB 数据线把音乐从您的计算机复制到您的设备中。</string>
-    <string name="empty_search">无搜索结果</string>
-    <string name="empty_search_check">请检查您的拼写是否正确，或尝试另一个关键字。</string>
     <string name="empty_favorite">您标记为收藏的歌曲将在这里显示。</string>
     <string name="empty_recent_main">没有最近的歌曲</string>
     <string name="empty_recent">这里会显示您最近听过的歌曲。</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">显示所有专辑</string>
     <string name="footer_search_songs">显示所有歌曲</string>
     <string name="footer_search_playlists">显示所有播放列表</string>
-    <string name="searchHint">搜索音乐</string>
     <string name="search_title_artists">所有的 \"%s\" 艺术家</string>
     <string name="search_title_albums">所有的 \"%s\" 专辑</string>
     <string name="search_title_songs">所有的 \"%s\" 歌曲</string>
