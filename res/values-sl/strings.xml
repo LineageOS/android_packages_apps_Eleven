@@ -30,7 +30,6 @@
     <string name="header_top_songs">Največkrat predvajane</string>
     <string name="header_all_songs">Vse skladbe</string>
     <string name="menu_settings">Nastavitve</string>
-    <string name="menu_search">Išči</string>
     <string name="menu_shuffle_item">Premešaj</string>
     <string name="menu_shuffle_all">Premešaj vse</string>
     <string name="menu_shuffle_playlist">Premešaj seznam predvajanja</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Glasba: nedavno poslušano</string>
     <string name="no_effects_for_you">Izenačevalnika ni mogoče odpreti.</string>
     <string name="empty_music">Za kopiranje glasbe iz vašega računalnika na vašo napravo uporabite kabel USB.</string>
-    <string name="empty_search">Rezultatov iskanja ni bilo najdenih</string>
-    <string name="empty_search_check">Preverite svoje črkovanje ali poskusite z drugo tipkovnico.</string>
     <string name="empty_favorite">Skladbe, ki jih označite kot priljubljene, bodo prikazane tukaj.</string>
     <string name="empty_recent_main">Ni nedavnih skladb</string>
     <string name="empty_recent">Skladbe, ki ste jih nedavno poslušali, bodo prikazane tukaj.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Prikaži vse albume</string>
     <string name="footer_search_songs">Prikaži vse skladbe</string>
     <string name="footer_search_playlists">Prikaži vse sezname predvajanja</string>
-    <string name="searchHint">Išči po glasbi</string>
     <string name="search_title_artists">Vseh \"%s\" izvajalcev</string>
     <string name="search_title_albums">Vseh \"%s\" albumov</string>
     <string name="search_title_songs">Vseh \"%s\" skladb</string>

@@ -30,7 +30,6 @@
     <string name="header_top_songs">Üst Şarkılar</string>
     <string name="header_all_songs">Tüm Şarkılar</string>
     <string name="menu_settings">Ayarlar</string>
-    <string name="menu_search">Ara</string>
     <string name="menu_shuffle_item">Karıştır</string>
     <string name="menu_shuffle_all">Tümünü karıştır</string>
     <string name="menu_shuffle_playlist">Çalma listesini karıştır</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Müzik: son zamanlarda dinlenen</string>
     <string name="no_effects_for_you">Ekolayzer açılamadı.</string>
     <string name="empty_music">Bilgisayarınızdan cihazınıza müzik kopyalamak için USB kablo kullanın.</string>
-    <string name="empty_search">Arama sonucu bulunamadı</string>
-    <string name="empty_search_check">Lütfen doğru kelime girdiğinizi kontrol edin ya da farklı bir kelime deneyin.</string>
     <string name="empty_favorite">Favori işaretlediğiniz şarkılar burada gözükecek.</string>
     <string name="empty_recent_main">Son çalınan şarkı yok</string>
     <string name="empty_recent">Son zamanlarda dinlediğiniz şarkılar burada gösterilecek.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Tüm albümleri göster</string>
     <string name="footer_search_songs">Tüm şarkıları göster</string>
     <string name="footer_search_playlists">Tüm listeleri göster</string>
-    <string name="searchHint">Müzik ara</string>
     <string name="search_title_artists">Tüm \"%s\" sanatçıları</string>
     <string name="search_title_albums">Tüm \"%s\" albümleri</string>
     <string name="search_title_songs">Tüm \"%s\" şarkıları</string>

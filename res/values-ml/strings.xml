@@ -30,7 +30,6 @@
     <string name="header_top_songs">മുന്‍നിര ഗാനങ്ങൾ</string>
     <string name="header_all_songs">ഗാനങ്ങൾ എല്ലാം</string>
     <string name="menu_settings">ക്രമീകരണം</string>
-    <string name="menu_search">തിരയുക</string>
     <string name="menu_shuffle_item">ഷഫിൾ ചെയ്യുക</string>
     <string name="menu_shuffle_all">എല്ലാം ഷഫിൾ ചെയ്യുക</string>
     <string name="menu_shuffle_playlist">പ്ലേലിസ്റ്റ് ഷഫിൾ ചെയ്യുക</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">സംഗീതം: സമീപകാലത്ത് കേട്ടത്</string>
     <string name="no_effects_for_you">ഈക്വലൈസര്‍ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
     <string name="empty_music">നിങ്ങളുടെ കമ്പ്യൂട്ടറിൽ നിന്ന് നിങ്ങളുടെ ഉപകരണത്തിലേക്ക് സംഗീതം പകർത്തുന്നതിന്, ഒരു USB കേബിൾ ഉപയോഗിക്കുക.</string>
-    <string name="empty_search">തിരയൽ ഫലങ്ങൾ ഒന്നും കണ്ടെത്തിയില്ല</string>
-    <string name="empty_search_check">ശരിയായ സ്പെല്ലിംഗ് നിങ്ങള്‍ക്കുണ്ടോയെന്ന്‍ പരിശോധിക്കുക. അല്ലെങ്കിൽ മറ്റൊരു കീവേഡ് ശ്രമിക്കുക.</string>
     <string name="empty_favorite">പ്രിയപ്പെട്ടവയായി നിങ്ങള്‍  അടയാളപ്പെടുത്തുക ഗാനങ്ങൾ ഇവിടെ കാണിക്കുന്നതാണ്.</string>
     <string name="empty_recent_main">സമീപകാലത്തുള്ള ഗാനങ്ങൾ ഇല്ല</string>
     <string name="empty_recent">നിങ്ങൾ അടുത്തിടെ കേട്ട ഗാനങ്ങൾ ഇവിടെ കാണിക്കുന്നതാണ്.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">എല്ലാ ആൽബങ്ങളും കാണിക്കുക</string>
     <string name="footer_search_songs">എല്ലാ ഗാനങ്ങളും കാണിക്കുക</string>
     <string name="footer_search_playlists">എല്ലാ പ്ലേലിസ്റ്റുകളും കാണിക്കുക</string>
-    <string name="searchHint">സംഗീതം തിരയുക</string>
     <string name="search_title_artists">\"%s\" ആര്‍ട്ടിസ്റ്റുകള്‍ എല്ലാം</string>
     <string name="search_title_albums">\"%s\" ആൽബങ്ങൾ എല്ലാം</string>
     <string name="search_title_songs">\"%s\" പാട്ടുകൾ എല്ലാം</string>

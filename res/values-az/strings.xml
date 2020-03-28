@@ -30,7 +30,6 @@
     <string name="header_top_songs">Top Mahnılar</string>
     <string name="header_all_songs">Bütün Mahnılar</string>
     <string name="menu_settings">Tənzimləmələr</string>
-    <string name="menu_search">Axtar</string>
     <string name="menu_shuffle_item">Qarışdır</string>
     <string name="menu_shuffle_all">Hamısını qarışdır</string>
     <string name="menu_shuffle_playlist">Oynatma siyahısını qarışdır</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musiqi: son vaxtlar dinlənən</string>
     <string name="no_effects_for_you">Ekvalayzer açılmadı.</string>
     <string name="empty_music">Komputerinizdən cihazınıza musiqi kopyalamaq üçün USB kabeldən istifadə edin.</string>
-    <string name="empty_search">Axtarış nəticə vermədi</string>
-    <string name="empty_search_check">Zəhmət olmasa düzgün söz daxil etdiyinizi yoxlayın və ya fərqli bir söz sınayın.</string>
     <string name="empty_favorite">Seçilmiş kimi işarələdiyiniz mahnılar burada görünəcək.</string>
     <string name="empty_recent_main">Son çalınan mahnı yoxdur</string>
     <string name="empty_recent">Təzəlikcə dinlədiyiniz mahnılar burada görünəcək.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Bütün albomları göstər</string>
     <string name="footer_search_songs">Bütün mahnıları göstər</string>
     <string name="footer_search_playlists">Bütün siyahıları göstər</string>
-    <string name="searchHint">Musiqi axtar</string>
     <string name="search_title_artists">Bütün \"%s\" sənətkarları</string>
     <string name="search_title_albums">Bütün \"%s\" albomları</string>
     <string name="search_title_songs">Bütün \"%s\" mahnıları</string>

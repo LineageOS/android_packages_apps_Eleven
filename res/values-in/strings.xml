@@ -30,7 +30,6 @@
     <string name="header_top_songs">Lagu Top</string>
     <string name="header_all_songs">Semua Lagu</string>
     <string name="menu_settings">Pengaturan</string>
-    <string name="menu_search">Cari</string>
     <string name="menu_shuffle_item">Acak</string>
     <string name="menu_shuffle_all">Acak semua</string>
     <string name="menu_shuffle_playlist">Putar acak daftar putar</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musik: baru saja didengarkan</string>
     <string name="no_effects_for_you">Equalizer tidak dapat dibuka.</string>
     <string name="empty_music">Untuk menyalin musik dari komputer ke perangkat Anda, gunakan kabel USB.</string>
-    <string name="empty_search">Hasil penelusuran tidak ditemukan</string>
-    <string name="empty_search_check">Periksa bahwa Anda memiliki ejaan yang benar atau coba kata kunci yang berbeda.</string>
     <string name="empty_favorite">Lagu-lagu yang anda tandai sebagai favorit akan ditampilkan di sini.</string>
     <string name="empty_recent_main">Tidak ada lagu terbaru</string>
     <string name="empty_recent">Lagu yang Anda dengarkan baru-baru ini akan muncul di sini.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Tampilkan semua album</string>
     <string name="footer_search_songs">Tampilkan semua lagu</string>
     <string name="footer_search_playlists">Tampilkan semua daftar putar</string>
-    <string name="searchHint">Cari musik</string>
     <string name="search_title_artists">Semua \"%s\" artis</string>
     <string name="search_title_albums">Semua \"%s\" album</string>
     <string name="search_title_songs">Semua \"%s\" lagu</string>

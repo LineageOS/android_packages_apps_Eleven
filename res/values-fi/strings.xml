@@ -30,7 +30,6 @@
     <string name="header_top_songs">Suosituimmat kappaleet</string>
     <string name="header_all_songs">Kaikki kappaleet</string>
     <string name="menu_settings">Asetukset</string>
-    <string name="menu_search">Haku</string>
     <string name="menu_shuffle_item">Sekoita</string>
     <string name="menu_shuffle_all">Sekoita kaikki</string>
     <string name="menu_shuffle_playlist">Sekoita soittolista</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musiikki: äskettäin kuunneltu</string>
     <string name="no_effects_for_you">Taajuuskorjainta ei voitu avata.</string>
     <string name="empty_music">Kopioi musiikkia tietokoneelta laitteeseen käyttämällä USB-kaapelia.</string>
-    <string name="empty_search">Hakutuloksia ei löytynyt</string>
-    <string name="empty_search_check">Tarkista oikeinkirjoitus tai kokeile eri hakusanaa.</string>
     <string name="empty_favorite">Suosikeiksi merkitsemäsi kappaleet näkyvät tässä.</string>
     <string name="empty_recent_main">Ei äskettäin kuunneltuja</string>
     <string name="empty_recent">Kuuntelemasi albumit näkyvät tässä.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Näytä kaikki albumit</string>
     <string name="footer_search_songs">Näytä kaikki kappaleet</string>
     <string name="footer_search_playlists">Näytä kaikki soittolistat</string>
-    <string name="searchHint">Etsi musiikkia</string>
     <string name="search_title_artists">Kaikki \"%s\" esittäjää</string>
     <string name="search_title_albums">Kaikki \"%s\" albumia</string>
     <string name="search_title_songs">Kaikki \"%s\" kappaletta</string>

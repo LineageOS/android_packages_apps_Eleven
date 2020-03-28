@@ -30,7 +30,6 @@
     <string name="header_top_songs">Bêste nûmers</string>
     <string name="header_all_songs">Alle nûmers</string>
     <string name="menu_settings">Ynstellingen</string>
-    <string name="menu_search">Sykje</string>
     <string name="menu_shuffle_item">Mjokselje</string>
     <string name="menu_shuffle_all">Alles mjokselje</string>
     <string name="menu_shuffle_playlist">Ofspyllist mjokselje</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Muzyk: resint belústere</string>
     <string name="no_effects_for_you">Kin equalizer net iepenje.</string>
     <string name="empty_music">Om muzyk fan jo kompjûter te kopiearjen nei jo apparaat, kinne jo in USB-kabel brûke.</string>
-    <string name="empty_search">Gjin sykresultaten fûn</string>
-    <string name="empty_search_check">Kontrolearje oft jo de krekte stavering brûke of probearje in oar trefwurd.</string>
     <string name="empty_favorite">Jo favorite nûmers wurde hjir toand.</string>
     <string name="empty_recent_main">Gjin resinte nûmers</string>
     <string name="empty_recent">Nûmers dêr\'t jo resint nei lústere hawwe wurde hjir toand.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Alle albums toane</string>
     <string name="footer_search_songs">Alle nûmers toane</string>
     <string name="footer_search_playlists">Alle ôfspyllisten toane</string>
-    <string name="searchHint">Muzyk sykje</string>
     <string name="search_title_artists">Alle ‘%s’ artysten</string>
     <string name="search_title_albums">Alle ‘%s’ albums</string>
     <string name="search_title_songs">Alle ‘%s’ nûmers</string>

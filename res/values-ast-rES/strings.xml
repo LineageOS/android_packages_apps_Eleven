@@ -30,7 +30,6 @@
     <string name="header_top_songs">Canciones más escuchaes</string>
     <string name="header_all_songs">Toles canciones</string>
     <string name="menu_settings">Axustes</string>
-    <string name="menu_search">Guetar</string>
     <string name="menu_shuffle_item">Al debalu</string>
     <string name="menu_shuffle_all">Too al debalu</string>
     <string name="menu_shuffle_playlist">Llista de reproducción aleatoria</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Música: Escuchaes recientemente</string>
     <string name="no_effects_for_you">L\'ecualizador nun pudo abrise.</string>
     <string name="empty_music">Pa copiar música del to ordenador al to preséu, usa un cable USB.</string>
-    <string name="empty_search">Nun s\'alcontraron resultaos de gueta</string>
-    <string name="empty_search_check">Comprueba que lo escribisti correutamente o intenta una pallabra clave diferente.</string>
     <string name="empty_favorite">Les canciones que marques como favorites van apaecer equí.</string>
     <string name="empty_recent_main">Nun hai canciones recientes</string>
     <string name="empty_recent">Les canciones que sentisti hai poco van apaecer equí.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Amosar tolos álbumes</string>
     <string name="footer_search_songs">Amosar toles canciones</string>
     <string name="footer_search_playlists">Amosar toles llistes</string>
-    <string name="searchHint">Guetar música</string>
     <string name="search_title_artists">Tolos artistes de «%s»</string>
     <string name="search_title_albums">Tolos álbumes de «%s»</string>
     <string name="search_title_songs">Toles canciones de «%s»</string>

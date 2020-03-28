@@ -30,7 +30,6 @@
     <string name="header_top_songs">Topp sanger</string>
     <string name="header_all_songs">Alle sanger</string>
     <string name="menu_settings">Innstillinger</string>
-    <string name="menu_search">Søk</string>
     <string name="menu_shuffle_item">Shuffle</string>
     <string name="menu_shuffle_all">Shuffle alle</string>
     <string name="menu_shuffle_playlist">Shuffle spilleliste</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musikk: nylig hørte</string>
     <string name="no_effects_for_you">Equalizeren kan ikke åpnes.</string>
     <string name="empty_music">For å kopiere musikk fra en datamaskin til enheten, bruk en USB kabel.</string>
-    <string name="empty_search">Ingen resultater funnet</string>
-    <string name="empty_search_check">Kontroller at du har riktig stavemåte eller prøv et annet nøkkelord.</string>
     <string name="empty_favorite">Sanger du markerer som favoritter vil bli vist her.</string>
     <string name="empty_recent_main">Ingen nye sanger</string>
     <string name="empty_recent">Sanger du har lyttet til sist vises her.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Vis alle album</string>
     <string name="footer_search_songs">Vis alle sanger</string>
     <string name="footer_search_playlists">Vis alle spillelister</string>
-    <string name="searchHint">Søk musikk</string>
     <string name="search_title_artists">Alle \"%s\" artister</string>
     <string name="search_title_albums">Alle \"%s\" albumer</string>
     <string name="search_title_songs">Alle \"%s\" sanger</string>

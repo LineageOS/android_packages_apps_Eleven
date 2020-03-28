@@ -29,7 +29,6 @@
     <string name="header_top_songs">ಟಾಪ್ ಹಾಡುಗಳು</string>
     <string name="header_all_songs">ಎಲ್ಲಾ ಹಾಡುಗಳು</string>
     <string name="menu_settings">ಸೆಟ್ಟಿಂಗ್ಸ್</string>
-    <string name="menu_search">ಹುಡುಕಿ</string>
     <string name="menu_shuffle_item">ಷಫಲ್</string>
     <string name="menu_shuffle_all">ಎಲ್ಲವನ್ನು ಷಫಲ್ ಮಾಡಿ</string>
     <string name="menu_shuffle_playlist">ಪ್ಲೇಪಟ್ಟಿ ಷಫಲ್ ಮಾಡಿ</string>
@@ -128,8 +127,6 @@
     <string name="app_widget_recent">ಸಂಗೀತ: ಇತ್ತೀಚೆಗೆ ಆಲಿಸಿದ</string>
     <string name="no_effects_for_you">ಸಮಾನಕಾರಕವನ್ನು ತೆರೆಯಲಾಗುವುದಿಲ್ಲ.</string>
     <string name="empty_music">ನಿಮ್ಮ ಸಂಗೀತವನ್ನು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‍‍ನಿಂದ ನಿಮ್ಮ ಸಾಧನಕ್ಕೆ ನಕಲಿಸಲು, ಯು‍ಎಸ್‍ಬಿ ಕೇಬಲ್ ಉಪಯೋಗಿಸಿ.</string>
-    <string name="empty_search">ಯಾವುದೇ ಶೋಧನೆ ಫಲಿತಾಂಶಗಳು ಪತ್ತೆಯಾಗಲಿಲ್ಲ</string>
-    <string name="empty_search_check">ದಯವಿಟ್ಟು ಪರಿಶೀಲಿಸಿ ನೀವು ಸರಿಯಾದ ಅಕ್ಷರವನ್ನು ಹೊಂದಿದ್ದೀರೇ ಎಂದು ಅಥವ  ಭಿನ್ನವಾದ ಪದಕುಂಜವನ್ನು ಪ್ರಯತ್ನಿಸಿ.</string>
     <string name="empty_favorite">ನೀವು ಫೇವರಿಟ್ಸ್ ಎಂದು ಗುರುತಿಸಿದ ಹಾಡುಗಳನ್ನು ಇಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ.</string>
     <string name="empty_recent_main">ಯಾವುದೇ ಇತ್ತೀಚಿನ ಹಾಡುಗಳಿಲ್ಲ</string>
     <string name="empty_recent">ನೀವು ಇತ್ತೀಚೆಗೆ ಆಲಿಸಿದ ಹಾಡುಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತದೆ.</string>
@@ -165,7 +162,6 @@
     <string name="footer_search_albums">ಎಲ್ಲಾ ಆಲ್ಬಂಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
     <string name="footer_search_songs">ಎಲ್ಲಾ ಹಾಡುಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
     <string name="footer_search_playlists">ಎಲ್ಲಾ ಪ್ಲೇಪಟ್ಟಿಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
-    <string name="searchHint">ಸಂಗೀತವನ್ನು ಹುಡುಕಿ</string>
     <string name="search_title_artists">ಎಲ್ಲಾ \"%s\" ಕಲಾವಿದರು</string>
     <string name="search_title_albums">ಎಲ್ಲಾ \"%s\" ಆಲ್ಬಂಗಳು</string>
     <string name="search_title_songs">ಎಲ್ಲಾ \"%s\" ಹಾಡುಗಳು</string>

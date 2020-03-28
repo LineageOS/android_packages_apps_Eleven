@@ -30,7 +30,6 @@
     <string name="header_top_songs">শীৰ্ষ গীত</string>
     <string name="header_all_songs">সকলো গীত</string>
     <string name="menu_settings">ছেটিংছ</string>
-    <string name="menu_search">বিচাৰক</string>
     <string name="menu_shuffle_item">সানমিহলি কৰক</string>
     <string name="menu_shuffle_all">আটাইবোৰ সানমিহলি কৰক</string>
     <string name="menu_shuffle_playlist">প্লে-সূচী সানমিহলি কৰক</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">সংগীত: শেহতীয়াকৈ শুনা</string>
     <string name="no_effects_for_you">ইকুইলাইজাৰ খুলিব পৰা নগ\'ল</string>
     <string name="empty_music">কম্পিউটাৰৰ পৰা আপোনাৰ ডিভাইচলৈ সংগীত কপি কৰিবলৈ, এডাল USB কেবল ব্যৱহাৰ কৰক</string>
-    <string name="empty_search">কোনো অনুসন্ধান ফলাফল পোৱা নগ\'ল</string>
-    <string name="empty_search_check">অনুগ্ৰহ কৰি পৰীক্ষা কৰক যে আপুনি সঠিক বানান দিছে বা আন এটা কীৱৰ্ড চেষ্টা কৰক</string>
     <string name="empty_favorite">আপুনি প্ৰিয় হিচাপে চিহ্নিত কৰা গীতবোৰ ইয়াত দেখুওৱা হ\'ব।</string>
     <string name="empty_recent_main">কোনো শেহতীয়া গীত নাই</string>
     <string name="empty_recent">আপুনি শেহতীয়াকৈ শুনা গীতবোৰ ইয়াত প্ৰদৰ্শিত হ\'ব।</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">সকলো এলবাম প্ৰদৰ্শন কৰক</string>
     <string name="footer_search_songs">সকলো গীত প্ৰদৰ্শন কৰক</string>
     <string name="footer_search_playlists">সকলো প্লে-সূচী প্ৰদৰ্শন কৰক</string>
-    <string name="searchHint">সংগীত বিচাৰক</string>
     <string name="search_title_artists">সকলো \"%s\" শিল্পী</string>
     <string name="search_title_albums">সকলো \"%s\" এলবাম</string>
     <string name="search_title_songs">সকলো \"%s\" গীত</string>

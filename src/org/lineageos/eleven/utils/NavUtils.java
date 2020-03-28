@@ -26,7 +26,6 @@ import android.widget.Toast;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
-import org.lineageos.eleven.ui.activities.SearchActivity;
 import org.lineageos.eleven.ui.activities.SettingsActivity;
 
 /**
@@ -153,20 +152,6 @@ public final class NavUtils {
      */
     public static void openSettings(final Activity activity) {
         final Intent intent = new Intent(activity, SettingsActivity.class);
-        activity.startActivity(intent);
-    }
-
-    /**
-     * Opens to {@link org.lineageos.eleven.ui.activities.SearchActivity}.
-     *
-     * @param activity The {@link Activity} to use.
-     * @param query The search query.
-     */
-    public static void openSearch(final Activity activity, final String query) {
-        final Bundle bundle = new Bundle();
-        final Intent intent = new Intent(activity, SearchActivity.class);
-        intent.putExtra(SearchManager.QUERY, query);
-        intent.putExtras(bundle);
         activity.startActivity(intent);
     }
 

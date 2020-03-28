@@ -30,7 +30,6 @@
     <string name="header_top_songs">Bästa låtarna</string>
     <string name="header_all_songs">Alla låtar</string>
     <string name="menu_settings">Inställningar</string>
-    <string name="menu_search">Sök</string>
     <string name="menu_shuffle_item">Blanda</string>
     <string name="menu_shuffle_all">Blanda alla</string>
     <string name="menu_shuffle_playlist">Blanda spellista</string>
@@ -129,8 +128,6 @@
     <string name="app_widget_recent">Musik: nyligen lyssnat</string>
     <string name="no_effects_for_you">Equalizern kunde inte öppnas.</string>
     <string name="empty_music">Använd en USB-kabel för att kopiera musik från din dator till din enhet.</string>
-    <string name="empty_search">Inga sökresultat hittades</string>
-    <string name="empty_search_check">Kontrollera att du har den korrekta stavningen eller prova ett annat nyckelord.</string>
     <string name="empty_favorite">Låtar som du markerar som Favoriter kommer att synas här.</string>
     <string name="empty_recent_main">Inga senaste låtar</string>
     <string name="empty_recent">Låtar du lyssnat på nyligen kommer visas här.</string>
@@ -166,7 +163,6 @@
     <string name="footer_search_albums">Visa alla album</string>
     <string name="footer_search_songs">Visa alla låtar</string>
     <string name="footer_search_playlists">Visa alla spellistor</string>
-    <string name="searchHint">Sök musik</string>
     <string name="search_title_artists">Alla \"%s\" artister</string>
     <string name="search_title_albums">Alla \"%s\" album</string>
     <string name="search_title_songs">Alla \"%s\" låtar</string>
