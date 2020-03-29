@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list android:opacity="opaque"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/background_color" />
+    <item android:bottom="@dimen/launchscreens_product_logo_bottom">
+        <bitmap android:gravity="center" android:src="@drawable/eleven_logo" />
+    </item>
+    <item android:bottom="@dimen/splash_eleven_logo_bottom">
+        <bitmap android:gravity="bottom|center" android:src="@drawable/eleven_text" />
+    </item>
+</layer-list>

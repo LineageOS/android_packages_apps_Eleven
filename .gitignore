@@ -2,6 +2,7 @@
 /build/
 /gen/
 /local.properties
+/release
 
 *.iml
 **~

@@ -219,4 +219,8 @@
     <dimen name="audio_player_controls_card_corner_radius">2dp</dimen>
     <dimen name="audio_player_controls_card_content_padding">8dp</dimen>
     <dimen name="audio_player_controls_card_elevation">4dp</dimen>
+
+    <!-- Splash -->
+    <dimen name="splash_eleven_logo_bottom">120.0dip</dimen>
+    <dimen name="launchscreens_product_logo_bottom">14.0dip</dimen>
 </resources>
