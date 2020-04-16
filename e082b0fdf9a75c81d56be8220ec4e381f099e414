@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a99a8ae1_b14f6a87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2020-04-16T22:13:04Z",
+      "side": 1,
+      "message": "We *can* provide it but not without a complete rewrite of the feature",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 27
+      },
+      "revId": "e082b0fdf9a75c81d56be8220ec4e381f099e414",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
