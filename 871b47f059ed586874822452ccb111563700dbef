@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1699f0db_1612fc79",
+        "filename": "src/org/lineageos/eleven/adapters/ArtistDetailAlbumAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-17T12:45:14Z",
+      "side": 0,
+      "message": "I am not sure if this logging is supposed to go into production.",
+      "revId": "871b47f059ed586874822452ccb111563700dbef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
