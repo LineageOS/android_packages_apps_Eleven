@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f9205a9_66d1654e",
+        "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-21T23:33:28Z",
+      "side": 1,
+      "message": "The service is null while settings activity is running, which results in not calling setShakeToPlayEnabled.",
+      "range": {
+        "startLine": 309,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 13
+      },
+      "revId": "f93fbfe20df2e6b7277650425ba0c7c8d98c40ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfdc7ef7_2379901c",
+        "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-21T23:33:28Z",
+      "side": 1,
+      "message": "The service is null while settings activity is running, which results in not calling setLockscreenAlbumArt.",
+      "range": {
+        "startLine": 323,
+        "startChar": 0,
+        "endLine": 326,
+        "endChar": 13
+      },
+      "revId": "f93fbfe20df2e6b7277650425ba0c7c8d98c40ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
