@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "02695ebf_1757bdcd",
+        "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-04-22T06:35:11Z",
+      "side": 1,
+      "message": "I guess what we need to change then is \n- make settings activity bind to service\n- call the service methods instead of the static methods here\n- (kill the static methods)",
+      "parentUuid": "8f9205a9_66d1654e",
+      "range": {
+        "startLine": 309,
+        "startChar": 0,
+        "endLine": 312,
+        "endChar": 13
+      },
+      "revId": "f93fbfe20df2e6b7277650425ba0c7c8d98c40ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bfdc7ef7_2379901c",
         "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
         "patchSetId": 8
