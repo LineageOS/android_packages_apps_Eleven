@@ -303,20 +303,6 @@ public final class MusicUtils {
     }
 
     /**
-     * Set shake to play status
-     */
-    public static void setShakeToPlayEnabled(final boolean enabled) {
-        try {
-            IElevenService service = getService();
-            if (service != null) {
-                service.setShakeToPlayEnabled(enabled);
-            }
-        } catch (final RemoteException exc) {
-            Log.e(TAG, "setShakeToPlayEnabled(" + enabled + ")", exc);
-        }
-    }
-
-    /**
      * Changes to the next track asynchronously
      */
     public static void asyncNext(final Context context) {
