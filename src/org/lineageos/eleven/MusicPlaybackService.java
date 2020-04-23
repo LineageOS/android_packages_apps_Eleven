@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014-2016 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2018-2020 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven;
@@ -531,11 +536,6 @@ public class MusicPlaybackService extends Service
      */
     private ShakeDetector mShakeDetector;
 
-    /**
-     * Switch for displaying album art on lockscreen
-     */
-    private boolean mShowAlbumArtOnLockscreen;
-
     private boolean mReadGranted = false;
 
     private PowerManager.WakeLock mHeadsetHookWakeLock;
@@ -649,8 +649,6 @@ public class MusicPlaybackService extends Service
         mPreferences = getSharedPreferences("Service", 0);
         mCardId = getCardId();
 
-        mShowAlbumArtOnLockscreen = mPreferences.getBoolean(
-                PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN, true);
         setShakeToPlayEnabled(mPreferences.getBoolean(PreferenceUtils.SHAKE_TO_PLAY, false));
 
         mRepeatMode = mPreferences.getInt("repeatmode", REPEAT_NONE);
@@ -1589,8 +1587,7 @@ public class MusicPlaybackService extends Service
                     .putLong(MediaMetadata.METADATA_KEY_TRACK_NUMBER, getQueuePosition() + 1)
                     .putLong(MediaMetadata.METADATA_KEY_NUM_TRACKS, getQueue().length)
                     .putString(MediaMetadata.METADATA_KEY_GENRE, getGenreName())
-                    .putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART,
-                            mShowAlbumArtOnLockscreen ? albumArt : null)
+                    .putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART, albumArt)
                     .build());
 
             if (what.equals(QUEUE_CHANGED)) {
@@ -2909,14 +2906,6 @@ public class MusicPlaybackService extends Service
     }
 
     /**
-     * Called to set visibility of album art on lockscreen
-     */
-    public void setLockscreenAlbumArt(boolean enabled) {
-        mShowAlbumArtOnLockscreen = enabled;
-        notifyChange(META_CHANGED);
-    }
-
-    /**
      * Called to start listening to shakes
      */
     private void startShakeDetector() {
@@ -3815,14 +3804,6 @@ public class MusicPlaybackService extends Service
         @Override
         public void setShakeToPlayEnabled(boolean enabled) {
             mService.get().setShakeToPlayEnabled(enabled);
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public void setLockscreenAlbumArt(boolean enabled) {
-            mService.get().setLockscreenAlbumArt(enabled);
         }
 
     }

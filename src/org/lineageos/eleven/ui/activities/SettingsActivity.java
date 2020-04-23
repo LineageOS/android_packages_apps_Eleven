@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -141,11 +141,6 @@ public class SettingsActivity extends AppCompatActivity
                 case PreferenceUtils.SHAKE_TO_PLAY: {
                     final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
                     MusicUtils.setShakeToPlayEnabled(enableShakeToPlay);
-                    break;
-                }
-                case PreferenceUtils.SHOW_ALBUM_ART_ON_LOCKSCREEN: {
-                    final boolean showAlbumArtOnLockscreen = sharedPreferences.getBoolean(key, true);
-                    MusicUtils.setShowAlbumArtOnLockscreen(showAlbumArtOnLockscreen);
                     break;
                 }
             }
