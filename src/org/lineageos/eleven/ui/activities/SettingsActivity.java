@@ -20,10 +20,13 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,12 +40,19 @@ import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity
+        implements ServiceConnection {
+
+    // The service token
+    private MusicUtils.ServiceToken mToken;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(this, this);
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -60,6 +70,25 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        // Unbind from the service
+        MusicUtils.unbindFromService(mToken);
+        mToken = null;
+    }
+
+    @Override
+    public void onServiceConnected(final ComponentName name, final IBinder service) {
+        // empty
+    }
+
+    @Override
+    public void onServiceDisconnected(ComponentName name) {
+        // empty
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat implements
