@@ -20,10 +20,14 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +36,7 @@ import androidx.core.content.ContextCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
+import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
@@ -63,7 +68,12 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat implements
-            SharedPreferences.OnSharedPreferenceChangeListener {
+            ServiceConnection, SharedPreferences.OnSharedPreferenceChangeListener {
+
+        private MusicUtils.ServiceToken mToken;
+
+        private IElevenService mService;
+
         @Override
         public void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -94,6 +104,33 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         @Override
+        public void onStart() {
+            super.onStart();
+
+            // Bind to Eleven's service
+            mToken = MusicUtils.bindToService(getActivity(), this);
+        }
+
+        @Override
+        public void onStop() {
+            super.onStop();
+
+            // Unbind from the service
+            MusicUtils.unbindFromService(mToken);
+            mToken = null;
+        }
+
+        @Override
+        public void onServiceConnected(final ComponentName name, final IBinder service) {
+            mService = IElevenService.Stub.asInterface(service);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            mService = null;
+        }
+
+        @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             switch (key) {
                 case PreferenceUtils.SHOW_VISUALIZER: {
@@ -111,7 +148,11 @@ public class SettingsActivity extends AppCompatActivity {
                 }
                 case PreferenceUtils.SHAKE_TO_PLAY: {
                     final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
-                    MusicUtils.setShakeToPlayEnabled(enableShakeToPlay);
+                    try {
+                        mService.setShakeToPlayEnabled(enableShakeToPlay);
+                    } catch (final RemoteException exc) {
+                        // do nothing
+                    }
                     break;
                 }
             }
