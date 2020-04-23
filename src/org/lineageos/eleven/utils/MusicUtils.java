@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -313,20 +313,6 @@ public final class MusicUtils {
             }
         } catch (final RemoteException exc) {
             Log.e(TAG, "setShakeToPlayEnabled(" + enabled + ")", exc);
-        }
-    }
-
-    /**
-     * Set show album art on lockscreen
-     */
-    public static void setShowAlbumArtOnLockscreen(final boolean enabled) {
-        try {
-            IElevenService service = getService();
-            if (service != null) {
-                service.setLockscreenAlbumArt(enabled);
-            }
-        } catch (final RemoteException exc) {
-            Log.e(TAG, "setLockscreenAlbumArt(" + enabled + ")", exc);
         }
     }
 

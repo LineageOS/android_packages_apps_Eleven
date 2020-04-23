@@ -2,6 +2,7 @@
 <!--
   Copyright (C) 2012 Andrew Neal
   Copyright (C) 2014 The CyanogenMod Project
+  Copyright (C) 2017-2020 The LineageOS Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -65,13 +66,8 @@
             android:title="@string/settings_shake_to_play"
             android:summary="@string/settings_shake_to_play_summary"/>
 
-        <!-- Show album art on lockscreen -->
-        <SwitchPreference
-            android:defaultValue="true"
-            android:key="lockscreen_album_art"
-            android:title="@string/settings_lockscreen_album_art"
-            android:summary="@string/settings_lockscreen_album_art_summary"/>
     </PreferenceCategory>
+
     <!-- Storage catetory -->
     <PreferenceCategory android:title="@string/settings_storage_category" >
 
