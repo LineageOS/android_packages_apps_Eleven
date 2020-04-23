@@ -540,6 +540,15 @@ public class MusicPlaybackService extends Service
 
     private PowerManager.WakeLock mHeadsetHookWakeLock;
 
+    private ShakeDetector.Listener mShakeDetectorListener = new ShakeDetector.Listener() {
+        @Override
+        public void hearShake() {
+            // if shake is detected, play next song
+            if (D) Log.d(TAG,"Shake detected!!!");
+            gotoNext(true);
+        }
+    };
+
     /**
      * {@inheritDoc}
      */
@@ -2887,10 +2896,7 @@ public class MusicPlaybackService extends Service
         }
         if (enabled) {
             if (mShakeDetector == null) {
-                mShakeDetector = new ShakeDetector(() -> {
-                    if (D) Log.d(TAG,"Shake detected");
-                    gotoNext(true);
-                });
+                mShakeDetector = new ShakeDetector(mShakeDetectorListener);
             }
             // if song is already playing, start listening immediately
             if (isPlaying()) {
