@@ -65,15 +65,6 @@ public final class PreferenceUtils {
     // Sort order for the song list
     public static final String SONG_SORT_ORDER = "song_sort_order";
 
-    // Key used to download images only on Wi-Fi
-    public static final String ONLY_ON_WIFI = "only_on_wifi";
-
-    // Key that gives permissions to download missing album covers
-    public static final String DOWNLOAD_MISSING_ARTWORK = "download_missing_artwork";
-
-    // Key that gives permissions to download missing artist images
-    public static final String DOWNLOAD_MISSING_ARTIST_IMAGES = "download_missing_artist_images";
-
     // Key used to set the overall theme color
     public static final String DEFAULT_THEME_COLOR = "default_theme_color";
 
@@ -190,30 +181,6 @@ public final class PreferenceUtils {
     public final int getDefaultThemeColor(final Context context) {
         return mPreferences.getInt(DEFAULT_THEME_COLOR,
                 context.getResources().getColor(R.color.blue));
-    }
-
-    /**
-     * @return True if the user has checked to only download images on Wi-Fi,
-     *         false otherwise
-     */
-    public final boolean onlyOnWifi() {
-        return mPreferences.getBoolean(ONLY_ON_WIFI, true);
-    }
-
-    /**
-     * @return True if the user has checked to download missing album covers,
-     *         false otherwise.
-     */
-    public final boolean downloadMissingArtwork() {
-        return mPreferences.getBoolean(DOWNLOAD_MISSING_ARTWORK, true);
-    }
-
-    /**
-     * @return True if the user has checked to download missing artist images,
-     *         false otherwise.
-     */
-    public final boolean downloadMissingArtistImages() {
-        return mPreferences.getBoolean(DOWNLOAD_MISSING_ARTIST_IMAGES, true);
     }
 
     /**
