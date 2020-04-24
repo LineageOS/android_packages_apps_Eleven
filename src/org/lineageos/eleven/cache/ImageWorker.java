@@ -179,16 +179,7 @@ public abstract class ImageWorker {
             bitmap = imageCache.getCachedArtwork(context, key, albumId);
         }
 
-        // Third, by now we need to download the image
-        if (bitmap == null && ElevenUtils.isOnline(context) && !sKeys.contains(key)) {
-            // Now define what the artist name, album name, and url are.
-            String url = ImageUtils.processImageUrl(context, artistName, albumName, imageType);
-            if (url != null) {
-                bitmap = ImageUtils.processBitmap(context, url);
-            }
-        }
-
-        // Fourth, add the new image to the cache
+        // Finally, add the new image to the cache
         if (bitmap != null && key != null && imageCache != null) {
             imageCache.addBitmapToCache(key, bitmap);
         }
