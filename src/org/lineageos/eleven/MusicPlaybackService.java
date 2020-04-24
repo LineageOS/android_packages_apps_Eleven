@@ -640,7 +640,7 @@ public class MusicPlaybackService extends Service
         mPreferences = getSharedPreferences("Service", 0);
         mCardId = getCardId();
 
-        setShakeToPlayEnabled(mPreferences.getBoolean(PreferenceUtils.SHAKE_TO_PLAY, false));
+        setShakeToPlayEnabled(PreferenceUtils.getInstance(this).getShakeToPlay());
 
         mRepeatMode = mPreferences.getInt("repeatmode", REPEAT_NONE);
         mShuffleMode = mPreferences.getInt("shufflemode", SHUFFLE_NONE);
