@@ -602,7 +602,7 @@ public class MusicPlaybackService extends Service
             mReadGranted = true;
         }
 
-        mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        mNotificationManager = getSystemService(NotificationManager.class);
 
         // Initialize the favorites and recents databases
         mRecentsCache = RecentStore.getInstance(this);
@@ -631,7 +631,7 @@ public class MusicPlaybackService extends Service
 
         // Initialize the audio manager and register any headset controls for
         // playback
-        mAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager = getSystemService(AudioManager.class);
 
         // Use the remote control APIs to set the playback state
         setUpMediaSession();
@@ -676,7 +676,7 @@ public class MusicPlaybackService extends Service
         final Intent shutdownIntent = new Intent(this, MusicPlaybackService.class);
         shutdownIntent.setAction(SHUTDOWN);
 
-        mAlarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        mAlarmManager = getSystemService(AlarmManager.class);
         mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent, 0);
 
         // Bring the queue back
@@ -884,7 +884,7 @@ public class MusicPlaybackService extends Service
 
     private void handleHeadsetHookClick(long timestamp) {
         if (mHeadsetHookWakeLock == null) {
-            PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+            PowerManager pm = getSystemService(PowerManager.class);
             mHeadsetHookWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                     "eleven:headsethook");
             mHeadsetHookWakeLock.setReferenceCounted(false);
@@ -2904,7 +2904,7 @@ public class MusicPlaybackService extends Service
      */
     private void startShakeDetector() {
         if (mShakeDetector != null) {
-            mShakeDetector.start((SensorManager)getSystemService(SENSOR_SERVICE));
+            mShakeDetector.start(getSystemService(SensorManager.class));
         }
     }
 
