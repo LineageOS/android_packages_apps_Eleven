@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2018-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -493,7 +493,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     public void updateVisualizerPowerSaveMode() {
-        PowerManager pm = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
+        PowerManager pm = getActivity().getSystemService(PowerManager.class);
         mVisualizerView.setPowerSaveMode(pm.isPowerSaveMode());
     }
 
