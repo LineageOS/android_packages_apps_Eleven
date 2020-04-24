@@ -25,8 +25,6 @@ import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Rect;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.BaseColumns;
@@ -120,59 +118,6 @@ public final class ElevenUtils {
         } else {
             task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, args);
         }
-    }
-
-    /**
-     * Used to determine if there is an active data connection and what type of
-     * connection it is if there is one
-     *
-     * @param context The {@link Context} to use
-     * @return True if there is an active data connection, false otherwise.
-     *         Also, if the user has checked to only download via Wi-Fi in the
-     *         settings, the mobile data and other network connections aren't
-     *         returned at all
-     */
-    public static boolean isOnline(final Context context) {
-        /*
-         * This sort of handles a sudden configuration change, but I think it
-         * should be dealt with in a more professional way.
-         */
-        if (context == null) {
-            return false;
-        }
-
-        boolean state = false;
-        final boolean onlyOnWifi = PreferenceUtils.getInstance(context).onlyOnWifi();
-
-        /* Monitor network connections */
-        final ConnectivityManager connectivityManager = context
-                .getSystemService(ConnectivityManager.class);
-
-        /* Wi-Fi connection */
-        final NetworkInfo wifiNetwork = connectivityManager
-                .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        if (wifiNetwork != null) {
-            state = wifiNetwork.isConnectedOrConnecting();
-        }
-
-        /* Mobile data connection */
-        final NetworkInfo mbobileNetwork = connectivityManager
-                .getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (mbobileNetwork != null) {
-            if (!onlyOnWifi) {
-                state = mbobileNetwork.isConnectedOrConnecting();
-            }
-        }
-
-        /* Other networks */
-        final NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
-        if (activeNetwork != null) {
-            if (!onlyOnWifi) {
-                state = activeNetwork.isConnectedOrConnecting();
-            }
-        }
-
-        return state;
     }
 
     /**
