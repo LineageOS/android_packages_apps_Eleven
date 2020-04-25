@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "419ccdbf_67e5a389",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-25T12:45:06Z",
+      "side": 1,
+      "message": "Because I get this otherwise:\n\npackages/apps/Eleven/src/org/lineageos/eleven/ui/activities/SettingsActivity.java:153: error: non-static variable mService cannot be referenced from a static context\n                   mService.setShakeToPlayEnabled(enableShakeToPlay);\n                   ^",
+      "parentUuid": "93c22fd2_bccdce32",
+      "revId": "1faeb12d69367d9f80b2efe7c291bba9edac1853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "731323ef_12cf4ec5",
         "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2020-04-25T12:38:49Z",
       "side": 1,
       "message": "Move to onStart",
+      "revId": "1faeb12d69367d9f80b2efe7c291bba9edac1853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a577e737_0f16821a",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2020-04-25T12:45:06Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "731323ef_12cf4ec5",
       "revId": "1faeb12d69367d9f80b2efe7c291bba9edac1853",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
