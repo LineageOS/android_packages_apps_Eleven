@@ -48,7 +48,6 @@ public class ImageFetcher extends ImageWorker {
     private static final int DEFAULT_MAX_IMAGE_WIDTH = 1024;
 
     private static ImageFetcher sInstance = null;
-    private boolean mUseBlur;
 
     /**
      * Creates a new instance of {@link ImageFetcher}.
@@ -57,7 +56,6 @@ public class ImageFetcher extends ImageWorker {
      */
     public ImageFetcher(final Context context) {
         super(context);
-        mUseBlur = PreferenceUtils.getInstance(context).getUseBlur();
     }
 
     /**
@@ -71,10 +69,6 @@ public class ImageFetcher extends ImageWorker {
             sInstance = new ImageFetcher(context.getApplicationContext());
         }
         return sInstance;
-    }
-
-    public void setUseBlur(boolean useBlur) {
-        mUseBlur = useBlur;
     }
 
     /**
@@ -115,20 +109,7 @@ public class ImageFetcher extends ImageWorker {
 
     public void updateScrimImage(final AlbumScrimImage image,
             final ColorExtractor.Callback callback) {
-        if (mUseBlur) {
-            loadCurrentBlurredArtwork(image);
-        } else {
-            loadCurrentGradientArtwork(callback);
-        }
-    }
-
-    /**
-     * Used to fetch the current artwork blurred.
-     */
-    private void loadCurrentBlurredArtwork(final AlbumScrimImage image) {
-        loadBlurImage(getCurrentCacheKey(),
-                MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                image, ImageType.ALBUM);
+         loadCurrentGradientArtwork(callback);
     }
 
     private void loadCurrentGradientArtwork(final ColorExtractor.Callback callback) {

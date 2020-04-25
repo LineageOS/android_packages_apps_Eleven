@@ -133,12 +133,6 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             switch (key) {
-                case PreferenceUtils.USE_BLUR: {
-                    final boolean useBlur = sharedPreferences.getBoolean(key, false);
-                    ImageFetcher.getInstance(getActivity()).setUseBlur(useBlur);
-                    ImageFetcher.getInstance(getActivity()).clearCaches();
-                    break;
-                }
                 case PreferenceUtils.SHAKE_TO_PLAY: {
                     final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
                     try {

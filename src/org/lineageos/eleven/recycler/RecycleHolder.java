@@ -39,7 +39,6 @@ public class RecycleHolder implements RecyclerListener {
 
         // Release mImage's reference
         if (holder.mImage.get() != null) {
-            ImageWorker.cancelWork(holder.mImage.get());
             holder.mImage.get().setImageDrawable(null);
             holder.mImage.get().setImageBitmap(null);
         }

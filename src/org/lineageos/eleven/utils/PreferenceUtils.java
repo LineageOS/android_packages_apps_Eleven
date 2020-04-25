@@ -83,9 +83,6 @@ public final class PreferenceUtils {
     // show lyrics option
     public static final String SHOW_LYRICS = "show_lyrics";
 
-    // use blur throughout the UI
-    public static final String USE_BLUR = "use_blur";
-
     // shake to play flag
     public static final String SHAKE_TO_PLAY = "shake_to_play";
 
@@ -359,10 +356,6 @@ public final class PreferenceUtils {
         activity.requestPermissions(
                 new String[] {permission.RECORD_AUDIO},
                 PERMISSION_REQUEST_RECORD_AUDIO);
-    }
-
-    public boolean getUseBlur() {
-        return mPreferences.getBoolean(USE_BLUR, false);
     }
 
     public boolean getShakeToPlay() {

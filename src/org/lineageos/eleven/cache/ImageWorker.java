@@ -283,24 +283,6 @@ public abstract class ImageWorker {
     }
 
     /**
-     * Cancels and clears out any pending bitmap worker tasks on this image view
-     * @param image ImageView/BlurScrimImage to check
-     */
-    public static final void cancelWork(final View image) {
-        Object tag = image.getTag();
-        if (tag != null && tag instanceof AsyncTaskContainer) {
-            AsyncTaskContainer asyncTaskContainer = (AsyncTaskContainer)tag;
-            BitmapWorkerTask bitmapWorkerTask = asyncTaskContainer.getBitmapWorkerTask();
-            if (bitmapWorkerTask != null) {
-                bitmapWorkerTask.cancel(false);
-            }
-
-            // clear out the tag
-            image.setTag(null);
-        }
-    }
-
-    /**
      * Returns false if the existing async task is loading the same key value
      * Returns true otherwise and also cancels the async task if one exists
      */
@@ -311,9 +293,6 @@ public abstract class ImageWorker {
             if (asyncTaskContainer.getKey().equals(key)) {
                 return false;
             }
-
-            // since we don't match, cancel the work and switch to the new worker task
-            cancelWork(view);
         }
 
         return true;
@@ -544,39 +523,6 @@ public abstract class ImageWorker {
                 ElevenUtils.execute(false, bitmapWorkerTask);
             } catch (RejectedExecutionException e) {
                 // Executor has exhausted queue space
-            }
-        }
-    }
-
-    /**
-     * Called to fetch the blurred artist or album art.
-     *
-     * @param key The unique identifier for the image.
-     * @param artistName The artist name for the Last.fm API.
-     * @param albumName The album name for the Last.fm API.
-     * @param albumId The album art index, to check for missing artwork.
-     * @param albumScrimImage The {@link AlbumScrimImage} used to set the cached
-     *            {@link Bitmap}.
-     * @param imageType The type of image URL to fetch for.
-     */
-    protected void loadBlurImage(final String key, final String artistName, final String albumName,
-            final long albumId, final AlbumScrimImage albumScrimImage, final ImageType imageType) {
-        if (key == null || mImageCache == null || albumScrimImage == null) {
-            return;
-        }
-
-        if (executePotentialWork(key, albumScrimImage) && !mImageCache.isDiskCachePaused()) {
-            // Otherwise run the worker task
-            final BlurBitmapWorkerTask blurWorkerTask = new BlurBitmapWorkerTask(key,
-                    albumScrimImage, imageType, mTransparentDrawable, mContext, sRenderScript);
-            final AsyncTaskContainer asyncTaskContainer = new AsyncTaskContainer(blurWorkerTask);
-            albumScrimImage.setTag(asyncTaskContainer);
-
-            try {
-                ElevenUtils.execute(false, blurWorkerTask, artistName, albumName, String.valueOf(albumId));
-            } catch (RejectedExecutionException e) {
-                // Executor has exhausted queue space, show default artwork
-                albumScrimImage.transitionToDefaultState();
             }
         }
     }
