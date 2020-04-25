@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9cebf8fb_852fcb60",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-04-25T13:19:33Z",
+      "side": 1,
+      "message": "Oh, right. Just move the service binding/unbinding and the member variables to the fragment instead of the activity :-)",
+      "parentUuid": "419ccdbf_67e5a389",
+      "revId": "1faeb12d69367d9f80b2efe7c291bba9edac1853",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "731323ef_12cf4ec5",
         "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
         "patchSetId": 5
