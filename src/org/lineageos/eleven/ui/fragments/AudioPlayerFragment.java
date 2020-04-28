@@ -326,8 +326,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mPlayerToolBar = mRootView.findViewById(R.id.audio_player_header);
 
         // Title text
-        mSongTitle = mRootView.findViewById(R.id.header_bar_song_title);
-        mArtistName = mRootView.findViewById(R.id.header_bar_artist_title);
+        mSongTitle = mRootView.findViewById(R.id.main_info_flow_song_title);
+        mArtistName = mRootView.findViewById(R.id.main_info_flow_artist_title);
     }
 
     /**
