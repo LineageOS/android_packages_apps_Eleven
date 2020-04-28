@@ -24,6 +24,7 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
+        android:background="@drawable/default_artwork"
+        android:scaleType="fitCenter" />
 
 </org.lineageos.eleven.widgets.SquareView>

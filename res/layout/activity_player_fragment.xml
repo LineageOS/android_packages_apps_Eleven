@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (C) 2012 Andrew Neal
   Copyright (C) 2014 The CyanogenMod Project
   Copyright (C) 2017-2019 The LineageOS Project
@@ -17,42 +16,38 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  -->
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    tools:background="@color/blue_dark">
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/audio_player_header"
         layout="@layout/audio_player_header_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <include
+        android:id="@+id/main_song_flow"
+        layout="@layout/main_song_flow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/audio_player_header" />
 
-        <include
-            android:id="@+id/main_album_flow"
-            layout="@layout/main_album_flow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <org.lineageos.eleven.widgets.MainPlaybackControls
+        android:id="@+id/main_playback_controls"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <org.lineageos.eleven.widgets.MainPlaybackControls
-            android:id="@+id/main_playback_controls"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_album_flow" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
