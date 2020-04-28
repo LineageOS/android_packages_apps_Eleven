@@ -34,29 +34,5 @@
         android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/header_bar_song_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textAllCaps="true"
-            android:textColor="@color/header_action_bar_text_color"
-            android:textSize="@dimen/text_size_medium"
-            android:textStyle="bold"
-            tools:text="Really long and nice album title" />
-
-        <TextView
-            android:id="@+id/header_bar_artist_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:paddingBottom="2dp"
-            android:textAllCaps="true"
-            android:textColor="@color/header_action_bar_text_color"
-            android:textSize="@dimen/text_size_micro"
-            tools:text="Name of Artist" />
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>
