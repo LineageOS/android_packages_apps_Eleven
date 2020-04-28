@@ -29,6 +29,8 @@
 
     <include
         layout="@layout/loading_empty_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         tools:visibility="gone" />
 
     <org.lineageos.eleven.widgets.VisualizerView
