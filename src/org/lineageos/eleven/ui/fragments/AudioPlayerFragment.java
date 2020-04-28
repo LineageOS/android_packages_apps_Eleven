@@ -326,8 +326,10 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mPlayerToolBar = mRootView.findViewById(R.id.audio_player_header);
 
         // Title text
-		mSongTitle = mRootView.findViewById(R.id.main_ablum_flow_song_title);
+        mSongTitle = mRootView.findViewById(R.id.main_ablum_flow_song_title);
+        mSongTitle.setSelected(true);
         mArtistName = mRootView.findViewById(R.id.main_ablum_flow_artist_title);
+
     }
 
     /**
