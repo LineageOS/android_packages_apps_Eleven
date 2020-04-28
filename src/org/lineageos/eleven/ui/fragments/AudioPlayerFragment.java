@@ -82,7 +82,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     // Header views
     private TextView mSongTitle;
     private TextView mArtistName;
-
+	
     // Message to refresh the time
     private static final int REFRESH_TIME = 1;
 
@@ -326,8 +326,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mPlayerToolBar = mRootView.findViewById(R.id.audio_player_header);
 
         // Title text
-        mSongTitle = mRootView.findViewById(R.id.header_bar_song_title);
-        mArtistName = mRootView.findViewById(R.id.header_bar_artist_title);
+		mSongTitle = mRootView.findViewById(R.id.main_info_flow_song_title);
+        mArtistName = mRootView.findViewById(R.id.main_info_flow_artist_title);
     }
 
     /**
@@ -382,7 +382,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Set the track name
         mSongTitle.setText(MusicUtils.getTrackName());
         mArtistName.setText(MusicUtils.getArtistName());
-
+		
         mMainPlaybackControls.updateNowPlayingInfo();
 
         if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
