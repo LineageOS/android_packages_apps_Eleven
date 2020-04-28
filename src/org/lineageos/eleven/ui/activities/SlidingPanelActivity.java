@@ -20,6 +20,7 @@ package org.lineageos.eleven.ui.activities;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -289,6 +290,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     public void clearMetaInfo() {
         super.clearMetaInfo();
         mAlbumScrimImage.transitionToDefaultState();
+		collapseAllPanels();
     }
 
     @Override
@@ -296,6 +298,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onMetaChanged();
 
         updateScrimImage();
+		checkQueueStatus();
     }
 
     @Override
@@ -303,14 +306,62 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onCacheUnpaused();
 
         updateScrimImage();
+		checkQueueStatus();
     }
 
     private void updateScrimImage() {
         ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage,
                 mColorExtractorCallback);
     }
-
-    protected AudioPlayerFragment getAudioPlayerFragment() {
+	
+    private void collapseAllPanels() {
+		Panel panel = getCurrentPanel();
+			switch (panel) {
+				case Browse:
+					mFirstPanel.setSlidingEnabled(false);
+					break;
+				default:
+				case MusicPlayer:
+					showPanel(Panel.Browse);
+					disableAllPanels();
+					break;
+				case Queue:
+					showPanel(Panel.Browse);
+					disableAllPanels();
+					break;
+			}
+	}
+	
+	private void disableAllPanels() {
+		try {
+       	//set time in mili
+        	Thread.sleep(200);
+    	}catch (Exception e){
+        	e.printStackTrace();
+    	}
+		mFirstPanel.setSlidingEnabled(false);
+		
+		new Handler().postDelayed(new Runnable() {
+  			@Override
+  			public void run() {
+    			//Do something after 100ms
+				mFirstPanel.setSlidingEnabled(false);
+		  }
+		}, 500);
+	}
+	
+	private void checkQueueStatus() {
+		final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+		if (MusicUtils.getQueue() != null) {
+			mFirstPanel.setSlidingEnabled(true);
+		} else {
+			if(!mSecondPanel.isPanelExpanded() && !mFirstPanel.isPanelExpanded()){
+				mFirstPanel.setSlidingEnabled(false);
+			}
+		}
+	}
+	
+	protected AudioPlayerFragment getAudioPlayerFragment() {
         return (AudioPlayerFragment) getSupportFragmentManager().findFragmentById(
                 R.id.audioPlayerFragment);
     }
