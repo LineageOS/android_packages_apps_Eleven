@@ -27,12 +27,19 @@
     android:background="@android:color/transparent"
     tools:ignore="ContentDescription" >
 
-    <org.lineageos.eleven.widgets.SquareImageView
-        android:id="@+id/bottom_action_bar_album_art"
+    <LinearLayout
+        android:id="@+id/album_art_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|center"
-        android:src="@drawable/default_artwork" />
+        android:visibility="gone" >
+
+            <org.lineageos.eleven.widgets.SquareImageView
+                android:id="@+id/bottom_action_bar_album_art"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/default_artwork"  />
+            </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/bottom_action_bar_info_container"
@@ -58,7 +65,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:paddingStart="@dimen/bab_progress_padding_left"
-        android:paddingEnd="@dimen/bab_progress_padding_right">
+        android:paddingEnd="@dimen/bab_progress_padding_right"
+        android:visibility="gone">
+
         <include
             android:contentDescription="@string/accessibility_play"
             android:layout_width="@dimen/bab_progress_size"
