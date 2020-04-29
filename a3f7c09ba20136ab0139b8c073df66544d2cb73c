@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3104322d_541a9ff0",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:44:35Z",
+      "side": 1,
+      "message": "empty line unnecessary change",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb0dde6f_31155cba",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:44:35Z",
+      "side": 1,
+      "message": "still a B too much",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2be6fb5_f9769bf9",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:44:35Z",
+      "side": 1,
+      "message": "this belongs to the change introfucing the line, not into this",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c63ddfed_3d34a03b",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:44:35Z",
+      "side": 1,
+      "message": "same",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dec765f8_e8f92c99",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:44:35Z",
+      "side": 1,
+      "message": "same",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b773b86d_6369b539",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:44:35Z",
+      "side": 1,
+      "message": "The changes to the indentstion belong to the original change, not this one (all lines below)",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
