@@ -22,6 +22,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -58,6 +59,9 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private SlidingUpPanelLayout mFirstPanel;
     private SlidingUpPanelLayout mSecondPanel;
     protected Panel mTargetNavigatePanel;
+    private LinearLayout mBottomActionBar;
+    private FrameLayout mPlayPauseContainer;
+    private LinearLayout mAlbumArtContainer;
 
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
@@ -88,10 +92,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     protected void initBottomActionBar() {
         super.initBottomActionBar();
         // Bottom action bar
-        final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+        mBottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
         // Display the now playing screen or shuffle if this isn't anything
         // playing
-        bottomActionBar.setOnClickListener(mOpenNowPlaying);
+        mBottomActionBar.setOnClickListener(mOpenNowPlaying);
     }
 
     /**
@@ -106,11 +110,12 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
         setupFirstPanel();
         setupSecondPanel();
-
-        // get the blur scrim image
+            // get the blur scrim image
         mAlbumScrimImage = findViewById(R.id.blurScrimImage);
-
-        if (savedInstanceState != null) {
+            mPlayPauseContainer = findViewById(R.id.play_pause_container);
+        mAlbumArtContainer = findViewById(R.id.album_art_container);
+            collapseAllPanels();
+            if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
                     Panel.Browse.ordinal());
             Panel targetPanel = Panel.values()[panelIndex];
@@ -309,7 +314,43 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage,
                 mColorExtractorCallback);
     }
-
+    private void collapseAllPanels() {
+        Panel panel = getCurrentPanel();
+            switch (panel) {
+                case Browse:
+                    mFirstPanel.setSlidingEnabled(false);
+                    mPlayPauseContainer.setVisibility(View.GONE);
+                    mAlbumArtContainer.setVisibility(View.GONE);
+                    break;
+                default:
+                case MusicPlayer:
+                    showPanel(Panel.Browse);
+                    disableAllPanels();
+                    break;
+                case Queue:
+                    showPanel(Panel.Browse);
+                    disableAllPanels();
+                    break;
+            }
+    }
+    private void disableAllPanels() {
+        new Handler().postDelayed(new Runnable() {
+              @Override
+              public void run() {
+                //Do something after 100ms
+                mFirstPanel.setSlidingEnabled(false);
+                mPlayPauseContainer.setVisibility(View.GONE);
+                mAlbumArtContainer.setVisibility(View.GONE);
+          }
+        }, 500);
+    }
+    private void checkQueueStatus() {
+        if (MusicUtils.getQueue() != null) {
+            mFirstPanel.setSlidingEnabled(true);
+            mPlayPauseContainer.setVisibility(View.VISIBLE);
+            mAlbumArtContainer.setVisibility(View.VISIBLE);
+        }
+    }
     protected AudioPlayerFragment getAudioPlayerFragment() {
         return (AudioPlayerFragment) getSupportFragmentManager().findFragmentById(
                 R.id.audioPlayerFragment);
