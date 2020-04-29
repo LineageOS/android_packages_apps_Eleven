@@ -23,6 +23,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -59,6 +61,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private SlidingUpPanelLayout mFirstPanel;
     private SlidingUpPanelLayout mSecondPanel;
     protected Panel mTargetNavigatePanel;
+	private LinearLayout bottomActionBar;
+	private FrameLayout playpPauseContainer;
+	private ImageView bottomActionBarAlbumArt;
+	
 
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
@@ -89,7 +95,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     protected void initBottomActionBar() {
         super.initBottomActionBar();
         // Bottom action bar
-        final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+        bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
         // Display the now playing screen or shuffle if this isn't anything
         // playing
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
@@ -110,6 +116,9 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
         // get the blur scrim image
         mAlbumScrimImage = findViewById(R.id.blurScrimImage);
+		
+		playpPauseContainer = findViewById(R.id.play_pause_container);
+		bottomActionBarAlbumArt = findViewById(R.id.bottom_action_bar_album_art);
 
         if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
@@ -319,6 +328,8 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 			switch (panel) {
 				case Browse:
 					mFirstPanel.setSlidingEnabled(false);
+					playpPauseContainer.setVisibility(View.GONE);
+					bottomActionBarAlbumArt.setVisibility(View.GONE);
 					break;
 				default:
 				case MusicPlayer:
@@ -333,30 +344,28 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 	}
 	
 	private void disableAllPanels() {
-		try {
-       	//set time in mili
-        	Thread.sleep(200);
-    	}catch (Exception e){
-        	e.printStackTrace();
-    	}
-		mFirstPanel.setSlidingEnabled(false);
-		
 		new Handler().postDelayed(new Runnable() {
   			@Override
   			public void run() {
     			//Do something after 100ms
 				mFirstPanel.setSlidingEnabled(false);
+				playpPauseContainer.setVisibility(View.GONE);
+				bottomActionBarAlbumArt.setVisibility(View.GONE);
 		  }
 		}, 500);
 	}
 	
 	private void checkQueueStatus() {
-		final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+		final FrameLayout playpPauseContainer = (FrameLayout)findViewById(R.id.play_pause_container);
 		if (MusicUtils.getQueue() != null) {
 			mFirstPanel.setSlidingEnabled(true);
+			playpPauseContainer.setVisibility(View.VISIBLE);
+			bottomActionBarAlbumArt.setVisibility(View.VISIBLE);
 		} else {
 			if(!mSecondPanel.isPanelExpanded() && !mFirstPanel.isPanelExpanded()){
 				mFirstPanel.setSlidingEnabled(false);
+				playpPauseContainer.setVisibility(View.GONE);
+				bottomActionBarAlbumArt.setVisibility(View.GONE);
 			}
 		}
 	}
