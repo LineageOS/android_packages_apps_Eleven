@@ -22,6 +22,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -58,6 +59,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private SlidingUpPanelLayout mFirstPanel;
     private SlidingUpPanelLayout mSecondPanel;
     protected Panel mTargetNavigatePanel;
+	private LinearLayout bottomActionBar;
+	private FrameLayout playpPauseContainer;
+	private LinearLayout AlbumArtContainer;
+	
 
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
@@ -88,7 +93,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     protected void initBottomActionBar() {
         super.initBottomActionBar();
         // Bottom action bar
-        final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+        bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
         // Display the now playing screen or shuffle if this isn't anything
         // playing
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
@@ -106,10 +111,15 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
         setupFirstPanel();
         setupSecondPanel();
-
+		
         // get the blur scrim image
         mAlbumScrimImage = findViewById(R.id.blurScrimImage);
-
+		
+		playpPauseContainer = findViewById(R.id.play_pause_container);
+		AlbumArtContainer = findViewById(R.id.album_art_container);
+		
+		collapseAllPanels();
+		
         if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
                     Panel.Browse.ordinal());
@@ -309,8 +319,49 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage,
                 mColorExtractorCallback);
     }
-
-    protected AudioPlayerFragment getAudioPlayerFragment() {
+	
+    private void collapseAllPanels() {
+		Panel panel = getCurrentPanel();
+			switch (panel) {
+				case Browse:
+					mFirstPanel.setSlidingEnabled(false);
+					playpPauseContainer.setVisibility(View.GONE);
+					AlbumArtContainer.setVisibility(View.GONE);
+					break;
+				default:
+				case MusicPlayer:
+					showPanel(Panel.Browse);
+					disableAllPanels();
+					break;
+				case Queue:
+					showPanel(Panel.Browse);
+					disableAllPanels();
+					break;
+			}
+	}
+	
+	private void disableAllPanels() {
+		new Handler().postDelayed(new Runnable() {
+  			@Override
+  			public void run() {
+    			//Do something after 100ms
+				mFirstPanel.setSlidingEnabled(false);
+				playpPauseContainer.setVisibility(View.GONE);
+				AlbumArtContainer.setVisibility(View.GONE);
+		  }
+		}, 500);
+	}
+	
+	private void checkQueueStatus() {
+		final FrameLayout playpPauseContainer = (FrameLayout)findViewById(R.id.play_pause_container);
+		if (MusicUtils.getQueue() != null) {
+			mFirstPanel.setSlidingEnabled(true);
+			playpPauseContainer.setVisibility(View.VISIBLE);
+			AlbumArtContainer.setVisibility(View.VISIBLE);
+		} 
+	}
+	
+	protected AudioPlayerFragment getAudioPlayerFragment() {
         return (AudioPlayerFragment) getSupportFragmentManager().findFragmentById(
                 R.id.audioPlayerFragment);
     }
