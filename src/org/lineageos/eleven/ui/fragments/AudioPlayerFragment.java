@@ -64,7 +64,6 @@ import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.MainPlaybackControls;
 import org.lineageos.eleven.widgets.NoResultsContainer;
-import org.lineageos.eleven.widgets.VisualizerView;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -92,9 +91,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     // Album art ListView
     private ViewPager mAlbumArtViewPager;
     private LoadingEmptyContainer mQueueEmpty;
-
-    // Visualizer View
-    private VisualizerView mVisualizerView;
 
     private MainPlaybackControls mMainPlaybackControls;
 
@@ -138,10 +134,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         initHeaderBar();
         initPlaybackControls();
-
-        mVisualizerView = mRootView.findViewById(R.id.visualizerView);
-        mVisualizerView.initialize(getActivity());
-        updateVisualizerPowerSaveMode();
 
         mLyricsText = mRootView.findViewById(R.id.audio_player_lyrics);
 
@@ -481,27 +473,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         }
     }
 
-    public void setVisualizerVisible(boolean visible) {
-        if (visible && PreferenceUtils.getInstance(getActivity()).getShowVisualizer()) {
-            if (PreferenceUtils.canRecordAudio(getActivity())) {
-                mVisualizerView.setVisible(true);
-            } else {
-                PreferenceUtils.requestRecordAudio(getActivity());
-            }
-        } else {
-            mVisualizerView.setVisible(false);
-        }
-    }
-
-    public void updateVisualizerPowerSaveMode() {
-        PowerManager pm = getActivity().getSystemService(PowerManager.class);
-        mVisualizerView.setPowerSaveMode(pm.isPowerSaveMode());
-    }
-
-    public void setVisualizerColor(int color) {
-        mVisualizerView.setColor(color);
-    }
-
     /**
      * Used to update the current time string
      */
@@ -563,7 +534,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                     break;
                 case MusicPlaybackService.PLAYSTATE_CHANGED:
                     audioPlayerFragment.mMainPlaybackControls.updatePlayPauseState();
-                    audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
                     break;
                 case MusicPlaybackService.REPEATMODE_CHANGED:
                 case MusicPlaybackService.SHUFFLEMODE_CHANGED:
@@ -580,9 +550,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                     break;
                 case MusicPlaybackService.NEW_LYRICS:
                     audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
-                    break;
-                case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
-                    audioPlayerFragment.updateVisualizerPowerSaveMode();
                     break;
             }
         }

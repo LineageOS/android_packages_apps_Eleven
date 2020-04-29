@@ -133,13 +133,6 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             switch (key) {
-                case PreferenceUtils.SHOW_VISUALIZER: {
-                    final boolean showVisualizer = sharedPreferences.getBoolean(key, false);
-                    if (showVisualizer && !PreferenceUtils.canRecordAudio(getActivity())) {
-                        PreferenceUtils.requestRecordAudio(getActivity());
-                    }
-                    break;
-                }
                 case PreferenceUtils.USE_BLUR: {
                     final boolean useBlur = sharedPreferences.getBoolean(key, false);
                     ImageFetcher.getInstance(getActivity()).setUseBlur(useBlur);
