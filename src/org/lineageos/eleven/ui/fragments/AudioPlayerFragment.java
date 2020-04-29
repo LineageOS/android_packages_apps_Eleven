@@ -78,10 +78,10 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     private Toolbar mPlayerToolBar;
 
-    // Header views
+    // Info views
     private TextView mSongTitle;
     private TextView mArtistName;
-	
+
     // Message to refresh the time
     private static final int REFRESH_TIME = 1;
 
@@ -132,7 +132,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mRootView = (ViewGroup) inflater.inflate(R.layout.activity_player_fragment, container,
                 false);
 
-        initHeaderBar();
+        initMainInfoFlow();
         initPlaybackControls();
 
         mLyricsText = mRootView.findViewById(R.id.audio_player_lyrics);
@@ -312,9 +312,9 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     /**
-     * Initializes the header bar
+     * Initializes the main info flow
      */
-    private void initHeaderBar() {
+    private void initMainInfoFlow() {
         mPlayerToolBar = mRootView.findViewById(R.id.audio_player_header);
 
         // Title text
@@ -356,7 +356,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 }
             }
         });
-        // view to show in place of album art if queue is empty
+
+        // view to show if queue is empty
+        mSongTitle.setText(R.string.empty_queue_main);
+
+        // init the view because it is need for the app to function properly
         mQueueEmpty = mRootView.findViewById(R.id.loading_empty_container);
         setupNoResultsContainer(mQueueEmpty.getNoResultsContainer());
     }
@@ -375,7 +379,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Set the track name
         mSongTitle.setText(MusicUtils.getTrackName());
         mArtistName.setText(MusicUtils.getArtistName());
-		
+
         mMainPlaybackControls.updateNowPlayingInfo();
 
         if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
@@ -424,10 +428,9 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mAlbumArtViewPager.setCurrentItem(targetIndex);
 
         if(queueSize == 0) {
-            mAlbumArtViewPager.setVisibility(View.GONE);
-            mQueueEmpty.showNoResults();
+            // view to show if queue is empty
+            mSongTitle.setText(R.string.empty_queue_main);
         } else {
-            mAlbumArtViewPager.setVisibility(View.VISIBLE);
             mQueueEmpty.hideAll();
         }
     }
