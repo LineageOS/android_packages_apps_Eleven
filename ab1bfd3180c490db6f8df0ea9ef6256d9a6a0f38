@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "556d6c76_43687765",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "thats one indent too much",
+      "range": {
+        "startLine": 318,
+        "startChar": 12,
+        "endLine": 331,
+        "endChar": 13
+      },
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93b9993f_41269d13",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "empty line between functions - no tabs or spaces in that empty line",
+      "range": {
+        "startLine": 332,
+        "startChar": 4,
+        "endLine": 333,
+        "endChar": 37
+      },
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b335424_9c3d2da5",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "} and catch need a space between, also the closing ) and opening { do need one",
+      "range": {
+        "startLine": 337,
+        "startChar": 8,
+        "endLine": 337,
+        "endChar": 10
+      },
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c7a498f_70b5342c",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "one indent level too much",
+      "range": {
+        "startLine": 341,
+        "startChar": 12,
+        "endLine": 341,
+        "endChar": 54
+      },
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63a4b254_b6ab113b",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "4 spaces, not 2 per level",
+      "range": {
+        "startLine": 342,
+        "startChar": 14,
+        "endLine": 345,
+        "endChar": 53
+      },
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7cef91a4_b273eb89",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "space after \"if\"",
+      "range": {
+        "startLine": 354,
+        "startChar": 12,
+        "endLine": 354,
+        "endChar": 15
+      },
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8342250_2cea3322",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:05:56Z",
+      "side": 1,
+      "message": "space between closing ) and opening {",
+      "revId": "ab1bfd3180c490db6f8df0ea9ef6256d9a6a0f38",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
