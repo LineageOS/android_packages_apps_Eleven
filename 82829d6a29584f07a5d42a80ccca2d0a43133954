@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a65fef20_f3ee0a54",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T15:29:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "be1ad356_2c58082b",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 1
+      },
+      "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c344f155_6818e29a",
         "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
         "patchSetId": 1
@@ -68,6 +92,54 @@
       "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2daec25_171b4697",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T15:29:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "add367ad_f6a9361e",
+      "range": {
+        "startLine": 329,
+        "startChar": 48,
+        "endLine": 329,
+        "endChar": 53
+      },
+      "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ecfd438b_3ef8facd",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T15:29:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c344f155_6818e29a",
+      "range": {
+        "startLine": 329,
+        "startChar": 1,
+        "endLine": 329,
+        "endChar": 2
+      },
+      "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -118,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "276e0ca1_6529ebd8",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T15:29:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10bc7f68_d2c5f451",
+      "range": {
+        "startLine": 330,
+        "startChar": 55,
+        "endLine": 330,
+        "endChar": 60
+      },
+      "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e5bfe6ca_322e6d36",
         "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
         "patchSetId": 1
@@ -138,6 +234,30 @@
       "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d06ec8f_b417b3e9",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T15:29:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5bfe6ca_322e6d36",
+      "range": {
+        "startLine": 385,
+        "startChar": 1,
+        "endLine": 385,
+        "endChar": 2
+      },
+      "revId": "82829d6a29584f07a5d42a80ccca2d0a43133954",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
