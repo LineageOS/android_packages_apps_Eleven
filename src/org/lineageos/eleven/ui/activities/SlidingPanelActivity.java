@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
@@ -59,6 +60,8 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private SlidingUpPanelLayout mFirstPanel;
     private SlidingUpPanelLayout mSecondPanel;
     protected Panel mTargetNavigatePanel;
+    private FrameLayout mPlayPauseContainer;
+    private ImageView mBottomActionBarAlbumArt;
 
     private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
 
@@ -90,6 +93,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.initBottomActionBar();
         // Bottom action bar
         final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+
         // Display the now playing screen or shuffle if this isn't anything
         // playing
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
@@ -110,6 +114,9 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
         // get the blur scrim image
         mAlbumScrimImage = findViewById(R.id.blurScrimImage);
+
+        mPlayPauseContainer = findViewById(R.id.play_pause_container);
+        mBottomActionBarAlbumArt = findViewById(R.id.bottom_action_bar_album_art);
 
         if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
@@ -290,7 +297,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     public void clearMetaInfo() {
         super.clearMetaInfo();
         mAlbumScrimImage.transitionToDefaultState();
-		collapseAllPanels();
+        collapseAllPanels();
     }
 
     @Override
@@ -298,7 +305,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onMetaChanged();
 
         updateScrimImage();
-		checkQueueStatus();
+        checkStatus();
     }
 
     @Override
@@ -306,62 +313,61 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onCacheUnpaused();
 
         updateScrimImage();
-		checkQueueStatus();
+        checkStatus();
     }
 
     private void updateScrimImage() {
         ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage,
                 mColorExtractorCallback);
     }
-	
+
     private void collapseAllPanels() {
-		Panel panel = getCurrentPanel();
-			switch (panel) {
-				case Browse:
-					mFirstPanel.setSlidingEnabled(false);
-					break;
-				default:
-				case MusicPlayer:
-					showPanel(Panel.Browse);
-					disableAllPanels();
-					break;
-				case Queue:
-					showPanel(Panel.Browse);
-					disableAllPanels();
-					break;
-			}
-	}
-	
-	private void disableAllPanels() {
-		try {
-       	//set time in mili
-        	Thread.sleep(200);
-    	}catch (Exception e){
-        	e.printStackTrace();
-    	}
-		mFirstPanel.setSlidingEnabled(false);
-		
-		new Handler().postDelayed(new Runnable() {
-  			@Override
-  			public void run() {
-    			//Do something after 100ms
-				mFirstPanel.setSlidingEnabled(false);
-		  }
-		}, 500);
-	}
-	
-	private void checkQueueStatus() {
-		final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
-		if (MusicUtils.getQueue() != null) {
-			mFirstPanel.setSlidingEnabled(true);
-		} else {
-			if(!mSecondPanel.isPanelExpanded() && !mFirstPanel.isPanelExpanded()){
-				mFirstPanel.setSlidingEnabled(false);
-			}
-		}
-	}
-	
-	protected AudioPlayerFragment getAudioPlayerFragment() {
+        Panel panel = getCurrentPanel();
+        switch (panel) {
+            case Browse:
+                mFirstPanel.setSlidingEnabled(false);
+                mPlayPauseContainer.setVisibility(View.GONE);
+                mPottomActionBarAlbumArt.setVisibility(View.GONE);
+                break;
+            default:
+            case MusicPlayer:
+                showPanel(Panel.Browse);
+                disableAllPanels();
+                break;
+            case Queue:
+                showPanel(Panel.Browse);
+                disableAllPanels();
+                break;
+        }
+    }
+
+    private void disableAllPanels() {
+        new Handler().postDelayed(new Runnable() {
+              @Override
+              public void run() {
+                //Do something after 100ms
+                mFirstPanel.setSlidingEnabled(false);
+                mPlayPauseContainer.setVisibility(View.GONE);
+                mPottomActionBarAlbumArt.setVisibility(View.GONE);
+          }
+        }, 500);
+    }
+
+    private void checkStatus() {
+        if (MusicUtils.getQueue() != null) {
+            mFirstPanel.setSlidingEnabled(true);
+            mPlayPauseContainer.setVisibility(View.VISIBLE);
+            mPottomActionBarAlbumArt.setVisibility(View.VISIBLE);
+        } else {
+            if(!mSecondPanel.isPanelExpanded() && !mFirstPanel.isPanelExpanded()){
+                mFirstPanel.setSlidingEnabled(false);
+                mPlayPauseContainer.setVisibility(View.GONE);
+                mPottomActionBarAlbumArt.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    protected AudioPlayerFragment getAudioPlayerFragment() {
         return (AudioPlayerFragment) getSupportFragmentManager().findFragmentById(
                 R.id.audioPlayerFragment);
     }
