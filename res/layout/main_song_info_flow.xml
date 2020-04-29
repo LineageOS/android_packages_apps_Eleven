@@ -22,51 +22,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-		<TextView
-			android:id="@+id/main_info_flow_song_title"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:ellipsize="end"
-			android:maxLines="1"
-			android:layout_gravity="top" 
-			android:gravity="top" 
-			android:textAllCaps="true"
-			android:textColor="@color/header_action_bar_text_color"
-			android:textSize="@dimen/text_size_medium"
-			android:textStyle="bold"
-			tools:text="Really long and nice album title" 
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			app:layout_constraintEnd_toEndOf="parent" 
-			app:layout_constraintBottom_toTopOf="@+id/main_info_flow_artist_title" />
+        <TextView
+            android:id="@+id/main_info_flow_song_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:textAllCaps="true"
+            android:textColor="@color/header_action_bar_text_color"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:singleLine="true"
+            android:scrollHorizontally="true"
+            android:marqueeRepeatLimit ="marquee_forever"
+            tools:text="Really long and nice album title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/main_info_flow_artist_title" />
 
-		<TextView
-			android:id="@+id/main_info_flow_artist_title"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:gravity="top" 
-			android:ellipsize="end"
-			android:maxLines="1"
-			android:paddingBottom="2dp"
-			android:textAllCaps="true"
-			android:textColor="@color/header_action_bar_text_color"
-			android:textSize="@dimen/text_size_micro"
-			tools:text="Name of Artist" 
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/main_info_flow_song_title"
-			app:layout_constraintEnd_toEndOf="parent" 
-			app:layout_constraintBottom_toTopOf="@+id/spacer" />
-			
-		<Space
-			android:id="@+id/spacer"
-        	android:layout_width="0dp" 
-			android:layout_height="match_parent"
-			android:layout_gravity="fill" 
-			android:gravity="bottom" 
-			app:layout_constraintTop_toBottomOf="@+id/main_info_flow_song_title"
-        	app:layout_constraintEnd_toEndOf="parent"
-        	app:layout_constraintStart_toStartOf="parent"
-        	app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/main_info_flow_artist_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="top"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingBottom="2dp"
+            android:textAllCaps="true"
+            android:textColor="@color/header_action_bar_text_color"
+            android:textSize="@dimen/text_size_micro"
+            tools:text="Name of Artist"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_info_flow_song_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/spacer" />
+            
+        <Space
+            android:id="@+id/spacer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="fill"
+            android:gravity="bottom"
+            app:layout_constraintTop_toBottomOf="@+id/main_info_flow_song_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
