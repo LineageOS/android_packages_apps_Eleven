@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c410fa0_0fe3b4fc",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:08:00Z",
+      "side": 1,
+      "message": "from a quick look I can\u0027t see any use of this being accessible outside of this context",
+      "range": {
+        "startLine": 97,
+        "startChar": 8,
+        "endLine": 97,
+        "endChar": 24
+      },
+      "revId": "2bcf666f068943ba60479ed5fc4dd3d40ddb1230",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22f371ac_ba1d7084",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-04-29T14:08:00Z",
+      "side": 1,
+      "message": "one \"p\" too much",
+      "range": {
+        "startLine": 119,
+        "startChar": 8,
+        "endLine": 119,
+        "endChar": 28
+      },
+      "revId": "2bcf666f068943ba60479ed5fc4dd3d40ddb1230",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
