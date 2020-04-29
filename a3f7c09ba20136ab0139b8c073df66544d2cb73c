@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9b8ac2c9_014d33e3",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T14:52:47Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3104322d_541a9ff0",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb0dde6f_31155cba",
         "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
         "patchSetId": 6
@@ -33,6 +51,24 @@
       "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71eebf7d_e767f9cb",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 20540
+      },
+      "writtenOn": "2020-04-29T14:52:47Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "bb0dde6f_31155cba",
+      "revId": "a3f7c09ba20136ab0139b8c073df66544d2cb73c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
