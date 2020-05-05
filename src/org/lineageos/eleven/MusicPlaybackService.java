@@ -636,6 +636,9 @@ public class MusicPlaybackService extends Service
         // Use the remote control APIs to set the playback state
         setUpMediaSession();
 
+        // Initialize the media player
+        mPlayer = new MultiPlayer(this, mPlayerHandler, mAudioAttributes);
+
         // Initialize the preferences
         mPreferences = getSharedPreferences("Service", 0);
         mCardId = getCardId();
@@ -646,9 +649,6 @@ public class MusicPlaybackService extends Service
         mShuffleMode = mPreferences.getInt("shufflemode", SHUFFLE_NONE);
 
         registerExternalStorageListener();
-
-        // Initialize the media player
-        mPlayer = new MultiPlayer(this, mPlayerHandler, mAudioAttributes);
 
         // Initialize the intent filter and each action
         final IntentFilter filter = new IntentFilter();
