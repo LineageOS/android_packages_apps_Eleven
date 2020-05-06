@@ -112,9 +112,13 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
     private Drawable mActionBarBackground;
 
-    @Override
-    protected void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    /**
+     * Called when all requirements (like permissions) are satisfied and we are ready
+     * to initialize the app.
+     */
+    protected void init(final Bundle savedInstanceState) {
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(this, this);
 
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
@@ -145,6 +149,10 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
         // listen to changes to the cache status
         ImageFetcher.getInstance(this).addCacheListener(this);
+    }
+
+    public boolean isInitialized() {
+        return mToken != null;
     }
 
     @Override
@@ -182,18 +190,18 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     @Override
     protected void onResume() {
         super.onResume();
-        // Set the playback drawables
-        updatePlaybackControls();
-        // Current info
-        onMetaChanged();
+
+        if (isInitialized()) {
+            // Set the playback drawables
+            updatePlaybackControls();
+            // Current info
+            onMetaChanged();
+        }
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
 
         final IntentFilter filter = new IntentFilter();
         // Play and pause changes
