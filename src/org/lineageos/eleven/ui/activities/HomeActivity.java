@@ -95,11 +95,14 @@ public class HomeActivity extends SlidingPanelActivity implements
         mSavedInstanceState = savedInstanceState;
 
         if (!needRequestStoragePermission()) {
-            init();
+            init(savedInstanceState);
         }
     }
 
-    private void init() {
+    @Override
+    protected void init(Bundle savedInstanceState) {
+        super.init(savedInstanceState);
+
         // if we've been launched by an intent, parse it
         Intent launchIntent = getIntent();
         boolean intentHandled = false;
@@ -108,7 +111,7 @@ public class HomeActivity extends SlidingPanelActivity implements
         }
 
         // if the intent didn't cause us to load a fragment, load the music browse one
-        if (mSavedInstanceState == null && !mLoadedBaseFragment) {
+        if (savedInstanceState == null && !mLoadedBaseFragment) {
             final MusicBrowserPhoneFragment fragment = new MusicBrowserPhoneFragment();
             if (launchIntent != null) {
                 fragment.setDefaultPageIdx(launchIntent.getIntExtra(EXTRA_BROWSE_PAGE_IDX,
@@ -124,11 +127,10 @@ public class HomeActivity extends SlidingPanelActivity implements
 
         getSupportFragmentManager().addOnBackStackChangedListener(this);
 
-
         // if we are resuming from a saved instance state
-        if (mSavedInstanceState != null) {
+        if (savedInstanceState != null) {
             // track which fragments are loaded and if this is the top level activity
-            mTopLevelActivity = mSavedInstanceState.getBoolean(STATE_KEY_BASE_FRAGMENT);
+            mTopLevelActivity = savedInstanceState.getBoolean(STATE_KEY_BASE_FRAGMENT);
             mLoadedBaseFragment = mTopLevelActivity;
 
             // update the action bar based on the top most fragment
@@ -491,7 +493,7 @@ public class HomeActivity extends SlidingPanelActivity implements
         switch (requestCode) {
             case PERMISSION_REQUEST_STORAGE: {
                 if (checkPermissionGrantResults(grantResults)) {
-                    init();
+                    init(mSavedInstanceState);
                 } else {
                     finish();
                 }
