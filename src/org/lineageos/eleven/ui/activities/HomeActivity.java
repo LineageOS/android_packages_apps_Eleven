@@ -28,12 +28,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -73,6 +75,7 @@ public class HomeActivity extends SlidingPanelActivity implements
 
     private static final int NEW_PHOTO = 1;
     public static final int EQUALIZER = 2;
+    private static final int REQ_PERMISSIONS = 3;
 
     private static final int PERMISSION_REQUEST_STORAGE = 1;
     private Bundle mSavedInstanceState;
@@ -88,6 +91,8 @@ public class HomeActivity extends SlidingPanelActivity implements
      */
     protected boolean mTopLevelActivity = false;
 
+    private AlertDialog mDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +101,15 @@ public class HomeActivity extends SlidingPanelActivity implements
 
         if (!needRequestStoragePermission()) {
             init(savedInstanceState);
+        }
+    }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
+
+        if (mDialog != null) {
+            mDialog.dismiss();
+            mDialog = null;
         }
     }
 
@@ -338,6 +352,10 @@ public class HomeActivity extends SlidingPanelActivity implements
                     MusicUtils.refresh();
                 }).start();
             }
+        } else if (requestCode == REQ_PERMISSIONS) {
+            if (!needRequestStoragePermission()) {
+                init(mSavedInstanceState);
+            }
         }
     }
 
@@ -495,10 +513,41 @@ public class HomeActivity extends SlidingPanelActivity implements
                 if (checkPermissionGrantResults(grantResults)) {
                     init(mSavedInstanceState);
                 } else {
-                    finish();
+                    final boolean shouldShowRationale = shouldShowPermissionRationale(permissions);
+                    showPermissionDialog(shouldShowRationale);
                 }
             }
         }
+    }
+
+    private void showPermissionDialog(final boolean shouldShowRationale) {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
+
+        final String message = getString(
+                R.string.dialog_please_grant_storage_permission_message, getString(R.string.app_name));
+
+        mDialog = new AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_please_grant_storage_permission_title)
+                .setMessage(message)
+                .setCancelable(false)
+                .setPositiveButton(R.string.dialog_grant, (dialog, which) -> {
+                    if (shouldShowRationale) {
+                        needRequestStoragePermission();
+                    } else {
+                        openPermissionSettings();
+                    }
+                })
+                .setNegativeButton(R.string.dialog_deny, ((dialog, which) -> finish()))
+                .create();
+        mDialog.show();
+    }
+
+    private void openPermissionSettings() {
+        final Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.fromParts("package", getPackageName(), null));
+        startActivityForResult(intent, REQ_PERMISSIONS);
     }
 
     private boolean needRequestStoragePermission() {
@@ -537,6 +586,15 @@ public class HomeActivity extends SlidingPanelActivity implements
             }
         }
         return true;
+    }
+
+    private boolean shouldShowPermissionRationale(@NonNull String[] permissions) {
+        for (String permission : permissions) {
+            if (shouldShowRequestPermissionRationale(permission)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
