@@ -94,12 +94,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    protected void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void init(final Bundle savedInstanceState) {
+        super.init(savedInstanceState);
+
         mUseBlur = PreferenceUtils.getInstance(this).getUseBlur();
 
         mTargetNavigatePanel = Panel.None;
@@ -277,6 +275,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     public Panel getCurrentPanel() {
+        if (!isInitialized()) {
+            return Panel.None;
+        }
+
         if (mSecondPanel.isPanelExpanded()) {
             return Panel.Queue;
         } else if (mFirstPanel.isPanelExpanded()) {
