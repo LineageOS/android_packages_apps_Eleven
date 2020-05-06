@@ -20,6 +20,11 @@
 
     <string name="app_name">Music</string>
 
+    <string name="dialog_deny">Deny &amp; exit</string>
+    <string name="dialog_grant">Grant</string>
+    <string name="dialog_please_grant_storage_permission_title">Permissions required</string>
+    <string name="dialog_please_grant_storage_permission_message"><xliff:g id="app_name">%s</xliff:g> needs to access the storage in order to play your music.\nPlease grant the required permission.</string>
+
     <!-- Page titles -->
     <string name="page_recent">Recent</string>
     <string name="page_artists">Artists</string>
