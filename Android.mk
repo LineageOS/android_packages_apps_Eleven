@@ -33,7 +33,14 @@ LOCAL_JNI_SHARED_LIBRARIES := librsjni
 LOCAL_PROGUARD_FLAGS := -include $(LOCAL_PATH)/proguard.cfg
 LOCAL_PROGUARD_ENABLED := disabled
 
+LOCAL_REQUIRED_MODULES := privapp_whitelist_org.lineageos.eleven.xml
+
 include $(BUILD_PACKAGE)
 
 include $(CLEAR_VARS)
-include $(BUILD_MULTI_PREBUILT)
+LOCAL_MODULE := privapp_whitelist_org.lineageos.eleven.xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
