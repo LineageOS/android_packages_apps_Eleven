@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea39b01b_029e0aff",
+        "filename": "src/org/lineageos/eleven/ui/activities/HomeActivity.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2020-05-09T05:58:53Z",
+      "side": 1,
+      "message": "I\u0027d prefer this to be a DialogFragment. That way, the dialog doesn\u0027t get lost on screen rotation and you don\u0027t need to clean it up manually.",
+      "revId": "a3ad03c0565c3ccadc031b8c125ff3f3cbd8ccb2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
