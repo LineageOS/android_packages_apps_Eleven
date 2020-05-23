@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -115,12 +116,11 @@
     <string name="settings_download_artist_images_title">ดาวน์โหลดภาพศิลปินที่หายไป</string>
     <string name="settings_general_category">ทั่วไป</string>
     <string name="settings_show_music_visualization_title">แสดงภาพเคลื่อนไหวประกอบเพลง</string>
+    <string name="settings_use_blur_title">พื้นหลังเบลอ</string>
     <string name="settings_show_lyrics_title">แสดงเนื้อเพลง</string>
     <string name="settings_show_lyrics_summary">สำหรับเพลงที่มีไฟล์ srt</string>
     <string name="settings_shake_to_play">เขย่าเพื่อเล่น</string>
     <string name="settings_shake_to_play_summary">เขย่าอุปกรณ์ของคุณเพื่อเล่นเพลงถัดไป</string>
-    <string name="settings_lockscreen_album_art">ปกอัลบั้มบนหน้าจอล็อค</string>
-    <string name="settings_lockscreen_album_art_summary">แทนที่ภาพพื้นหลังหน้าจอล็อคด้วยผลงานปกอัลบั้มเพลง</string>
     <string name="app_widget_small">เพลง: 4 \u00d7 1</string>
     <string name="app_widget_large">เพลง: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">เพลง: 4 \u00d7 2 (สลับ)</string>

@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -115,12 +116,11 @@
     <string name="settings_download_artist_images_title">Prenesi manjkajoče slike izvajalcev</string>
     <string name="settings_general_category">Splošno</string>
     <string name="settings_show_music_visualization_title">Prikaži predočenje glasbe</string>
+    <string name="settings_use_blur_title">Zamegli ozadje</string>
     <string name="settings_show_lyrics_title">Prikaži besedilo skladbe</string>
     <string name="settings_show_lyrics_summary">Za pesmi, ki imajo datoteko srt</string>
     <string name="settings_shake_to_play">Stresi za predvajanje</string>
     <string name="settings_shake_to_play_summary">Stresite svojo napravo za predvajanje naslednje skladbe</string>
-    <string name="settings_lockscreen_album_art">Naslovnica zaslona za zakl.</string>
-    <string name="settings_lockscreen_album_art_summary">Nadomesti ozadje zaklenjenega zaslona z naslovnico</string>
     <string name="app_widget_small">Glasba: 4 \u00d7 1</string>
     <string name="app_widget_large">Glasba: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Glasba: 4 \u00d7 2 (nadomestno)</string>

@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -109,8 +110,6 @@
     <string name="settings_show_lyrics_summary">針對有 srt 檔的歌曲</string>
     <string name="settings_shake_to_play">搖動即可播放</string>
     <string name="settings_shake_to_play_summary">搖動您的裝置即可播放下一首歌曲</string>
-    <string name="settings_lockscreen_album_art">鎖屏專輯圖片</string>
-    <string name="settings_lockscreen_album_art_summary">將鎖屏背景替換成專輯圖片</string>
     <string name="app_widget_small">音樂：4 \u00d7 1</string>
     <string name="app_widget_large">音樂：4 \u00d7 2</string>
     <string name="app_widget_large_alt">音樂：4 \u00d7 2（交替）</string>

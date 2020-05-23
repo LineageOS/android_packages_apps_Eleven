@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -120,8 +121,6 @@
     <string name="settings_show_lyrics_summary">Pentru melodii care au un fișier srt</string>
     <string name="settings_shake_to_play">Scuturați pentru a reda</string>
     <string name="settings_shake_to_play_summary">Se agită dispozitivul pentru a reda melodia următoare</string>
-    <string name="settings_lockscreen_album_art">Coperta albumului pe ecranul de blocare</string>
-    <string name="settings_lockscreen_album_art_summary">Înlocuiți fundalul ecranului de blocare cu coperta albumului</string>
     <string name="app_widget_small">Muzică: 4 \u00d7 1</string>
     <string name="app_widget_large">Muzică: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muzică: 4 \u00d7 2 (alternativ)</string>

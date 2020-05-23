@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">Fir Lidder déi en \"srt\"-Fichier hunn</string>
     <string name="settings_shake_to_play">Rësele fir opzespillen</string>
     <string name="settings_shake_to_play_summary">Apparat rësele fir dat nächst Lidd ofzespillen</string>
-    <string name="settings_lockscreen_album_art">Album-Biller um Spärschierm</string>
-    <string name="settings_lockscreen_album_art_summary">D\'Hannergrondbild um Spärschierm mam Album-Bild ersetzen</string>
     <string name="app_widget_small">Musek: 4 \u00d7 1</string>
     <string name="app_widget_large">Musek: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musek: 4 \u00d7 2 (alternativ)</string>

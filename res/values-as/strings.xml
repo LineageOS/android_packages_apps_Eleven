@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">srt ফাইল থকা গীতৰ বাবে</string>
     <string name="settings_shake_to_play">প্লে কৰিবলৈ জোকাৰক</string>
     <string name="settings_shake_to_play_summary">পৰৱৰ্তী গীতটো বজাবলৈ আপোনাৰ ডিভাইচটো জোকাৰক</string>
-    <string name="settings_lockscreen_album_art">লকস্ক্ৰীণ এলবাম আৰ্ট</string>
-    <string name="settings_lockscreen_album_art_summary">এলবাম আৰ্টেৰে লকস্ক্ৰীণ পৃষ্ঠভূমি পৰিৱৰ্তন কৰক</string>
     <string name="app_widget_small">সংগীত: 4 \u00d7 1</string>
     <string name="app_widget_large">সংগীত: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">সংগীত: 4 \u00d7 2 (বিকল্প)</string>

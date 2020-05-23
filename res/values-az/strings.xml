@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">srt faylı olan mahnılar üçün</string>
     <string name="settings_shake_to_play">Oynatmaq üçün silkələyin</string>
     <string name="settings_shake_to_play_summary">Növbəti mahnını səsləndirmək üçün cihazınızı silkələyin</string>
-    <string name="settings_lockscreen_album_art">Kilid ekranı albom üzü</string>
-    <string name="settings_lockscreen_album_art_summary">Kilid ekranı arxaplanını albom üzü ilə əvəz edər</string>
     <string name="app_widget_small">Musiqi: 4 \u00d7 1</string>
     <string name="app_widget_large">Musiqi: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musiqi: 4 \u00d7 2 (alternativ)</string>

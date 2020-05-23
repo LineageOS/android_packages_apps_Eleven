@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">srt ഫയൽ ഉള്ള ഗാനങ്ങള്‍ക്ക് വേണ്ടിയുള്ളത്</string>
     <string name="settings_shake_to_play">പ്ലേ ചെയ്യാന്‍ കുലുക്കുക</string>
     <string name="settings_shake_to_play_summary">അടുത്ത ഗാനം പ്ലേ ചെയ്യാന്‍ നിങ്ങളുടെ ഉപകരണം കുലുക്കുക</string>
-    <string name="settings_lockscreen_album_art">ലോക്ക് സ്ക്രീനിലേക്ക് ആൽബം ആർട്ട്</string>
-    <string name="settings_lockscreen_album_art_summary">ആൽബം ആർട്ട് ഉപയോഗിച്ച് ലോക്ക് സ്ക്രീൻ പശ്ചാത്തലം പകരംവയ്ക്കുക</string>
     <string name="app_widget_small">സംഗീതം: 4 \u00d7 1</string>
     <string name="app_widget_large">സംഗീതം: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">സംഗീതം: 4 \u00d7 2 (ഇതരമാര്‍ഗ്ഗം)</string>

@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -120,8 +121,6 @@
     <string name="settings_show_lyrics_summary">Για τραγούδια που έχουν αρχείο srt</string>
     <string name="settings_shake_to_play">Ανακίνηση για αναπαραγωγή</string>
     <string name="settings_shake_to_play_summary">Κουνήστε τη συσκευή σας για αναπαραγωγή του επόμενου τραγουδιού</string>
-    <string name="settings_lockscreen_album_art">Εξώφυλλο άλμπουμ στην οθόνη κλειδώματος</string>
-    <string name="settings_lockscreen_album_art_summary">Αντικατάσταση της ταπετσαρίας οθόνης κλειδώματος με το εξώφυλλο άλμπουμ</string>
     <string name="app_widget_small">Μουσική: 4 \u00d7 1</string>
     <string name="app_widget_large">Μουσική: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Μουσική: 4 \u00d7 2 (εναλλακτικό)</string>

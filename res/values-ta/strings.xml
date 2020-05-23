@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">srt கோப்பு உடைய பாடல்களுக்கு</string>
     <string name="settings_shake_to_play">இயக்க அசை</string>
     <string name="settings_shake_to_play_summary">அடுத்த பாடலை இயக்குவதற்கு உங்கள் சாதனத்தை அசைக்கவும்</string>
-    <string name="settings_lockscreen_album_art">பூட்டுத் திரை ஆல்பம் கலை</string>
-    <string name="settings_lockscreen_album_art_summary">பூட்டுத்திரை பின்னணியை ஆல்பம் கலையால் மாற்றிடவும்</string>
     <string name="app_widget_small">இசை: 4 \u00d7 1</string>
     <string name="app_widget_large">இசை: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">இசை: 4 \u00d7 2 (மாற்று)</string>

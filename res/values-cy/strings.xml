@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -115,12 +116,11 @@
     <string name="settings_download_artist_images_title">Lawrlwytho delweddau ar goll yr artist</string>
     <string name="settings_general_category">Cyffredinol</string>
     <string name="settings_show_music_visualization_title">Dangos patrymau cerddoriaeth</string>
+    <string name="settings_use_blur_title">Pylu\'r cefndir</string>
     <string name="settings_show_lyrics_title">Dangos geiriau caneuon</string>
     <string name="settings_show_lyrics_summary">Ar gyfer caneuon sydd gyda ffeil srt</string>
     <string name="settings_shake_to_play">Ysgwyd i Chwarae</string>
     <string name="settings_shake_to_play_summary">Ysgwyd dy ddyfais i chwarae\'r trac nesaf</string>
-    <string name="settings_lockscreen_album_art">Delwedd Casgliad ar Sgrin Cloi</string>
-    <string name="settings_lockscreen_album_art_summary">Rhoi delwedd y casgliad fel cefndir y sgrin cloi</string>
     <string name="app_widget_small">Cerddoriaeth: 4 \u00d7 1</string>
     <string name="app_widget_large">Cerddoriaeth 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Cerddoriaeth 4 \u00d7 2 (amgen)</string>

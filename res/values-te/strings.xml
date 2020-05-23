@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">srt ఫైల్ కలిగిన పాటల కొరకు</string>
     <string name="settings_shake_to_play">ప్లే చేసేందుకు కదపండి</string>
     <string name="settings_shake_to_play_summary">తరువాతి పాటను ప్లే చేసేందుకు మీ పరికరాన్ని కదపండి</string>
-    <string name="settings_lockscreen_album_art">లాక్‌స్కీన్ ఆల్బమ్ ఆర్ట్</string>
-    <string name="settings_lockscreen_album_art_summary">లాక్‌స్కీన్ నేపధ్యాన్ని ఆల్బమ్ ఆర్టుతో భర్తీ చేయండి</string>
     <string name="app_widget_small">సంగీతం: 4 \u00d7 1</string>
     <string name="app_widget_large">సంగీతం: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">సంగీతం: 4 \u00d7 2 (ప్రత్యామ్నాయ)</string>

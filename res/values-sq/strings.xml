@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,6 +26,7 @@
     <string name="page_genres">Zhanret</string>
     <string name="header_albums">Albumet</string>
     <string name="header_all_songs">Të gjitha këngët</string>
+    <string name="menu_play_all">Luaji të gjitha</string>
     <string name="menu_sort_by">Rendit sipas</string>
     <string name="menu_clear_list">Hiqe listën</string>
     <string name="add_to_queue">Shto në radhë</string>
@@ -34,6 +36,7 @@
     <string name="sort_order_entry_artist">Artisti</string>
     <string name="sort_order_entry_album">Albumi</string>
     <string name="sort_order_entry_year">Viti</string>
+    <string name="sort_order_entry_duration">Kohëzgjatja</string>
     <string name="sort_order_entry_number_of_songs">Numri i këngëve</string>
     <string name="sort_order_entry_number_of_albums">Numri i albumeve</string>
     <string name="sort_order_entry_filename">Emri i skedarit</string>
@@ -50,20 +53,23 @@
     <string name="google_search">Kërkimi në Google</string>
     <string name="use_default">Përdor foton e paracaktuar</string>
     <string name="old_photo">Përdor foto të vjetër</string>
+    <string name="context_menu_play_selection">Luaj</string>
     <string name="context_menu_rename_playlist">Riemërto</string>
     <string name="context_menu_delete">Fshi</string>
     <string name="context_menu_change_image">Ndërro imazhin</string>
     <string name="accessibility_pause">Vë në pauzë</string>
+    <string name="accessibility_next">Tjetra</string>
+    <string name="accessibility_prev">E mëparshmja</string>
     <string name="accessibility_repeat">Përsërit</string>
     <string name="accessibility_repeat_all">Përsëriti të gjitha</string>
     <string name="playlist_renamed">Lista u riemërtua</string>
     <string name="settings_ui_category">Ndërfaqe</string>
     <string name="settings_storage_category">Memoria</string>
+    <string name="settings_delete_cache_summary">Hiqi të gjitha imazhet e ruajtura</string>
     <string name="settings_download_only_on_wifi_title">Shkarko vetëm me Wi-Fi</string>
     <string name="settings_download_only_on_wifi_summary">Për të reduktuar pagesat ndaj operatorit, mos shkarkoni mbi rrjetet celulare</string>
     <string name="settings_download_missing_artwork_title">Shkarko kopertinën e munguar të albumit</string>
-    <string name="settings_lockscreen_album_art">Kopertina e albumit në ekranin bllokues</string>
-    <string name="settings_lockscreen_album_art_summary">Zëvendëso sfondin e ekranit bllokues me kopertinat e albumeve</string>
+    <string name="settings_use_blur_title">Zbeh sfondin</string>
     <string name="app_widget_small">Muzika: 4\u00d7 1</string>
     <string name="app_widget_large">Muzika: 4\u00d7 2</string>
     <string name="app_widget_large_alt">Muzika: 4 \u00d7 2 (alternative)</string>

@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -115,12 +116,11 @@
     <string name="settings_download_artist_images_title">下载缺失的艺术家的图像</string>
     <string name="settings_general_category">常规</string>
     <string name="settings_show_music_visualization_title">显示音乐可视化效果</string>
+    <string name="settings_use_blur_title">模糊背景</string>
     <string name="settings_show_lyrics_title">显示歌词</string>
     <string name="settings_show_lyrics_summary">有一个 srt 文件与歌曲匹配</string>
     <string name="settings_shake_to_play">摇动播放</string>
     <string name="settings_shake_to_play_summary">摇动您的设备以播放下一首歌</string>
-    <string name="settings_lockscreen_album_art">锁屏唱片封面</string>
-    <string name="settings_lockscreen_album_art_summary">将锁屏背景换为唱片集封面</string>
     <string name="app_widget_small">音乐：4 \u00d7 1</string>
     <string name="app_widget_large">音乐：4 \u00d7 1</string>
     <string name="app_widget_large_alt">音乐：4 \u00d7 2 (交替)</string>

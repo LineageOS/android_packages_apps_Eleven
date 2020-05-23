@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2012-2013 Andrew Neal
      Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -119,8 +120,6 @@
     <string name="settings_show_lyrics_summary">Per le canzoni che hanno un file srt</string>
     <string name="settings_shake_to_play">Scuoti per riprodurre</string>
     <string name="settings_shake_to_play_summary">Scuoti il dispositivo per riprodurre la prossima canzone</string>
-    <string name="settings_lockscreen_album_art">Cover schermata sblocco</string>
-    <string name="settings_lockscreen_album_art_summary">Sostituisci lo sfondo del blocco schermo con la copertina dell\'album</string>
     <string name="app_widget_small">Musica: 4 \u00d7 1</string>
     <string name="app_widget_large">Musica: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musica: 4 \u00d7 2 (alternativo)</string>
