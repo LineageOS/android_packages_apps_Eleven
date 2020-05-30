@@ -540,6 +540,8 @@ public class MusicPlaybackService extends Service
 
     private PowerManager.WakeLock mHeadsetHookWakeLock;
 
+    private final int mNotificationId = hashCode();
+
     /**
      * {@inheritDoc}
      */
@@ -909,20 +911,19 @@ public class MusicPlaybackService extends Service
             newNotifyMode = NOTIFY_MODE_NONE;
         }
 
-        int notificationId = hashCode();
         if (mNotifyMode != newNotifyMode) {
             if (mNotifyMode == NOTIFY_MODE_FOREGROUND) {
                 stopForeground(newNotifyMode == NOTIFY_MODE_NONE);
             } else if (newNotifyMode == NOTIFY_MODE_NONE) {
-                mNotificationManager.cancel(notificationId);
+                mNotificationManager.cancel(mNotificationId);
                 mNotificationPostTime = 0;
             }
         }
 
         if (newNotifyMode == NOTIFY_MODE_FOREGROUND) {
-            startForeground(notificationId, buildNotification());
+            startForeground(mNotificationId, buildNotification());
         } else if (newNotifyMode == NOTIFY_MODE_BACKGROUND) {
-            mNotificationManager.notify(notificationId, buildNotification());
+            mNotificationManager.notify(mNotificationId, buildNotification());
         }
 
         mNotifyMode = newNotifyMode;
@@ -930,7 +931,7 @@ public class MusicPlaybackService extends Service
 
     private void cancelNotification() {
         stopForeground(true);
-        mNotificationManager.cancel(hashCode());
+        mNotificationManager.cancel(mNotificationId);
         mNotificationPostTime = 0;
         mNotifyMode = NOTIFY_MODE_NONE;
     }
