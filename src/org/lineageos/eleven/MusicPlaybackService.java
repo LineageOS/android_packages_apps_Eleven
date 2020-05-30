@@ -457,6 +457,8 @@ public class MusicPlaybackService extends Service
     private int mNotifyMode = NOTIFY_MODE_NONE;
     private long mNotificationPostTime = 0;
 
+    private static final int NOTIFICATION_ID = 0x1337;
+
     private static final int NOTIFY_MODE_NONE = 0;
     private static final int NOTIFY_MODE_FOREGROUND = 1;
     private static final int NOTIFY_MODE_BACKGROUND = 2;
@@ -909,20 +911,19 @@ public class MusicPlaybackService extends Service
             newNotifyMode = NOTIFY_MODE_NONE;
         }
 
-        int notificationId = hashCode();
         if (mNotifyMode != newNotifyMode) {
             if (mNotifyMode == NOTIFY_MODE_FOREGROUND) {
                 stopForeground(newNotifyMode == NOTIFY_MODE_NONE);
             } else if (newNotifyMode == NOTIFY_MODE_NONE) {
-                mNotificationManager.cancel(notificationId);
+                mNotificationManager.cancel(NOTIFICATION_ID);
                 mNotificationPostTime = 0;
             }
         }
 
         if (newNotifyMode == NOTIFY_MODE_FOREGROUND) {
-            startForeground(notificationId, buildNotification());
+            startForeground(NOTIFICATION_ID, buildNotification());
         } else if (newNotifyMode == NOTIFY_MODE_BACKGROUND) {
-            mNotificationManager.notify(notificationId, buildNotification());
+            mNotificationManager.notify(NOTIFICATION_ID, buildNotification());
         }
 
         mNotifyMode = newNotifyMode;
@@ -930,7 +931,7 @@ public class MusicPlaybackService extends Service
 
     private void cancelNotification() {
         stopForeground(true);
-        mNotificationManager.cancel(hashCode());
+        mNotificationManager.cancel(NOTIFICATION_ID);
         mNotificationPostTime = 0;
         mNotifyMode = NOTIFY_MODE_NONE;
     }
