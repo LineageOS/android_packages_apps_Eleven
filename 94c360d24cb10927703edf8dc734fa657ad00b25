@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39080def_8217da3c",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2020-05-31T09:31:20Z",
+      "side": 1,
+      "message": "Make this a /random/ int\nprivate static final int NOTIFICATION_ID \u003d 87",
+      "parentUuid": "",
+      "revId": "94c360d24cb10927703edf8dc734fa657ad00b25",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
