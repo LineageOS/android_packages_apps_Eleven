@@ -116,6 +116,7 @@
     <string name="settings_download_artist_images_title">Scarica immagine artista mancante</string>
     <string name="settings_general_category">Generale</string>
     <string name="settings_show_music_visualization_title">Mostra visualizzatore musicale</string>
+    <string name="settings_use_blur_title">Sfuoca sfondo</string>
     <string name="settings_show_lyrics_title">Visualizza testo canzone</string>
     <string name="settings_show_lyrics_summary">Per le canzoni che hanno un file srt</string>
     <string name="settings_shake_to_play">Scuoti per riprodurre</string>
