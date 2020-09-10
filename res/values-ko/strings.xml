@@ -116,6 +116,7 @@
     <string name="settings_download_artist_images_title">아티스트 이미지가 없으면 다운로드</string>
     <string name="settings_general_category">일반</string>
     <string name="settings_show_music_visualization_title">음악 시각화 표시</string>
+    <string name="settings_use_blur_title">배경 흐림 효과</string>
     <string name="settings_show_lyrics_title">노래 가사 표시</string>
     <string name="settings_show_lyrics_summary">SRT 파일이 있는 곡만</string>
     <string name="settings_shake_to_play">흔들어 재생</string>
