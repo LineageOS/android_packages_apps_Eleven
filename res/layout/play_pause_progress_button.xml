@@ -21,14 +21,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="gone"
-    tools:visibility="visible">
+    tools:visibility="visible"
+	android:theme="@style/RestrictDarkMode">
 
     <org.lineageos.eleven.widgets.PlayPauseButton
         android:id="@+id/action_button_play"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="@color/accent"
+        android:background="@color/white"
         android:contentDescription="@string/accessibility_play"
         android:focusable="true"
         android:scaleType="centerCrop"
