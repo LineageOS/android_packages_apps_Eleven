@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28bbdab4_e3c7e4b2",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:13:37Z",
+      "side": 1,
+      "message": "this",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 36
+      },
+      "revId": "548743976a1e9d0c7ff1e01d55b993cd61190beb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58e080ef_bbf92f65",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:13:37Z",
+      "side": 1,
+      "message": "this should have the same indentation as the original code around it (2 or 3 tabs)",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 40,
+        "endChar": 57
+      },
+      "revId": "548743976a1e9d0c7ff1e01d55b993cd61190beb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7898ca28_e6453905",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:13:37Z",
+      "side": 1,
+      "message": "and this...\nshould not be touched",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 62
+      },
+      "revId": "548743976a1e9d0c7ff1e01d55b993cd61190beb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
