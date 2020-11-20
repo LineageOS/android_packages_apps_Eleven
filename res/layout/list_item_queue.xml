@@ -58,7 +58,8 @@
         android:layout_centerVertical="true"
         android:layout_toStartOf="@+id/popup_menu_button"
         android:paddingStart="@dimen/list_item_progress_padding_left"
-        android:paddingEnd="@dimen/list_item_progress_padding_right">
+        android:paddingEnd="@dimen/list_item_progress_padding_right"
+		android:theme="@style/RestrictDarkMode">
         <include
             android:layout_width="@dimen/list_item_progress_width"
             android:layout_height="@dimen/list_item_progress_height"
