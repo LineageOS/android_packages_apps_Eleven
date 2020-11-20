@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d2c8cf3_727f413e",
+        "filename": "res/layout-land/activity_player_fragment.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "dont touch",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 42
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e81ba04f_28881d51",
+        "filename": "res/layout-land/main_song_flow.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "this indentation is wrong\nalso: stray spaces at the end of various lines",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 68
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17de57d4_68f579fc",
+        "filename": "res/layout/activity_player_fragment.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "unnecessary change",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 42
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86c23a2f_cedadf65",
+        "filename": "res/layout/activity_player_fragment.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "move to next kube",
+      "range": {
+        "startLine": 19,
+        "startChar": 51,
+        "endLine": 19,
+        "endChar": 109
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3bd24fd_b5bc3632",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "should be moved to the next line, see L#19 how it should be indented",
+      "range": {
+        "startLine": 18,
+        "startChar": 51,
+        "endLine": 18,
+        "endChar": 109
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47ca39cd_fedff763",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "remove all the stray spaces you introduced on this and other rows (see the \"red\" parts on the end of the lines)",
+      "range": {
+        "startLine": 31,
+        "startChar": 40,
+        "endLine": 31,
+        "endChar": 41
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75b04777_f9bfd708",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-20T20:18:59Z",
+      "side": 1,
+      "message": "starting from here, this code is either a copy of the code above or the content of another file, but clearly shouldn\u0027t be here",
+      "range": {
+        "startLine": 72,
+        "startChar": 52,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "6756ff7c5dbd295313268ef91bc60bead3db6e9d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
