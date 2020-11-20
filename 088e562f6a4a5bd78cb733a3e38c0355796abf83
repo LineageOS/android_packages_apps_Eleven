@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b8fba4b0_59217d4b",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 26076
+      },
+      "writtenOn": "2020-11-20T19:58:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8477710a_4d44a7d1",
+      "range": {
+        "startLine": 39,
+        "startChar": 9,
+        "endLine": 39,
+        "endChar": 36
+      },
+      "revId": "088e562f6a4a5bd78cb733a3e38c0355796abf83",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e5a58751_5c89749d",
         "filename": "res/layout/main_song_info_flow.xml",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "088e562f6a4a5bd78cb733a3e38c0355796abf83",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77987ae8_75446488",
+        "filename": "res/layout/main_song_info_flow.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 26076
+      },
+      "writtenOn": "2020-11-20T19:58:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5a58751_5c89749d",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 54
+      },
+      "revId": "088e562f6a4a5bd78cb733a3e38c0355796abf83",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
