@@ -58,7 +58,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:paddingStart="@dimen/bab_progress_padding_left"
-        android:paddingEnd="@dimen/bab_progress_padding_right">
+        android:paddingEnd="@dimen/bab_progress_padding_right"
+		android:theme="@style/RestrictDarkMode">
         <include
             android:contentDescription="@string/accessibility_play"
             android:layout_width="@dimen/bab_progress_size"
