@@ -23,7 +23,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:background="@color/blue_dark"
-    tools:layout_height="match_parent">
+    tools:layout_height="match_parent"
+    android:theme="@style/RestrictDarkMode">
 
     <TextView
         android:id="@+id/audio_player_current_time"
