@@ -23,6 +23,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ContextThemeWrapper;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
@@ -127,7 +128,9 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
         mTextColor = a.getColorStateList(2);
         mTextAllCaps = a.getBoolean(3, false);
 
-        mTabStrip = new ViewPagerTabStrip(context);
+        ContextThemeWrapper wrappedContext = new ContextThemeWrapper(context, R.style.RestrictDarkMode);
+        
+        mTabStrip = new ViewPagerTabStrip(wrappedContext);
         addView(mTabStrip,
                 new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT));
         a.recycle();
