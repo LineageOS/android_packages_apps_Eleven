@@ -1025,7 +1025,7 @@ public final class MusicUtils {
             if (cursor != null) {
                 cursor.moveToFirst();
                 if (!cursor.isAfterLast()) {
-                    return cursor.getInt(0);
+                    return cursor.getLong(0);
                 }
             }
         }
