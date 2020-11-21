@@ -167,7 +167,7 @@
     <dimen name="color_scheme_dialog_row_padding">8.0dip</dimen>
 
     <!-- Sliding Panel -->
-    <dimen name="sliding_panel_indicator_height">20.0dip</dimen>
+    <dimen name="sliding_panel_indicator_height">60.0dip</dimen>
     <dimen name="sliding_panel_shadow_height">0.0dip</dimen>
 
     <!-- Header Bar -->
