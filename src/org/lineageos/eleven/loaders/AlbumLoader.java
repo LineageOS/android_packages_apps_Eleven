@@ -150,7 +150,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         Cursor cursor = context.getContentResolver().query(uri,
                 new String[] {
                         /* 0 */
-                        BaseColumns._ID,
+                        AlbumColumns.ALBUM_ID,
                         /* 1 */
                         AlbumColumns.ALBUM,
                         /* 2 */
@@ -165,7 +165,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         final SortParameter sortParameter = getSortParameter(albumSortOrder);
         if (sortParameter != null && cursor != null) {
             final boolean descending = MusicUtils.isSortOrderDesending(albumSortOrder);
-            return LocalizedStore.getInstance(context).getLocalizedSort(cursor, BaseColumns._ID,
+            return LocalizedStore.getInstance(context).getLocalizedSort(cursor, AlbumColumns.ALBUM_ID,
                     SortParameter.Album, sortParameter, descending, artistId == null);
         }
 
