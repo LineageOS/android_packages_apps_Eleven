@@ -247,7 +247,7 @@ public class HomeActivity extends SlidingPanelActivity implements
 
     private void updateStatusBarColor(int color) {
         if (color == Color.TRANSPARENT) {
-            color = getResources().getColor(R.color.primary_dark);
+            color = getResources().getColor(R.color.header_action_bar_color);
         }
         final Window window = getWindow();
         ObjectAnimator animator = ObjectAnimator.ofInt(window,
