@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a44d0ee_d3c53cf1",
+        "filename": "res/layout/bottom_action_bar.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-28T11:55:09Z",
+      "side": 1,
+      "message": "look at this line, look at the ones above and below and then think whats different and how to fix it...",
+      "revId": "85af2e9a86e1ab6a9d3db823226701cb849fa769",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03d4e1ff_5f0d6291",
+        "filename": "res/values/styles.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-28T11:55:09Z",
+      "side": 1,
+      "message": "same for this and following lines",
+      "revId": "85af2e9a86e1ab6a9d3db823226701cb849fa769",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6685042_c43fe92c",
+        "filename": "res/values/styles.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2020-11-28T11:55:09Z",
+      "side": 1,
+      "message": "keep line untouched",
+      "revId": "85af2e9a86e1ab6a9d3db823226701cb849fa769",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
