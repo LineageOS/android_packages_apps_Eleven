@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa37f09d_7b3bab2d",
+        "filename": "src/org/lineageos/eleven/loaders/AlbumLoader.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2020-12-07T14:39:25Z",
+      "side": 1,
+      "message": "Wrap at 100 chars",
+      "revId": "ff60ec5a4707f9483ffcddf02a4f6a5d2fef6d9e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
