@@ -116,6 +116,7 @@
     <string name="settings_download_artist_images_title">Lataa puuttuvat esittäjän kuvat</string>
     <string name="settings_general_category">Yleiset</string>
     <string name="settings_show_music_visualization_title">Näytä visualisointi</string>
+    <string name="settings_use_blur_title">Sumennettu tausta</string>
     <string name="settings_show_lyrics_title">Näytä sanoitukset</string>
     <string name="settings_show_lyrics_summary">Jos kappaleella on srt-tiedosto</string>
     <string name="settings_shake_to_play">Toista ravistamalla</string>
