@@ -105,15 +105,9 @@
     <string name="accessibility_browse">இசையை உலாவு</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ஐ ரிங்டோனாக அமை</string>
     <string name="playlist_renamed">இசைப்பட்டியல் மறுபெயரிடப்பட்டது</string>
-    <string name="settings_ui_category">இடைமுகம்</string>
     <string name="settings_storage_category">சேமிப்பிடம்</string>
-    <string name="settings_data_category">தரவு</string>
     <string name="settings_delete_cache_title">தேக்கத்தை நீக்கு</string>
     <string name="settings_delete_cache_summary">தேக்கப்பட்ட படங்கள் அனைத்தையும் நீக்கு</string>
-    <string name="settings_download_only_on_wifi_title">Wi-fi வழியாக மட்டுமே பதிவிறக்கு</string>
-    <string name="settings_download_only_on_wifi_summary">கேரியர் கட்டணங்களை குறைக்க, மொபைல் பிணையங்களில் பதிவிறக்காதே</string>
-    <string name="settings_download_missing_artwork_title">பதிவிறக்கத்தில் ஆல்பம் கலையை காணவில்லை</string>
-    <string name="settings_download_artist_images_title">பதிவிறக்கத்தில் ஆல்பம் கலைஞர் படங்களைக் காணவில்லை</string>
     <string name="settings_general_category">பொது</string>
     <string name="settings_show_music_visualization_title">இசை காட்சிப்படுத்தலை காண்பி</string>
     <string name="settings_show_lyrics_title">பாடல் வரிகளைக் காண்பி</string>

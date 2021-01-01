@@ -104,15 +104,9 @@
     <string name="accessibility_browse">ಸಂಗೀತವನ್ನು ಬ್ರೌಸ್ ಮಾಡಿ</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ರಿಂಗ್‍ಟೋನ್ ಆಗಿ ಹೊಂದಿಸಲಾಗಿದೆ</string>
     <string name="playlist_renamed">ಪ್ಲೇಪಟ್ಟಿ ಮರುಹೆಸರಿಸಲಾಗಿದೆ</string>
-    <string name="settings_ui_category">ಇಂಟರ್ಫೇಸ್</string>
     <string name="settings_storage_category">ಸಂಗ್ರಹಣೆ</string>
-    <string name="settings_data_category">ಡೇಟಾ</string>
     <string name="settings_delete_cache_title">ನಗದನ್ನು ಅಳಿಸು</string>
     <string name="settings_delete_cache_summary">ಎಲ್ಲಾ ನಗದು ಮಾಡಿದ ಚಿತ್ರಗಳನ್ನು ತೆಗೆ</string>
-    <string name="settings_download_only_on_wifi_title">ವೈ-ಫೈ ಮೂಲಕ ಮಾತ್ರ ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
-    <string name="settings_download_only_on_wifi_summary">ವಾಹಕ ಶುಲ್ಕಗಳನ್ನು ಕಡಿಮೆಮಾಡಲು, ಮೊಬೈಲ್ ನೆಟ್‍ವರ್ಕ್‍ಗಳಿಂದ ಡೌನ್‍ಲೋಡ್ ಮಾಡಬೇಡಿ</string>
-    <string name="settings_download_missing_artwork_title">ಕಾಣೆಯಾದ ಆಲ್ಬಂ ಆರ್ಟ್ ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
-    <string name="settings_download_artist_images_title">ಕಾಣೆಯಾಗಿರುವ ಕಾಲಾವಿದನ ಚಿತ್ರಗಳನ್ನು ಡೌನ್‍ಲೋಡ್ ಮಾಡು</string>
     <string name="settings_general_category">ಸಾಮಾನ್ಯ</string>
     <string name="settings_show_music_visualization_title">ಸಂಗೀತ ದೃಶ್ಯೀಕರಣವನ್ನು ಪ್ರದರ್ಶಿಸು</string>
     <string name="settings_show_lyrics_title">ಹಾಡಿನ ಸಾಹಿತ್ಯವನ್ನು ಪ್ರದರ್ಶಿಸು</string>

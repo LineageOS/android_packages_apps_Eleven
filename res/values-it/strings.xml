@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Sfoglia musica</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' impostata come suoneria</string>
     <string name="playlist_renamed">Playlist rinominata</string>
-    <string name="settings_ui_category">Interfaccia</string>
     <string name="settings_storage_category">Archivio</string>
-    <string name="settings_data_category">Dati</string>
     <string name="settings_delete_cache_title">Cancella cache</string>
     <string name="settings_delete_cache_summary">Rimuovi immagini memorizzate in cache</string>
-    <string name="settings_download_only_on_wifi_title">Scarica solo con Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Per ridurre i costi dell\'operatore, non scaricare usando la rete mobile</string>
-    <string name="settings_download_missing_artwork_title">Scarica copertina album mancante</string>
-    <string name="settings_download_artist_images_title">Scarica immagine artista mancante</string>
     <string name="settings_general_category">Generale</string>
     <string name="settings_show_music_visualization_title">Mostra visualizzatore musicale</string>
     <string name="settings_use_blur_title">Sfuoca sfondo</string>

@@ -23,10 +23,6 @@
     <string name="context_menu_fetch_album_art">Sækja umslagsmyndir</string>
     <string name="context_menu_fetch_artist_image">Sækja mynd af flytjanda</string>
     <string name="settings_delete_cache_summary">Fjarlægja allar myndir úr skyndiminni</string>
-    <string name="settings_download_only_on_wifi_title">Aðeins hlaða niður á Wi-Fi neti</string>
-    <string name="settings_download_only_on_wifi_summary">Til að minnka kostnað vegna gagnamagns, ekki sækja meðan verið er á farsímanetum</string>
-    <string name="settings_download_missing_artwork_title">Sækja umslagsmyndir sem vantar</string>
-    <string name="settings_download_artist_images_title">Sækja myndir af flytjendum sem vantar</string>
     <string name="no_effects_for_you">Ekki var hægt að opna tónjafnarann.</string>
     <string name="empty_playlist_secondary">Til að bæta lögum á þennan spilunarlista, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta á spilunarlista\".</string>
     <string name="empty_queue_secondary">Til að bæta lögum í spilunarbiðröðina þína, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta í biðröð\".</string>

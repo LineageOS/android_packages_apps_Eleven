@@ -105,15 +105,9 @@
     <string name="accessibility_browse">সংগীত ব্ৰাউজ কৰক</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ৰিংটোন হিচাপে ছেট কৰা হৈছে</string>
     <string name="playlist_renamed">প্লে-সূচী পুনৰ নামাকৰণ কৰা হৈছে</string>
-    <string name="settings_ui_category">ইণ্টাৰফেচ</string>
     <string name="settings_storage_category">ষ্টোৰেজ</string>
-    <string name="settings_data_category">ডাটা</string>
     <string name="settings_delete_cache_title">কেশ্ব বিলোপ কৰক</string>
     <string name="settings_delete_cache_summary">কেশ্বড কৰা সকলো প্ৰতিচ্ছবি আঁতৰাওক</string>
-    <string name="settings_download_only_on_wifi_title">কেৱল Wi-Fiৰ মাধ্যমেৰে ডাউনলোড কৰক</string>
-    <string name="settings_download_only_on_wifi_summary">কেৰিয়াৰৰ মাচুল হ্ৰাস কৰিবলৈ, ম\'বাইল নেটৱৰ্কৰে ডাউনলোড নকৰিব</string>
-    <string name="settings_download_missing_artwork_title">হেৰুওৱা এলবাম আৰ্ট ডাউনলোড কৰক</string>
-    <string name="settings_download_artist_images_title">হেৰুওৱা শিল্পীৰ প্ৰতিচ্ছবি ডাউনলোড কৰক</string>
     <string name="settings_general_category">সাধাৰণ</string>
     <string name="settings_show_music_visualization_title">সংগীত ভিজুৱেলাইজেশ্বন প্ৰদৰ্শন কৰক</string>
     <string name="settings_show_lyrics_title">গীতৰ কথা প্ৰদৰ্শন কৰক</string>

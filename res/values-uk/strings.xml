@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Огляд музики</string>
     <string name="set_as_ringtone">«<xliff:g id="name" example="Alarm Bell">%s</xliff:g>» встановити як мелодію дзвінка</string>
     <string name="playlist_renamed">Список відтворення перейменовано</string>
-    <string name="settings_ui_category">Інтерфейс</string>
     <string name="settings_storage_category">Сховище</string>
-    <string name="settings_data_category">Дані</string>
     <string name="settings_delete_cache_title">Видалити кеш</string>
     <string name="settings_delete_cache_summary">Видалити всі кешовані зображення</string>
-    <string name="settings_download_only_on_wifi_title">Завантажувати лише через Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Щоб знизити витрати мобільного оператора, не завантажуйте через мобільні мережі</string>
-    <string name="settings_download_missing_artwork_title">Завантажити відсутні обкладинки альбомів</string>
-    <string name="settings_download_artist_images_title">Завантажити відсутні зображення виконавців</string>
     <string name="settings_general_category">Загальні</string>
     <string name="settings_show_music_visualization_title">Показати візуалізацію музики</string>
     <string name="settings_show_lyrics_title">Показати тексти пісень</string>

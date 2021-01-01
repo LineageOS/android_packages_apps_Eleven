@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Răsfoire muzică</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' este ton de apel</string>
     <string name="playlist_renamed">Listă de redare redenumită</string>
-    <string name="settings_ui_category">Interfața</string>
     <string name="settings_storage_category">Stocare</string>
-    <string name="settings_data_category">Date</string>
     <string name="settings_delete_cache_title">Șterge cache-ul</string>
     <string name="settings_delete_cache_summary">Elimină toate imaginile din cache</string>
-    <string name="settings_download_only_on_wifi_title">Descărcați doar via Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Pentru a micșora taxele operatorului, nu descărcați folosind rețelele mobile</string>
-    <string name="settings_download_missing_artwork_title">Descărcare copertă album absentă</string>
-    <string name="settings_download_artist_images_title">Descărcare imagine artist absentă</string>
     <string name="settings_general_category">General</string>
     <string name="settings_show_music_visualization_title">Arată vizualizarea muzicală</string>
     <string name="settings_use_blur_title">Estompare fundal</string>

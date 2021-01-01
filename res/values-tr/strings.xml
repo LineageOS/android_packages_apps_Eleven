@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Müziğe gözat</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' zil sesi olarak ayarlandı</string>
     <string name="playlist_renamed">Çalma listesi yeniden adlandırıldı</string>
-    <string name="settings_ui_category">Arayüz</string>
     <string name="settings_storage_category">Depolama</string>
-    <string name="settings_data_category">Veri</string>
     <string name="settings_delete_cache_title">Önbelleği sil</string>
     <string name="settings_delete_cache_summary">Ön belleğe alınmış tüm resimleri sil</string>
-    <string name="settings_download_only_on_wifi_title">Sadece Wi-Fi ile indir</string>
-    <string name="settings_download_only_on_wifi_summary">Operatör veri ücretlerini azaltmak için mobil şebeke üzerinden indirme yapmayın</string>
-    <string name="settings_download_missing_artwork_title">Eksik albüm kapaklarını indir</string>
-    <string name="settings_download_artist_images_title">Eksik sanatçı resimlerini indir</string>
     <string name="settings_general_category">Genel</string>
     <string name="settings_show_music_visualization_title">Müzik görselleştirmelerini göster</string>
     <string name="settings_use_blur_title">Bulanık arkaplan</string>

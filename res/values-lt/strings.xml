@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Naršyti muziką</string>
     <string name="set_as_ringtone">„<xliff:g id="name" example="Alarm Bell">%s</xliff:g>“ nustatytas kaip skambėjimo tonas</string>
     <string name="playlist_renamed">Grojaraštis pervardytas</string>
-    <string name="settings_ui_category">Sąsaja</string>
     <string name="settings_storage_category">Saugykla</string>
-    <string name="settings_data_category">Duomenys</string>
     <string name="settings_delete_cache_title">Ištrinti talpyklą</string>
     <string name="settings_delete_cache_summary">Pašalinti visus talpyklos vaizdus</string>
-    <string name="settings_download_only_on_wifi_title">Atsisiųsti tik per „Wi-Fi“</string>
-    <string name="settings_download_only_on_wifi_summary">Siekiant sumažinti operatoriaus mokesčius nesisiųsti per mobiliojio ryšio tinklus</string>
-    <string name="settings_download_missing_artwork_title">Atsisiųsti trūkstamus albumo viršelius</string>
-    <string name="settings_download_artist_images_title">Atsisiųsti trūkstamus atlikėjų vaizdus</string>
     <string name="settings_general_category">Bendra</string>
     <string name="settings_show_music_visualization_title">Rodyti muzikos vizualizaciją</string>
     <string name="settings_show_lyrics_title">Rodyti dainos žodžius</string>

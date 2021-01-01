@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Duyệt nhạc</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' được đặt làm nhạc chuông</string>
     <string name="playlist_renamed">Đã đổi tên danh sách phát</string>
-    <string name="settings_ui_category">Giao diện</string>
     <string name="settings_storage_category">Lưu trữ</string>
-    <string name="settings_data_category">Dữ liệu</string>
     <string name="settings_delete_cache_title">Xoá bộ nhớ đệm</string>
     <string name="settings_delete_cache_summary">Xoá tất cả ảnh đã có trong bộ nhớ đệm</string>
-    <string name="settings_download_only_on_wifi_title">Chỉ tải xuống qua WiFi</string>
-    <string name="settings_download_only_on_wifi_summary">Để giảm cước, đừng tải qua mạng di động</string>
-    <string name="settings_download_missing_artwork_title">Tải xuống ảnh bìa album còn thiếu</string>
-    <string name="settings_download_artist_images_title">Tải xuống ảnh nghệ sỹ còn thiếu</string>
     <string name="settings_general_category">Tổng quát</string>
     <string name="settings_show_music_visualization_title">Hiện trực quan hoá nhạc</string>
     <string name="settings_show_lyrics_title">Hiện lời bài hát</string>

@@ -105,15 +105,9 @@
     <string name="accessibility_browse">음악 탐색</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\'이(가) 벨소리로 지정되었습니다</string>
     <string name="playlist_renamed">재생목록의 이름이 변경되었습니다</string>
-    <string name="settings_ui_category">인터페이스</string>
     <string name="settings_storage_category">저장소</string>
-    <string name="settings_data_category">데이터</string>
     <string name="settings_delete_cache_title">캐시 제거</string>
     <string name="settings_delete_cache_summary">임시 저장된 모든 이미지 제거</string>
-    <string name="settings_download_only_on_wifi_title">Wi-Fi를 통해서만 다운로드</string>
-    <string name="settings_download_only_on_wifi_summary">데이터 과금을 막기 위해 모바일 네트워크를 통해 다운로드하지 않음</string>
-    <string name="settings_download_missing_artwork_title">앨범 아트가 없으면 다운로드</string>
-    <string name="settings_download_artist_images_title">아티스트 이미지가 없으면 다운로드</string>
     <string name="settings_general_category">일반</string>
     <string name="settings_show_music_visualization_title">음악 시각화 표시</string>
     <string name="settings_use_blur_title">배경 흐림 효과</string>

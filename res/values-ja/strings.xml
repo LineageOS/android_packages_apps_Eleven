@@ -105,15 +105,9 @@
     <string name="accessibility_browse">音楽を参照</string>
     <string name="set_as_ringtone">[<xliff:g id="name" example="Alarm Bell">%s</xliff:g>]を着信音として設定しました</string>
     <string name="playlist_renamed">プレイリスト名を変更しました</string>
-    <string name="settings_ui_category">インターフェース</string>
     <string name="settings_storage_category">ストレージ</string>
-    <string name="settings_data_category">データ</string>
     <string name="settings_delete_cache_title">キャッシュを削除</string>
     <string name="settings_delete_cache_summary">すべてのキャッシュされた画像を削除する</string>
-    <string name="settings_download_only_on_wifi_title">Wi-Fi経由でのみダウンロード</string>
-    <string name="settings_download_only_on_wifi_summary">パケット通信料を減らすために、モバイルネットワーク経由でダウンロードしない</string>
-    <string name="settings_download_missing_artwork_title">持っていないアルバムアートをダウンロード</string>
-    <string name="settings_download_artist_images_title">持っていないアーティストの画像をダウンロード</string>
     <string name="settings_general_category">全般</string>
     <string name="settings_show_music_visualization_title">音楽の視覚エフェクトを表示</string>
     <string name="settings_show_lyrics_title">歌詞を表示</string>

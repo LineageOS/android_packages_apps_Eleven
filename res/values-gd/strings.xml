@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Rùraich an ceòl</string>
     <string name="set_as_ringtone">Suidhich “<xliff:g id="name" example="Alarm Bell">%s</xliff:g>” mar sheirm</string>
     <string name="playlist_renamed">Chaidh ainm ùr a thoirt air an liosta-chluich</string>
-    <string name="settings_ui_category">Eadar-aghaidh</string>
     <string name="settings_storage_category">Stòras</string>
-    <string name="settings_data_category">Dàta</string>
     <string name="settings_delete_cache_title">Sguab an tasgadan às</string>
     <string name="settings_delete_cache_summary">Thoir air falbh gach dealbh san tasgadan</string>
-    <string name="settings_download_only_on_wifi_title">Na luchdaich a-nuas ach air WiFi</string>
-    <string name="settings_download_only_on_wifi_summary">Airson cosgaisean a sheachnadh, na luchdaich a-nuas air lìonra mobile</string>
-    <string name="settings_download_missing_artwork_title">Luchdaich a-nuas obair-ealain an albaim a tha a dhìth</string>
-    <string name="settings_download_artist_images_title">Luchdaich a-nuas dealbhan an luchd-chiùil a tha a dhìth</string>
     <string name="settings_general_category">Coitcheann</string>
     <string name="settings_show_music_visualization_title">Seall fir-chlis a’ chiùil</string>
     <string name="settings_show_lyrics_title">Seall faclan nan òran</string>

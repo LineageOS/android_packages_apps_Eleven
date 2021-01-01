@@ -105,15 +105,9 @@
     <string name="accessibility_browse">مۇزىكا كۆرۈش</string>
     <string name="set_as_ringtone"><xliff:g id="name" example="Alarm Bell">%s</xliff:g> نى قوڭغۇراق ئاۋازىغا تەڭشە</string>
     <string name="playlist_renamed">چالىدىغان تىزىم ئاتى ئۆزگەرتىلدى</string>
-    <string name="settings_ui_category">كۆرۈنمە يۈز</string>
     <string name="settings_storage_category">ساقلىغۇچ</string>
-    <string name="settings_data_category">سانلىق مەلۇمات</string>
     <string name="settings_delete_cache_title">غەملەكنى تازىلاش</string>
     <string name="settings_delete_cache_summary">غەملەنگەن ھەممە سۈرەتلەرنى چىقىرىۋەت</string>
-    <string name="settings_download_only_on_wifi_title">پەقەت Wi-Fi تورىدىلا چۈشۈرۈش</string>
-    <string name="settings_download_only_on_wifi_summary">مۇلازىمەت تەمىنلىگۈچىنىڭ خىراجىتىنى ئازايتىش ئۈچۈن، كۆچمە تورنىڭ سانلىق مەلۇمات چۈشۈرۈشىنى ئىشلەتمەيدۇ</string>
-    <string name="settings_download_missing_artwork_title">ناخشا توپلىمىنىڭ كەم مۇقاۋىسىنى چۈشۈرۈش</string>
-    <string name="settings_download_artist_images_title">سەنئەتكارنىڭ كەم سۈرىتىنى چۈشۈرۈش</string>
     <string name="settings_general_category">ئادەتتىكى</string>
     <string name="settings_show_music_visualization_title">مۇزىكىنىڭ كۆرۈنۈش ئۈنۈمىنى كۆرسىتىش</string>
     <string name="settings_show_lyrics_title">تېكىسىت كۆرسىتىش</string>

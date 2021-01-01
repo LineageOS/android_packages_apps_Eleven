@@ -105,15 +105,9 @@
     <string name="accessibility_browse">મ્યુઝિક બ્રાઉઝ કરો</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' રિંગટોન તરીકે સેટ કરો</string>
     <string name="playlist_renamed">પ્લેલિસ્ટનું પુન:નામકરણ કર્યું</string>
-    <string name="settings_ui_category">ઇન્ટરફેસ</string>
     <string name="settings_storage_category">સ્ટોરેજ</string>
-    <string name="settings_data_category">ડેટા</string>
     <string name="settings_delete_cache_title">કૅશ રદ કરો</string>
     <string name="settings_delete_cache_summary">તમામ કૅશ ઇમેજ કાઢી નાંખો</string>
-    <string name="settings_download_only_on_wifi_title">ફકત Wi-Fi મારફત ડાઉનલોડ કરો</string>
-    <string name="settings_download_only_on_wifi_summary">પ્રદાતા શુલ્કો ઘટાડવા, મોબાઇલ નેટવર્કો પર ડાઉનલોડ કરશો નહીં</string>
-    <string name="settings_download_missing_artwork_title">ગૂમ આલ્બમ આર્ટ ડાઉનલોડ કરો</string>
-    <string name="settings_download_artist_images_title">ગૂમ આર્ટિસ્ટ ઇમેજ ડાઉનલોડ કરો</string>
     <string name="settings_general_category">સામાન્ય</string>
     <string name="settings_show_music_visualization_title">મ્યુઝિક વિઝ્યુઅલાઇઝેશન દર્શાવો</string>
     <string name="settings_show_lyrics_title">ગીત લિરિક્સ દર્શાવો</string>

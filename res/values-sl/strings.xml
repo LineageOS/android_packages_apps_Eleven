@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Prebrskaj glasbo</string>
     <string name="set_as_ringtone"><xliff:g id="name" example="Alarm Bell">%s</xliff:g> nastavljena kot melodijo zvonjenja</string>
     <string name="playlist_renamed">Seznam predvajanja preimenovan</string>
-    <string name="settings_ui_category">Vmesnik</string>
     <string name="settings_storage_category">Shranjevanje</string>
-    <string name="settings_data_category">Podatki</string>
     <string name="settings_delete_cache_title">Izbriši predpomnilnik</string>
     <string name="settings_delete_cache_summary">Odstrani vse predpomnjene slike</string>
-    <string name="settings_download_only_on_wifi_title">Prenesi samo preko omrežja Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Za zmanjšanje stroškov ne prenašajte preko mobilnih omrežij</string>
-    <string name="settings_download_missing_artwork_title">Prenesi manjkajoče naslovnice</string>
-    <string name="settings_download_artist_images_title">Prenesi manjkajoče slike izvajalcev</string>
     <string name="settings_general_category">Splošno</string>
     <string name="settings_show_music_visualization_title">Prikaži predočenje glasbe</string>
     <string name="settings_use_blur_title">Zamegli ozadje</string>

@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Selaa musiikkia</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' asetettu soittoääneksi</string>
     <string name="playlist_renamed">Soittolista nimetty uudelleen</string>
-    <string name="settings_ui_category">Käyttöliittymä</string>
     <string name="settings_storage_category">Tallennustila</string>
-    <string name="settings_data_category">Tiedot</string>
     <string name="settings_delete_cache_title">Poista välimuisti</string>
     <string name="settings_delete_cache_summary">Poista kaikki välimuistissa olevat kuvat</string>
-    <string name="settings_download_only_on_wifi_title">Lataa vain Wi-Fi-yhteydellä </string>
-    <string name="settings_download_only_on_wifi_summary">Välttääksesi tiedonsiirtomaksut, älä lataa mobiiliverkon kautta</string>
-    <string name="settings_download_missing_artwork_title">Lataa albumin puuttuva kansikuva</string>
-    <string name="settings_download_artist_images_title">Lataa puuttuvat esittäjän kuvat</string>
     <string name="settings_general_category">Yleiset</string>
     <string name="settings_show_music_visualization_title">Näytä visualisointi</string>
     <string name="settings_use_blur_title">Sumennettu tausta</string>

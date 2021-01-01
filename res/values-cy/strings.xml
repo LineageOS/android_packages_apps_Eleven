@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Pori traciau</string>
     <string name="set_as_ringtone">Gosodwyd \'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' fel y tôn caniad</string>
     <string name="playlist_renamed">Ailenwyd y rhestr chwarae</string>
-    <string name="settings_ui_category">Rhyngwyneb</string>
     <string name="settings_storage_category">Storfa</string>
-    <string name="settings_data_category">Data</string>
     <string name="settings_delete_cache_title">Dileu\'r cof dros dro</string>
     <string name="settings_delete_cache_summary">Dileu pob delwedd wedi\'i chadw dros dro</string>
-    <string name="settings_download_only_on_wifi_title">Lawrlwytho dros Wi-Fi yn unig</string>
-    <string name="settings_download_only_on_wifi_summary">I leihau costau data, paid â lawrlwytho ar rwydweithiau symudol</string>
-    <string name="settings_download_missing_artwork_title">Lawrlwytho delweddau ar goll y casgliad</string>
-    <string name="settings_download_artist_images_title">Lawrlwytho delweddau ar goll yr artist</string>
     <string name="settings_general_category">Cyffredinol</string>
     <string name="settings_show_music_visualization_title">Dangos patrymau cerddoriaeth</string>
     <string name="settings_use_blur_title">Pylu\'r cefndir</string>

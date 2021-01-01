@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Restolar pente la música</string>
     <string name="set_as_ringtone">«<xliff:g id="name" example="Alarm Bell">%s</xliff:g>» afitóse como timbre</string>
     <string name="playlist_renamed">Llista renomada</string>
-    <string name="settings_ui_category">Interfaz</string>
     <string name="settings_storage_category">Almacenamientu</string>
-    <string name="settings_data_category">Datos</string>
     <string name="settings_delete_cache_title">Desanciar caché</string>
     <string name="settings_delete_cache_summary">Desanicia toles imáxenes na caché</string>
-    <string name="settings_download_only_on_wifi_title">Baxar namái per Wi-fi</string>
-    <string name="settings_download_only_on_wifi_summary">P\'amenorgar los cargos de la operadora, nun baxar conteníu en rede móviles</string>
-    <string name="settings_download_missing_artwork_title">Obtener carátules</string>
-    <string name="settings_download_artist_images_title">Obtener semeyes d\'artistes</string>
     <string name="settings_general_category">Xeneral</string>
     <string name="settings_show_music_visualization_title">Amosar visualización musical</string>
     <string name="settings_show_lyrics_title">Amosar les lletres de les canciones</string>

@@ -63,12 +63,8 @@
     <string name="accessibility_repeat">Përsërit</string>
     <string name="accessibility_repeat_all">Përsëriti të gjitha</string>
     <string name="playlist_renamed">Lista u riemërtua</string>
-    <string name="settings_ui_category">Ndërfaqe</string>
     <string name="settings_storage_category">Memoria</string>
     <string name="settings_delete_cache_summary">Hiqi të gjitha imazhet e ruajtura</string>
-    <string name="settings_download_only_on_wifi_title">Shkarko vetëm me Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Për të reduktuar pagesat ndaj operatorit, mos shkarkoni mbi rrjetet celulare</string>
-    <string name="settings_download_missing_artwork_title">Shkarko kopertinën e munguar të albumit</string>
     <string name="settings_use_blur_title">Zbeh sfondin</string>
     <string name="app_widget_small">Muzika: 4\u00d7 1</string>
     <string name="app_widget_large">Muzika: 4\u00d7 2</string>
