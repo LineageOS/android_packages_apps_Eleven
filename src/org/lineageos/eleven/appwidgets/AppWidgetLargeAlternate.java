@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2020 The LineageOS Project
  * Licensed under the Apache License, Version 2.0
  * (the "License"); you may not use this file except in compliance with the
  * License. You may obtain a copy of the License at
@@ -40,7 +41,11 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
 
     private static AppWidgetLargeAlternate mInstance;
 
-    public static synchronized AppWidgetLargeAlternate getInstance() {
+    public static synchronized AppWidgetLargeAlternate getInstance(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return null;
+        }
+
         if (mInstance == null) {
             mInstance = new AppWidgetLargeAlternate();
         }
@@ -74,6 +79,10 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
     }
 
     private void pushUpdate(final Context context, final int[] appWidgetIds, final RemoteViews views) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         if (appWidgetIds != null) {
             appWidgetManager.updateAppWidget(appWidgetIds, views);
@@ -87,6 +96,10 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
      * widget.
      */
     private boolean hasInstances(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return false;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         final int[] mAppWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context,
                 getClass()));
