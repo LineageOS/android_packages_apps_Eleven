@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
- * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2014-2016 The CyanogenMod Project
+ * Copyright (C) 2018-2020 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.appwidgets;
@@ -38,7 +43,11 @@ public class AppWidgetLarge extends AppWidgetBase {
 
     private static AppWidgetLarge mInstance;
 
-    public static synchronized AppWidgetLarge getInstance() {
+    public static synchronized AppWidgetLarge getInstance(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return null;
+        }
+
         if (mInstance == null) {
             mInstance = new AppWidgetLarge();
         }
@@ -71,6 +80,10 @@ public class AppWidgetLarge extends AppWidgetBase {
     }
 
     private void pushUpdate(final Context context, final int[] appWidgetIds, final RemoteViews views) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         if (appWidgetIds != null) {
             appWidgetManager.updateAppWidget(appWidgetIds, views);
@@ -84,6 +97,10 @@ public class AppWidgetLarge extends AppWidgetBase {
      * widget.
      */
     private boolean hasInstances(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return false;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         final int[] mAppWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context,
                 getClass()));
