@@ -43,7 +43,11 @@ public class AppWidgetSmall extends AppWidgetBase {
 
     private static AppWidgetSmall mInstance;
 
-    public static synchronized AppWidgetSmall getInstance() {
+    public static synchronized AppWidgetSmall getInstance(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return null;
+        }
+
         if (mInstance == null) {
             mInstance = new AppWidgetSmall();
         }
@@ -73,6 +77,10 @@ public class AppWidgetSmall extends AppWidgetBase {
     }
 
     private void pushUpdate(final Context context, final int[] appWidgetIds, final RemoteViews views) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         if (appWidgetIds != null) {
             appWidgetManager.updateAppWidget(appWidgetIds, views);
@@ -86,6 +94,10 @@ public class AppWidgetSmall extends AppWidgetBase {
      * widget.
      */
     private boolean hasInstances(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return false;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         final int[] mAppWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context,
                 getClass()));

@@ -44,7 +44,11 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
 
     private static AppWidgetLargeAlternate mInstance;
 
-    public static synchronized AppWidgetLargeAlternate getInstance() {
+    public static synchronized AppWidgetLargeAlternate getInstance(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return null;
+        }
+
         if (mInstance == null) {
             mInstance = new AppWidgetLargeAlternate();
         }
@@ -75,6 +79,10 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
     }
 
     private void pushUpdate(final Context context, final int[] appWidgetIds, final RemoteViews views) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         if (appWidgetIds != null) {
             appWidgetManager.updateAppWidget(appWidgetIds, views);
@@ -88,6 +96,10 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
      * widget.
      */
     private boolean hasInstances(final Context context) {
+        if (!AppWidgetBase.isWidgetSupported(context)) {
+            return false;
+        }
+
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         final int[] mAppWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context,
                 getClass()));

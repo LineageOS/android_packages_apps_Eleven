@@ -386,18 +386,17 @@ public class MusicPlaybackService extends Service
     /**
      * 4x1 widget
      */
-    private final AppWidgetSmall mAppWidgetSmall = AppWidgetSmall.getInstance();
+    private AppWidgetSmall mAppWidgetSmall;
 
     /**
      * 4x2 widget
      */
-    private final AppWidgetLarge mAppWidgetLarge = AppWidgetLarge.getInstance();
+    private AppWidgetLarge mAppWidgetLarge;
 
     /**
      * 4x2 alternate widget
      */
-    private final AppWidgetLargeAlternate mAppWidgetLargeAlternate = AppWidgetLargeAlternate
-            .getInstance();
+    private AppWidgetLargeAlternate mAppWidgetLargeAlternate;
 
     /**
      * The media player
@@ -596,6 +595,11 @@ public class MusicPlaybackService extends Service
         } else {
             mReadGranted = true;
         }
+
+        // Initialize the widgets
+        mAppWidgetSmall = AppWidgetSmall.getInstance(this);
+        mAppWidgetLarge = AppWidgetLarge.getInstance(this);
+        mAppWidgetLargeAlternate = AppWidgetLargeAlternate.getInstance(this);
 
         mNotificationManager = getSystemService(NotificationManager.class);
 
@@ -1519,9 +1523,15 @@ public class MusicPlaybackService extends Service
         }
 
         // Update the app-widgets
-        mAppWidgetSmall.notifyChange(this, what);
-        mAppWidgetLarge.notifyChange(this, what);
-        mAppWidgetLargeAlternate.notifyChange(this, what);
+        if (mAppWidgetSmall != null) {
+            mAppWidgetSmall.notifyChange(this, what);
+        }
+        if (mAppWidgetLarge != null) {
+            mAppWidgetLarge.notifyChange(this, what);
+        }
+        if (mAppWidgetLargeAlternate != null) {
+            mAppWidgetLargeAlternate.notifyChange(this, what);
+        }
     }
 
     private void updateMediaSession(final String what) {
@@ -2917,15 +2927,23 @@ public class MusicPlaybackService extends Service
             final String command = intent.getStringExtra(CMDNAME);
 
             if (AppWidgetSmall.APP_WIDGET_UPDATE.equals(command)) {
-                final int[] small = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-                mAppWidgetSmall.performUpdate(MusicPlaybackService.this, small);
+                if (mAppWidgetSmall != null) {
+                    final int[] small = intent
+                            .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+                    mAppWidgetSmall.performUpdate(MusicPlaybackService.this, small);
+                }
             } else if (AppWidgetLarge.APP_WIDGET_UPDATE.equals(command)) {
-                final int[] large = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-                mAppWidgetLarge.performUpdate(MusicPlaybackService.this, large);
+                if (mAppWidgetLarge != null) {
+                    final int[] large = intent
+                            .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+                    mAppWidgetLarge.performUpdate(MusicPlaybackService.this, large);
+                }
             } else if (AppWidgetLargeAlternate.APP_WIDGET_UPDATE.equals(command)) {
-                final int[] largeAlt = intent
-                        .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
-                mAppWidgetLargeAlternate.performUpdate(MusicPlaybackService.this, largeAlt);
+                if (mAppWidgetLargeAlternate != null) {
+                    final int[] largeAlt = intent
+                            .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
+                    mAppWidgetLargeAlternate.performUpdate(MusicPlaybackService.this, largeAlt);
+                }
             } else {
                 handleCommandIntent(intent);
             }
