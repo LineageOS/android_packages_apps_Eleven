@@ -13,13 +13,19 @@
 
 package org.lineageos.eleven.appwidgets;
 
+import android.annotation.TargetApi;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 
 public abstract class AppWidgetBase extends AppWidgetProvider {
+
+    private static boolean sWidgetChecked = false;
+    private static boolean sWidgetSupported = false;
 
     protected PendingIntent buildPendingIntent(Context context, final String action,
             final ComponentName serviceName) {
@@ -28,4 +34,24 @@ public abstract class AppWidgetBase extends AppWidgetProvider {
         return PendingIntent.getService(context, 0, intent, 0);
     }
 
+    public static boolean isWidgetSupported(Context context) {
+        if (!AppWidgetBase.sWidgetChecked) {
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+              AppWidgetBase.sWidgetSupported = hasAppWidgetsSystemFeature(context);
+          } else {
+              // Before SDK 18, we can assume AppWidgetManager#getInstance will
+              // never return null, so we can always return true regardless of
+              // whether the widgets are really supported.
+              AppWidgetBase.sWidgetSupported = true;
+          }
+          AppWidgetBase.sWidgetChecked = true;
+        }
+
+        return AppWidgetBase.sWidgetSupported;
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+    private static boolean hasAppWidgetsSystemFeature(Context context) {
+        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_APP_WIDGETS);
+    }
 }
