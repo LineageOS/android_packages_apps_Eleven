@@ -18,8 +18,12 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 
 public abstract class AppWidgetBase extends AppWidgetProvider {
+
+    private static boolean sWidgetChecked = false;
+    private static boolean sWidgetSupported = false;
 
     protected PendingIntent buildPendingIntent(Context context, final String action,
             final ComponentName serviceName) {
@@ -28,4 +32,16 @@ public abstract class AppWidgetBase extends AppWidgetProvider {
         return PendingIntent.getService(context, 0, intent, 0);
     }
 
+    public static boolean isWidgetSupported(Context context) {
+        if (!sWidgetChecked) {
+          sWidgetSupported = hasAppWidgetsSystemFeature(context);
+          sWidgetChecked = true;
+        }
+
+        return sWidgetSupported;
+    }
+
+    private static boolean hasAppWidgetsSystemFeature(Context context) {
+        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_APP_WIDGETS);
+    }
 }
