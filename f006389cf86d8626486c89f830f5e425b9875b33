@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eb1fd0b3_4380a71b",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2948,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2021-01-03T14:02:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f47e16d8_066ab52d",
+      "revId": "f006389cf86d8626486c89f830f5e425b9875b33",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "56ce6165_d5b54606",
         "filename": "src/org/lineageos/eleven/appwidgets/AppWidgetBase.java",
         "patchSetId": 2
@@ -39,6 +57,30 @@
       "revId": "f006389cf86d8626486c89f830f5e425b9875b33",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbfe83c8_dcaecacb",
+        "filename": "src/org/lineageos/eleven/appwidgets/AppWidgetBase.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2021-01-03T14:02:09Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "56ce6165_d5b54606",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 58
+      },
+      "revId": "f006389cf86d8626486c89f830f5e425b9875b33",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
