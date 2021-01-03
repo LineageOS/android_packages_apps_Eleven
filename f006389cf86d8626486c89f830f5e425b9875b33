@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f47e16d8_066ab52d",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2948,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-01-03T13:50:09Z",
+      "side": 1,
+      "message": "100 chars here and below",
+      "revId": "f006389cf86d8626486c89f830f5e425b9875b33",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56ce6165_d5b54606",
+        "filename": "src/org/lineageos/eleven/appwidgets/AppWidgetBase.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-01-03T13:50:09Z",
+      "side": 1,
+      "message": "Eleven minSdk is 26 so this check is useless",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 58
+      },
+      "revId": "f006389cf86d8626486c89f830f5e425b9875b33",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
