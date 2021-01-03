@@ -22,6 +22,30 @@
       "revId": "2dad341edb94536675a23d4819302abf2023269f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a3dfda0_8040af7e",
+        "filename": "src/org/lineageos/eleven/appwidgets/AppWidgetBase.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13589
+      },
+      "writtenOn": "2021-01-03T14:22:54Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "435064f4_55c7f9f7",
+      "range": {
+        "startLine": 37,
+        "startChar": 8,
+        "endLine": 37,
+        "endChar": 10
+      },
+      "revId": "2dad341edb94536675a23d4819302abf2023269f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
