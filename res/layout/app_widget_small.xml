@@ -39,41 +39,41 @@
        android:gravity="center_horizontal"
        android:orientation="horizontal" >
 
-       <ImageButton
-           android:id="@+id/app_widget_small_previous"
-           android:layout_width="0dp"
-           android:layout_height="@dimen/app_widget_small_button_height"
-           android:layout_weight="1"
-           android:background="@null"
-           android:contentDescription="@string/accessibility_prev"
-           android:focusable="true"
-           android:padding="@dimen/app_widget_small_button_padding"
-           android:scaleType="fitCenter"
-           android:src="@drawable/btn_playback_previous" />
+        <ImageButton
+            android:id="@+id/app_widget_small_previous"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/app_widget_small_button_height"
+            android:layout_weight="1"
+            android:background="@null"
+            android:contentDescription="@string/accessibility_prev"
+            android:focusable="true"
+            android:padding="@dimen/app_widget_small_button_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_playback_previous_alt" />
 
-       <ImageButton
-           android:id="@+id/app_widget_small_play"
-           android:layout_width="0dp"
-           android:layout_height="@dimen/app_widget_small_button_height"
-           android:layout_weight="1"
-           android:background="@null"
-           android:contentDescription="@string/accessibility_play"
-           android:focusable="true"
-           android:padding="@dimen/app_widget_small_button_padding"
-           android:scaleType="fitCenter"
-           android:src="@drawable/btn_playback_play" />
+        <ImageButton
+            android:id="@+id/app_widget_small_play"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/app_widget_small_button_height"
+            android:layout_weight="1"
+            android:background="@null"
+            android:contentDescription="@string/accessibility_play"
+            android:focusable="true"
+            android:padding="@dimen/app_widget_small_button_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_playback_play_alt" />
 
-       <ImageButton
-           android:id="@+id/app_widget_small_next"
-           android:layout_width="0dp"
-           android:layout_height="@dimen/app_widget_small_button_height"
-           android:layout_weight="1"
-           android:background="@null"
-           android:contentDescription="@string/accessibility_next"
-           android:focusable="true"
-           android:padding="@dimen/app_widget_small_button_padding"
-           android:scaleType="fitCenter"
-           android:src="@drawable/btn_playback_next" />
+        <ImageButton
+            android:id="@+id/app_widget_small_next"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/app_widget_small_button_height"
+            android:layout_weight="1"
+            android:background="@null"
+            android:contentDescription="@string/accessibility_next"
+            android:focusable="true"
+            android:padding="@dimen/app_widget_small_button_padding"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_playback_next_alt" />
 
     </LinearLayout>
 
