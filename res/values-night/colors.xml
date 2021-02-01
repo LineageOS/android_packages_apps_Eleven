@@ -16,13 +16,13 @@
 -->
 <resources>
     <!-- Material -->
-    <color name="primary">#ffffff</color>
-    <color name="primary_dark">#ffffff</color>
-    <color name="primary_light">#ffffff</color>
-    <color name="accent">#167C80</color>
+    <color name="primary">#000000</color>
+    <color name="primary_dark">#000000</color>
+    <color name="primary_light">#000000</color>
+    <color name="accent">#1ddbc5</color>
 
     <!-- Main colors -->
-    <color name="black">#000000</color>
+    <color name="black">#ff000000</color>
     <color name="semitransparent_black">#a0333333</color>
     <color name="white">#ffffff</color>
     <color name="grey">#9e9e9e</color>
@@ -45,13 +45,13 @@
     <color name="blue_dark">#303F9F</color>
 
     <!-- Standard Text Color -->
-    <color name="default_text_color">@color/black</color>
-    <color name="default_text_color_light">@color/black</color>
+    <color name="default_text_color">@color/white</color>
+    <color name="default_text_color_light">@color/white</color>
 
     <!-- Cards -->
-    <color name="cards_bg_color">#ffffff</color>
-    <color name="cardOne">@color/black</color>
-    <color name="cardTwo">@color/black</color>
+    <color name="cards_bg_color">#222222</color>
+    <color name="cardOne">@color/white</color>
+    <color name="cardTwo">@color/white</color>
 
     <!-- Transparent colors -->
     <color name="transparent">#00000000</color>
@@ -59,27 +59,27 @@
     <color name="transparent_white">#99fafafa</color>
     <color name="transparent_blue">#993F51B5</color>
 
-    <color name="background_color">@color/white</color>
+    <color name="background_color">@color/black</color>
 
     <!-- Color for the action bar -->
     <color name="header_action_bar_color">@color/primary</color>
-    <color name="header_action_bar_text_color">@color/black</color>
+    <color name="header_action_bar_text_color">@color/white</color>
     <color name="header_action_bar_text_color_active">@color/accent</color>
-    <color name="bottom_action_bar_text_color">@color/white</color>
+    <color name="bottom_action_bar_text_color">@color/default_text_color_light</color>
 
     <!-- Background color used on some page headers -->
-    <color name="page_header_background">@color/white</color>
+    <color name="page_header_background">@color/black</color>
 
     <!-- Color for background for shadow on playlist page -->
-    <color name="header_shadow_color">#eaffffff</color>
+    <color name="header_shadow_color">#ea212121</color>
 
     <!-- Color for the pop up menu -->
     <color name="menu_divider_color">@color/transparent</color>
-    <color name="menu_text_color">@color/black</color>
+    <color name="menu_text_color">@color/white</color>
 
     <!-- List view related colors -->
-    <color name="list_item_background">#4cffffff</color>
-    <color name="list_item_header_text_color">@color/black</color>
+    <color name="list_item_background">#ff000000</color>
+    <color name="list_item_header_text_color">@color/white</color>
     <color name="list_item_search_footer_text_color">@color/accent</color>
     <color name="list_item_text_color">@color/default_text_color</color>
     <color name="list_item_text_color_light">@color/default_text_color_light</color>
@@ -101,9 +101,6 @@
     <!-- Color for the Progress bar -->
     <color name="circular_progress_bar_background">#40ffffff</color>
     <color name="circular_progress_bar">@color/white</color>
-
-    <!-- search no results text color -->
-    <color name="no_results_light">#ffffff</color>
 
     <color name="now_playing_divider">@color/transparent</color>
 
@@ -144,8 +141,8 @@
     <color name="visualizer_fill_color">#bffafafa</color>
 
     <!-- Separated and exposed values for themes -->
-    <color name="widget_background_color">@color/white</color>
-    <color name="list_base_container_background_color">@color/white</color>
+    <color name="widget_background_color">@color/black</color>
+    <color name="list_base_container_background_color">@color/black</color>
     <color name="activity_album_detail_background_color">@color/background_color</color>
     <color name="activity_artist_detail_background_color">@color/background_color</color>
     <color name="activity_base_background_color">@color/background_color</color>
