@@ -17,8 +17,10 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
@@ -33,10 +35,12 @@ import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -54,6 +58,7 @@ import org.lineageos.eleven.ui.fragments.RecentFragment;
 import org.lineageos.eleven.ui.fragments.phone.MusicBrowserPhoneFragment;
 import org.lineageos.eleven.ui.fragments.profile.LastAddedFragment;
 import org.lineageos.eleven.ui.fragments.profile.TopTracksFragment;
+import org.lineageos.eleven.utils.AnimatorEndListener;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.NavUtils;
@@ -85,6 +90,8 @@ public class HomeActivity extends SlidingPanelActivity implements
     private final Handler mHandler = new Handler();
     private boolean mBrowsePanelActive = true;
 
+    private View mRootView;
+
     /**
      * Used by the up action to determine how to handle this
      */
@@ -95,6 +102,7 @@ public class HomeActivity extends SlidingPanelActivity implements
         super.onCreate(savedInstanceState);
 
         mSavedInstanceState = savedInstanceState;
+        mRootView = getWindow().getDecorView();
 
         if (!needRequestStoragePermission()) {
             init();
@@ -249,11 +257,21 @@ public class HomeActivity extends SlidingPanelActivity implements
         if (color == Color.TRANSPARENT) {
             color = ContextCompat.getColor(this, R.color.primary_dark);
         }
+        final boolean isDark = ColorUtils.calculateLuminance(color) > 0.5f;
         final Window window = getWindow();
-        ObjectAnimator animator = ObjectAnimator.ofInt(window,
+        final ObjectAnimator animator = ObjectAnimator.ofInt(window,
                 "statusBarColor", window.getStatusBarColor(), color);
         animator.setEvaluator(new ArgbEvaluator());
         animator.setDuration(300);
+        animator.addListener((AnimatorEndListener) animation -> {
+            int flags = mRootView.getSystemUiVisibility();
+            if (isDark) {
+                flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            } else {
+                flags &= ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
+            }
+            mRootView.setSystemUiVisibility(flags);
+        });
         animator.start();
     }
 

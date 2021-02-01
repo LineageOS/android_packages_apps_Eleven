@@ -13,8 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<androidx.appcompat.widget.Toolbar
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/audio_player_header"
@@ -22,7 +21,7 @@
     android:layout_height="?android:attr/actionBarSize"
     android:background="@android:color/transparent"
     android:elevation="@dimen/action_bar_elevation"
-    android:theme="@style/ToolBarTheme"
+    android:theme="@style/ToolBarThemeMP"
     app:popupTheme="@style/ToolBarPopupTheme"
     tools:background="@color/blue_dark">
 
@@ -42,7 +41,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textAllCaps="true"
-            android:textColor="@color/header_action_bar_text_color"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             tools:text="Really long and nice album title" />
@@ -55,7 +54,7 @@
             android:maxLines="1"
             android:paddingBottom="2dp"
             android:textAllCaps="true"
-            android:textColor="@color/header_action_bar_text_color"
+            android:textColor="@color/white"
             android:textSize="@dimen/text_size_micro"
             tools:text="Name of Artist" />
     </LinearLayout>
