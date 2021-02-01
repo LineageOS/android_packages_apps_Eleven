@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012 Andrew Neal
      Copyright (C) 2014 The CyanogenMod Project
+     Copyright (C) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
 
-     http://www.apache.org/licenses/LICENSE-2.0
+          http://www.apache.org/licenses/LICENSE-2.0
 
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,15 +17,15 @@
 -->
 <resources>
     <!-- Material -->
-    <color name="primary">#333333</color>
-    <color name="primary_dark">#212121</color>
-    <color name="primary_light">#424242</color>
-    <color name="accent">#E91E63</color>
+    <color name="primary">#ffffff</color>
+    <color name="primary_dark">#ffffff</color>
+    <color name="primary_light">#ffffff</color>
+    <color name="accent">#167C80</color>
 
     <!-- Main colors -->
-    <color name="black">#333333</color>
+    <color name="black">#000000</color>
     <color name="semitransparent_black">#a0333333</color>
-    <color name="white">#fafafa</color>
+    <color name="white">#ffffff</color>
     <color name="grey">#9e9e9e</color>
     <color name="grey_dark">#616161</color>
     <color name="purple">#9C27B0</color>
@@ -46,12 +47,12 @@
 
     <!-- Standard Text Color -->
     <color name="default_text_color">@color/black</color>
-    <color name="default_text_color_light">@color/white</color>
+    <color name="default_text_color_light">@color/black</color>
 
     <!-- Cards -->
-    <color name="cards_bg_color">#fefefe</color>
+    <color name="cards_bg_color">#ffffff</color>
     <color name="cardOne">@color/black</color>
-    <color name="cardTwo">#424242</color>
+    <color name="cardTwo">@color/black</color>
 
     <!-- Transparent colors -->
     <color name="transparent">#00000000</color>
@@ -63,22 +64,22 @@
 
     <!-- Color for the action bar -->
     <color name="header_action_bar_color">@color/primary</color>
-    <color name="header_action_bar_text_color">#f5f5f5</color>
-    <color name="header_action_bar_text_color_active">#ffffff</color>
-    <color name="bottom_action_bar_text_color">@color/default_text_color_light</color>
+    <color name="header_action_bar_text_color">@color/black</color>
+    <color name="header_action_bar_text_color_active">@color/accent</color>
+    <color name="bottom_action_bar_text_color">@color/white</color>
 
     <!-- Background color used on some page headers -->
     <color name="page_header_background">@color/white</color>
 
     <!-- Color for background for shadow on playlist page -->
-    <color name="header_shadow_color">#ea212121</color>
+    <color name="header_shadow_color">#eaffffff</color>
 
     <!-- Color for the pop up menu -->
     <color name="menu_divider_color">@color/transparent</color>
     <color name="menu_text_color">@color/black</color>
 
     <!-- List view related colors -->
-    <color name="list_item_background">#4cfafafa</color>
+    <color name="list_item_background">#4cffffff</color>
     <color name="list_item_header_text_color">@color/black</color>
     <color name="list_item_search_footer_text_color">@color/accent</color>
     <color name="list_item_text_color">@color/default_text_color</color>
@@ -88,12 +89,12 @@
     <color name="grid_list_item_text_color">#b3212121</color>
 
     <!-- Top title page colors -->
-    <color name="tab_ripple_color">@color/white</color>
-    <color name="tab_accent_color">@color/white</color>
-    <color name="tab_selected_underline_color">@color/white</color>
+    <color name="tab_ripple_color">@color/accent</color>
+    <color name="tab_accent_color">@color/accent</color>
+    <color name="tab_selected_underline_color">@color/accent</color>
 
     <!-- Search Colors -->
-    <color name="search_hint_color">@color/black</color>
+    <color name="search_hint_color">@color/accent</color>
 
     <!-- Color for the text on the audio player -->
     <color name="audio_player_text_color">@color/default_text_color_light</color>
@@ -103,8 +104,7 @@
     <color name="circular_progress_bar">@color/white</color>
 
     <!-- search no results text color -->
-    <color name="no_results">@color/black</color>
-    <color name="no_results_light">@color/white</color>
+    <color name="no_results_light">#ffffff</color>
 
     <color name="now_playing_divider">@color/transparent</color>
 
@@ -145,7 +145,7 @@
     <color name="visualizer_fill_color">#bffafafa</color>
 
     <!-- Separated and exposed values for themes -->
-    <color name="widget_background_color">@color/black</color>
+    <color name="widget_background_color">@color/white</color>
     <color name="list_base_container_background_color">@color/white</color>
     <color name="activity_album_detail_background_color">@color/background_color</color>
     <color name="activity_artist_detail_background_color">@color/background_color</color>
@@ -166,8 +166,8 @@
     <color name="audio_player_lyrics_text_color">@color/white</color>
     <color name="audio_player_current_time_color">@color/white</color>
     <color name="audio_player_total_time_color">@color/white</color>
-    <color name="number_of_songs_text_color">@color/white</color>
-    <color name="duration_text_color">@color/white</color>
+    <color name="number_of_songs_text_color">@color/accent</color>
+    <color name="duration_text_color">@color/accent</color>
 
     <!-- audio player main controls -->
     <color name="audio_player_seeker_progress_color">@color/white</color>
