@@ -42,7 +42,8 @@
             android:layout_height="?android:attr/actionBarSize"
             android:elevation="@dimen/action_bar_elevation"
             android:theme="@style/ToolBarTheme"
-            app:popupTheme="@style/ToolBarPopupTheme" />
+            app:popupTheme="@style/ToolBarPopupTheme"
+            app:titleTextAppearance="@style/TextAppearance.Widget.Event.Toolbar.Title" />
 
         <FrameLayout
             android:id="@+id/activity_base_content"

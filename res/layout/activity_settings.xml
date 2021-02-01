@@ -29,7 +29,8 @@
         android:background="@color/header_action_bar_color"
         android:elevation="@dimen/action_bar_elevation"
         android:theme="@style/ToolBarTheme"
-        app:popupTheme="@style/ToolBarPopupTheme" />
+        app:popupTheme="@style/ToolBarPopupTheme"
+        app:titleTextAppearance="@style/TextAppearance.Widget.Event.Toolbar.Title"/>
 
     <fragment
         android:name="org.lineageos.eleven.ui.activities.SettingsActivity$SettingsFragment"
