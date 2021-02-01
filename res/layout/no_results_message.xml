@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2014 The CyanogenMod Project
+     Copyright (C) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,6 +36,7 @@
         android:layout_gravity="center_horizontal"
         android:paddingBottom="@dimen/white_note_padding_bottom"
         android:scaleType="centerInside"
+        android:contentDescription="@null"
         android:src="@drawable/no_results" />
 
     <LinearLayout
@@ -51,7 +53,7 @@
             android:layout_gravity="center_horizontal"
             android:maxLines="2"
             android:textAllCaps="true"
-            android:textColor="@color/no_results"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/no_results_text_main"
             android:textStyle="bold"
             android:text="@string/empty_generic_main" />
@@ -64,7 +66,7 @@
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
             android:maxLines="2"
-            android:textColor="@color/no_results"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="@dimen/no_results_text_main"
             android:textStyle="bold|italic"
             android:visibility="gone" />
@@ -75,7 +77,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:textColor="@color/no_results"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="@dimen/no_results_text_secondary"
         android:text="@string/empty_generic_secondary" />
 </org.lineageos.eleven.widgets.NoResultsContainer>

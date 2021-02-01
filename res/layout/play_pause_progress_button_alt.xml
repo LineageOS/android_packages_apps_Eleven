@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2014 The CyanogenMod Project
+     Copyright (C) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,10 +15,11 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<org.lineageos.eleven.widgets.PlayPauseButtonContainer
+
+<org.lineageos.eleven.widgets.PlayPauseProgressButton
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/playPauseProgressButton"
+    android:id="@+id/playPauseProgressButtonAlt"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="gone"
@@ -35,14 +37,22 @@
         android:src="@drawable/btn_playback_play" />
 
     <ProgressBar
-        android:id="@+id/circularProgressBar"
+        android:id="@+id/progressBarBackground"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="false"
         android:indeterminate="false"
-        android:max="100"
-        android:progress="100"
-        android:progressDrawable="@drawable/circular_drawable" />
+        android:max="1000"
+        android:progress="1000"
+        android:progressDrawable="@drawable/circular_drawable_background" />
 
-</org.lineageos.eleven.widgets.PlayPauseButtonContainer>
+    <ProgressBar
+        android:id="@+id/circularProgressBarAlt"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circular_drawable" />
+</org.lineageos.eleven.widgets.PlayPauseProgressButton>
