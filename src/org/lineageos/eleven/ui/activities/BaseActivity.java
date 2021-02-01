@@ -53,6 +53,7 @@ import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.MusicUtils.ServiceToken;
 import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
+import org.lineageos.eleven.widgets.PlayPauseProgressButton;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -85,7 +86,9 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     /**
      * Play pause progress button
      */
+    private PlayPauseProgressButton mPlayPauseProgressButton;
     private PlayPauseButtonContainer mPlayPauseButtonContainer;
+
 
     /**
      * Track name (BAB)
@@ -275,6 +278,8 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
      */
     protected void initBottomActionBar() {
         // Play and pause button
+        mPlayPauseProgressButton = findViewById(R.id.playPauseProgressButtonAlt);
+        mPlayPauseProgressButton.enableAndShow();
         mPlayPauseButtonContainer = findViewById(R.id.playPauseProgressButton);
         mPlayPauseButtonContainer.enableAndShow();
 
@@ -310,6 +315,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     private void updatePlaybackControls() {
         // Set the play and pause image
         mPlayPauseButtonContainer.updateState();
+        mPlayPauseProgressButton.updateState();
     }
 
     /**
@@ -353,6 +359,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
                 baseActivity.onMetaChanged();
             } else if (MusicPlaybackService.PLAYSTATE_CHANGED.equals(action)) {
                 baseActivity.mPlayPauseButtonContainer.updateState();
+                baseActivity.mPlayPauseProgressButton.updateState();
             } else if (MusicPlaybackService.REFRESH.equals(action)) {
                 baseActivity.restartLoader();
             } else if (MusicPlaybackService.PLAYLIST_CHANGED.equals(action)) {
