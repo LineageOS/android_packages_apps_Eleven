@@ -50,6 +50,7 @@
             android:id="@+id/bottom_action_bar_line_two"
             style="@style/BottomActionBarLineTwo"
             android:layout_below="@+id/bottom_action_bar_line_one" />
+
     </RelativeLayout>
 
     <FrameLayout
@@ -63,6 +64,6 @@
             android:contentDescription="@string/accessibility_play"
             android:layout_width="@dimen/bab_progress_size"
             android:layout_height="@dimen/bab_progress_size"
-            layout="@layout/play_pause_progress_button" />
+            layout="@layout/play_pause_progress_button_alt" />
     </FrameLayout>
 </LinearLayout>
