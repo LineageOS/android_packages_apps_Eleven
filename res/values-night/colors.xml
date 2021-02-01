@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2021 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Material -->
+    <color name="primary">#212121</color>
+    <color name="primary_dark">#121212</color>
+    <color name="primary_light">#333333</color>
+    <color name="accent">#1ddbc5</color>
+
+    <!-- Standard Text Color -->
+    <color name="default_text_color">@color/white</color>
+    <color name="default_text_color_light">@color/white</color>
+
+    <!-- Cards -->
+    <color name="cards_bg_color">#333333</color>
+    <color name="cardOne">@color/white</color>
+    <color name="cardTwo">@color/white</color>
+
+    <!-- Transparent colors -->
+    <color name="background_color">#121212</color>
+
+    <!-- Color for the action bar -->
+    <color name="header_action_bar_text_color">@color/white</color>
+    <color name="bottom_action_bar_text_color">@color/default_text_color_light</color>
+
+    <!-- Background color used on some page headers -->
+    <color name="page_header_background">@color/black</color>
+
+    <!-- Color for background for shadow on playlist page -->
+    <color name="header_shadow_color">#ea212121</color>
+
+    <!-- Color for the pop up menu -->
+    <color name="menu_text_color">@color/white</color>
+
+    <!-- List view related colors -->
+    <color name="list_item_background">#ff000000</color>
+    <color name="list_item_header_text_color">@color/white</color>
+
+    <!-- Separated and exposed values for themes -->
+    <color name="widget_background_color">@color/black</color>
+    <color name="list_base_container_background_color">@color/black</color>
+</resources>
