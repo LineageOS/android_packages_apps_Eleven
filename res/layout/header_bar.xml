@@ -1,5 +1,6 @@
 <!--
      Copyright (C) 2014 The CyanogenMod Project
+     Copyright (C) 2021 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -43,7 +44,7 @@
         android:ellipsize="end"
         android:singleLine="true"
         android:textAllCaps="true"
-        android:textColor="@color/header_action_bar_text_color"
+        android:textColor="@color/white"
         android:textSize="@dimen/text_size_medium"
         android:textStyle="bold" />
 
@@ -55,6 +56,6 @@
         android:layout_weight="0"
         android:scaleType="centerInside"
         android:background="@drawable/selectable_background"
-        android:src="@drawable/menu_button_light"/>
+        android:src="@drawable/menu_button_light" />
 
 </org.lineageos.eleven.ui.HeaderBar>
