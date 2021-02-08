@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- * Copyright (C) 2019-2020 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -293,7 +293,7 @@ public class AudioPreviewActivity extends AppCompatActivity implements
                     setRequestedOrientation(mLastOrientationWhileBuffering);
                 }
                 if (mPlayPauseBtn != null) {
-                    mPlayPauseBtn.setImageResource(R.drawable.btn_playback_play);
+                    mPlayPauseBtn.setImageResource(R.drawable.btn_preview_play);
                     mPlayPauseBtn.setEnabled(true);
                     mPlayPauseBtn.setOnClickListener(this);
                 }
@@ -301,14 +301,14 @@ public class AudioPreviewActivity extends AppCompatActivity implements
             case PLAYING:
                 Logger.logd(TAG, "PLAYING");
                 if (mPlayPauseBtn != null) {
-                    mPlayPauseBtn.setImageResource(R.drawable.btn_playback_pause);
+                    mPlayPauseBtn.setImageResource(R.drawable.btn_preview_pause);
                     mPlayPauseBtn.setEnabled(true);
                 }
                 break;
             case PAUSED:
                 Logger.logd(TAG, "PAUSED");
                 if (mPlayPauseBtn != null) {
-                    mPlayPauseBtn.setImageResource(R.drawable.btn_playback_play);
+                    mPlayPauseBtn.setImageResource(R.drawable.btn_preview_play);
                     mPlayPauseBtn.setEnabled(true);
                 }
                 break;
