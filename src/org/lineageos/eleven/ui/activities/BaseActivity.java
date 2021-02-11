@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.ui.activities;
 
 import android.content.BroadcastReceiver;
@@ -71,7 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         MusicStateListener, ICacheListener {
 
     /**
-     * Playstate and meta change listener
+     * Play-state and meta change listener
      */
     private final ArrayList<MusicStateListener> mMusicStateListener = Lists.newArrayList();
 
@@ -113,9 +112,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
     private Drawable mActionBarBackground;
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,8 +124,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
         // Calculate ActionBar height
         TypedValue value = new TypedValue();
-        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, value, true))
-        {
+        if (getTheme().resolveAttribute(android.R.attr.actionBarSize, value, true)) {
             mActionBarHeight = TypedValue.complexToDimensionPixelSize(value.data,
                     getResources().getDisplayMetrics());
         }
@@ -145,16 +140,13 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         // set the background on the root view
         getWindow().getDecorView().getRootView().setBackgroundColor(
                 ContextCompat.getColor(this, R.color.background_color));
-        // Initialze the bottom action bar
+        // Initialize the bottom action bar
         initBottomActionBar();
 
         // listen to changes to the cache status
         ImageFetcher.getInstance(this).addCacheListener(this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
         // Set the playback drawables
@@ -165,16 +157,10 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         handlePendingPlaybackRequests();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onServiceDisconnected(final ComponentName name) {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onCreateOptionsMenu(final Menu menu) {
         // Settings
@@ -183,26 +169,16 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         return super.onCreateOptionsMenu(menu);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_settings:
-                // Settings
-                NavUtils.openSettings(this);
-                return true;
-
-            default:
-                break;
+        if (item.getItemId() == R.id.menu_settings) {
+            // Settings
+            NavUtils.openSettings(this);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onResume() {
         super.onResume();
@@ -212,9 +188,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         onMetaChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onStart() {
         super.onStart();
@@ -236,9 +209,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         registerReceiver(mPlaybackStatus, filter);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onStop() {
         super.onStop();
@@ -255,9 +225,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -354,19 +321,12 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     /**
      * Opens the album profile of the currently playing album
      */
-    private final View.OnClickListener mOpenCurrentAlbumProfile = new View.OnClickListener() {
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public void onClick(final View v) {
-            if (MusicUtils.getCurrentAudioId() != -1) {
-                NavUtils.openAlbumProfile(BaseActivity.this, MusicUtils.getAlbumName(),
-                        MusicUtils.getArtistName(), MusicUtils.getCurrentAlbumId());
-            } else {
-                MusicUtils.shuffleAll(BaseActivity.this);
-            }
+    private final View.OnClickListener mOpenCurrentAlbumProfile = v -> {
+        if (MusicUtils.getCurrentAudioId() != -1) {
+            NavUtils.openAlbumProfile(BaseActivity.this, MusicUtils.getAlbumName(),
+                    MusicUtils.getArtistName(), MusicUtils.getCurrentAlbumId());
+        } else {
+            MusicUtils.shuffleAll(BaseActivity.this);
         }
     };
 
@@ -384,9 +344,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             mReference = new WeakReference<>(activity);
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void onReceive(final Context context, final Intent intent) {
             final String action = intent.getAction();
@@ -395,27 +352,22 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             }
 
             final BaseActivity baseActivity = mReference.get();
-            if (baseActivity != null) {
-                switch (action) {
-                    case MusicPlaybackService.META_CHANGED:
-                        baseActivity.onMetaChanged();
-                        break;
-                    case MusicPlaybackService.PLAYSTATE_CHANGED:
-                        baseActivity.mPlayPauseButtonContainer.updateState();
-                        baseActivity.mPlayPauseProgressButton.updateState();
-                        break;
-                    case MusicPlaybackService.REFRESH:
-                        baseActivity.restartLoader();
-                        break;
-                    case MusicPlaybackService.PLAYLIST_CHANGED:
-                        baseActivity.onPlaylistChanged();
-                        break;
-                    case MusicPlaybackService.TRACK_ERROR:
-                        final String errorMsg = context.getString(R.string.error_playing_track,
-                                intent.getStringExtra(MusicPlaybackService.TrackErrorExtra.TRACK_NAME));
-                        Toast.makeText(baseActivity, errorMsg, Toast.LENGTH_SHORT).show();
-                        break;
-                }
+            if (baseActivity == null) {
+                return;
+            }
+            if (MusicPlaybackService.META_CHANGED.equals(action)) {
+                baseActivity.onMetaChanged();
+            } else if (MusicPlaybackService.PLAYSTATE_CHANGED.equals(action)) {
+                baseActivity.mPlayPauseButtonContainer.updateState();
+                baseActivity.mPlayPauseProgressButton.updateState();
+            } else if (MusicPlaybackService.REFRESH.equals(action)) {
+                baseActivity.restartLoader();
+            } else if (MusicPlaybackService.PLAYLIST_CHANGED.equals(action)) {
+                baseActivity.onPlaylistChanged();
+            } else if (MusicPlaybackService.TRACK_ERROR.equals(action)) {
+                final String errorMsg = context.getString(R.string.error_playing_track,
+                        intent.getStringExtra(MusicPlaybackService.TrackErrorExtra.TRACK_NAME));
+                Toast.makeText(baseActivity, errorMsg, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -425,7 +377,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         // update action bar info
         updateBottomActionBarInfo();
 
-        // Let the listener know to the meta chnaged
+        // Let the listener know to the meta changed
         for (final MusicStateListener listener : mMusicStateListener) {
             if (listener != null) {
                 listener.onMetaChanged();
@@ -476,7 +428,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     }
 
     @Override
-    public void onCacheUnpaused() {
+    public void onCacheUnPaused() {
         // Set the album art
         ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
     }

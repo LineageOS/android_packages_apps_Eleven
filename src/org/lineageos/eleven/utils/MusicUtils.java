@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018-2021 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.utils;
 
 import android.app.Activity;
@@ -76,7 +75,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.WeakHashMap;
 
 /**
  * A collection of helpers directly related to music or Eleven's service.
@@ -87,13 +85,13 @@ public final class MusicUtils {
     public static final String TAG = MusicUtils.class.getSimpleName();
 
     private static final long[] sEmptyList;
-    private static Set<WeakReference<ServiceToken>> sKnownTokens = new HashSet<>();
+    private static final Set<WeakReference<ServiceToken>> sKnownTokens = new HashSet<>();
     private static ContentValues[] mContentValuesCache = null;
 
     private static final int MIN_VALID_YEAR = 1900; // used to remove invalid years from metadata
 
     public static final String MUSIC_ONLY_SELECTION = MediaStore.Audio.AudioColumns.IS_MUSIC + "=1"
-                    + " AND " + MediaStore.Audio.AudioColumns.TITLE + " != ''"; //$NON-NLS-2$
+            + " AND " + MediaStore.Audio.AudioColumns.TITLE + " != ''"; //$NON-NLS-2$
 
     public static final long UPDATE_FREQUENCY_MS = 500;
     public static final long UPDATE_FREQUENCY_FAST_MS = 30;
@@ -107,12 +105,12 @@ public final class MusicUtils {
     }
 
     /**
-     * @param context The {@link Context} to use
+     * @param context  The {@link Context} to use
      * @param callback The {@link ServiceConnection} to use
      * @return The new instance of {@link ServiceToken}
      */
     public static ServiceToken bindToService(final Context context,
-            final ServiceConnection callback) {
+                                             final ServiceConnection callback) {
         final ServiceBinder binder = new ServiceBinder(callback);
         final Intent intent = new Intent(context, MusicPlaybackService.class);
         final int flags = Context.BIND_ADJUST_WITH_ACTIVITY | Context.BIND_AUTO_CREATE;
@@ -182,7 +180,7 @@ public final class MusicUtils {
          * Constructor of <code>ServiceToken</code>
          *
          * @param context The context for the bind operation
-         * @param binder The {@link ServiceBinder} this token references
+         * @param binder  The {@link ServiceBinder} this token references
          */
         private ServiceToken(final Context context, final ServiceBinder binder) {
             mContextRef = new WeakReference<>(context);
@@ -207,6 +205,7 @@ public final class MusicUtils {
         }
         return null;
     }
+
     public static boolean isPlaybackServiceConnected() {
         return getService() != null;
     }
@@ -215,14 +214,14 @@ public final class MusicUtils {
      * Used to make number of labels for the number of artists, albums, songs,
      * genres, and playlists.
      *
-     * @param context The {@link Context} to use.
+     * @param context   The {@link Context} to use.
      * @param pluralInt The ID of the plural string to use.
-     * @param number The number of artists, albums, songs, genres, or playlists.
+     * @param number    The number of artists, albums, songs, genres, or playlists.
      * @return A {@link String} used as a label for the number of artists,
-     *         albums, songs, genres, and playlists.
+     * albums, songs, genres, and playlists.
      */
     public static String makeLabel(final Context context, final int pluralInt,
-            final int number) {
+                                   final int number) {
         return context.getResources().getQuantityString(pluralInt, number, number);
     }
 
@@ -230,7 +229,7 @@ public final class MusicUtils {
      * * Used to create a formatted time string for the duration of tracks.
      *
      * @param context The {@link Context} to use.
-     * @param secs The track in seconds.
+     * @param secs    The track in seconds.
      * @return Duration of a track that's properly formatted.
      */
     @NonNull
@@ -251,7 +250,7 @@ public final class MusicUtils {
      * Used to create a formatted time string in the format of #h #m or #m if there is only minutes
      *
      * @param context The {@link Context} to use.
-     * @param secs The duration seconds.
+     * @param secs    The duration seconds.
      * @return Duration properly formatted in #h #m format
      */
     public static String makeLongTimeString(final Context context, long secs) {
@@ -261,8 +260,8 @@ public final class MusicUtils {
         secs %= 3600;
         mins = secs / 60;
 
-        String hoursString = MusicUtils.makeLabel(context, R.plurals.Nhours, (int)hours);
-        String minutesString = MusicUtils.makeLabel(context, R.plurals.Nminutes, (int)mins);
+        String hoursString = MusicUtils.makeLabel(context, R.plurals.Nhours, (int) hours);
+        String minutesString = MusicUtils.makeLabel(context, R.plurals.Nminutes, (int) mins);
 
         if (hours == 0) {
             return minutesString;
@@ -278,12 +277,12 @@ public final class MusicUtils {
      * Used to combine two strings with some kind of separator in between
      *
      * @param context The {@link Context} to use.
-     * @param first string to combine
-     * @param second string to combine
+     * @param first   string to combine
+     * @param second  string to combine
      * @return the combined string
      */
     public static String makeCombinedString(final Context context, final String first,
-                                                  final String second) {
+                                            final String second) {
         final String formatter = context.getResources().getString(R.string.combine_two_strings);
         return String.format(formatter, first, second);
     }
@@ -313,17 +312,17 @@ public final class MusicUtils {
 
     /**
      * Changes to the previous track.
-     *
-     * @NOTE The AIDL isn't used here in order to properly use the previous
-     *       action. When the user is shuffling, because {@link
-     *       MusicPlaybackService#openCurrentAndNext()} is used, the user won't
-     *       be able to travel to the previously skipped track. To remedy this,
-     *       {@link MusicPlaybackService#openCurrent()} is called in {@link
-     *       MusicPlaybackService#prev(boolean)}. {@code #startService(Intent intent)}
-     *       is called here to specifically invoke the onStartCommand used by
-     *       {@link MusicPlaybackService}, which states if the current position
-     *       less than 2000 ms, start the track over, otherwise move to the
-     *       previously listened track.
+     * <p>
+     * NOTE The AIDL isn't used here in order to properly use the previous
+     * action. When the user is shuffling, because {@link
+     * MusicPlaybackService#openCurrentAndNext()} is used, the user won't
+     * be able to travel to the previously skipped track. To remedy this,
+     * {@link MusicPlaybackService#openCurrent()} is called in {@link
+     * MusicPlaybackService#prev(boolean)}. {@code #startService(Intent intent)}
+     * is called here to specifically invoke the onStartCommand used by
+     * {@link MusicPlaybackService}, which states if the current position
+     * less than 2000 ms, start the track over, otherwise move to the
+     * previously listened track.
      */
     public static void previous(final Context context, final boolean force) {
         final Intent previous = new Intent(context, MusicPlaybackService.class);
@@ -358,22 +357,20 @@ public final class MusicUtils {
      */
     public static void cycleRepeat() {
         try {
-            IElevenService service = getService();
-            if (service != null) {
-                switch (service.getRepeatMode()) {
-                    case MusicPlaybackService.REPEAT_NONE:
-                        service.setRepeatMode(MusicPlaybackService.REPEAT_ALL);
-                        break;
-                    case MusicPlaybackService.REPEAT_ALL:
-                        service.setRepeatMode(MusicPlaybackService.REPEAT_CURRENT);
-                        if (service.getShuffleMode() != MusicPlaybackService.SHUFFLE_NONE) {
-                            service.setShuffleMode(MusicPlaybackService.SHUFFLE_NONE);
-                        }
-                        break;
-                    default:
-                        service.setRepeatMode(MusicPlaybackService.REPEAT_NONE);
-                        break;
+            final IElevenService service = getService();
+            if (service == null) {
+                return;
+            }
+            final int repeatMode = service.getRepeatMode();
+            if (repeatMode == MusicPlaybackService.REPEAT_NONE) {
+                service.setRepeatMode(MusicPlaybackService.REPEAT_ALL);
+            } else if (repeatMode == MusicPlaybackService.REPEAT_ALL) {
+                service.setRepeatMode(MusicPlaybackService.REPEAT_CURRENT);
+                if (service.getShuffleMode() != MusicPlaybackService.SHUFFLE_NONE) {
+                    service.setShuffleMode(MusicPlaybackService.SHUFFLE_NONE);
                 }
+            } else {
+                service.setRepeatMode(MusicPlaybackService.REPEAT_NONE);
             }
         } catch (final RemoteException exc) {
             Log.e(TAG, "cycleRepeat()", exc);
@@ -386,23 +383,19 @@ public final class MusicUtils {
     public static void cycleShuffle() {
         try {
             IElevenService service = getService();
-            if (service != null) {
-                switch (service.getShuffleMode()) {
-                    case MusicPlaybackService.SHUFFLE_NONE:
-                        service.setShuffleMode(MusicPlaybackService.SHUFFLE_NORMAL);
-                        if (service.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
-                            service.setRepeatMode(MusicPlaybackService.REPEAT_ALL);
-                        }
-                        break;
-                    case MusicPlaybackService.SHUFFLE_NORMAL:
-                        service.setShuffleMode(MusicPlaybackService.SHUFFLE_NONE);
-                        break;
-                    case MusicPlaybackService.SHUFFLE_AUTO:
-                        service.setShuffleMode(MusicPlaybackService.SHUFFLE_NONE);
-                        break;
-                    default:
-                        break;
+            if (service == null) {
+                return;
+            }
+            final int shuffleMode = service.getShuffleMode();
+            if (shuffleMode == MusicPlaybackService.SHUFFLE_NONE) {
+                service.setShuffleMode(MusicPlaybackService.SHUFFLE_NORMAL);
+                if (service.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
+                    service.setRepeatMode(MusicPlaybackService.REPEAT_ALL);
                 }
+            } else if (shuffleMode == MusicPlaybackService.SHUFFLE_NORMAL) {
+                service.setShuffleMode(MusicPlaybackService.SHUFFLE_NONE);
+            } else if (shuffleMode == MusicPlaybackService.SHUFFLE_AUTO) {
+                service.setShuffleMode(MusicPlaybackService.SHUFFLE_NONE);
             }
         } catch (final RemoteException exc) {
             Log.e(TAG, "cycleShuffle()", exc);
@@ -575,36 +568,6 @@ public final class MusicUtils {
     }
 
     /**
-     * @return The previous song Id.
-     */
-    public static long getPreviousAudioId() {
-        IElevenService service = getService();
-        if (service != null) {
-            try {
-                return service.getPreviousAudioId();
-            } catch (final RemoteException exc) {
-                Log.e(TAG, "getPreviousAudioId()", exc);
-            }
-        }
-        return -1;
-    }
-
-    /**
-     * @return The current artist Id.
-     */
-    public static long getCurrentArtistId() {
-        IElevenService service = getService();
-        if (service != null) {
-            try {
-                return service.getArtistId();
-            } catch (final RemoteException exc) {
-                Log.e(TAG, "getArtistId()", exc);
-            }
-        }
-        return -1;
-    }
-
-    /**
      * @return The audio session Id.
      */
     public static int getAudioSessionId() {
@@ -710,21 +673,6 @@ public final class MusicUtils {
     }
 
     /**
-     * @return The queue history
-     */
-    public static int[] getQueueHistoryList() {
-        IElevenService service = getService();
-        if (service != null) {
-            try {
-                return service.getQueueHistoryList();
-            } catch (final RemoteException exc) {
-                Log.e(TAG, "getQueueHistoryList()", exc);
-            }
-        }
-        return null;
-    }
-
-    /**
      * @param id The ID of the track to remove.
      * @return removes track from a playlist or the queue.
      */
@@ -743,9 +691,8 @@ public final class MusicUtils {
     /**
      * Remove song at a specified position in the list
      *
-     * @param id The ID of the track to remove
+     * @param id       The ID of the track to remove
      * @param position The position of the song
-     *
      * @return true if successful, false otherwise
      */
     public static boolean removeTrackAtPosition(final long id, final int position) {
@@ -790,12 +737,12 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use.
-     * @param id The ID of the artist.
+     * @param id      The ID of the artist.
      * @return The song list for an artist.
      */
     public static long[] getSongListForArtist(final Context context, final long id) {
-        final String[] projection = new String[] {
-            BaseColumns._ID
+        final String[] projection = new String[]{
+                BaseColumns._ID
         };
         final String selection = AudioColumns.ARTIST_ID + "=" + id + " AND "
                 + AudioColumns.IS_MUSIC + "=1";
@@ -811,12 +758,12 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use.
-     * @param id The ID of the album.
+     * @param id      The ID of the album.
      * @return The song list for an album.
      */
     public static long[] getSongListForAlbum(final Context context, final long id) {
-        final String[] projection = new String[] {
-            BaseColumns._ID
+        final String[] projection = new String[]{
+                BaseColumns._ID
         };
         final String selection = AudioColumns.ALBUM_ID + "=" + id + " AND " + AudioColumns.IS_MUSIC
                 + "=1";
@@ -833,7 +780,7 @@ public final class MusicUtils {
     /**
      * Plays songs by an artist.
      *
-     * @param context The {@link Context} to use.
+     * @param context  The {@link Context} to use.
      * @param artistId The artist Id.
      * @param position Specify where to start.
      */
@@ -845,59 +792,9 @@ public final class MusicUtils {
     }
 
     /**
-     * @param context The {@link Context} to use.
-     * @param id The ID of the genre.
-     * @return The song list for an genre.
-     */
-    public static long[] getSongListForGenre(final Context context, final long id) {
-        final String[] projection = new String[] {
-            BaseColumns._ID
-        };
-        String selection = (AudioColumns.IS_MUSIC + "=1") +
-                " AND " + MediaColumns.TITLE + "!=''";
-        final Uri uri = MediaStore.Audio.Genres.Members.getContentUri("external", id);
-        try (Cursor cursor = context.getContentResolver().query(uri, projection, selection,
-                null, null)) {
-            if (cursor != null) {
-                return getSongListForCursor(cursor);
-            }
-        }
-        return sEmptyList;
-    }
-
-    /**
-     * @param context The {@link Context} to use
-     * @param uri The source of the file
-     */
-    public static void playFile(final Context context, final Uri uri) {
-        IElevenService service = getService();
-        if (uri == null || service == null) {
-            return;
-        }
-
-        // If this is a file:// URI, just use the path directly instead
-        // of going through the open-from-filedescriptor codepath.
-        String filename;
-        String scheme = uri.getScheme();
-        if ("file".equals(scheme)) {
-            filename = uri.getPath();
-        } else {
-            filename = uri.toString();
-        }
-
-        try {
-            service.stop();
-            service.openFile(filename);
-            service.play();
-        } catch (final RemoteException exc) {
-            Log.e(TAG, "playFile(" + uri + ")", exc);
-        }
-    }
-
-    /**
-     * @param context The {@link Context} to use.
-     * @param list The list of songs to play.
-     * @param position Specify where to start.
+     * @param context      The {@link Context} to use.
+     * @param list         The list of songs to play.
+     * @param position     Specify where to start.
      * @param forceShuffle True to force a shuffle, false otherwise.
      */
     public static void playAll(final Context context, final long[] list, int position,
@@ -932,7 +829,8 @@ public final class MusicUtils {
         try {
             service.enqueue(list, MusicPlaybackService.NEXT, sourceId, sourceType.mId);
         } catch (final RemoteException exc) {
-            Log.e(TAG, "playNext(" + Arrays.asList(list) + ", " + sourceId + ", " + sourceType + ")", exc);
+            Log.e(TAG, "playNext(" + Collections.singletonList(list) + ", " +
+                    sourceId + ", " + sourceType + ")", exc);
         }
     }
 
@@ -973,7 +871,7 @@ public final class MusicUtils {
      * Returns The ID for a playlist.
      *
      * @param context The {@link Context} to use.
-     * @param name The name of the playlist.
+     * @param name    The name of the playlist.
      * @return The ID for a playlist.
      */
     public static long getIdForPlaylist(final Context context, final String name) {
@@ -994,9 +892,11 @@ public final class MusicUtils {
         return -1;
     }
 
-    /** @param context The {@link Context} to use.
-     *  @param id The id of the playlist.
-     *  @return The name for a playlist. */
+    /**
+     * @param context The {@link Context} to use.
+     * @param id      The id of the playlist.
+     * @return The name for a playlist.
+     */
     public static String getNameForPlaylist(final Context context, final long id) {
         try (Cursor cursor = context.getContentResolver().query(
                 Playlists.EXTERNAL_CONTENT_URI, new String[]{PlaylistsColumns.NAME},
@@ -1015,7 +915,7 @@ public final class MusicUtils {
      * Returns the Id for an artist.
      *
      * @param context The {@link Context} to use.
-     * @param name The name of the artist.
+     * @param name    The name of the artist.
      * @return The ID for an artist.
      */
     public static long getIdForArtist(final Context context, final String name) {
@@ -1033,35 +933,10 @@ public final class MusicUtils {
     }
 
     /**
-     * Returns the ID for an album.
-     *
-     * @param context The {@link Context} to use.
-     * @param albumName The name of the album.
-     * @param artistName The name of the artist
-     * @return The ID for an album.
-     */
-    public static long getIdForAlbum(final Context context, final String albumName,
-            final String artistName) {
-        try (Cursor cursor = context.getContentResolver().query(
-                MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, new String[]{BaseColumns._ID},
-                AlbumColumns.ALBUM + "=? AND " + AlbumColumns.ARTIST + "=?", new String[]{
-                        albumName, artistName
-                }, AlbumColumns.ALBUM)) {
-            if (cursor != null) {
-                cursor.moveToFirst();
-                if (!cursor.isAfterLast()) {
-                    return cursor.getInt(0);
-                }
-            }
-        }
-        return -1;
-    }
-
-    /**
      * Plays songs from an album.
      *
-     * @param context The {@link Context} to use.
-     * @param albumId The album Id.
+     * @param context  The {@link Context} to use.
+     * @param albumId  The album Id.
      * @param position Specify where to start.
      */
     public static void playAlbum(final Context context, final long albumId, int position, boolean shuffle) {
@@ -1090,14 +965,14 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use.
-     * @param name The name of the new playlist.
+     * @param name    The name of the new playlist.
      * @return A new playlist ID.
      */
     public static long createPlaylist(final Context context, final String name) {
         if (name != null && name.length() > 0) {
             final ContentResolver resolver = context.getContentResolver();
-            final String[] projection = new String[] {
-                PlaylistsColumns.NAME
+            final String[] projection = new String[]{
+                    PlaylistsColumns.NAME
             };
             final String selection = PlaylistsColumns.NAME + " = '" + name + "'";
             try (Cursor cursor = resolver.query(Playlists.EXTERNAL_CONTENT_URI,
@@ -1120,7 +995,7 @@ public final class MusicUtils {
     }
 
     /**
-     * @param context The {@link Context} to use.
+     * @param context    The {@link Context} to use.
      * @param playlistId The playlist ID.
      */
     public static void clearPlaylist(final Context context, final int playlistId) {
@@ -1128,32 +1003,38 @@ public final class MusicUtils {
         context.getContentResolver().delete(uri, null, null);
     }
 
-    /** remove all backing data for top tracks playlist */
+    /**
+     * remove all backing data for top tracks playlist
+     */
     public static void clearTopTracks(Context context) {
         SongPlayCount.getInstance(context).deleteAll();
     }
 
-    /** remove all backing data for top tracks playlist */
+    /**
+     * remove all backing data for top tracks playlist
+     */
     public static void clearRecent(Context context) {
         RecentStore.getInstance(context).deleteAll();
     }
 
-    /** move up cutoff for last added songs so playlist will be cleared */
+    /**
+     * move up cutoff for last added songs so playlist will be cleared
+     */
     public static void clearLastAdded(Context context) {
         PreferenceUtils.getInstance(context)
-            .setLastAddedCutoff(System.currentTimeMillis());
+                .setLastAddedCutoff(System.currentTimeMillis());
     }
 
     /**
-     * @param context The {@link Context} to use.
-     * @param ids The id of the song(s) to add.
+     * @param context    The {@link Context} to use.
+     * @param ids        The id of the song(s) to add.
      * @param playlistid The id of the playlist being added to.
      */
     public static void addToPlaylist(final Context context, final long[] ids, final long playlistid) {
         final int size = ids.length;
         final ContentResolver resolver = context.getContentResolver();
-        final String[] projection = new String[] {
-            "max(" + Playlists.Members.PLAY_ORDER + ")",
+        final String[] projection = new String[]{
+                "max(" + Playlists.Members.PLAY_ORDER + ")",
         };
         final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistid);
 
@@ -1177,16 +1058,17 @@ public final class MusicUtils {
 
     /**
      * Removes a single track from a given playlist
-     * @param context The {@link Context} to use.
-     * @param id The id of the song to remove.
+     *
+     * @param context    The {@link Context} to use.
+     * @param id         The id of the song to remove.
      * @param playlistId The id of the playlist being removed from.
      */
     public static void removeFromPlaylist(final Context context, final long id,
-            final long playlistId) {
+                                          final long playlistId) {
         final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
         final ContentResolver resolver = context.getContentResolver();
-        resolver.delete(uri, Playlists.Members.AUDIO_ID + " = ? ", new String[] {
-            Long.toString(id)
+        resolver.delete(uri, Playlists.Members.AUDIO_ID + " = ? ", new String[]{
+                Long.toString(id)
         });
         final String message = context.getResources().getQuantityString(
                 R.plurals.NNNtracksfromplaylist, 1, 1);
@@ -1196,7 +1078,7 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use.
-     * @param list The list to enqueue.
+     * @param list    The list to enqueue.
      */
     public static void addToQueue(final Context context, final long[] list, long sourceId,
                                   IdType sourceType) {
@@ -1215,7 +1097,7 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use
-     * @param id The song ID.
+     * @param id      The song ID.
      */
     public static void setRingtone(final Context context, final long id) {
         final ContentResolver resolver = context.getContentResolver();
@@ -1229,7 +1111,7 @@ public final class MusicUtils {
             return;
         }
 
-        final String[] projection = new String[] {
+        final String[] projection = new String[]{
                 BaseColumns._ID, MediaColumns.DATA, MediaColumns.TITLE
         };
 
@@ -1248,12 +1130,14 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use.
-     * @param id The id of the album.
+     * @param id      The id of the album.
      * @return The song count for an album.
      */
     public static int getSongCountForAlbumInt(final Context context, final long id) {
         int songCount = 0;
-        if (id == -1) { return songCount; }
+        if (id == -1) {
+            return songCount;
+        }
 
         Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, id);
         try (Cursor cursor = context.getContentResolver().query(uri,
@@ -1273,7 +1157,8 @@ public final class MusicUtils {
 
     /**
      * Gets the number of songs for a playlist
-     * @param context The {@link Context} to use.
+     *
+     * @param context    The {@link Context} to use.
      * @param playlistId the id of the playlist
      * @return the # of songs in the playlist
      */
@@ -1297,15 +1182,15 @@ public final class MusicUtils {
                 " AND " + BaseColumns._ID + " = '" + trackId + "'";
 
         final Cursor cursor = context.getContentResolver().query(
-            MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-            new String[] {
-                    /* 0 */
-                MediaStore.Audio.AudioColumns.ALBUM_ID,
-                    /* 1 */
-                MediaStore.Audio.AudioColumns.ALBUM,
-                    /* 2 */
-                MediaStore.Audio.AlbumColumns.ARTIST,
-            }, selection, null, null
+                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                new String[]{
+                        /* 0 */
+                        MediaStore.Audio.AudioColumns.ALBUM_ID,
+                        /* 1 */
+                        MediaStore.Audio.AudioColumns.ALBUM,
+                        /* 2 */
+                        MediaStore.Audio.AlbumColumns.ARTIST,
+                }, selection, null, null
         );
 
         if (cursor == null) {
@@ -1330,7 +1215,7 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use.
-     * @param id The id of the album.
+     * @param id      The id of the album.
      * @return The release date for an album.
      */
     public static String getReleaseDateForAlbum(final Context context, final long id) {
@@ -1339,7 +1224,7 @@ public final class MusicUtils {
         }
         Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, id);
         String releaseDate = null;
-        try (Cursor cursor = context.getContentResolver().query(uri, new String[] {
+        try (Cursor cursor = context.getContentResolver().query(uri, new String[]{
                 AlbumColumns.FIRST_YEAR
         }, null, null, null)) {
             if (cursor != null) {
@@ -1353,23 +1238,8 @@ public final class MusicUtils {
     }
 
     /**
-     * @return The path to the currently playing file as {@link String}
-     */
-    public static String getFilePath() {
-        try {
-            IElevenService service = getService();
-            if (service != null) {
-                return service.getPath();
-            }
-        } catch (final RemoteException exc) {
-            Log.e(TAG, "getFilePath()", exc);
-        }
-        return null;
-    }
-
-    /**
      * @param from The index the item is currently at.
-     * @param to The index the item is moving to.
+     * @param to   The index the item is moving to.
      */
     public static void moveQueueItem(final int from, final int to) {
         try {
@@ -1383,7 +1253,7 @@ public final class MusicUtils {
     }
 
     /**
-     * @param context The {@link Context} to sue
+     * @param context    The {@link Context} to sue
      * @param playlistId The playlist Id
      * @return The track list for a playlist
      */
@@ -1399,7 +1269,7 @@ public final class MusicUtils {
     /**
      * Plays a user created playlist.
      *
-     * @param context The {@link Context} to use.
+     * @param context    The {@link Context} to use.
      * @param playlistId The playlist Id.
      */
     public static void playPlaylist(final Context context, final long playlistId, boolean shuffle) {
@@ -1411,11 +1281,11 @@ public final class MusicUtils {
 
     /**
      * @param context The {@link Context} to use
-     * @param type The Smart Playlist Type
+     * @param type    The Smart Playlist Type
      * @return The song list for the last added playlist
      */
     public static long[] getSongListForSmartPlaylist(final Context context,
-                                                           final SmartPlaylistType type) {
+                                                     final SmartPlaylistType type) {
         Cursor cursor = null;
         try {
             switch (type) {
@@ -1435,18 +1305,6 @@ public final class MusicUtils {
                 cursor.close();
             }
         }
-    }
-
-    /**
-     * Plays the smart playlist
-     * @param context The {@link Context} to use
-     * @param position the position to start playing from
-     * @param type The Smart Playlist Type
-     */
-    public static void playSmartPlaylist(final Context context, final int position,
-                                         final SmartPlaylistType type, final boolean shuffle) {
-        final long[] list = getSongListForSmartPlaylist(context, type);
-        MusicUtils.playAll(context, list, position, type.mId, IdType.Playlist, shuffle);
     }
 
     /**
@@ -1470,7 +1328,7 @@ public final class MusicUtils {
         }
 
         // sort the list but ignore case
-        Collections.sort(menuItemMap, new IgnoreCaseComparator());
+        menuItemMap.sort(new IgnoreCaseComparator());
         // add new_playlist to the top of the sorted list
         menuItemMap.add(0, context.getString(R.string.new_playlist));
 
@@ -1532,10 +1390,8 @@ public final class MusicUtils {
         if (service != null) {
             try {
                 service.seekRelative(deltaInMs);
-            } catch (final RemoteException exc) {
-                Log.e(TAG, "seekRelative(" + deltaInMs + ")", exc);
-            } catch (final IllegalStateException exc) {
-                Log.e(TAG, "seekRelative(" + deltaInMs + ")", exc);
+            } catch (final RemoteException | IllegalStateException e) {
+                Log.e(TAG, "seekRelative(" + deltaInMs + ")", e);
             }
         }
     }
@@ -1548,10 +1404,8 @@ public final class MusicUtils {
         if (service != null) {
             try {
                 return service.position();
-            } catch (final RemoteException exc) {
-                Log.e(TAG, "position()", exc);
-            } catch (final IllegalStateException exc) {
-                Log.e(TAG, "position()", exc);
+            } catch (final RemoteException | IllegalStateException e) {
+                Log.e(TAG, "position()", e);
             }
         }
         return 0;
@@ -1565,10 +1419,8 @@ public final class MusicUtils {
         if (service != null) {
             try {
                 return service.duration();
-            } catch (final RemoteException exc) {
-                Log.e(TAG, "duration()", exc);
-            } catch (final IllegalStateException exc) {
-                Log.e(TAG, "duration()", exc);
+            } catch (final RemoteException | IllegalStateException e) {
+                Log.e(TAG, "duration()", e);
             }
         }
         return 0;
@@ -1611,10 +1463,10 @@ public final class MusicUtils {
      * Perminately deletes item(s) from the user's device
      *
      * @param context The {@link Context} to use.
-     * @param list The item(s) to delete.
+     * @param list    The item(s) to delete.
      */
     public static void deleteTracks(final Context context, final long[] list) {
-        final String[] projection = new String[] {
+        final String[] projection = new String[]{
                 BaseColumns._ID, MediaColumns.DATA, AudioColumns.ALBUM_ID
         };
         final StringBuilder selection = new StringBuilder();
@@ -1680,6 +1532,7 @@ public final class MusicUtils {
 
     /**
      * Simple function used to determine if the song/album year is invalid
+     *
      * @param year value to test
      * @return true if the app considers it valid
      */
@@ -1691,6 +1544,7 @@ public final class MusicUtils {
      * A snippet is taken from MediaStore.Audio.keyFor method
      * This will take a name, removes things like "the", "an", etc
      * as well as special characters and return it
+     *
      * @param name the string to trim
      * @return the trimmed name
      */
@@ -1723,6 +1577,7 @@ public final class MusicUtils {
      * A snippet is taken from MediaStore.Audio.keyFor method
      * This will take a name, removes things like "the", "an", etc
      * as well as special characters, then find the localized label
+     *
      * @param name Name to get the label of
      * @return the localized label of the bucket that the name falls into
      */
@@ -1740,13 +1595,21 @@ public final class MusicUtils {
         return null;
     }
 
-    /** @return true if a string is null, empty, or contains only whitespace */
+    /**
+     * @return true if a string is null, empty, or contains only whitespace
+     */
     public static boolean isBlank(String s) {
-        if(s == null) { return true; }
-        if(s.isEmpty()) { return true; }
-        for(int i = 0; i < s.length(); i++) {
+        if (s == null) {
+            return true;
+        }
+        if (s.isEmpty()) {
+            return true;
+        }
+        for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if(!Character.isWhitespace(c)) { return false; }
+            if (!Character.isWhitespace(c)) {
+                return false;
+            }
         }
         return true;
     }
@@ -1774,10 +1637,8 @@ public final class MusicUtils {
     }
 
     /**
-     *
      * @param sortOrder values are mostly derived from SortOrder.class or could also be any sql
      *                  order clause
-     * @return
      */
     public static boolean isSortOrderDesending(String sortOrder) {
         return sortOrder.endsWith(" DESC");
@@ -1785,6 +1646,7 @@ public final class MusicUtils {
 
     /**
      * Takes a collection of items and builds a comma-separated list of them
+     *
      * @param items collection of items
      * @return comma-separted list of items
      */
