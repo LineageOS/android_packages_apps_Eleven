@@ -36,7 +36,7 @@ import org.lineageos.eleven.widgets.ShuffleButton;
 @SuppressLint("NewApi")
 public class AppWidgetLargeAlternate extends AppWidgetBase {
 
-    public static final String CMDAPPWIDGETUPDATE = "app_widget_large_alternate_update";
+    public static final String APP_WIDGET_UPDATE = "app_widget_large_alternate_update";
 
     private static AppWidgetLargeAlternate mInstance;
 
@@ -47,16 +47,13 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         return mInstance;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onUpdate(final Context context, final AppWidgetManager appWidgetManager,
             final int[] appWidgetIds) {
         defaultAppWidget(context, appWidgetIds);
         final Intent updateIntent = new Intent(MusicPlaybackService.SERVICECMD);
         updateIntent.putExtra(MusicPlaybackService.CMDNAME,
-                AppWidgetLargeAlternate.CMDAPPWIDGETUPDATE);
+                AppWidgetLargeAlternate.APP_WIDGET_UPDATE);
         updateIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
         updateIntent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
         context.sendBroadcast(updateIntent);
@@ -188,7 +185,7 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
     }
 
     /**
-     * Link up various button actions using {@link PendingIntents}.
+     * Link up various button actions using {@link PendingIntent}s.
      *
      */
     private void linkButtons(final Context context, final RemoteViews views) {

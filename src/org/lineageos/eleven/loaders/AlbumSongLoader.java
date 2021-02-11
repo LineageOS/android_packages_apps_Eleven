@@ -106,13 +106,13 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
      * @param albumId The Id of the album the songs belong to.
      * @return The {@link Cursor} used to run the query.
      */
-    public static final Cursor makeAlbumSongCursor(final Context context, final Long albumId) {
+    public static Cursor makeAlbumSongCursor(final Context context, final Long albumId) {
         // Match the songs up with the artist
         String selection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''" +
                 " AND " + AudioColumns.ALBUM_ID + "=" + albumId;
         return context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                new String[] {
+                new String[]{
                         /* 0 */
                         BaseColumns._ID,
                         /* 1 */

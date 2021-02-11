@@ -32,14 +32,9 @@ public abstract class WrappedAsyncTaskLoader<D> extends AsyncTaskLoader<D> {
         if (!isReset()) {
             this.mData = data;
             super.deliverResult(data);
-        } else {
-            // An asynchronous query came in while the loader is stopped
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onStartLoading() {
         if (this.mData != null) {
@@ -49,18 +44,12 @@ public abstract class WrappedAsyncTaskLoader<D> extends AsyncTaskLoader<D> {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onStopLoading() {
         // Attempt to cancel the current load task if possible
         cancelLoad();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onReset() {
         super.onReset();

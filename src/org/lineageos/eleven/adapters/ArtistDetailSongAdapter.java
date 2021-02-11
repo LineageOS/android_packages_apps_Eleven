@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
@@ -43,14 +44,16 @@ public abstract class ArtistDetailSongAdapter extends DetailSongAdapter {
         return Config.IdType.Artist;
     }
 
-    @Override // LoaderCallbacks
+    @Override
+    @NonNull
     public Loader<List<Song>> onCreateLoader(int id, Bundle args) {
         onLoading();
-        setSourceId(args.getLong(Config.ID));
+        setSourceId(args == null ? -1 : args.getLong(Config.ID));
         final String selection = MediaStore.Audio.AudioColumns.ARTIST_ID + "=" + getSourceId();
         return new SongLoader(mActivity, selection);
     }
 
+    @Override
     protected Holder newHolder(View root, ImageFetcher fetcher) {
         return new ArtistHolder(root, fetcher);
     }

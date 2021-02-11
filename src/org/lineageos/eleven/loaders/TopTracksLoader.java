@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package org.lineageos.eleven.loaders;
 
@@ -78,10 +78,11 @@ public class TopTracksLoader extends SongLoader {
 
     /**
      * This creates a sorted cursor based on the top played results
+     *
      * @param context Android context
      * @return sorted cursor
      */
-    public static final SortedCursor makeTopTracksCursor(final Context context) {
+    public static SortedCursor makeTopTracksCursor(final Context context) {
         // first get the top results ids from the internal database
         Cursor songs = SongPlayCount.getInstance(context).getTopPlayedResults(NUMBER_OF_SONGS);
 
@@ -91,17 +92,17 @@ public class TopTracksLoader extends SongLoader {
         } finally {
             if (songs != null) {
                 songs.close();
-                songs = null;
             }
         }
     }
 
     /**
      * This creates a sorted cursor based on the recently played tracks
+     *
      * @param context Android context
      * @return sorted cursor
      */
-    public static final SortedCursor makeRecentTracksCursor(final Context context) {
+    public static SortedCursor makeRecentTracksCursor(final Context context) {
         // first get the top results ids from the internal database
         Cursor songs = RecentStore.getInstance(context).queryRecentIds(null);
 
@@ -111,20 +112,20 @@ public class TopTracksLoader extends SongLoader {
         } finally {
             if (songs != null) {
                 songs.close();
-                songs = null;
             }
         }
     }
 
     /**
      * This creates a sorted song cursor given a cursor that contains the sort order
-     * @param context Android context
-     * @param cursor This is the cursor used to determine the order of the ids
+     *
+     * @param context  Android context
+     * @param cursor   This is the cursor used to determine the order of the ids
      * @param idColumn the id column index of the cursor
      * @return a Sorted Cursor of songs
      */
-    public static final SortedCursor makeSortedCursor(final Context context, final Cursor cursor,
-                                                      final int idColumn) {
+    public static SortedCursor makeSortedCursor(final Context context, final Cursor cursor,
+                                                final int idColumn) {
         if (cursor != null && cursor.moveToFirst()) {
             // create the list of ids to select against
             StringBuilder selection = new StringBuilder();
@@ -143,7 +144,7 @@ public class TopTracksLoader extends SongLoader {
 
                 id = cursor.getLong(idColumn);
                 order[cursor.getPosition()] = id;
-                selection.append(String.valueOf(id));
+                selection.append(id);
             }
 
             selection.append(")");

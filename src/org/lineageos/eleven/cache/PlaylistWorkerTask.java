@@ -1,18 +1,18 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.cache;
 
 import android.content.Context;
@@ -62,16 +62,21 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
     /**
      * Constructor of <code>PlaylistWorkerTask</code>
-     * @param key the key of the image to store to
-     * @param playlistId the playlist identifier
-     * @param type Artist or CoverArt?
+     *
+     * @param key          the key of the image to store to
+     * @param playlistId   the playlist identifier
+     * @param type         Artist or CoverArt?
      * @param foundInCache does this exist in the memory cache already
-     * @param imageView The {@link ImageView} to use.
+     * @param imageView    The {@link ImageView} to use.
      * @param fromDrawable what drawable to transition from
      */
-    public PlaylistWorkerTask(final String key, final long playlistId, final PlaylistWorkerType type,
-                              final boolean foundInCache, final ImageView imageView,
-                              final Drawable fromDrawable, final Context context) {
+    public PlaylistWorkerTask(final String key,
+                              final long playlistId,
+                              final PlaylistWorkerType type,
+                              final boolean foundInCache,
+                              final ImageView imageView,
+                              final Drawable fromDrawable,
+                              final Context context) {
         super(key, imageView, ImageType.PLAYLIST, fromDrawable, context);
 
         mPlaylistId = playlistId;
@@ -81,9 +86,6 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
         mFallbackToDefaultImage = false;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected TransitionDrawable doInBackground(final Void... params) {
         if (isCancelled()) {
@@ -140,15 +142,14 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
                     // remove the cached image
                     mImageCache.removeFromCache(PlaylistArtworkStore.getArtistCacheKey(mPlaylistId));
                     // revert back to default image
-                    mFallbackToDefaultImage = true;
-                } else if (mWorkerType == PlaylistWorkerType.CoverArt) {
+                } else {
                     // update the timestamp
                     mPlaylistStore.updateCoverArt(mPlaylistId);
                     // remove the cached image
                     mImageCache.removeFromCache(PlaylistArtworkStore.getCoverCacheKey(mPlaylistId));
                     // revert back to default image
-                    mFallbackToDefaultImage = true;
                 }
+                mFallbackToDefaultImage = true;
             } else if (mWorkerType == PlaylistWorkerType.Artist) {
                 bitmap = loadTopArtist(sortedCursor);
             } else {
@@ -166,11 +167,12 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
     /**
      * This gets the sorted cursor of the songs from a playlist based on play count
+     *
      * @return Cursor containing the sorted list
      */
     protected Cursor getTopSongsForPlaylist() {
         Cursor playlistCursor = null;
-        SortedCursor sortedCursor = null;
+        SortedCursor sortedCursor;
 
         try {
             // gets the songs in the playlist
@@ -206,7 +208,6 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             // if we quit early from isCancelled(), close our cursor
             if (playlistCursor != null) {
                 playlistCursor.close();
-                playlistCursor = null;
             }
         }
 
@@ -215,6 +216,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
     /**
      * Gets the most played song's artist image
+     *
      * @param sortedCursor the sorted playlist song cursor
      * @return Bitmap of the artist
      */
@@ -223,9 +225,9 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             return null;
         }
 
-        Bitmap bitmap = null;
+        Bitmap bitmap;
         int artistIndex = sortedCursor.getColumnIndex(MediaStore.Audio.AudioColumns.ARTIST);
-        String artistName = null;
+        String artistName;
 
         do {
             if (isCancelled()) {
@@ -235,7 +237,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             artistName = sortedCursor.getString(artistIndex);
             // try to load the bitmap
             bitmap = ImageWorker.getBitmapInBackground(mContext, mImageCache, artistName,
-                    null, artistName, -1, ImageType.ARTIST);
+                    -1, ImageType.ARTIST);
         } while (sortedCursor.moveToNext() && bitmap == null);
 
         if (bitmap == null) {
@@ -260,6 +262,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
     /**
      * Gets the Cover Art of the playlist, which is a combination of the top song's album image
+     *
      * @param sortedCursor the sorted playlist song cursor
      * @return Bitmap of the artist
      */
@@ -275,9 +278,9 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
         final int albumIdx = sortedCursor.getColumnIndex(MediaStore.Audio.AudioColumns.ALBUM);
 
         Bitmap bitmap = null;
-        String artistName = null;
-        String albumName = null;
-        long albumId = -1;
+        String artistName;
+        String albumName;
+        long albumId;
 
         // create a hashset of the keys so we don't load images from the same album multiple times
         HashSet<String> keys = new HashSet<>(sortedCursor.getCount());
@@ -297,7 +300,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             if (keys.add(key)) {
                 // try to load the bitmap
                 bitmap = ImageWorker.getBitmapInBackground(mContext, mImageCache,
-                        key, albumName, artistName, albumId, ImageType.ALBUM);
+                        key, albumId, ImageType.ALBUM);
 
                 // if we got the bitmap, add it to the list
                 if (bitmap != null) {
@@ -337,7 +340,6 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
                 combinedCanvas.drawBitmap(loadedBitmaps.get(3), null,
                         new Rect(width / 2, height / 2, width, height), null);
 
-                combinedCanvas = null;
                 bitmap = combinedBitmap;
             }
         }

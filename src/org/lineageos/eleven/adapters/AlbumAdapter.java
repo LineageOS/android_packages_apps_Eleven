@@ -34,7 +34,7 @@ import java.util.List;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the albums on a user's
- * device for {@link RecentsFragment} and {@link AlbumsFragment}.
+ * device.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -60,20 +60,20 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
      */
     private IPopupMenuCallback.IListener mListener;
 
-    /** number of columns of containing grid view,
-     *  used to determine which views to pad */
+    /**
+     * number of columns of containing grid view,
+     * used to determine which views to pad
+     */
     private int mColumns;
-    private int mPadding;
+    private final int mPadding;
 
-    private Context mContext;
+    private final Context mContext;
 
     /**
      * Constructor of <code>AlbumAdapter</code>
      *
-     * @param context The {@link Context} to use.
+     * @param context  The {@link Context} to use.
      * @param layoutId The resource Id of the view to inflate.
-     * @param style Determines which layout to use and therefore which items to
-     *            load.
      */
     public AlbumAdapter(final Activity context, final int layoutId) {
         mContext = context;
@@ -84,9 +84,6 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         mPadding = context.getResources().getDimensionPixelSize(R.dimen.list_item_general_margin);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         // Recycle ViewHolder's items
@@ -98,7 +95,7 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
             // set the pop up menu listener
             holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         } else {
-            holder = (MusicHolder)convertView.getTag();
+            holder = (MusicHolder) convertView.getTag();
         }
 
         adjustPadding(position, convertView);
@@ -128,19 +125,18 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         }
         int count = getCount();
         int footers = count % mColumns;
-        if (footers == 0) { footers = mColumns; }
-        if (position >= (count-footers)) {
+        if (footers == 0) {
+            footers = mColumns;
+        }
+        if (position >= (count - footers)) {
             // last row
             convertView.setPadding(0, 0, 0, mPadding);
         } else {
             // middle rows
-            convertView.setPadding(0, 0 ,0, 0);
+            convertView.setPadding(0, 0, 0, 0);
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean hasStableIds() {
         return true;
@@ -157,7 +153,9 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
     }
 
     @Override
-    public long getItemId(int pos) { return pos; }
+    public long getItemId(int pos) {
+        return pos;
+    }
 
     /**
      * Method used to cache the data used to populate the list or grid. The idea
@@ -200,16 +198,6 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
     }
 
     /**
-     * @param album The key used to find the cached album to remove
-     */
-    public void removeFromCache(final Album album) {
-        if (mImageFetcher != null) {
-            mImageFetcher.removeFromCache(
-                    ImageFetcher.generateAlbumCacheKey(album.mAlbumName, album.mArtistName));
-        }
-    }
-
-    /**
      * Flushes the disk cache.
      */
     public void flush() {
@@ -218,6 +206,7 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
 
     /**
      * Gets the item position for a given id
+     *
      * @param id identifies the object
      * @return the position if found, -1 otherwise
      */

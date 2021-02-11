@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -43,16 +44,27 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
     }
 
     @Override
-    public int getCount() { return mSongs.size(); }
+    public int getCount() {
+        return mSongs.size();
+    }
 
     @Override
-    public Song getItem(int pos) { return mSongs.get(pos); }
+    public Song getItem(int pos) {
+        return mSongs.get(pos);
+    }
 
     @Override
-    public long getItemId(int pos) { return pos; }
+    public long getItemId(int pos) {
+        return pos;
+    }
 
-    protected long getSourceId() { return mSourceId; }
-    protected void setSourceId(long id) { mSourceId = id; }
+    protected long getSourceId() {
+        return mSourceId;
+    }
+
+    protected void setSourceId(long id) {
+        mSourceId = id;
+    }
 
     public void setCurrentlyPlayingTrack(MusicPlaybackTrack currentTrack) {
         if (mCurrentlyPlayingTrack == null || !mCurrentlyPlayingTrack.equals(currentTrack)) {
@@ -63,12 +75,12 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
 
     @Override
     public View getView(int pos, View convertView, ViewGroup parent) {
-        if(convertView == null) {
+        if (convertView == null) {
             convertView = mInflater.inflate(rowLayoutId(), parent, false);
             convertView.setTag(newHolder(convertView, mImageFetcher));
         }
 
-        Holder holder = (Holder)convertView.getTag();
+        Holder holder = (Holder) convertView.getTag();
 
         Song song = getItem(pos);
         holder.update(song);
@@ -88,30 +100,35 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
     }
 
     protected abstract int rowLayoutId();
+
     protected abstract void onLoading();
+
     protected abstract void onNoResults();
+
     protected abstract Config.IdType getSourceType();
 
-    @Override // OnItemClickListener
+    @Override
     public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
         // id is in this case the index in the underlying collection,
         // which is what we are interested in here -- so use as position
-        int position = (int)id;
+        int position = (int) id;
         // ignore clicks on the header
-        if(id < 0) { return; }
+        if (id < 0) {
+            return;
+        }
         // play clicked song and enqueue the rest of the songs in the Adapter
         int songCount = getCount();
         long[] toPlay = new long[songCount];
         // add all songs to list
-        for(int i = 0; i < songCount; i++) {
+        for (int i = 0; i < songCount; i++) {
             toPlay[i] = getItem(i).mSongId;
         }
         // specify the song position to start playing
         MusicUtils.playAll(mActivity, toPlay, position, getSourceId(), getSourceType(), false);
     }
 
-    @Override // LoaderCallbacks
-    public void onLoadFinished(Loader<List<Song>> loader, List<Song> songs) {
+    @Override
+    public void onLoadFinished(@NonNull Loader<List<Song>> loader, List<Song> songs) {
         if (songs.isEmpty()) {
             onNoResults();
             return;
@@ -120,8 +137,8 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
         notifyDataSetChanged();
     }
 
-    @Override // LoaderCallbacks
-    public void onLoaderReset(Loader<List<Song>> loader) {
+    @Override
+    public void onLoaderReset(@NonNull Loader<List<Song>> loader) {
         mSongs = Collections.emptyList();
         notifyDataSetChanged();
         mImageFetcher.flush();
@@ -142,9 +159,9 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
 
         protected Holder(View root, ImageFetcher fetcher) {
             this.fetcher = fetcher;
-            title = (TextView)root.findViewById(R.id.title);
-            popupMenuButton = (PopupMenuButton)root.findViewById(R.id.overflow);
-            playIcon = (ImageView)root.findViewById(R.id.now_playing);
+            title = (TextView) root.findViewById(R.id.title);
+            popupMenuButton = (PopupMenuButton) root.findViewById(R.id.overflow);
+            playIcon = (ImageView) root.findViewById(R.id.now_playing);
         }
 
         protected abstract void update(Song song);

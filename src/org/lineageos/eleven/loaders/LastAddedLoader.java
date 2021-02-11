@@ -48,9 +48,6 @@ public class LastAddedLoader extends SectionCreator.SimpleListLoader<Song> {
         super(context);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Song> loadInBackground() {
         // Create the xCursor
@@ -92,7 +89,6 @@ public class LastAddedLoader extends SectionCreator.SimpleListLoader<Song> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
         return mSongList;
     }
@@ -101,13 +97,15 @@ public class LastAddedLoader extends SectionCreator.SimpleListLoader<Song> {
      * @param context The {@link Context} to use.
      * @return The {@link Cursor} used to run the song query.
      */
-    public static final Cursor makeLastAddedCursor(final Context context) {
+    public static Cursor makeLastAddedCursor(final Context context) {
         // timestamp of four weeks ago
         long fourWeeksAgo = (System.currentTimeMillis() / 1000) - (4 * 3600 * 24 * 7);
         // possible saved timestamp caused by user "clearing" the last added playlist
         long cutoff = PreferenceUtils.getInstance(context).getLastAddedCutoff() / 1000;
         // use the most recent of the two timestamps
-        if(cutoff < fourWeeksAgo) { cutoff = fourWeeksAgo; }
+        if (cutoff < fourWeeksAgo) {
+            cutoff = fourWeeksAgo;
+        }
 
         String selection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''" +
@@ -115,7 +113,7 @@ public class LastAddedLoader extends SectionCreator.SimpleListLoader<Song> {
                 cutoff;
 
         return context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                new String[] {
+                new String[]{
                         /* 0 */
                         BaseColumns._ID,
                         /* 1 */

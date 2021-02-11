@@ -60,9 +60,6 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         mPlaylistID = playlistId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Song> loadInBackground() {
         final int playlistCount = countPlaylist(getContext(), mPlaylistID);
@@ -158,19 +155,19 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
         return mSongList;
     }
 
     /**
      * Cleans up the playlist based on the passed in cursor's data
-     * @param context The {@link Context} to use
+     *
+     * @param context    The {@link Context} to use
      * @param playlistId playlistId to clean up
-     * @param cursor data to repopulate the playlist with
+     * @param cursor     data to repopulate the playlist with
      */
     private static void cleanupPlaylist(final Context context, final long playlistId,
-                                 final Cursor cursor) {
+                                        final Cursor cursor) {
         Log.w(TAG, "Cleaning up playlist: " + playlistId);
 
         final int idCol = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID);
@@ -213,7 +210,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
 
     /**
      * Returns the playlist count for the raw playlist mapping table
-     * @param context The {@link Context} to use
+     *
+     * @param context    The {@link Context} to use
      * @param playlistId playlistId to count
      * @return the number of tracks in the raw playlist mapping table
      */
@@ -246,16 +244,16 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
     /**
      * Creates the {@link Cursor} used to run the query.
      *
-     * @param context The {@link Context} to use.
+     * @param context    The {@link Context} to use.
      * @param playlistID The playlist the songs belong to.
      * @return The {@link Cursor} used to run the song query.
      */
-    public static final Cursor makePlaylistSongCursor(final Context context, final Long playlistID) {
+    public static Cursor makePlaylistSongCursor(final Context context, final Long playlistID) {
         String mSelection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''";
         return context.getContentResolver().query(
                 MediaStore.Audio.Playlists.Members.getContentUri("external", playlistID),
-                new String[] {
+                new String[]{
                         /* 0 */
                         MediaStore.Audio.Playlists.Members._ID,
                         /* 1 */
