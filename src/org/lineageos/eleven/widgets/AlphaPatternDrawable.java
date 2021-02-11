@@ -1,14 +1,20 @@
 /*
- * Copyright (C) 2010 Daniel Nilsson Copyright (C) 2012 THe CyanogenMod Project
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by
- * applicable law or agreed to in writing, software distributed under the
- * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
- * OF ANY KIND, either express or implied. See the License for the specific
- * language governing permissions and limitations under the License.
+ * Copyright (C) 2010 Daniel Nilsson
+ * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.widgets;
 
 import android.graphics.Bitmap;
@@ -51,41 +57,26 @@ public class AlphaPatternDrawable extends Drawable {
         mPaintGray.setColor(0xffcbcbcb);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void draw(final Canvas canvas) {
         canvas.drawBitmap(mBitmap, null, getBounds(), mPaint);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getOpacity() {
         return PixelFormat.OPAQUE;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setAlpha(final int alpha) {
         throw new UnsupportedOperationException("Alpha is not supported by this drawable.");
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void setColorFilter(final ColorFilter cf) {
         throw new UnsupportedOperationException("ColorFilter is not supported by this drawable.");
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onBoundsChange(final Rect bounds) {
         super.onBoundsChange(bounds);

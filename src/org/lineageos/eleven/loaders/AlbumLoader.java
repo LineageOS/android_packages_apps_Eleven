@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 
@@ -29,6 +27,7 @@ import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.provider.LocalizedStore;
 import org.lineageos.eleven.provider.LocalizedStore.SortParameter;
 import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.utils.EmptyCursor;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
@@ -48,7 +47,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     /**
      * The result
      */
-    private ArrayList<Album> mAlbumsList = Lists.newArrayList();
+    private final ArrayList<Album> mAlbumsList = Lists.newArrayList();
 
     /**
      * Additional selection filter
@@ -72,9 +71,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         mArtistId = artistId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Album> loadInBackground() {
         // Create the Cursor
@@ -116,7 +112,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
 
         return mAlbumsList;
@@ -144,11 +139,14 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
      * @param artistId The artistId we want to find albums for or null if we want all albums
      * @return The {@link Cursor} used to run the album query.
      */
-    public static final Cursor makeAlbumCursor(final Context context, final Long artistId) {
+    public static Cursor makeAlbumCursor(final Context context, final Long artistId) {
         // requested album ordering
         final String albumSortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
         Uri uri = MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
         if (artistId != null) {
+            if (artistId == -1) {
+                return new EmptyCursor();
+            }
             uri = MediaStore.Audio.Artists.Albums.getContentUri("external", artistId);
         }
 
@@ -169,7 +167,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         // if our sort is a localized-based sort, grab localized data from the store
         final SortParameter sortParameter = getSortParameter(albumSortOrder);
         if (sortParameter != null && cursor != null) {
-            final boolean descending = MusicUtils.isSortOrderDesending(albumSortOrder);
+            final boolean descending = MusicUtils.isSortOrderDescending(albumSortOrder);
             return LocalizedStore.getInstance(context).getLocalizedSort(cursor,
                     AlbumColumns.ALBUM_ID, SortParameter.Album, sortParameter,
                     descending, artistId == null);
