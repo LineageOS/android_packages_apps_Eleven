@@ -55,9 +55,6 @@ public class ProfileSongAdapter extends SongAdapter {
         mHeaderId = headerId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
 
@@ -73,9 +70,6 @@ public class ProfileSongAdapter extends SongAdapter {
         return super.getView(position, convertView, parent);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     protected boolean showNowPlayingIndicator(final Song song, final int position) {
         return super.showNowPlayingIndicator(song, position)
                 && mCurrentlyPlayingTrack.mSourcePosition == position - NUM_HEADERS;
@@ -90,9 +84,6 @@ public class ProfileSongAdapter extends SongAdapter {
         return super.isEnabled(position);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getViewTypeCount() {
         return super.getViewTypeCount() + NUM_HEADERS;

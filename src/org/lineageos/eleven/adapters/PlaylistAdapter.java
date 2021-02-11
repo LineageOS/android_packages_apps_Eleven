@@ -66,9 +66,6 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
         super(context, 0);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         // Recycle ViewHolder's items
@@ -87,7 +84,7 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
             // set the pop up menu listener
             holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         } else {
-            holder = (MusicHolder)convertView.getTag();
+            holder = (MusicHolder) convertView.getTag();
         }
 
         // Retrieve the data holder
@@ -128,29 +125,19 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
         }
 
 
-
         return convertView;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean hasStableIds() {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getViewTypeCount() {
         return VIEW_TYPE_COUNT;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getItemViewType(int position) {
         if (getItem(position).isSmartPlaylist()) {

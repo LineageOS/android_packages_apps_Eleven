@@ -2933,13 +2933,13 @@ public class MusicPlaybackService extends Service
         public void onReceive(final Context context, final Intent intent) {
             final String command = intent.getStringExtra(CMDNAME);
 
-            if (AppWidgetSmall.CMDAPPWIDGETUPDATE.equals(command)) {
+            if (AppWidgetSmall.APP_WIDGET_UPDATE.equals(command)) {
                 final int[] small = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
                 mAppWidgetSmall.performUpdate(MusicPlaybackService.this, small);
-            } else if (AppWidgetLarge.CMDAPPWIDGETUPDATE.equals(command)) {
+            } else if (AppWidgetLarge.APP_WIDGET_UPDATE.equals(command)) {
                 final int[] large = intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
                 mAppWidgetLarge.performUpdate(MusicPlaybackService.this, large);
-            } else if (AppWidgetLargeAlternate.CMDAPPWIDGETUPDATE.equals(command)) {
+            } else if (AppWidgetLargeAlternate.APP_WIDGET_UPDATE.equals(command)) {
                 final int[] largeAlt = intent
                         .getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS);
                 mAppWidgetLargeAlternate.performUpdate(MusicPlaybackService.this, largeAlt);

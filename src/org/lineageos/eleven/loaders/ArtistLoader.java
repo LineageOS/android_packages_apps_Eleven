@@ -41,7 +41,7 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
     /**
      * The result
      */
-    private ArrayList<Artist> mArtistsList = Lists.newArrayList();
+    private final ArrayList<Artist> mArtistsList = Lists.newArrayList();
 
     /**
      * Constructor of <code>ArtistLoader</code>
@@ -92,7 +92,6 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
 
         return mArtistsList;
@@ -116,7 +115,7 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
      * @param context The {@link Context} to use.
      * @return The {@link Cursor} used to run the artist query.
      */
-    public static final Cursor makeArtistCursor(final Context context) {
+    public static Cursor makeArtistCursor(final Context context) {
         // requested artist ordering
         final String artistSortOrder = PreferenceUtils.getInstance(context).getArtistSortOrder();
 

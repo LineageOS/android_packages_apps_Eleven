@@ -43,15 +43,12 @@ public class QueueLoader extends WrappedAsyncTaskLoader<List<Song>> {
         super(context);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Song> loadInBackground() {
         // Create the Cursor
         NowPlayingCursor cursor = new NowPlayingCursor(getContext());
         // Gather the data
-        if (cursor != null && cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
             do {
                 // Copy the song Id
                 final long id = cursor.getLong(0);
@@ -85,10 +82,7 @@ public class QueueLoader extends WrappedAsyncTaskLoader<List<Song>> {
             } while (cursor.moveToNext());
         }
         // Close the cursor
-        if (cursor != null) {
-            cursor.close();
-            cursor = null;
-        }
+        cursor.close();
         return mSongList;
     }
 
@@ -98,7 +92,7 @@ public class QueueLoader extends WrappedAsyncTaskLoader<List<Song>> {
      * @param context The {@link Context} to use.
      * @return The {@link Cursor} used to run the song query.
      */
-    public static final Cursor makeQueueCursor(final Context context) {
+    public static Cursor makeQueueCursor(final Context context) {
         return new NowPlayingCursor(context);
     }
 }

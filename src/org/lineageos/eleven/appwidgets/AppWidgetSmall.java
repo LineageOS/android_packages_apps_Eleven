@@ -36,7 +36,7 @@ import org.lineageos.eleven.ui.activities.HomeActivity;
 @SuppressLint("NewApi")
 public class AppWidgetSmall extends AppWidgetBase {
 
-    public static final String CMDAPPWIDGETUPDATE = "app_widget_small_update";
+    public static final String APP_WIDGET_UPDATE = "app_widget_small_update";
 
     private static AppWidgetSmall mInstance;
 
@@ -47,15 +47,12 @@ public class AppWidgetSmall extends AppWidgetBase {
         return mInstance;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onUpdate(final Context context, final AppWidgetManager appWidgetManager,
             final int[] appWidgetIds) {
         defaultAppWidget(context, appWidgetIds);
         final Intent updateIntent = new Intent(MusicPlaybackService.SERVICECMD);
-        updateIntent.putExtra(MusicPlaybackService.CMDNAME, AppWidgetSmall.CMDAPPWIDGETUPDATE);
+        updateIntent.putExtra(MusicPlaybackService.CMDNAME, AppWidgetSmall.APP_WIDGET_UPDATE);
         updateIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
         updateIntent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
         context.sendBroadcast(updateIntent);
@@ -149,7 +146,7 @@ public class AppWidgetSmall extends AppWidgetBase {
     }
 
     /**
-     * Link up various button actions using {@link PendingIntents}.
+     * Link up various button actions using {@link PendingIntent}s.
      *
      */
     private void linkButtons(final Context context, final RemoteViews views) {

@@ -23,8 +23,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.ImageView;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
@@ -66,7 +66,7 @@ public class ImageFetcher extends ImageWorker {
      * @param context The {@link Context} to use
      * @return A new instance of this class.
      */
-    public static final ImageFetcher getInstance(final Context context) {
+    public static ImageFetcher getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new ImageFetcher(context.getApplicationContext());
         }
@@ -79,8 +79,9 @@ public class ImageFetcher extends ImageWorker {
 
     /**
      * Loads a playlist's most played song's artist image
+     *
      * @param playlistId id of the playlist
-     * @param imageView imageview to load into
+     * @param imageView  imageview to load into
      */
     public void loadPlaylistArtistImage(final long playlistId, final ImageView imageView) {
         loadPlaylistImage(playlistId, PlaylistWorkerType.Artist, imageView);
@@ -88,8 +89,9 @@ public class ImageFetcher extends ImageWorker {
 
     /**
      * Loads a playlist's most played songs into a combined image, or show 1 if not enough images
+     *
      * @param playlistId id of the playlist
-     * @param imageView imageview to load into
+     * @param imageView  imageview to load into
      */
     public void loadPlaylistCoverArtImage(final long playlistId, final ImageView imageView) {
         loadPlaylistImage(playlistId, PlaylistWorkerType.CoverArt, imageView);
@@ -114,7 +116,7 @@ public class ImageFetcher extends ImageWorker {
     }
 
     public void updateScrimImage(final AlbumScrimImage image,
-            final ColorExtractor.Callback callback) {
+                                 final ColorExtractor.Callback callback) {
         if (mUseBlur) {
             loadCurrentBlurredArtwork(image);
         } else {
@@ -128,7 +130,7 @@ public class ImageFetcher extends ImageWorker {
     private void loadCurrentBlurredArtwork(final AlbumScrimImage image) {
         loadBlurImage(getCurrentCacheKey(),
                 MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                image, ImageType.ALBUM);
+                image);
     }
 
     private void loadCurrentGradientArtwork(final ColorExtractor.Callback callback) {
@@ -156,14 +158,6 @@ public class ImageFetcher extends ImageWorker {
      */
     public void loadArtistImage(final String key, final ImageView imageView, boolean scaleImgToView) {
         loadImage(key, key, null, -1, imageView, ImageType.ARTIST, scaleImgToView);
-    }
-
-    /**
-     * Used to fetch the current artist image.
-     */
-    public void loadCurrentArtistImage(final ImageView imageView) {
-        loadImage(MusicUtils.getArtistName(), MusicUtils.getArtistName(), null, -1, imageView,
-                ImageType.ARTIST);
     }
 
     /**
@@ -212,15 +206,15 @@ public class ImageFetcher extends ImageWorker {
      * Finds cached or downloads album art. Used in {@link MusicPlaybackService}
      * to set the current album art in the notification and lock screen
      *
-     * @param albumName  The name of the current album
-     * @param albumId    The ID of the current album
-     * @param artistName The album artist in case we should have to download
-     *                   missing artwork
+     * @param albumName    The name of the current album
+     * @param albumId      The ID of the current album
+     * @param artistName   The album artist in case we should have to download
+     *                     missing artwork
      * @param smallArtwork Get the small version of the default artwork if no artwork exists
      * @return The album art as an {@link Bitmap}
      */
     public BitmapWithColors getArtwork(final String albumName, final long albumId,
-            final String artistName, boolean smallArtwork) {
+                                       final String artistName, boolean smallArtwork) {
         final String key = String.valueOf(albumId);
         final Bitmap artwork = getArtworkBitmap(albumName, albumId);
         if (artwork != null) {
@@ -266,8 +260,8 @@ public class ImageFetcher extends ImageWorker {
      *
      * @param selectedImage Uri of the Image to decode
      * @return A {@link Bitmap} sampled down from the original with the same
-     *         aspect ratio and dimensions that are equal to or greater than the
-     *         requested width and height
+     * aspect ratio and dimensions that are equal to or greater than the
+     * requested width and height
      */
     public static Bitmap decodeSampledBitmapFromUri(ContentResolver cr, final Uri selectedImage) {
         // First decode with inJustDecodeBounds=true to check dimensions
@@ -312,14 +306,14 @@ public class ImageFetcher extends ImageWorker {
      * decoding but results in a larger bitmap which isn't as useful for caching
      * purposes.
      *
-     * @param options An options object with out* params already populated (run
-     *            through a decode* method with inJustDecodeBounds==true
-     * @param reqWidth The requested width of the resulting bitmap
+     * @param options   An options object with out* params already populated (run
+     *                  through a decode* method with inJustDecodeBounds==true
+     * @param reqWidth  The requested width of the resulting bitmap
      * @param reqHeight The requested height of the resulting bitmap
      * @return The value to be used for inSampleSize
      */
-    public static final int calculateInSampleSize(final BitmapFactory.Options options,
-                                                  final int reqWidth, final int reqHeight) {
+    public static int calculateInSampleSize(final BitmapFactory.Options options,
+                                            final int reqWidth, final int reqHeight) {
         /* Raw height and width of image */
         final int height = options.outHeight;
         final int width = options.outWidth;
@@ -327,9 +321,9 @@ public class ImageFetcher extends ImageWorker {
 
         if (height > reqHeight || width > reqWidth) {
             if (width > height) {
-                inSampleSize = Math.round((float)height / (float)reqHeight);
+                inSampleSize = Math.round((float) height / (float) reqHeight);
             } else {
-                inSampleSize = Math.round((float)width / (float)reqWidth);
+                inSampleSize = Math.round((float) width / (float) reqWidth);
             }
 
             // This offers some additional logic in case the image has a strange

@@ -32,14 +32,10 @@ public class LruCache<K, V> {
 
     private final int maxSize;
 
-    /** Size of this cache in units. Not necessarily the number of elements. */
+    /**
+     * Size of this cache in units. Not necessarily the number of elements.
+     */
     private int size;
-
-    private int putCount;
-
-    private int createCount;
-
-    private int evictionCount;
 
     private int hitCount;
 
@@ -47,9 +43,9 @@ public class LruCache<K, V> {
 
     /**
      * @param maxSize for caches that do not override {@link #sizeOf}, this is
-     *            the maximum number of entries in the cache. For all other
-     *            caches, this is the maximum sum of the sizes of the entries in
-     *            this cache.
+     *                the maximum number of entries in the cache. For all other
+     *                caches, this is the maximum sum of the sizes of the entries in
+     *                this cache.
      */
     public LruCache(final int maxSize) {
         if (maxSize <= 0) {
@@ -93,7 +89,6 @@ public class LruCache<K, V> {
         }
 
         synchronized (this) {
-            this.createCount++;
             mapValue = map.put(key, createdValue);
 
             if (mapValue != null) {
@@ -126,7 +121,6 @@ public class LruCache<K, V> {
 
         V previous;
         synchronized (this) {
-            this.putCount++;
             this.size += safeSizeOf(key, value);
             previous = this.map.put(key, value);
             if (previous != null) {
@@ -144,7 +138,7 @@ public class LruCache<K, V> {
 
     /**
      * @param maxSize the maximum size of the cache before returning. May be -1
-     *            to evict even 0-sized elements.
+     *                to evict even 0-sized elements.
      */
     public void trimToSize(final int maxSize) {
         while (true) {
@@ -165,7 +159,6 @@ public class LruCache<K, V> {
                 value = toEvict.getValue();
                 this.map.remove(key);
                 this.size -= safeSizeOf(key, value);
-                this.evictionCount++;
             }
 
             entryRemoved(true, key, value, null);
@@ -206,14 +199,14 @@ public class LruCache<K, V> {
      * The method is called without synchronization: other threads may access
      * the cache while this method is executing.
      *
-     * @param evicted true if the entry is being removed to make space, false if
-     *            the removal was caused by a {@link #put} or {@link #remove}.
+     * @param evicted  true if the entry is being removed to make space, false if
+     *                 the removal was caused by a {@link #put} or {@link #remove}.
      * @param newValue the new value for {@code key}, if it exists. If non-null,
-     *            this removal was caused by a {@link #put}. Otherwise it was
-     *            caused by an eviction or a {@link #remove}.
+     *                 this removal was caused by a {@link #put}. Otherwise it was
+     *                 caused by an eviction or a {@link #remove}.
      */
     protected void entryRemoved(final boolean evicted, final K key, final V oldValue,
-            final V newValue) {
+                                final V newValue) {
     }
 
     /**
@@ -267,59 +260,6 @@ public class LruCache<K, V> {
      */
     public synchronized final int size() {
         return this.size;
-    }
-
-    /**
-     * For caches that do not override {@link #sizeOf}, this returns the maximum
-     * number of entries in the cache. For all other caches, this returns the
-     * maximum sum of the sizes of the entries in this cache.
-     */
-    public synchronized final int maxSize() {
-        return this.maxSize;
-    }
-
-    /**
-     * Returns the number of times {@link #get} returned a value.
-     */
-    public synchronized final int hitCount() {
-        return this.hitCount;
-    }
-
-    /**
-     * Returns the number of times {@link #get} returned null or required a new
-     * value to be created.
-     */
-    public synchronized final int missCount() {
-        return this.missCount;
-    }
-
-    /**
-     * Returns the number of times {@link #create(Object)} returned a value.
-     */
-    public synchronized final int createCount() {
-        return this.createCount;
-    }
-
-    /**
-     * Returns the number of times {@link #put} was called.
-     */
-    public synchronized final int putCount() {
-        return this.putCount;
-    }
-
-    /**
-     * Returns the number of values that have been evicted.
-     */
-    public synchronized final int evictionCount() {
-        return this.evictionCount;
-    }
-
-    /**
-     * Returns a copy of the current contents of the cache, ordered from least
-     * recently accessed to most recently accessed.
-     */
-    public synchronized final Map<K, V> snapshot() {
-        return new LinkedHashMap<>(this.map);
     }
 
     @SuppressLint("DefaultLocale")

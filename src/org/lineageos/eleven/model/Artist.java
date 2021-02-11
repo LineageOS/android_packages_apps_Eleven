@@ -15,6 +15,8 @@ package org.lineageos.eleven.model;
 
 import android.text.TextUtils;
 
+import java.util.Objects;
+
 /**
  * A class that represents an artist.
  *
@@ -50,13 +52,13 @@ public class Artist {
     /**
      * Constructor of <code>Artist</code>
      *
-     * @param artistId The Id of the artist
-     * @param artistName The artist name
-     * @param songNumber The number of songs for the artist
+     * @param artistId    The Id of the artist
+     * @param artistName  The artist name
+     * @param songNumber  The number of songs for the artist
      * @param albumNumber The number of albums for the artist
      */
-    public Artist(final long artistId, final String artistName, final int songNumber,
-            final int albumNumber) {
+    public Artist(final long artistId, final String artistName,
+                  final int songNumber, final int albumNumber) {
         super();
         mArtistId = artistId;
         mArtistName = artistName;
@@ -64,48 +66,20 @@ public class Artist {
         mAlbumNumber = albumNumber;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + mAlbumNumber;
-        result = prime * result + (int) mArtistId;
-        result = prime * result + (mArtistName == null ? 0 : mArtistName.hashCode());
-        result = prime * result + mSongNumber;
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Artist artist = (Artist) o;
+        return mArtistId == artist.mArtistId &&
+                mAlbumNumber == artist.mAlbumNumber &&
+                mSongNumber == artist.mSongNumber &&
+                Objects.equals(mArtistName, artist.mArtistName);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public boolean equals(final Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Artist other = (Artist)obj;
-        if (mAlbumNumber != other.mAlbumNumber) {
-            return false;
-        }
-        if (mArtistId != other.mArtistId) {
-            return false;
-        }
-        if (!TextUtils.equals(mArtistName, other.mArtistName)) {
-            return false;
-        }
-        if (mSongNumber != other.mSongNumber) {
-            return false;
-        }
-        return true;
+    public int hashCode() {
+        return Objects.hash(mArtistId, mArtistName, mAlbumNumber, mSongNumber);
     }
 
     /**

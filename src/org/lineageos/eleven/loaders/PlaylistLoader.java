@@ -50,12 +50,9 @@ public class PlaylistLoader extends WrappedAsyncTaskLoader<List<Playlist>> {
         super(context);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Playlist> loadInBackground() {
-        // Add the deafult playlits to the adapter
+        // Add the default playlist to the adapter
         makeDefaultPlaylists();
 
         // Create the Cursor
@@ -112,9 +109,9 @@ public class PlaylistLoader extends WrappedAsyncTaskLoader<List<Playlist>> {
      * @param context The {@link Context} to use.
      * @return The {@link Cursor} used to run the playlist query.
      */
-    public static final Cursor makePlaylistCursor(final Context context) {
+    public static Cursor makePlaylistCursor(final Context context) {
         return context.getContentResolver().query(MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
-                new String[] {
+                new String[]{
                         /* 0 */
                         BaseColumns._ID,
                         /* 1 */

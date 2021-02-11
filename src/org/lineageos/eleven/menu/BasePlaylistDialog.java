@@ -28,6 +28,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 import org.lineageos.eleven.R;
@@ -60,7 +61,7 @@ public abstract class BasePlaylistDialog extends DialogFragment implements TextW
 
     @NonNull
     @Override
-    public Dialog onCreateDialog(@NonNull final Bundle savedInstanceState) {
+    public Dialog onCreateDialog(@Nullable final Bundle savedInstanceState) {
         mPlaylistDialog = new AlertDialog.Builder(getActivity()).create();
         mPlaylistDialog.setButton(Dialog.BUTTON_POSITIVE, getString(R.string.save),
                 (dialog, which) -> {
@@ -106,7 +107,7 @@ public abstract class BasePlaylistDialog extends DialogFragment implements TextW
 
     @Override
     public void beforeTextChanged(final CharSequence s, final int start, final int count,
-                final int after) {
+                                  final int after) {
         /* Nothing to do */
     }
 

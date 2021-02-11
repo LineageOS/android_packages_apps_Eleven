@@ -20,6 +20,7 @@ package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.CursorWrapper;
 import android.net.Uri;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
@@ -48,7 +49,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     /**
      * The result
      */
-    private ArrayList<Album> mAlbumsList = Lists.newArrayList();
+    private final ArrayList<Album> mAlbumsList = Lists.newArrayList();
 
     /**
      * Additional selection filter
@@ -63,7 +64,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     }
 
     /**
-     * @param context The {@link Context} to use
+     * @param context  The {@link Context} to use
      * @param artistId The artistId to filter against or null if none
      */
     public AlbumLoader(final Context context, final Long artistId) {
@@ -72,9 +73,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         mArtistId = artistId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Album> loadInBackground() {
         // Create the Cursor
@@ -106,7 +104,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
                 final Album album = new Album(id, albumName, artist, songCount, year);
 
                 if (cursor instanceof SortedCursor) {
-                    album.mBucketLabel = (String)((SortedCursor) cursor).getExtraData();
+                    album.mBucketLabel = (String) ((SortedCursor) cursor).getExtraData();
                 }
 
                 // Add everything up
@@ -116,7 +114,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
 
         return mAlbumsList;
@@ -124,6 +121,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
 
     /**
      * For string-based sorts, return the localized store sort parameter, otherwise return null
+     *
      * @param sortOrder the song ordering preference selected by the user
      */
     private static LocalizedStore.SortParameter getSortParameter(String sortOrder) {
@@ -140,11 +138,11 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     /**
      * Creates the {@link Cursor} used to run the query.
      *
-     * @param context The {@link Context} to use.
+     * @param context  The {@link Context} to use.
      * @param artistId The artistId we want to find albums for or null if we want all albums
      * @return The {@link Cursor} used to run the album query.
      */
-    public static final Cursor makeAlbumCursor(final Context context, final Long artistId) {
+    public static Cursor makeAlbumCursor(final Context context, final Long artistId) {
         // requested album ordering
         final String albumSortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
         Uri uri = MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
@@ -153,7 +151,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         }
 
         Cursor cursor = context.getContentResolver().query(uri,
-                new String[] {
+                new String[]{
                         /* 0 */
                         AlbumColumns.ALBUM_ID,
                         /* 1 */

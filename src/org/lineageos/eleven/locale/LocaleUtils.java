@@ -19,16 +19,13 @@ package org.lineageos.eleven.locale;
 import android.icu.text.AlphabeticIndex;
 import android.util.Log;
 
-import androidx.annotation.VisibleForTesting;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Locale;
 
 /**
  * This utility class provides specialized handling for locale specific
  * information: labels, name lookup keys.
- *
+ * <p>
  * This class has been modified from ContactLocaleUtils.java for now to rip out
  * Chinese/Japanese specific Alphabetic Indexers because the MediaProvider's sort
  * is using a Collator sort which can result in confusing behavior, so for now we will
@@ -52,17 +49,17 @@ public class LocaleUtils {
     /**
      * This class is the default implementation and should be the base class
      * for other locales.
-     *
+     * <p>
      * sortKey: same as name
      * nameLookupKeys: none
      * labels: uses ICU AlphabeticIndex for labels and extends by labeling
-     *     phone numbers "#".  Eg English labels are: [A-Z], #, " "
+     * phone numbers "#".  Eg English labels are: [A-Z], #, " "
      */
     private static class LocaleUtilsBase {
         private static final String EMPTY_STRING = "";
         private static final String NUMBER_STRING = "#";
 
-        protected final AlphabeticIndex.ImmutableIndex mAlphabeticIndex;
+        protected final AlphabeticIndex.ImmutableIndex<?> mAlphabeticIndex;
         private final int mAlphabeticIndexBucketCount;
         private final int mNumberBucketIndex;
 
@@ -80,27 +77,23 @@ public class LocaleUtils {
             // Cyrillic because their alphabets are complementary supersets
             // of Russian.
             final Locale secondaryLocale = locales.getSecondaryLocale();
-            AlphabeticIndex ai = new AlphabeticIndex(locales.getPrimaryLocale())
-                .setMaxLabelCount(300);
+            AlphabeticIndex<?> ai = new AlphabeticIndex<>(locales.getPrimaryLocale())
+                    .setMaxLabelCount(300);
             if (secondaryLocale != null) {
                 ai.addLabels(secondaryLocale);
             }
             mAlphabeticIndex = ai.addLabels(Locale.ENGLISH)
-                .addLabels(Locale.JAPANESE)
-                .addLabels(Locale.KOREAN)
-                .addLabels(LOCALE_THAI)
-                .addLabels(LOCALE_ARABIC)
-                .addLabels(LOCALE_HEBREW)
-                .addLabels(LOCALE_GREEK)
-                .addLabels(LOCALE_UKRAINIAN)
-                .addLabels(LOCALE_SERBIAN)
-                .buildImmutableIndex();
+                    .addLabels(Locale.JAPANESE)
+                    .addLabels(Locale.KOREAN)
+                    .addLabels(LOCALE_THAI)
+                    .addLabels(LOCALE_ARABIC)
+                    .addLabels(LOCALE_HEBREW)
+                    .addLabels(LOCALE_GREEK)
+                    .addLabels(LOCALE_UKRAINIAN)
+                    .addLabels(LOCALE_SERBIAN)
+                    .buildImmutableIndex();
             mAlphabeticIndexBucketCount = mAlphabeticIndex.getBucketCount();
             mNumberBucketIndex = mAlphabeticIndexBucketCount - 1;
-        }
-
-        public String getSortKey(String name) {
-            return name;
         }
 
         /**
@@ -127,9 +120,9 @@ public class LocaleUtils {
                     prefixIsNumeric = true;
                     break;
                 } else if (!Character.isSpaceChar(codePoint) &&
-                           codePoint != '+' && codePoint != '(' &&
-                           codePoint != ')' && codePoint != '.' &&
-                           codePoint != '-' && codePoint != '#') {
+                        codePoint != '+' && codePoint != '(' &&
+                        codePoint != ')' && codePoint != '.' &&
+                        codePoint != '-' && codePoint != '#') {
                     break;
                 }
                 offset += Character.charCount(codePoint);
@@ -172,15 +165,10 @@ public class LocaleUtils {
             return mAlphabeticIndex.getBucket(bucketIndex).getLabel();
         }
 
-        @SuppressWarnings("unused")
-        public Iterator<String> getNameLookupKeys(String name, int nameStyle) {
-            return null;
-        }
-
         public ArrayList<String> getLabels() {
             final int bucketCount = getBucketCount();
             final ArrayList<String> labels = new ArrayList<>(bucketCount);
-            for(int i = 0; i < bucketCount; ++i) {
+            for (int i = 0; i < bucketCount; ++i) {
                 labels.add(getBucketLabel(i));
             }
             return labels;
@@ -215,27 +203,14 @@ public class LocaleUtils {
         return sSingleton;
     }
 
-    @VisibleForTesting
-    public static synchronized void setLocale(Locale locale) {
-        setLocales(new LocaleSet(locale));
-    }
-
     public static synchronized void setLocales(LocaleSet locales) {
         if (sSingleton == null || !sSingleton.isLocale(locales)) {
             sSingleton = new LocaleUtils(locales);
         }
     }
 
-    public String getSortKey(String name, int nameStyle) {
-        return mUtils.getSortKey(name);
-    }
-
     public int getBucketIndex(String name) {
         return mUtils.getBucketIndex(name);
-    }
-
-    public int getBucketCount() {
-        return mUtils.getBucketCount();
     }
 
     public String getBucketLabel(int bucketIndex) {

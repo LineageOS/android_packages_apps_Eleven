@@ -18,9 +18,8 @@ package org.lineageos.eleven.locale;
 
 import android.text.TextUtils;
 
-import androidx.annotation.VisibleForTesting;
-
 import java.util.Locale;
+import java.util.Objects;
 
 public class LocaleSet {
     private static final String CHINESE_LANGUAGE = Locale.CHINESE.getLanguage().toLowerCase();
@@ -58,7 +57,7 @@ public class LocaleSet {
         }
 
         public boolean isLocale(Locale locale) {
-            return mLocale == null ? (locale == null) : mLocale.equals(locale);
+            return Objects.equals(mLocale, locale);
         }
 
         public boolean isLocaleCJK() {
@@ -102,12 +101,10 @@ public class LocaleSet {
             final String[] locales = localeString.split(";");
             final Locale primaryLocale = Locale.forLanguageTag(locales[0]);
             // ICU tags undefined/unparseable locales "und"
-            if (primaryLocale != null &&
-                    !TextUtils.equals(primaryLocale.toLanguageTag(), "und")) {
+            if (!TextUtils.equals(primaryLocale.toLanguageTag(), "und")) {
                 if (locales.length > 1 && locales[1] != null) {
                     final Locale secondaryLocale = Locale.forLanguageTag(locales[1]);
-                    if (secondaryLocale != null &&
-                            !TextUtils.equals(secondaryLocale.toLanguageTag(), "und")) {
+                    if (!TextUtils.equals(secondaryLocale.toLanguageTag(), "und")) {
                         return new LocaleSet(primaryLocale, secondaryLocale);
                     }
                 }
@@ -123,7 +120,8 @@ public class LocaleSet {
     public LocaleSet(Locale primaryLocale, Locale secondaryLocale) {
         mPrimaryLocale = new LocaleWrapper(primaryLocale);
         mSecondaryLocale = new LocaleWrapper(
-                mPrimaryLocale.equals(secondaryLocale) ? null : secondaryLocale);
+                Objects.equals(mPrimaryLocale, new LocaleWrapper(secondaryLocale)) ?
+                        null : secondaryLocale);
     }
 
     public LocaleSet normalize() {
@@ -164,53 +162,6 @@ public class LocaleSet {
 
     public boolean isSecondaryLocale(Locale locale) {
         return mSecondaryLocale.isLocale(locale);
-    }
-
-    private static final String SCRIPT_SIMPLIFIED_CHINESE = "Hans";
-    private static final String SCRIPT_TRADITIONAL_CHINESE = "Hant";
-
-    @VisibleForTesting
-    public static boolean isLocaleSimplifiedChinese(Locale locale) {
-        // language must match
-        if (locale == null || !TextUtils.equals(locale.getLanguage(), CHINESE_LANGUAGE)) {
-            return false;
-        }
-        // script is optional but if present must match
-        if (!TextUtils.isEmpty(locale.getScript())) {
-            return locale.getScript().equals(SCRIPT_SIMPLIFIED_CHINESE);
-        }
-        // if no script, must match known country
-        return locale.equals(Locale.SIMPLIFIED_CHINESE);
-    }
-
-    public boolean isPrimaryLocaleSimplifiedChinese() {
-        return isLocaleSimplifiedChinese(getPrimaryLocale());
-    }
-
-    public boolean isSecondaryLocaleSimplifiedChinese() {
-        return isLocaleSimplifiedChinese(getSecondaryLocale());
-    }
-
-    @VisibleForTesting
-    public static boolean isLocaleTraditionalChinese(Locale locale) {
-        // language must match
-        if (locale == null || !TextUtils.equals(locale.getLanguage(), CHINESE_LANGUAGE)) {
-            return false;
-        }
-        // script is optional but if present must match
-        if (!TextUtils.isEmpty(locale.getScript())) {
-            return locale.getScript().equals(SCRIPT_TRADITIONAL_CHINESE);
-        }
-        // if no script, must match known country
-        return locale.equals(Locale.TRADITIONAL_CHINESE);
-    }
-
-    public boolean isPrimaryLocaleTraditionalChinese() {
-        return isLocaleTraditionalChinese(getPrimaryLocale());
-    }
-
-    public boolean isSecondaryLocaleTraditionalChinese() {
-        return isLocaleTraditionalChinese(getSecondaryLocale());
     }
 
     public boolean isPrimaryLocaleCJK() {

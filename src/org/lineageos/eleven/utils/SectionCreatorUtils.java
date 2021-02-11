@@ -22,7 +22,6 @@ import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.model.Artist;
-import org.lineageos.eleven.model.SearchResult;
 import org.lineageos.eleven.model.Song;
 
 import java.util.List;
@@ -611,79 +610,5 @@ public class SectionCreatorUtils {
         }
 
         return sectionCreator;
-    }
-
-    /**
-     * Returns an song comparison based on the current sort
-     * @param context Context for string generation
-     * @return the song comparison method
-     */
-    public static IItemCompare<SearchResult> createSearchResultComparison(final Context context) {
-        return new IItemCompare<SearchResult>() {
-
-            @Override
-            public String createSectionHeader(SearchResult first, SearchResult second) {
-                if (first == null || first.mType != second.mType) {
-                    return createHeaderLabel(second);
-                }
-
-                return null;
-            }
-
-            @Override
-            public String createHeaderLabel(SearchResult item) {
-                switch (item.mType) {
-                    case Artist:
-                        return context.getString(R.string.page_artists);
-                    case Album:
-                        return context.getString(R.string.page_albums);
-                    case Song:
-                        return context.getString(R.string.page_songs);
-                    case Playlist:
-                        return context.getString(R.string.page_playlists);
-                }
-
-                return null;
-            }
-
-            @Override
-            public String createSectionFooter(SearchResult first, SearchResult second,
-                                              List<SearchResult> items, int firstIndex) {
-                if (second == null ||
-                        (first != null && first.mType != second.mType)) {
-                    // if we don't have SEARCH_NUM_RESULTS_TO_GET # of the same type of items
-                    // then we don't have enough to show the footer.  For example, if we show 5
-                    // items but only the last 2 items are artists, that means we only have 2
-                    // so there is no point in showing the "Show All" footer
-                    // We start from 1 because we don't need to count
-                    // the first item itself
-                    for (int i = 1; i < Config.SEARCH_NUM_RESULTS_TO_GET; i++) {
-                        if (firstIndex - i < 0 || items.get(firstIndex - i).mType != first.mType) {
-                            return null;
-                        }
-                    }
-
-                    return createFooterLabel(first);
-                }
-
-                return null;
-            }
-
-            @Override
-            public String createFooterLabel(SearchResult item) {
-                switch (item.mType) {
-                    case Artist:
-                        return context.getString(R.string.footer_search_artists);
-                    case Album:
-                        return context.getString(R.string.footer_search_albums);
-                    case Song:
-                        return context.getString(R.string.footer_search_songs);
-                    case Playlist:
-                        return context.getString(R.string.footer_search_playlists);
-                }
-
-                return null;
-            }
-        };
     }
 }

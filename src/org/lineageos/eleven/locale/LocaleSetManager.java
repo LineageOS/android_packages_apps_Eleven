@@ -59,7 +59,7 @@ public class LocaleSetManager {
                 .getProperty(PropertiesStore.DbProperties.ICU_VERSION);
         if (!String.valueOf(Build.VERSION.SDK_INT).equals(storedICUversion)) {
             Log.d(TAG, "ICU version has changed from: " + storedICUversion + " to "
-                    + String.valueOf(Build.VERSION.SDK_INT));
+                    + Build.VERSION.SDK_INT);
             return true;
         }
 
@@ -69,17 +69,20 @@ public class LocaleSetManager {
 
     /**
      * Sets up the locale set
+     *
      * @param localeSet value to set it to
      */
     public void updateLocaleSet(LocaleSet localeSet) {
         Log.d(TAG, "Locale Changed from: " + mCurrentLocales + " to " + localeSet);
         mCurrentLocales = localeSet;
+        //noinspection AccessStaticViaInstance
         LocaleUtils.getInstance().setLocales(mCurrentLocales);
     }
 
     /**
      * This takes an old and new locale set and creates a combined locale set.  If they share a
      * primary then the old one is returned
+     *
      * @return the combined locale set
      */
     private static LocaleSet getCombinedLocaleSet(LocaleSet oldLocales, Locale newLocale) {

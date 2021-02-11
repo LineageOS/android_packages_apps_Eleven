@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -45,8 +46,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
 
     private final Context mContext;
 
-    private int mCurrentPage;
-
     /**
      * Constructor of <code>PagerAdatper<code>
      *
@@ -62,7 +61,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
      * internally instantiate)
      *
      * @param className The full qualified name of fragment class.
-     * @param params The instantiate params.
+     * @param params    The instantiate params.
      */
     @SuppressWarnings("synthetic-access")
     public void add(final Class<? extends Fragment> className, final Bundle params) {
@@ -90,12 +89,10 @@ public class PagerAdapter extends FragmentPagerAdapter {
         return getItem(position);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public Object instantiateItem(final ViewGroup container, final int position) {
-        final Fragment mFragment = (Fragment)super.instantiateItem(container, position);
+    @NonNull
+    public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
+        final Fragment mFragment = (Fragment) super.instantiateItem(container, position);
         final WeakReference<Fragment> mWeakFragment = mFragmentArray.get(position);
         if (mWeakFragment != null) {
             mWeakFragment.clear();
@@ -104,22 +101,17 @@ public class PagerAdapter extends FragmentPagerAdapter {
         return mFragment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
+    @NonNull
     public Fragment getItem(final int position) {
         final Holder mCurrentHolder = mHolderList.get(position);
-        final Fragment mFragment = Fragment.instantiate(mContext,
+        return Fragment.instantiate(mContext,
                 mCurrentHolder.mClassName, mCurrentHolder.mParams);
-        return mFragment;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void destroyItem(final ViewGroup container, final int position, final Object object) {
+    public void destroyItem(@NonNull final ViewGroup container, final int position,
+                            @NonNull final Object object) {
         super.destroyItem(container, position, object);
         final WeakReference<Fragment> mWeakFragment = mFragmentArray.get(position);
         if (mWeakFragment != null) {
@@ -127,39 +119,15 @@ public class PagerAdapter extends FragmentPagerAdapter {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getCount() {
         return mHolderList.size();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public CharSequence getPageTitle(final int position) {
         return mContext.getResources().getStringArray(R.array.page_titles)[position]
                 .toUpperCase(Locale.getDefault());
-    }
-
-    /**
-     * Method that returns the current page position.
-     *
-     * @return int The current page.
-     */
-    public int getCurrentPage() {
-        return mCurrentPage;
-    }
-
-    /**
-     * Method that sets the current page position.
-     *
-     * @param currentPage The current page.
-     */
-    protected void setCurrentPage(final int currentPage) {
-        mCurrentPage = currentPage;
     }
 
     /**
@@ -183,14 +151,14 @@ public class PagerAdapter extends FragmentPagerAdapter {
          */
         PLAYLIST(PlaylistFragment.class);
 
-        private Class<? extends Fragment> mFragmentClass;
+        private final Class<? extends Fragment> mFragmentClass;
 
         /**
          * Constructor of <code>MusicFragments</code>
          *
          * @param fragmentClass The fragment class
          */
-        private MusicFragments(final Class<? extends Fragment> fragmentClass) {
+        MusicFragments(final Class<? extends Fragment> fragmentClass) {
             mFragmentClass = fragmentClass;
         }
 

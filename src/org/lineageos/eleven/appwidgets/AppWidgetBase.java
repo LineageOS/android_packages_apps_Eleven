@@ -22,10 +22,9 @@ import android.content.Intent;
 public abstract class AppWidgetBase extends AppWidgetProvider {
 
     protected PendingIntent buildPendingIntent(Context context, final String action,
-            final ComponentName serviceName) {
+                                               final ComponentName serviceName) {
         Intent intent = new Intent(action);
         intent.setComponent(serviceName);
         return PendingIntent.getService(context, 0, intent, 0);
     }
-
 }

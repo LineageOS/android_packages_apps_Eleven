@@ -37,15 +37,11 @@ public class RecentStore {
 
     public void onCreate(final SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + RecentStoreColumns.NAME + " ("
-                + RecentStoreColumns.ID + " LONG NOT NULL," + RecentStoreColumns.TIMEPLAYED
+                + RecentStoreColumns.ID + " LONG NOT NULL," + RecentStoreColumns.TIME_PLAYED
                 + " LONG NOT NULL);");
     }
 
-    public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion) {
-        // No upgrade path needed yet
-    }
-
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onDowngrade(SQLiteDatabase db) {
         // If we ever have downgrade, drop the table to be safe
         db.execSQL("DROP TABLE IF EXISTS " + RecentStoreColumns.NAME);
         onCreate(db);
@@ -55,7 +51,7 @@ public class RecentStore {
      * @param context The {@link Context} to use
      * @return A new instance of this class.
      */
-    public static final synchronized RecentStore getInstance(final Context context) {
+    public static synchronized RecentStore getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new RecentStore(context.getApplicationContext());
         }
@@ -84,36 +80,34 @@ public class RecentStore {
             } finally {
                 if (mostRecentItem != null) {
                     mostRecentItem.close();
-                    mostRecentItem = null;
                 }
             }
 
             // add the entry
             final ContentValues values = new ContentValues(2);
             values.put(RecentStoreColumns.ID, songId);
-            values.put(RecentStoreColumns.TIMEPLAYED, System.currentTimeMillis());
+            values.put(RecentStoreColumns.TIME_PLAYED, System.currentTimeMillis());
             database.insert(RecentStoreColumns.NAME, null, values);
 
             // if our db is too large, delete the extra items
             Cursor oldest = null;
             try {
                 oldest = database.query(RecentStoreColumns.NAME,
-                        new String[]{RecentStoreColumns.TIMEPLAYED}, null, null, null, null,
-                        RecentStoreColumns.TIMEPLAYED + " ASC");
+                        new String[]{RecentStoreColumns.TIME_PLAYED}, null, null, null, null,
+                        RecentStoreColumns.TIME_PLAYED + " ASC");
 
                 if (oldest != null && oldest.getCount() > MAX_ITEMS_IN_DB) {
                     oldest.moveToPosition(oldest.getCount() - MAX_ITEMS_IN_DB);
                     long timeOfRecordToKeep = oldest.getLong(0);
 
                     database.delete(RecentStoreColumns.NAME,
-                            RecentStoreColumns.TIMEPLAYED + " < ?",
+                            RecentStoreColumns.TIME_PLAYED + " < ?",
                             new String[] { String.valueOf(timeOfRecordToKeep) });
 
                 }
             } finally {
                 if (oldest != null) {
                     oldest.close();
-                    oldest = null;
                 }
             }
         } finally {
@@ -147,17 +141,17 @@ public class RecentStore {
         final SQLiteDatabase database = mMusicDatabase.getReadableDatabase();
         return database.query(RecentStoreColumns.NAME,
                 new String[]{RecentStoreColumns.ID}, null, null, null, null,
-                RecentStoreColumns.TIMEPLAYED + " DESC", limit);
+                RecentStoreColumns.TIME_PLAYED + " DESC", limit);
     }
 
     public interface RecentStoreColumns {
         /* Table name */
-        public static final String NAME = "recenthistory";
+        String NAME = "recenthistory";
 
         /* Album IDs column */
-        public static final String ID = "songid";
+        String ID = "songid";
 
         /* Time played column */
-        public static final String TIMEPLAYED = "timeplayed";
+        String TIME_PLAYED = "timeplayed";
     }
 }

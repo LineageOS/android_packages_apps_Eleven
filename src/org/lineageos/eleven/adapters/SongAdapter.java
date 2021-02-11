@@ -96,9 +96,9 @@ public class SongAdapter extends ArrayAdapter<Song>
     /**
      * Constructor of <code>SongAdapter</code>
      *
-     * @param context The {@link Context} to use.
-     * @param layoutId The resource Id of the view to inflate.
-     * @param sourceId The source id that the adapter is created from
+     * @param context    The {@link Context} to use.
+     * @param layoutId   The resource Id of the view to inflate.
+     * @param sourceId   The source id that the adapter is created from
      * @param sourceType The source type that the adapter is created from
      */
     public SongAdapter(final Activity context, final int layoutId, final long sourceId,
@@ -113,9 +113,6 @@ public class SongAdapter extends ArrayAdapter<Song>
         mSourceType = sourceType;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         // Recycle ViewHolder's items
@@ -127,7 +124,7 @@ public class SongAdapter extends ArrayAdapter<Song>
 
             holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         } else {
-            holder = (MusicHolder)convertView.getTag();
+            holder = (MusicHolder) convertView.getTag();
         }
 
         // Retrieve the data holder
@@ -178,32 +175,23 @@ public class SongAdapter extends ArrayAdapter<Song>
 
     /**
      * Determines whether the song at the position should show the currently playing indicator
-     * @param song the song in question
+     *
+     * @param song     the song in question
      * @param position the position of the song
      * @return true if we want to show the indicator
      */
     protected boolean showNowPlayingIndicator(final Song song, final int position) {
-        if (mCurrentlyPlayingTrack != null
+        return mCurrentlyPlayingTrack != null
                 && mCurrentlyPlayingTrack.mSourceId == mSourceId
                 && mCurrentlyPlayingTrack.mSourceType == mSourceType
-                && mCurrentlyPlayingTrack.mId == song.mSongId) {
-            return true;
-        }
-
-        return false;
+                && mCurrentlyPlayingTrack.mId == song.mSongId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean hasStableIds() {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getViewTypeCount() {
         return VIEW_TYPE_COUNT;
@@ -214,6 +202,7 @@ public class SongAdapter extends ArrayAdapter<Song>
      * is to cache everything before {@code #getView(int, View, ViewGroup)} is
      * called.
      */
+    @Override
     public void buildCache() {
         mData = new DataHolder[getCount()];
         for (int i = 0; i < getCount(); i++) {
@@ -250,17 +239,9 @@ public class SongAdapter extends ArrayAdapter<Song>
     }
 
     /**
-     * @param artist The key used to find the cached artist to remove
-     */
-    public void removeFromCache(final Artist artist) {
-        if (mImageFetcher != null) {
-            mImageFetcher.removeFromCache(artist.mArtistName);
-        }
-    }
-
-    /**
      * Method that unloads and clears the items in the adapter
      */
+    @Override
     public void unload() {
         clear();
         mData = null;
@@ -269,11 +250,13 @@ public class SongAdapter extends ArrayAdapter<Song>
     /**
      * Do nothing.
      */
+    @Override
     public void flush() {
     }
 
     /**
      * Gets the item position for a given id
+     *
      * @param id identifies the object
      * @return the position if found, -1 otherwise
      */
@@ -285,7 +268,7 @@ public class SongAdapter extends ArrayAdapter<Song>
             }
         }
 
-        return  -1;
+        return -1;
     }
 
     public void setCurrentQueuePosition(long queuePosition) {
@@ -303,6 +286,7 @@ public class SongAdapter extends ArrayAdapter<Song>
 
     /**
      * Sets the currently playing track for the adapter to know when to show indicators
+     *
      * @param currentTrack the currently playing track
      * @return true if the current track is different
      */

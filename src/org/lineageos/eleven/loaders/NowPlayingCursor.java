@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.AbstractCursor;
 import android.database.Cursor;
-import android.os.RemoteException;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AudioColumns;
@@ -68,9 +67,6 @@ public class NowPlayingCursor extends AbstractCursor {
         return mSize;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean onMove(final int oldPosition, final int newPosition) {
         if (oldPosition == newPosition) {
@@ -88,9 +84,6 @@ public class NowPlayingCursor extends AbstractCursor {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String getString(final int column) {
         try {
@@ -101,17 +94,11 @@ public class NowPlayingCursor extends AbstractCursor {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public short getShort(final int column) {
         return mQueueCursor.getShort(column);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getInt(final int column) {
         try {
@@ -122,9 +109,6 @@ public class NowPlayingCursor extends AbstractCursor {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public long getLong(final int column) {
         try {
@@ -135,49 +119,31 @@ public class NowPlayingCursor extends AbstractCursor {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public float getFloat(final int column) {
         return mQueueCursor.getFloat(column);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public double getDouble(final int column) {
         return mQueueCursor.getDouble(column);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getType(final int column) {
         return mQueueCursor.getType(column);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean isNull(final int column) {
         return mQueueCursor.isNull(column);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public String[] getColumnNames() {
         return PROJECTION;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @SuppressWarnings("deprecation")
     @Override
     public void deactivate() {
@@ -186,18 +152,12 @@ public class NowPlayingCursor extends AbstractCursor {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean requery() {
         makeNowPlayingCursor();
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void close() {
         try {
@@ -205,7 +165,7 @@ public class NowPlayingCursor extends AbstractCursor {
                 mQueueCursor.close();
                 mQueueCursor = null;
             }
-        } catch (final Exception close) {
+        } catch (final Exception ignored) {
         }
         super.close();
     };
@@ -270,11 +230,10 @@ public class NowPlayingCursor extends AbstractCursor {
 
     /**
      * @param which The position to remove
-     * @return True if sucessfull, false othersise
      */
-    public boolean removeItem(final int which) {
+    public void removeItem(final int which) {
         if (!MusicUtils.removeTrackAtPosition(mNowPlaying[which], which)) {
-            return false;
+            return;
         }
         int i = which;
         mSize--;
@@ -283,6 +242,5 @@ public class NowPlayingCursor extends AbstractCursor {
             i++;
         }
         onMove(-1, mCurPos);
-        return true;
     }
 }

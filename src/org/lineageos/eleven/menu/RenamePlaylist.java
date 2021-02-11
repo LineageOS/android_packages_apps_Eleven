@@ -18,6 +18,7 @@
 
 package org.lineageos.eleven.menu;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -60,15 +61,19 @@ public class RenamePlaylist extends BasePlaylistDialog {
 
     @Override
     public void initialize(final Bundle savedInstanceState) {
+        final Bundle args = getArguments();
         mRenameId = savedInstanceState != null
                 ? savedInstanceState.getLong(EXTRA_RENAME)
-                : getArguments().getLong(EXTRA_RENAME, -1);
+                : args == null ? -1 : args.getLong(EXTRA_RENAME, -1);
         final String originalName = MusicUtils.getNameForPlaylist(getContext(), mRenameId);
         mDefaultName = savedInstanceState != null
                 ? savedInstanceState.getString(EXTRA_DEFAULT_NAME)
                 : originalName;
         if (mRenameId < 0 || originalName == null || mDefaultName == null) {
-            getDialog().dismiss();
+            final Dialog dialog = getDialog();
+            if (dialog != null) {
+                dialog.dismiss();
+            }
             return;
         }
         mPrompt = getString(R.string.create_playlist_prompt);
@@ -77,15 +82,21 @@ public class RenamePlaylist extends BasePlaylistDialog {
     @Override
     public void onSaveClick() {
         final String playlistName = mPlaylist.getText().toString();
-        if (!TextUtils.isEmpty(playlistName)) {
-            final ContentResolver resolver = getActivity().getContentResolver();
-            final ContentValues values = new ContentValues(1);
-            values.put(Audio.Playlists.NAME, playlistName);
-            resolver.update(Audio.Playlists.EXTERNAL_CONTENT_URI, values,
-                    MediaStore.Audio.Playlists._ID + "=?", new String[]{
-                            String.valueOf(mRenameId)
-                    });
-            getDialog().dismiss();
+        final Activity activity = getActivity();
+        if (activity == null || TextUtils.isEmpty(playlistName)) {
+            return;
+        }
+
+        final ContentResolver resolver = activity.getContentResolver();
+        final ContentValues values = new ContentValues(1);
+        values.put(Audio.Playlists.NAME, playlistName);
+        resolver.update(Audio.Playlists.EXTERNAL_CONTENT_URI, values,
+                MediaStore.Audio.Playlists._ID + "=?", new String[]{
+                        String.valueOf(mRenameId)
+                });
+        final Dialog dialog = getDialog();
+        if (dialog != null) {
+            dialog.dismiss();
         }
     }
 
