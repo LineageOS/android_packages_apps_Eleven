@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -91,11 +91,7 @@ public class PlaylistArtworkStore {
         db.execSQL(builder);
     }
 
-    public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion) {
-        // No upgrade path needed yet
-    }
-
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onDowngrade(SQLiteDatabase db) {
         // If we ever have downgrade, drop the table to be safe
         db.execSQL("DROP TABLE IF EXISTS " + PlaylistArtworkStoreColumns.NAME);
         onCreate(db);
@@ -123,6 +119,7 @@ public class PlaylistArtworkStore {
 
     /**
      * Updates the time and the # of songs in the db for the artist section of the table
+     *
      * @param playlistId playlist identifier
      */
     public void updateArtistArt(final long playlistId) {
@@ -133,6 +130,7 @@ public class PlaylistArtworkStore {
 
     /**
      * Updates the time and the # of songs in the db for the cover art of the table
+     *
      * @param playlistId playlist identifier
      */
     public void updateCoverArt(final long playlistId) {
@@ -143,11 +141,13 @@ public class PlaylistArtworkStore {
 
     /**
      * Internal function to update the entry for the columns passed in
-     * @param playlistId playlist identifier
-     * @param columnName the column to update to the current time
+     *
+     * @param playlistId      playlist identifier
+     * @param columnName      the column to update to the current time
      * @param countColumnName the column to set the # of songs to based on the playlist
      */
-    private void updateOrInsertTime(final long playlistId, final String columnName, final String countColumnName) {
+    private void updateOrInsertTime(final long playlistId, final String columnName,
+                                    final String countColumnName) {
         final SQLiteDatabase database = mMusicDatabase.getWritableDatabase();
         database.beginTransaction();
 
@@ -173,10 +173,12 @@ public class PlaylistArtworkStore {
 
     /**
      * Internal function to get the existing values for a playlist entry
+     *
      * @param playlistId playlist identifier
      * @return the content values
      */
-    private ContentValues getExistingContentValues(final SQLiteDatabase database, final long playlistId) {
+    private ContentValues getExistingContentValues(final SQLiteDatabase database,
+                                                   final long playlistId) {
         final ContentValues values = new ContentValues(5);
         try (final Cursor c = getEntry(database, playlistId)) {
             if (c != null && c.moveToFirst()) {
@@ -193,12 +195,13 @@ public class PlaylistArtworkStore {
 
     /**
      * Internal function to return whether the columns show that this needs an update
-     * @param playlistId playlist identifier
-     * @param columnName the column to inspect
+     *
+     * @param playlistId      playlist identifier
+     * @param columnName      the column to inspect
      * @param countColumnName the column count to inspect
-     * @return
      */
-    private boolean needsUpdate(final long playlistId, final String columnName, final String countColumnName) {
+    private boolean needsUpdate(final long playlistId, final String columnName,
+                                final String countColumnName) {
         final SQLiteDatabase database = mMusicDatabase.getReadableDatabase();
         try (final Cursor c = getEntry(database, playlistId)) {
             if (c != null && c.moveToFirst()) {
@@ -220,6 +223,7 @@ public class PlaylistArtworkStore {
 
     /**
      * Internal function to get the cursor entry for the playlist
+     *
      * @param playlistId playlist identifier
      * @return cursor
      */
@@ -230,21 +234,21 @@ public class PlaylistArtworkStore {
 
     public interface PlaylistArtworkStoreColumns {
         /* Table name */
-        public static final String NAME = "playlist_details";
+        String NAME = "playlist_details";
 
         /* Playlist ID column */
-        public static final String ID = "playlistid";
+        String ID = "playlistid";
 
         /* When the top artist was last updated */
-        public static final String LAST_UPDATE_ARTIST = "last_updated_artist";
+        String LAST_UPDATE_ARTIST = "last_updated_artist";
 
         /* The number of songs when we last updated the artist */
-        public static final String NUM_SONGS_LAST_UPDATE_ARTIST = "num_songs_last_updated_artist";
+        String NUM_SONGS_LAST_UPDATE_ARTIST = "num_songs_last_updated_artist";
 
         /* When the cover art was last updated */
-        public static final String LAST_UPDATE_COVER = "last_updated_cover";
+        String LAST_UPDATE_COVER = "last_updated_cover";
 
         /* The number of songs when we last updated the cover */
-        public static final String NUM_SONGS_LAST_UPDATE_COVER = "num_songs_last_updated_cover";
+        String NUM_SONGS_LAST_UPDATE_COVER = "num_songs_last_updated_cover";
     }
 }
