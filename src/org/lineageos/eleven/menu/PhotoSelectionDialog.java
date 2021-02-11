@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.menu;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import org.lineageos.eleven.Config;
@@ -55,15 +54,15 @@ public class PhotoSelectionDialog extends DialogFragment {
     private String mKey;
 
     /**
-     * Empty constructor as per the {@link Fragment} documentation
+     * Empty constructor as per the Fragment documentation
      */
     public PhotoSelectionDialog() {
     }
 
     /**
      * @param title The dialog title.
-     * @param type Either Artist or Album
-     * @param key key to query ImageFetcher
+     * @param type  Either Artist or Album
+     * @param key   key to query ImageFetcher
      * @return A new instance of the dialog.
      */
     public static PhotoSelectionDialog newInstance(final String title, final ProfileType type,
@@ -77,12 +76,11 @@ public class PhotoSelectionDialog extends DialogFragment {
         return frag;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @NonNull
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
-        final String title = getArguments().getString(Config.NAME);
+        final Bundle args = getArguments();
+        final String title = args == null ? "" : args.getString(Config.NAME);
         switch (mProfileType) {
             case ARTIST:
                 setArtistChoices();
@@ -101,22 +99,21 @@ public class PhotoSelectionDialog extends DialogFragment {
         final ListAdapter adapter = new ArrayAdapter<>(activity,
                 android.R.layout.select_dialog_item, mChoices);
         return new AlertDialog.Builder(activity).setTitle(title)
-                .setAdapter(adapter, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(final DialogInterface dialog, final int which) {
-                        switch (which) {
-                            case NEW_PHOTO:
+                .setAdapter(adapter, (dialog, which) -> {
+                    switch (which) {
+                        case NEW_PHOTO:
+                            if (activity != null) {
                                 activity.selectNewPhoto(mKey);
-                                break;
-                            case OLD_PHOTO:
-                                MusicUtils.selectOldPhoto(activity, mKey);
-                                break;
-                            default:
-                                break;
-                        }
+                            }
+                            break;
+                        case OLD_PHOTO:
+                            MusicUtils.selectOldPhoto(activity, mKey);
+                            break;
+                        default:
+                            break;
                     }
-                }).create();
+                })
+                .create();
     }
 
     /**
@@ -147,6 +144,9 @@ public class PhotoSelectionDialog extends DialogFragment {
      * Easily detect the MIME type
      */
     public enum ProfileType {
-        ARTIST, ALBUM, ProfileType, OTHER
+        ARTIST,
+        ALBUM,
+        PROFILE_TYPE,
+        OTHER
     }
 }

@@ -1,21 +1,27 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.ui.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -36,9 +42,6 @@ import org.lineageos.eleven.utils.SectionCreatorUtils;
  */
 public class SongFragment extends BasicSongFragment {
 
-    /**
-     * {@inheritDoc}
-     */
     public void playAll(int position) {
         int internalPosition = mAdapter.getInternalPosition(position);
         final long[] list = mAdapter.getUnderlyingAdapter().getSongIds();
@@ -47,9 +50,7 @@ public class SongFragment extends BasicSongFragment {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @NonNull
     @Override
     public Loader<SectionListContainer<Song>> onCreateLoader(final int id, final Bundle args) {
         // show the loading progress bar
@@ -74,40 +75,9 @@ public class SongFragment extends BasicSongFragment {
         return PagerAdapter.MusicFragments.SONG.ordinal();
     }
 
-    /**
-     * Scrolls the list to the currently playing song when the user touches the
-     * header in the {@link TitlePageIndicator}.
-     */
-    public void scrollToCurrentSong() {
-        final int currentSongPosition = getItemPositionBySong();
-
-        if (currentSongPosition != 0) {
-            mListView.setSelection(currentSongPosition);
-        }
-    }
-
-    /**
-     * @return The position of an item in the list based on the name of the
-     * currently playing song.
-     */
-    private int getItemPositionBySong() {
-        final long trackId = MusicUtils.getCurrentAudioId();
-        if (mAdapter == null) {
-            return 0;
-        }
-
-        int position = mAdapter.getItemPosition(trackId);
-
-        // if for some reason we don't find the item, just jump to the top
-        if (position < 0) {
-            return 0;
-        }
-
-        return position;
-    }
-
     @Override
     public LoaderManager getFragmentLoaderManager() {
-        return getParentFragment().getLoaderManager();
+        final Fragment parent = getParentFragment();
+        return parent == null ? null : LoaderManager.getInstance(parent);
     }
 }
