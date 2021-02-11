@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui.fragments;
 
 import android.view.View;
@@ -36,8 +37,9 @@ public abstract class FadingBarFragment extends DetailFragment implements OnScro
 
     protected abstract void setHeaderPosition(float y);
 
-    @Override // OnScrollListener
-    public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+    @Override
+    public void onScroll(AbsListView view, int firstVisibleItem,
+                         int visibleItemCount, int totalItemCount) {
         View firstChild = view.getChildAt(0);
         if (firstChild == null) {
             return;
@@ -51,9 +53,11 @@ public abstract class FadingBarFragment extends DetailFragment implements OnScro
             setHeaderPosition(firstChildY);
             // calculate alpha for the action bar
             alpha = ACTION_BAR_DEFAULT_OPACITY +
-                    (int)((255 - ACTION_BAR_DEFAULT_OPACITY) * -firstChildY /
-                            (float)(firstChild.getHeight()));
-            if(alpha > 255) { alpha = 255; }
+                    (int) ((255 - ACTION_BAR_DEFAULT_OPACITY) * -firstChildY /
+                            (float) (firstChild.getHeight()));
+            if (alpha > 255) {
+                alpha = 255;
+            }
         } else {
             // header off screen
             setHeaderPosition(-getHeaderHeight());
@@ -65,8 +69,7 @@ public abstract class FadingBarFragment extends DetailFragment implements OnScro
         }
     }
 
-    @Override // OnScrollListener
+    @Override
     public void onScrollStateChanged(AbsListView view, int scrollState) {
-
     }
 }

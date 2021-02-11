@@ -56,18 +56,15 @@ public final class Config {
      */
     public static final String ALBUM_YEAR = "album_year";
 
-    /** number of songs in a album or track list */
+    /**
+     * number of songs in a album or track list
+     */
     public static final String SONG_COUNT = "song_count";
 
     /**
      * The MIME type passed to a the profile activity
      */
     public static final String MIME_TYPE = "mime_type";
-
-    /**
-     * Play from search intent
-     */
-    public static final String PLAY_FROM_SEARCH = "android.media.action.MEDIA_PLAY_FROM_SEARCH";
 
     /**
      * The smart playlist type
@@ -79,7 +76,7 @@ public final class Config {
      */
     public static final int SEARCH_NUM_RESULTS_TO_GET = 3;
 
-    public static enum SmartPlaylistType {
+    public enum SmartPlaylistType {
         LastAdded(-1, R.string.playlist_last_added),
         RecentlyPlayed(-2, R.string.playlist_recently_played),
         TopTracks(-3, R.string.playlist_top_tracks);

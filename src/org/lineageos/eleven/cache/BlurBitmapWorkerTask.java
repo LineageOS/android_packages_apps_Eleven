@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.cache;
 
 import android.content.Context;
@@ -35,12 +36,13 @@ import java.lang.ref.WeakReference;
  * This will download the image (if needed) and create a blur and set the scrim as well on the
  * BlurScrimImage
  */
-public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBitmapWorkerTask.ResultContainer> {
+public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
+        BlurBitmapWorkerTask.ResultContainer> {
 
     private static final String TAG = BlurBitmapWorkerTask.class.getSimpleName();
 
     // if the image is too small, the blur will look bad post scale up so we use the min size
-    // to scale up before bluring
+    // to scale up before blurring
     private static final int MIN_BITMAP_SIZE = 500;
     // number of times to run the blur
     private static final int NUM_BLUR_RUNS = 8;
@@ -65,10 +67,11 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
 
     /**
      * Constructor of <code>BlurBitmapWorkerTask</code>
-     * @param key used for caching the image
+     *
+     * @param key             used for caching the image
      * @param albumScrimImage The {@link AlbumScrimImage} to use.
-     * @param imageType The type of image URL to fetch for.
-     * @param fromDrawable what drawable to transition from
+     * @param imageType       The type of image URL to fetch for.
+     * @param fromDrawable    what drawable to transition from
      */
     public BlurBitmapWorkerTask(final String key, final AlbumScrimImage albumScrimImage,
                                 final ImageType imageType, final Drawable fromDrawable,
@@ -84,9 +87,6 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected ResultContainer doInBackground(final String... params) {
         if (isCancelled()) {
@@ -105,15 +105,16 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
 
             // if the image is too small, scale it up before running through the blur
             if (input.getWidth() < MIN_BITMAP_SIZE || input.getHeight() < MIN_BITMAP_SIZE) {
-                float multiplier = Math.max(MIN_BITMAP_SIZE / (float)input.getWidth(),
-                        MIN_BITMAP_SIZE / (float)input.getHeight());
-                input = input.createScaledBitmap(bitmap, (int)(input.getWidth() * multiplier),
-                        (int)(input.getHeight() * multiplier), true);
+                float multiplier = Math.max(MIN_BITMAP_SIZE / (float) input.getWidth(),
+                        MIN_BITMAP_SIZE / (float) input.getHeight());
+                input = Bitmap.createScaledBitmap(bitmap, (int) (input.getWidth() * multiplier),
+                        (int) (input.getHeight() * multiplier), true);
                 // since we created a new bitmap, we can re-use the bitmap for our output
                 output = input;
             } else {
                 // if we aren't creating a new bitmap, create a new output bitmap
-                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(), input.getConfig());
+                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(),
+                        input.getConfig());
             }
 
             // run the blur multiple times
@@ -151,9 +152,6 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
         return null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onPostExecute(ResultContainer resultContainer) {
         AlbumScrimImage albumScrimImage = mBlurScrimImage.get();
@@ -174,13 +172,11 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void, BlurBit
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected final ImageView getAttachedImageView() {
-        final AlbumScrimImage blurImage  = mBlurScrimImage.get();
-        final BitmapWorkerTask bitmapWorkerTask = ImageWorker.getBitmapWorkerTask(blurImage);
+        final AlbumScrimImage blurImage = mBlurScrimImage.get();
+        final BitmapWorkerTask<?, ?, ?> bitmapWorkerTask =
+                ImageWorker.getBitmapWorkerTask(blurImage);
         if (this == bitmapWorkerTask) {
             return blurImage.getImageView();
         }

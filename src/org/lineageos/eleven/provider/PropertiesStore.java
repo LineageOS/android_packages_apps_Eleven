@@ -1,6 +1,7 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2009 The Android Open Source Project
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,10 +13,11 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
 package org.lineageos.eleven.provider;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -25,7 +27,7 @@ public class PropertiesStore {
     private final MusicDB mMusicDatabase;
     private static PropertiesStore sInstance = null;
 
-    public static final synchronized PropertiesStore getInstance(final Context context) {
+    public static synchronized PropertiesStore getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new PropertiesStore(context.getApplicationContext());
         }
@@ -36,6 +38,7 @@ public class PropertiesStore {
         mMusicDatabase = MusicDB.getInstance(context);
     }
 
+    @SuppressLint("SQLiteString")
     public void onCreate(final SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + PropertiesColumns.TABLE_NAME + "(" +
                 PropertiesColumns.PROPERTY_KEY + " STRING PRIMARY KEY," +
@@ -49,7 +52,7 @@ public class PropertiesStore {
         }
     }
 
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onDowngrade(SQLiteDatabase db) {
         // If we ever have downgrade, drop the table to be safe
         db.execSQL("DROP TABLE IF EXISTS " + PropertiesColumns.TABLE_NAME);
         onCreate(db);
@@ -61,9 +64,9 @@ public class PropertiesStore {
 
     public String getProperty(String key, String defaultValue) {
         Cursor cursor = mMusicDatabase.getReadableDatabase().query(PropertiesColumns.TABLE_NAME,
-                new String[] { PropertiesColumns.PROPERTY_VALUE },
+                new String[]{PropertiesColumns.PROPERTY_VALUE},
                 PropertiesColumns.PROPERTY_KEY + "=?",
-                new String[] { key }, null, null, null);
+                new String[]{key}, null, null, null);
         try {
             if (cursor != null && cursor.moveToFirst()) {
                 return cursor.getString(0);
@@ -71,7 +74,6 @@ public class PropertiesStore {
         } finally {
             if (cursor != null) {
                 cursor.close();
-                cursor = null;
             }
         }
 

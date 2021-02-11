@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.cache;
 
 import android.content.ContentResolver;
@@ -23,14 +22,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.ImageView;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
+import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.colors.BitmapWithColors;
-import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.colors.ColorExtractor;
 import org.lineageos.eleven.widgets.AlbumScrimImage;
 import org.lineageos.eleven.widgets.LetterTileDrawable;
@@ -66,7 +64,7 @@ public class ImageFetcher extends ImageWorker {
      * @param context The {@link Context} to use
      * @return A new instance of this class.
      */
-    public static final ImageFetcher getInstance(final Context context) {
+    public static ImageFetcher getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new ImageFetcher(context.getApplicationContext());
         }
@@ -100,17 +98,16 @@ public class ImageFetcher extends ImageWorker {
      */
     public void loadAlbumImage(final String artistName, final String albumName, final long albumId,
                                final ImageView imageView) {
-        loadImage(generateAlbumCacheKey(albumName, artistName), artistName, albumName, albumId, imageView,
-                ImageType.ALBUM);
+        loadImage(generateAlbumCacheKey(albumName, artistName), artistName, albumName, albumId,
+                imageView, ImageType.ALBUM);
     }
 
     /**
      * Used to fetch the current artwork.
      */
     public void loadCurrentArtwork(final ImageView imageView) {
-        loadImage(getCurrentCacheKey(),
-                MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                imageView, ImageType.ALBUM);
+        loadImage(getCurrentCacheKey(), MusicUtils.getArtistName(), MusicUtils.getAlbumName(),
+                MusicUtils.getCurrentAlbumId(), imageView, ImageType.ALBUM);
     }
 
     public void updateScrimImage(final AlbumScrimImage image,
@@ -126,9 +123,8 @@ public class ImageFetcher extends ImageWorker {
      * Used to fetch the current artwork blurred.
      */
     private void loadCurrentBlurredArtwork(final AlbumScrimImage image) {
-        loadBlurImage(getCurrentCacheKey(),
-                MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                image, ImageType.ALBUM);
+        loadBlurImage(getCurrentCacheKey(), MusicUtils.getArtistName(), MusicUtils.getAlbumName(),
+                MusicUtils.getCurrentAlbumId(), image);
     }
 
     private void loadCurrentGradientArtwork(final ColorExtractor.Callback callback) {
@@ -154,16 +150,9 @@ public class ImageFetcher extends ImageWorker {
     /**
      * Used to fetch artist images. It also scales the image to fit the image view, if necessary.
      */
-    public void loadArtistImage(final String key, final ImageView imageView, boolean scaleImgToView) {
+    public void loadArtistImage(final String key, final ImageView imageView,
+                                boolean scaleImgToView) {
         loadImage(key, key, null, -1, imageView, ImageType.ARTIST, scaleImgToView);
-    }
-
-    /**
-     * Used to fetch the current artist image.
-     */
-    public void loadCurrentArtistImage(final ImageView imageView) {
-        loadImage(MusicUtils.getArtistName(), MusicUtils.getArtistName(), null, -1, imageView,
-                ImageType.ARTIST);
     }
 
     /**
