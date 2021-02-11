@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +22,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.util.AttributeSet;
@@ -70,14 +71,18 @@ public class AlbumScrimImage extends FrameLayout {
             return;
         }
 
-        Bitmap blurredBitmap = ((BitmapDrawable) ContextCompat.getDrawable(
-                getContext(), R.drawable.default_artwork_blur)).getBitmap();
+        final Drawable drawable = ContextCompat.getDrawable(getContext(),
+                R.drawable.default_artwork_blur);
+        if (!(drawable instanceof BitmapDrawable)) {
+            return;
+        }
+        final Bitmap blurredBitmap = ((BitmapDrawable) drawable).getBitmap();
 
-        TransitionDrawable imageTransition = ImageWorker.createImageTransitionDrawable(
+        final TransitionDrawable imageTransition = ImageWorker.createImageTransitionDrawable(
                 getResources(), mImageView.getDrawable(), blurredBitmap,
                 ImageWorker.FADE_IN_TIME_SLOW, true, true);
 
-        TransitionDrawable paletteTransition = ImageWorker.createPaletteTransition(this,
+        final TransitionDrawable paletteTransition = ImageWorker.createPaletteTransition(this,
                 Color.TRANSPARENT);
 
         setTransitionDrawable(imageTransition, paletteTransition);

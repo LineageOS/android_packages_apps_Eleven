@@ -1,20 +1,23 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.utils;
 
 import android.app.Activity;
-import android.app.SearchManager;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -38,7 +41,7 @@ public final class NavUtils {
     /**
      * Opens the profile of an artist.
      *
-     * @param context The {@link Activity} to use.
+     * @param context    The {@link Activity} to use.
      * @param artistName The name of the artist
      */
     public static void openArtistProfile(final Activity context, final String artistName) {
@@ -58,13 +61,13 @@ public final class NavUtils {
     /**
      * Opens the profile of an album.
      *
-     * @param context The {@link Activity} to use.
-     * @param albumName The name of the album
+     * @param context    The {@link Activity} to use.
+     * @param albumName  The name of the album
      * @param artistName The name of the album artist
-     * @param albumId The id of the album
+     * @param albumId    The id of the album
      */
     public static void openAlbumProfile(final Activity context,
-            final String albumName, final String artistName, final long albumId) {
+                                        final String albumName, final String artistName, final long albumId) {
 
         // Create a new bundle to transfer the album info
         final Bundle bundle = new Bundle();
@@ -93,8 +96,8 @@ public final class NavUtils {
     /**
      * Opens the playlist view
      *
-     * @param context The {@link Activity} to use.
-     * @param playlistId the id of the playlist
+     * @param context      The {@link Activity} to use.
+     * @param playlistId   the id of the playlist
      * @param playlistName the playlist name
      */
     public static void openPlaylist(final Activity context, final long playlistId,
@@ -123,7 +126,7 @@ public final class NavUtils {
     /**
      * Opens the sound effects panel AudioFX in LineageOS
      *
-     * @param context The {@link Activity} to use.
+     * @param context     The {@link Activity} to use.
      * @param requestCode The request code passed into startActivityForResult
      */
     public static void openEffectsPanel(final Activity context, final int requestCode) {

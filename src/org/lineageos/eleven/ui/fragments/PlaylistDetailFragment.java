@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui.fragments;
 
 import android.database.Cursor;
@@ -26,6 +27,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -48,7 +51,6 @@ import org.lineageos.eleven.utils.PlaylistPopupMenuHelper;
 import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.utils.PopupMenuHelper.PopupMenuType;
 import org.lineageos.eleven.utils.SongPopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 
@@ -64,11 +66,9 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
      */
     private static final int LOADER = 0;
 
-    private DragSortListView mListView;
     private ProfileSongAdapter mAdapter;
 
     private View mHeaderContainer;
-    private ImageView mPlaylistImageView;
 
     private LoadingEmptyContainer mLoadingEmptyContainer;
 
@@ -87,7 +87,9 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
     private PopupMenuHelper mPopupMenuHelper;
 
     @Override
-    protected String getTitle() { return mPlaylistName; }
+    protected String getTitle() {
+        return mPlaylistName;
+    }
 
     @Override
     protected int getLayoutToInflate() {
@@ -105,7 +107,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         mPlaylistName = MusicUtils.getNameForPlaylist(getActivity(), mPlaylistId);
     }
 
-    @Override // DetailFragment
+    @Override
     protected PopupMenuHelper createActionMenuHelper() {
         return new PlaylistPopupMenuHelper(
                 getActivity(), getChildFragmentManager(), PopupMenuType.Playlist) {
@@ -115,10 +117,12 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         };
     }
 
-    @Override // DetailFragment
-    protected int getShuffleTitleId() { return R.string.menu_shuffle_playlist; }
+    @Override
+    protected int getShuffleTitleId() {
+        return R.string.menu_shuffle_playlist;
+    }
 
-    @Override // DetailFragment
+    @Override
     protected void playShuffled() {
         MusicUtils.playPlaylist(getActivity(), mPlaylistId, true);
     }
@@ -127,7 +131,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        LoaderManager lm = getLoaderManager();
+        LoaderManager lm = LoaderManager.getInstance(this);
         lm.initLoader(0, getArguments(), this);
     }
 
@@ -135,7 +139,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mPopupMenuHelper = new SongPopupMenuHelper(getActivity(), getFragmentManager()) {
+        mPopupMenuHelper = new SongPopupMenuHelper(getActivity(), getChildFragmentManager()) {
             @Override
             public Song getSong(int position) {
                 if (position == 0) {
@@ -168,28 +172,33 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
                 mAdapter.remove(mSong);
                 mAdapter.buildCache();
                 mAdapter.notifyDataSetChanged();
-                MusicUtils.removeFromPlaylist(getActivity(), mSong.mSongId, mPlaylistId);
-                getLoaderManager().restartLoader(LOADER, null, PlaylistDetailFragment.this);
+                final FragmentActivity activity = getActivity();
+                if (activity != null) {
+                    MusicUtils.removeFromPlaylist(activity, mSong.mSongId, mPlaylistId);
+                }
+                LoaderManager.getInstance(PlaylistDetailFragment.this)
+                        .restartLoader(LOADER, null, PlaylistDetailFragment.this);
             }
         };
 
-        mPlaylistId = getArguments().getLong(Config.ID);
+        final Bundle args = getArguments();
+        mPlaylistId = args == null ? -1 : args.getLong(Config.ID);
         lookupName();
     }
 
     private void setupHero() {
-        mPlaylistImageView = (ImageView)mRootView.findViewById(R.id.image);
+        final ImageView playlistImageView = (ImageView) mRootView.findViewById(R.id.image);
         mHeaderContainer = mRootView.findViewById(R.id.playlist_header);
-        mNumberOfSongs = (TextView)mRootView.findViewById(R.id.number_of_songs_text);
-        mDurationOfPlaylist = (TextView)mRootView.findViewById(R.id.duration_text);
+        mNumberOfSongs = (TextView) mRootView.findViewById(R.id.number_of_songs_text);
+        mDurationOfPlaylist = (TextView) mRootView.findViewById(R.id.duration_text);
 
         final ImageFetcher imageFetcher = ImageFetcher.getInstance(getActivity());
-        imageFetcher.loadPlaylistArtistImage(mPlaylistId, mPlaylistImageView);
+        imageFetcher.loadPlaylistArtistImage(mPlaylistId, playlistImageView);
     }
 
     private void setupSongList() {
-        mListView = (DragSortListView) mRootView.findViewById(R.id.list_base);
-        mListView.setOnScrollListener(PlaylistDetailFragment.this);
+        final DragSortListView listView = (DragSortListView) mRootView.findViewById(R.id.list_base);
+        listView.setOnScrollListener(PlaylistDetailFragment.this);
 
         mAdapter = new ProfileSongAdapter(
                 mPlaylistId,
@@ -197,23 +206,19 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
                 R.layout.edit_track_list_item,
                 R.layout.faux_playlist_header
         );
-        mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
-        mListView.setAdapter(mAdapter);
+        mAdapter.setPopupMenuClickedListener((v, position) ->
+                mPopupMenuHelper.showPopupMenu(v, position));
+        listView.setAdapter(mAdapter);
         // Release any references to the recycled Views
-        mListView.setRecyclerListener(new RecycleHolder());
+        listView.setRecyclerListener(new RecycleHolder());
         // Play the selected song
-        mListView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
         // Set the drop listener
-        mListView.setDropListener(this);
+        listView.setDropListener(this);
         // Set the swipe to remove listener
-        mListView.setRemoveListener(this);
+        listView.setRemoveListener(this);
         // Quick scroll while dragging
-        mListView.setDragScrollProfile(this);
+        listView.setDragScrollProfile(this);
 
         // Adjust the progress bar padding to account for the header
         int padTop = getResources().getDimensionPixelSize(R.dimen.playlist_detail_header_height);
@@ -221,9 +226,9 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
 
         // set the loading and empty view container
         mLoadingEmptyContainer =
-                (LoadingEmptyContainer)mRootView.findViewById(R.id.loading_empty_container);
+                (LoadingEmptyContainer) mRootView.findViewById(R.id.loading_empty_container);
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
-        mListView.setEmptyView(mLoadingEmptyContainer);
+        listView.setEmptyView(mLoadingEmptyContainer);
     }
 
     private void setupNoResultsContainer(final NoResultsContainer container) {
@@ -231,9 +236,6 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         container.setSecondaryText(R.string.empty_playlist_secondary);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public float getSpeed(final float w, final long t) {
         if (w > 0.8f) {
@@ -243,9 +245,6 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void remove(final int which) {
         if (which == 0) {
@@ -257,16 +256,16 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         mAdapter.buildCache();
         mAdapter.notifyDataSetChanged();
         final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", mPlaylistId);
-        getActivity().getContentResolver().delete(uri,
-                MediaStore.Audio.Playlists.Members.AUDIO_ID + "=" + song.mSongId,
-                null);
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.getContentResolver().delete(uri,
+                    MediaStore.Audio.Playlists.Members.AUDIO_ID + "=" + song.mSongId,
+                    null);
+        }
 
         MusicUtils.refresh();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void drop(int from, int to) {
         from = Math.max(ProfileSongAdapter.NUM_HEADERS, from);
@@ -280,26 +279,29 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
 
         final int realFrom = from - ProfileSongAdapter.NUM_HEADERS;
         final int realTo = to - ProfileSongAdapter.NUM_HEADERS;
-        MediaStore.Audio.Playlists.Members.moveItem(getActivity().getContentResolver(),
-                mPlaylistId, realFrom, realTo);
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            MediaStore.Audio.Playlists.Members.moveItem(activity.getContentResolver(),
+                    mPlaylistId, realFrom, realTo);
+        }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
                             final long id) {
         if (position == 0) {
             return;
         }
-        Cursor cursor = PlaylistSongLoader.makePlaylistSongCursor(getActivity(),
+        final FragmentActivity activity = getActivity();
+        if (activity == null) {
+            return;
+        }
+        Cursor cursor = PlaylistSongLoader.makePlaylistSongCursor(activity,
                 mPlaylistId);
         final long[] list = MusicUtils.getSongListForCursor(cursor);
-        MusicUtils.playAll(getActivity(), list, position - ProfileSongAdapter.NUM_HEADERS,
+        MusicUtils.playAll(activity, list, position - ProfileSongAdapter.NUM_HEADERS,
                 mPlaylistId, Config.IdType.Playlist, false);
         cursor.close();
-        cursor = null;
     }
 
     @Override
@@ -314,7 +316,9 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         }
     }
 
-    protected int getHeaderHeight() { return mHeaderContainer.getHeight(); }
+    protected int getHeaderHeight() {
+        return mHeaderContainer.getHeight();
+    }
 
     protected void setHeaderPosition(float y) {
         // Offset the header height to account for the faux header
@@ -322,6 +326,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         mHeaderContainer.setY(y);
     }
 
+    @NonNull
     @Override
     public Loader<List<Song>> onCreateLoader(int i, Bundle bundle) {
         mLoadingEmptyContainer.showLoading();
@@ -330,7 +335,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
     }
 
     @Override
-    public void onLoadFinished(final Loader<List<Song>> loader, final List<Song> data) {
+    public void onLoadFinished(@NonNull final Loader<List<Song>> loader, final List<Song> data) {
         if (data.isEmpty()) {
             mLoadingEmptyContainer.showNoResults();
 
@@ -355,7 +360,11 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
             // re-enable the notify by calling notify dataset changes
             mAdapter.notifyDataSetChanged();
             // set the number of songs
-            String numberOfSongs = MusicUtils.makeLabel(getActivity(), R.plurals.Nsongs,
+            final FragmentActivity activity = getActivity();
+            if (activity == null) {
+                return;
+            }
+            String numberOfSongs = MusicUtils.makeLabel(activity, R.plurals.Nsongs,
                     data.size());
             mNumberOfSongs.setText(numberOfSongs);
 
@@ -367,13 +376,13 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
             }
 
             // set the duration
-            String durationString = MusicUtils.makeLongTimeString(getActivity(), duration);
+            String durationString = MusicUtils.makeLongTimeString(activity, duration);
             mDurationOfPlaylist.setText(durationString);
         }
     }
 
     @Override
-    public void onLoaderReset(final Loader<List<Song>> loader) {
+    public void onLoaderReset(@NonNull final Loader<List<Song>> loader) {
         // Clear the data in the adapter
         mAdapter.unload();
     }
@@ -381,7 +390,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
     @Override
     public void restartLoader() {
         lookupName(); // playlist name may have changed
-        if(mPlaylistName == null) {
+        if (mPlaylistName == null) {
             // if name is null, we've been deleted, so close the this fragment
             getContainingActivity().postRemoveFragment(this);
             return;
@@ -397,7 +406,8 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
 
         getContainingActivity().setActionBarTitle(mPlaylistName);
         // and reload the song list
-        getLoaderManager().restartLoader(0, getArguments(), this);
+        LoaderManager.getInstance(this)
+                .restartLoader(0, getArguments(), this);
     }
 
     @Override

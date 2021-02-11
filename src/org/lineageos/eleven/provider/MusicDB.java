@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.provider;
 
 import android.content.Context;
@@ -24,12 +25,12 @@ public class MusicDB extends SQLiteOpenHelper {
     /**
      * Version History
      * v1 Sept 22 2014  Initial Merge of tables
-     *                  Has PlaylistArtworkstore, RecentStore, SongPlayCount
+     * Has PlaylistArtworkstore, RecentStore, SongPlayCount
      * v2 Oct 7 2014    Added a new class MusicPlaybackState - need to bump version so the new
-     *                  tables are created, but need to remove all drops from other classes to
-     *                  maintain data
+     * tables are created, but need to remove all drops from other classes to
+     * maintain data
      * v3 Dec 4 2014    Add Sorting tables similar to Contacts to enable other languages like
-     *                  Chinese to properly sort as they would expect
+     * Chinese to properly sort as they would expect
      * v4 Jan 6 2015    Missed Collate keyword on the LocalizedSongSortTable
      */
 
@@ -73,22 +74,19 @@ public class MusicDB extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         PropertiesStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
-        PlaylistArtworkStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
-        RecentStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
-        SongPlayCount.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
         MusicPlaybackState.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
-        LocalizedStore.getInstance(mContext).onUpgrade(db, oldVersion, newVersion);
+        LocalizedStore.getInstance(mContext).onUpgrade(db, oldVersion);
     }
 
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.w(MusicDB.class.getSimpleName(),
                 "Downgrading from: " + oldVersion + " to " + newVersion + ". Dropping tables");
-        PropertiesStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
-        PlaylistArtworkStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
-        RecentStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
-        SongPlayCount.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
-        MusicPlaybackState.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
-        LocalizedStore.getInstance(mContext).onDowngrade(db, oldVersion, newVersion);
+        PropertiesStore.getInstance(mContext).onDowngrade(db);
+        PlaylistArtworkStore.getInstance(mContext).onDowngrade(db);
+        RecentStore.getInstance(mContext).onDowngrade(db);
+        SongPlayCount.getInstance(mContext).onDowngrade(db);
+        MusicPlaybackState.getInstance(mContext).onDowngrade(db);
+        LocalizedStore.getInstance(mContext).onDowngrade(db);
     }
 }

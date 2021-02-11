@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.utils;
 
 import android.text.TextUtils;
@@ -35,13 +36,13 @@ public class SrtParser {
 
     /**
      * The SubRip file format should contain entries that follow the following format:
-     *
+     * <p>
      * 1. A numeric counter identifying each sequential subtitle
      * 2. The time that the subtitle should appear on the screen, followed by --> and the time it
-     *    should disappear
+     * should disappear
      * 3. Subtitle text itself on one or more lines
      * 4. A blank line containing no text, indicating the end of this subtitle
-     *
+     * <p>
      * The timecode format should be hours:minutes:seconds,milliseconds with time units fixed to two
      * zero-padded digits and fractions fixed to three zero-padded digits (00:00:00,000).
      */
@@ -89,24 +90,17 @@ public class SrtParser {
 
                 ret.add(entry);
             }
-        } catch (NumberFormatException nfe) {
+        } catch (ArrayIndexOutOfBoundsException | IOException | NumberFormatException nfe) {
             // The file isn't a valid srt format
+            // or if the time is malformed
             Log.e(TAG, nfe.getMessage(), nfe);
-            ret = null;
-        } catch (IOException ioe) {
-            // shouldn't happen
-            Log.e(TAG, ioe.getMessage(), ioe);
-            ret = null;
-        } catch (ArrayIndexOutOfBoundsException e) {
-            // if the time is malformed
-            Log.e(TAG, e.getMessage());
             ret = null;
         } finally {
             if (br != null) {
                 try {
                     br.close();
                 } catch (IOException e) {
-                    Log.e(TAG, e.getMessage());
+                    Log.e(TAG, "Failed to close", e);
                 }
             }
 
@@ -114,7 +108,7 @@ public class SrtParser {
                 try {
                     reader.close();
                 } catch (IOException e) {
-                    Log.e(TAG, e.getMessage());
+                    Log.e(TAG, "Failed to close reader", e);
                 }
             }
         }

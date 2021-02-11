@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
@@ -32,11 +36,8 @@ import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the artists on a user's
- * device for {@link ArtistFragment}.
+ * device
  *
- * @author Andrew Neal (andrewdneal@gmail.com)
- */
-/**
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter, IPopupMenuCallback {
@@ -57,11 +58,6 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
     private final ImageFetcher mImageFetcher;
 
     /**
-     * Semi-transparent overlay
-     */
-    private final int mOverlay;
-
-    /**
      * Used to cache the artist info
      */
     private DataHolder[] mData;
@@ -74,7 +70,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
     /**
      * Constructor of <code>ArtistAdapter</code>
      *
-     * @param context The {@link Context} to use.
+     * @param context  The {@link Context} to use.
      * @param layoutId The resource Id of the view to inflate.
      */
     public ArtistAdapter(final Activity context, final int layoutId) {
@@ -83,13 +79,8 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
         mLayoutId = layoutId;
         // Initialize the cache & image fetcher
         mImageFetcher = ElevenUtils.getImageFetcher(context);
-        // Cache the transparent overlay
-        mOverlay = context.getResources().getColor(R.color.list_item_background);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         // Recycle ViewHolder's items
@@ -102,35 +93,29 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
             // set the pop up menu listener
             holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         } else {
-            holder = (MusicHolder)convertView.getTag();
+            holder = (MusicHolder) convertView.getTag();
         }
 
         // Retrieve the data holder
         final DataHolder dataHolder = mData[position];
 
         // Set each artist name (line one)
-        holder.mLineOne.get().setText(dataHolder.mLineOne);
+        holder.mLineOne.get().setText(dataHolder.lineOne);
         // Set the number of albums (line two)
-        holder.mLineTwo.get().setText(dataHolder.mLineTwo);
+        holder.mLineTwo.get().setText(dataHolder.lineTwo);
         // Asynchronously load the artist image into the adapter
-        mImageFetcher.loadArtistImage(dataHolder.mLineOne, holder.mImage.get());
+        mImageFetcher.loadArtistImage(dataHolder.lineOne, holder.mImage.get());
         // because of recycling, we need to set the position each time
         holder.mPopupMenuButton.get().setPosition(position);
 
         return convertView;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean hasStableIds() {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getViewTypeCount() {
         return VIEW_TYPE_COUNT;
@@ -141,6 +126,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
      * is to cache everything before {@code #getView(int, View, ViewGroup)} is
      * called.
      */
+    @Override
     public void buildCache() {
         mData = new DataHolder[getCount()];
         for (int i = 0; i < getCount(); i++) {
@@ -150,22 +136,23 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
             // Build the data holder
             mData[i] = new DataHolder();
             // Artist Id
-            mData[i].mItemId = artist.mArtistId;
+            mData[i].itemId = artist.mArtistId;
             // Artist names (line one)
-            mData[i].mLineOne = artist.mArtistName;
+            mData[i].lineOne = artist.mArtistName;
 
             String albumNumber = MusicUtils.makeLabel(getContext(),
                     R.plurals.Nalbums, artist.mAlbumNumber);
             String songNumber = MusicUtils.makeLabel(getContext(),
                     R.plurals.Nsongs, artist.mSongNumber);
 
-            mData[i].mLineTwo = MusicUtils.makeCombinedString(getContext(), albumNumber, songNumber);
+            mData[i].lineTwo = MusicUtils.makeCombinedString(getContext(), albumNumber, songNumber);
         }
     }
 
     /**
      * Method that unloads and clears the items in the adapter
      */
+    @Override
     public void unload() {
         clear();
         mData = null;
@@ -181,23 +168,16 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
     }
 
     /**
-     * @param artist The key used to find the cached artist to remove
-     */
-    public void removeFromCache(final Artist artist) {
-        if (mImageFetcher != null) {
-            mImageFetcher.removeFromCache(artist.mArtistName);
-        }
-    }
-
-    /**
      * Flushes the disk cache.
      */
+    @Override
     public void flush() {
         mImageFetcher.flush();
     }
 
     /**
      * Gets the item position for a given id
+     *
      * @param id identifies the object
      * @return the position if found, -1 otherwise
      */
@@ -209,7 +189,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
             }
         }
 
-        return  -1;
+        return -1;
     }
 
     @Override

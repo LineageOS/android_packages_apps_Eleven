@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
@@ -34,7 +38,7 @@ import java.util.List;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the albums on a user's
- * device for {@link RecentsFragment} and {@link AlbumsFragment}.
+ * device.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -60,20 +64,20 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
      */
     private IPopupMenuCallback.IListener mListener;
 
-    /** number of columns of containing grid view,
-     *  used to determine which views to pad */
+    /**
+     * number of columns of containing grid view,
+     * used to determine which views to pad
+     */
     private int mColumns;
-    private int mPadding;
+    private final int mPadding;
 
-    private Context mContext;
+    private final Context mContext;
 
     /**
      * Constructor of <code>AlbumAdapter</code>
      *
-     * @param context The {@link Context} to use.
+     * @param context  The {@link Context} to use.
      * @param layoutId The resource Id of the view to inflate.
-     * @param style Determines which layout to use and therefore which items to
-     *            load.
      */
     public AlbumAdapter(final Activity context, final int layoutId) {
         mContext = context;
@@ -84,9 +88,6 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         mPadding = context.getResources().getDimensionPixelSize(R.dimen.list_item_general_margin);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         // Recycle ViewHolder's items
@@ -98,7 +99,7 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
             // set the pop up menu listener
             holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         } else {
-            holder = (MusicHolder)convertView.getTag();
+            holder = (MusicHolder) convertView.getTag();
         }
 
         adjustPadding(position, convertView);
@@ -109,13 +110,13 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         // Sets the position each time because of recycling
         holder.mPopupMenuButton.get().setPosition(position);
         // Set each album name (line one)
-        holder.mLineOne.get().setText(dataHolder.mLineOne);
+        holder.mLineOne.get().setText(dataHolder.lineOne);
         // Set the artist name (line two)
-        holder.mLineTwo.get().setText(dataHolder.mLineTwo);
+        holder.mLineTwo.get().setText(dataHolder.lineTwo);
         // Asynchronously load the album images into the adapter
         mImageFetcher.loadAlbumImage(
-                dataHolder.mLineTwo, dataHolder.mLineOne,
-                dataHolder.mItemId, holder.mImage.get());
+                dataHolder.lineTwo, dataHolder.lineOne,
+                dataHolder.itemId, holder.mImage.get());
 
         return convertView;
     }
@@ -128,19 +129,18 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         }
         int count = getCount();
         int footers = count % mColumns;
-        if (footers == 0) { footers = mColumns; }
-        if (position >= (count-footers)) {
+        if (footers == 0) {
+            footers = mColumns;
+        }
+        if (position >= (count - footers)) {
             // last row
             convertView.setPadding(0, 0, 0, mPadding);
         } else {
             // middle rows
-            convertView.setPadding(0, 0 ,0, 0);
+            convertView.setPadding(0, 0, 0, 0);
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean hasStableIds() {
         return true;
@@ -157,7 +157,9 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
     }
 
     @Override
-    public long getItemId(int pos) { return pos; }
+    public long getItemId(int pos) {
+        return pos;
+    }
 
     /**
      * Method used to cache the data used to populate the list or grid. The idea
@@ -169,9 +171,9 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
         int i = 0;
         for (Album album : mAlbums) {
             mData[i] = new DataHolder();
-            mData[i].mItemId = album.mAlbumId;
-            mData[i].mLineOne = album.mAlbumName;
-            mData[i].mLineTwo = album.mArtistName;
+            mData[i].itemId = album.mAlbumId;
+            mData[i].lineOne = album.mAlbumName;
+            mData[i].lineTwo = album.mArtistName;
             i++;
         }
     }
@@ -187,7 +189,7 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
     }
 
     public void unload() {
-        setData(Collections.<Album>emptyList());
+        setData(Collections.emptyList());
     }
 
     /**
@@ -200,37 +202,10 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
     }
 
     /**
-     * @param album The key used to find the cached album to remove
-     */
-    public void removeFromCache(final Album album) {
-        if (mImageFetcher != null) {
-            mImageFetcher.removeFromCache(
-                    ImageFetcher.generateAlbumCacheKey(album.mAlbumName, album.mArtistName));
-        }
-    }
-
-    /**
      * Flushes the disk cache.
      */
     public void flush() {
         mImageFetcher.flush();
-    }
-
-    /**
-     * Gets the item position for a given id
-     * @param id identifies the object
-     * @return the position if found, -1 otherwise
-     */
-    public int getItemPosition(long id) {
-        int i = 0;
-        for (Album album : mAlbums) {
-            if (album.mAlbumId == id) {
-                return i;
-            }
-            i++;
-        }
-
-        return -1;
     }
 
     @Override
