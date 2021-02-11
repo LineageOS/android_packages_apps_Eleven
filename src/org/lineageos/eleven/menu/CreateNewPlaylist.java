@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.menu;
 
 import android.app.Activity;
@@ -58,26 +57,36 @@ public class CreateNewPlaylist extends BasePlaylistDialog {
                 ? savedInstanceState.getString(EXTRA_DEFAULT_NAME)
                 : makePlaylistName();
         if (mDefaultName == null) {
-            getDialog().dismiss();
+            final Dialog dialog = getDialog();
+            if (dialog != null) {
+                dialog.dismiss();
+            }
             return;
         }
-        mPlaylistList = getArguments().getLongArray(EXTRA_PLAYLIST_LIST);
+        final Bundle args = getArguments();
+        mPlaylistList = args == null ? new long[]{} : args.getLongArray(EXTRA_PLAYLIST_LIST);
         mPrompt = getString(R.string.create_playlist_prompt);
     }
 
     @Override
     public void onSaveClick() {
         final String playlistName = mPlaylist.getText().toString();
-        if (!TextUtils.isEmpty(playlistName)) {
-            final int playlistId = (int) MusicUtils.getIdForPlaylist(getActivity(), playlistName);
-            if (playlistId >= 0) {
-                MusicUtils.clearPlaylist(getActivity(), playlistId);
-                MusicUtils.addToPlaylist(getActivity(), mPlaylistList, playlistId);
-            } else {
-                final long newId = MusicUtils.createPlaylist(getActivity(), playlistName);
-                MusicUtils.addToPlaylist(getActivity(), mPlaylistList, newId);
-            }
-            getDialog().dismiss();
+        final Activity activity = getActivity();
+        if (activity == null || TextUtils.isEmpty(playlistName)) {
+            return;
+        }
+
+        final int playlistId = (int) MusicUtils.getIdForPlaylist(getActivity(), playlistName);
+        if (playlistId >= 0) {
+            MusicUtils.clearPlaylist(activity, playlistId);
+            MusicUtils.addToPlaylist(activity, mPlaylistList, playlistId);
+        } else {
+            final long newId = MusicUtils.createPlaylist(getActivity(), playlistName);
+            MusicUtils.addToPlaylist(activity, mPlaylistList, newId);
+        }
+        final Dialog dialog = getDialog();
+        if (dialog != null) {
+            dialog.dismiss();
         }
     }
 
@@ -124,8 +133,8 @@ public class CreateNewPlaylist extends BasePlaylistDialog {
                 done = true;
                 cursor.moveToFirst();
                 while (!cursor.isAfterLast()) {
-                    final String playlistname = cursor.getString(0);
-                    if (playlistname.compareToIgnoreCase(suggestedname) == 0) {
+                    final String playlistName = cursor.getString(0);
+                    if (playlistName.compareToIgnoreCase(suggestedname) == 0) {
                         suggestedname = String.format(template, num++);
                         done = false;
                     }

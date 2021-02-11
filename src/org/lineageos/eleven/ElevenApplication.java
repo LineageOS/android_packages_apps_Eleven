@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven;
 
 import android.app.Application;
 import android.os.StrictMode;
+import android.os.StrictMode.ThreadPolicy;
+import android.os.StrictMode.VmPolicy;
 
 import org.lineageos.eleven.cache.ImageCache;
 
@@ -40,11 +41,11 @@ public class ElevenApplication extends Application {
     }
 
     private void enableStrictMode() {
-        final StrictMode.ThreadPolicy.Builder threadPolicyBuilder = new StrictMode.ThreadPolicy.Builder()
+        final ThreadPolicy.Builder threadPolicyBuilder = new ThreadPolicy.Builder()
                 .detectAll()
                 .penaltyLog()
                 .penaltyFlashScreen();
-        final StrictMode.VmPolicy.Builder vmPolicyBuilder = new StrictMode.VmPolicy.Builder()
+        final VmPolicy.Builder vmPolicyBuilder = new VmPolicy.Builder()
                 .detectAll()
                 .penaltyLog();
 

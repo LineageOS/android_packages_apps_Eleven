@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,9 +15,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.ui.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -33,7 +33,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -55,7 +58,6 @@ import org.lineageos.eleven.service.MusicPlaybackTrack;
 import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 
@@ -92,19 +94,9 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
     private SongAdapter mAdapter;
 
     /**
-     * The list view
-     */
-    private DragSortListView mListView;
-
-    /**
      * Pop up menu helper
      */
     private PopupMenuHelper mPopupMenuHelper;
-
-    /**
-     * Root view
-     */
-    private ViewGroup mRootView;
 
     /**
      * This holds the loading progress bar as well as the no results message
@@ -117,13 +109,10 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
     public QueueFragment() {
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPopupMenuHelper = new PopupMenuHelper(getActivity(), getFragmentManager()) {
+        mPopupMenuHelper = new PopupMenuHelper(getActivity(), getChildFragmentManager()) {
             private Song mSong;
             private int mSelectedPosition;
             private MusicPlaybackTrack mSelectedTrack;
@@ -139,7 +128,7 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
 
             @Override
             protected long[] getIdList() {
-                return new long[] { mSong.mSongId };
+                return new long[]{mSong.mSongId};
             }
 
             @Override
@@ -168,16 +157,15 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
             @Override
             protected void onDeleteClicked() {
                 DeleteDialog.newInstance(mSong.mSongName,
-                        new long[] { getId() }, null).show(getFragmentManager(), "DeleteDialog");
+                        new long[]{getId()}, null).show(getChildFragmentManager(), "DeleteDialog");
             }
 
             @Override
             protected void playNext() {
-                NowPlayingCursor queue = (NowPlayingCursor)QueueLoader
+                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
                         .makeQueueCursor(getActivity());
                 queue.removeItem(mSelectedPosition);
                 queue.close();
-                queue = null;
                 MusicUtils.playNext(getIdList(), getSourceId(), getSourceType());
                 refreshQueue();
             }
@@ -202,50 +190,41 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         // Create the adapter
         mAdapter = new SongAdapter(getActivity(), R.layout.edit_queue_list_item,
                 -1, Config.IdType.NA);
-        mAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
+        mAdapter.setPopupMenuClickedListener((v, position) ->
+                mPopupMenuHelper.showPopupMenu(v, position));
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @SuppressLint("InflateParams")
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-            final Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        mRootView = (ViewGroup)inflater.inflate(R.layout.list_base, null);
+        ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.list_base, null);
         // Initialize the list
-        mListView = (DragSortListView)mRootView.findViewById(R.id.list_base);
+        DragSortListView listView = (DragSortListView) rootView.findViewById(R.id.list_base);
         // Set the data behind the list
-        mListView.setAdapter(mAdapter);
+        listView.setAdapter(mAdapter);
         // Release any references to the recycled Views
-        mListView.setRecyclerListener(new RecycleHolder());
+        listView.setRecyclerListener(new RecycleHolder());
         // Play the selected song
-        mListView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
         // Set the drop listener
-        mListView.setDropListener(this);
+        listView.setDropListener(this);
         // Set the swipe to remove listener
-        mListView.setRemoveListener(this);
+        listView.setRemoveListener(this);
         // Quick scroll while dragging
-        mListView.setDragScrollProfile(this);
+        listView.setDragScrollProfile(this);
         // Enable fast scroll bars
-        mListView.setFastScrollEnabled(true);
+        listView.setFastScrollEnabled(true);
         // Setup the loading and empty state
         mLoadingEmptyContainer =
-                (LoadingEmptyContainer)mRootView.findViewById(R.id.loading_empty_container);
+                (LoadingEmptyContainer) rootView.findViewById(R.id.loading_empty_container);
         // Setup the container strings
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
-        mListView.setEmptyView(mLoadingEmptyContainer);
-        return mRootView;
+        listView.setEmptyView(mLoadingEmptyContainer);
+        return rootView;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onActivityCreated(final Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -254,9 +233,6 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         mQueueUpdateListener = new QueueUpdateListener(this);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onServiceConnected(final ComponentName name, final IBinder service) {
         refreshQueue();
@@ -281,7 +257,10 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         // Track changes
         filter.addAction(MusicPlaybackService.META_CHANGED);
 
-        getActivity().registerReceiver(mQueueUpdateListener, filter);
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.registerReceiver(mQueueUpdateListener, filter);
+        }
     }
 
     @Override
@@ -289,7 +268,10 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         super.onStop();
 
         try {
-            getActivity().unregisterReceiver(mQueueUpdateListener);
+            final FragmentActivity activity = getActivity();
+            if (activity != null) {
+                activity.unregisterReceiver(mQueueUpdateListener);
+            }
         } catch (final Throwable e) {
             //$FALL-THROUGH$
         }
@@ -298,32 +280,24 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         mToken = null;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onItemClick(final AdapterView<?> parent, final View view, final int position,
-            final long id) {
+                            final long id) {
         // When selecting a track from the queue, just jump there instead of
         // reloading the queue. This is both faster, and prevents accidentally
         // dropping out of party shuffle.
         MusicUtils.setQueuePosition(position);
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @NonNull
     @Override
     public Loader<List<Song>> onCreateLoader(final int id, final Bundle args) {
         mLoadingEmptyContainer.showLoading();
         return new QueueLoader(getActivity());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoadFinished(final Loader<List<Song>> loader, final List<Song> data) {
+    public void onLoadFinished(@NonNull final Loader<List<Song>> loader, final List<Song> data) {
         // pause notifying the adapter and make changes before re-enabling it so that the list
         // view doesn't reset to the top of the list
         mAdapter.setNotifyOnChange(false);
@@ -332,10 +306,15 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         if (data.isEmpty()) {
             mLoadingEmptyContainer.showNoResults();
             mAdapter.setCurrentQueuePosition(SongAdapter.NOTHING_PLAYING);
-            ((SlidingPanelActivity)getActivity()).clearMetaInfo();
+            final FragmentActivity activity = getActivity();
+            if (activity instanceof SlidingPanelActivity) {
+                ((SlidingPanelActivity) activity).clearMetaInfo();
+            }
         } else {
             // Add the songs found to the adapter
-            for (final Song song : data) { mAdapter.add(song); }
+            for (final Song song : data) {
+                mAdapter.add(song);
+            }
             // Build the cache
             mAdapter.buildCache();
             // Set the currently playing audio
@@ -345,18 +324,12 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         mAdapter.notifyDataSetChanged();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
-    public void onLoaderReset(final Loader<List<Song>> loader) {
+    public void onLoaderReset(@NonNull final Loader<List<Song>> loader) {
         // Clear the data in the adapter
         mAdapter.unload();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public float getSpeed(final float w, final long t) {
         if (w > 0.8f) {
@@ -366,9 +339,6 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void remove(final int which) {
         Song song = mAdapter.getItem(which);
@@ -379,9 +349,6 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         mAdapter.buildCache();
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void drop(final int from, final int to) {
         Song song = mAdapter.getItem(from);
@@ -398,13 +365,16 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
      */
     public void refreshQueue() {
         if (isAdded()) {
-            getLoaderManager().restartLoader(LOADER, null, this);
+            LoaderManager.getInstance(this).restartLoader(LOADER, null, this);
         }
     }
 
     private void setupNoResultsContainer(NoResultsContainer empty) {
-        int color = getResources().getColor(R.color.no_results_light);
-        empty.setTextColor(color);
+        final Context context = getContext();
+        if (context != null) {
+            int color = ContextCompat.getColor(context, R.color.no_results_light);
+            empty.setTextColor(color);
+        }
         empty.setMainText(R.string.empty_queue_main);
         empty.setSecondaryText(R.string.empty_queue_secondary);
     }
@@ -423,28 +393,17 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
             mReference = new WeakReference<>(fragment);
         }
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void onReceive(final Context context, final Intent intent) {
-            // TODO: Invalid options menu if opened?
             final String action = intent.getAction();
-            if (action == null || action.isEmpty()) {
-                return;
+            if (MusicPlaybackService.META_CHANGED.equals(action)) {
+                mReference.get().mAdapter.setCurrentQueuePosition(MusicUtils.getQueuePosition());
+            } else if (MusicPlaybackService.PLAYSTATE_CHANGED.equals(action)) {
+                mReference.get().mAdapter.notifyDataSetChanged();
+            } else if (MusicPlaybackService.QUEUE_CHANGED.equals(action)) {
+                mReference.get().refreshQueue();
             }
 
-            switch (action) {
-                case MusicPlaybackService.META_CHANGED:
-                    mReference.get().mAdapter.setCurrentQueuePosition(MusicUtils.getQueuePosition());
-                    break;
-                case MusicPlaybackService.PLAYSTATE_CHANGED:
-                    mReference.get().mAdapter.notifyDataSetChanged();
-                    break;
-                case MusicPlaybackService.QUEUE_CHANGED:
-                    mReference.get().refreshQueue();
-                    break;
-            }
         }
     }
 }
