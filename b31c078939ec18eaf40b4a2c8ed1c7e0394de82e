@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c2cb6cb1_de6afa98",
+        "filename": "src/org/lineageos/eleven/adapters/AlbumAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "add a newline at the end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31e5d172_9a0e4a7c",
+        "filename": "src/org/lineageos/eleven/adapters/AlbumDetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "+newline",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c9e5dff_d34d3568",
+        "filename": "src/org/lineageos/eleven/adapters/ArtistDetailAlbumAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "can\u0027t remove the casts?",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98a4a71c_41d0f28c",
+        "filename": "src/org/lineageos/eleven/adapters/ArtistDetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "remove casts",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e523d35_69a5c097",
+        "filename": "src/org/lineageos/eleven/adapters/DetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "casts required?",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dadc9f1d_369dbc71",
+        "filename": "src/org/lineageos/eleven/adapters/DetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "+newline",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cdbdcf0_331bf4fb",
+        "filename": "src/org/lineageos/eleven/cache/ICacheListener.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "Isn\u0027t \"onCacheResumed\" the proper terminology? UnPaused doesn\u0027t really look right to me",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b8bd739_25911537",
+        "filename": "src/org/lineageos/eleven/cache/PlaylistWorkerTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "fix this line length as well",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3aab5be_59313479",
+        "filename": "src/org/lineageos/eleven/cache/PlaylistWorkerTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "this comment should be moved to the new location of the code you moved below",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4129fe11_d1e64bbe",
+        "filename": "src/org/lineageos/eleven/cache/SimpleBitmapWorkerTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "add { } around the next statement, because the if() also uses them",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "489cc5cc_68059787",
+        "filename": "src/org/lineageos/eleven/dragdrop/DragSortListView.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T23:17:26Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
