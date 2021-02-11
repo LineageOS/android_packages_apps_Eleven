@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.loaders;
 
 import android.content.Context;
@@ -55,9 +59,6 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         mAlbumID = albumId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Song> loadInBackground() {
         // Create the Cursor
@@ -96,7 +97,6 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
         return mSongList;
     }
@@ -106,13 +106,13 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
      * @param albumId The Id of the album the songs belong to.
      * @return The {@link Cursor} used to run the query.
      */
-    public static final Cursor makeAlbumSongCursor(final Context context, final Long albumId) {
+    public static Cursor makeAlbumSongCursor(final Context context, final Long albumId) {
         // Match the songs up with the artist
         String selection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''" +
                 " AND " + AudioColumns.ALBUM_ID + "=" + albumId;
         return context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                new String[] {
+                new String[]{
                         /* 0 */
                         BaseColumns._ID,
                         /* 1 */
@@ -128,5 +128,4 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
                 }, selection, null,
                 PreferenceUtils.getInstance(context).getAlbumSongSortOrder());
     }
-
 }

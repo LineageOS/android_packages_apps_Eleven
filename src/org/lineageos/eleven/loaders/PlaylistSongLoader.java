@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.loaders;
 
 import android.content.ContentProviderOperation;
@@ -60,9 +64,6 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         mPlaylistID = playlistId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Song> loadInBackground() {
         final int playlistCount = countPlaylist(getContext(), mPlaylistID);
@@ -74,8 +75,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
             boolean runCleanup = false;
 
             // if the raw playlist count differs from the mapped playlist count (ie the raw mapping
-            // table vs the mapping table join the audio table) that means the playlist mapping table
-            // is messed up
+            // table vs the mapping table join the audio table) that means the playlist mapping
+            // table is messed up
             if (cursor.getCount() != playlistCount) {
                 Log.w(TAG, "Count Differs - raw is: " + playlistCount + " while cursor is " +
                         cursor.getCount());
@@ -149,7 +150,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
                         .getColumnIndexOrThrow(AudioColumns.YEAR));
 
                 // Create a new song
-                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs, year);
+                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs,
+                        year);
 
                 // Add everything up
                 mSongList.add(song);
@@ -158,23 +160,23 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
         return mSongList;
     }
 
     /**
      * Cleans up the playlist based on the passed in cursor's data
-     * @param context The {@link Context} to use
+     *
+     * @param context    The {@link Context} to use
      * @param playlistId playlistId to clean up
-     * @param cursor data to repopulate the playlist with
+     * @param cursor     data to repopulate the playlist with
      */
     private static void cleanupPlaylist(final Context context, final long playlistId,
-                                 final Cursor cursor) {
+                                        final Cursor cursor) {
         Log.w(TAG, "Cleaning up playlist: " + playlistId);
 
-        final int idCol = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID);
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
+        final int idCol = cursor.getColumnIndexOrThrow(Playlists.Members.AUDIO_ID);
+        final Uri uri = Playlists.Members.getContentUri("external", playlistId);
 
         ArrayList<ContentProviderOperation> ops = new ArrayList<>();
 
@@ -213,30 +215,21 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
 
     /**
      * Returns the playlist count for the raw playlist mapping table
-     * @param context The {@link Context} to use
+     *
+     * @param context    The {@link Context} to use
      * @param playlistId playlistId to count
      * @return the number of tracks in the raw playlist mapping table
      */
     private static int countPlaylist(final Context context, final long playlistId) {
-        Cursor c = null;
-        try {
+        try (Cursor c = context.getContentResolver().query(
+                Playlists.Members.getContentUri("external", playlistId),
+                new String[]{Playlists.Members.AUDIO_ID,}, null, null,
+                Playlists.Members.DEFAULT_SORT_ORDER)) {
             // when we query using only the audio_id column we will get the raw mapping table
             // results - which will tell us if the table has rows that don't exist in the normal
             // table
-            c = context.getContentResolver().query(
-                    MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId),
-                    new String[]{
-                            MediaStore.Audio.Playlists.Members.AUDIO_ID,
-                    }, null, null,
-                    MediaStore.Audio.Playlists.Members.DEFAULT_SORT_ORDER);
-
             if (c != null) {
                 return c.getCount();
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-                c = null;
             }
         }
 
@@ -246,20 +239,20 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
     /**
      * Creates the {@link Cursor} used to run the query.
      *
-     * @param context The {@link Context} to use.
+     * @param context    The {@link Context} to use.
      * @param playlistID The playlist the songs belong to.
      * @return The {@link Cursor} used to run the song query.
      */
-    public static final Cursor makePlaylistSongCursor(final Context context, final Long playlistID) {
+    public static Cursor makePlaylistSongCursor(final Context context, final Long playlistID) {
         String mSelection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''";
         return context.getContentResolver().query(
-                MediaStore.Audio.Playlists.Members.getContentUri("external", playlistID),
-                new String[] {
+                Playlists.Members.getContentUri("external", playlistID),
+                new String[]{
                         /* 0 */
-                        MediaStore.Audio.Playlists.Members._ID,
+                        Playlists.Members._ID,
                         /* 1 */
-                        MediaStore.Audio.Playlists.Members.AUDIO_ID,
+                        Playlists.Members.AUDIO_ID,
                         /* 2 */
                         AudioColumns.TITLE,
                         /* 3 */
@@ -275,6 +268,6 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
                         /* 8 */
                         Playlists.Members.PLAY_ORDER,
                 }, mSelection, null,
-                MediaStore.Audio.Playlists.Members.DEFAULT_SORT_ORDER);
+                Playlists.Members.DEFAULT_SORT_ORDER);
     }
 }
