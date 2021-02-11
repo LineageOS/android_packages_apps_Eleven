@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1b706b32_d134dc79",
+        "filename": "res/drawable-xxhdpi/ic_album_lg.png",
+        "patchSetId": 31
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-11T10:49:12Z",
+      "side": 1,
+      "message": "this doesn\u0027t look properly made. the inner circle has no anti aliasing and isn\u0027t round at all",
+      "revId": "af7194b17249a41cbf19f723ad99feead8459663",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
