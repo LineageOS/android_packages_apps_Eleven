@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.widgets;
 
 import android.animation.Animator;
@@ -23,11 +22,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewAnimationUtils;
-import android.widget.ImageButton;
 
 import androidx.appcompat.widget.AppCompatImageButton;
 
@@ -45,7 +42,7 @@ public class PlayPauseButton extends AppCompatImageButton
 
     /**
      * @param context The {@link Context} to use
-     * @param attrs The attributes of the XML tag that is inflating the view.
+     * @param attrs   The attributes of the XML tag that is inflating the view.
      */
     public PlayPauseButton(final Context context, final AttributeSet attrs) {
         super(context, attrs);
@@ -59,8 +56,8 @@ public class PlayPauseButton extends AppCompatImageButton
     @Override
     public void onClick(final View v) {
         MusicUtils.playOrPause();
-        int centerX = (v.getLeft() + v.getRight())  / 2;
-        int centerY = (v.getTop()  + v.getBottom()) / 2;
+        int centerX = (v.getLeft() + v.getRight()) / 2;
+        int centerY = (v.getTop() + v.getBottom()) / 2;
         int startRadius = 0;
         int endRadius = (int) Math.hypot(v.getWidth(), v.getHeight());
 

@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.appwidgets;
 
 import android.annotation.SuppressLint;
@@ -36,7 +40,7 @@ import org.lineageos.eleven.ui.activities.HomeActivity;
 @SuppressLint("NewApi")
 public class AppWidgetSmall extends AppWidgetBase {
 
-    public static final String CMDAPPWIDGETUPDATE = "app_widget_small_update";
+    public static final String APP_WIDGET_UPDATE = "app_widget_small_update";
 
     private static AppWidgetSmall mInstance;
 
@@ -47,15 +51,12 @@ public class AppWidgetSmall extends AppWidgetBase {
         return mInstance;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onUpdate(final Context context, final AppWidgetManager appWidgetManager,
             final int[] appWidgetIds) {
         defaultAppWidget(context, appWidgetIds);
         final Intent updateIntent = new Intent(MusicPlaybackService.SERVICECMD);
-        updateIntent.putExtra(MusicPlaybackService.CMDNAME, AppWidgetSmall.CMDAPPWIDGETUPDATE);
+        updateIntent.putExtra(MusicPlaybackService.CMDNAME, AppWidgetSmall.APP_WIDGET_UPDATE);
         updateIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
         updateIntent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
         context.sendBroadcast(updateIntent);
@@ -149,7 +150,7 @@ public class AppWidgetSmall extends AppWidgetBase {
     }
 
     /**
-     * Link up various button actions using {@link PendingIntents}.
+     * Link up various button actions using {@link PendingIntent}s.
      *
      */
     private void linkButtons(final Context context, final RemoteViews views) {
@@ -166,16 +167,17 @@ public class AppWidgetSmall extends AppWidgetBase {
         views.setOnClickPendingIntent(R.id.app_widget_small_image, pendingIntent);
 
         // Previous track
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.PREVIOUS_ACTION, serviceName);
+        pendingIntent = buildPendingIntent(context, MusicPlaybackService.PREVIOUS_ACTION,
+                serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_small_previous, pendingIntent);
 
         // Play and pause
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION, serviceName);
+        pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION,
+                serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_small_play, pendingIntent);
 
         // Next track
         pendingIntent = buildPendingIntent(context, MusicPlaybackService.NEXT_ACTION, serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_small_next, pendingIntent);
     }
-
 }
