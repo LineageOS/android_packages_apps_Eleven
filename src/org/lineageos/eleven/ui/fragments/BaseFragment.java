@@ -1,38 +1,41 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import org.lineageos.eleven.MusicStateListener;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
 
-public abstract class BaseFragment extends Fragment implements MusicStateListener,
-    ISetupActionBar {
+public abstract class BaseFragment extends Fragment
+        implements MusicStateListener, ISetupActionBar {
 
     protected ViewGroup mRootView;
 
     protected abstract String getTitle();
+
     protected abstract int getLayoutToInflate();
 
     protected boolean needsElevatedActionBar() {
@@ -47,10 +50,11 @@ public abstract class BaseFragment extends Fragment implements MusicStateListene
 
     @Override
     public void setupActionBar() {
-        getContainingActivity().setupActionBar(getTitle());
-        getContainingActivity().setActionBarAlpha(255);
-        getContainingActivity().setFragmentPadding(true);
-        getContainingActivity().setActionBarElevation(needsElevatedActionBar());
+        final HomeActivity activity = getContainingActivity();
+        activity.setupActionBar(getTitle());
+        activity.setActionBarAlpha(255);
+        activity.setFragmentPadding(true);
+        activity.setActionBarElevation(needsElevatedActionBar());
     }
 
     protected HomeActivity getContainingActivity() {
@@ -62,13 +66,14 @@ public abstract class BaseFragment extends Fragment implements MusicStateListene
         // The View for the fragment's UI
         mRootView = (ViewGroup) inflater.inflate(getLayoutToInflate(), null);
         // set the background color
-        mRootView.setBackgroundColor(getResources().getColor(R.color.background_color));
+        final Context context = getContext();
+        if (context != null) {
+            mRootView.setBackgroundColor(ContextCompat.getColor(context,
+                    R.color.background_color));
+        }
         // eat any touches that fall through to the root so they aren't
         // passed on to fragments "behind" the current one.
-        mRootView.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent me) { return true; }
-        });
+        mRootView.setOnTouchListener((v, me) -> true);
 
         setupActionBar();
         onViewCreated();
@@ -83,17 +88,14 @@ public abstract class BaseFragment extends Fragment implements MusicStateListene
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-
         getContainingActivity().removeMusicStateListenerListener(this);
     }
 
     @Override
     public void onMetaChanged() {
-
     }
 
     @Override
     public void onPlaylistChanged() {
-
     }
 }

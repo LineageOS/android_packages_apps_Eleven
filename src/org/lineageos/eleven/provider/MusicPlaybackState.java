@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.provider;
 
 import android.content.ContentValues;
@@ -34,7 +35,7 @@ import java.util.LinkedList;
 public class MusicPlaybackState {
     private static MusicPlaybackState sInstance = null;
 
-    private MusicDB mMusicDatabase = null;
+    private final MusicDB mMusicDatabase;
 
     /**
      * Constructor of <code>MusicPlaybackState</code>
@@ -83,7 +84,7 @@ public class MusicPlaybackState {
         }
     }
 
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onDowngrade(SQLiteDatabase db) {
         // If we ever have downgrade, drop the table to be safe
         db.execSQL("DROP TABLE IF EXISTS " + PlaybackQueueColumns.NAME);
         db.execSQL("DROP TABLE IF EXISTS " + PlaybackHistoryColumns.NAME);
@@ -94,7 +95,7 @@ public class MusicPlaybackState {
      * @param context The {@link android.content.Context} to use
      * @return A new instance of this class.
      */
-    public static final synchronized MusicPlaybackState getInstance(final Context context) {
+    public static synchronized MusicPlaybackState getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new MusicPlaybackState(context.getApplicationContext());
         }
@@ -104,7 +105,8 @@ public class MusicPlaybackState {
     /**
      * Clears the existing database and saves the queue and history into the db so that when the
      * app is restarted, the tracks you were listening to is restored
-     * @param queue the queue to save
+     *
+     * @param queue   the queue to save
      * @param history the history to save
      */
     public synchronized void saveState(final ArrayList<MusicPlaybackTrack> queue,
@@ -166,14 +168,11 @@ public class MusicPlaybackState {
     public ArrayList<MusicPlaybackTrack> getQueue() {
         ArrayList<MusicPlaybackTrack> results = Lists.newArrayList();
 
-        Cursor cursor = null;
-        try {
-            cursor = mMusicDatabase.getReadableDatabase().query(PlaybackQueueColumns.NAME, null,
-                    null, null, null, null, null);
+        try (Cursor cursor = mMusicDatabase.getReadableDatabase().query(PlaybackQueueColumns.NAME,
+                null, null, null, null, null, null)) {
 
             if (cursor != null && cursor.moveToFirst()) {
                 results.ensureCapacity(cursor.getCount());
-
                 do {
                     results.add(new MusicPlaybackTrack(cursor.getLong(0), cursor.getLong(1),
                             Config.IdType.getTypeById(cursor.getInt(2)), cursor.getInt(3)));
@@ -181,21 +180,14 @@ public class MusicPlaybackState {
             }
 
             return results;
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-                cursor = null;
-            }
         }
     }
 
     public LinkedList<Integer> getHistory(final int playlistSize) {
         LinkedList<Integer> results = Lists.newLinkedList();
 
-        Cursor cursor = null;
-        try {
-            cursor = mMusicDatabase.getReadableDatabase().query(PlaybackHistoryColumns.NAME, null,
-                    null, null, null, null, null);
+        try (Cursor cursor = mMusicDatabase.getReadableDatabase().query(
+                PlaybackHistoryColumns.NAME, null, null, null, null, null, null)) {
 
             if (cursor != null && cursor.moveToFirst()) {
                 do {
@@ -207,15 +199,10 @@ public class MusicPlaybackState {
             }
 
             return results;
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-                cursor = null;
-            }
         }
     }
 
-    public class PlaybackQueueColumns {
+    public static class PlaybackQueueColumns {
         /* Table name */
         public static final String NAME = "playbackqueue";
 
@@ -232,7 +219,7 @@ public class MusicPlaybackState {
         public static final String SOURCE_POSITION = "sourceposition";
     }
 
-    public class PlaybackHistoryColumns {
+    public static class PlaybackHistoryColumns {
         /* Table name */
         public static final String NAME = "playbackhistory";
 

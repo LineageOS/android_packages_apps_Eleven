@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2012 Andrew Neal
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.ui.activities;
 
 import android.graphics.Color;
@@ -23,6 +22,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -71,9 +71,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
      */
     private final View.OnClickListener mOpenNowPlaying = new View.OnClickListener() {
 
-        /**
-         * {@inheritDoc}
-         */
         @Override
         public void onClick(final View v) {
             if (MusicUtils.getCurrentAudioId() != -1) {
@@ -88,15 +85,12 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     protected void initBottomActionBar() {
         super.initBottomActionBar();
         // Bottom action bar
-        final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+        final LinearLayout bottomActionBar = (LinearLayout) findViewById(R.id.bottom_action_bar);
         // Display the now playing screen or shuffle if this isn't anything
         // playing
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,7 +119,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         outState.putInt(STATE_KEY_CURRENT_PANEL, getCurrentPanel().ordinal());
@@ -179,7 +173,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         });
 
         // setup the header bar
-        setupQueueHeaderBar(R.id.secondHeaderBar, R.string.page_play_queue, mShowMusicPlayer);
+        setupQueueHeaderBar(mShowMusicPlayer);
 
         // set the drag view offset to allow the panel to go past the top of the viewport
         // since the previous view's is hiding the slide offset, we need to subtract that
@@ -194,7 +188,8 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         super.onPause();
     }
 
-    @Override protected void onResume() {
+    @Override
+    protected void onResume() {
         super.onResume();
 
         // recreate activity if blur preference has changed to apply changes
@@ -204,9 +199,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         }
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int setContentView() {
         return R.layout.activity_base;
@@ -299,8 +291,8 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     @Override
-    public void onCacheUnpaused() {
-        super.onCacheUnpaused();
+    public void onCacheResumed() {
+        super.onCacheResumed();
 
         updateScrimImage();
     }
@@ -334,11 +326,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         mAlbumScrimImage.setGradientDrawable(gradientDrawable);
     };
 
-    protected void setupQueueHeaderBar(final int containerId, final int textId,
-            final View.OnClickListener headerClickListener) {
-        final HeaderBar headerBar = findViewById(containerId);
+    protected void setupQueueHeaderBar(final View.OnClickListener headerClickListener) {
+        final HeaderBar headerBar = findViewById(R.id.secondHeaderBar);
         headerBar.setFragment(getQueueFragment());
-        headerBar.setTitleText(textId);
+        headerBar.setTitleText(R.string.page_play_queue);
         headerBar.setBackgroundColor(Color.TRANSPARENT);
         headerBar.setHeaderClickListener(headerClickListener);
 
@@ -347,7 +338,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
 
     private class ShowPanelClickListener implements View.OnClickListener {
 
-        private Panel mTargetPanel;
+        private final Panel mTargetPanel;
 
         public ShowPanelClickListener(Panel targetPanel) {
             mTargetPanel = targetPanel;

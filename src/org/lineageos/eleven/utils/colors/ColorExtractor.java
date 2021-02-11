@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +16,6 @@
  */
 package org.lineageos.eleven.utils.colors;
 
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -27,13 +26,8 @@ public class ColorExtractor {
         void onColorExtracted(final BitmapWithColors bitmapWithColors);
     }
 
-    public static void extractColors(final Bitmap bitmap, final int bitmapKey,
-            final ColorExtractor.Callback callback) {
-        new ColorExtractionTask(bitmap, bitmapKey, callback).execute();
-    }
-
     public static void extractColors(final ImageFetcher imageFetcher,
-            final ColorExtractor.Callback callback) {
+                                     final ColorExtractor.Callback callback) {
         new ColorExtractionTask(imageFetcher, callback).execute();
     }
 
@@ -41,45 +35,29 @@ public class ColorExtractor {
         private final ImageFetcher imageFetcher;
         private final ColorExtractor.Callback callback;
 
-        private Bitmap bitmap;
-        private int bitmapKey;
-
-        ColorExtractionTask(final Bitmap bitmap, final int bitmapKey,
-                final ColorExtractor.Callback callback) {
-            this.bitmap = bitmap;
-            this.bitmapKey = bitmapKey;
-
-            this.imageFetcher = null;
-            this.callback = callback;
-        }
-
         ColorExtractionTask(final ImageFetcher imageFetcher,
-                final ColorExtractor.Callback callback) {
+                            final ColorExtractor.Callback callback) {
             this.imageFetcher = imageFetcher;
             this.callback = callback;
         }
 
         @Override
         protected BitmapWithColors doInBackground(Void... voids) {
-            if (bitmap == null && imageFetcher != null) {
-                final String albumName = MusicUtils.getAlbumName();
-                final long albumId = MusicUtils.getCurrentAlbumId();
-                final String artistName = MusicUtils.getArtistName();
-
-                // We are not playing anything, return null. Otherwise we will
-                // potentially override any default colors.
-                if (albumName == null && artistName == null && albumId == -1) {
-                    return null;
-                }
-
-                return imageFetcher.getArtwork(albumName, albumId, artistName, true);
+            if (imageFetcher == null) {
+                return null;
             }
 
-            if (bitmap != null) {
-                return new BitmapWithColors(bitmap, bitmapKey);
+            final String albumName = MusicUtils.getAlbumName();
+            final long albumId = MusicUtils.getCurrentAlbumId();
+            final String artistName = MusicUtils.getArtistName();
+
+            // We are not playing anything, return null. Otherwise we will
+            // potentially override any default colors.
+            if (albumName == null && artistName == null && albumId == -1) {
+                return null;
             }
 
-            return null;
+            return imageFetcher.getArtwork(albumName, albumId, artistName, true);
         }
 
         @Override

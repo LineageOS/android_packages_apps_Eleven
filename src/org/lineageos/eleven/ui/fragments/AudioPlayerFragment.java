@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import org.lineageos.eleven.MusicPlaybackService;
@@ -117,7 +119,10 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         super.onActivityCreated(savedInstanceState);
 
         // Control the media volume
-        getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        }
 
         // Initialize the image fetcher/cache
         mImageFetcher = ElevenUtils.getImageFetcher(getActivity());
@@ -130,11 +135,12 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     @Override
-    public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
-                final Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater,
+                             final ViewGroup container,
+                             final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        mRootView = (ViewGroup) inflater.inflate(R.layout.activity_player_fragment, container,
-                false);
+        mRootView = (ViewGroup) inflater.inflate(R.layout.activity_player_fragment,
+                container, false);
 
         initHeaderBar();
         initPlaybackControls();
@@ -155,7 +161,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
         final Menu playerMenu = mPlayerToolBar.getMenu();
@@ -167,7 +173,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             // ringtone, and equalizer
             inflater.inflate(R.menu.audio_player, playerMenu);
 
-            if (!NavUtils.hasEffectsPanel(getActivity())) {
+            final FragmentActivity activity = getActivity();
+            if (activity != null && !NavUtils.hasEffectsPanel(activity)) {
                 playerMenu.removeItem(R.id.menu_audio_player_equalizer);
             }
 
@@ -185,68 +192,72 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_audio_player_add_to_playlist: {
-                // save the current track id
-                mSelectedId = MusicUtils.getCurrentAudioId();
-                final List<String> menuItemList = MusicUtils.makePlaylist(getActivity());
+        final FragmentActivity activity = getActivity();
+        final FragmentManager fragmentManager = activity == null ?
+                null : activity.getSupportFragmentManager();
 
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        final int id = item.getItemId();
+        if (id == R.id.menu_audio_player_add_to_playlist) {
+            // save the current track id
+            mSelectedId = MusicUtils.getCurrentAudioId();
+            if (activity != null) {
+                final List<String> menuItemList = MusicUtils.makePlaylist(activity);
+                final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                 builder.setTitle(R.string.add_to_playlist)
                         .setItems(menuItemList.toArray(new String[0]), (dialog, which) -> {
                             final long playListId = MusicUtils.getIdForPlaylist(getActivity(),
                                     menuItemList.get(which));
-                            MusicUtils.addToPlaylist(getActivity(), new long[]{mSelectedId},
+                            MusicUtils.addToPlaylist(activity, new long[]{mSelectedId},
                                     playListId);
                         })
                         .setPositiveButton(R.string.new_playlist, (dialog, which) -> {
                             dialog.dismiss();
                             CreateNewPlaylist.getInstance(new long[]{mSelectedId})
-                                    .show(getFragmentManager(), "CreatePlaylist");
+                                    .show(fragmentManager, "CreatePlaylist");
                         });
                 mAlertDialog = builder.show();
-                return true;
             }
-            case R.id.menu_shuffle_all:
-                // Shuffle all the songs
-                MusicUtils.shuffleAll(getActivity());
-                return true;
-            case R.id.menu_audio_player_ringtone:
+        } else if (id == R.id.menu_shuffle_all) {
+            // Shuffle all the songs
+            MusicUtils.shuffleAll(activity);
+        } else if (id == R.id.menu_audio_player_ringtone) {
+            if (activity != null) {
                 // Set the current track as a ringtone
-                MusicUtils.setRingtone(getActivity(), MusicUtils.getCurrentAudioId());
-                return true;
-            case R.id.menu_audio_player_equalizer:
+                MusicUtils.setRingtone(activity, MusicUtils.getCurrentAudioId());
+            }
+        } else if (id == R.id.menu_audio_player_equalizer) {
+            if (activity != null) {
                 // Sound effects
-                NavUtils.openEffectsPanel(getActivity(), HomeActivity.EQUALIZER);
-                return true;
-            case R.id.menu_settings:
-                // Settings
-                NavUtils.openSettings(getActivity());
-                return true;
-            case R.id.menu_audio_player_more_by_artist:
-                NavUtils.openArtistProfile(getActivity(), MusicUtils.getArtistName());
-                return true;
-            case R.id.menu_audio_player_delete:
-                // Delete current song
-                DeleteDialog.newInstance(MusicUtils.getTrackName(), new long[]{
-                        MusicUtils.getCurrentAudioId()
-                }, null).show(getActivity().getSupportFragmentManager(), "DeleteDialog");
-                return true;
-            case R.id.menu_save_queue:
-                NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
-                        .makeQueueCursor(getActivity());
-                CreateNewPlaylist.getInstance(MusicUtils.getSongListForCursor(queue)).show(
-                        getFragmentManager(), "CreatePlaylist");
-                queue.close();
-                return true;
-            case R.id.menu_clear_queue:
-                MusicUtils.clearQueue();
-                return true;
-            default:
-                break;
+                NavUtils.openEffectsPanel(activity, HomeActivity.EQUALIZER);
+            }
+        } else if (id == R.id.menu_settings) {
+            // Settings
+            NavUtils.openSettings(activity);
+        } else if (id == R.id.menu_audio_player_more_by_artist) {
+            NavUtils.openArtistProfile(activity, MusicUtils.getArtistName());
+        } else if (id == R.id.menu_audio_player_delete) {
+            // Delete current song
+            DeleteDialog.newInstance(
+                    MusicUtils.getTrackName(),
+                    new long[]{MusicUtils.getCurrentAudioId()},
+                    null
+            ).show(getActivity().getSupportFragmentManager(), "DeleteDialog");
+            return true;
+        } else if (id == R.id.menu_save_queue) {
+            NowPlayingCursor queue = (NowPlayingCursor) QueueLoader
+                    .makeQueueCursor(activity);
+            if (fragmentManager != null) {
+                CreateNewPlaylist.getInstance(
+                        MusicUtils.getSongListForCursor(queue)
+                ).show(fragmentManager, "CreatePlaylist");
+            }
+            queue.close();
+        } else if (id == R.id.menu_clear_queue) {
+            MusicUtils.clearQueue();
+        } else {
+            return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @Override
@@ -288,7 +299,10 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Listen for power save mode changed
         filter.addAction(PowerManager.ACTION_POWER_SAVE_MODE_CHANGED);
         // Register the intent filters
-        getActivity().registerReceiver(mPlaybackStatus, filter);
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.registerReceiver(mPlaybackStatus, filter);
+        }
         // Refresh the current time
         final long next = refreshCurrentTime();
         queueNextRefresh(next);
@@ -313,7 +327,10 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         // Unregister the receiver
         try {
-            getActivity().unregisterReceiver(mPlaybackStatus);
+            final FragmentActivity activity = getActivity();
+            if (activity != null) {
+                activity.unregisterReceiver(mPlaybackStatus);
+            }
         } catch (final Throwable e) {
             //$FALL-THROUGH$
         }
@@ -343,7 +360,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
 
-                int currentPosition = 0;
+                final int currentPosition;
                 if (MusicUtils.getShuffleMode() == MusicPlaybackService.SHUFFLE_NONE) {
                     // if we aren't shuffling, base the position on the queue position
                     currentPosition = MusicUtils.getQueuePosition();
@@ -369,8 +386,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     private void setupNoResultsContainer(NoResultsContainer empty) {
-        int color = ContextCompat.getColor(getContext(), R.color.no_results_light);
-        empty.setTextColor(color);
+        final Context context = getContext();
+        if (context != null) {
+            final int color = ContextCompat.getColor(getContext(), R.color.no_results_light);
+            empty.setTextColor(color);
+        }
         empty.setMainText(R.string.empty_queue_main);
         empty.setSecondaryText(R.string.empty_queue_secondary);
     }
@@ -430,7 +450,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         mAlbumArtViewPager.setAdapter(albumArtPagerAdapter);
         mAlbumArtViewPager.setCurrentItem(targetIndex);
 
-        if(queueSize == 0) {
+        if (queueSize == 0) {
             mAlbumArtViewPager.setVisibility(View.GONE);
             mQueueEmpty.showNoResults();
         } else {
@@ -473,7 +493,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             mLyricsText.animate().alpha(0).setDuration(200);
         } else {
             lyrics = lyrics.replace("\n", "<br/>");
-            Spanned span = Html.fromHtml(lyrics);
+            Spanned span = Html.fromHtml(lyrics, Html.FROM_HTML_MODE_LEGACY);
             mLyricsText.setText(span);
 
             mLyricsText.animate().alpha(1).setDuration(200);
@@ -481,11 +501,13 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     public void setVisualizerVisible(boolean visible) {
-        if (visible && PreferenceUtils.getInstance(getActivity()).getShowVisualizer()) {
-            if (PreferenceUtils.canRecordAudio(getActivity())) {
+        final FragmentActivity activity = getActivity();
+        if (visible && activity != null &&
+                PreferenceUtils.getInstance(activity).getShowVisualizer()) {
+            if (PreferenceUtils.canRecordAudio(activity)) {
                 mVisualizerView.setVisible(true);
             } else {
-                PreferenceUtils.requestRecordAudio(getActivity());
+                PreferenceUtils.requestRecordAudio(activity);
             }
         } else {
             mVisualizerView.setVisible(false);
@@ -493,8 +515,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     public void updateVisualizerPowerSaveMode() {
-        PowerManager pm = getActivity().getSystemService(PowerManager.class);
-        mVisualizerView.setPowerSaveMode(pm.isPowerSaveMode());
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            PowerManager pm = activity.getSystemService(PowerManager.class);
+            mVisualizerView.setPowerSaveMode(pm.isPowerSaveMode());
+        }
     }
 
     public void setVisualizerColor(int color) {
@@ -517,16 +542,12 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         @Override
         public void handleMessage(final Message msg) {
-            switch (msg.what) {
-                case REFRESH_TIME:
-                    final long next = mAudioPlayer.get().refreshCurrentTime();
-                    mAudioPlayer.get().queueNextRefresh(next);
-                    break;
-                default:
-                    break;
+            if (msg.what == REFRESH_TIME) {
+                final long next = mAudioPlayer.get().refreshCurrentTime();
+                mAudioPlayer.get().queueNextRefresh(next);
             }
         }
-    };
+    }
 
     /**
      * Used to monitor the state of playback
@@ -550,39 +571,32 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
             }
 
             final AudioPlayerFragment audioPlayerFragment = mReference.get();
-            switch (action) {
-                case MusicPlaybackService.META_CHANGED:
-                    // if we are repeating current and the track has changed, re-create the adapter
-                    if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
-                        mReference.get().createAndSetAdapter();
-                    }
+            if (MusicPlaybackService.META_CHANGED.equals(action)) {
+                // if we are repeating current and the track has changed, re-create the adapter
+                if (MusicUtils.getRepeatMode() == MusicPlaybackService.REPEAT_CURRENT) {
+                    mReference.get().createAndSetAdapter();
+                }
 
-                    // Current info
-                    audioPlayerFragment.updateNowPlayingInfo();
-                    break;
-                case MusicPlaybackService.PLAYSTATE_CHANGED:
-                    audioPlayerFragment.mMainPlaybackControls.updatePlayPauseState();
-                    audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
-                    break;
-                case MusicPlaybackService.REPEATMODE_CHANGED:
-                case MusicPlaybackService.SHUFFLEMODE_CHANGED:
-                    // Set the repeat image
-                    audioPlayerFragment.mMainPlaybackControls.updateRepeatState();
-                    // Set the shuffle image
-                    audioPlayerFragment.mMainPlaybackControls.updateShuffleState();
+                // Current info
+                audioPlayerFragment.updateNowPlayingInfo();
+            } else if (MusicPlaybackService.PLAYSTATE_CHANGED.equals(action)) {
+                audioPlayerFragment.mMainPlaybackControls.updatePlayPauseState();
+                audioPlayerFragment.mVisualizerView.setPlaying(MusicUtils.isPlaying());
+            } else if (MusicPlaybackService.REPEATMODE_CHANGED.equals(action) ||
+                    MusicPlaybackService.SHUFFLEMODE_CHANGED.equals(action)) {
+                // Set the repeat image
+                audioPlayerFragment.mMainPlaybackControls.updateRepeatState();
+                // Set the shuffle image
+                audioPlayerFragment.mMainPlaybackControls.updateShuffleState();
 
-                    // Update the queue
-                    audioPlayerFragment.createAndSetAdapter();
-                    break;
-                case MusicPlaybackService.QUEUE_CHANGED:
-                    audioPlayerFragment.createAndSetAdapter();
-                    break;
-                case MusicPlaybackService.NEW_LYRICS:
-                    audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
-                    break;
-                case PowerManager.ACTION_POWER_SAVE_MODE_CHANGED:
-                    audioPlayerFragment.updateVisualizerPowerSaveMode();
-                    break;
+                // Update the queue
+                audioPlayerFragment.createAndSetAdapter();
+            } else if (MusicPlaybackService.QUEUE_CHANGED.equals(action)) {
+                audioPlayerFragment.createAndSetAdapter();
+            } else if (MusicPlaybackService.NEW_LYRICS.equals(action)) {
+                audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
+            } else if (PowerManager.ACTION_POWER_SAVE_MODE_CHANGED.equals(action)) {
+                audioPlayerFragment.updateVisualizerPowerSaveMode();
             }
         }
     }

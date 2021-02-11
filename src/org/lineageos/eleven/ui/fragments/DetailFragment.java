@@ -1,23 +1,26 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui.fragments;
 
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.PopupMenuHelper;
@@ -25,12 +28,20 @@ import org.lineageos.eleven.utils.PopupMenuHelper;
 public abstract class DetailFragment extends BaseFragment {
     protected PopupMenuHelper mActionMenuHelper;
 
-    /** create the popup menu helper used by the type of item
-     *  for which this is a detail screen */
+    /**
+     * create the popup menu helper used by the type of item
+     * for which this is a detail screen
+     */
     protected abstract PopupMenuHelper createActionMenuHelper();
-    /** menu title for the shuffle option for this screen */
+
+    /**
+     * menu title for the shuffle option for this screen
+     */
     protected abstract int getShuffleTitleId();
-    /** action to take if the shuffle menu is selected */
+
+    /**
+     * action to take if the shuffle menu is selected
+     */
     protected abstract void playShuffled();
 
     @Override
@@ -40,7 +51,7 @@ public abstract class DetailFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull final Menu menu, final MenuInflater inflater) {
         inflater.inflate(R.menu.shuffle_item, menu);
         menu.findItem(R.id.menu_shuffle_item).setTitle(getShuffleTitleId());
 
@@ -55,14 +66,16 @@ public abstract class DetailFragment extends BaseFragment {
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        if(item.getItemId() == R.id.menu_shuffle_item) {
+        if (item.getItemId() == R.id.menu_shuffle_item) {
             playShuffled();
             return true;
         }
 
         // delegate to the popup menu that represents the item
         // for which this is a detail screen
-        if(mActionMenuHelper.onMenuItemClick(item)) { return true; }
+        if (mActionMenuHelper.onMenuItemClick(item)) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
