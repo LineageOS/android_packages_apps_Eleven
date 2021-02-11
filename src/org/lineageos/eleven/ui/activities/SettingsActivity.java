@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018-2021 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,27 +16,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.ui.activities;
 
-import static android.content.pm.PackageManager.PERMISSION_GRANTED;
-
+import android.Manifest.permission;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.Manifest.permission;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreference;
@@ -47,6 +43,8 @@ import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
+
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
@@ -56,19 +54,20 @@ public class SettingsActivity extends AppCompatActivity {
 
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                finish();
-                return true;
-            default:
-                break;
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            finish();
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -86,25 +85,28 @@ public class SettingsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
 
             final Preference deleteCache = findPreference("delete_cache");
-            deleteCache.setOnPreferenceClickListener(preference -> {
-                new AlertDialog.Builder(getContext())
-                        .setMessage(R.string.delete_warning)
-                        .setPositiveButton(android.R.string.ok, (dialog, which) ->
-                                ImageFetcher.getInstance(getContext()).clearCaches())
-                        .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss())
-                        .show();
-                return true;
-            });
+            if (deleteCache != null) {
+                deleteCache.setOnPreferenceClickListener(preference -> {
+                    new AlertDialog.Builder(getContext())
+                            .setMessage(R.string.delete_warning)
+                            .setPositiveButton(android.R.string.ok, (dialog, which) ->
+                                    ImageFetcher.getInstance(getContext()).clearCaches())
+                            .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss())
+                            .show();
+                    return true;
+                });
+            }
 
             PreferenceUtils prefUtils = PreferenceUtils.getInstance(getContext());
             prefUtils.setOnSharedPreferenceChangeListener(this);
 
             mShowVisualizer = findPreference(PreferenceUtils.SHOW_VISUALIZER);
             if (mShowVisualizer != null) {
+                final Activity activity = getActivity();
                 // Otherwise we wouldn't notice if the permission has been denied via the Settings
                 // app since the last time
-                mShowVisualizer.setChecked(prefUtils.getShowVisualizer() &&
-                    PreferenceUtils.canRecordAudio(getActivity()));
+                mShowVisualizer.setChecked(prefUtils.getShowVisualizer() && activity != null &&
+                        PreferenceUtils.canRecordAudio(activity));
             }
         }
 
@@ -148,21 +150,26 @@ public class SettingsActivity extends AppCompatActivity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            final Activity activity = getActivity();
             switch (key) {
-                case PreferenceUtils.SHOW_VISUALIZER: {
+                case PreferenceUtils.SHOW_VISUALIZER:
                     final boolean showVisualizer = sharedPreferences.getBoolean(key, false);
-                    if (showVisualizer && !PreferenceUtils.canRecordAudio(getActivity())) {
+                    if (showVisualizer && activity != null &&
+                            !PreferenceUtils.canRecordAudio(getActivity())) {
                         requestRecordAudio();
                     }
                     break;
-                }
-                case PreferenceUtils.USE_BLUR: {
-                    final boolean useBlur = sharedPreferences.getBoolean(key, false);
-                    ImageFetcher.getInstance(getActivity()).setUseBlur(useBlur);
-                    ImageFetcher.getInstance(getActivity()).clearCaches();
+
+                case PreferenceUtils.USE_BLUR:
+                    if (activity != null) {
+                        final boolean useBlur = sharedPreferences.getBoolean(key, false);
+                        final ImageFetcher fetcher = ImageFetcher.getInstance(activity);
+                        fetcher.setUseBlur(useBlur);
+                        fetcher.clearCaches();
+                    }
                     break;
-                }
-                case PreferenceUtils.SHAKE_TO_PLAY: {
+
+                case PreferenceUtils.SHAKE_TO_PLAY:
                     final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
                     try {
                         mService.setShakeToPlayEnabled(enableShakeToPlay);
@@ -170,7 +177,6 @@ public class SettingsActivity extends AppCompatActivity {
                         // do nothing
                     }
                     break;
-                }
             }
         }
 
@@ -179,8 +185,9 @@ public class SettingsActivity extends AppCompatActivity {
            onRequestPermissionsResult gets called */
         private void requestRecordAudio() {
             requestPermissions(new String[]{permission.RECORD_AUDIO},
-                PreferenceUtils.PERMISSION_REQUEST_RECORD_AUDIO);
+                    PreferenceUtils.PERMISSION_REQUEST_RECORD_AUDIO);
         }
+
         @Override
         public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                                @NonNull int[] grantResults) {
@@ -190,9 +197,9 @@ public class SettingsActivity extends AppCompatActivity {
                     mShowVisualizer.setChecked(false);
                     if (!showRationale) {
                         new AlertDialog.Builder(getContext())
-                            .setMessage(R.string.visualizer_perm_denied)
-                            .setPositiveButton(android.R.string.ok, null)
-                            .show();
+                                .setMessage(R.string.visualizer_perm_denied)
+                                .setPositiveButton(android.R.string.ok, null)
+                                .show();
                     }
                 }
             }
