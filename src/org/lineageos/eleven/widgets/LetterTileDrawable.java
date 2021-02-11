@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.widgets;
 
 import android.content.Context;
@@ -34,8 +34,8 @@ import androidx.core.content.ContextCompat;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
-import org.lineageos.eleven.utils.colors.BitmapWithColors;
 import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.colors.BitmapWithColors;
 
 /**
  * A drawable that encapsulates all the functionality needed to display a letter tile to
@@ -47,7 +47,9 @@ public class LetterTileDrawable extends Drawable {
 
     private final Paint mPaint;
 
-    /** Letter tile */
+    /**
+     * Letter tile
+     */
     private static TypedArray sColors;
     private static TypedArray sVibrantDarkColors;
     private static int sDefaultColor;
@@ -60,7 +62,9 @@ public class LetterTileDrawable extends Drawable {
     private static Bitmap DEFAULT_PLAYLIST;
     private static Bitmap DEFAULT_PLAYLIST_LARGE;
 
-    /** Reusable components to avoid new allocations */
+    /**
+     * Reusable components to avoid new allocations
+     */
     private static final Paint sPaint = new Paint();
     private static final Rect sRect = new Rect();
     private static final char[] sChars = new char[2];
@@ -69,7 +73,6 @@ public class LetterTileDrawable extends Drawable {
     private String mIdentifier;
     private float mScale = 1.0f;
     private float mOffset = 0.0f;
-    private Resources res;
     private boolean mIsCircle = false;
 
     private ImageType mImageType;
@@ -100,7 +103,6 @@ public class LetterTileDrawable extends Drawable {
         mPaint = new Paint();
         mPaint.setFilterBitmap(true);
         mPaint.setDither(true);
-        res = context.getResources();
 
         initializeStaticVariables(context);
     }
@@ -230,8 +232,8 @@ public class LetterTileDrawable extends Drawable {
                 return small ? DEFAULT_ARTIST : DEFAULT_ARTIST_LARGE;
             case ALBUM:
                 return small ? DEFAULT_ALBUM : DEFAULT_ALBUM_LARGE;
-             case PLAYLIST:
-                 return small ? DEFAULT_PLAYLIST : DEFAULT_PLAYLIST_LARGE;
+            case PLAYLIST:
+                return small ? DEFAULT_PLAYLIST : DEFAULT_PLAYLIST_LARGE;
             default:
                 throw new IllegalArgumentException("Unrecognized image type");
         }
@@ -257,26 +259,16 @@ public class LetterTileDrawable extends Drawable {
     }
 
     /**
-     * Scale the drawn letter tile to a ratio of its default size
-     *
-     * @param scale The ratio the letter tile should be scaled to as a percentage of its default
-     * size, from a scale of 0 to 2.0f. The default is 1.0f.
-     */
-    public void setScale(float scale) {
-        mScale = scale;
-    }
-
-    /**
      * Assigns the vertical offset of the position of the letter tile to the ContactDrawable
      *
      * @param offset The provided offset must be within the range of -0.5f to 0.5f.
-     * If set to -0.5f, the letter will be shifted upwards by 0.5 times the height of the canvas
-     * it is being drawn on, which means it will be drawn with the center of the letter starting
-     * at the top edge of the canvas.
-     * If set to 0.5f, the letter will be shifted downwards by 0.5 times the height of the canvas
-     * it is being drawn on, which means it will be drawn with the center of the letter starting
-     * at the bottom edge of the canvas.
-     * The default is 0.0f.
+     *               If set to -0.5f, the letter will be shifted upwards by 0.5 times the height of
+     *               the canvas it is being drawn on, which means it will be drawn with the center
+     *               of the letter starting at the top edge of the canvas.
+     *               If set to 0.5f, the letter will be shifted downwards by 0.5 times the height of
+     *               the canvas it is being drawn on, which means it will be drawn with the center
+     *               of the letter starting at the bottom edge of the canvas.
+     *               The default is 0.0f.
      */
     public void setOffset(float offset) {
         mOffset = offset;
@@ -284,12 +276,13 @@ public class LetterTileDrawable extends Drawable {
 
     /**
      * Sets the tile data used to determine the display text and color
+     *
      * @param displayName the name to display - Some logic will be applied to do some trimming
      *                    and up to the first two letters will be displayed
-     * @param identifier the identifier used to determine the color of the background.  For
-     *                   album, use albumId, for artist use artistName and for playlist use
-     *                   playlistId
-     * @param type the type of item that this tile drawable corresponds to
+     * @param identifier  the identifier used to determine the color of the background.  For
+     *                    album, use albumId, for artist use artistName and for playlist use
+     *                    playlistId
+     * @param type        the type of item that this tile drawable corresponds to
      */
     public void setTileDetails(final String displayName, final String identifier,
                                final ImageType type) {
@@ -325,16 +318,18 @@ public class LetterTileDrawable extends Drawable {
 
     /**
      * Draws the default letter tile drawable for the image type to a bitmap
-     * @param identifier the identifier used to determine the color of the background.  For
-     *                   album, use albumId, for artist use artistName and for playlist use
-     *                   playlistId
-     * @param type the type of item that this tile drawable corresponds to
-     * @param isCircle whether to draw a circle or a square
+     *
+     * @param identifier   the identifier used to determine the color of the background.  For
+     *                     album, use albumId, for artist use artistName and for playlist use
+     *                     playlistId
+     * @param type         the type of item that this tile drawable corresponds to
+     * @param isCircle     whether to draw a circle or a square
      * @param smallArtwork true if you want to draw a smaller version of the default bitmap for
      *                     perf/memory reasons
      */
     public static BitmapWithColors createDefaultBitmap(Context context, String identifier,
-            ImageType type, boolean isCircle, boolean smallArtwork) {
+                                                       ImageType type, boolean isCircle,
+                                                       boolean smallArtwork) {
         initializeStaticVariables(context);
 
         identifier = MusicUtils.getTrimmedName(identifier);

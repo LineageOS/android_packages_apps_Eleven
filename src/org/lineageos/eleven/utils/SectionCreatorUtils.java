@@ -1,28 +1,26 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.utils;
 
 import android.content.Context;
 import android.text.TextUtils;
 
-import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.model.Artist;
-import org.lineageos.eleven.model.SearchResult;
 import org.lineageos.eleven.model.Song;
 
 import java.util.List;
@@ -50,16 +48,19 @@ public class SectionCreatorUtils {
 
     /**
      * Interface to compare two items and create labels
+     *
      * @param <T> type of item to compare
      */
+    @SuppressWarnings("unused")
     public static class IItemCompare<T> {
         /**
          * Compares to items and returns a section divider T if there should
          * be a section divider between first and second
-         * @param first the first element in the list.  If null, it is checking to see
-         *              if we need a divider at the beginning of the list
-         * @param second the second element in the list.
-         * @param items the source list of items that we are creating headers from
+         *
+         * @param first      the first element in the list.  If null, it is checking to see
+         *                   if we need a divider at the beginning of the list
+         * @param second     the second element in the list.
+         * @param items      the source list of items that we are creating headers from
          * @param firstIndex index of the first item we are looking at
          * @return String the expected separator label or null if none
          */
@@ -74,10 +75,11 @@ public class SectionCreatorUtils {
         /**
          * Compares to items and returns a section divider T if there should
          * be a section divider between first and second
-         * @param first the first element in the list.
-         * @param second the second element in the list. If null, it is checking to see if we need
-         *               a divider at the end of the list
-         * @param items the source list of items that we are creating footers from
+         *
+         * @param first      the first element in the list.
+         * @param second     the second element in the list. If null, it is checking to see if we
+         *                   need a divider at the end of the list
+         * @param items      the source list of items that we are creating footers from
          * @param firstIndex index of the first item we are looking at
          * @return String the expected separator label or null if none
          */
@@ -91,6 +93,7 @@ public class SectionCreatorUtils {
 
         /**
          * Returns the section label that corresponds to this item
+         *
          * @param item the item
          * @return the section label that this label falls under
          */
@@ -100,6 +103,7 @@ public class SectionCreatorUtils {
 
         /**
          * Returns the section label that corresponds to this item
+         *
          * @param item the item
          * @return the section label that this label falls under
          */
@@ -116,6 +120,7 @@ public class SectionCreatorUtils {
 
     /**
      * A localized String comparison implementation of IItemCompare
+     *
      * @param <T> the type of item to compare
      */
     public static abstract class LocalizedCompare<T> extends IItemCompare<T> {
@@ -167,6 +172,7 @@ public class SectionCreatorUtils {
 
     /**
      * A simple int comparison implementation of IItemCompare
+     *
      * @param <T> the type of item to compare
      */
     public static abstract class IntCompare<T> extends IItemCompare<T> {
@@ -191,6 +197,7 @@ public class SectionCreatorUtils {
      * A Bounded int comparison implementation of IntCompare
      * Basically this will take ints and determine what bounds it falls into
      * For example, 1-5 mintes, 5-10 minutes, 10+ minutes
+     *
      * @param <T> the type of item to compare
      */
     public static abstract class BoundedIntCompare<T> extends IntCompare<T> {
@@ -224,6 +231,7 @@ public class SectionCreatorUtils {
 
     /**
      * This implements BoundedIntCompare and gives duration buckets
+     *
      * @param <T> the type of item to compare
      */
     public static abstract class DurationCompare<T> extends BoundedIntCompare<T> {
@@ -237,7 +245,7 @@ public class SectionCreatorUtils {
         protected int getStringId(int value) {
             if (value < 30) {
                 return R.string.header_less_than_30s;
-            } else if (value < 1 * SECONDS_PER_MINUTE) {
+            } else if (value < SECONDS_PER_MINUTE) {
                 return R.string.header_30_to_60_seconds;
             } else if (value < 2 * SECONDS_PER_MINUTE) {
                 return R.string.header_1_to_2_minutes;
@@ -261,6 +269,7 @@ public class SectionCreatorUtils {
 
     /**
      * This implements BoundedIntCompare and gives number of songs buckets
+     *
      * @param <T> the type of item to compare
      */
     public static abstract class NumberOfSongsCompare<T> extends BoundedIntCompare<T> {
@@ -284,6 +293,7 @@ public class SectionCreatorUtils {
 
     /**
      * This implements BoundedIntCompare and gives number of albums buckets
+     *
      * @param <T> the type of item to compare
      */
     public static abstract class NumberOfAlbumsCompare<T> extends BoundedIntCompare<T> {
@@ -336,13 +346,14 @@ public class SectionCreatorUtils {
 
     /**
      * This creates the sections given a list of items and the comparison algorithm
-     * @param list The list of items to analyze
+     *
+     * @param list       The list of items to analyze
      * @param comparator The comparison function to use
-     * @param <T> the type of item to compare
+     * @param <T>        the type of item to compare
      * @return Creates a TreeMap of indices (if the headers were part of the list) to section labels
      */
     public static <T> TreeMap<Integer, Section> createSections(final List<T> list,
-                                                              final IItemCompare<T> comparator) {
+                                                               final IItemCompare<T> comparator) {
         if (list != null && list.size() > 0) {
             TreeMap<Integer, Section> sections = new TreeMap<>();
             for (int i = 0; i < list.size() + 1; i++) {
@@ -380,6 +391,7 @@ public class SectionCreatorUtils {
 
     /**
      * Returns an artist comparison based on the current sort
+     *
      * @param context Context for string generation
      * @return the artist comparison method
      */
@@ -428,96 +440,8 @@ public class SectionCreatorUtils {
     }
 
     /**
-     * Returns an album comparison based on the current sort
-     * @param context Context for string generation
-     * @return the album comparison method
-     */
-    public static IItemCompare<Album> createAlbumComparison(final Context context) {
-        IItemCompare<Album> sectionCreator = null;
-
-        final String sortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
-        switch (sortOrder) {
-            case SortOrder.AlbumSortOrder.ALBUM_A_Z:
-            case SortOrder.AlbumSortOrder.ALBUM_Z_A:
-                sectionCreator = new LocalizedCompare<Album>(context) {
-                    @Override
-                    public String getString(Album item) {
-                        return item.mAlbumName;
-                    }
-
-                    @Override
-                    public String createHeaderLabel(Album item) {
-                        if (item.mBucketLabel != null) {
-                            return super.createHeaderLabel(item.mBucketLabel);
-                        }
-
-                        return super.createHeaderLabel(item);
-                    }
-                };
-                break;
-            case SortOrder.AlbumSortOrder.ALBUM_ARTIST:
-                sectionCreator = new LocalizedCompare<Album>(context) {
-                    @Override
-                    public String getString(Album item) {
-                        return item.mArtistName;
-                    }
-
-                    @Override
-                    public String createHeaderLabel(Album item) {
-                        if (item.mBucketLabel != null) {
-                            return super.createHeaderLabel(item.mBucketLabel);
-                        }
-
-                        return super.createHeaderLabel(item);
-                    }
-                };
-                break;
-            case SortOrder.AlbumSortOrder.ALBUM_NUMBER_OF_SONGS:
-                sectionCreator = new NumberOfSongsCompare<Album>(context) {
-                    @Override
-                    public int getInt(Album item) {
-                        return item.mSongNumber;
-                    }
-                };
-                break;
-            case SortOrder.AlbumSortOrder.ALBUM_YEAR:
-                sectionCreator = new IntCompare<Album>() {
-                    private static final int INVALID_YEAR = -1;
-
-                    @Override
-                    public int getInt(Album item) {
-                        // if we don't have a year, treat it as invalid
-                        if (item.mYear == null) {
-                            return INVALID_YEAR;
-                        }
-
-                        int year = Integer.valueOf(item.mYear);
-
-                        // if the year is extremely low, treat it as invalid too
-                        if (MusicUtils.isInvalidYear(year)) {
-                            return INVALID_YEAR;
-                        }
-
-                        return year;
-                    }
-
-                    @Override
-                    public String createHeaderLabel(Album item) {
-                        if (MusicUtils.isInvalidYear(getInt(item))) {
-                            return context.getString(R.string.header_unknown_year);
-                        }
-
-                        return item.mYear;
-                    }
-                };
-                break;
-        }
-
-        return sectionCreator;
-    }
-
-    /**
      * Returns an song comparison based on the current sort
+     *
      * @param context Context for string generation
      * @return the song comparison method
      */
@@ -611,79 +535,5 @@ public class SectionCreatorUtils {
         }
 
         return sectionCreator;
-    }
-
-    /**
-     * Returns an song comparison based on the current sort
-     * @param context Context for string generation
-     * @return the song comparison method
-     */
-    public static IItemCompare<SearchResult> createSearchResultComparison(final Context context) {
-        return new IItemCompare<SearchResult>() {
-
-            @Override
-            public String createSectionHeader(SearchResult first, SearchResult second) {
-                if (first == null || first.mType != second.mType) {
-                    return createHeaderLabel(second);
-                }
-
-                return null;
-            }
-
-            @Override
-            public String createHeaderLabel(SearchResult item) {
-                switch (item.mType) {
-                    case Artist:
-                        return context.getString(R.string.page_artists);
-                    case Album:
-                        return context.getString(R.string.page_albums);
-                    case Song:
-                        return context.getString(R.string.page_songs);
-                    case Playlist:
-                        return context.getString(R.string.page_playlists);
-                }
-
-                return null;
-            }
-
-            @Override
-            public String createSectionFooter(SearchResult first, SearchResult second,
-                                              List<SearchResult> items, int firstIndex) {
-                if (second == null ||
-                        (first != null && first.mType != second.mType)) {
-                    // if we don't have SEARCH_NUM_RESULTS_TO_GET # of the same type of items
-                    // then we don't have enough to show the footer.  For example, if we show 5
-                    // items but only the last 2 items are artists, that means we only have 2
-                    // so there is no point in showing the "Show All" footer
-                    // We start from 1 because we don't need to count
-                    // the first item itself
-                    for (int i = 1; i < Config.SEARCH_NUM_RESULTS_TO_GET; i++) {
-                        if (firstIndex - i < 0 || items.get(firstIndex - i).mType != first.mType) {
-                            return null;
-                        }
-                    }
-
-                    return createFooterLabel(first);
-                }
-
-                return null;
-            }
-
-            @Override
-            public String createFooterLabel(SearchResult item) {
-                switch (item.mType) {
-                    case Artist:
-                        return context.getString(R.string.footer_search_artists);
-                    case Album:
-                        return context.getString(R.string.footer_search_albums);
-                    case Song:
-                        return context.getString(R.string.footer_search_songs);
-                    case Playlist:
-                        return context.getString(R.string.footer_search_playlists);
-                }
-
-                return null;
-            }
-        };
     }
 }
