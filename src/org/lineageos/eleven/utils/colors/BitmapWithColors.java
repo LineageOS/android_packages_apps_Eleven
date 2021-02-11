@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,8 +72,8 @@ public class BitmapWithColors {
     private static final LruCache<Integer, BitmapColors> sCachedColors =
             new LruCache<>(CACHE_SIZE_MAX);
 
-    private Bitmap mBitmap;
-    private int mBitmapKey;
+    private final Bitmap mBitmap;
+    private final int mBitmapKey;
     private BitmapColors mColors;
 
     public BitmapWithColors(Bitmap bitmap, int bitmapKey) {
@@ -103,14 +103,6 @@ public class BitmapWithColors {
             return mColors.mVibrantDarkColor;
         }
         return mColors.mVibrantColor;
-    }
-
-    public int getVibrantLightColor() {
-        loadColorsIfNeeded();
-        if (mColors.mVibrantLightColor == Color.TRANSPARENT) {
-            return getVibrantColor();
-        }
-        return mColors.mVibrantLightColor;
     }
 
     public int getVibrantDarkColor() {
@@ -143,13 +135,15 @@ public class BitmapWithColors {
         }
         if (contrastToLight > bestContrast) {
             bestColor = mColors.mVibrantLightColor;
-            bestContrast = contrastToLight;
         }
 
         return bestColor;
     }
 
-    /** Calculates the constrast between two colors, using the algorithm provided by the WCAG v2. */
+    /**
+     * Calculates the contrast between two colors, using the algorithm
+     * provided by the WCAG v2.
+     */
     private static float computeContrastBetweenColors(int bg, int fg) {
         if (bg == Color.TRANSPARENT || fg == Color.TRANSPARENT || bg == fg) {
             return -1;

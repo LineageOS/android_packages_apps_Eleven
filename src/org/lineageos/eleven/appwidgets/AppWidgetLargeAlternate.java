@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.appwidgets;
 
 import android.annotation.SuppressLint;
@@ -36,7 +40,7 @@ import org.lineageos.eleven.widgets.ShuffleButton;
 @SuppressLint("NewApi")
 public class AppWidgetLargeAlternate extends AppWidgetBase {
 
-    public static final String CMDAPPWIDGETUPDATE = "app_widget_large_alternate_update";
+    public static final String APP_WIDGET_UPDATE = "app_widget_large_alternate_update";
 
     private static AppWidgetLargeAlternate mInstance;
 
@@ -47,16 +51,13 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         return mInstance;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void onUpdate(final Context context, final AppWidgetManager appWidgetManager,
             final int[] appWidgetIds) {
         defaultAppWidget(context, appWidgetIds);
         final Intent updateIntent = new Intent(MusicPlaybackService.SERVICECMD);
         updateIntent.putExtra(MusicPlaybackService.CMDNAME,
-                AppWidgetLargeAlternate.CMDAPPWIDGETUPDATE);
+                AppWidgetLargeAlternate.APP_WIDGET_UPDATE);
         updateIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
         updateIntent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
         context.sendBroadcast(updateIntent);
@@ -188,7 +189,7 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
     }
 
     /**
-     * Link up various button actions using {@link PendingIntents}.
+     * Link up various button actions using {@link PendingIntent}s.
      *
      */
     private void linkButtons(final Context context, final RemoteViews views) {

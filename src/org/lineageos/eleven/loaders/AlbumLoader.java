@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2020 The LineageOS Project
+ * Copyright (C) 2020-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 
@@ -29,6 +27,7 @@ import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.provider.LocalizedStore;
 import org.lineageos.eleven.provider.LocalizedStore.SortParameter;
 import org.lineageos.eleven.sectionadapter.SectionCreator;
+import org.lineageos.eleven.utils.EmptyCursor;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
@@ -48,7 +47,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     /**
      * The result
      */
-    private ArrayList<Album> mAlbumsList = Lists.newArrayList();
+    private final ArrayList<Album> mAlbumsList = Lists.newArrayList();
 
     /**
      * Additional selection filter
@@ -63,7 +62,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     }
 
     /**
-     * @param context The {@link Context} to use
+     * @param context  The {@link Context} to use
      * @param artistId The artistId to filter against or null if none
      */
     public AlbumLoader(final Context context, final Long artistId) {
@@ -72,9 +71,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         mArtistId = artistId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Album> loadInBackground() {
         // Create the Cursor
@@ -106,7 +102,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
                 final Album album = new Album(id, albumName, artist, songCount, year);
 
                 if (cursor instanceof SortedCursor) {
-                    album.mBucketLabel = (String)((SortedCursor) cursor).getExtraData();
+                    album.mBucketLabel = (String) ((SortedCursor) cursor).getExtraData();
                 }
 
                 // Add everything up
@@ -116,7 +112,6 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
 
         return mAlbumsList;
@@ -124,6 +119,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
 
     /**
      * For string-based sorts, return the localized store sort parameter, otherwise return null
+     *
      * @param sortOrder the song ordering preference selected by the user
      */
     private static LocalizedStore.SortParameter getSortParameter(String sortOrder) {
@@ -140,20 +136,23 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     /**
      * Creates the {@link Cursor} used to run the query.
      *
-     * @param context The {@link Context} to use.
+     * @param context  The {@link Context} to use.
      * @param artistId The artistId we want to find albums for or null if we want all albums
      * @return The {@link Cursor} used to run the album query.
      */
-    public static final Cursor makeAlbumCursor(final Context context, final Long artistId) {
+    public static Cursor makeAlbumCursor(final Context context, final Long artistId) {
         // requested album ordering
         final String albumSortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
         Uri uri = MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
         if (artistId != null) {
+            if (artistId == -1) {
+                return new EmptyCursor();
+            }
             uri = MediaStore.Audio.Artists.Albums.getContentUri("external", artistId);
         }
 
         Cursor cursor = context.getContentResolver().query(uri,
-                new String[] {
+                new String[]{
                         /* 0 */
                         AlbumColumns.ALBUM_ID,
                         /* 1 */
@@ -177,4 +176,5 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
 
         return cursor;
     }
+
 }

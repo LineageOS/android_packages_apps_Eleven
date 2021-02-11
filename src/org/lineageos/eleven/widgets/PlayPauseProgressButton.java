@@ -1,22 +1,20 @@
 /*
-* Copyright (c) 2013, The Linux Foundation. All rights reserved.
-* Copyright (C) 2015 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-
-* Note: This file was re-added only to provide a progress bar to the Bottom Action Bar, the main music player ui is unaffected by this file.
-
-*/
+ * Copyright (C) 2013, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.widgets;
 
 import android.content.Context;
@@ -37,10 +35,11 @@ import org.lineageos.eleven.utils.MusicUtils;
  * updates while the activity/fragment is not visible
  */
 public class PlayPauseProgressButton extends FrameLayout {
-    private static String TAG = PlayPauseProgressButton.class.getSimpleName();
-    private static boolean DEBUG = false;
+    private static final String TAG = PlayPauseProgressButton.class.getSimpleName();
+    private static final boolean DEBUG = false;
     private static final int REVOLUTION_IN_DEGREES = 360;
     private static final int HALF_REVOLUTION_IN_DEGREES = REVOLUTION_IN_DEGREES / 2;
+    private static final boolean DRAG_ENABLED = false;
 
     private ProgressBar mProgressBar;
     private PlayPauseButton mPlayPauseButton;
@@ -49,7 +48,6 @@ public class PlayPauseProgressButton extends FrameLayout {
 
     private final int mSmallDistance;
     private float mDragPercentage = 0.0f;
-    private boolean mDragEnabled = false;
     private boolean mDragging = false;
     private float mDownAngle;
     private float mDragAngle;
@@ -75,8 +73,8 @@ public class PlayPauseProgressButton extends FrameLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mPlayPauseButton = (PlayPauseButton)findViewById(R.id.action_button_play);
-        mProgressBar = (ProgressBar)findViewById(R.id.circularProgressBarAlt);
+        mPlayPauseButton = (PlayPauseButton) findViewById(R.id.action_button_play);
+        mProgressBar = (ProgressBar) findViewById(R.id.circularProgressBarAlt);
     }
 
     @Override
@@ -92,8 +90,8 @@ public class PlayPauseProgressButton extends FrameLayout {
 
         // rotate the progress bar 90 degrees counter clockwise so that the
         // starting position is at the top
-        mProgressBar.setPivotX(mProgressBar.getMeasuredWidth() / 2);
-        mProgressBar.setPivotY(mProgressBar.getMeasuredHeight() / 2);
+        mProgressBar.setPivotX(mProgressBar.getMeasuredWidth() >> 1);
+        mProgressBar.setPivotY(mProgressBar.getMeasuredHeight() >> 1);
         mProgressBar.setRotation(-90);
     }
 
@@ -109,35 +107,10 @@ public class PlayPauseProgressButton extends FrameLayout {
     }
 
     /**
-     * Disables and sets the visibility to gone for the container
-     */
-    public void disableAndHide() {
-        // disable
-        setEnabled(false);
-
-        // hide our view
-        setVisibility(GONE);
-    }
-
-    /**
-     * Sets whether the user can drag the progress in a circular motion to seek the track
-     */
-    public void setDragEnabled(boolean enabled) {
-        mDragEnabled = enabled;
-    }
-
-    /**
      * @return true if the user is actively dragging to seek
      */
     public boolean isDragging() {
-        return mDragEnabled && mDragging;
-    }
-
-    /**
-     * @return how far the user has dragged in the track in ms
-     */
-    public long getDragProgressInMs() {
-        return (long)(mDragPercentage * mCurrentSongDuration);
+        return DRAG_ENABLED && mDragging;
     }
 
     @Override
@@ -161,25 +134,6 @@ public class PlayPauseProgressButton extends FrameLayout {
             // signal our state has changed
             onStateChanged();
         }
-    }
-
-    /**
-     * Resumes the progress bar periodic update logic
-     */
-    public void resume() {
-        if (mPaused) {
-            mPaused = false;
-
-            // signal our state has changed
-            onStateChanged();
-        }
-    }
-
-    /**
-     * @return play pause button
-     */
-    public PlayPauseButton getPlayPauseButton() {
-        return mPlayPauseButton;
     }
 
     /**
@@ -223,13 +177,10 @@ public class PlayPauseProgressButton extends FrameLayout {
      */
     private void postUpdate() {
         if (mUpdateProgress == null) {
-            mUpdateProgress = new Runnable() {
-                @Override
-                public void run() {
-                    updateState();
-                    postDelayed(mUpdateProgress, isDragging() ? MusicUtils.UPDATE_FREQUENCY_FAST_MS
-                            : MusicUtils.UPDATE_FREQUENCY_MS);
-                }
+            mUpdateProgress = () -> {
+                updateState();
+                postDelayed(mUpdateProgress, isDragging() ? MusicUtils.UPDATE_FREQUENCY_FAST_MS
+                        : MusicUtils.UPDATE_FREQUENCY_MS);
             };
         }
 
@@ -256,7 +207,7 @@ public class PlayPauseProgressButton extends FrameLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        if (!mDragEnabled) {
+        if (!DRAG_ENABLED) {
             return false;
         }
 
@@ -268,7 +219,7 @@ public class PlayPauseProgressButton extends FrameLayout {
         final float x = event.getX();
         final float y = event.getY();
 
-        if (!mDragEnabled || mCurrentSongDuration <= 0) {
+        if (!DRAG_ENABLED || mCurrentSongDuration <= 0) {
             return false;
         }
 
@@ -312,7 +263,7 @@ public class PlayPauseProgressButton extends FrameLayout {
             case MotionEvent.ACTION_CANCEL:
                 // if we were dragging, seek to where we dragged to
                 if (mDragging) {
-                    MusicUtils.seek((long)(mDragPercentage * mCurrentSongDuration));
+                    MusicUtils.seek((long) (mDragPercentage * mCurrentSongDuration));
                 }
                 mDragging = false;
             default:
