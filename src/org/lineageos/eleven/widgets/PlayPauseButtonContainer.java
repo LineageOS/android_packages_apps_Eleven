@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  * Copyright (C) 2019 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,13 +19,11 @@ package org.lineageos.eleven.widgets;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
-import android.widget.ProgressBar;
 
 import org.lineageos.eleven.R;
 
 public class PlayPauseButtonContainer extends FrameLayout {
     private PlayPauseButton mPlayPauseButton;
-    private ProgressBar mCircularProgressBar;
 
     public PlayPauseButtonContainer(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -39,7 +37,6 @@ public class PlayPauseButtonContainer extends FrameLayout {
         super.onFinishInflate();
 
         mPlayPauseButton = findViewById(R.id.action_button_play);
-        mCircularProgressBar = findViewById(R.id.circularProgressBar);
     }
 
     @Override

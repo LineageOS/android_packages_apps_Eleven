@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.loaders;
 
 import android.content.Context;
@@ -41,7 +45,7 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
     /**
      * The result
      */
-    private ArrayList<Artist> mArtistsList = Lists.newArrayList();
+    private final ArrayList<Artist> mArtistsList = Lists.newArrayList();
 
     /**
      * Constructor of <code>ArtistLoader</code>
@@ -52,9 +56,6 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
         super(context);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Artist> loadInBackground() {
         // Create the Cursor
@@ -92,7 +93,6 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
 
         return mArtistsList;
@@ -116,7 +116,7 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
      * @param context The {@link Context} to use.
      * @return The {@link Cursor} used to run the artist query.
      */
-    public static final Cursor makeArtistCursor(final Context context) {
+    public static Cursor makeArtistCursor(final Context context) {
         // requested artist ordering
         final String artistSortOrder = PreferenceUtils.getInstance(context).getArtistSortOrder();
 
@@ -135,7 +135,7 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
         // if our sort is a localized-based sort, grab localized data from the store
         final SortParameter sortParameter = getSortParameter(artistSortOrder);
         if (sortParameter != null && cursor != null) {
-            final boolean descending = MusicUtils.isSortOrderDesending(artistSortOrder);
+            final boolean descending = MusicUtils.isSortOrderDescending(artistSortOrder);
             return LocalizedStore.getInstance(context).getLocalizedSort(cursor, Artists._ID,
                     SortParameter.Artist, sortParameter, descending, true);
         }
