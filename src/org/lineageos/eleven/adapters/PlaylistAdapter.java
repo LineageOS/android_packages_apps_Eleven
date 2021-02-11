@@ -1,14 +1,19 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package org.lineageos.eleven.adapters;
@@ -66,9 +71,6 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
         super(context, 0);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public View getView(final int position, View convertView, final ViewGroup parent) {
         // Recycle ViewHolder's items
@@ -87,7 +89,7 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
             // set the pop up menu listener
             holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         } else {
-            holder = (MusicHolder)convertView.getTag();
+            holder = (MusicHolder) convertView.getTag();
         }
 
         // Retrieve the data holder
@@ -97,16 +99,16 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
         holder.mPopupMenuButton.get().setPosition(position);
 
         // Set each playlist name (line one)
-        holder.mLineOne.get().setText(dataHolder.mLineOne);
+        holder.mLineOne.get().setText(dataHolder.lineOne);
 
-        if (dataHolder.mLineTwo == null) {
+        if (dataHolder.lineTwo == null) {
             holder.mLineTwo.get().setVisibility(View.GONE);
         } else {
             holder.mLineTwo.get().setVisibility(View.VISIBLE);
-            holder.mLineTwo.get().setText(dataHolder.mLineTwo);
+            holder.mLineTwo.get().setText(dataHolder.lineTwo);
         }
 
-        SmartPlaylistType type = SmartPlaylistType.getTypeById(dataHolder.mItemId);
+        SmartPlaylistType type = SmartPlaylistType.getTypeById(dataHolder.itemId);
         if (type != null) {
             // Set the image resource based on the icon
             switch (type) {
@@ -124,33 +126,23 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
         } else {
             // load the image
             ImageFetcher.getInstance(getContext()).loadPlaylistCoverArtImage(
-                    dataHolder.mItemId, holder.mImage.get());
+                    dataHolder.itemId, holder.mImage.get());
         }
-
 
 
         return convertView;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public boolean hasStableIds() {
         return true;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getViewTypeCount() {
         return VIEW_TYPE_COUNT;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public int getItemViewType(int position) {
         if (getItem(position).isSmartPlaylist()) {
@@ -174,12 +166,12 @@ public class PlaylistAdapter extends ArrayAdapter<Playlist> implements IPopupMen
             // Build the data holder
             mData[i] = new DataHolder();
             // Playlist Id
-            mData[i].mItemId = playlist.mPlaylistId;
+            mData[i].itemId = playlist.mPlaylistId;
             // Playlist names (line one)
-            mData[i].mLineOne = playlist.mPlaylistName;
+            mData[i].lineOne = playlist.mPlaylistName;
             // # of songs
             if (playlist.mSongCount >= 0) {
-                mData[i].mLineTwo = MusicUtils.makeLabel(getContext(),
+                mData[i].lineTwo = MusicUtils.makeLabel(getContext(),
                         R.plurals.Nsongs, playlist.mSongCount);
             }
         }

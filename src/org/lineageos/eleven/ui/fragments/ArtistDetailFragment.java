@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
@@ -41,7 +42,6 @@ import org.lineageos.eleven.utils.ArtistPopupMenuHelper;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.utils.SongPopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 import java.util.TreeSet;
@@ -56,10 +56,8 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     private ImageView mHero;
     private View mHeader;
 
-    private ListView mSongs;
     private ArtistDetailSongAdapter mSongAdapter;
 
-    private RecyclerView mAlbums;
     private ArtistDetailAlbumAdapter mAlbumAdapter;
 
     private PopupMenuHelper mSongPopupMenuHelper;
@@ -68,15 +66,19 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     private LoadingEmptyContainer mLoadingEmptyContainer;
 
     @Override
-    protected int getLayoutToInflate() { return R.layout.activity_artist_detail; }
+    protected int getLayoutToInflate() {
+        return R.layout.activity_artist_detail;
+    }
 
     @Override
     protected String getTitle() {
-        return getArguments().getString(Config.ARTIST_NAME);
+        final Bundle args = getArguments();
+        return args == null ? "" : args.getString(Config.ARTIST_NAME);
     }
 
     protected long getArtistId() {
-        return getArguments().getLong(Config.ID);
+        final Bundle args = getArguments();
+        return args == null ? -1 : getArguments().getLong(Config.ID);
     }
 
     @Override
@@ -85,21 +87,21 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
 
         getContainingActivity().setFragmentPadding(false);
 
-        Bundle arguments = getArguments();
-        mArtistName = arguments.getString(Config.ARTIST_NAME);
-        mArtistId = arguments.getLong(Config.ID);
+        Bundle args = getArguments();
+        mArtistName = args == null ? "" : args.getString(Config.ARTIST_NAME);
+        mArtistId = args == null ? -1 : args.getLong(Config.ID);
 
         setupPopupMenuHelpers();
         setupSongList();
         setupAlbumList();
         setupHero(mArtistName);
 
-        LoaderManager lm = getLoaderManager();
-        lm.initLoader(ALBUM_LOADER_ID, arguments, mAlbumAdapter);
-        lm.initLoader(SONG_LOADER_ID, arguments, mSongAdapter);
+        LoaderManager lm = LoaderManager.getInstance(this);
+        lm.initLoader(ALBUM_LOADER_ID, args, mAlbumAdapter);
+        lm.initLoader(SONG_LOADER_ID, args, mSongAdapter);
     }
 
-    @Override // DetailFragment
+    @Override
     protected PopupMenuHelper createActionMenuHelper() {
         return new ArtistPopupMenuHelper(getActivity(), getChildFragmentManager()) {
             public Artist getArtist(int position) {
@@ -108,49 +110,50 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
         };
     }
 
-    @Override // DetailFragment
-    protected int getShuffleTitleId() { return R.string.menu_shuffle_artist; }
+    @Override
+    protected int getShuffleTitleId() {
+        return R.string.menu_shuffle_artist;
+    }
 
-    @Override // DetailFragment
+    @Override
     protected void playShuffled() {
         MusicUtils.playArtist(getActivity(), mArtistId, -1, true);
     }
 
     private void setupHero(String artistName) {
-        mHero = (ImageView)mHeader.findViewById(R.id.hero);
+        mHero = (ImageView) mHeader.findViewById(R.id.hero);
         mHero.setContentDescription(artistName);
         // initiate loading the artist image
-        // since the artist image needs to be scaled to the image view bounds, we need to wait till the first layout
-        // traversal to be able to get the image view dimensions in the helper method that scales the image
-        mHero.getViewTreeObserver().addOnGlobalLayoutListener( new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                mHero.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                ImageFetcher.getInstance(getActivity()).loadArtistImage(mArtistName, mHero, true);
-            }
-        });
+        // since the artist image needs to be scaled to the image view bounds,
+        // we need to wait till the first layout traversal to be able to get the image view
+        // dimensions in the helper method that scales the image
+        mHero.getViewTreeObserver().addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        mHero.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        ImageFetcher.getInstance(getActivity()).loadArtistImage(mArtistName, mHero, true);
+                    }
+                });
     }
 
     private void setupAlbumList() {
-        mAlbums = (RecyclerView) mHeader.findViewById(R.id.albums);
-        mAlbums.setHasFixedSize(true);
-        mAlbums.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
+        RecyclerView albumsList = (RecyclerView) mHeader.findViewById(R.id.albums);
+        albumsList.setHasFixedSize(true);
+        albumsList.setLayoutManager(
+                new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
         mAlbumAdapter = new ArtistDetailAlbumAdapter(getActivity());
-        mAlbumAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mAlbumPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
-        mAlbums.setAdapter(mAlbumAdapter);
+        mAlbumAdapter.setPopupMenuClickedListener((v, position) ->
+                mAlbumPopupMenuHelper.showPopupMenu(v, position));
+        albumsList.setAdapter(mAlbumAdapter);
     }
 
     private void setupSongList() {
-        mSongs = (ListView)mRootView.findViewById(R.id.songs);
+        ListView songsList = (ListView) mRootView.findViewById(R.id.songs);
         mHeader = LayoutInflater.from(getActivity()).
-                inflate(R.layout.artist_detail_header, mSongs, false);
-        mSongs.addHeaderView(mHeader);
-        mSongs.setOnScrollListener(this);
+                inflate(R.layout.artist_detail_header, songsList, false);
+        songsList.addHeaderView(mHeader);
+        songsList.setOnScrollListener(this);
         mSongAdapter = new ArtistDetailSongAdapter(getActivity()) {
             @Override
             protected void onLoading() {
@@ -164,17 +167,13 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
                 getContainingActivity().postRemoveFragment(ArtistDetailFragment.this);
             }
         };
-        mSongAdapter.setPopupMenuClickedListener(new IPopupMenuCallback.IListener() {
-            @Override
-            public void onPopupMenuClicked(View v, int position) {
-                mSongPopupMenuHelper.showPopupMenu(v, position);
-            }
-        });
-        mSongs.setAdapter(mSongAdapter);
-        mSongs.setOnItemClickListener(mSongAdapter);
+        mSongAdapter.setPopupMenuClickedListener((v, position) ->
+                mSongPopupMenuHelper.showPopupMenu(v, position));
+        songsList.setAdapter(mSongAdapter);
+        songsList.setOnItemClickListener(mSongAdapter);
         mLoadingEmptyContainer =
-                (LoadingEmptyContainer)mRootView.findViewById(R.id.loading_empty_container);
-        mSongs.setEmptyView(mLoadingEmptyContainer);
+                (LoadingEmptyContainer) mRootView.findViewById(R.id.loading_empty_container);
+        songsList.setEmptyView(mLoadingEmptyContainer);
     }
 
     private void setupPopupMenuHelpers() {
@@ -220,14 +219,17 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     }
 
     // TODO: change this class to use the same header strategy as PlaylistDetail
-    protected int getHeaderHeight() { return mHero.getHeight(); }
+    protected int getHeaderHeight() {
+        return mHero.getHeight();
+    }
 
-    protected void setHeaderPosition(float y) {  }
+    protected void setHeaderPosition(float y) {
+    }
 
     @Override
     public void restartLoader() {
         Bundle arguments = getArguments();
-        LoaderManager lm = getLoaderManager();
+        LoaderManager lm = LoaderManager.getInstance(this);
         lm.restartLoader(ALBUM_LOADER_ID, arguments, mAlbumAdapter);
         lm.restartLoader(SONG_LOADER_ID, arguments, mSongAdapter);
 
