@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -11,7 +12,7 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * limitations under the License
+ * limitations under the License.
  */
 package org.lineageos.eleven.provider;
 
@@ -28,6 +29,8 @@ import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AudioColumns;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import org.lineageos.eleven.loaders.SortedCursor;
 import org.lineageos.eleven.locale.LocaleSet;
@@ -63,7 +66,7 @@ public class LocalizedStore {
         Song,
         Artist,
         Album,
-    };
+    }
 
     private static class SortData {
         long[] ids;
@@ -74,7 +77,7 @@ public class LocalizedStore {
      * @param context The {@link android.content.Context} to use
      * @return A new instance of this class.
      */
-    public static final synchronized LocalizedStore getInstance(final Context context) {
+    public static synchronized LocalizedStore getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new LocalizedStore(context.getApplicationContext());
         }
@@ -91,7 +94,7 @@ public class LocalizedStore {
         mHandlerThread.start();
         mHandler = new Handler(mHandlerThread.getLooper()) {
             @Override
-            public void handleMessage(Message msg) {
+            public void handleMessage(@NonNull Message msg) {
                 if (msg.what == LOCALE_CHANGED && mLocaleSetManager.localeSetNeedsUpdate()) {
                     rebuildLocaleData(mLocaleSetManager.getSystemLocaleSet());
                 }
@@ -105,26 +108,26 @@ public class LocalizedStore {
     public void onCreate(final SQLiteDatabase db) {
 
         String[] tables = new String[]{
-            "CREATE TABLE IF NOT EXISTS " + SongSortColumns.TABLE_NAME + "(" +
-                    SongSortColumns.ID + " INTEGER PRIMARY KEY," +
-                    SongSortColumns.ARTIST_ID + " INTEGER NOT NULL," +
-                    SongSortColumns.ALBUM_ID + " INTEGER NOT NULL," +
-                    SongSortColumns.NAME + " TEXT COLLATE LOCALIZED," +
-                    SongSortColumns.NAME_LABEL + " TEXT," +
-                    SongSortColumns.NAME_BUCKET + " INTEGER);",
+                "CREATE TABLE IF NOT EXISTS " + SongSortColumns.TABLE_NAME + "(" +
+                        SongSortColumns.ID + " INTEGER PRIMARY KEY," +
+                        SongSortColumns.ARTIST_ID + " INTEGER NOT NULL," +
+                        SongSortColumns.ALBUM_ID + " INTEGER NOT NULL," +
+                        SongSortColumns.NAME + " TEXT COLLATE LOCALIZED," +
+                        SongSortColumns.NAME_LABEL + " TEXT," +
+                        SongSortColumns.NAME_BUCKET + " INTEGER);",
 
-            "CREATE TABLE IF NOT EXISTS " + AlbumSortColumns.TABLE_NAME + "(" +
-                    AlbumSortColumns.ID + " INTEGER PRIMARY KEY," +
-                    AlbumSortColumns.ARTIST_ID + " INTEGER NOT NULL," +
-                    AlbumSortColumns.NAME + " TEXT COLLATE LOCALIZED," +
-                    AlbumSortColumns.NAME_LABEL + " TEXT," +
-                    AlbumSortColumns.NAME_BUCKET + " INTEGER);",
+                "CREATE TABLE IF NOT EXISTS " + AlbumSortColumns.TABLE_NAME + "(" +
+                        AlbumSortColumns.ID + " INTEGER PRIMARY KEY," +
+                        AlbumSortColumns.ARTIST_ID + " INTEGER NOT NULL," +
+                        AlbumSortColumns.NAME + " TEXT COLLATE LOCALIZED," +
+                        AlbumSortColumns.NAME_LABEL + " TEXT," +
+                        AlbumSortColumns.NAME_BUCKET + " INTEGER);",
 
-            "CREATE TABLE IF NOT EXISTS " + ArtistSortColumns.TABLE_NAME + "(" +
-                    ArtistSortColumns.ID + " INTEGER PRIMARY KEY," +
-                    ArtistSortColumns.NAME + " TEXT COLLATE LOCALIZED," +
-                    ArtistSortColumns.NAME_LABEL + " TEXT," +
-                    ArtistSortColumns.NAME_BUCKET + " INTEGER);",
+                "CREATE TABLE IF NOT EXISTS " + ArtistSortColumns.TABLE_NAME + "(" +
+                        ArtistSortColumns.ID + " INTEGER PRIMARY KEY," +
+                        ArtistSortColumns.NAME + " TEXT COLLATE LOCALIZED," +
+                        ArtistSortColumns.NAME_LABEL + " TEXT," +
+                        ArtistSortColumns.NAME_BUCKET + " INTEGER);",
         };
 
         for (String table : tables) {
@@ -135,7 +138,7 @@ public class LocalizedStore {
         }
     }
 
-    public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion) {
+    public void onUpgrade(final SQLiteDatabase db, final int oldVersion) {
         // this table was created in version 3 so call the onCreate method if oldVersion <= 2
         // in version 4 we need to recreate the SongSortcolumns table so drop the table and call
         // onCreate if oldVersion <= 3
@@ -145,7 +148,7 @@ public class LocalizedStore {
         }
     }
 
-    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onDowngrade(SQLiteDatabase db) {
         // If we ever have downgrade, drop the table to be safe
         db.execSQL("DROP TABLE IF EXISTS " + SongSortColumns.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + AlbumSortColumns.TABLE_NAME);
@@ -180,7 +183,8 @@ public class LocalizedStore {
             // But assume that ICU versions are only able to change on Android version upgrades and
             // use SDK INT as identifier.
             PropertiesStore.getInstance(mContext).storeProperty(
-                    PropertiesStore.DbProperties.ICU_VERSION, String.valueOf(Build.VERSION.SDK_INT));
+                    PropertiesStore.DbProperties.ICU_VERSION,
+                    String.valueOf(Build.VERSION.SDK_INT));
             PropertiesStore.getInstance(mContext).storeProperty(PropertiesStore.DbProperties.LOCALE,
                     locales.toString());
 
@@ -190,12 +194,14 @@ public class LocalizedStore {
         }
 
         if (DEBUG) {
-            Log.i(TAG, "Locale change completed in " + (SystemClock.elapsedRealtime() - start) + "ms");
+            Log.i(TAG, "Locale change completed in " + (SystemClock.elapsedRealtime() - start) +
+                    "ms");
         }
     }
 
     /**
-     * This will grab all the songs from the medistore and add the localized data to the db
+     * This will grab all the songs from the MediaStore and add the localized data to the db
+     *
      * @param selection if we only want to do this for some songs, this selection will filter it out
      */
     private void updateLocalizedStore(final SQLiteDatabase db, final String selection) {
@@ -253,13 +259,13 @@ public class LocalizedStore {
                             updateAlbumData(db, albumId, cursor.getString(5), artistId);
                         }
 
-                        updateSongData(db, cursor.getLong(0), cursor.getString(1), artistId, albumId);
+                        updateSongData(db, cursor.getLong(0), cursor.getString(1), artistId,
+                                albumId);
                     } while (cursor.moveToNext());
                 }
             } finally {
                 if (cursor != null) {
                     cursor.close();
-                    cursor = null;
                 }
             }
 
@@ -326,18 +332,19 @@ public class LocalizedStore {
 
     /**
      * Gets the list of saved ids and labels for the itemType in localized sorted order
-     * @param itemType the type of item we're querying for (artists, albums, songs)
-     * @param sortType the type we want to sort by (eg songs sorted by artists,
-     *                 albums sorted by artists).  Note some combinations don't make sense and
-     *                 will fallback to the basic sort, for example Artists sorted by songs
-     *                 doesn't make sense
+     *
+     * @param itemType   the type of item we're querying for (artists, albums, songs)
+     * @param sortType   the type we want to sort by (eg songs sorted by artists,
+     *                   albums sorted by artists).  Note some combinations don't make sense and
+     *                   will fallback to the basic sort, for example Artists sorted by songs
+     *                   doesn't make sense
      * @param descending Whether we want to sort ascending or descending.  This will only apply to
-     *                  the basic searches (ie when sortType == itemType),
-     *                  otherwise ascending is always assumed
+     *                   the basic searches (ie when sortType == itemType),
+     *                   otherwise ascending is always assumed
      * @return sorted list of ids and bucket labels for the itemType
      */
     public SortData getSortOrder(SortParameter itemType, SortParameter sortType,
-                                boolean descending) {
+                                 boolean descending) {
         SortData sortData = new SortData();
         String tableName = "";
         String joinClause = "";
@@ -410,13 +417,14 @@ public class LocalizedStore {
 
     /**
      * Wraps the cursor with a sorted cursor that sorts it in the proper localized order
-     * @param cursor underlying cursor to sort
+     *
+     * @param cursor     underlying cursor to sort
      * @param columnName the column name of the id
-     * @param idType the type of item that the cursor contains
-     * @param sortType the type to sort by (for example can be song sorted by albums)
+     * @param idType     the type of item that the cursor contains
+     * @param sortType   the type to sort by (for example can be song sorted by albums)
      * @param descending descending?
-     * @param update do we want to update any discrepencies we find - only should be true if the
-     *               cursor contains all songs/artists/albums and not a subset
+     * @param update     do we want to update any discrepencies we find - only should be true if the
+     *                   cursor contains all songs/artists/albums and not a subset
      * @return the sorted cursor
      */
     public Cursor getLocalizedSort(Cursor cursor, String columnName, SortParameter idType,
@@ -446,8 +454,9 @@ public class LocalizedStore {
 
     /**
      * Updates the localized store based on the cursor
+     *
      * @param sortedCursor the current sorting cursor based on the LocalizedStore sort
-     * @param type the item type in the cursor
+     * @param type         the item type in the cursor
      * @return true if there are new ids in the cursor that aren't tracked in the store
      */
     private boolean updateDiscrepancies(SortedCursor sortedCursor, SortParameter type) {
@@ -607,5 +616,4 @@ public class LocalizedStore {
             return createOrderBy(NAME_BUCKET, NAME, descending);
         }
     }
-
 }

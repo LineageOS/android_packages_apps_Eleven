@@ -1,11 +1,12 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -30,16 +31,15 @@ public abstract class MusicBrowserFragment extends Fragment {
     public abstract int getLoaderId();
 
     public LoaderManager getContainingLoaderManager() {
-        return getParentFragment().getLoaderManager();
+        final Fragment parent = getParentFragment();
+        return parent == null ? null : LoaderManager.getInstance(getParentFragment());
     }
 
-    protected void initLoader(Bundle args,
-            LoaderManager.LoaderCallbacks<? extends Object> callback) {
-        getContainingLoaderManager().initLoader(getLoaderId(), args, callback);
+    protected void initLoader(LoaderManager.LoaderCallbacks<?> callback) {
+        getContainingLoaderManager().initLoader(getLoaderId(), null, callback);
     }
 
-    protected void restartLoader(Bundle args,
-            LoaderManager.LoaderCallbacks<? extends Object> callback) {
+    protected void restartLoader(Bundle args, LoaderManager.LoaderCallbacks<?> callback) {
         getContainingLoaderManager().restartLoader(getLoaderId(), args, callback);
     }
 }
