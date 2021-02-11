@@ -1,16 +1,20 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Licensed under the Apache License, Version 2.0
- * (the "License"); you may not use this file except in compliance with the
- * License. You may obtain a copy of the License at
- * http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law
- * or agreed to in writing, software distributed under the License is
- * distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package org.lineageos.eleven.loaders;
 
 import android.content.ContentProviderOperation;
@@ -60,9 +64,6 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         mPlaylistID = playlistId;
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<Song> loadInBackground() {
         final int playlistCount = countPlaylist(getContext(), mPlaylistID);
@@ -149,7 +150,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
                         .getColumnIndexOrThrow(AudioColumns.YEAR));
 
                 // Create a new song
-                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs, year);
+                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs,
+                        year);
 
                 // Add everything up
                 mSongList.add(song);
@@ -158,7 +160,6 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         // Close the cursor
         if (cursor != null) {
             cursor.close();
-            cursor = null;
         }
         return mSongList;
     }
@@ -218,25 +219,17 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
      * @return the number of tracks in the raw playlist mapping table
      */
     private static int countPlaylist(final Context context, final long playlistId) {
-        Cursor c = null;
-        try {
+        try (Cursor c = context.getContentResolver().query(
+                MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId),
+                new String[]{
+                        MediaStore.Audio.Playlists.Members.AUDIO_ID,
+                }, null, null,
+                MediaStore.Audio.Playlists.Members.DEFAULT_SORT_ORDER)) {
             // when we query using only the audio_id column we will get the raw mapping table
             // results - which will tell us if the table has rows that don't exist in the normal
             // table
-            c = context.getContentResolver().query(
-                    MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId),
-                    new String[]{
-                            MediaStore.Audio.Playlists.Members.AUDIO_ID,
-                    }, null, null,
-                    MediaStore.Audio.Playlists.Members.DEFAULT_SORT_ORDER);
-
             if (c != null) {
                 return c.getCount();
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-                c = null;
             }
         }
 
@@ -250,7 +243,7 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
      * @param playlistID The playlist the songs belong to.
      * @return The {@link Cursor} used to run the song query.
      */
-    public static final Cursor makePlaylistSongCursor(final Context context, final Long playlistID) {
+    public static Cursor makePlaylistSongCursor(final Context context, final Long playlistID) {
         String mSelection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''";
         return context.getContentResolver().query(

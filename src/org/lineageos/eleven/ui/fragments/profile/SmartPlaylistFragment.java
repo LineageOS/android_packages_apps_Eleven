@@ -1,18 +1,19 @@
 /*
-* Copyright (C) 2014 The CyanogenMod Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2014 The CyanogenMod Project
+ * Copyright (C) 2021 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.lineageos.eleven.ui.fragments.profile;
 
 import android.os.Bundle;
@@ -23,8 +24,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.lineageos.eleven.Config.SmartPlaylistType;
+import androidx.annotation.NonNull;
+
 import org.lineageos.eleven.Config;
+import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.menu.ConfirmDialog;
@@ -45,11 +48,13 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
     private PopupMenuHelper mActionMenuHelper;
 
     @Override
-    public int getLoaderId() { return LOADER; }
+    public int getLoaderId() {
+        return LOADER;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         setHasOptionsMenu(true);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -60,7 +65,7 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
     }
 
     @Override
-    public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull final Menu menu, final MenuInflater inflater) {
         inflater.inflate(R.menu.shuffle_item, menu);
         menu.findItem(R.id.menu_shuffle_item).setTitle(getShuffleTitleId());
 
@@ -82,23 +87,20 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
 
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.menu_shuffle_item:
-                playAll(-1, true);
-                return true;
-            case R.id.clear_list:
-                ConfirmDialog.show(
-                    this, CLEAR_REQUEST, getClearTitleId(), R.string.clear);
-                return true;
-            default:
-                if(mActionMenuHelper.onMenuItemClick(item)) { return true; }
+        final int id = item.getItemId();
+        if (id == R.id.menu_shuffle_item) {
+            playAll(-1, true);
+        } else if (id == R.id.clear_list) {
+            ConfirmDialog.show(this, CLEAR_REQUEST, getClearTitleId(), R.string.clear);
+        } else if (!mActionMenuHelper.onMenuItemClick(item)) {
+            super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
     @Override
     public void confirmOk(int requestCode) {
-        if(requestCode == CLEAR_REQUEST) {
+        if (requestCode == CLEAR_REQUEST) {
             mAdapter.unload();
             clearList();
             restartLoader();
@@ -120,7 +122,7 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
         // enter the page.
         long[] songIds = getSongIdsFromAdapter();
         if (songIds != null) {
-            MusicUtils.playAll(getActivity(), songIds, position, getSmartPlaylistType().mId,
+            MusicUtils.playAll(songIds, position, getSmartPlaylistType().mId,
                     Config.IdType.Playlist, shuffle);
         }
     }
@@ -131,12 +133,18 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
 
     protected abstract SmartPlaylistType getSmartPlaylistType();
 
-    /** text for menu item that shuffles items in this playlist */
+    /**
+     * text for menu item that shuffles items in this playlist
+     */
     protected abstract int getShuffleTitleId();
 
-    /** text for confirmation dialog that clears this playlist */
+    /**
+     * text for confirmation dialog that clears this playlist
+     */
     protected abstract int getClearTitleId();
 
-    /** action that clears this playlist */
+    /**
+     * action that clears this playlist
+     */
     protected abstract void clearList();
 }

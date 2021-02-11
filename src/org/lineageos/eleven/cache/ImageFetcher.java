@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package org.lineageos.eleven.cache;
 
 import android.content.ContentResolver;
@@ -23,14 +22,13 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.util.Log;
 import android.widget.ImageView;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
+import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.colors.BitmapWithColors;
-import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.colors.ColorExtractor;
 import org.lineageos.eleven.widgets.AlbumScrimImage;
 import org.lineageos.eleven.widgets.LetterTileDrawable;
@@ -66,7 +64,7 @@ public class ImageFetcher extends ImageWorker {
      * @param context The {@link Context} to use
      * @return A new instance of this class.
      */
-    public static final ImageFetcher getInstance(final Context context) {
+    public static ImageFetcher getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new ImageFetcher(context.getApplicationContext());
         }
@@ -128,7 +126,7 @@ public class ImageFetcher extends ImageWorker {
     private void loadCurrentBlurredArtwork(final AlbumScrimImage image) {
         loadBlurImage(getCurrentCacheKey(),
                 MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                image, ImageType.ALBUM);
+                image);
     }
 
     private void loadCurrentGradientArtwork(final ColorExtractor.Callback callback) {
@@ -156,14 +154,6 @@ public class ImageFetcher extends ImageWorker {
      */
     public void loadArtistImage(final String key, final ImageView imageView, boolean scaleImgToView) {
         loadImage(key, key, null, -1, imageView, ImageType.ARTIST, scaleImgToView);
-    }
-
-    /**
-     * Used to fetch the current artist image.
-     */
-    public void loadCurrentArtistImage(final ImageView imageView) {
-        loadImage(MusicUtils.getArtistName(), MusicUtils.getArtistName(), null, -1, imageView,
-                ImageType.ARTIST);
     }
 
     /**

@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,8 +33,8 @@ import org.lineageos.eleven.R;
 public class LoadingEmptyContainer extends FrameLayout {
     private static final int LOADING_DELAY = 300;
 
-    private Handler mHandler;
-    private Runnable mShowLoadingRunnable;
+    private final Handler mHandler;
+    private final Runnable mShowLoadingRunnable;
 
     public LoadingEmptyContainer(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -76,6 +76,6 @@ public class LoadingEmptyContainer extends FrameLayout {
     }
 
     public NoResultsContainer getNoResultsContainer() {
-        return (NoResultsContainer)findViewById(R.id.no_results_container);
+        return (NoResultsContainer) findViewById(R.id.no_results_container);
     }
 }

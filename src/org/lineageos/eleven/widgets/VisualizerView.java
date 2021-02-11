@@ -1,12 +1,12 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2019-2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,8 +44,8 @@ public class VisualizerView extends View {
     private Visualizer mVisualizer;
     private ObjectAnimator mVisualizerColorAnimator;
 
-    private ValueAnimator[] mValueAnimators = new ValueAnimator[32];
-    private float[] mFFTPoints = new float[128];
+    private final ValueAnimator[] mValueAnimators = new ValueAnimator[32];
+    private final float[] mFFTPoints = new float[128];
 
     private boolean mVisible = false;
     private boolean mPlaying = false;
@@ -54,7 +54,7 @@ public class VisualizerView extends View {
 
     private int mColor;
 
-    private Visualizer.OnDataCaptureListener mVisualizerListener =
+    private final Visualizer.OnDataCaptureListener mVisualizerListener =
             new Visualizer.OnDataCaptureListener() {
         byte rfk, ifk;
         int dbValue;
