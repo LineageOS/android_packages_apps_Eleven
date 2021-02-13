@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "f0560ff9_c4bfcd8f",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "fix line length as well",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c2cb6cb1_de6afa98",
         "filename": "src/org/lineageos/eleven/adapters/AlbumAdapter.java",
         "patchSetId": 4
@@ -183,6 +200,250 @@
       "writtenOn": "2021-02-11T23:17:26Z",
       "side": 1,
       "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72d7f317_6ec293cb",
+        "filename": "src/org/lineageos/eleven/loaders/AlbumLoader.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "this newline isn\u0027t required",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39a0e364_e75409bc",
+        "filename": "src/org/lineageos/eleven/menu/ConfirmDialog.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "add newline",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc6b9ede_5d5fb376",
+        "filename": "src/org/lineageos/eleven/menu/FragmentMenuItems.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "add newline",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "589603ff_904f6fb0",
+        "filename": "src/org/lineageos/eleven/model/AlbumArtistDetails.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2274051d_9ba8787e",
+        "filename": "src/org/lineageos/eleven/provider/PlaylistArtworkStore.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "a line length to fix :)",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "666e2eaa_0e85c91e",
+        "filename": "src/org/lineageos/eleven/provider/PlaylistArtworkStore.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "and another one",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb97e6d9_07c75f9b",
+        "filename": "src/org/lineageos/eleven/provider/SongPlayCount.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cabbcae9_ab37664a",
+        "filename": "src/org/lineageos/eleven/provider/SongPlayCount.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2beac1a5_59281ab3",
+        "filename": "src/org/lineageos/eleven/provider/SongPlayCount.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dbdf6e02_fbfc6d5f",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/SlidingUpPanelLayout.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c34335a1_3f4c0157",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/SlidingUpPanelLayout.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "remove, no need to keep around",
+      "range": {
+        "startLine": 757,
+        "startChar": 0,
+        "endLine": 759,
+        "endChar": 19
+      },
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66db03bf_2e9d5ec3",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/SlidingUpPanelLayout.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "this somehow doesn\u0027t look good to me. Make this 3 or 4 rows instead\n            lp.height \u003d mIsSlidingUp\n                ? newTop - getPaddingBottom()\n                : getHeight() - getPaddingBottom() - mSlideableView.getMeasuredHeight()\n                    - newTop;",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30484a51_53412356",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/ViewDragHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51a9ae24_a4e8932f",
+        "filename": "src/org/lineageos/eleven/ui/activities/BaseActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-13T21:52:19Z",
+      "side": 1,
+      "message": "already said somewhere else in the last round of review of the same changeset: onCacheResumed would be better",
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
