@@ -447,6 +447,91 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b6b316a_696aec52",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-14T15:30:09Z",
+      "side": 1,
+      "message": "why are you checking activity for null here but not in USE_BLUR? also, is there any gain to checking it? shouldn\u0027t canRecordAudio and requestRecordAudio be tolerant to null values being passed in instead?",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64a23af1_5d3d87d0",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-14T15:30:09Z",
+      "side": 1,
+      "message": "same as before",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89a99a4a_e408c8b3",
+        "filename": "src/org/lineageos/eleven/ui/activities/preview/AudioPreviewActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-14T15:30:09Z",
+      "side": 1,
+      "message": "could get rid of the initialisation here as this value is never used anymore",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f66ab1e_15c13056",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AlbumDetailFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-14T15:30:09Z",
+      "side": 1,
+      "message": "fix line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb6dd9da_24be550c",
+        "filename": "src/org/lineageos/eleven/ui/fragments/ArtistFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-14T15:30:09Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
