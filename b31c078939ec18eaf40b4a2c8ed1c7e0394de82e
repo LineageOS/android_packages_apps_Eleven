@@ -433,6 +433,23 @@
     },
     {
       "key": {
+        "uuid": "f978b6a1_41b10960",
+        "filename": "src/org/lineageos/eleven/ui/MusicHolder.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "this \u003cp\u003e doesn\u0027t look correct here and in the following comments\nmake it just \"see getView() of a [...]\"",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "51a9ae24_a4e8932f",
         "filename": "src/org/lineageos/eleven/ui/activities/BaseActivity.java",
         "patchSetId": 4
@@ -529,6 +546,335 @@
       "writtenOn": "2021-02-14T15:30:09Z",
       "side": 1,
       "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1486986_ec1823a6",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "566827c3_d7f1f6b5",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba85443e_2c7ee6d1",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "it should be \"clicks\"",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fad6a7d_576944af",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/SmartPlaylistFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83de5d90_9882e500",
+        "filename": "src/org/lineageos/eleven/utils/ArtistPopupMenuHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "add a newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3731331f_15b14307",
+        "filename": "src/org/lineageos/eleven/utils/ElevenUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7d2b44a_ea717c49",
+        "filename": "src/org/lineageos/eleven/utils/IoUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "Nothing in this file changed, keep header untouched?",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4111fe99_61a8a0ee",
+        "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "I generally don\u0027t like the removal of that space character (noticed it in many other places as well) and looking here: https://google.github.io/styleguide/javaguide.html#s4.6.2-horizontal-whitespace at (8) (they talk about the spaces inside the curly braces, but both examples show they want a space between ] and {\nLeaving this here only but is valid for all other occurances throughout the code as well",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "436c911f_33dcbf7e",
+        "filename": "src/org/lineageos/eleven/utils/NavUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc4e4e9c_0f16a9e5",
+        "filename": "src/org/lineageos/eleven/utils/PlaylistPopupMenuHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "743ec5b8_b7c0082d",
+        "filename": "src/org/lineageos/eleven/utils/SrtParser.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "remove \"if\"",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b41a186_1c71dbd1",
+        "filename": "src/org/lineageos/eleven/utils/colors/BitmapWithColors.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "replace with call to https://developer.android.com/reference/androidx/core/graphics/ColorUtils#calculateContrast(int,%20int)",
+      "range": {
+        "startLine": 147,
+        "startChar": 4,
+        "endLine": 169,
+        "endChar": 5
+      },
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "989ff761_17d9984f",
+        "filename": "src/org/lineageos/eleven/widgets/AudioActivityButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ca07aec_86ef8cc7",
+        "filename": "src/org/lineageos/eleven/widgets/BrowseButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "file needs newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d0fe6c1_08c23dcc",
+        "filename": "src/org/lineageos/eleven/widgets/PlayPauseProgressButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "file needs newline at end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2ce5539_d016eb08",
+        "filename": "src/org/lineageos/eleven/widgets/PopupMenuButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "erm... nope",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97b009bf_fa336721",
+        "filename": "src/org/lineageos/eleven/widgets/QueueButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "newline at file end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "261a02dc_9f52abe8",
+        "filename": "src/org/lineageos/eleven/widgets/ShuffleButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "newline at file end",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f74a0c3_0ce26f38",
+        "filename": "src/org/lineageos/eleven/widgets/SquareFrame.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-02-15T21:33:13Z",
+      "side": 1,
+      "message": "newline at file end",
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
