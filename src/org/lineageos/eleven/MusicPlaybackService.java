@@ -1530,6 +1530,7 @@ public class MusicPlaybackService extends Service
                 PlaybackState.ACTION_PLAY_FROM_MEDIA_ID |
                 PlaybackState.ACTION_PAUSE |
                 PlaybackState.ACTION_SKIP_TO_NEXT |
+                PlaybackState.ACTION_SEEK_TO |
                 PlaybackState.ACTION_SKIP_TO_PREVIOUS |
                 PlaybackState.ACTION_STOP;
 
