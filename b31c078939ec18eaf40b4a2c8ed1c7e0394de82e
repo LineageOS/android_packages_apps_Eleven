@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "192595e9_0f1e9ce5",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0560ff9_c4bfcd8f",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2cb6cb1_de6afa98",
         "filename": "src/org/lineageos/eleven/adapters/AlbumAdapter.java",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ba1ed5a_3ef3498a",
+        "filename": "src/org/lineageos/eleven/adapters/AlbumAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c2cb6cb1_de6afa98",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "00d6b24e_76e64402",
+        "filename": "src/org/lineageos/eleven/adapters/AlbumDetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31e5d172_9a0e4a7c",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c9e5dff_d34d3568",
         "filename": "src/org/lineageos/eleven/adapters/ArtistDetailAlbumAdapter.java",
         "patchSetId": 4
@@ -67,6 +121,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfc47d6b_f73421f6",
+        "filename": "src/org/lineageos/eleven/adapters/ArtistDetailAlbumAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c9e5dff_d34d3568",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3ba916ef_5d677a14",
+        "filename": "src/org/lineageos/eleven/adapters/ArtistDetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98a4a71c_41d0f28c",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e523d35_69a5c097",
         "filename": "src/org/lineageos/eleven/adapters/DetailSongAdapter.java",
         "patchSetId": 4
@@ -101,6 +191,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9565e30_546d4807",
+        "filename": "src/org/lineageos/eleven/adapters/DetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e523d35_69a5c097",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "0820f67f_c111856c",
+        "filename": "src/org/lineageos/eleven/adapters/DetailSongAdapter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dadc9f1d_369dbc71",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0cdbdcf0_331bf4fb",
         "filename": "src/org/lineageos/eleven/cache/ICacheListener.java",
         "patchSetId": 4
@@ -135,6 +261,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "794487e3_9e008d22",
+        "filename": "src/org/lineageos/eleven/cache/ICacheListener.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0cdbdcf0_331bf4fb",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "5320c105_c02ede66",
+        "filename": "src/org/lineageos/eleven/cache/PlaylistWorkerTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b8bd739_25911537",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c3aab5be_59313479",
         "filename": "src/org/lineageos/eleven/cache/PlaylistWorkerTask.java",
         "patchSetId": 4
@@ -169,6 +331,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d85b1257_5ec426c9",
+        "filename": "src/org/lineageos/eleven/cache/PlaylistWorkerTask.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3aab5be_59313479",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -223,6 +403,24 @@
     },
     {
       "key": {
+        "uuid": "90003646_7213bf63",
+        "filename": "src/org/lineageos/eleven/loaders/AlbumLoader.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72d7f317_6ec293cb",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39a0e364_e75409bc",
         "filename": "src/org/lineageos/eleven/menu/ConfirmDialog.java",
         "patchSetId": 4
@@ -237,6 +435,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b3ed32b_752f2ba5",
+        "filename": "src/org/lineageos/eleven/menu/ConfirmDialog.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39a0e364_e75409bc",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -291,6 +507,24 @@
     },
     {
       "key": {
+        "uuid": "f2b7de28_fc249d2c",
+        "filename": "src/org/lineageos/eleven/provider/PlaylistArtworkStore.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2274051d_9ba8787e",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "666e2eaa_0e85c91e",
         "filename": "src/org/lineageos/eleven/provider/PlaylistArtworkStore.java",
         "patchSetId": 4
@@ -305,6 +539,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fe319dc_899760c7",
+        "filename": "src/org/lineageos/eleven/provider/PlaylistArtworkStore.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "666e2eaa_0e85c91e",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -325,6 +577,24 @@
     },
     {
       "key": {
+        "uuid": "c9f70c07_254378da",
+        "filename": "src/org/lineageos/eleven/provider/SongPlayCount.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb97e6d9_07c75f9b",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cabbcae9_ab37664a",
         "filename": "src/org/lineageos/eleven/provider/SongPlayCount.java",
         "patchSetId": 4
@@ -339,6 +609,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d2c58bf_7c9672f0",
+        "filename": "src/org/lineageos/eleven/provider/SongPlayCount.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cabbcae9_ab37664a",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -399,6 +687,30 @@
     },
     {
       "key": {
+        "uuid": "f9b90d71_6f98dee5",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/SlidingUpPanelLayout.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c34335a1_3f4c0157",
+      "range": {
+        "startLine": 757,
+        "startChar": 0,
+        "endLine": 759,
+        "endChar": 19
+      },
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66db03bf_2e9d5ec3",
         "filename": "src/org/lineageos/eleven/slidinguppanel/SlidingUpPanelLayout.java",
         "patchSetId": 4
@@ -416,6 +728,24 @@
     },
     {
       "key": {
+        "uuid": "041c1b2e_d6939101",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/SlidingUpPanelLayout.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66db03bf_2e9d5ec3",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "30484a51_53412356",
         "filename": "src/org/lineageos/eleven/slidinguppanel/ViewDragHelper.java",
         "patchSetId": 4
@@ -430,6 +760,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b708aad_a0a13214",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/ViewDragHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30484a51_53412356",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -467,6 +815,24 @@
     },
     {
       "key": {
+        "uuid": "af80a959_f5745bc1",
+        "filename": "src/org/lineageos/eleven/ui/activities/BaseActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51a9ae24_a4e8932f",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3b6b316a_696aec52",
         "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
         "patchSetId": 4
@@ -481,6 +847,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9a17f1a_5c2cc192",
+        "filename": "src/org/lineageos/eleven/ui/activities/SettingsActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b6b316a_696aec52",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -501,6 +885,24 @@
     },
     {
       "key": {
+        "uuid": "62a0b461_dea64601",
+        "filename": "src/org/lineageos/eleven/ui/activities/SlidingPanelActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "64a23af1_5d3d87d0",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89a99a4a_e408c8b3",
         "filename": "src/org/lineageos/eleven/ui/activities/preview/AudioPreviewActivity.java",
         "patchSetId": 4
@@ -512,6 +914,24 @@
       "writtenOn": "2021-02-14T15:30:09Z",
       "side": 1,
       "message": "could get rid of the initialisation here as this value is never used anymore",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30f20c62_5ac03fcb",
+        "filename": "src/org/lineageos/eleven/ui/activities/preview/AudioPreviewActivity.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 644,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "It\u0027s needed, otherwise the compiler complains because it\u0027s not smart enough to figure out it\u0027s useless at this line",
+      "parentUuid": "89a99a4a_e408c8b3",
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
@@ -532,6 +952,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f992d4e6_ce946c1e",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AlbumDetailFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f66ab1e_15c13056",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -569,6 +1007,24 @@
     },
     {
       "key": {
+        "uuid": "ae1df3dc_dc077de7",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1486986_ec1823a6",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "566827c3_d7f1f6b5",
         "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
         "patchSetId": 4
@@ -583,6 +1039,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb4a6ba5_51608d57",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "566827c3_d7f1f6b5",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -603,6 +1077,24 @@
     },
     {
       "key": {
+        "uuid": "ff4e2686_a001ab1b",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/BasicSongFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba85443e_2c7ee6d1",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8fad6a7d_576944af",
         "filename": "src/org/lineageos/eleven/ui/fragments/profile/SmartPlaylistFragment.java",
         "patchSetId": 4
@@ -617,6 +1109,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a62cb89_b0038c82",
+        "filename": "src/org/lineageos/eleven/ui/fragments/profile/SmartPlaylistFragment.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fad6a7d_576944af",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -637,6 +1147,24 @@
     },
     {
       "key": {
+        "uuid": "66d90b3a_1f74907d",
+        "filename": "src/org/lineageos/eleven/utils/ArtistPopupMenuHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83de5d90_9882e500",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3731331f_15b14307",
         "filename": "src/org/lineageos/eleven/utils/ElevenUtils.java",
         "patchSetId": 4
@@ -651,6 +1179,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7d0fbbe_d72b9379",
+        "filename": "src/org/lineageos/eleven/utils/ElevenUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3731331f_15b14307",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -671,6 +1217,24 @@
     },
     {
       "key": {
+        "uuid": "dfede108_d4f5fff7",
+        "filename": "src/org/lineageos/eleven/utils/IoUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7d2b44a_ea717c49",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4111fe99_61a8a0ee",
         "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
         "patchSetId": 4
@@ -685,6 +1249,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8792d881_16cec5df",
+        "filename": "src/org/lineageos/eleven/utils/MusicUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 1227,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4111fe99_61a8a0ee",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -705,6 +1287,24 @@
     },
     {
       "key": {
+        "uuid": "ede40ed2_47f0f9bf",
+        "filename": "src/org/lineageos/eleven/utils/NavUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "436c911f_33dcbf7e",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cc4e4e9c_0f16a9e5",
         "filename": "src/org/lineageos/eleven/utils/PlaylistPopupMenuHelper.java",
         "patchSetId": 4
@@ -719,6 +1319,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64f50da4_8a5feb71",
+        "filename": "src/org/lineageos/eleven/utils/PlaylistPopupMenuHelper.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc4e4e9c_0f16a9e5",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -739,6 +1357,24 @@
     },
     {
       "key": {
+        "uuid": "cd6267d3_efc7198e",
+        "filename": "src/org/lineageos/eleven/utils/SrtParser.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "743ec5b8_b7c0082d",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8b41a186_1c71dbd1",
         "filename": "src/org/lineageos/eleven/utils/colors/BitmapWithColors.java",
         "patchSetId": 4
@@ -750,6 +1386,30 @@
       "writtenOn": "2021-02-15T21:33:13Z",
       "side": 1,
       "message": "replace with call to https://developer.android.com/reference/androidx/core/graphics/ColorUtils#calculateContrast(int,%20int)",
+      "range": {
+        "startLine": 147,
+        "startChar": 4,
+        "endLine": 169,
+        "endChar": 5
+      },
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e2d105f_bc47511f",
+        "filename": "src/org/lineageos/eleven/utils/colors/BitmapWithColors.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "The algorithm is different. This one supports translucent backgrounds which are needed for our use case",
+      "parentUuid": "8b41a186_1c71dbd1",
       "range": {
         "startLine": 147,
         "startChar": 4,
@@ -779,6 +1439,24 @@
     },
     {
       "key": {
+        "uuid": "8b5c752d_3b1b4bce",
+        "filename": "src/org/lineageos/eleven/widgets/AudioActivityButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "989ff761_17d9984f",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ca07aec_86ef8cc7",
         "filename": "src/org/lineageos/eleven/widgets/BrowseButton.java",
         "patchSetId": 4
@@ -793,6 +1471,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adfd937d_895b9652",
+        "filename": "src/org/lineageos/eleven/widgets/BrowseButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ca07aec_86ef8cc7",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -813,6 +1509,24 @@
     },
     {
       "key": {
+        "uuid": "3f65b549_84f1a6cc",
+        "filename": "src/org/lineageos/eleven/widgets/PlayPauseProgressButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d0fe6c1_08c23dcc",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2ce5539_d016eb08",
         "filename": "src/org/lineageos/eleven/widgets/PopupMenuButton.java",
         "patchSetId": 4
@@ -827,6 +1541,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af7317c8_7154937d",
+        "filename": "src/org/lineageos/eleven/widgets/PopupMenuButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Sad",
+      "parentUuid": "a2ce5539_d016eb08",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     },
     {
       "key": {
@@ -847,6 +1579,24 @@
     },
     {
       "key": {
+        "uuid": "92037a27_0aced263",
+        "filename": "src/org/lineageos/eleven/widgets/QueueButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97b009bf_fa336721",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "261a02dc_9f52abe8",
         "filename": "src/org/lineageos/eleven/widgets/ShuffleButton.java",
         "patchSetId": 4
@@ -864,6 +1614,24 @@
     },
     {
       "key": {
+        "uuid": "fe7d8b99_9853ad78",
+        "filename": "src/org/lineageos/eleven/widgets/ShuffleButton.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "261a02dc_9f52abe8",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4f74a0c3_0ce26f38",
         "filename": "src/org/lineageos/eleven/widgets/SquareFrame.java",
         "patchSetId": 4
@@ -878,6 +1646,24 @@
       "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "521041d6_954a727a",
+        "filename": "src/org/lineageos/eleven/widgets/SquareFrame.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f74a0c3_0ce26f38",
+      "revId": "b31c078939ec18eaf40b4a2c8ed1c7e0394de82e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }

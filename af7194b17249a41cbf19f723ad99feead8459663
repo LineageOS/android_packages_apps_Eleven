@@ -16,6 +16,24 @@
       "revId": "af7194b17249a41cbf19f723ad99feead8459663",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ab5b1e5_88275e4a",
+        "filename": "src/org/lineageos/eleven/utils/ImageUtils.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-02-23T20:15:18Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "d3d9f39c_32e4199d",
+      "revId": "af7194b17249a41cbf19f723ad99feead8459663",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
