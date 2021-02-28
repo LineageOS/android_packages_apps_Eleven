@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Muziek verkennen</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ingesteld als beltoon</string>
     <string name="playlist_renamed">Naam afspeellijst gewijzigd</string>
-    <string name="settings_ui_category">Uiterlijk</string>
     <string name="settings_storage_category">Opslag</string>
-    <string name="settings_data_category">Gegevens</string>
     <string name="settings_delete_cache_title">Cache wissen</string>
     <string name="settings_delete_cache_summary">Opgeslagen afbeeldingen verwijderen</string>
-    <string name="settings_download_only_on_wifi_title">Alleen via wifi</string>
-    <string name="settings_download_only_on_wifi_summary">Om gegevensgebruik te verminderen, niet downloaden via mobiele gegevensverbinding</string>
-    <string name="settings_download_missing_artwork_title">Albumhoezen downloaden</string>
-    <string name="settings_download_artist_images_title">Artiestenafbeeldingen downloaden</string>
     <string name="settings_general_category">Algemeen</string>
     <string name="settings_show_music_visualization_title">Muziekvisualisaties weergeven</string>
     <string name="settings_show_lyrics_title">Songteksten weergeven</string>

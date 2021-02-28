@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Sirvi muusikat</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' sea telefoni helinaks</string>
     <string name="playlist_renamed">Esitusloend ümbernimetatud</string>
-    <string name="settings_ui_category">Liides</string>
     <string name="settings_storage_category">Mälu</string>
-    <string name="settings_data_category">Andmed</string>
     <string name="settings_delete_cache_title">Kustuta vahemälu</string>
     <string name="settings_delete_cache_summary">Eemalda kõik puhverdatud pildid</string>
-    <string name="settings_download_only_on_wifi_title">Lae ainult üle Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Et vältida tasusid andmeside eest, ära lae üle mobiilisidevõrgu</string>
-    <string name="settings_download_missing_artwork_title">Lae puuduv albumipilt</string>
-    <string name="settings_download_artist_images_title">Lae puuduvad esitaja pildid</string>
     <string name="settings_general_category">Üldine</string>
     <string name="settings_show_music_visualization_title">Näita muusika visualiseerimist</string>
     <string name="settings_use_blur_title">Tausta hägustamine</string>

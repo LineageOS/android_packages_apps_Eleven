@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Muzyk ferkenne</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ynsteld as beltoan</string>
     <string name="playlist_renamed">Namme ôfspyllist wizige</string>
-    <string name="settings_ui_category">Uterlik</string>
     <string name="settings_storage_category">Unthâld</string>
-    <string name="settings_data_category">Gegevens</string>
     <string name="settings_delete_cache_title">Buffer wiskje</string>
     <string name="settings_delete_cache_summary">Alle buffere ôfbyldingen fuortsmite</string>
-    <string name="settings_download_only_on_wifi_title">Allinnich fia wifi</string>
-    <string name="settings_download_only_on_wifi_summary">Om gegevensgebrûk te ferminderjen, net downloade fia mobile gegevensferbining</string>
-    <string name="settings_download_missing_artwork_title">Albumhoezen downloade</string>
-    <string name="settings_download_artist_images_title">Untbrekkende artystenôfbyldingen downloade</string>
     <string name="settings_general_category">Algemien</string>
     <string name="settings_show_music_visualization_title">Muzykfisualisaasjes toane</string>
     <string name="settings_use_blur_title">Eftergrûn ferfaagje</string>

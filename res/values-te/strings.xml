@@ -105,15 +105,9 @@
     <string name="accessibility_browse">సంగీతాన్ని బ్రౌజ్ చేయుము</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' న్ని రింగ్‌టోనుగా సెట్ చేయుము</string>
     <string name="playlist_renamed">ప్లేజాబితా పేరు మార్చబడింది</string>
-    <string name="settings_ui_category">ఇంటర్‌ఫేస్</string>
     <string name="settings_storage_category">నిల్వ</string>
-    <string name="settings_data_category">డేటా</string>
     <string name="settings_delete_cache_title">కాషును తొలిగించుము</string>
     <string name="settings_delete_cache_summary">కాష్ చేయబడిన అన్ని చిత్రాలను తొలిగించుము</string>
-    <string name="settings_download_only_on_wifi_title">Wi-Fi ద్వారా మాత్రమే డౌన్లోడ్ చేయుము</string>
-    <string name="settings_download_only_on_wifi_summary">కారియర్ ఛార్జీలను తగ్గించేందుకు, మొబైల్ నెట్వర్కుల ద్వారా డౌన్లోడ్ చేయవద్దు</string>
-    <string name="settings_download_missing_artwork_title">కనిపించకుండా పోయిన ఆల్బమ్ ఆర్టును డౌన్లోడ్ చేయుము</string>
-    <string name="settings_download_artist_images_title">కనిపించకుండా పోయిన కళాకారుని చిత్రాలు డౌన్లోడ్ చేయుము</string>
     <string name="settings_general_category">సాధారణం</string>
     <string name="settings_show_music_visualization_title">సంగీత విజువలైజేషనును చూపుము</string>
     <string name="settings_show_lyrics_title">పాట సాహిత్యాన్ని చూపుము</string>

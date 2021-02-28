@@ -103,15 +103,9 @@
     <string name="accessibility_browse">Pārlūkot mūziku</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ir uzstadīts kā zvana signāls</string>
     <string name="playlist_renamed">Atskaņošanas saraksts ir pārsaukts</string>
-    <string name="settings_ui_category">Izskats</string>
     <string name="settings_storage_category">Krātuve</string>
-    <string name="settings_data_category">Dati</string>
     <string name="settings_delete_cache_title">Dzēst kešatmiņu</string>
     <string name="settings_delete_cache_summary">Dzēst visas kešotās bildes</string>
-    <string name="settings_download_only_on_wifi_title">lejuplādēt tikai caur Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">Lai mazinātu izmaksas, neveikt lejuplādi, izmantojot mobilo tīklu</string>
-    <string name="settings_download_missing_artwork_title">Lejuplādēt trūkstošo albuma noformējumu</string>
-    <string name="settings_download_artist_images_title">Lejuplādēt trūkstošos izpildītāju attēlus</string>
     <string name="settings_general_category">Vispārīgi</string>
     <string name="settings_show_music_visualization_title">Rādīt mūzikas vizualizāciju</string>
     <string name="settings_show_lyrics_title">Rādīt dziesmu vārdus</string>

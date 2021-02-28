@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Arakatu musika</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' dei doinu bezala ezarri da</string>
     <string name="playlist_renamed">Erreprodukzio zerrendaren izena aldatu da</string>
-    <string name="settings_ui_category">Interfazea</string>
     <string name="settings_storage_category">Biltegiratzea</string>
-    <string name="settings_data_category">Datuak</string>
     <string name="settings_delete_cache_title">Ezabatu cachea</string>
     <string name="settings_delete_cache_summary">Ezabatu cachean gordetako irudi guztiak</string>
-    <string name="settings_download_only_on_wifi_title">Deskargatu Wi-Fi bidez soilik</string>
-    <string name="settings_download_only_on_wifi_summary">Ez deskargatu datu mugikorren bidez operadorearen zordunketa murrizteko</string>
-    <string name="settings_download_missing_artwork_title">Deskargatu falta diren karatulak</string>
-    <string name="settings_download_artist_images_title">Deskargatu falta diren artisten argazkiak</string>
     <string name="settings_general_category">Orokorra</string>
     <string name="settings_show_music_visualization_title">Erakutsi musika irudikatzea</string>
     <string name="settings_show_lyrics_title">Erakutsi abestien letrak</string>

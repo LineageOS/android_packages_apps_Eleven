@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Bla gjennom musikken</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' Sett som ringetone</string>
     <string name="playlist_renamed">Spillelisten fikk et nytt navn</string>
-    <string name="settings_ui_category">Grensesnitt</string>
     <string name="settings_storage_category">Lagring</string>
-    <string name="settings_data_category">Data</string>
     <string name="settings_delete_cache_title">Slett hurtigbuffer</string>
     <string name="settings_delete_cache_summary">Slett alle mellomlagrede bilder</string>
-    <string name="settings_download_only_on_wifi_title">Last ned kun med Wi-Fi</string>
-    <string name="settings_download_only_on_wifi_summary">For å redusere operatøravgifter, ikke last ned over mobilnett</string>
-    <string name="settings_download_missing_artwork_title">Last ned manglende albumcover</string>
-    <string name="settings_download_artist_images_title">Last ned manglende artistbilder</string>
     <string name="settings_general_category">Generelt</string>
     <string name="settings_show_music_visualization_title">Vis musikk visualisering</string>
     <string name="settings_show_lyrics_title">Vis sangtekst</string>

@@ -105,15 +105,9 @@
     <string name="accessibility_browse">ଗୀତ ବ୍ରାଉଜ୍‍ କରନ୍ତୁ</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ରିଙ୍ଗ୍‍ଟୋନ୍‍ ଭାବେ ସେଟ୍‍ କରନ୍ତୁ</string>
     <string name="playlist_renamed">ପ୍ଲେତାଲିକା ପୁନଃନାମ ହୋଇଛି।</string>
-    <string name="settings_ui_category">ଇଂଟରଫେସ୍‍</string>
     <string name="settings_storage_category">ଷ୍ଟୋରେଜ୍</string>
-    <string name="settings_data_category">ଡାଟା</string>
     <string name="settings_delete_cache_title">କ୍ୟାସେ ବିଲୋପ କରନ୍ତୁ</string>
     <string name="settings_delete_cache_summary">ସମସ୍ତ କ୍ୟାସେର ଚିତ୍ର ଅପସାରଣ କରନ୍ତୁ</string>
-    <string name="settings_download_only_on_wifi_title">କେବଳ Wi-Fi ମାଧ୍ୟମରେ ଡାଉନ୍‍ଲୋଡ୍‍ କରନ୍ତୁ</string>
-    <string name="settings_download_only_on_wifi_summary">ମୋବାଇଲ୍‍ ଅପ୍ରେଟର ଶୁଳ୍କ ହ୍ରାସ କରିବା ପାଇଁ, ମୋବାଇଲ୍‍ ନେତ୍‍ୱାର୍କ୍‍ରେ ଡାଉନ୍‍ଲୋଡ୍‍ କରନ୍ତୁ ନାହିଁ</string>
-    <string name="settings_download_missing_artwork_title">ହଜିଯାଇଥିବା ଆଲ୍‍ବମ୍‍ ଆର୍ଟ ଡାଉନ୍‍ଲୋଡ୍‍ କରନ୍ତୁ</string>
-    <string name="settings_download_artist_images_title">ହଜିଯାଇଥିବା କଳାକାର ଚିତ୍ର ଡାଉନ୍‍ଲୋଡ୍‍ କରନ୍ତୁ</string>
     <string name="settings_general_category">ସାଧାରଣ</string>
     <string name="settings_show_music_visualization_title">ମ୍ୟୁଜିକ୍‍ ଭିଜୁଆଲାଇଜେସନ୍‍ ଦେଖାନ୍ତୁ</string>
     <string name="settings_show_lyrics_title">ଗୀତ ଲିରିକ୍ସ ଦେଖାନ୍ତୁ</string>

@@ -27,7 +27,6 @@
     <string name="overwrite">Subraiscrie</string>
     <string name="clear">Isbòida</string>
     <string name="context_menu_delete">Iscantzella</string>
-    <string name="settings_data_category">Datos</string>
     <string name="settings_general_category">Generale</string>
     <string name="header_less_than_30s">Prus pagu de 30 segundos</string>
     <string name="header_30_to_60_seconds">30 - 60 segundos</string>

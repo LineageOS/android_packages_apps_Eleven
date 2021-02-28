@@ -105,15 +105,9 @@
     <string name="accessibility_browse">Parcourir la musique</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' défini comme sonnerie</string>
     <string name="playlist_renamed">Liste de lecture renommée</string>
-    <string name="settings_ui_category">Interface</string>
     <string name="settings_storage_category">Stockage</string>
-    <string name="settings_data_category">Données</string>
     <string name="settings_delete_cache_title">Supprimer le cache</string>
     <string name="settings_delete_cache_summary">Supprimer toutes les images du cache</string>
-    <string name="settings_download_only_on_wifi_title">Télécharger via Wi-Fi uniquement</string>
-    <string name="settings_download_only_on_wifi_summary">Pour réduire les frais de consommation de données, ne pas télécharger via un réseau mobile</string>
-    <string name="settings_download_missing_artwork_title">Télécharger les pochettes manquantes</string>
-    <string name="settings_download_artist_images_title">Télécharger les images d\'artistes manquantes</string>
     <string name="settings_general_category">Général</string>
     <string name="settings_show_music_visualization_title">Voir les animations musicales</string>
     <string name="settings_use_blur_title">Floutage arrière-plan</string>

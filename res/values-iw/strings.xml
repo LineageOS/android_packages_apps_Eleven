@@ -105,15 +105,9 @@
     <string name="accessibility_browse">הצג מוזיקה</string>
     <string name="set_as_ringtone">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" נקבע כרינגטון</string>
     <string name="playlist_renamed">שונה שם רשימת ההשמעה</string>
-    <string name="settings_ui_category">ממשק</string>
     <string name="settings_storage_category">אחסון</string>
-    <string name="settings_data_category">נתונים</string>
     <string name="settings_delete_cache_title">מחק מטמון</string>
     <string name="settings_delete_cache_summary">מסיר את כל התמונות שבמטמון</string>
-    <string name="settings_download_only_on_wifi_title">הורד דרך Wi-Fi בלבד</string>
-    <string name="settings_download_only_on_wifi_summary">כדי להפחית עלויות ספק תקשורת, אל תוריד מאינטרנט סלולרי</string>
-    <string name="settings_download_missing_artwork_title">הורד תמונת אלבום חסרה</string>
-    <string name="settings_download_artist_images_title">הורד תמונות אמן חסרות</string>
     <string name="settings_general_category">כללי</string>
     <string name="settings_show_music_visualization_title">הצג אפקטים ויזואליים למוזיקה</string>
     <string name="settings_show_lyrics_title">הצג את מילות השיר</string>

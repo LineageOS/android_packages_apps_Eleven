@@ -105,15 +105,9 @@
     <string name="accessibility_browse">เรียกดูเพลง</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ตั้งเป็นเสียงเรียกเข้า</string>
     <string name="playlist_renamed">เปลี่ยนชื่อรายการเพลง</string>
-    <string name="settings_ui_category">อินเตอร์เฟซ</string>
     <string name="settings_storage_category">แหล่งเก็บข้อมูล</string>
-    <string name="settings_data_category">ข้อมูล</string>
     <string name="settings_delete_cache_title">ล้างแคช</string>
     <string name="settings_delete_cache_summary">ลบรูปที่แคชทั้งหมดออก</string>
-    <string name="settings_download_only_on_wifi_title">ดาวน์โหลดด้วย Wi-Fi เท่านั้น</string>
-    <string name="settings_download_only_on_wifi_summary">ในการประหยัดค่าใช้จ่าย ไม่ควรดาวน์โหลดผ่านเครือข่ายมือถือ</string>
-    <string name="settings_download_missing_artwork_title">ดาวน์โหลดปกอัลบั้มที่หายไป</string>
-    <string name="settings_download_artist_images_title">ดาวน์โหลดภาพศิลปินที่หายไป</string>
     <string name="settings_general_category">ทั่วไป</string>
     <string name="settings_show_music_visualization_title">แสดงภาพเคลื่อนไหวประกอบเพลง</string>
     <string name="settings_use_blur_title">พื้นหลังเบลอ</string>
