@@ -110,6 +110,7 @@
     <string name="settings_delete_cache_summary">Odstráni všetky obrázky vo vyrovnávacej pamäti</string>
     <string name="settings_general_category">Všeobecné</string>
     <string name="settings_show_music_visualization_title">Zobraziť vizualizáciu hudby</string>
+    <string name="settings_use_blur_title">Rozmazanie pozadia</string>
     <string name="settings_show_lyrics_title">Zobraziť texty skladieb</string>
     <string name="settings_show_lyrics_summary">Pre skladby, ktoré majú súbor srt</string>
     <string name="settings_shake_to_play">Prehrať zatrasením</string>
