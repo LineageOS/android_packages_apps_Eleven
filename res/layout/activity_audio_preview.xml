@@ -43,6 +43,7 @@
             <SeekBar
                 android:id="@+id/sb_progress"
                 android:enabled="false"
+                android:progressTint="?android:attr/colorAccent"
                 android:visibility="invisible"
                 android:maxHeight="@dimen/preview_layout_seekbar_height"
                 android:minHeight="@dimen/preview_layout_seekbar_height"
@@ -53,6 +54,7 @@
                 style="@android:style/Widget.DeviceDefault.ProgressBar.Horizontal"
                 android:id="@+id/pb_loader"
                 android:indeterminate="true"
+                android:indeterminateTint="?android:attr/colorAccent"
                 android:visibility="invisible"
                 android:maxHeight="@dimen/preview_layout_seekbar_height"
                 android:minHeight="@dimen/preview_layout_seekbar_height"
