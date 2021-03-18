@@ -173,4 +173,7 @@
     <color name="audio_player_seeker_progress_color">@color/white</color>
     <color name="audio_player_seeker_progress_background_color">@color/white</color>
     <color name="audio_player_seeker_thumb_color">@color/white</color>
+  
+    <!-- audio player preview controls -->
+    <color name="audio_preview_accent_color">@*android:color/accent_device_default_light</color>
 </resources>
