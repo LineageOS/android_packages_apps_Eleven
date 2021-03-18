@@ -53,4 +53,7 @@
     <!-- Separated and exposed values for themes -->
     <color name="widget_background_color">@color/black</color>
     <color name="list_base_container_background_color">@color/black</color>
+
+    <!-- audio player preview controls -->
+    <color name="audio_preview_accent_color">@*android:color/accent_device_default_dark</color>
 </resources>
