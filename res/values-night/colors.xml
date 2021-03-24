@@ -33,6 +33,9 @@
     <!-- Transparent colors -->
     <color name="background_color">#121212</color>
 
+    <!-- Color for the Position Number -->
+    <color name="position_number_color">@color/black</color>
+
     <!-- Color for the action bar -->
     <color name="header_action_bar_text_color">@color/white</color>
     <color name="bottom_action_bar_text_color">@color/default_text_color_light</color>
