@@ -109,7 +109,7 @@
     <color name="now_playing_divider">@color/transparent</color>
 
     <!-- App widget colors -->
-    <color name="widget_text">@color/white</color>
+    <color name="widget_text">@color/default_text_color</color>
 
     <!-- Background Lyrics Color -->
     <color name="lyrics_background_color">#b2212121</color>
