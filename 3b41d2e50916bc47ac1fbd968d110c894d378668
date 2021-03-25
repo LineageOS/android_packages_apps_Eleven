@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74209a9a_8da6a3ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-03-25T10:47:07Z",
+      "side": 1,
+      "message": "when commiting you should have already been told by git that all these lines are clearly too long.\n\nCorrect format: No line \u003e 80 chars, 1st line is title, then comes an empty line, then the description (manually line wrapped every time 80 chars would be exceeded), then an empty line, then the change id",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 112
+      },
+      "revId": "3b41d2e50916bc47ac1fbd968d110c894d378668",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d82f4b6_e4873fee",
+        "filename": "res/drawable/btn_preview_pause.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-03-25T10:47:07Z",
+      "side": 1,
+      "message": "this change is clearly fixing a white on white issue",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 11,
+        "endChar": 37
+      },
+      "revId": "3b41d2e50916bc47ac1fbd968d110c894d378668",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "007830bb_6d9cb78f",
+        "filename": "res/drawable/btn_preview_play.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-03-25T10:47:07Z",
+      "side": 1,
+      "message": "this change is clearly fixing a white on white issue",
+      "range": {
+        "startLine": 10,
+        "startChar": 8,
+        "endLine": 11,
+        "endChar": 37
+      },
+      "revId": "3b41d2e50916bc47ac1fbd968d110c894d378668",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb843f66_064e9973",
+        "filename": "res/layout/app_widget_large.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-03-25T10:47:07Z",
+      "side": 1,
+      "message": "remove the added newline",
+      "revId": "3b41d2e50916bc47ac1fbd968d110c894d378668",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
