@@ -2,6 +2,7 @@
 <!--
   Copyright (C) 2012 Andrew Neal
   Copyright (C) 2014 The CyanogenMod Project
+  Copyright (C) 2021 The LineageOS Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -18,106 +19,60 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_app_widget"
     android:columnCount="2"
-    android:rowCount="2"
-    android:background="@color/widget_background_color"
-    android:gravity="top"
-    android:padding="@dimen/app_widget_padding"
-    tools:ignore="NestedWeights" >
+    android:padding="16dp"
+    android:rowCount="2">
 
     <ImageView
         android:id="@+id/app_widget_small_image"
-        android:layout_width="@dimen/app_widget_small_artwork_size"
-        android:layout_height="@dimen/app_widget_small_artwork_size"
+        android:layout_width="@dimen/app_widget_large_alternate_artwork_size"
+        android:layout_height="@dimen/app_widget_large_alternate_artwork_size"
+        android:layout_row="0"
+        android:layout_column="0"
         android:contentDescription="@null"
-        android:scaleType="centerInside" />
+        android:scaleType="fitXY" />
 
-    <LinearLayout
-       android:layout_gravity="fill_horizontal"
-       android:focusable="true"
-       android:gravity="center_horizontal"
-       android:orientation="horizontal" >
-
-       <ImageButton
-           android:id="@+id/app_widget_small_previous"
-           android:layout_width="0dp"
-           android:layout_height="@dimen/app_widget_small_button_height"
-           android:layout_weight="1"
-           android:background="@null"
-           android:contentDescription="@string/accessibility_prev"
-           android:focusable="true"
-           android:padding="@dimen/app_widget_small_button_padding"
-           android:scaleType="fitCenter"
-           android:src="@drawable/btn_playback_previous_widget" />
-
-       <ImageButton
-           android:id="@+id/app_widget_small_play"
-           android:layout_width="0dp"
-           android:layout_height="@dimen/app_widget_small_button_height"
-           android:layout_weight="1"
-           android:background="@null"
-           android:contentDescription="@string/accessibility_play"
-           android:focusable="true"
-           android:padding="@dimen/app_widget_small_button_padding"
-           android:scaleType="fitCenter"
-           android:src="@drawable/btn_playback_play_widget" />
-
-       <ImageButton
-           android:id="@+id/app_widget_small_next"
-           android:layout_width="0dp"
-           android:layout_height="@dimen/app_widget_small_button_height"
-           android:layout_weight="1"
-           android:background="@null"
-           android:contentDescription="@string/accessibility_next"
-           android:focusable="true"
-           android:padding="@dimen/app_widget_small_button_padding"
-           android:scaleType="fitCenter"
-           android:src="@drawable/btn_playback_next_widget" />
-
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/app_widget_small_play"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_gravity="center"
+        android:background="?android:selectableItemBackground"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/btn_playback_pause_widget"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:id="@+id/app_widget_small_info_container"
-        android:layout_gravity="fill"
+        android:layout_width="match_parent"
+        android:layout_row="1"
+        android:layout_column="0"
         android:layout_columnSpan="2"
-        android:layout_marginBottom="@dimen/app_widget_bottom_margin"
-        android:focusable="true"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingStart="@dimen/app_widget_small_info_container_padding_left"
-        android:paddingRight="@dimen/app_widget_small_info_container_padding_right" >
+        android:orientation="vertical"
+        android:paddingTop="8dp">
 
         <TextView
             android:id="@+id/app_widget_small_line_one"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="none"
-            android:singleLine="true"
+            style="@style/NotificationText"
             android:textColor="@color/widget_text"
-            android:textSize="@dimen/text_size_small"
+            android:textSize="@dimen/text_size_medium"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/app_widget_small_text_separator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="none"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:singleLine="true"
-            android:text="@string/app_widget_text_separator"
+            android:id="@+id/app_widget_small_line_two"
+            style="@style/NotificationText"
             android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
 
         <TextView
-            android:id="@+id/app_widget_small_line_two"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="marquee"
-            android:singleLine="true"
+            android:id="@+id/app_widget_small_line_three"
+            style="@style/NotificationText"
             android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
     </LinearLayout>
-
 </GridLayout>
