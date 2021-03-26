@@ -33,7 +33,7 @@ import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
 
 /**
- * 4x1 App-Widget
+ * Square App-Widget
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
@@ -69,7 +69,6 @@ public class AppWidgetSmall extends AppWidgetBase {
     private void defaultAppWidget(final Context context, final int[] appWidgetIds) {
         final RemoteViews appWidgetViews = new RemoteViews(context.getPackageName(),
                 R.layout.app_widget_small);
-        appWidgetViews.setViewVisibility(R.id.app_widget_small_info_container, View.INVISIBLE);
         linkButtons(context, appWidgetViews);
         pushUpdate(context, appWidgetIds, appWidgetViews);
     }
@@ -116,16 +115,15 @@ public class AppWidgetSmall extends AppWidgetBase {
                 R.layout.app_widget_small);
 
         final CharSequence trackName = service.getTrackName();
+        final CharSequence albumName = service.getAlbumName();
         final CharSequence artistName = service.getArtistName();
         final Bitmap bitmap = service.getAlbumArt(true).getBitmap();
 
         // Set the titles and artwork
-        if (TextUtils.isEmpty(trackName) && TextUtils.isEmpty(artistName)) {
-            appWidgetView.setViewVisibility(R.id.app_widget_small_info_container, View.INVISIBLE);
-        } else {
-            appWidgetView.setViewVisibility(R.id.app_widget_small_info_container, View.VISIBLE);
+        if (!TextUtils.isEmpty(trackName) || !TextUtils.isEmpty(artistName)) {
             appWidgetView.setTextViewText(R.id.app_widget_small_line_one, trackName);
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_two, artistName);
+            appWidgetView.setTextViewText(R.id.app_widget_small_line_two, albumName);
+            appWidgetView.setTextViewText(R.id.app_widget_small_line_three, artistName);
         }
         appWidgetView.setImageViewBitmap(R.id.app_widget_small_image, bitmap);
 
@@ -167,18 +165,9 @@ public class AppWidgetSmall extends AppWidgetBase {
         views.setOnClickPendingIntent(R.id.app_widget_small_info_container, pendingIntent);
         views.setOnClickPendingIntent(R.id.app_widget_small_image, pendingIntent);
 
-        // Previous track
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.PREVIOUS_ACTION,
-                serviceName);
-        views.setOnClickPendingIntent(R.id.app_widget_small_previous, pendingIntent);
-
         // Play and pause
         pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION,
                 serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_small_play, pendingIntent);
-
-        // Next track
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.NEXT_ACTION, serviceName);
-        views.setOnClickPendingIntent(R.id.app_widget_small_next, pendingIntent);
     }
 }
