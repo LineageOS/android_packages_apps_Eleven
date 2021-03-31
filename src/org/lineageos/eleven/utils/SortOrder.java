@@ -107,8 +107,8 @@ public final class SortOrder {
         public final static String SONG_Z_A = SONG_A_Z + " DESC";
 
         /* Album song sort order track list */
-        public final static String SONG_TRACK_LIST = MediaStore.Audio.Media.TRACK + ", "
-                + MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
+        public final static String SONG_TRACK_LIST = "CAST("
+                + MediaStore.Audio.Media.TRACK + " as int)";
 
         /* Album song sort order duration */
         public final static String SONG_DURATION = SongSortOrder.SONG_DURATION;
