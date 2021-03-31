@@ -100,7 +100,7 @@ public final class SortOrder {
      */
     public interface AlbumSongSortOrder {
         /* Album song sort order track list */
-        String SONG_TRACK_LIST = MediaStore.Audio.Media.TRACK + ", "
-                + MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
+        String SONG_TRACK_LIST = String.format("CAST(%s as int), %s",
+                MediaStore.Audio.Media.TRACK, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
     }
 }
