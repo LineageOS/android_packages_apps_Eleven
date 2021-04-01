@@ -799,9 +799,11 @@ public final class MusicUtils {
         };
         final String selection = AudioColumns.ARTIST_ID + "=" + id + " AND "
                 + AudioColumns.IS_MUSIC + "=1";
+        final String sortOrder = String.format("%s, CAST(%s as int)",
+                AudioColumns.ALBUM_KEY, AudioColumns.TRACK);
         try (Cursor cursor = context.getContentResolver().query(
                 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null,
-                AudioColumns.ALBUM_KEY + "," + AudioColumns.TRACK)) {
+                sortOrder)) {
             if (cursor != null) {
                 return getSongListForCursor(cursor);
             }
@@ -820,9 +822,11 @@ public final class MusicUtils {
         };
         final String selection = AudioColumns.ALBUM_ID + "=" + id + " AND " + AudioColumns.IS_MUSIC
                 + "=1";
+        final String sortOrder = String.format("CAST(%s as int), %s",
+                AudioColumns.TRACK, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
         try (Cursor cursor = context.getContentResolver().query(
                 MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null,
-                AudioColumns.TRACK + ", " + MediaStore.Audio.Media.DEFAULT_SORT_ORDER)) {
+                sortOrder)) {
             if (cursor != null) {
                 return getSongListForCursor(cursor);
             }
