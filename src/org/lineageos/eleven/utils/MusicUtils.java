@@ -53,6 +53,7 @@ import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
+import org.lineageos.eleven.loaders.AlbumSongLoader;
 import org.lineageos.eleven.loaders.LastAddedLoader;
 import org.lineageos.eleven.loaders.PlaylistLoader;
 import org.lineageos.eleven.loaders.PlaylistSongLoader;
@@ -741,14 +742,9 @@ public final class MusicUtils {
      * @return The song list for an artist.
      */
     public static long[] getSongListForArtist(final Context context, final long id) {
-        final String[] projection = new String[]{
-                BaseColumns._ID
-        };
         final String selection = AudioColumns.ARTIST_ID + "=" + id + " AND "
                 + AudioColumns.IS_MUSIC + "=1";
-        try (Cursor cursor = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null,
-                AudioColumns.ALBUM_KEY + "," + AudioColumns.TRACK)) {
+        try (Cursor cursor = SongLoader.makeSongCursor(context, selection)) {
             if (cursor != null) {
                 return getSongListForCursor(cursor);
             }
@@ -762,14 +758,7 @@ public final class MusicUtils {
      * @return The song list for an album.
      */
     public static long[] getSongListForAlbum(final Context context, final long id) {
-        final String[] projection = new String[]{
-                BaseColumns._ID
-        };
-        final String selection = AudioColumns.ALBUM_ID + "=" + id + " AND " + AudioColumns.IS_MUSIC
-                + "=1";
-        try (Cursor cursor = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection, null,
-                AudioColumns.TRACK + ", " + MediaStore.Audio.Media.DEFAULT_SORT_ORDER)) {
+        try (Cursor cursor = AlbumSongLoader.makeAlbumSongCursor(context, id)) {
             if (cursor != null) {
                 return getSongListForCursor(cursor);
             }
