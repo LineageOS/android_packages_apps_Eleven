@@ -29,6 +29,7 @@ import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -329,10 +330,13 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
      * Sets the track name, album name, and album art.
      */
     private void updateBottomActionBarInfo() {
+        final String albumName = MusicUtils.getAlbumName();
+        final String artistName = MusicUtils.getArtistName();
         // Set the track name
         mTrackName.setText(MusicUtils.getTrackName());
-        // Set the artist name
-        mArtistName.setText(MusicUtils.getArtistName());
+        // Set the artist and album name
+        mArtistName.setText(TextUtils.isEmpty(albumName)
+                ? artistName : artistName + " - " + albumName);
         // Set the album art
         ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
     }

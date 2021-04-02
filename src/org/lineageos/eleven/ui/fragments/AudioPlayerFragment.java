@@ -379,9 +379,13 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
      * Sets the track name, album name, and album art.
      */
     private void updateNowPlayingInfo() {
+        final String albumName = MusicUtils.getAlbumName();
+        final String artistName = MusicUtils.getArtistName();
         // Set the track name
         mSongTitle.setText(MusicUtils.getTrackName());
-        mArtistName.setText(MusicUtils.getArtistName());
+        // Set artist and album name
+        mArtistName.setText(TextUtils.isEmpty(albumName)
+                ? artistName : artistName + " - " + albumName);
 
         mMainPlaybackControls.updateNowPlayingInfo();
 
