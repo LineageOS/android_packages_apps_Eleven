@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92f62dab_7096e3ea",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-02T16:52:46Z",
+      "side": 1,
+      "message": "not sure, but for RTLlanguages it would make sense to have the format in strings.xml with xliff tags?",
+      "revId": "640192c1eacf508ee1e9763d0d53777ae662c2f1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
