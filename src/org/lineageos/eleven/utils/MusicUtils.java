@@ -45,6 +45,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.WorkerThread;
+import androidx.fragment.app.FragmentActivity;
 
 import org.lineageos.eleven.BuildConfig;
 import org.lineageos.eleven.Config.IdType;
@@ -1609,7 +1610,7 @@ public final class MusicUtils {
      * Removes the header image from the cache.
      */
     @WorkerThread
-    public static void removeFromCache(Activity activity, String key) {
+    public static void removeFromCache(FragmentActivity activity, String key) {
         ImageFetcher imageFetcher = ElevenUtils.getImageFetcher(activity);
         imageFetcher.removeFromCache(key);
 
@@ -1621,7 +1622,7 @@ public final class MusicUtils {
     /**
      * Removes image from cache so that the stock image is retrieved on reload
      */
-    public static void selectOldPhoto(Activity activity, String key) {
+    public static void selectOldPhoto(FragmentActivity activity, String key) {
         // First remove the old image
         removeFromCache(activity, key);
         MusicUtils.refresh();
