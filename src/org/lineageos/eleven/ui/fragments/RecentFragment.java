@@ -17,7 +17,6 @@
  */
 package org.lineageos.eleven.ui.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -121,7 +120,7 @@ public class RecentFragment extends SmartPlaylistFragment implements ISetupActio
     }
 
     private static class RecentAdapter extends SongAdapter {
-        public RecentAdapter(Activity context, int layoutId, long sourceId,
+        public RecentAdapter(FragmentActivity context, int layoutId, long sourceId,
                              Config.IdType sourceType) {
             super(context, layoutId, sourceId, sourceType);
         }
