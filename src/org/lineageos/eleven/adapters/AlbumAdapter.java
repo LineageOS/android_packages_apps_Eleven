@@ -17,13 +17,14 @@
  */
 package org.lineageos.eleven.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+
+import androidx.fragment.app.FragmentActivity;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -79,7 +80,7 @@ public class AlbumAdapter extends BaseAdapter implements IPopupMenuCallback {
      * @param context  The {@link Context} to use.
      * @param layoutId The resource Id of the view to inflate.
      */
-    public AlbumAdapter(final Activity context, final int layoutId) {
+    public AlbumAdapter(final FragmentActivity context, final int layoutId) {
         mContext = context;
         // Get the layout Id
         mLayoutId = layoutId;
