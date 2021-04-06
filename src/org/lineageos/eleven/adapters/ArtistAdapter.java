@@ -17,12 +17,13 @@
  */
 package org.lineageos.eleven.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import androidx.fragment.app.FragmentActivity;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -75,7 +76,7 @@ public class ArtistAdapter extends ArrayAdapter<Artist>
      * @param context  The {@link Context} to use.
      * @param layoutId The resource Id of the view to inflate.
      */
-    public ArtistAdapter(final Activity context, final int layoutId) {
+    public ArtistAdapter(final FragmentActivity context, final int layoutId) {
         super(context, 0);
         // Get the layout Id
         mLayoutId = layoutId;
