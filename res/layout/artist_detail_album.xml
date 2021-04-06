@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Copyright (C) 2015 The CyanogenMod Project
+  Copyright (C) 2021 The LineageOS Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -18,64 +19,44 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="156dp"
-    android:layout_height="222dp"
-    android:layout_marginEnd="8dp"
-    android:foreground="@drawable/selectable_background"
-    android:elevation="3dp"
+    android:layout_height="156dp"
+    android:layout_margin="4dp"
     card_view:cardElevation="4dp"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardBackgroundColor="@color/cards_bg_color">
+    card_view:cardCornerRadius="8dp"
+    card_view:cardBackgroundColor="@color/cards_bg_color" >
 
-    <RelativeLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/album_art"
-            android:layout_width="156dp"
-            android:layout_height="156dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:scaleType="centerCrop" />
+        <include layout="@layout/square_image_view" />
 
-        <org.lineageos.eleven.widgets.PopupMenuButton
-            android:id="@+id/overflow"
-            android:layout_width="@dimen/overflow_width"
-            android:layout_height="match_parent"
-            android:layout_below="@id/album_art"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="1dp"
-            android:gravity="center_vertical"
-            android:src="@drawable/menu_button" />
-
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_below="@id/album_art"
-            android:layout_toStartOf="@id/overflow"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="8dp" >
+            android:background="@drawable/bg_grid_item"
+            android:layout_height="@dimen/grid_bottom_height"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/title"
-                style="@style/ListItemMainText.Single"
-                android:textSize="@dimen/text_size_micro"
+                android:id="@+id/description"
+                style="@style/ListItemMainText.Grid.Single"
+                android:layout_marginStart="@dimen/grid_item_padding_left"
+                android:textColor="@color/white"
+                android:maxLines="2"
+                android:layout_marginEnd="32dp"
+                android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/artist_detail_album_title_text_color" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/year"
-                style="@style/ListItemSecondaryText.Single"
-                android:textSize="@dimen/text_size_extra_micro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/artist_detail_album_year_text_color" />
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
+            <org.lineageos.eleven.widgets.PopupMenuButton
+                android:id="@+id/popup_menu_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="@dimen/grid_item_padding_right"
+                android:src="@drawable/menu_button_light" />
+        </FrameLayout>
+    </FrameLayout>
 </androidx.cardview.widget.CardView>
