@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Ini tidak dapat diurungkan</string>
     <string name="delete_warning">Ini akan menghapus cache gambar secara permanen</string>
     <string name="new_photo">Pilih foto dari Galeri</string>
-    <string name="google_search">Pencarian Google</string>
     <string name="use_default">Gunakan foto bawaan</string>
-    <string name="old_photo">Gunakan foto lama</string>
     <string name="context_menu_play_selection">Putar</string>
     <string name="context_menu_play_next">Putar selanjutnya</string>
     <string name="context_menu_play_album">Putar album</string>

@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">بۇنىڭدىن يېنىۋالغىلى بولمايدۇ</string>
     <string name="delete_warning">بۇ مەشغۇلات غەملەنگەن سۈرەت تۈرلىرىنى مەڭگۈلۈك ئۆچۈرۈۋېتىدۇ</string>
     <string name="new_photo">رەسىم يىغقۇچتىن سۈرەت تاللاڭ</string>
-    <string name="google_search">Google ئىزدەش</string>
     <string name="use_default">كۆڭۈلدىكى سۈرەتنى ئىشلەت</string>
-    <string name="old_photo">كونا سۈرەتنى ئىشلىتىش</string>
     <string name="context_menu_play_selection">قويۇش</string>
     <string name="context_menu_play_next">كېيىنكىنى چال</string>
     <string name="context_menu_play_album">پىلاستىنكىنى قويۇش</string>

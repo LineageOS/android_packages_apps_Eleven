@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Això no es podrà desfer</string>
     <string name="delete_warning">Això esborrarà permanentment les imatges de la memòria cau</string>
     <string name="new_photo">Tria una foto de la galeria</string>
-    <string name="google_search">Cerca a Google</string>
     <string name="use_default">Utilitza la foto predefinida</string>
-    <string name="old_photo">Utilitza la foto antiga</string>
     <string name="context_menu_play_selection">Reprodueix</string>
     <string name="context_menu_play_next">Reprodueix el següent</string>
     <string name="context_menu_play_album">Reprodueix àlbum</string>

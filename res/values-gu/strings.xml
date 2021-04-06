@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">આ ક્રિયા પૂર્વવત થઈ શકે નહીં.</string>
     <string name="delete_warning">આનાથી કૅશ કરેલ ઇમેજ એન્ટ્રીઓ કાયમી ભૂંસાઇ જશે</string>
     <string name="new_photo">ગૅલેરીમાંથી ફોટા પસંદ કરો</string>
-    <string name="google_search">ગૂગલ સર્ચ</string>
     <string name="use_default">ડિફૉલ્ટ ફોટો વાપરો</string>
-    <string name="old_photo">જૂનો ફોટો વાપરો</string>
     <string name="context_menu_play_selection">ચલાવો</string>
     <string name="context_menu_play_next">આગામી પ્લે કરો</string>
     <string name="context_menu_play_album">આલ્બમ પ્લે કરો</string>

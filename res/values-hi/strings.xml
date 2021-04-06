@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">इसे पलटा नहीं जा सकेगा</string>
     <string name="delete_warning">यह कैश की गई छवि प्रविष्टियों को हमेशा के लिए मिटा देगा</string>
     <string name="new_photo">गैलरी से फ़ोटो चुनें</string>
-    <string name="google_search">गूगल खोज</string>
     <string name="use_default">डिफ़ॉल्ट फ़ोटो का उपयोग करें</string>
-    <string name="old_photo">पुरानी फ़ोटो का उपयोग करें</string>
     <string name="context_menu_play_selection">बजाएँ</string>
     <string name="context_menu_play_next">अगला बजाएँ</string>
     <string name="context_menu_play_album">एल्बम को चलाएँ</string>

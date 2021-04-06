@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Это действие невозможно отменить</string>
     <string name="delete_warning">Кэшированные изображения будут удалены.</string>
     <string name="new_photo">Выбрать из Галереи</string>
-    <string name="google_search">Найти в Google</string>
     <string name="use_default">Изображение по умолчанию</string>
-    <string name="old_photo">Исходное изображение</string>
     <string name="context_menu_play_selection">Воспроизвести</string>
     <string name="context_menu_play_next">Воспр. следующим</string>
     <string name="context_menu_play_album">Воспр. альбом</string>

@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">ഇത് പൂര്‍വ്വസ്ഥിതിയിലാക്കാന്‍ കഴിയില്ല</string>
     <string name="delete_warning">ഈ കാഷെ ചെയ്ത ഇമേജ് എൻട്രികൾ ശാശ്വതമായി ഇല്ലാതാക്കുന്നതാണ്</string>
     <string name="new_photo">ഗാലറിയിൽ നിന്നും ഫോട്ടോ തിരഞ്ഞെടുക്കുക</string>
-    <string name="google_search">ഗൂഗിള്‍ തിരയല്‍</string>
     <string name="use_default">ഡിഫോള്‍ട്ട് ഫോട്ടോ ഉപയോഗിക്കുക</string>
-    <string name="old_photo">പഴയ ഫോട്ടോ ഉപയോഗിക്കുക</string>
     <string name="context_menu_play_selection">പ്ലേ ചെയ്യുക</string>
     <string name="context_menu_play_next">അടുത്തത് പ്ലേ ചെയ്യുക</string>
     <string name="context_menu_play_album">ആൽബം പ്ലേ ചെയ്യുക</string>
