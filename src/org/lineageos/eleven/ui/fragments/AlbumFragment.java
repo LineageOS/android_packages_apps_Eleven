@@ -19,6 +19,7 @@ package org.lineageos.eleven.ui.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,8 +31,12 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.MusicStateListener;
 import org.lineageos.eleven.R;
@@ -57,7 +62,7 @@ import org.lineageos.eleven.widgets.LoadingEmptyContainer;
  */
 public class AlbumFragment extends MusicBrowserFragment implements
         LoaderManager.LoaderCallbacks<SectionListContainer<Album>>, OnScrollListener,
-        OnItemClickListener, MusicStateListener {
+        MusicStateListener {
 
     /**
      * Grid view column count. ONE - list, TWO - normal grid, FOUR - landscape
@@ -101,7 +106,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
 
         int layout = R.layout.grid_items_normal;
 
-        mAdapter = new AlbumAdapter(getActivity(), layout);
+        mAdapter = new AlbumAdapter(requireActivity(), layout, this::onItemClick);
         mAdapter.setPopupMenuClickedListener((v, position) ->
                 mPopupMenuHelper.showPopupMenu(v, position));
     }
@@ -109,7 +114,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
-        mRootView = (ViewGroup) inflater.inflate(R.layout.grid_base, null);
+        mRootView = (ViewGroup) inflater.inflate(R.layout.grid_base, container, false);
         initGridView();
 
         // Register the music status listener
@@ -158,13 +163,6 @@ public class AlbumFragment extends MusicBrowserFragment implements
     }
 
     @Override
-    public void onItemClick(final AdapterView<?> parent, final View view, final int position,
-                            final long id) {
-        Album album = mAdapter.getItem(position);
-        NavUtils.openAlbumProfile(getActivity(), album.mAlbumName, album.mArtistName, album.mAlbumId);
-    }
-
-    @Override
     @NonNull
     public Loader<SectionListContainer<Album>> onCreateLoader(final int id, final Bundle args) {
         mLoadingEmptyContainer.showLoading();
@@ -176,13 +174,18 @@ public class AlbumFragment extends MusicBrowserFragment implements
     @Override
     public void onLoadFinished(@NonNull final Loader<SectionListContainer<Album>> loader,
                                final SectionListContainer<Album> data) {
+        Handler handler = new Handler(requireActivity().getMainLooper());
+
         if (data.mListResults.isEmpty()) {
-            mAdapter.unload();
+            // Do on UI thread: https://issuetracker.google.com/issues/37030377
+            handler.post(() -> mAdapter.unload());
             mLoadingEmptyContainer.showNoResults();
             return;
         }
 
-        mAdapter.setData(data.mListResults);
+        mLoadingEmptyContainer.setVisibility(View.GONE);
+        // Do on UI thread: https://issuetracker.google.com/issues/37030377
+        handler.post(() -> mAdapter.setData(data.mListResults));
     }
 
     @Override
@@ -223,36 +226,28 @@ public class AlbumFragment extends MusicBrowserFragment implements
     }
 
     /**
-     * Sets up various helpers for both the list and grid
-     *
-     * @param list The list or grid
-     */
-    private void initAbsListView(final AbsListView list) {
-        // Release any references to the recycled Views
-        list.setRecyclerListener(new RecycleHolder());
-        // Show the albums and songs from the selected artist
-        list.setOnItemClickListener(this);
-        // To help make scrolling smooth
-        list.setOnScrollListener(this);
-    }
-
-    /**
      * Sets up the grid view
      */
     private void initGridView() {
         final Activity activity = getActivity();
         int columns = (activity != null && ElevenUtils.isLandscape(activity)) ? FOUR : TWO;
-        mAdapter.setNumColumns(columns);
+        final GridLayoutManager layoutManager = new GridLayoutManager(activity, columns);
         // Initialize the grid
-        GridView gridView = mRootView.findViewById(R.id.grid_base);
+        RecyclerView gridView = mRootView.findViewById(R.id.grid_base);
+        // Set up the helpers
+        gridView.setLayoutManager(layoutManager);
+        // Set up the animator
+        gridView.setItemAnimator(new DefaultItemAnimator());
         // Set the data behind the grid
         gridView.setAdapter(mAdapter);
-        // Set up the helpers
-        initAbsListView(gridView);
-        gridView.setNumColumns(columns);
 
         // Show progress bar
         mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
-        gridView.setEmptyView(mLoadingEmptyContainer);
+        mLoadingEmptyContainer.setVisibility(View.VISIBLE);
+    }
+
+    private void onItemClick(Album album) {
+        NavUtils.openAlbumProfile(getActivity(), album.mAlbumName,
+                album.mArtistName, album.mAlbumId);
     }
 }
