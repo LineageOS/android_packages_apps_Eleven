@@ -35,38 +35,24 @@ import org.lineageos.eleven.utils.MusicUtils;
 
 import java.util.List;
 
-public abstract class AlbumDetailSongAdapter extends DetailSongAdapter {
-    private final AlbumDetailFragment mFragment;
+public class AlbumDetailSongAdapter extends DetailSongAdapter {
 
-    public AlbumDetailSongAdapter(FragmentActivity activity, AlbumDetailFragment fragment) {
+    public AlbumDetailSongAdapter(FragmentActivity activity) {
         super(activity);
-        mFragment = fragment;
     }
 
+    @Override
     protected int rowLayoutId() {
         return R.layout.album_detail_song;
     }
 
+    @Override
     protected Config.IdType getSourceType() {
         return Config.IdType.Album;
     }
 
-    @NonNull
-    @Override
-    public Loader<List<Song>> onCreateLoader(int id, Bundle args) {
-        onLoading();
-        setSourceId(args == null ? -1 : args.getLong(Config.ID));
-        return new AlbumSongLoader(mActivity, getSourceId());
-    }
-
-    @Override
-    public void onLoadFinished(@NonNull Loader<List<Song>> loader, List<Song> songs) {
-        super.onLoadFinished(loader, songs);
-        mFragment.update(songs);
-    }
-
     protected Holder newHolder(View root, ImageFetcher fetcher) {
-        return new AlbumHolder(root, fetcher, mActivity);
+        return new AlbumHolder(root, fetcher, mContext);
     }
 
     private static class AlbumHolder extends Holder {
