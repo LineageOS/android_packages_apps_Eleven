@@ -284,6 +284,12 @@ public class HomeActivity extends SlidingPanelActivity implements
             Fragment targetFragment = null;
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
+            transaction.setCustomAnimations(
+                    androidx.fragment.R.anim.fragment_open_enter,
+                    androidx.fragment.R.anim.fragment_open_exit,
+                    androidx.fragment.R.anim.fragment_fade_enter,
+                    androidx.fragment.R.anim.fragment_fade_exit);
+
             if (action.equals(ACTION_VIEW_SMART_PLAYLIST)) {
                 long playlistId = intent.getExtras().getLong(Config.SMART_PLAYLIST_TYPE);
                 Config.SmartPlaylistType type = Config.SmartPlaylistType.getTypeById(playlistId);
