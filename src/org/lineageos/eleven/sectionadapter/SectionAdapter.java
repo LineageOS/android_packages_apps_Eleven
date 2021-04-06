@@ -261,6 +261,7 @@ public class SectionAdapter<TItem,
      * @param position position in the overall lis
      * @return true if a section header
      */
+    @SuppressWarnings("ConstantConditions")
     public boolean isSectionHeader(int position) {
         return mSections.containsKey(position) &&
                 mSections.get(position).mType == SectionType.Header;
@@ -272,6 +273,7 @@ public class SectionAdapter<TItem,
      * @param position position in the overall lis
      * @return true if a section footer
      */
+    @SuppressWarnings("ConstantConditions")
     public boolean isSectionFooter(int position) {
         return mSections.containsKey(position) &&
                 mSections.get(position).mType == SectionType.Footer;
