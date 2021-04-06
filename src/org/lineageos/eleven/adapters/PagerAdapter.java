@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentFactory;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
@@ -57,7 +58,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
      * @param fragmentManager The supporting fragment manager
      */
     public PagerAdapter(final Context context, final FragmentManager fragmentManager) {
-        super(fragmentManager);
+        super(fragmentManager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mContext = context;
     }
 
@@ -110,8 +111,15 @@ public class PagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(final int position) {
         final Holder mCurrentHolder = mHolderList.get(position);
-        return Fragment.instantiate(mContext,
-                mCurrentHolder.mClassName, mCurrentHolder.mParams);
+        final Class<? extends Fragment> fragmentClass = FragmentFactory.loadFragmentClass(
+                mContext.getClassLoader(), mCurrentHolder.mClassName);
+        try {
+            final Fragment fragment = fragmentClass.newInstance();
+            fragment.setArguments(mCurrentHolder.mParams);
+            return fragment;
+        } catch (InstantiationException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
