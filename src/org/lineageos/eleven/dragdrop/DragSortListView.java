@@ -498,7 +498,7 @@ public class DragSortListView extends ListView {
             canvas.translate(mFloatViewLeft, mFloatViewTop);
             canvas.clipRect(0, 0, w, h);
 
-            canvas.saveLayerAlpha(0, 0, w, h, alpha, Canvas.ALL_SAVE_FLAG);
+            canvas.saveLayerAlpha(0, 0, w, h, alpha);
             mFloatView.draw(canvas);
             canvas.restore();
             canvas.restore();
