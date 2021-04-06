@@ -17,7 +17,7 @@
 package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
-import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,14 +26,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
-import org.lineageos.eleven.loaders.AlbumLoader;
 import org.lineageos.eleven.model.Album;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.NavUtils;
@@ -45,22 +41,38 @@ import java.util.List;
 
 public class ArtistDetailAlbumAdapter
         extends RecyclerView.Adapter<ArtistDetailAlbumAdapter.ViewHolder>
-        implements LoaderManager.LoaderCallbacks<List<Album>>, IPopupMenuCallback {
+        implements IPopupMenuCallback {
     private static final int TYPE_FIRST = 1;
     private static final int TYPE_MIDDLE = 2;
     private static final int TYPE_LAST = 3;
 
-    private final Activity mActivity;
+    /**
+     * Image cache and image fetcher.
+     */
     private final ImageFetcher mImageFetcher;
-    private final LayoutInflater mInflater;
-    private List<Album> mAlbums = Collections.emptyList();
+
+    /**
+     * Used to listen to the pop up menu callbacks
+     */
     private IListener mListener;
+
+    /**
+     * Used to cache the album info.
+     */
+    private List<Album> mAlbums = Collections.emptyList();
+
+    private final Activity mActivity;
+
     private final int mListMargin;
 
+    /**
+     * Constructor of <code>ArtistDetailAlbumAdapter</code>
+     *
+     * @param activity    The {@link FragmentActivity} to use.
+     */
     public ArtistDetailAlbumAdapter(final FragmentActivity activity) {
         mActivity = activity;
         mImageFetcher = ElevenUtils.getImageFetcher(activity);
-        mInflater = LayoutInflater.from(activity);
         mListMargin = activity.getResources().
                 getDimensionPixelSize(R.dimen.list_item_general_margin);
     }
@@ -79,7 +91,8 @@ public class ArtistDetailAlbumAdapter
     @Override
     @NonNull
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = mInflater.inflate(R.layout.artist_detail_album, parent, false);
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.artist_detail_album, parent, false);
         // add extra margin to the first and last elements
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
         if (viewType == TYPE_FIRST) {
@@ -91,10 +104,14 @@ public class ArtistDetailAlbumAdapter
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Album a = mAlbums.get(position);
-        holder.title.setText(a.mAlbumName);
-        holder.year.setText(a.mYear);
+        StringBuilder sb = new StringBuilder();
+        sb.append(a.mAlbumName);
+        if (!TextUtils.isEmpty(a.mYear)) {
+            sb.append('\n').append(a.mYear);
+        }
+        holder.description.setText(sb.toString());
         mImageFetcher.loadAlbumImage(
                 a.mArtistName, a.mAlbumName, a.mAlbumId, holder.art);
         holder.popupButton.setPopupMenuClickedListener(mListener);
@@ -123,39 +140,46 @@ public class ArtistDetailAlbumAdapter
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView art;
-        public TextView title;
-        public TextView year;
+        public TextView description;
         public PopupMenuButton popupButton;
 
         public ViewHolder(View root) {
             super(root);
-            art = root.findViewById(R.id.album_art);
-            title = root.findViewById(R.id.title);
-            year = root.findViewById(R.id.year);
-            popupButton = root.findViewById(R.id.overflow);
+            art = root.findViewById(R.id.image);
+            description = root.findViewById(R.id.description);
+            popupButton = root.findViewById(R.id.popup_menu_button);
         }
     }
 
-    @NonNull
-    @Override
-    public Loader<List<Album>> onCreateLoader(int id, Bundle args) {
-        return args == null ?
-                new Loader<>(mActivity) : new AlbumLoader(mActivity, args.getLong(Config.ID));
-    }
+    public void setData(List<Album> albums) {
+        int oldSize = mAlbums == null ? 0 : mAlbums.size();
+        int newSize = albums.size();
 
-    @Override
-    public void onLoadFinished(@NonNull Loader<List<Album>> loader, List<Album> albums) {
-        if (albums.isEmpty()) {
-            return;
-        }
         mAlbums = albums;
-        notifyDataSetChanged();
+
+        if (oldSize == 0) {
+            notifyItemRangeInserted(0, newSize);
+        } else {
+            int diff = oldSize - newSize;
+            if (diff > 0) {
+                // Items were removed
+                notifyItemRangeChanged(0, newSize);
+                notifyItemRangeRemoved(newSize, diff);
+            } else if (diff < 0) {
+                // Items were added
+                notifyItemRangeChanged(0, oldSize);
+                notifyItemRangeInserted(oldSize, diff * -1);
+            }
+        }
     }
 
-    @Override // LoaderCallbacks
-    public void onLoaderReset(@NonNull Loader<List<Album>> loader) {
-        mAlbums = Collections.emptyList();
-        notifyDataSetChanged();
+    /**
+     * Method that unloads and clears the items in the adapter
+     */
+    public void unload() {
+        int size = mAlbums.size();
+        mAlbums.clear();
         mImageFetcher.flush();
+        notifyItemRangeRemoved(0, size);
     }
 }
