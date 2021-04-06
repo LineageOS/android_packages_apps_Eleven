@@ -82,7 +82,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     protected void initBottomActionBar() {
         super.initBottomActionBar();
         // Bottom action bar
-        final LinearLayout bottomActionBar = (LinearLayout)findViewById(R.id.bottom_action_bar);
+        final LinearLayout bottomActionBar = findViewById(R.id.bottom_action_bar);
         // Display the now playing screen or shuffle if this isn't anything
         // playing
         bottomActionBar.setOnClickListener(mOpenNowPlaying);
