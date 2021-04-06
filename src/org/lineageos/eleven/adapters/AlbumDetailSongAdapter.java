@@ -43,10 +43,12 @@ public abstract class AlbumDetailSongAdapter extends DetailSongAdapter {
         mFragment = fragment;
     }
 
+    @Override
     protected int rowLayoutId() {
         return R.layout.album_detail_song;
     }
 
+    @Override
     protected Config.IdType getSourceType() {
         return Config.IdType.Album;
     }

@@ -17,13 +17,14 @@
 package org.lineageos.eleven.ui.fragments;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
-import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,9 +45,10 @@ import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.utils.SongPopupMenuHelper;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
+import java.util.List;
 import java.util.TreeSet;
 
-public class ArtistDetailFragment extends FadingBarFragment implements IChildFragment {
+public class ArtistDetailFragment extends DetailFragment implements IChildFragment {
     private final int ALBUM_LOADER_ID = 0;
     private final int SONG_LOADER_ID = 1;
 
@@ -54,7 +56,6 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     private String mArtistName;
 
     private ImageView mHero;
-    private View mHeader;
 
     private ArtistDetailSongAdapter mSongAdapter;
     private ArtistDetailAlbumAdapter mAlbumAdapter;
@@ -120,7 +121,7 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     }
 
     private void setupHero(String artistName) {
-        mHero = mHeader.findViewById(R.id.hero);
+        mHero = mRootView.findViewById(R.id.hero);
         mHero.setContentDescription(artistName);
         // initiate loading the artist image
         // since the artist image needs to be scaled to the image view bounds,
@@ -138,26 +139,28 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     }
 
     private void setupAlbumList() {
-        RecyclerView albumsList = mHeader.findViewById(R.id.albums);
-        albumsList.setHasFixedSize(true);
-        albumsList.setLayoutManager(new LinearLayoutManager(getActivity(),
-                LinearLayoutManager.HORIZONTAL, false));
+        RecyclerView albumsList = mRootView.findViewById(R.id.albums);
         mAlbumAdapter = new ArtistDetailAlbumAdapter(getActivity());
         mAlbumAdapter.setPopupMenuClickedListener((v, position) ->
                 mAlbumPopupMenuHelper.showPopupMenu(v, position));
+        albumsList.setLayoutManager(new LinearLayoutManager(getActivity(),
+                LinearLayoutManager.HORIZONTAL, false));
+        albumsList.setItemAnimator(new DefaultItemAnimator());
         albumsList.setAdapter(mAlbumAdapter);
     }
 
     private void setupSongList() {
-        ListView songsList = mRootView.findViewById(R.id.songs);
-        mHeader = LayoutInflater.from(getActivity()).
-                inflate(R.layout.artist_detail_header, songsList, false);
-        songsList.addHeaderView(mHeader);
-        songsList.setOnScrollListener(this);
+        RecyclerView songsList = mRootView.findViewById(R.id.songs);
         mSongAdapter = new ArtistDetailSongAdapter(getActivity()) {
             @Override
             protected void onLoading() {
                 mLoadingEmptyContainer.showLoading();
+            }
+
+            @Override
+            public void onLoadFinished(@NonNull Loader<List<Song>> loader, List<Song> songs) {
+                super.onLoadFinished(loader, songs);
+                mLoadingEmptyContainer.setVisibility(songs.isEmpty() ? View.VISIBLE : View.GONE);
             }
 
             @Override
@@ -169,10 +172,11 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
         };
         mSongAdapter.setPopupMenuClickedListener((v, position) ->
                 mSongPopupMenuHelper.showPopupMenu(v, position));
+        songsList.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        songsList.setItemAnimator(new DefaultItemAnimator());
         songsList.setAdapter(mSongAdapter);
-        songsList.setOnItemClickListener(mSongAdapter);
         mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
-        songsList.setEmptyView(mLoadingEmptyContainer);
+        mLoadingEmptyContainer.setVisibility(View.VISIBLE);
     }
 
     private void setupPopupMenuHelpers() {
@@ -215,14 +219,6 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
                 set.remove(FragmentMenuItems.MORE_BY_ARTIST);
             }
         };
-    }
-
-    // TODO: change this class to use the same header strategy as PlaylistDetail
-    protected int getHeaderHeight() {
-        return mHero.getHeight();
-    }
-
-    protected void setHeaderPosition(float y) {
     }
 
     @Override
