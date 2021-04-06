@@ -244,7 +244,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
         int columns = (activity != null && ElevenUtils.isLandscape(activity)) ? FOUR : TWO;
         mAdapter.setNumColumns(columns);
         // Initialize the grid
-        GridView gridView = (GridView) mRootView.findViewById(R.id.grid_base);
+        GridView gridView = mRootView.findViewById(R.id.grid_base);
         // Set the data behind the grid
         gridView.setAdapter(mAdapter);
         // Set up the helpers
@@ -252,8 +252,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
         gridView.setNumColumns(columns);
 
         // Show progress bar
-        mLoadingEmptyContainer = (LoadingEmptyContainer)
-                mRootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
         gridView.setEmptyView(mLoadingEmptyContainer);
     }
 }

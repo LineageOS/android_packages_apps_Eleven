@@ -384,12 +384,12 @@ public class AudioPreviewActivity extends AppCompatActivity implements
         // Make it so if the user touches the background overlay we exit
         View v = findViewById(R.id.grp_transparent_wrapper);
         v.setOnTouchListener(this);
-        mTitleTextView = (TextView) findViewById(R.id.tv_title);
-        mArtistTextView = (TextView) findViewById(R.id.tv_artist);
-        mSeekBar = (SeekBar) findViewById(R.id.sb_progress);
+        mTitleTextView = findViewById(R.id.tv_title);
+        mArtistTextView = findViewById(R.id.tv_artist);
+        mSeekBar = findViewById(R.id.sb_progress);
         mSeekBar.setOnSeekBarChangeListener(this);
-        mProgressBar = (ProgressBar) findViewById(R.id.pb_loader);
-        mPlayPauseBtn = (ImageButton) findViewById(R.id.ib_playpause);
+        mProgressBar = findViewById(R.id.pb_loader);
+        mPlayPauseBtn = findViewById(R.id.ib_playpause);
     }
 
     private void processUri() {

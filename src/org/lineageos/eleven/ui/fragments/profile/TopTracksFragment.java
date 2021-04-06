@@ -96,7 +96,7 @@ public class TopTracksFragment extends SmartPlaylistFragment implements ISetupAc
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = super.getView(position, convertView, parent);
-            TextView positionText = (TextView) view.findViewById(R.id.position_number);
+            TextView positionText = view.findViewById(R.id.position_number);
             positionText.setText(String.valueOf(position + 1));
             return view;
         }
