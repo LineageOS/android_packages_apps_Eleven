@@ -26,6 +26,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -53,7 +58,7 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
     private long mSourceId = -1;
     private MusicPlaybackTrack mCurrentlyPlayingTrack;
 
-    public DetailSongAdapter(final Activity activity) {
+    public DetailSongAdapter(final FragmentActivity activity) {
         mActivity = activity;
         mImageFetcher = ElevenUtils.getImageFetcher(activity);
         mInflater = LayoutInflater.from(activity);

@@ -24,6 +24,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -56,7 +62,7 @@ public class ArtistDetailAlbumAdapter
     private IListener mListener;
     private final int mListMargin;
 
-    public ArtistDetailAlbumAdapter(final Activity activity) {
+    public ArtistDetailAlbumAdapter(final FragmentActivity activity) {
         mActivity = activity;
         mImageFetcher = ElevenUtils.getImageFetcher(activity);
         mInflater = LayoutInflater.from(activity);
