@@ -216,7 +216,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         @Override
         public void onActivityCreated(final Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            mImageView = (SquareImageView) mRootView.findViewById(R.id.audio_player_album_art);
+            mImageView = mRootView.findViewById(R.id.audio_player_album_art);
             loadImageAsync();
         }
 

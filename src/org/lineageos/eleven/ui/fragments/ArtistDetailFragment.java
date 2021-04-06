@@ -121,7 +121,7 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     }
 
     private void setupHero(String artistName) {
-        mHero = (ImageView) mHeader.findViewById(R.id.hero);
+        mHero = mHeader.findViewById(R.id.hero);
         mHero.setContentDescription(artistName);
         // initiate loading the artist image
         // since the artist image needs to be scaled to the image view bounds,
@@ -139,7 +139,7 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     }
 
     private void setupAlbumList() {
-        RecyclerView albumsList = (RecyclerView) mHeader.findViewById(R.id.albums);
+        RecyclerView albumsList = mHeader.findViewById(R.id.albums);
         albumsList.setHasFixedSize(true);
         albumsList.setLayoutManager(new LinearLayoutManager(getActivity(),
                 LinearLayoutManager.HORIZONTAL, false));
@@ -150,7 +150,7 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
     }
 
     private void setupSongList() {
-        ListView songsList = (ListView) mRootView.findViewById(R.id.songs);
+        ListView songsList = mRootView.findViewById(R.id.songs);
         mHeader = LayoutInflater.from(getActivity()).
                 inflate(R.layout.artist_detail_header, songsList, false);
         songsList.addHeaderView(mHeader);
@@ -172,8 +172,7 @@ public class ArtistDetailFragment extends FadingBarFragment implements IChildFra
                 mSongPopupMenuHelper.showPopupMenu(v, position));
         songsList.setAdapter(mSongAdapter);
         songsList.setOnItemClickListener(mSongAdapter);
-        mLoadingEmptyContainer =
-                (LoadingEmptyContainer) mRootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
         songsList.setEmptyView(mLoadingEmptyContainer);
     }
 

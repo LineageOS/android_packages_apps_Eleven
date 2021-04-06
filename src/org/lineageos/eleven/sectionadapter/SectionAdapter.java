@@ -118,7 +118,7 @@ public class SectionAdapter<TItem,
                 convertView = LayoutInflater.from(mContext).inflate(layoutId, parent, false);
             }
 
-            TextView title = (TextView) convertView.findViewById(R.id.title);
+            TextView title = convertView.findViewById(R.id.title);
             Section section = mSections.get(position);
             if (section != null) {
                 title.setText(section.mIdentifier);
