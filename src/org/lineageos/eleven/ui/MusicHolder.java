@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.widgets.PlayPauseButtonContainer;
 import org.lineageos.eleven.widgets.PopupMenuButton;
@@ -33,7 +35,7 @@ import java.lang.ref.WeakReference;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class MusicHolder {
+public class MusicHolder extends RecyclerView.ViewHolder {
 
     /**
      * This is the artist or album image
@@ -92,7 +94,7 @@ public class MusicHolder {
      * Constructor of <code>ViewHolder</code>
      */
     public MusicHolder(final View view) {
-        super();
+        super(view);
         // Initialize mImage
         mImage = new WeakReference<>(view.findViewById(R.id.image));
 
