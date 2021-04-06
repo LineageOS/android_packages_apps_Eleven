@@ -25,7 +25,6 @@
         android:layout_width="@dimen/drag_and_drop_width"
         android:layout_height="@dimen/drag_and_drop_height"
         android:layout_centerVertical="true"
-        android:scaleType="fitXY"
         android:src="@drawable/gripper_light" />
 
     <FrameLayout
