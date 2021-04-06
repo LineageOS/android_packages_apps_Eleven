@@ -30,6 +30,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.provider.MediaStore.Audio.Media;
 import android.text.TextUtils;
@@ -123,14 +124,21 @@ public class AudioPreviewActivity extends AppCompatActivity implements
      *
      * @see Handler
      */
-    private class UiHandler extends Handler {
+    private static class UiHandler extends Handler {
 
         public static final int MSG_UPDATE_PROGRESS = 1000;
+
+        private final Runnable mUpdateProgressForPlayer;
+
+        public UiHandler(@NonNull Looper looper, Runnable updateProgressForPlayer) {
+            super(looper);
+            mUpdateProgressForPlayer = updateProgressForPlayer;
+        }
 
         @Override
         public void handleMessage(Message msg) {
             if (msg.what == MSG_UPDATE_PROGRESS) {
-                updateProgressForPlayer();
+                mUpdateProgressForPlayer.run();
             } else {
                 super.handleMessage(msg);
             }
@@ -150,7 +158,8 @@ public class AudioPreviewActivity extends AppCompatActivity implements
             }
         }
     };
-    private final UiHandler mHandler = new UiHandler();
+    private final UiHandler mHandler = new UiHandler(Looper.getMainLooper(),
+            this::updateProgressForPlayer);
     private static AsyncQueryHandler sAsyncQueryHandler;
     private AudioManager mAudioManager;
     private PreviewPlayer mPreviewPlayer;
