@@ -310,7 +310,7 @@ public final class ImageCache {
                         flush();
                     }
                 }
-            } catch (final IOException | IllegalStateException e) {
+            } catch (final IOException e) {
                 // if the user clears the cache while we have an async task going we could try
                 // writing to the disk cache while it isn't ready. Catching here will silently
                 // fail instead
