@@ -109,23 +109,23 @@ public class AlbumDetailFragment extends DetailFragment implements IChildFragmen
         String year = arguments.getString(Config.ALBUM_YEAR);
         int songCount = arguments.getInt(Config.SONG_COUNT);
 
-        mAlbumArt = (ImageView) mRootView.findViewById(R.id.album_art);
+        mAlbumArt = mRootView.findViewById(R.id.album_art);
         mAlbumArt.setContentDescription(mAlbumName);
         ImageFetcher.getInstance(getActivity()).loadAlbumImage(artist,
                 mAlbumName, mAlbumId, mAlbumArt);
 
-        TextView title = (TextView) mRootView.findViewById(R.id.title);
+        TextView title = mRootView.findViewById(R.id.title);
         title.setText(mAlbumName);
 
         setupCountAndYear(mRootView, year, songCount);
 
         // will be updated once we have song data
-        mAlbumDuration = (TextView) mRootView.findViewById(R.id.duration);
-        mGenre = (TextView) mRootView.findViewById(R.id.genre);
+        mAlbumDuration = mRootView.findViewById(R.id.duration);
+        mGenre = mRootView.findViewById(R.id.genre);
     }
 
     private void setupCountAndYear(View root, String year, int songCount) {
-        TextView songCountAndYear = (TextView) root.findViewById(R.id.song_count_and_year);
+        TextView songCountAndYear = root.findViewById(R.id.song_count_and_year);
         if (songCount > 0) {
             String countText = getResources().
                     getQuantityString(R.plurals.Nsongs, songCount, songCount);
@@ -159,7 +159,7 @@ public class AlbumDetailFragment extends DetailFragment implements IChildFragmen
     }
 
     private void setupSongList() {
-        ListView songsList = (ListView) mRootView.findViewById(R.id.songs);
+        ListView songsList = mRootView.findViewById(R.id.songs);
         mSongAdapter = new AlbumDetailSongAdapter(getActivity(), this) {
             @Override
             protected void onLoading() {
@@ -175,8 +175,7 @@ public class AlbumDetailFragment extends DetailFragment implements IChildFragmen
                 mSongMenuHelper.showPopupMenu(v, position));
         songsList.setAdapter(mSongAdapter);
         songsList.setOnItemClickListener(mSongAdapter);
-        mLoadingEmptyContainer =
-                (LoadingEmptyContainer) mRootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
         songsList.setEmptyView(mLoadingEmptyContainer);
     }
 

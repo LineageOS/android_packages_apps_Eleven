@@ -51,8 +51,8 @@ public class PlayPauseProgressButton extends FrameLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mPlayPauseButton = (PlayPauseButton) findViewById(R.id.action_button_play);
-        mProgressBar = (ProgressBar) findViewById(R.id.circularProgressBarAlt);
+        mPlayPauseButton = findViewById(R.id.action_button_play);
+        mProgressBar = findViewById(R.id.circularProgressBarAlt);
     }
 
     @Override
