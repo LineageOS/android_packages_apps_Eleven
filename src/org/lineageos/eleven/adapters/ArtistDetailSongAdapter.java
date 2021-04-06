@@ -39,10 +39,12 @@ public abstract class ArtistDetailSongAdapter extends DetailSongAdapter {
         super(activity);
     }
 
+    @Override
     protected int rowLayoutId() {
         return R.layout.artist_detail_song;
     }
 
+    @Override
     protected Config.IdType getSourceType() {
         return Config.IdType.Artist;
     }

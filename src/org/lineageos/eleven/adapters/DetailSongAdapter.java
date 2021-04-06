@@ -20,9 +20,6 @@ import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +27,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
@@ -44,8 +42,8 @@ import org.lineageos.eleven.widgets.PopupMenuButton;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class DetailSongAdapter extends BaseAdapter implements
-        LoaderManager.LoaderCallbacks<List<Song>>, OnItemClickListener, IPopupMenuCallback {
+public abstract class DetailSongAdapter extends RecyclerView.Adapter<DetailSongAdapter.Holder>
+        implements LoaderManager.LoaderCallbacks<List<Song>>, IPopupMenuCallback {
     protected final Activity mActivity;
     private final ImageFetcher mImageFetcher;
     private final LayoutInflater mInflater;
@@ -61,11 +59,10 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return mSongs.size();
     }
 
-    @Override
     public Song getItem(int pos) {
         return mSongs.get(pos);
     }
@@ -90,19 +87,19 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
         }
     }
 
+    @NonNull
     @Override
-    public View getView(int pos, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = mInflater.inflate(rowLayoutId(), parent, false);
-            convertView.setTag(newHolder(convertView, mImageFetcher));
-        }
+    public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return newHolder(mInflater.inflate(rowLayoutId(), parent, false), mImageFetcher);
+    }
 
-        Holder holder = (Holder) convertView.getTag();
 
-        Song song = getItem(pos);
+    @Override
+    public void onBindViewHolder(@NonNull Holder holder, int position) {
+        Song song = getItem(position);
         holder.update(song);
         holder.popupMenuButton.setPopupMenuClickedListener(mListener);
-        holder.popupMenuButton.setPosition(pos);
+        holder.popupMenuButton.setPosition(position);
 
         if (mCurrentlyPlayingTrack != null
                 && mCurrentlyPlayingTrack.mSourceId == getSourceId()
@@ -112,8 +109,7 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
         } else {
             holder.playIcon.setVisibility(View.GONE);
         }
-
-        return convertView;
+        holder.itemView.setOnClickListener(v -> onItemClick(position));
     }
 
     protected abstract int rowLayoutId();
@@ -124,24 +120,22 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
 
     protected abstract Config.IdType getSourceType();
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+    private void onItemClick(int id) {
         // id is in this case the index in the underlying collection,
         // which is what we are interested in here -- so use as position
-        int position = (int) id;
         // ignore clicks on the header
         if (id < 0) {
             return;
         }
         // play clicked song and enqueue the rest of the songs in the Adapter
-        int songCount = getCount();
+        int songCount = getItemCount();
         long[] toPlay = new long[songCount];
         // add all songs to list
         for (int i = 0; i < songCount; i++) {
             toPlay[i] = getItem(i).mSongId;
         }
         // specify the song position to start playing
-        MusicUtils.playAll(mActivity, toPlay, position, getSourceId(), getSourceType(), false);
+        MusicUtils.playAll(mActivity, toPlay, id, getSourceId(), getSourceType(), false);
     }
 
     @Override
@@ -150,8 +144,14 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
             onNoResults();
             return;
         }
+
+        int oldSize = mSongs == null ? 0 : mSongs.size();
+        int diff = oldSize - songs.size();
         mSongs = songs;
-        notifyDataSetChanged();
+        notifyItemRangeInserted(0, songs.size());
+        if (diff > 0) {
+            notifyItemRangeRemoved(songs.size(), oldSize);
+        }
     }
 
     @Override
@@ -168,13 +168,14 @@ public abstract class DetailSongAdapter extends BaseAdapter implements
 
     protected abstract Holder newHolder(View root, ImageFetcher fetcher);
 
-    protected static abstract class Holder {
+    protected static abstract class Holder extends RecyclerView.ViewHolder {
         protected ImageFetcher fetcher;
         protected TextView title;
         protected PopupMenuButton popupMenuButton;
         protected ImageView playIcon;
 
         protected Holder(View root, ImageFetcher fetcher) {
+            super(root);
             this.fetcher = fetcher;
             title = root.findViewById(R.id.title);
             popupMenuButton = root.findViewById(R.id.overflow);

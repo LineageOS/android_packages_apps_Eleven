@@ -23,7 +23,7 @@
     <include
         layout="@layout/loading_empty_container" />
 
-    <GridView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/grid_base"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,13 +31,8 @@
         android:paddingRight="@dimen/list_item_general_margin"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
-        android:cacheColorHint="@color/transparent"
-        android:drawSelectorOnTop="true"
         android:fadingEdge="vertical"
         android:clipToPadding="false"
-        android:fastScrollEnabled="true"
-        android:horizontalSpacing="@dimen/grid_item_horizontal_spacing"
         android:scrollbarStyle="outsideOverlay"
-        android:scrollbars="vertical"
-        android:verticalSpacing="@dimen/grid_item_vertical_spacing" />
+        android:scrollbars="vertical" />
 </FrameLayout>
