@@ -107,15 +107,14 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         }
 
         // Initialize the ViewPager
-        mViewPager = (ViewPager) mRootView.findViewById(R.id.fragment_home_phone_pager);
+        mViewPager = mRootView.findViewById(R.id.fragment_home_phone_pager);
         // Attach the adapter
         mViewPager.setAdapter(mPagerAdapter);
         // Offscreen pager loading limit
         mViewPager.setOffscreenPageLimit(mPagerAdapter.getCount() - 1);
 
         // Initialize the tab strip
-        final ViewPagerTabs tabs = (ViewPagerTabs)
-                mRootView.findViewById(R.id.fragment_home_phone_pager_titles);
+        final ViewPagerTabs tabs = mRootView.findViewById(R.id.fragment_home_phone_pager_titles);
         // Attach the ViewPager
         tabs.setViewPager(mViewPager);
         mViewPager.addOnPageChangeListener(tabs);
