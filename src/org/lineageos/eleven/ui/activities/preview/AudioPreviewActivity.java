@@ -24,6 +24,8 @@ import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Rect;
+import android.media.AudioAttributes;
+import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer;
@@ -84,6 +86,8 @@ public class AudioPreviewActivity extends AppCompatActivity implements
     // Seeking flag
     private boolean mIsSeeking = false;
     private boolean mWasPlaying = false;
+
+    private AudioFocusRequest mFocusRequest;
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -557,14 +561,21 @@ public class AudioPreviewActivity extends AppCompatActivity implements
         if (mAudioManager == null) {
             return false;
         }
-        int r = mAudioManager.requestAudioFocus(this, AudioManager.STREAM_MUSIC,
-                AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+        AudioAttributes attrs = new AudioAttributes.Builder()
+                .setLegacyStreamType(AudioManager.STREAM_MUSIC)
+                .build();
+        mFocusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
+                .setOnAudioFocusChangeListener(this)
+                .setAudioAttributes(attrs)
+                .build();
+        int r = mAudioManager.requestAudioFocus(mFocusRequest);
         return r == AudioManager.AUDIOFOCUS_REQUEST_GRANTED;
     }
 
     private void abandonAudioFocus() {
-        if (mAudioManager != null) {
-            mAudioManager.abandonAudioFocus(this);
+        if (mAudioManager != null && mFocusRequest != null) {
+            mAudioManager.abandonAudioFocusRequest(mFocusRequest);
+            mFocusRequest = null;
         }
     }
 
@@ -615,8 +626,9 @@ public class AudioPreviewActivity extends AppCompatActivity implements
     @Override
     public void onAudioFocusChange(int focusChange) {
         if (mPreviewPlayer == null) {
-            if (mAudioManager != null) {
-                mAudioManager.abandonAudioFocus(this);
+            if (mAudioManager != null && mFocusRequest != null) {
+                mAudioManager.abandonAudioFocusRequest(mFocusRequest);
+                mFocusRequest = null;
             }
         }
         Logger.logd(TAG, "Focus change: " + focusChange);
