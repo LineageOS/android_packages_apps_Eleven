@@ -88,12 +88,10 @@
     <include
         layout="@layout/loading_empty_container" />
 
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/songs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/header"
-        android:layout_alignParentStart="true"
-        android:divider="@null"
-        android:dividerHeight="0dp" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
