@@ -57,7 +57,6 @@ import org.lineageos.eleven.service.MusicPlaybackTrack;
 import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
-import org.lineageos.eleven.widgets.IPopupMenuCallback;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 
@@ -200,7 +199,7 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         // The View for the fragment's UI
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.list_base, null);
         // Initialize the list
-        DragSortListView listView = (DragSortListView) rootView.findViewById(R.id.list_base);
+        DragSortListView listView = rootView.findViewById(R.id.list_base);
         // Set the data behind the list
         listView.setAdapter(mAdapter);
         // Release any references to the recycled Views
@@ -216,8 +215,7 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         // Enable fast scroll bars
         listView.setFastScrollEnabled(true);
         // Setup the loading and empty state
-        mLoadingEmptyContainer = (LoadingEmptyContainer)
-                rootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = rootView.findViewById(R.id.loading_empty_container);
         // Setup the container strings
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
         listView.setEmptyView(mLoadingEmptyContainer);

@@ -117,7 +117,7 @@ public class SectionAdapter<TItem,
                 convertView = LayoutInflater.from(mContext).inflate(layoutId, parent, false);
             }
 
-            TextView title = (TextView) convertView.findViewById(R.id.title);
+            TextView title = convertView.findViewById(R.id.title);
             Section section = mSections.get(position);
             if (section != null) {
                 title.setText(section.mIdentifier);
@@ -260,6 +260,7 @@ public class SectionAdapter<TItem,
      * @param position position in the overall lis
      * @return true if a section header
      */
+    @SuppressWarnings("ConstantConditions")
     public boolean isSectionHeader(int position) {
         return mSections.containsKey(position) &&
                 mSections.get(position).mType == SectionType.Header;
@@ -271,6 +272,7 @@ public class SectionAdapter<TItem,
      * @param position position in the overall lis
      * @return true if a section footer
      */
+    @SuppressWarnings("ConstantConditions")
     public boolean isSectionFooter(int position) {
         return mSections.containsKey(position) &&
                 mSections.get(position).mType == SectionType.Footer;

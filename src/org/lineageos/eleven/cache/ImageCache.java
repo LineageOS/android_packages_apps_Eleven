@@ -19,8 +19,6 @@ package org.lineageos.eleven.cache;
 
 import android.app.Activity;
 import android.app.ActivityManager;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.ComponentCallbacks2;
 import android.content.ContentUris;
 import android.content.Context;
@@ -36,6 +34,9 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import org.lineageos.eleven.cache.disklrucache.DiskLruCache;
 import org.lineageos.eleven.utils.ElevenUtils;
@@ -224,11 +225,11 @@ public final class ImageCache {
      * @return An existing retained ImageCache object or a new one if one did
      * not exist
      */
-    public static ImageCache findOrCreateCache(final Activity activity) {
+    public static ImageCache findOrCreateCache(final FragmentActivity activity) {
 
         // Search for, or create an instance of the non-UI RetainFragment
         final RetainFragment retainFragment = findOrCreateRetainFragment(
-                activity.getFragmentManager());
+                activity.getSupportFragmentManager());
 
         // See if we already have an ImageCache stored in RetainFragment
         ImageCache cache = (ImageCache) retainFragment.getObject();
@@ -307,8 +308,6 @@ public final class ImageCache {
                     }
                 }
             } catch (final IOException e) {
-                Log.e(TAG, "addBitmapToCache", e);
-            } catch (final IllegalStateException e) {
                 // if the user clears the cache while we have an async task going we could try
                 // writing to the disk cache while it isn't ready. Catching here will silently
                 // fail instead

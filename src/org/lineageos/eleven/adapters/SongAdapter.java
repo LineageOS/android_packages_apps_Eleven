@@ -17,12 +17,13 @@
  */
 package org.lineageos.eleven.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import androidx.fragment.app.FragmentActivity;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -99,7 +100,7 @@ public class SongAdapter extends ArrayAdapter<Song>
      * @param sourceId   The source id that the adapter is created from
      * @param sourceType The source type that the adapter is created from
      */
-    public SongAdapter(final Activity context, final int layoutId, final long sourceId,
+    public SongAdapter(final FragmentActivity context, final int layoutId, final long sourceId,
                        final Config.IdType sourceType) {
         super(context, 0);
         // Get the layout Id
