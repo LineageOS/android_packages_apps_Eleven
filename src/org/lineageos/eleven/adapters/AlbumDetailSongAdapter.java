@@ -76,7 +76,7 @@ public abstract class AlbumDetailSongAdapter extends DetailSongAdapter {
         protected AlbumHolder(View root, ImageFetcher fetcher, Context context) {
             super(root, fetcher);
             this.context = context;
-            duration = (TextView) root.findViewById(R.id.duration);
+            duration = root.findViewById(R.id.duration);
         }
 
         protected void update(Song song) {
