@@ -61,12 +61,12 @@ public class HeaderBar extends LinearLayout {
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mMenuButton = (ImageView) findViewById(R.id.header_bar_menu_button);
+        mMenuButton = findViewById(R.id.header_bar_menu_button);
         mMenuButton.setOnClickListener(v -> showPopupMenu());
 
-        mBackButton = (ImageView) findViewById(R.id.header_bar_up);
+        mBackButton = findViewById(R.id.header_bar_up);
 
-        mTitleText = (TextView) findViewById(R.id.header_bar_title);
+        mTitleText = findViewById(R.id.header_bar_title);
     }
 
     public void hideBackButton() {

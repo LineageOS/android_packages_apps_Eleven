@@ -80,7 +80,7 @@ public class AlbumScrimImage extends FrameLayout {
 
         final TransitionDrawable imageTransition = ImageWorker.createImageTransitionDrawable(
                 getResources(), mImageView.getDrawable(), blurredBitmap,
-                ImageWorker.FADE_IN_TIME_SLOW, true, true);
+                ImageWorker.FADE_IN_TIME_SLOW, true);
 
         final TransitionDrawable paletteTransition = ImageWorker.createPaletteTransition(this,
                 Color.TRANSPARENT);

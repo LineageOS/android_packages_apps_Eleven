@@ -16,13 +16,13 @@
  */
 package org.lineageos.eleven.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
@@ -38,7 +38,7 @@ import java.util.List;
 public abstract class AlbumDetailSongAdapter extends DetailSongAdapter {
     private final AlbumDetailFragment mFragment;
 
-    public AlbumDetailSongAdapter(Activity activity, AlbumDetailFragment fragment) {
+    public AlbumDetailSongAdapter(FragmentActivity activity, AlbumDetailFragment fragment) {
         super(activity);
         mFragment = fragment;
     }
@@ -76,7 +76,7 @@ public abstract class AlbumDetailSongAdapter extends DetailSongAdapter {
         protected AlbumHolder(View root, ImageFetcher fetcher, Context context) {
             super(root, fetcher);
             this.context = context;
-            duration = (TextView) root.findViewById(R.id.duration);
+            duration = root.findViewById(R.id.duration);
         }
 
         protected void update(Song song) {
