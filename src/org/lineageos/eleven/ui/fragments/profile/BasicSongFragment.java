@@ -151,7 +151,7 @@ public abstract class BasicSongFragment extends Fragment implements
             mRootView.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color));
         }
         // Initialize the list
-        mListView = (ListView) mRootView.findViewById(R.id.list_base);
+        mListView = mRootView.findViewById(R.id.list_base);
         // Set the data behind the list
         mListView.setAdapter(mAdapter);
         // Release any references to the recycled Views
