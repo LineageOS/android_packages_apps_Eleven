@@ -162,7 +162,7 @@
     <dimen name="colorstrip_height">2.0dip</dimen>
 
     <!-- Drag and drop -->
-    <dimen name="drag_and_drop_width">20.0dip</dimen>
+    <dimen name="drag_and_drop_width">24.0dip</dimen>
     <dimen name="drag_and_drop_height">50.0dip</dimen>
 
     <!-- Color scheme dialog -->
