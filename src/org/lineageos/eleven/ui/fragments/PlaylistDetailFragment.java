@@ -186,17 +186,17 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
     }
 
     private void setupHero() {
-        final ImageView playlistImageView = (ImageView) mRootView.findViewById(R.id.image);
+        final ImageView playlistImageView = mRootView.findViewById(R.id.image);
         mHeaderContainer = mRootView.findViewById(R.id.playlist_header);
-        mNumberOfSongs = (TextView) mRootView.findViewById(R.id.number_of_songs_text);
-        mDurationOfPlaylist = (TextView) mRootView.findViewById(R.id.duration_text);
+        mNumberOfSongs = mRootView.findViewById(R.id.number_of_songs_text);
+        mDurationOfPlaylist = mRootView.findViewById(R.id.duration_text);
 
         final ImageFetcher imageFetcher = ImageFetcher.getInstance(getActivity());
         imageFetcher.loadPlaylistArtistImage(mPlaylistId, playlistImageView);
     }
 
     private void setupSongList() {
-        final DragSortListView listView = (DragSortListView) mRootView.findViewById(R.id.list_base);
+        final DragSortListView listView = mRootView.findViewById(R.id.list_base);
         listView.setOnScrollListener(PlaylistDetailFragment.this);
 
         mAdapter = new ProfileSongAdapter(
@@ -224,8 +224,7 @@ public class PlaylistDetailFragment extends FadingBarFragment implements
         mRootView.findViewById(R.id.progressbar).setPadding(0, padTop, 0, 0);
 
         // set the loading and empty view container
-        mLoadingEmptyContainer =
-                (LoadingEmptyContainer) mRootView.findViewById(R.id.loading_empty_container);
+        mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
         listView.setEmptyView(mLoadingEmptyContainer);
     }
