@@ -73,9 +73,7 @@
     <string name="cannot_be_undone">ئه‌مه‌ دواتر ناتوانی بیگه‌ڕێنیته‌وه‌</string>
     <string name="delete_warning">ئه‌مه‌ واته‌ سڕینه‌وه‌ی هه‌موو وێنه‌ خه‌زنکراوه‌کان به‌ گشتی</string>
     <string name="new_photo">هه‌ڵبژاردنی وینه‌یه‌ک له‌ گه‌له‌ری</string>
-    <string name="google_search">گه‌ڕانی گۆگڵ</string>
     <string name="use_default">به‌کارهێنانی وێنه‌ی سه‌ره‌تایی</string>
-    <string name="old_photo">به‌کارهێنانی وێنه‌ی کۆن</string>
     <string name="context_menu_play_selection">لێدان</string>
     <string name="context_menu_play_next">لێدانی داهاتوو</string>
     <string name="context_menu_more_by_artist">زیاتر له‌لایه‌ن هونه‌رمه‌نده‌وه‌</string>

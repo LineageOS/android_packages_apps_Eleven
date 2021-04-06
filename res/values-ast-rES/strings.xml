@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Esto nun pue desafacese</string>
     <string name="delete_warning">Esto desaniciará dafechu toles imáxenes na caché</string>
     <string name="new_photo">Esbillar imaxe de la Galería</string>
-    <string name="google_search">Gueta de Google</string>
     <string name="use_default">Usar imaxe por defeutu</string>
-    <string name="old_photo">Usar imaxe previa</string>
     <string name="context_menu_play_selection">Reproducir</string>
     <string name="context_menu_play_next">Siguiente</string>
     <string name="context_menu_play_album">Reproducir álbum</string>

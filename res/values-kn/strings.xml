@@ -76,9 +76,7 @@
     <string name="cannot_be_undone">ಇದನ್ನು ಹಿಂತಿರುಗಿಸಲಾಗುವುದಿಲ್ಲ</string>
     <string name="delete_warning">ಇದು ನಗದುಮಾಡಿರುವ ಚಿತ್ರ ನಮೂದುಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿಹಾಕುತ್ತದೆ</string>
     <string name="new_photo">ಗ್ಯಾಲರಿಯಿಂದ ಫೋಟೋ ಆರಿಸಿ</string>
-    <string name="google_search">ಗೂಗಲ್ ಸರ್ಚ್</string>
     <string name="use_default">ಡೀಫಾಲ್ಟ್ ಫೋಟೋವನ್ನು ಉಪಯೋಗಿಸಿ</string>
-    <string name="old_photo">ಹಳೆಯ ಫೋಟೋ ಉಪಯೋಗಿಸಿ</string>
     <string name="context_menu_play_selection">ಪ್ಲೇ</string>
     <string name="context_menu_play_next">ನಂತರ ಪ್ಲೇಮಾಡು</string>
     <string name="context_menu_play_album">ಆಲ್ಬಂ ಪ್ಲೇ ಮಾಡು</string>

@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Tätä ei voi perua</string>
     <string name="delete_warning">Kaikki välimuistissa olevat kuvat poistetaan pysyvästi</string>
     <string name="new_photo">Valitse valokuva galleriasta</string>
-    <string name="google_search">Google-haku</string>
     <string name="use_default">Käytä oletusvalokuvaa</string>
-    <string name="old_photo">Käytä vanhaa valokuvaa</string>
     <string name="context_menu_play_selection">Toista</string>
     <string name="context_menu_play_next">Toista seuraava</string>
     <string name="context_menu_play_album">Toista albumi</string>

@@ -76,9 +76,7 @@
     <string name="cannot_be_undone">To nevar atsaukt</string>
     <string name="delete_warning">Kešoto attēlu ieraksti tiks dzēsti neatgriezeniski</string>
     <string name="new_photo">Izvēlēties foto no galerijas</string>
-    <string name="google_search">Google meklēšana</string>
     <string name="use_default">Izmantot noklusēto foto</string>
-    <string name="old_photo">Izmantot agrāko foto</string>
     <string name="context_menu_play_selection">Atskaņot</string>
     <string name="context_menu_play_next">Atskaņot nākamo</string>
     <string name="context_menu_more_by_artist">Vairāk no izpildītāja</string>

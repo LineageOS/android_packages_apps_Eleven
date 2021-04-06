@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">हे पुनर्स्थापित करता येत नाही</string>
     <string name="delete_warning">यामुळे कॅशे केलेल्या प्रतिमा प्रविष्ठी कायमस्वरूपी हटवल्या जातील</string>
     <string name="new_photo">गॅलरीमधून फोटो निवडा</string>
-    <string name="google_search">Google शोध</string>
     <string name="use_default">डिफॉल्ट फोटो वापरा</string>
-    <string name="old_photo">जुना फोटो वापरा</string>
     <string name="context_menu_play_selection">प्ले करा</string>
     <string name="context_menu_play_next">पुढील प्ले करा</string>
     <string name="context_menu_play_album">अल्बम प्ले करा</string>

@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Nid yw\'n bosib dadwneud hyn.</string>
     <string name="delete_warning">Bydd hyn yn dileu delweddau wedi\'u cadw dros dro</string>
     <string name="new_photo">Dewis lun o\'r oriel</string>
-    <string name="google_search">Chwilio Google</string>
     <string name="use_default">Defnyddio llun rhagosodedig</string>
-    <string name="old_photo">Defnyddio hen lun</string>
     <string name="context_menu_play_selection">Chwarae</string>
     <string name="context_menu_play_next">Chwarae\'r nesaf</string>
     <string name="context_menu_play_album">Chwarae casgliad</string>

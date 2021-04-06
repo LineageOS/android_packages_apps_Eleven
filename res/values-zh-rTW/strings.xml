@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">這將無法復原</string>
     <string name="delete_warning">這將永久刪除已快取的影像</string>
     <string name="new_photo">從相簿選擇相片</string>
-    <string name="google_search">Google 搜尋</string>
     <string name="use_default">使用預設相片</string>
-    <string name="old_photo">使用舊的相片</string>
     <string name="context_menu_play_selection">播放</string>
     <string name="context_menu_play_next">播放下一首</string>
     <string name="context_menu_play_album">播放專輯</string>

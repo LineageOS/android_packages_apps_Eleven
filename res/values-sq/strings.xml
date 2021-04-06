@@ -50,9 +50,7 @@
     <string name="create_playlist_prompt">Emri i listës së këngëve</string>
     <string name="delete_dialog_title">Dëshiron ta fshish <xliff:g id="item" example="album">%s</xliff:g>?</string>
     <string name="new_photo">Zgjidh një foto nga Galeria</string>
-    <string name="google_search">Kërkimi në Google</string>
     <string name="use_default">Përdor foton e paracaktuar</string>
-    <string name="old_photo">Përdor foto të vjetër</string>
     <string name="context_menu_play_selection">Luaj</string>
     <string name="context_menu_rename_playlist">Riemërto</string>
     <string name="context_menu_delete">Fshi</string>

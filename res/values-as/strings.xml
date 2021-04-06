@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">এইটো ওভতাব নোৱাৰি</string>
     <string name="delete_warning">ই কেশ্বড প্ৰতিচ্ছবি এণ্ট্ৰিবোৰ স্থায়ীভাবে আঁতৰাব</string>
     <string name="new_photo">গেলাৰীৰ পৰা ফটো বাচনি কৰক</string>
-    <string name="google_search">Google অনুসন্ধান</string>
     <string name="use_default">ডিফ\'ল্ট ফটো ব্যৱহাৰ কৰক</string>
-    <string name="old_photo">পুৰণি ফটো ব্যৱহাৰ কৰক</string>
     <string name="context_menu_play_selection">চলাওঁক</string>
     <string name="context_menu_play_next">পৰৱৰ্তীটো প্লে কৰক</string>
     <string name="context_menu_play_album">এলবাম প্লে কৰক</string>

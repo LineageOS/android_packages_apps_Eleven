@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">ఈ చర్యని రద్దు చేయడం సాధ్యపడదు</string>
     <string name="delete_warning">ఇది శాశ్వతంగా క్యాష్ చేసిన చిత్రాల ఎంట్రీలను తొలిగిస్తుంది</string>
     <string name="new_photo">గ్యాలరీ నుండి ఫోటోను ఎంచుకోండి</string>
-    <string name="google_search">Google శోధన</string>
     <string name="use_default">స్వయంసిద్ధ ఫోటోను ఉపయోగించుము</string>
-    <string name="old_photo">పాత ఫోటోను ఉపయోగించుము</string>
     <string name="context_menu_play_selection">ప్లే చేయి</string>
     <string name="context_menu_play_next">తరువాతి దానిని ప్లే చేయుము</string>
     <string name="context_menu_play_album">ఆల్బమును ప్లే చేయుము</string>

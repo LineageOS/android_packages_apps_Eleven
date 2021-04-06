@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">ଏହା ଅନ୍‍ଡନ୍‍ ହୋଇପାରିବ ନାହିଁ</string>
     <string name="delete_warning">ଏହା କ୍ୟାଚ୍‍ରେ ଥିବା ଚିତ୍ର ପ୍ରବେଶ ‍ସ୍ଥାୟୀ ଭାବେ ବିଲୋପ କରିଦେବ</string>
     <string name="new_photo">ଗ୍ୟାଲେରୀରୁ ଫଟୋ ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
-    <string name="google_search">Google ସନ୍ଧାନ</string>
     <string name="use_default">ଡିଫଲ୍ଟ ଫଟୋ ବ୍ୟବହାର କରନ୍ତୁ</string>
-    <string name="old_photo">ପୁରୁଣା ଫଟୋ ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="context_menu_play_selection">ଚଳାଅ</string>
     <string name="context_menu_play_next">ପରବର୍ତ୍ତୀ ପ୍ଲେ କରନ୍ତୁ</string>
     <string name="context_menu_play_album">ଆଲ୍‍ବମ୍‍ ପ୍ଲେ କରନ୍ତୁ</string>

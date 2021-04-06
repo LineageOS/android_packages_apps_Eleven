@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Táto akcia sa nedá vrátiť späť</string>
     <string name="delete_warning">Týmto natrvalo odstránite obrázky vo vyrovnávacej pamäti</string>
     <string name="new_photo">Vybrať fotografiu z Galérie</string>
-    <string name="google_search">Vyhľadať pomocou Google</string>
     <string name="use_default">Použiť predvolenú fotografiu</string>
-    <string name="old_photo">Použiť pôvodnú fotografiu</string>
     <string name="context_menu_play_selection">Prehrať</string>
     <string name="context_menu_play_next">Prehrať ďalšiu</string>
     <string name="context_menu_play_album">Prehrať album</string>
