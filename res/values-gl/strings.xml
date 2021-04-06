@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Isto non se pode desfacer</string>
     <string name="delete_warning">Isto eliminará permanentemente as imaxes gardadas na caché</string>
     <string name="new_photo">Escoller imaxe da Galería</string>
-    <string name="google_search">Buscar en Google</string>
     <string name="use_default">Utilizar foto predeterminada</string>
-    <string name="old_photo">Utilizar foto antiga</string>
     <string name="context_menu_play_selection">Reproducir</string>
     <string name="context_menu_play_next">Reproducir a seguinte</string>
     <string name="context_menu_play_album">Reproducir o álbum</string>

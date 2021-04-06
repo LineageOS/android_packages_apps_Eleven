@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Hierdie kan nie ongedaan gemaak word nie</string>
     <string name="delete_warning">Dit sal permanent kasgeheue foto inskrywings verwyder</string>
     <string name="new_photo">Kies foto vanuit Galery</string>
-    <string name="google_search">Google soektog</string>
     <string name="use_default">Gebruik verstekfoto</string>
-    <string name="old_photo">Gebruik ou foto</string>
     <string name="context_menu_play_selection">Speel</string>
     <string name="context_menu_play_next">Speel volgende</string>
     <string name="context_menu_play_album">Speel album</string>

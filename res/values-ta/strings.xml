@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">இதை செயல்நீக்க முடியாது</string>
     <string name="delete_warning">இது நிரந்தரமாக தேக்கிய பட உள்ளீடுகளை நீக்கிவிடும்</string>
     <string name="new_photo">கேலரியிலிருந்து படத்தைத் தேர்வுசெய்க</string>
-    <string name="google_search">Google தேடல்</string>
     <string name="use_default">இயல்புநிலை புகைப்படத்தை பயன்படுத்தவும்</string>
-    <string name="old_photo">பழைய புகைப்படத்தை பயன்படுத்தவும்</string>
     <string name="context_menu_play_selection">இயக்கு</string>
     <string name="context_menu_play_next">அடுத்ததை இயக்கு</string>
     <string name="context_menu_play_album">ஆல்பத்தை இயக்கு</string>

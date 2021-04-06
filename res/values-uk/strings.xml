@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Цю дію не можна відмінити</string>
     <string name="delete_warning">Це призведе до остаточного видалення записів кешованих зображень</string>
     <string name="new_photo">Вибрати фото з галереї</string>
-    <string name="google_search">Пошук Google</string>
     <string name="use_default">Використовувати типове фото</string>
-    <string name="old_photo">Використовувати старе фото</string>
     <string name="context_menu_play_selection">Грати</string>
     <string name="context_menu_play_next">Грати наступну</string>
     <string name="context_menu_play_album">Відтворити альбом</string>

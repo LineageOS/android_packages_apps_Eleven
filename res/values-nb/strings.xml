@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Dette kan ikke omgjøres</string>
     <string name="delete_warning">Dette vil permanent slette allehurtigbufferbilder</string>
     <string name="new_photo">Velg foto fra Galleri</string>
-    <string name="google_search">Google søk</string>
     <string name="use_default">Bruk standard bilde</string>
-    <string name="old_photo">Bruk gammelt bilde</string>
     <string name="context_menu_play_selection">Spill av</string>
     <string name="context_menu_play_next">Spill neste</string>
     <string name="context_menu_play_album">Spill album</string>

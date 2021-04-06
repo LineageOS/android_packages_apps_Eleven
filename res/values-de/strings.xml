@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Dies kann nicht rückgängig gemacht werden.</string>
     <string name="delete_warning">Alle zwischengespeicherten Bilder werden hiermit endgültig gelöscht.</string>
     <string name="new_photo">Foto aus Galerie auswählen</string>
-    <string name="google_search">Google-Suche</string>
     <string name="use_default">Standardfoto verwenden</string>
-    <string name="old_photo">Altes Foto verwenden</string>
     <string name="context_menu_play_selection">Wiedergeben</string>
     <string name="context_menu_play_next">Als nächstes wiedergeben</string>
     <string name="context_menu_play_album">Album wiedergeben</string>

@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Това не може да бъде отменено</string>
     <string name="delete_warning">Това завинаги ще изтрие записите в кеша</string>
     <string name="new_photo">Изберете снимка от Галерия</string>
-    <string name="google_search">Търсене в Google</string>
     <string name="use_default">Използване снимка по подразбиране</string>
-    <string name="old_photo">Използвай стара снимка</string>
     <string name="context_menu_play_selection">Изпълни</string>
     <string name="context_menu_play_next">Следваща песен</string>
     <string name="context_menu_play_album">Изпълни албум</string>

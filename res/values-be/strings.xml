@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Гэта дзеянне немагчыма скасаваць</string>
     <string name="delete_warning">Кэшаваныя выявы будуць выдалены</string>
     <string name="new_photo">Выбраць з Галерэі</string>
-    <string name="google_search">Знайсці ў Google</string>
     <string name="use_default">Відарыс па змаўчанні</string>
-    <string name="old_photo">Зыходная выява\"</string>
     <string name="context_menu_play_selection">Прайграць</string>
     <string name="context_menu_play_next">Уключыць наступным</string>
     <string name="context_menu_play_album">Прайграць</string>

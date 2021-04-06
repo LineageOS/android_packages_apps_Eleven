@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Dette kan ikke fortrydes</string>
     <string name="delete_warning">Dette vil permanent slette de lagrede billedposter</string>
     <string name="new_photo">Vælg fotografi fra Galleri</string>
-    <string name="google_search">Google-søgning</string>
     <string name="use_default">Brug standard-fotografi</string>
-    <string name="old_photo">Brug gammelt fotografi</string>
     <string name="context_menu_play_selection">Afspil</string>
     <string name="context_menu_play_next">Afspil næste</string>
     <string name="context_menu_play_album">Afspil album</string>

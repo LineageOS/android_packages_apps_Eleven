@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Αυτό δεν μπορεί να αναιρεθεί</string>
     <string name="delete_warning">Αυτό θα διαγράψει μόνιμα τις προσωρινά αποθηκευμένες εικόνες</string>
     <string name="new_photo">Επιλέξτε φωτογραφία από τη Συλλογή</string>
-    <string name="google_search">Αναζήτηση Google</string>
     <string name="use_default">Χρήση προεπιλεγμένης φωτογραφίας</string>
-    <string name="old_photo">Χρήση παλιάς φωτογραφίας</string>
     <string name="context_menu_play_selection">Αναπαραγωγή</string>
     <string name="context_menu_play_next">Αναπαραγωγή επόμενου</string>
     <string name="context_menu_play_album">Αναπαραγωγή άλμπουμ</string>

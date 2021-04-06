@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Dit kin net ûngedien makke wurde</string>
     <string name="delete_warning">Hjirmei wurde alle bewarre ôfbyldingen permanint fuortsmiten</string>
     <string name="new_photo">Selektearje foto út Galerij</string>
-    <string name="google_search">Sykje mei Google</string>
     <string name="use_default">Standertfoto brûke</string>
-    <string name="old_photo">Alde foto brûke</string>
     <string name="context_menu_play_selection">Ofspylje</string>
     <string name="context_menu_play_next">Folgjende ôfspylje</string>
     <string name="context_menu_play_album">Album ôfspylje</string>

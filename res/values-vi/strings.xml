@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">Không thể hoàn tác điều này</string>
     <string name="delete_warning">Điều này sẽ xoá vĩnh viễn các mục nhập ảnh đã lưu trong bộ nhớ đệm</string>
     <string name="new_photo">Chọn ảnh từ Bộ sưu tập</string>
-    <string name="google_search">Tìm bằng Google</string>
     <string name="use_default">Dùng ảnh mặc định</string>
-    <string name="old_photo">Dùng ảnh cũ</string>
     <string name="context_menu_play_selection">Phát</string>
     <string name="context_menu_play_next">Phát tiếp theo</string>
     <string name="context_menu_play_album">Phát album</string>

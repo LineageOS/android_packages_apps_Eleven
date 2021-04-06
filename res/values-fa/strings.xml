@@ -77,9 +77,7 @@
     <string name="cannot_be_undone">این کار برگشت‌پذیر نیست</string>
     <string name="delete_warning">این کار تصاویر ذخیره شده را برای همیشه حذف می‌کند</string>
     <string name="new_photo">انتخاب عکس از گالری</string>
-    <string name="google_search">جستجوی گوگل</string>
     <string name="use_default">استفاده از عکس پیش‌فرض</string>
-    <string name="old_photo">استفاده از عکس قبلی</string>
     <string name="context_menu_play_selection">پخش</string>
     <string name="context_menu_play_next">پخش بعدی</string>
     <string name="context_menu_play_album">پخش آلبوم</string>
