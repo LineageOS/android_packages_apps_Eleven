@@ -91,7 +91,7 @@ public class TopTracksFragment extends SmartPlaylistFragment
     }
 
     public class TopTracksAdapter extends SongAdapter {
-        public TopTracksAdapter(final Activity context, final int layoutId) {
+        public TopTracksAdapter(final FragmentActivity context, final int layoutId) {
             super(context, layoutId, getFragmentSourceId(), getFragmentSourceType());
         }
 

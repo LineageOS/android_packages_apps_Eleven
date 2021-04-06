@@ -23,6 +23,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import androidx.fragment.app.FragmentActivity;
+
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.model.Song;
 
@@ -52,8 +54,8 @@ public class ProfileSongAdapter extends SongAdapter {
      * @param activity The {@link Activity} to use
      * @param layoutId The resource Id of the view to inflate.
      */
-    public ProfileSongAdapter(final long playlistId, final Activity activity, final int layoutId,
-                              final int headerId) {
+    public ProfileSongAdapter(final long playlistId, final FragmentActivity activity,
+                              final int layoutId, final int headerId) {
         super(activity, layoutId, playlistId, Config.IdType.Playlist);
         // Cache the header
         mHeaderId = headerId;
