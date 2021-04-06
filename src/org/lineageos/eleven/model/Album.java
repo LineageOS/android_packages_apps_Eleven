@@ -18,6 +18,8 @@
 
 package org.lineageos.eleven.model;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 /**
@@ -89,6 +91,7 @@ public class Album {
                 Objects.equals(mYear, album.mYear);
     }
 
+    @NonNull
     @Override
     public int hashCode() {
         return Objects.hash(mAlbumId, mAlbumName, mArtistName, mSongNumber, mYear);

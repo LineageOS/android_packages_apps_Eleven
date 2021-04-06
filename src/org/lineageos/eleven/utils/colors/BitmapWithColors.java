@@ -21,6 +21,8 @@ import android.graphics.Color;
 import android.os.Looper;
 import android.util.LruCache;
 
+import androidx.annotation.NonNull;
+import androidx.core.graphics.ColorUtils;
 import androidx.palette.graphics.Palette;
 
 public class BitmapWithColors {
@@ -187,6 +189,7 @@ public class BitmapWithColors {
         }
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "BitmapWithColors[key=" + mBitmapKey + ", colors=" + mColors + "]";

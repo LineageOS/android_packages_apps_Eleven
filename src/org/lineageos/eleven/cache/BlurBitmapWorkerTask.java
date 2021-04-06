@@ -144,7 +144,7 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
 
             // create the bitmap transition drawable
             result.mImageViewBitmapDrawable = createImageTransitionDrawable(output,
-                    ImageWorker.FADE_IN_TIME_SLOW, true, true);
+                    ImageWorker.FADE_IN_TIME_SLOW, true);
 
             return result;
         }

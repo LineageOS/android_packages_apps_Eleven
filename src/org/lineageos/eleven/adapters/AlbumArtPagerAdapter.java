@@ -97,7 +97,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
     private int mPlaylistLen = 0;
 
     public AlbumArtPagerAdapter(FragmentManager fm) {
-        super(fm);
+        super(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
     @Override
