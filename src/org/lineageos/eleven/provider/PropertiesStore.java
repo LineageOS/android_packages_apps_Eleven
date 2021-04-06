@@ -63,17 +63,13 @@ public class PropertiesStore {
     }
 
     public String getProperty(String key, String defaultValue) {
-        Cursor cursor = mMusicDatabase.getReadableDatabase().query(PropertiesColumns.TABLE_NAME,
+        try (Cursor cursor = mMusicDatabase.getReadableDatabase().query(
+                PropertiesColumns.TABLE_NAME,
                 new String[]{PropertiesColumns.PROPERTY_VALUE},
                 PropertiesColumns.PROPERTY_KEY + "=?",
-                new String[]{key}, null, null, null);
-        try {
+                new String[]{key}, null, null, null)) {
             if (cursor != null && cursor.moveToFirst()) {
                 return cursor.getString(0);
-            }
-        } finally {
-            if (cursor != null) {
-                cursor.close();
             }
         }
 

@@ -31,7 +31,7 @@ tasks.register("updateGradleWrapper", Wrapper) {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -42,7 +42,7 @@ android {
         applicationId "org.lineageos.eleven"
 
         minSdkVersion 26
-        targetSdkVersion 29
+        targetSdkVersion 30
 
         versionCode 4
         versionName '4.0'

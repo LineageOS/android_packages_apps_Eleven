@@ -28,7 +28,7 @@ public class RecentStore {
 
     private static RecentStore sInstance = null;
 
-    private MusicDB mMusicDatabase = null;
+    private MusicDB mMusicDatabase;
 
     /**
      * Constructor of <code>RecentStore</code>

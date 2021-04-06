@@ -17,6 +17,8 @@
  */
 package org.lineageos.eleven.model;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 /**
@@ -84,6 +86,7 @@ public class Artist {
         return Objects.hash(mArtistId, mArtistName, mAlbumNumber, mSongNumber);
     }
 
+    @NonNull
     @Override
     public String toString() {
         return mArtistName;

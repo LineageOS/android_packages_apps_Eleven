@@ -96,7 +96,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
     private int mPlaylistLen = 0;
 
     public AlbumArtPagerAdapter(FragmentManager fm) {
-        super(fm);
+        super(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
     @Override
@@ -215,7 +215,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         @Override
         public void onActivityCreated(final Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            mImageView = (SquareImageView) mRootView.findViewById(R.id.audio_player_album_art);
+            mImageView = mRootView.findViewById(R.id.audio_player_album_art);
             loadImageAsync();
         }
 
