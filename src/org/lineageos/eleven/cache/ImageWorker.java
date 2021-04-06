@@ -210,7 +210,6 @@ public abstract class ImageWorker {
      * @param fromDrawable the drawable to transition from
      * @param bitmap       the bitmap to transition to
      * @param fadeTime     the fade time in MS to fade in
-     * @param dither       setting
      * @param force        force create a transition even if bitmap == null (fade to transparent)
      * @return the drawable if created, null otherwise
      */
@@ -218,7 +217,6 @@ public abstract class ImageWorker {
                                                                    final Drawable fromDrawable,
                                                                    final Bitmap bitmap,
                                                                    final int fadeTime,
-                                                                   final boolean dither,
                                                                    final boolean force) {
         if (bitmap != null || force) {
             final Drawable[] arrayDrawable = new Drawable[2];
@@ -229,7 +227,6 @@ public abstract class ImageWorker {
             if (bitmap != null) {
                 layerTwo = new BitmapDrawable(resources, bitmap);
                 layerTwo.setFilterBitmap(false);
-                layerTwo.setDither(dither);
             } else {
                 // if no bitmap (forced) then transition to transparent
                 layerTwo = new ColorDrawable(Color.TRANSPARENT);

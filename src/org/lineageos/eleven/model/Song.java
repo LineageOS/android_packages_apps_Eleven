@@ -18,6 +18,8 @@
 
 package org.lineageos.eleven.model;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 /**
@@ -109,6 +111,7 @@ public class Song {
                 mAlbumId, mDuration, mYear);
     }
 
+    @NonNull
     @Override
     public String toString() {
         return mSongName;
