@@ -29,10 +29,7 @@ import androidx.fragment.app.DialogFragment;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.ui.activities.HomeActivity;
-import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
-
-import java.util.ArrayList;
 
 /**
  * Used when the user requests to modify Album art or Artist image
@@ -47,9 +44,7 @@ public class PhotoSelectionDialog extends DialogFragment {
 
     private static final int OLD_PHOTO = 1;
 
-    private final ArrayList<String> mChoices = Lists.newArrayList();
-
-    private static ProfileType mProfileType;
+    private final String[] mChoices = new String[2];
 
     private String mKey;
 
@@ -61,17 +56,14 @@ public class PhotoSelectionDialog extends DialogFragment {
 
     /**
      * @param title The dialog title.
-     * @param type  Either Artist or Album
      * @param key   key to query ImageFetcher
      * @return A new instance of the dialog.
      */
-    public static PhotoSelectionDialog newInstance(final String title, final ProfileType type,
-                                                   String key) {
+    public static PhotoSelectionDialog newInstance(final String title, String key) {
         final PhotoSelectionDialog frag = new PhotoSelectionDialog();
         final Bundle args = new Bundle();
         args.putString(Config.NAME, title);
         frag.setArguments(args);
-        mProfileType = type;
         frag.mKey = key;
         return frag;
     }
@@ -81,19 +73,8 @@ public class PhotoSelectionDialog extends DialogFragment {
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
         final Bundle args = getArguments();
         final String title = args == null ? "" : args.getString(Config.NAME);
-        switch (mProfileType) {
-            case ARTIST:
-                setArtistChoices();
-                break;
-            case ALBUM:
-                setAlbumChoices();
-                break;
-            case OTHER:
-                setOtherChoices();
-                break;
-            default:
-                break;
-        }
+        setChoices();
+
         // Dialog item Adapter
         final HomeActivity activity = (HomeActivity) getActivity();
         final ListAdapter adapter = new ArrayAdapter<>(activity,
@@ -116,37 +97,10 @@ public class PhotoSelectionDialog extends DialogFragment {
                 .create();
     }
 
-    /**
-     * Adds the choices for the artist profile image.
-     */
-    private void setArtistChoices() {
+    private void setChoices() {
+        // Default photo
+        mChoices[OLD_PHOTO] = getString(R.string.old_photo);
         // Select a photo from the gallery
-        mChoices.add(NEW_PHOTO, getString(R.string.new_photo));
-    }
-
-    /**
-     * Adds the choices for the album profile image.
-     */
-    private void setAlbumChoices() {
-        // Select a photo from the gallery
-        mChoices.add(NEW_PHOTO, getString(R.string.new_photo));
-    }
-
-    /**
-     * Adds the choices for the genre and playlist images.
-     */
-    private void setOtherChoices() {
-        // Select a photo from the gallery
-        mChoices.add(NEW_PHOTO, getString(R.string.new_photo));
-    }
-
-    /**
-     * Easily detect the MIME type
-     */
-    public enum ProfileType {
-        ARTIST,
-        ALBUM,
-        PROFILE_TYPE,
-        OTHER
+        mChoices[NEW_PHOTO] = getString(R.string.new_photo);
     }
 }
