@@ -17,12 +17,9 @@
 package org.lineageos.eleven.ui.activities;
 
 import android.Manifest;
-import android.animation.Animator;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
