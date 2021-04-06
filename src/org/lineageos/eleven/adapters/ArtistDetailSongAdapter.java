@@ -16,7 +16,6 @@
  */
 package org.lineageos.eleven.adapters;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -24,6 +23,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
@@ -35,7 +35,7 @@ import org.lineageos.eleven.model.Song;
 import java.util.List;
 
 public abstract class ArtistDetailSongAdapter extends DetailSongAdapter {
-    public ArtistDetailSongAdapter(Activity activity) {
+    public ArtistDetailSongAdapter(FragmentActivity activity) {
         super(activity);
     }
 

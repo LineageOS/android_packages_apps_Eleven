@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,7 +56,7 @@ public class ArtistDetailAlbumAdapter
     private IListener mListener;
     private final int mListMargin;
 
-    public ArtistDetailAlbumAdapter(final Activity activity) {
+    public ArtistDetailAlbumAdapter(final FragmentActivity activity) {
         mActivity = activity;
         mImageFetcher = ElevenUtils.getImageFetcher(activity);
         mInflater = LayoutInflater.from(activity);

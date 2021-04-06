@@ -25,6 +25,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.loader.content.Loader;
 
 import org.lineageos.eleven.Config;
@@ -89,7 +90,7 @@ public class TopTracksFragment extends SmartPlaylistFragment implements ISetupAc
     }
 
     public class TopTracksAdapter extends SongAdapter {
-        public TopTracksAdapter(final Activity context, final int layoutId) {
+        public TopTracksAdapter(final FragmentActivity context, final int layoutId) {
             super(context, layoutId, getFragmentSourceId(), getFragmentSourceType());
         }
 
