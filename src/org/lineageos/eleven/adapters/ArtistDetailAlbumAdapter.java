@@ -17,6 +17,7 @@ package org.lineageos.eleven.adapters;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,10 +91,14 @@ public class ArtistDetailAlbumAdapter
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Album a = mAlbums.get(position);
-        holder.title.setText(a.mAlbumName);
-        holder.year.setText(a.mYear);
+        StringBuilder sb = new StringBuilder();
+        sb.append(a.mAlbumName);
+        if (!TextUtils.isEmpty(a.mYear)) {
+            sb.append('\n').append(a.mYear);
+        }
+        holder.description.setText(sb.toString());
         mImageFetcher.loadAlbumImage(
                 a.mArtistName, a.mAlbumName, a.mAlbumId, holder.art);
         holder.popupButton.setPopupMenuClickedListener(mListener);
@@ -122,16 +127,14 @@ public class ArtistDetailAlbumAdapter
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public ImageView art;
-        public TextView title;
-        public TextView year;
+        public TextView description;
         public PopupMenuButton popupButton;
 
         public ViewHolder(View root) {
             super(root);
-            art = root.findViewById(R.id.album_art);
-            title = root.findViewById(R.id.title);
-            year = root.findViewById(R.id.year);
-            popupButton = root.findViewById(R.id.overflow);
+            art = root.findViewById(R.id.image);
+            description = root.findViewById(R.id.description);
+            popupButton = root.findViewById(R.id.popup_menu_button);
         }
     }
 

@@ -19,11 +19,15 @@ package org.lineageos.eleven.ui.fragments;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
@@ -158,11 +162,17 @@ public class AlbumDetailFragment extends DetailFragment implements IChildFragmen
     }
 
     private void setupSongList() {
-        ListView songsList = mRootView.findViewById(R.id.songs);
+        RecyclerView songsList = mRootView.findViewById(R.id.songs);
         mSongAdapter = new AlbumDetailSongAdapter(getActivity(), this) {
             @Override
             protected void onLoading() {
                 mLoadingEmptyContainer.showLoading();
+            }
+
+            @Override
+            public void onLoadFinished(@NonNull Loader<List<Song>> loader, List<Song> songs) {
+                super.onLoadFinished(loader, songs);
+                mLoadingEmptyContainer.setVisibility(songs.isEmpty() ? View.VISIBLE : View.GONE);
             }
 
             @Override
@@ -172,10 +182,11 @@ public class AlbumDetailFragment extends DetailFragment implements IChildFragmen
         };
         mSongAdapter.setPopupMenuClickedListener((v, position) ->
                 mSongMenuHelper.showPopupMenu(v, position));
+        songsList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        songsList.setItemAnimator(new DefaultItemAnimator());
         songsList.setAdapter(mSongAdapter);
-        songsList.setOnItemClickListener(mSongAdapter);
         mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
-        songsList.setEmptyView(mLoadingEmptyContainer);
+        mLoadingEmptyContainer.setVisibility(View.VISIBLE);
     }
 
     /**
