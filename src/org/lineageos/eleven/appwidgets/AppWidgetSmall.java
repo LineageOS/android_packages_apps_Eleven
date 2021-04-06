@@ -25,7 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.RemoteViews;
 
 import org.lineageos.eleven.MusicPlaybackService;

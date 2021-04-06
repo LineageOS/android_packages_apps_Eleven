@@ -308,8 +308,6 @@ public final class ImageCache {
                     }
                 }
             } catch (final IOException e) {
-                Log.e(TAG, "addBitmapToCache", e);
-            } catch (final IllegalStateException e) {
                 // if the user clears the cache while we have an async task going we could try
                 // writing to the disk cache while it isn't ready. Catching here will silently
                 // fail instead
