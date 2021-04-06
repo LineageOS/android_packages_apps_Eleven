@@ -19,6 +19,7 @@ import android.view.KeyEvent;
 
 import androidx.legacy.content.WakefulBroadcastReceiver;
 
+@SuppressWarnings("deprecation")
 public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "MediaButtonIntentReceiver";

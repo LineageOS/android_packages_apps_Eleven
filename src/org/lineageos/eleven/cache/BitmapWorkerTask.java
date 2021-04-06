@@ -137,7 +137,7 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
      * @return the transition drawable
      */
     protected TransitionDrawable createImageTransitionDrawable(final Bitmap bitmap) {
-        return createImageTransitionDrawable(bitmap, ImageWorker.FADE_IN_TIME, false, false);
+        return createImageTransitionDrawable(bitmap, ImageWorker.FADE_IN_TIME, false);
     }
 
     /**
@@ -145,13 +145,13 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
      *
      * @param bitmap   to transition to
      * @param fadeTime the time to fade in ms
-     * @param dither   setting
      * @param force    force create a transition even if bitmap == null (fade to transparent)
      * @return the transition drawable
      */
     protected TransitionDrawable createImageTransitionDrawable(final Bitmap bitmap,
-                                                               final int fadeTime, final boolean dither, final boolean force) {
+                                                               final int fadeTime,
+                                                               final boolean force) {
         return ImageWorker.createImageTransitionDrawable(mResources, mFromDrawable, bitmap,
-                fadeTime, dither, force);
+                fadeTime, force);
     }
 }
