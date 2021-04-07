@@ -129,6 +129,11 @@ public class MusicPlaybackService extends Service
     public static final String QUEUE_CHANGED = PKG_NAME + ".queuechanged";
 
     /**
+     * Indicates a queue item has been moved
+     */
+    public static final String QUEUE_MOVED = BuildConstants.PACKAGE_NAME + ".queuemoved";
+
+    /**
      * Indicates the queue has been updated
      */
     public static final String PLAYLIST_CHANGED = PKG_NAME + ".playlistchanged";
@@ -1501,7 +1506,7 @@ public class MusicPlaybackService extends Service
             mRecentsCache.addSongId(getAudioId());
 
             mSongPlayCountCache.bumpSongCount(getAudioId());
-        } else if (QUEUE_CHANGED.equals(what)) {
+        } else if (QUEUE_CHANGED.equals(what) || QUEUE_MOVED.equals(what)) {
             saveQueue(true);
             if (isPlaying()) {
                 // if we are in shuffle mode and our next track is still valid,
@@ -1547,7 +1552,8 @@ public class MusicPlaybackService extends Service
                     .setActions(playBackStateActions)
                     .setActiveQueueItemId(getAudioId())
                     .setState(playState, position(), 1.0f).build());
-        } else if (what.equals(META_CHANGED) || what.equals(QUEUE_CHANGED)) {
+        } else if (what.equals(META_CHANGED) || what.equals(QUEUE_CHANGED)
+                || QUEUE_MOVED.equals(what)) {
             Bitmap albumArt = getAlbumArt(false).getBitmap();
             if (albumArt != null) {
                 // RemoteControlClient wants to recycle the bitmaps thrown at it, so we need
@@ -1571,7 +1577,7 @@ public class MusicPlaybackService extends Service
                     .putBitmap(MediaMetadata.METADATA_KEY_ALBUM_ART, albumArt)
                     .build());
 
-            if (what.equals(QUEUE_CHANGED)) {
+            if (what.equals(QUEUE_CHANGED) || what.equals(QUEUE_MOVED)) {
                 updateMediaSessionQueue();
             }
 
@@ -2699,7 +2705,7 @@ public class MusicPlaybackService extends Service
                     mPlayPos++;
                 }
             }
-            notifyChange(QUEUE_CHANGED);
+            notifyChange(QUEUE_MOVED);
         }
     }
 
