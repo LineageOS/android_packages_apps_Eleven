@@ -297,6 +297,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         filter.addAction(MusicPlaybackService.REFRESH);
         // Listen to changes to the entire queue
         filter.addAction(MusicPlaybackService.QUEUE_CHANGED);
+        filter.addAction(MusicPlaybackService.QUEUE_MOVED);
         // Listen for lyrics text for the audio track
         filter.addAction(MusicPlaybackService.NEW_LYRICS);
         // Listen for power save mode changed
@@ -601,7 +602,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
                 // Update the queue
                 audioPlayerFragment.createAndSetAdapter();
-            } else if (MusicPlaybackService.QUEUE_CHANGED.equals(action)) {
+            } else if (MusicPlaybackService.QUEUE_CHANGED.equals(action)
+                    || MusicPlaybackService.QUEUE_MOVED.equals(action)) {
                 audioPlayerFragment.createAndSetAdapter();
             } else if (MusicPlaybackService.NEW_LYRICS.equals(action)) {
                 audioPlayerFragment.onLyrics(intent.getStringExtra("lyrics"));
