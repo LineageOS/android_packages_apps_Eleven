@@ -21,15 +21,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.MusicStateListener;
@@ -38,7 +38,6 @@ import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.adapters.PlaylistAdapter;
 import org.lineageos.eleven.loaders.PlaylistLoader;
 import org.lineageos.eleven.model.Playlist;
-import org.lineageos.eleven.recycler.RecycleHolder;
 import org.lineageos.eleven.ui.activities.BaseActivity;
 import org.lineageos.eleven.ui.fragments.phone.MusicBrowserFragment;
 import org.lineageos.eleven.utils.NavUtils;
@@ -56,7 +55,7 @@ import java.util.List;
  */
 public class PlaylistFragment extends MusicBrowserFragment implements
         LoaderManager.LoaderCallbacks<List<Playlist>>,
-        OnItemClickListener, MusicStateListener {
+        MusicStateListener {
 
     /**
      * The adapter for the list
@@ -97,7 +96,7 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         };
 
         // Create the adapter
-        mAdapter = new PlaylistAdapter(getActivity());
+        mAdapter = new PlaylistAdapter(requireActivity(), this::onItemClick);
         mAdapter.setPopupMenuClickedListener((v, position) ->
                 mPopupMenuHelper.showPopupMenu(v, position));
     }
@@ -106,19 +105,17 @@ public class PlaylistFragment extends MusicBrowserFragment implements
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        final ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.list_base, container, false);
+        final ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.list_base2, container, false);
         // Initialize the list
         // The list view
-        ListView listView = rootView.findViewById(R.id.list_base);
-        // Set the data behind the grid
+        RecyclerView listView = rootView.findViewById(R.id.list_base);
+        listView.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        listView.setItemAnimator(new DefaultItemAnimator());
         listView.setAdapter(mAdapter);
-        // Release any references to the recycled Views
-        listView.setRecyclerListener(new RecycleHolder());
-        // Play the selected song
-        listView.setOnItemClickListener(this);
+
         // Setup the loading and empty state
         mLoadingEmptyContainer = rootView.findViewById(R.id.loading_empty_container);
-        listView.setEmptyView(mLoadingEmptyContainer);
+        mLoadingEmptyContainer.setVisibility(View.VISIBLE);
 
         // Register the music status listener
         final FragmentActivity activity = getActivity();
@@ -148,9 +145,7 @@ public class PlaylistFragment extends MusicBrowserFragment implements
         initLoader(null, this);
     }
 
-    @Override
-    public void onItemClick(final AdapterView<?> parent, final View view, final int position,
-                            final long id) {
+    private void onItemClick(int position) {
         Playlist playlist = mAdapter.getItem(position);
 
         SmartPlaylistType playlistType = SmartPlaylistType.getTypeById(playlist.mPlaylistId);
@@ -176,6 +171,8 @@ public class PlaylistFragment extends MusicBrowserFragment implements
             mLoadingEmptyContainer.showNoResults();
             return;
         }
+
+        mLoadingEmptyContainer.setVisibility(View.GONE);
 
         // Start fresh, fill adapter with new data and create cache
         mAdapter.unload();
