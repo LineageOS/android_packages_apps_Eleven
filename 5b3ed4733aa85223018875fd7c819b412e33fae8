@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22a7ab00_1bafcdc5",
+        "filename": "src/org/lineageos/eleven/menu/PhotoSelectionDialog.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:44:09Z",
+      "side": 1,
+      "message": "I think it\u0027d be better to initialize the array in the constructor",
+      "revId": "5b3ed4733aa85223018875fd7c819b412e33fae8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
