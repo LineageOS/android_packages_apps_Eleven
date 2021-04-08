@@ -29,7 +29,7 @@ import androidx.loader.content.Loader;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.adapters.SongAdapter;
+import org.lineageos.eleven.adapters.SongAdapter2;
 import org.lineageos.eleven.loaders.TopTracksLoader;
 import org.lineageos.eleven.menu.FragmentMenuItems;
 import org.lineageos.eleven.model.Song;
@@ -41,6 +41,7 @@ import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.NoResultsContainer;
 
 import java.util.TreeSet;
+import java.util.function.Consumer;
 
 /**
  * This class is used to display all of the recently listened to songs by the
@@ -110,19 +111,20 @@ public class RecentFragment extends SmartPlaylistFragment implements ISetupActio
     }
 
     @Override
-    protected SongAdapter createAdapter() {
+    protected SongAdapter2 createAdapter() {
         return new RecentAdapter(
                 getActivity(),
                 R.layout.list_item_normal,
                 getFragmentSourceId(),
-                getFragmentSourceType()
+                getFragmentSourceType(),
+                this::onItemClick
         );
     }
 
-    private static class RecentAdapter extends SongAdapter {
+    private static class RecentAdapter extends SongAdapter2 {
         public RecentAdapter(FragmentActivity context, int layoutId, long sourceId,
-                             Config.IdType sourceType) {
-            super(context, layoutId, sourceId, sourceType);
+                             Config.IdType sourceType, Consumer<Integer> onItemClickListener) {
+            super(context, layoutId, sourceId, sourceType, onItemClickListener);
         }
 
         @Override
