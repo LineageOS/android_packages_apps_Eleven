@@ -131,6 +131,11 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
         return PagerAdapter.MusicFragments.PLAYLIST;
     }
 
+    @Override
+    protected boolean hasHeaders() {
+        return false;
+    }
+
     protected abstract SmartPlaylistType getSmartPlaylistType();
 
     /**

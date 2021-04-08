@@ -15,7 +15,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <!-- Main Material -->
     <style name="Eleven.Theme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowContentOverlay">@null</item>
@@ -211,5 +212,17 @@
         <item name="android:overlapAnchor">true</item>
         <item name="android:dropDownVerticalOffset">0dp</item>
         <item name="android:dropDownHorizontalOffset">0dp</item>
+    </style>
+
+    <!-- Use dp because the time decoration has constrained width and we don't want it to grow if
+         the user sets large text scale in the system settings. -->
+    <style name="SectionSeparator">
+        <item name="android:width">300dp</item>
+        <item name="android:height">24dp</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">2dp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
+        <item name="verticalBias">0.5</item>
     </style>
 </resources>
