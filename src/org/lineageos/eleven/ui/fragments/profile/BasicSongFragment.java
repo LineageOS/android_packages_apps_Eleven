@@ -24,33 +24,33 @@ import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.MusicStateListener;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.adapters.SongAdapter;
+import org.lineageos.eleven.adapters.SongListAdapter;
 import org.lineageos.eleven.model.Song;
-import org.lineageos.eleven.recycler.RecycleHolder;
-import org.lineageos.eleven.sectionadapter.SectionAdapter;
 import org.lineageos.eleven.sectionadapter.SectionListContainer;
 import org.lineageos.eleven.service.MusicPlaybackTrack;
 import org.lineageos.eleven.ui.activities.BaseActivity;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PopupMenuHelper;
+import org.lineageos.eleven.utils.SectionCreatorUtils;
 import org.lineageos.eleven.utils.SongPopupMenuHelper;
 import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import org.lineageos.eleven.widgets.NoResultsContainer;
+import org.lineageos.eleven.widgets.SectionSeparatorItemDecoration;
 
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -59,8 +59,7 @@ import java.util.TreeSet;
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public abstract class BasicSongFragment extends Fragment implements
-        LoaderManager.LoaderCallbacks<SectionListContainer<Song>>,
-        OnItemClickListener, MusicStateListener {
+        LoaderManager.LoaderCallbacks<SectionListContainer<Song>>, MusicStateListener {
 
     /**
      * Fragment UI
@@ -70,12 +69,12 @@ public abstract class BasicSongFragment extends Fragment implements
     /**
      * The adapter for the list
      */
-    protected SectionAdapter<Song, SongAdapter> mAdapter;
+    protected SongListAdapter mAdapter;
 
     /**
      * The list view
      */
-    protected ListView mListView;
+    protected RecyclerView mListView;
 
     /**
      * Pop up menu helper
@@ -99,7 +98,7 @@ public abstract class BasicSongFragment extends Fragment implements
         mPopupMenuHelper = new SongPopupMenuHelper(getActivity(), getChildFragmentManager()) {
             @Override
             public Song getSong(int position) {
-                return mAdapter.getTItem(position);
+                return mAdapter.getItem(position);
             }
 
             @Override
@@ -120,7 +119,7 @@ public abstract class BasicSongFragment extends Fragment implements
         };
 
         // Create the adapter
-        mAdapter = new SectionAdapter<>(getActivity(), createAdapter());
+        mAdapter = createAdapter();
         mAdapter.setPopupMenuClickedListener((v, position) ->
                 mPopupMenuHelper.showPopupMenu(v, position));
     }
@@ -141,7 +140,7 @@ public abstract class BasicSongFragment extends Fragment implements
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
         // The View for the fragment's UI
-        mRootView = (ViewGroup) inflater.inflate(R.layout.list_base, null);
+        mRootView = (ViewGroup) inflater.inflate(R.layout.fragment_list, container, false);
         // set the background on the root view
         final Context context = getContext();
         if (context != null) {
@@ -151,35 +150,14 @@ public abstract class BasicSongFragment extends Fragment implements
         mListView = mRootView.findViewById(R.id.list_base);
         // Set the data behind the list
         mListView.setAdapter(mAdapter);
-        // Release any references to the recycled Views
-        mListView.setRecyclerListener(new RecycleHolder());
-        // Play the selected song
-        mListView.setOnItemClickListener(this);
-        // To help make scrolling smooth
-        mListView.setOnScrollListener(new AbsListView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(AbsListView view, int scrollState) {
-                // Pause disk cache access to ensure smoother scrolling
-                if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
-                    mAdapter.getUnderlyingAdapter().setPauseDiskCache(true);
-                } else {
-                    mAdapter.getUnderlyingAdapter().setPauseDiskCache(false);
-                    mAdapter.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onScroll(AbsListView view, int firstVisibleItem,
-                                 int visibleItemCount, int totalItemCount) {
-
-            }
-        });
+        mListView.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        mListView.setItemAnimator(new DefaultItemAnimator());
 
         // Show progress bar
         mLoadingEmptyContainer = mRootView.findViewById(R.id.loading_empty_container);
         // Setup the container strings
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
-        mListView.setEmptyView(mLoadingEmptyContainer);
+        mLoadingEmptyContainer.setVisibility(View.VISIBLE);
 
         // Register the music status listener
         final Activity activity = getActivity();
@@ -215,9 +193,7 @@ public abstract class BasicSongFragment extends Fragment implements
         getFragmentLoaderManager().initLoader(getLoaderId(), null, this);
     }
 
-    @Override
-    public void onItemClick(final AdapterView<?> parent, final View view, final int position,
-                            final long id) {
+    protected void onItemClick(final int position) {
         playAll(position);
     }
 
@@ -230,7 +206,10 @@ public abstract class BasicSongFragment extends Fragment implements
             return;
         }
 
-        mAdapter.setData(data);
+        mLoadingEmptyContainer.setVisibility(View.GONE);
+
+        mAdapter.setData(data.mListResults);
+        setHeaders(data.mSections);
     }
 
     /**
@@ -238,10 +217,7 @@ public abstract class BasicSongFragment extends Fragment implements
      */
     protected long[] getSongIdsFromAdapter() {
         if (mAdapter != null) {
-            final SongAdapter adapter = mAdapter.getUnderlyingAdapter();
-            if (adapter != null) {
-                return adapter.getSongIds();
-            }
+            return mAdapter.getSongIds();
         }
 
         return null;
@@ -273,12 +249,13 @@ public abstract class BasicSongFragment extends Fragment implements
      *
      * @return the Song adapter
      */
-    protected SongAdapter createAdapter() {
-        return new SongAdapter(
-                getActivity(),
+    protected SongListAdapter createAdapter() {
+        return new SongListAdapter(
+                requireActivity(),
                 R.layout.list_item_normal,
                 getFragmentSourceId(),
-                getFragmentSourceType()
+                getFragmentSourceType(),
+                this::onItemClick
         );
     }
 
@@ -294,9 +271,7 @@ public abstract class BasicSongFragment extends Fragment implements
     @Override
     public void onMetaChanged() {
         MusicPlaybackTrack currentTrack = MusicUtils.getCurrentTrack();
-        if (mAdapter.getUnderlyingAdapter().setCurrentlyPlayingTrack(currentTrack)) {
-            mAdapter.notifyDataSetChanged();
-        }
+        mAdapter.setCurrentlyPlayingTrack(currentTrack);
     }
 
     @Override
@@ -316,4 +291,16 @@ public abstract class BasicSongFragment extends Fragment implements
      */
     public abstract void playAll(int position);
 
+    protected abstract boolean hasHeaders();
+
+    private void setHeaders(TreeMap<Integer, SectionCreatorUtils.Section> sections) {
+        if (!hasHeaders() || sections == null) {
+            return;
+        }
+
+        for (int i = 0; i < mListView.getItemDecorationCount(); i++) {
+            mListView.removeItemDecorationAt(i);
+        }
+        mListView.addItemDecoration(new SectionSeparatorItemDecoration(requireContext(), sections));
+    }
 }
