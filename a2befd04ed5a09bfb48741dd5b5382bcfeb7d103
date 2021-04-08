@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6e9e991_cca9e521",
+        "filename": "res/layout/list_item_common.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "Add the usual copyright comment with just \"Copyright (C) 2021 The LineageOS Project\" as author",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f6c8c35_6718645f",
+        "filename": "res/layout/list_item_normal.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "Add \"Copyright (C) 2021 The LineageOS Project\"",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84a30e39_58d76654",
+        "filename": "res/values/styles.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "put the tools namespace declaration in a new line and after android one",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f946c21d_5f7b706b",
+        "filename": "src/org/lineageos/eleven/adapters/SongAdapter2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "Rename it to something better such as SongListAdapter ? I see the original SongAdapter is still being used for the queue, so I\u0027d be fine with separating the two adapters since the queue one has to support sorting items with drag drop. If you happen to \"convert\" the queue list to recyclerView, then maybe you could name that QueueAdapter",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a91b6935_4c191ea0",
+        "filename": "src/org/lineageos/eleven/adapters/SongAdapter2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "157 to 166 is useless, this button has visibility gone in the xml layout already",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97cfbacb_2b2319c1",
+        "filename": "src/org/lineageos/eleven/adapters/SongAdapter2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "do an inverse if check and make an early return instead of wrapping everything in a big if",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f4946fe_6cbc149b",
+        "filename": "src/org/lineageos/eleven/adapters/SongAdapter2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "Iirc it is possible that the current track id could be -1, so make the ternary operator condition (currentTrack \u003d\u003d null || currentTrack.mId \u003d\u003d -1)",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9d4c209_ce703330",
+        "filename": "src/org/lineageos/eleven/widgets/SectionSeparatorItemDecoration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T16:16:58Z",
+      "side": 1,
+      "message": "Since I assume you adapted this to work with the \"TreeMap\u003cInteger, SectionCreatorUtils.Section\u003e\" argument, I\u0027d add the usual \"Copyright (c) 2021 The LineageOS Project\" below google",
+      "revId": "a2befd04ed5a09bfb48741dd5b5382bcfeb7d103",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
