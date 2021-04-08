@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a69127f6_147fb07d",
+        "filename": "res/layout/artist_detail_album.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:52:23Z",
+      "side": 1,
+      "message": "Add \"Copyright (C) 2021 The LineageOS Project\" instead of these 2, but keep the 2015 one from cm",
+      "revId": "92313bf3f4452fd4f1f4ec5fe6790381fc7c9488",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05149508_0907b562",
+        "filename": "res/layout/grid_base.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:52:23Z",
+      "side": 1,
+      "message": "Add \"Copyright (C) 2021 The LineageOS Project\"",
+      "revId": "92313bf3f4452fd4f1f4ec5fe6790381fc7c9488",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2417cf41_2f25bc41",
+        "filename": "res/layout/grid_items_normal.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:52:23Z",
+      "side": 1,
+      "message": "Add \"Copyright (C) 2021 The LineageOS Project\"",
+      "revId": "92313bf3f4452fd4f1f4ec5fe6790381fc7c9488",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0c99efc_6085c380",
+        "filename": "src/org/lineageos/eleven/adapters/AlbumAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:52:23Z",
+      "side": 1,
+      "message": "I think you can add the onItemClickedListener obj to the constructor arguments and make it final instead of setting it later. Then remember to remove the setOnItemClickedListener method",
+      "revId": "92313bf3f4452fd4f1f4ec5fe6790381fc7c9488",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c2c3648_28f11b66",
+        "filename": "src/org/lineageos/eleven/adapters/DetailSongAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:52:23Z",
+      "side": 1,
+      "message": "As mentioned earlier this should be done in the constructor, it\u0027s not going to change across different invocations of onBindViewHolder",
+      "revId": "92313bf3f4452fd4f1f4ec5fe6790381fc7c9488",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ecb3d726_0f2a6448",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AlbumFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:52:23Z",
+      "side": 1,
+      "message": "Same as before, pass this in the constructor rather than setting it later",
+      "revId": "92313bf3f4452fd4f1f4ec5fe6790381fc7c9488",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
