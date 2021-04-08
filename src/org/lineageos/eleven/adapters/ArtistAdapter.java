@@ -18,22 +18,26 @@
 package org.lineageos.eleven.adapters;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.model.Artist;
-import org.lineageos.eleven.sectionadapter.SectionAdapter.BasicAdapter;
 import org.lineageos.eleven.ui.MusicHolder;
-import org.lineageos.eleven.ui.MusicHolder.DataHolder;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.IPopupMenuCallback;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * This {@link ArrayAdapter} is used to display all of the artists on a user's
@@ -41,12 +45,7 @@ import org.lineageos.eleven.widgets.IPopupMenuCallback;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter, IPopupMenuCallback {
-
-    /**
-     * Number of views (ImageView and TextView)
-     */
-    private static final int VIEW_TYPE_COUNT = 2;
+public class ArtistAdapter extends RecyclerView.Adapter<MusicHolder> implements IPopupMenuCallback {
 
     /**
      * The resource Id of the layout to inflate
@@ -61,12 +60,15 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
     /**
      * Used to cache the artist info
      */
-    private DataHolder[] mData;
+    private List<Artist> mArtists;
 
     /**
      * Used to listen to the pop up menu callbacks
      */
     private IListener mListener;
+
+    private final Context mContext;
+    private final Consumer<Integer> mOnItemClickListener;
 
     /**
      * Constructor of <code>ArtistAdapter</code>
@@ -74,127 +76,97 @@ public class ArtistAdapter extends ArrayAdapter<Artist> implements BasicAdapter,
      * @param context  The {@link Context} to use.
      * @param layoutId The resource Id of the view to inflate.
      */
-    public ArtistAdapter(final FragmentActivity context, final int layoutId) {
-        super(context, 0);
+    public ArtistAdapter(final FragmentActivity context, final int layoutId,
+                         final Consumer<Integer> onItemClickListener) {
+        mContext = context;
         // Get the layout Id
         mLayoutId = layoutId;
         // Initialize the cache & image fetcher
         mImageFetcher = ElevenUtils.getImageFetcher(context);
+        mOnItemClickListener = onItemClickListener;
+        mArtists = new ArrayList<>(0);
+    }
+
+    @NonNull
+    @Override
+    public MusicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MusicHolder(LayoutInflater.from(parent.getContext())
+                .inflate(mLayoutId, parent, false));
     }
 
     @Override
-    public View getView(final int position, View convertView, final ViewGroup parent) {
-        // Recycle ViewHolder's items
-        MusicHolder holder;
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(mLayoutId, parent, false);
-            holder = new MusicHolder(convertView);
-            convertView.setTag(holder);
+    public void onBindViewHolder(@NonNull MusicHolder holder, int position) {
+        Artist artist = getItem(position);
+        String albumNumber = MusicUtils.makeLabel(mContext,
+                R.plurals.Nalbums, artist.mAlbumNumber);
+        String songNumber = MusicUtils.makeLabel(mContext,
+                R.plurals.Nsongs, artist.mSongNumber);
 
-            // set the pop up menu listener
-            holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
-        } else {
-            holder = (MusicHolder) convertView.getTag();
-        }
-
-        // Retrieve the data holder
-        final DataHolder dataHolder = mData[position];
-
+        holder.itemView.setOnClickListener(v -> mOnItemClickListener.accept(position));
+        // set the pop up menu listener
+        holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
         // Set each artist name (line one)
-        holder.mLineOne.get().setText(dataHolder.lineOne);
+        holder.mLineOne.get().setText(artist.mArtistName);
         // Set the number of albums (line two)
-        holder.mLineTwo.get().setText(dataHolder.lineTwo);
+        holder.mLineTwo.get().setText(MusicUtils.makeCombinedString(mContext,
+                albumNumber, songNumber));
         // Asynchronously load the artist image into the adapter
-        mImageFetcher.loadArtistImage(dataHolder.lineOne, holder.mImage.get());
+        mImageFetcher.loadArtistImage(artist.mArtistName, holder.mImage.get());
         // because of recycling, we need to set the position each time
         holder.mPopupMenuButton.get().setPosition(position);
-
-        return convertView;
     }
 
     @Override
-    public boolean hasStableIds() {
-        return true;
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return VIEW_TYPE_COUNT;
-    }
-
-    /**
-     * Method used to cache the data used to populate the list or grid. The idea
-     * is to cache everything before {@code #getView(int, View, ViewGroup)} is
-     * called.
-     */
-    @Override
-    public void buildCache() {
-        mData = new DataHolder[getCount()];
-        for (int i = 0; i < getCount(); i++) {
-            // Build the artist
-            final Artist artist = getItem(i);
-
-            // Build the data holder
-            mData[i] = new DataHolder();
-            // Artist Id
-            mData[i].itemId = artist.mArtistId;
-            // Artist names (line one)
-            mData[i].lineOne = artist.mArtistName;
-
-            String albumNumber = MusicUtils.makeLabel(getContext(),
-                    R.plurals.Nalbums, artist.mAlbumNumber);
-            String songNumber = MusicUtils.makeLabel(getContext(),
-                    R.plurals.Nsongs, artist.mSongNumber);
-
-            mData[i].lineTwo = MusicUtils.makeCombinedString(getContext(), albumNumber, songNumber);
-        }
+    public int getItemCount() {
+        return mArtists.size();
     }
 
     /**
      * Method that unloads and clears the items in the adapter
      */
-    @Override
     public void unload() {
-        clear();
-        mData = null;
-    }
-
-    /**
-     * @param pause True to temporarily pause the disk cache, false otherwise.
-     */
-    public void setPauseDiskCache(final boolean pause) {
-        if (mImageFetcher != null) {
-            mImageFetcher.setPauseDiskCache(pause);
-        }
+        int size = mArtists.size();
+        mArtists.clear();
+        notifyItemRangeRemoved(0, size);
     }
 
     /**
      * Flushes the disk cache.
      */
-    @Override
     public void flush() {
         mImageFetcher.flush();
-    }
-
-    /**
-     * Gets the item position for a given id
-     *
-     * @param id identifies the object
-     * @return the position if found, -1 otherwise
-     */
-    @Override
-    public int getItemPosition(long id) {
-        for (int i = 0; i < getCount(); i++) {
-            if (getItem(i).mArtistId == id) {
-                return i;
-            }
-        }
-
-        return -1;
     }
 
     @Override
     public void setPopupMenuClickedListener(IListener listener) {
         mListener = listener;
+    }
+
+    public Artist getItem(int position) {
+        return mArtists.get(position);
+    }
+
+    public void setData(List<Artist> artists) {
+        int oldSize = mArtists == null ? 0 : mArtists.size();
+        int newSize = artists.size();
+
+        mArtists = artists;
+
+        if (oldSize == 0) {
+            notifyItemRangeInserted(0, newSize);
+        } else {
+            int diff = oldSize - newSize;
+            if (diff > 0) {
+                // Items were removed
+                notifyItemRangeChanged(0, newSize);
+                notifyItemRangeRemoved(newSize, diff);
+            } else if (diff < 0) {
+                // Items were added
+                notifyItemRangeChanged(0, oldSize);
+                notifyItemRangeInserted(oldSize, diff * -1);
+            } else {
+                notifyItemChanged(0, oldSize);
+            }
+        }
     }
 }
