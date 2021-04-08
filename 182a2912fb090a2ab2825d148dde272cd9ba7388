@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3246a9c3_6b6ae04d",
+        "filename": "src/org/lineageos/eleven/cache/PlaylistWorkerTask.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:42:20Z",
+      "side": 1,
+      "message": "unused import",
+      "revId": "182a2912fb090a2ab2825d148dde272cd9ba7388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
