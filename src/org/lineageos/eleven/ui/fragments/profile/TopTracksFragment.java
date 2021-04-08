@@ -31,15 +31,18 @@ import androidx.loader.content.Loader;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.adapters.SongAdapter;
+import org.lineageos.eleven.adapters.SongListAdapter;
 import org.lineageos.eleven.loaders.TopTracksLoader;
 import org.lineageos.eleven.model.Song;
 import org.lineageos.eleven.sectionadapter.SectionCreator;
 import org.lineageos.eleven.sectionadapter.SectionListContainer;
+import org.lineageos.eleven.ui.MusicHolder;
 import org.lineageos.eleven.ui.activities.BaseActivity;
 import org.lineageos.eleven.ui.fragments.ISetupActionBar;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.NoResultsContainer;
+
+import java.util.function.Consumer;
 
 /**
  * This class is used to display all of the songs the user put on their device
@@ -66,10 +69,11 @@ public class TopTracksFragment extends SmartPlaylistFragment implements ISetupAc
     }
 
     @Override
-    protected SongAdapter createAdapter() {
+    protected SongListAdapter createAdapter() {
         return new TopTracksAdapter(
                 getActivity(),
-                R.layout.list_item_top_tracks
+                R.layout.list_item_top_tracks,
+                this::onItemClick
         );
     }
 
@@ -89,17 +93,17 @@ public class TopTracksFragment extends SmartPlaylistFragment implements ISetupAc
         }
     }
 
-    public class TopTracksAdapter extends SongAdapter {
-        public TopTracksAdapter(final FragmentActivity context, final int layoutId) {
-            super(context, layoutId, getFragmentSourceId(), getFragmentSourceType());
+    public class TopTracksAdapter extends SongListAdapter {
+        public TopTracksAdapter(final FragmentActivity context, final int layoutId,
+                                final Consumer<Integer> onItemClickListener) {
+            super(context, layoutId, getFragmentSourceId(), getFragmentSourceType(),
+                    onItemClickListener);
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            View view = super.getView(position, convertView, parent);
-            TextView positionText = view.findViewById(R.id.position_number);
+        protected void customizeBind(@NonNull MusicHolder holder, int position) {
+            TextView positionText = holder.itemView.findViewById(R.id.position_number);
             positionText.setText(String.valueOf(position + 1));
-            return view;
         }
     }
 
