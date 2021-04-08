@@ -34,4 +34,14 @@
             <enum name="hidden" value="3" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="SectionSeparator">
+        <attr name="android:width" />
+        <attr name="android:height" />
+        <attr name="android:paddingHorizontal" />
+        <attr name="android:paddingVertical" />
+        <attr name="android:textColor" />
+        <attr name="android:textSize" format="dimension" />
+        <attr name="verticalBias" format="float" />
+    </declare-styleable>
 </resources>
