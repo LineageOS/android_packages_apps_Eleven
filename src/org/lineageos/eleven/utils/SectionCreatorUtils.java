@@ -366,7 +366,7 @@ public class SectionCreatorUtils {
                     String footer = comparator.createSectionFooter(first, second, list, i - 1);
                     if (footer != null) {
                         // add sectionHeaders.size() to store the indices of the combined list
-                        sections.put(sections.size() + i, new Section(SectionType.Footer, footer));
+                        sections.put(i, new Section(SectionType.Footer, footer));
                     }
                 }
 
@@ -374,7 +374,7 @@ public class SectionCreatorUtils {
                     String header = comparator.createSectionHeader(first, second, list, i - 1);
                     if (header != null) {
                         // add sectionHeaders.size() to store the indices of the combined list
-                        sections.put(sections.size() + i, new Section(SectionType.Header, header));
+                        sections.put(i, new Section(SectionType.Header, header));
                         // stop section creation
                         if (comparator.shouldStopSectionCreation()) {
                             break;
