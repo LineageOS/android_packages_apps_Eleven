@@ -26,5 +26,7 @@
         android:id="@+id/list_base"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fadingEdge="vertical" />
+        android:fadingEdge="vertical"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical" />
 </FrameLayout>
