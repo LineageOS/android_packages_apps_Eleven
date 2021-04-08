@@ -93,19 +93,8 @@ public class PlaylistAdapter extends RecyclerView.Adapter<MusicHolder> implement
     @NonNull
     @Override
     public MusicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        final int layout;
-        switch (viewType) {
-            case USER_PLAYLIST_VIEW_TYPE:
-                layout = R.layout.list_item_normal;
-                break;
-            case SMART_PLAYLIST_VIEW_TYPE:
-                layout = R.layout.list_item_smart_playlist;
-                break;
-            default:
-                throw new IllegalArgumentException("Unknown view type " + viewType);
-        }
         return new MusicHolder(LayoutInflater.from(parent.getContext())
-                .inflate(layout, parent, false));
+                .inflate(R.layout.list_item_normal, parent, false));
     }
 
     @Override
