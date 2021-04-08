@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7caae67_bd6375e4",
+        "filename": "res/layout/list_base2.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8461
+      },
+      "writtenOn": "2021-04-08T15:59:16Z",
+      "side": 1,
+      "message": "While I understand the motivation for this file to exist, I think it should have a better name.  What about \"fragment_list\" so it\u0027s more in line with the naming schemes we use across the project?",
+      "revId": "6425264851fed45cb06729db25dca565383f77f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
