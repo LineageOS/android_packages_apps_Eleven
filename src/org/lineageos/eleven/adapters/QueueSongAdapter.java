@@ -131,6 +131,7 @@ public class QueueSongAdapter extends RecyclerView.Adapter<MusicHolder> implemen
     @Override
     public void onBindViewHolder(@NonNull MusicHolder holder, int position) {
         mHandler.post(() -> {
+            if (position >= mSongs.size()) return;
             // Retrieve the data holder
             Song item = getItem(position);
 
