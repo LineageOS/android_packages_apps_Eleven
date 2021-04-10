@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd8b408f_1f53fc4b",
+        "filename": "src/org/lineageos/eleven/adapters/PlaylistAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T14:18:37Z",
+      "side": 0,
+      "message": "unneccessary change",
+      "revId": "9684d84f2be68c6e9a1a4c3b9dc4dc428da9e579",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

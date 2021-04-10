@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d4c10cc_d28c0f5d",
+        "filename": "src/org/lineageos/eleven/adapters/PlaylistAdapter.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T14:18:37Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 102
+      },
+      "revId": "1696423de1627d55c2345ef1ca3ef1ce65d496b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ac6eaf82_0f16c7c4",
+        "filename": "src/org/lineageos/eleven/ui/fragments/PlaylistFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T14:18:37Z",
+      "side": 1,
+      "message": "I think this fits into the line above now without a line length issue",
+      "revId": "1696423de1627d55c2345ef1ca3ef1ce65d496b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57d29c9a_f8638b03",
+        "filename": "src/org/lineageos/eleven/ui/fragments/PlaylistFragment.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T14:18:37Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 108,
+        "startChar": 8,
+        "endLine": 108,
+        "endChar": 106
+      },
+      "revId": "1696423de1627d55c2345ef1ca3ef1ce65d496b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
