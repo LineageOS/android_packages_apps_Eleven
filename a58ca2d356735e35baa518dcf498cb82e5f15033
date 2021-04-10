@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "906c3731_c25149ee",
+        "filename": "src/org/lineageos/eleven/adapters/SongListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:45:01Z",
+      "side": 1,
+      "message": "is this file new? if so, the old copyrights shouldn\u0027t be here. if not, ignore this comment",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 48
+      },
+      "revId": "a58ca2d356735e35baa518dcf498cb82e5f15033",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37c01cb8_61a351e2",
+        "filename": "src/org/lineageos/eleven/adapters/SongListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:45:01Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 102
+      },
+      "revId": "a58ca2d356735e35baa518dcf498cb82e5f15033",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f208e04_debe3fe4",
+        "filename": "src/org/lineageos/eleven/adapters/SongListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:45:01Z",
+      "side": 1,
+      "message": "remove, the ame of the variable already says \"lineOne\"",
+      "range": {
+        "startLine": 196,
+        "startChar": 26,
+        "endLine": 196,
+        "endChar": 36
+      },
+      "revId": "a58ca2d356735e35baa518dcf498cb82e5f15033",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f01569b_bdd4f419",
+        "filename": "src/org/lineageos/eleven/adapters/SongListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:45:01Z",
+      "side": 1,
+      "message": "same, variable name already says \"lineOneRight\"",
+      "range": {
+        "startLine": 198,
+        "startChar": 29,
+        "endLine": 198,
+        "endChar": 46
+      },
+      "revId": "a58ca2d356735e35baa518dcf498cb82e5f15033",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1ddfafe_8246a78f",
+        "filename": "src/org/lineageos/eleven/adapters/SongListAdapter.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:45:01Z",
+      "side": 1,
+      "message": "guess :)",
+      "range": {
+        "startLine": 201,
+        "startChar": 40,
+        "endLine": 201,
+        "endChar": 50
+      },
+      "revId": "a58ca2d356735e35baa518dcf498cb82e5f15033",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
