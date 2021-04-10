@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69142164_d8116c64",
+        "filename": "src/org/lineageos/eleven/adapters/QueueSongAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:37:27Z",
+      "side": 1,
+      "message": "is this file from an older version of Eleven? If not, the copyright should just be ours from this year. Otherwise ignore my comment",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 48
+      },
+      "revId": "e3c38030df2dad42d2a8111112a30a810d18a794",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f070f888_d6dc4e3c",
+        "filename": "src/org/lineageos/eleven/adapters/QueueSongAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:37:27Z",
+      "side": 1,
+      "message": "line length",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 103
+      },
+      "revId": "e3c38030df2dad42d2a8111112a30a810d18a794",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05b2e5e5_327e2b13",
+        "filename": "src/org/lineageos/eleven/adapters/QueueSongAdapter.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-10T13:37:27Z",
+      "side": 1,
+      "message": "line length. I suggest a shorter name: buttonContainer - that should be enough",
+      "range": {
+        "startLine": 156,
+        "startChar": 12,
+        "endLine": 156,
+        "endChar": 102
+      },
+      "revId": "e3c38030df2dad42d2a8111112a30a810d18a794",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
