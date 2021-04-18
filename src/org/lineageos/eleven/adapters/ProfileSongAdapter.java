@@ -17,18 +17,28 @@
  */
 package org.lineageos.eleven.adapters;
 
-import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config;
+import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.model.Song;
+import org.lineageos.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.ui.MusicHolder;
+import org.lineageos.eleven.utils.ElevenUtils;
+import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.widgets.IPopupMenuCallback;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * This {@link ArrayAdapter} is used to display the songs for a particular playlist
@@ -36,96 +46,205 @@ import java.util.Collection;
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
-public class ProfileSongAdapter extends SongAdapter {
-    /**
-     * Instead of having random +1 and -1 sprinkled around, this variable will show what is really
-     * related to the header
-     */
-    public static final int NUM_HEADERS = 1;
+public class ProfileSongAdapter extends RecyclerView.Adapter<MusicHolder> implements
+        IPopupMenuCallback {
+
+    private static final int NOTHING_PLAYING = -1;
 
     /**
-     * Fake header layout Id
+     * The resource Id of the layout to inflate
      */
-    private final int mHeaderId;
+    private final int mLayoutId;
+
+    /**
+     * Image cache and image fetcher
+     */
+    private final ImageFetcher mImageFetcher;
+
+    /**
+     * Used to cache the song info
+     */
+    private List<Song> mSongs;
+
+    /**
+     * Used to listen to the pop up menu callbacks
+     */
+    private IPopupMenuCallback.IListener mListener;
+
+    /**
+     * Current music track
+     */
+    private MusicPlaybackTrack mCurrentlyPlayingTrack;
+
+    /**
+     * Source id and type
+     */
+    private final long mSourceId;
+    private final Config.IdType mSourceType = Config.IdType.Playlist;
+
+    private final Context mContext;
+    private final Consumer<Integer> mOnItemClickListener;
 
     /**
      * Constructor of <code>ProfileSongAdapter</code>
      *
-     * @param activity The {@link Activity} to use
+     * @param context The {@link FragmentActivity} to use
      * @param layoutId The resource Id of the view to inflate.
      */
-    public ProfileSongAdapter(final long playlistId, final FragmentActivity activity,
-                              final int layoutId, final int headerId) {
-        super(activity, layoutId, playlistId, Config.IdType.Playlist);
-        // Cache the header
-        mHeaderId = headerId;
-    }
-
-    @Override
-    public View getView(final int position, View convertView, final ViewGroup parent) {
-
-        // Return a faux header at position 0
-        if (position == 0) {
-            if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(mHeaderId, parent, false);
-            }
-
-            return convertView;
-        }
-
-        return super.getView(position, convertView, parent);
-    }
-
-    protected boolean showNowPlayingIndicator(final Song song, final int position) {
-        return super.showNowPlayingIndicator(song, position)
-                && mCurrentlyPlayingTrack.mSourcePosition == position - NUM_HEADERS;
-    }
-
-    @Override
-    public boolean isEnabled(int position) {
-        if (position == 0) {
-            return false;
-        }
-
-        return super.isEnabled(position);
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return super.getViewTypeCount() + NUM_HEADERS;
-    }
-
-    @Override
-    public int getItemViewType(final int position) {
-        if (position == 0) {
-            // since our view type count adds 1 to the super class, we can return viewtypecount - 1
-            return getViewTypeCount() - 1;
-        }
-        return super.getItemViewType(position);
-    }
-
-    @Override
-    public void addAll(Collection<? extends Song> collection) {
-        // insert a header if one is needed
-        insertHeader();
-        super.addAll(collection);
-    }
-
-    @Override
-    public void addAll(Song... items) {
-        // insert a header if one is needed
-        insertHeader();
-        super.addAll(items);
+    public ProfileSongAdapter(final long playlistId, final FragmentActivity context,
+                              final int layoutId, final Consumer<Integer> onItemClickListener) {
+        mContext = context;
+        // Get the layout Id
+        mLayoutId = layoutId;
+        // Initialize the cache & image fetcher
+        mImageFetcher = ElevenUtils.getImageFetcher(context);
+        // set the source id and type
+        mSourceId = playlistId;
+        mOnItemClickListener = onItemClickListener;
+        mSongs = new ArrayList<>(0);
     }
 
     /**
-     * Make sure we insert our header when we add items
+     * Determines whether the song at the position should show the currently playing indicator
+     *
+     * @param song     the song in question
+     * @return true if we want to show the indicator
      */
-    private void insertHeader() {
-        if (getCount() == 0) {
-            // add a dummy entry to the underlying adapter.  This is needed otherwise the
-            // underlying adapter could crash because getCount() doesn't match up
-            add(new Song(-1, null, null, null, -1, -1, -1));
+    protected boolean showNowPlayingIndicator(final Song song) {
+        return mCurrentlyPlayingTrack != null
+                && mCurrentlyPlayingTrack.mSourceId == mSourceId
+                && mCurrentlyPlayingTrack.mSourceType == mSourceType
+                && mCurrentlyPlayingTrack.mId == song.mSongId;
+    }
+
+    @NonNull
+    @Override
+    public MusicHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MusicHolder(LayoutInflater.from(parent.getContext())
+                .inflate(mLayoutId, parent, false));
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MusicHolder holder, int position) {
+        // Retrieve the data holder
+        Song item = getItem(position);
+
+        holder.itemView.setOnClickListener(v -> mOnItemClickListener.accept(position));
+
+        holder.mPopupMenuButton.get().setPopupMenuClickedListener(mListener);
+        // Sets the position each time because of recycling
+        holder.mPopupMenuButton.get().setPosition(position);
+        // Set each song name (line one)
+        holder.mLineOne.get().setText(item.mSongName);
+        // Set the album name (line two)
+        holder.mLineTwo.get().setText(MusicUtils.makeCombinedString(mContext, item.mArtistName,
+                item.mAlbumName));
+
+        // Asynchronously load the artist image into the adapter
+        if (item.mAlbumId >= 0) {
+            mImageFetcher.loadAlbumImage(item.mArtistName, item.mAlbumName, item.mAlbumId,
+                    holder.mImage.get());
         }
+
+        View nowPlayingIndicator = holder.mNowPlayingIndicator.get();
+        if (nowPlayingIndicator != null) {
+            if (showNowPlayingIndicator(item)) {
+                nowPlayingIndicator.setVisibility(View.VISIBLE);
+            } else {
+                nowPlayingIndicator.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    @Override
+    public int getItemCount() {
+        return mSongs.size();
+    }
+
+    /**
+     * Method that unloads and clears the items in the adapter
+     */
+    public void unload() {
+        int size = mSongs.size();
+        mSongs.clear();
+        notifyItemRangeRemoved(0, size);
+    }
+
+    @Override
+    public void setPopupMenuClickedListener(IPopupMenuCallback.IListener listener) {
+        mListener = listener;
+    }
+
+    /**
+     * Sets the currently playing track for the adapter to know when to show indicators
+     *
+     * @param currentTrack the currently playing track
+     */
+    public void setCurrentlyPlayingTrack(MusicPlaybackTrack currentTrack) {
+        if (mCurrentlyPlayingTrack != null && mCurrentlyPlayingTrack.equals(currentTrack)) {
+            return;
+        }
+
+        long previousPlayingId = mCurrentlyPlayingTrack == null
+                ? NOTHING_PLAYING : mCurrentlyPlayingTrack.mId;
+        mCurrentlyPlayingTrack = currentTrack;
+
+        int toBeUpdated = (currentTrack == null || currentTrack.mId == NOTHING_PLAYING)
+                ? 1 : 2;
+        int updated = 0;
+
+        for (int i = 0; i < mSongs.size() && updated < toBeUpdated; i++) {
+            long id = mSongs.get(i).mSongId;
+            if ((currentTrack != null && id == currentTrack.mId) || id == previousPlayingId) {
+                notifyItemChanged(i);
+                updated++;
+            }
+        }
+    }
+
+    public Song getItem(int position) {
+        return mSongs.get(position);
+    }
+
+    public void setData(List<Song> songs) {
+        int oldSize = mSongs == null ? 0 : mSongs.size();
+        int newSize = songs.size();
+
+        mSongs = songs;
+
+        if (oldSize == 0) {
+            notifyItemRangeInserted(0, newSize);
+        } else {
+            int diff = oldSize - newSize;
+            if (diff > 0) {
+                // Items were removed
+                notifyItemRangeChanged(0, newSize);
+                notifyItemRangeRemoved(newSize, diff);
+            } else if (diff < 0) {
+                // Items were added
+                notifyItemRangeChanged(0, oldSize);
+                notifyItemRangeInserted(oldSize, diff * -1);
+            } else {
+                notifyItemChanged(0, oldSize);
+            }
+        }
+    }
+
+    public void remove(Song song) {
+        final int index = mSongs.indexOf(song);
+        if (index >= 0) {
+            mSongs.remove(index);
+            notifyItemRemoved(index);
+        }
+    }
+
+    public void move(int startPosition, int endPosition) {
+        if (startPosition == endPosition) {
+            return;
+        }
+
+        Song moving = mSongs.remove(startPosition);
+        mSongs.add(endPosition, moving);
+        notifyItemMoved(startPosition, endPosition);
     }
 }
