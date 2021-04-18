@@ -26,45 +26,32 @@
         android:contentDescription="@null"
         android:scaleType="centerCrop" />
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="@dimen/playlist_detail_header_bottom_height"
         android:layout_alignParentBottom="true"
-        android:background="@color/header_shadow_color">
+        android:layout_gravity="center"
+        android:background="@color/header_shadow_color"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/number_of_songs_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/number_of_songs_text_color"
+            android:textSize="@dimen/text_size_micro"
+            android:drawableStart="@drawable/playlist_icon"
+            android:drawablePadding="4dp" />
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/playlist_icon" />
-
-            <TextView
-                android:id="@+id/number_of_songs_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingEnd="16dp"
-                android:textColor="@color/number_of_songs_text_color"
-                android:textSize="@dimen/text_size_micro" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/stopwatch_icon_white" />
-
-            <TextView
-                android:id="@+id/duration_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/duration_text_color"
-                android:textSize="@dimen/text_size_micro" />
-        </LinearLayout>
-    </FrameLayout>
+        <TextView
+            android:id="@+id/duration_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/duration_text_color"
+            android:textSize="@dimen/text_size_micro"
+            android:drawableStart="@drawable/stopwatch_icon_white"
+            android:drawablePadding="4dp"/>
+    </LinearLayout>
 </RelativeLayout>
