@@ -19,12 +19,10 @@
     <!-- Material -->
     <color name="primary">#ffffff</color>
     <color name="primary_dark">#ffffff</color>
-    <color name="primary_light">#ffffff</color>
     <color name="accent">#167C80</color>
 
     <!-- Main colors -->
     <color name="black">#000000</color>
-    <color name="semitransparent_black">#a0333333</color>
     <color name="white">#ffffff</color>
     <color name="grey">#9e9e9e</color>
     <color name="grey_dark">#616161</color>
@@ -51,14 +49,9 @@
 
     <!-- Cards -->
     <color name="cards_bg_color">#ffffff</color>
-    <color name="cardOne">@color/black</color>
-    <color name="cardTwo">@color/black</color>
 
     <!-- Transparent colors -->
     <color name="transparent">#00000000</color>
-    <color name="transparent_black">#99212121</color>
-    <color name="transparent_white">#99fafafa</color>
-    <color name="transparent_blue">#993F51B5</color>
 
     <color name="background_color">@color/white</color>
 
@@ -75,13 +68,10 @@
     <color name="header_shadow_color">#eaffffff</color>
 
     <!-- Color for the pop up menu -->
-    <color name="menu_divider_color">@color/transparent</color>
     <color name="menu_text_color">@color/black</color>
 
     <!-- List view related colors -->
-    <color name="list_item_background">#4cffffff</color>
     <color name="list_item_header_text_color">@color/black</color>
-    <color name="list_item_search_footer_text_color">@color/accent</color>
     <color name="list_item_text_color">@color/default_text_color</color>
     <color name="list_item_text_color_light">@color/default_text_color_light</color>
     <color name="list_item_divider_color">#4c212121</color>
@@ -90,14 +80,12 @@
 
     <!-- Top title page colors -->
     <color name="tab_ripple_color">@color/accent</color>
-    <color name="tab_accent_color">@color/accent</color>
     <color name="tab_selected_underline_color">@color/accent</color>
 
     <!-- Search Colors -->
     <color name="search_hint_color">@color/accent</color>
 
     <!-- Color for the text on the audio player -->
-    <color name="audio_player_text_color">@color/default_text_color_light</color>
 
     <!-- Color for the Progress bar -->
     <color name="circular_progress_bar_background">#40ffffff</color>
@@ -105,8 +93,6 @@
 
     <!-- search no results text color -->
     <color name="no_results_light">#ffffff</color>
-
-    <color name="now_playing_divider">@color/transparent</color>
 
     <!-- App widget colors -->
     <color name="widget_text">@color/default_text_color</color>
@@ -146,22 +132,15 @@
 
     <!-- Separated and exposed values for themes -->
     <color name="widget_background_color">@color/white</color>
-    <color name="list_base_container_background_color">@color/white</color>
     <color name="activity_album_detail_background_color">@color/background_color</color>
     <color name="activity_artist_detail_background_color">@color/background_color</color>
     <color name="activity_base_background_color">@color/background_color</color>
-    <color name="artist_detail_header_background_color">@color/background_color</color>
     <color name="album_detail_title_text_color">@color/default_text_color</color>
     <color name="album_detail_song_count_and_year_text_color">@color/default_text_color</color>
     <color name="album_detail_genre_text_color">@color/default_text_color</color>
     <color name="album_detail_duration_text_color">@color/default_text_color</color>
-    <color name="app_msg_text_color">?android:textColorPrimaryInverse</color>
-    <color name="artist_detail_album_title_text_color">@color/cardOne</color>
-    <color name="artist_detail_album_year_text_color">@color/cardTwo</color>
     <color name="artist_detail_header_albums_label_text_color">@color/list_item_header_text_color</color>
     <color name="artist_detail_header_songs_label_text_color">@color/list_item_header_text_color</color>
-    <color name="grid_items_normal_line_one">@color/cardOne</color>
-    <color name="grid_items_normal_line_two">@color/cardTwo</color>
     <color name="position_number_color">@color/white</color>
     <color name="audio_player_lyrics_text_color">@color/white</color>
     <color name="audio_player_current_time_color">@color/white</color>
