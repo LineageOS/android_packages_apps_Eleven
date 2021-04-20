@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
  * Copyright (C) 2019-2021 The LineageOS Project
- * Copyright (C) 2019 SHIFT GmbH
+ * Copyright (C) 2019-2021 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ package org.lineageos.eleven.widgets;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -30,10 +29,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import androidx.core.content.ContextCompat;
-
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageWorker;
+import org.lineageos.eleven.utils.ImageUtils;
+
+import androidx.core.content.ContextCompat;
 
 public class AlbumScrimImage extends FrameLayout {
     private static final int COLOR_GREY_30 = 0x4c000000;
@@ -41,20 +41,27 @@ public class AlbumScrimImage extends FrameLayout {
     private ImageView mImageView;
     private View mScrimView;
 
-    private boolean mUsingDefaultBlur;
+    private final int mDefaultArtworkColor;
+    private boolean mUsingDefaultArtwork;
 
     public AlbumScrimImage(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mUsingDefaultBlur = true;
+        mDefaultArtworkColor = ContextCompat.getColor(getContext(), R.color.default_artwork_color);
     }
 
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
 
-        mImageView = findViewById(R.id.blurImage);
-        mScrimView = findViewById(R.id.blurScrim);
+        mImageView = findViewById(R.id.albumImage);
+        mScrimView = findViewById(R.id.albumScrim);
+
+        // generate and set default artwork
+        final Drawable defaultArtworkDrawable = createDefaultArtworkDrawable();
+        mImageView.setImageDrawable(defaultArtworkDrawable);
+
+        mUsingDefaultArtwork = true;
     }
 
     public ImageView getImageView() {
@@ -65,28 +72,24 @@ public class AlbumScrimImage extends FrameLayout {
      * Transitions the image to the default state (default blur artwork)
      */
     public void transitionToDefaultState() {
-        // if we are already showing the default blur and we are transitioning to the default blur
-        // then don't do the transition at all
-        if (mUsingDefaultBlur) {
+        // if we are already showing the default artwork and we are transitioning to the
+        // default artwork then don't do the transition at all
+        if (mUsingDefaultArtwork) {
             return;
         }
 
-        final Drawable drawable = ContextCompat.getDrawable(getContext(),
-                R.drawable.default_artwork_blur);
-        if (!(drawable instanceof BitmapDrawable)) {
-            return;
-        }
-        final Bitmap blurredBitmap = ((BitmapDrawable) drawable).getBitmap();
+        final Drawable drawable = createDefaultArtworkDrawable();
+        final Bitmap albumBitmap = ImageUtils.drawableToBitmap(drawable);
 
         final TransitionDrawable imageTransition = ImageWorker.createImageTransitionDrawable(
-                getResources(), mImageView.getDrawable(), blurredBitmap,
+                getResources(), mImageView.getDrawable(), albumBitmap,
                 ImageWorker.FADE_IN_TIME_SLOW, true);
 
         final TransitionDrawable paletteTransition = ImageWorker.createPaletteTransition(this,
                 Color.TRANSPARENT);
 
         setTransitionDrawable(imageTransition, paletteTransition);
-        mUsingDefaultBlur = true;
+        mUsingDefaultArtwork = true;
     }
 
     /**
@@ -96,10 +99,10 @@ public class AlbumScrimImage extends FrameLayout {
      * @param paletteTransition the transition for the scrim overlay
      */
     public void setTransitionDrawable(TransitionDrawable imageTransition,
-            TransitionDrawable paletteTransition) {
+                                      TransitionDrawable paletteTransition) {
         mScrimView.setBackground(paletteTransition);
         mImageView.setImageDrawable(imageTransition);
-        mUsingDefaultBlur = false;
+        mUsingDefaultArtwork = false;
     }
 
     public void setGradientDrawable(GradientDrawable gradientDrawable) {
@@ -108,6 +111,10 @@ public class AlbumScrimImage extends FrameLayout {
         mScrimView.setBackground(scrimDrawable);
 
         mImageView.setImageDrawable(gradientDrawable);
-        mUsingDefaultBlur = false;
+        mUsingDefaultArtwork = false;
+    }
+
+    private Drawable createDefaultArtworkDrawable() {
+        return new ColorDrawable(mDefaultArtworkColor);
     }
 }
