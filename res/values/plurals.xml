@@ -17,10 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Used to indicate the number of artists -->
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> artist</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> artists</item>
-    </plurals>
 
     <!-- Used to indicate the number of albums for an artist -->
     <plurals name="Nalbums">
@@ -36,10 +32,6 @@
     </plurals>
 
     <!-- Used to indicate the number of genres -->
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> genre</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> genres</item>
-    </plurals>
 
     <!-- Used to show a shortened version of hours-->
     <plurals name="Nhours">
@@ -70,10 +62,6 @@
     </plurals>
 
     <!-- Toasts after adding song(s) to the favorites list -->
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> song added to favorites.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> songs added to favorites.</item>
-    </plurals>
 
     <!-- Toast confirming that song(s) was/were deleted. -->
     <plurals name="NNNtracksdeleted">

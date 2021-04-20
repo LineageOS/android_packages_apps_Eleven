@@ -18,7 +18,6 @@
     <!-- Material -->
     <color name="primary">#212121</color>
     <color name="primary_dark">#121212</color>
-    <color name="primary_light">#333333</color>
     <color name="accent">#1ddbc5</color>
 
     <!-- Standard Text Color -->
@@ -27,8 +26,6 @@
 
     <!-- Cards -->
     <color name="cards_bg_color">#333333</color>
-    <color name="cardOne">@color/white</color>
-    <color name="cardTwo">@color/white</color>
 
     <!-- Transparent colors -->
     <color name="background_color">#121212</color>
@@ -50,10 +47,8 @@
     <color name="menu_text_color">@color/white</color>
 
     <!-- List view related colors -->
-    <color name="list_item_background">#ff000000</color>
     <color name="list_item_header_text_color">@color/white</color>
 
     <!-- Separated and exposed values for themes -->
     <color name="widget_background_color">@color/black</color>
-    <color name="list_base_container_background_color">@color/black</color>
 </resources>
