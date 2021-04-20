@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fdb89972_39a693e3",
+        "filename": "src/org/lineageos/eleven/widgets/AlbumScrimImage.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2021-04-20T13:18:34Z",
+      "side": 1,
+      "message": "feel free to change the color to your liking :)",
+      "range": {
+        "startLine": 113,
+        "startChar": 8,
+        "endLine": 113,
+        "endChar": 56
+      },
+      "revId": "67125f0690e702144ee5e332e60e92322ceb614f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
