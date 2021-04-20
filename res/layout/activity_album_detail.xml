@@ -22,7 +22,6 @@
             android:scaleType="centerCrop" />
 
         <RelativeLayout
-            android:id="@+id/header_info"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_toEndOf="@id/album_art"
