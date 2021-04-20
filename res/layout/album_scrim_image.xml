@@ -16,18 +16,17 @@
 -->
 <org.lineageos.eleven.widgets.AlbumScrimImage
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/blurScrimImage"
+    android:id="@+id/albumScrimImage"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/blurImage"
+        android:id="@+id/albumImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/default_artwork_blur"/>
+        android:scaleType="centerCrop"/>
     <LinearLayout
-        android:id="@+id/blurScrim"
+        android:id="@+id/albumScrim"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"/>

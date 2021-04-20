@@ -98,8 +98,8 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         setupFirstPanel();
         setupSecondPanel();
 
-        // get the blur scrim image
-        mAlbumScrimImage = findViewById(R.id.blurScrimImage);
+        // get the album scrim image
+        mAlbumScrimImage = findViewById(R.id.albumScrimImage);
 
         if (savedInstanceState != null) {
             int panelIndex = savedInstanceState.getInt(STATE_KEY_CURRENT_PANEL,
