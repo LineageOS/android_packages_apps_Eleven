@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6ce952c_b235a97a",
+        "filename": "src/org/lineageos/eleven/slidinguppanel/ViewDragHelper.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:02:46Z",
+      "side": 1,
+      "message": "line length",
+      "revId": "43695941daccc50f52aa724075a3c3e3b14e01e5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
