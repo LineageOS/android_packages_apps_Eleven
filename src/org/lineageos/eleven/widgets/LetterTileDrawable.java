@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2013 The Android Open Source Project
  * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021 SHIFT GmbH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +21,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
@@ -30,7 +30,9 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
@@ -84,12 +86,29 @@ public class LetterTileDrawable extends Drawable {
             sDefaultColor = ContextCompat.getColor(context, R.color.letter_tile_default_color);
             sTileFontColor = ContextCompat.getColor(context, R.color.letter_tile_font_color);
             sLetterToTileRatio = res.getFraction(R.fraction.letter_to_tile_ratio, 1, 1);
-            DEFAULT_ARTIST = BitmapFactory.decodeResource(res, R.drawable.ic_artist);
-            DEFAULT_ARTIST_LARGE = BitmapFactory.decodeResource(res, R.drawable.ic_artist_lg);
-            DEFAULT_ALBUM = BitmapFactory.decodeResource(res, R.drawable.ic_album);
-            DEFAULT_ALBUM_LARGE = BitmapFactory.decodeResource(res, R.drawable.ic_album_lg);
-            DEFAULT_PLAYLIST = BitmapFactory.decodeResource(res, R.drawable.ic_playlist);
-            DEFAULT_PLAYLIST_LARGE = BitmapFactory.decodeResource(res, R.drawable.ic_playlist_lg);
+
+            final Drawable artistDrawable = ResourcesCompat.getDrawable(res,
+                    R.drawable.ic_artist, context.getTheme());
+            final Drawable albumDrawable = ResourcesCompat.getDrawable(res,
+                    R.drawable.ic_album, context.getTheme());
+            final Drawable playlistDrawable = ResourcesCompat.getDrawable(res,
+                    R.drawable.ic_playlist, context.getTheme());
+
+            final int defaultSize = res.getDimensionPixelSize(R.dimen.list_icon_default);
+            final int largeSize = res.getDimensionPixelSize(R.dimen.list_icon_large);
+
+            if (artistDrawable != null) {
+                DEFAULT_ARTIST = setupBitmap(artistDrawable, defaultSize);
+                DEFAULT_ARTIST_LARGE = setupBitmap(artistDrawable, largeSize);
+            }
+            if (albumDrawable != null) {
+                DEFAULT_ALBUM = setupBitmap(albumDrawable, defaultSize);
+                DEFAULT_ALBUM_LARGE = setupBitmap(albumDrawable, largeSize);
+            }
+            if (playlistDrawable != null) {
+                DEFAULT_PLAYLIST = setupBitmap(playlistDrawable, defaultSize);
+                DEFAULT_PLAYLIST_LARGE = setupBitmap(playlistDrawable, largeSize);
+            }
 
             sPaint.setTypeface(Typeface.create(
                     res.getString(R.string.letter_tile_letter_font_family), Typeface.NORMAL));
@@ -361,5 +380,13 @@ public class LetterTileDrawable extends Drawable {
                 bounds, 0, paint);
 
         return new BitmapWithColors(createdBitmap, identifier.hashCode(), color, vibrantDarkColor);
+    }
+
+    private static Bitmap setupBitmap(@NonNull Drawable drawable, int size) {
+        final Bitmap bitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888);
+        final Canvas c = new Canvas(bitmap);
+        drawable.setBounds(0, 0, c.getWidth(), c.getHeight());
+        drawable.draw(c);
+        return bitmap;
     }
 }
