@@ -63,7 +63,7 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
     /**
      * RenderScript used to blur the image
      */
-    protected final RenderScript mRenderScript;
+    private static RenderScript sRenderScript;
 
     /**
      * Constructor of <code>BlurBitmapWorkerTask</code>
@@ -75,10 +75,13 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
      */
     public BlurBitmapWorkerTask(final String key, final AlbumScrimImage albumScrimImage,
                                 final ImageType imageType, final Drawable fromDrawable,
-                                final Context context, final RenderScript renderScript) {
+                                final Context context) {
         super(key, albumScrimImage.getImageView(), imageType, fromDrawable, context);
         mBlurScrimImage = new WeakReference<>(albumScrimImage);
-        mRenderScript = renderScript;
+
+        if (sRenderScript == null) {
+            sRenderScript = RenderScript.create(mContext);
+        }
 
         // use the existing image as the drawable and if it doesn't exist fallback to transparent
         mFromDrawable = albumScrimImage.getImageView().getDrawable();
@@ -119,11 +122,11 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
             // run the blur multiple times
             for (int i = 0; i < NUM_BLUR_RUNS; i++) {
                 try {
-                    final Allocation inputAlloc = Allocation.createFromBitmap(mRenderScript, input);
-                    final Allocation outputAlloc = Allocation.createTyped(mRenderScript,
+                    final Allocation inputAlloc = Allocation.createFromBitmap(sRenderScript, input);
+                    final Allocation outputAlloc = Allocation.createTyped(sRenderScript,
                             inputAlloc.getType());
-                    final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(mRenderScript,
-                            Element.U8_4(mRenderScript));
+                    final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(sRenderScript,
+                            Element.U8_4(sRenderScript));
 
                     script.setRadius(BLUR_RADIUS);
                     script.setInput(inputAlloc);
