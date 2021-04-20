@@ -37,7 +37,6 @@
         android:src="@drawable/btn_playback_play" />
 
     <ProgressBar
-        android:id="@+id/progressBarBackground"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
