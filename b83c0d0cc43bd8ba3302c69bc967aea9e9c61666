@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c9930ec7_590d2f47",
+        "filename": "res/drawable/bg_grid_item.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:21:04Z",
+      "side": 1,
+      "message": "is this file added or readded? Those copyrights look suspicious",
+      "revId": "b83c0d0cc43bd8ba3302c69bc967aea9e9c61666",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4284815a_9cc7c2d0",
         "filename": "src/org/lineageos/eleven/ui/fragments/AlbumFragment.java",
         "patchSetId": 8
