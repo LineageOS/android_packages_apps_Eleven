@@ -117,9 +117,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
      * to initialize the app.
      */
     protected void init(final Bundle savedInstanceState) {
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
-
         // Control the media volume
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
 
@@ -202,6 +199,9 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     @Override
     protected void onStart() {
         super.onStart();
+
+        // Bind Eleven's service
+        mToken = MusicUtils.bindToService(this, this);
 
         final IntentFilter filter = new IntentFilter();
         // Play and pause changes
