@@ -27,7 +27,6 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/song_info"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_toStartOf="@id/right_container"
