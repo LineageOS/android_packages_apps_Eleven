@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">মিউজিক</string>
-    <string name="page_recent">শেহতীয়া</string>
     <string name="page_artists">চিত্ৰকৰসকল</string>
     <string name="page_albums">এলবামসমূহ</string>
     <string name="page_songs">গীতসমূহ</string>
     <string name="page_playlists">প্লেলিষ্টs</string>
-    <string name="page_genres">শ্ৰেণী</string>
-    <string name="page_now_playing">এতিয়া চলি আছে</string>
     <string name="page_play_queue">প্লে কিউ</string>
     <string name="header_albums">এলবামসমূহ</string>
-    <string name="header_top_songs">শীৰ্ষ গীত</string>
     <string name="header_all_songs">সকলো গীত</string>
     <string name="menu_settings">ছেটিংছ</string>
     <string name="menu_shuffle_item">সানমিহলি কৰক</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">শীৰ্ষ ট্ৰেকবোৰ সানমিহলি কৰক</string>
     <string name="menu_shuffle_recent">শেহতীয়াকৈ প্লে কৰাবোৰ সানমিহলি কৰক</string>
     <string name="menu_shuffle_last_added">অন্তিম যোগ কৰাবোৰ সানমিহলি কৰক</string>
-    <string name="menu_play_all">আটাইবোৰ প্লে’ কৰক</string>
     <string name="menu_sort_by">সজাই লওঁক</string>
     <string name="menu_clear_list">তালিকাখন আঁতৰাওঁক</string>
-    <string name="menu_clear_recents">শেহতীয়াবোৰ পৰিষ্কাৰ কৰক</string>
     <string name="menu_clear_queue">কিউ পৰিষ্কাৰ কৰক</string>
     <string name="menu_save_queue">প্লে-সূচীলৈ কিউ সংৰক্ষণ কৰক</string>
     <string name="menu_equalizer">ইকুইলাইজাৰ</string>
     <string name="add_to_playlist">প্লেলিষ্টলৈ যোগ দিয়ক</string>
     <string name="add_to_queue">কিউলৈ যোগ কৰক</string>
-    <string name="remove_from_recent">শেহতীয়াৰ পৰা আঁতৰাওক</string>
     <string name="remove_from_queue">কিউৰ পৰা আঁতৰাওক</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">এলবাম</string>
     <string name="sort_order_entry_year">বছৰ</string>
     <string name="sort_order_entry_duration">সময়সীমা</string>
-    <string name="sort_order_entry_date_added">তাৰিখ যোগ কৰা হৈছে</string>
-    <string name="sort_order_entry_track_list">ট্ৰেক সূচী</string>
     <string name="sort_order_entry_number_of_songs">গীতৰ সংখ্যা</string>
     <string name="sort_order_entry_number_of_albums">এলবামৰ সংখ্যা</string>
     <string name="sort_order_entry_filename">ফাইলনাম</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">এইটো ওভতাব নোৱাৰি</string>
     <string name="delete_warning">ই কেশ্বড প্ৰতিচ্ছবি এণ্ট্ৰিবোৰ স্থায়ীভাবে আঁতৰাব</string>
     <string name="new_photo">গেলাৰীৰ পৰা ফটো বাচনি কৰক</string>
-    <string name="google_search">Google অনুসন্ধান</string>
     <string name="use_default">ডিফ\'ল্ট ফটো ব্যৱহাৰ কৰক</string>
-    <string name="old_photo">পুৰণি ফটো ব্যৱহাৰ কৰক</string>
     <string name="context_menu_play_selection">চলাওঁক</string>
     <string name="context_menu_play_next">পৰৱৰ্তীটো প্লে কৰক</string>
     <string name="context_menu_play_album">এলবাম প্লে কৰক</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">পুনৰাবৃত্তি</string>
     <string name="accessibility_repeat_all">সকলো পুনৰাবৃত্তি কৰক</string>
     <string name="accessibility_repeat_one">এটা পুনৰাবৃত্তি কৰক</string>
-    <string name="accessibility_queue">কিউ খোলক</string>
-    <string name="accessibility_browse">সংগীত ব্ৰাউজ কৰক</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ৰিংটোন হিচাপে ছেট কৰা হৈছে</string>
-    <string name="playlist_renamed">প্লে-সূচী পুনৰ নামাকৰণ কৰা হৈছে</string>
     <string name="settings_storage_category">ষ্টোৰেজ</string>
     <string name="settings_delete_cache_title">কেশ্ব বিলোপ কৰক</string>
     <string name="settings_delete_cache_summary">কেশ্বড কৰা সকলো প্ৰতিচ্ছবি আঁতৰাওক</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">সংগীত: 4 \u00d7 1</string>
     <string name="app_widget_large">সংগীত: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">সংগীত: 4 \u00d7 2 (বিকল্প)</string>
-    <string name="app_widget_recent">সংগীত: শেহতীয়াকৈ শুনা</string>
     <string name="no_effects_for_you">ইকুইলাইজাৰ খুলিব পৰা নগ\'ল</string>
-    <string name="empty_music">কম্পিউটাৰৰ পৰা আপোনাৰ ডিভাইচলৈ সংগীত কপি কৰিবলৈ, এডাল USB কেবল ব্যৱহাৰ কৰক</string>
-    <string name="empty_favorite">আপুনি প্ৰিয় হিচাপে চিহ্নিত কৰা গীতবোৰ ইয়াত দেখুওৱা হ\'ব।</string>
     <string name="empty_recent_main">কোনো শেহতীয়া গীত নাই</string>
     <string name="empty_recent">আপুনি শেহতীয়াকৈ শুনা গীতবোৰ ইয়াত প্ৰদৰ্শিত হ\'ব।</string>
     <string name="empty_playlist_main">কোনো গীত প্লে-সূচী নাই</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ টা গান</string>
     <string name="header_5_plus_albums">5+ এলবাম</string>
     <string name="header_other">""অন্যান্য""</string>
-    <string name="footer_search_artists">সকলো শিল্পী প্ৰদৰ্শন কৰক</string>
-    <string name="footer_search_albums">সকলো এলবাম প্ৰদৰ্শন কৰক</string>
-    <string name="footer_search_songs">সকলো গীত প্ৰদৰ্শন কৰক</string>
-    <string name="footer_search_playlists">সকলো প্লে-সূচী প্ৰদৰ্শন কৰক</string>
-    <string name="search_title_artists">সকলো \"%s\" শিল্পী</string>
-    <string name="search_title_albums">সকলো \"%s\" এলবাম</string>
-    <string name="search_title_songs">সকলো \"%s\" গীত</string>
-    <string name="search_title_playlists">সকলো \"%s\" প্লে-সূচী</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

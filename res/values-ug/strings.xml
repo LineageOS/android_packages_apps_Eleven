@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">نەغمە</string>
-    <string name="page_recent">يېقىنقى</string>
     <string name="page_artists">سەنئەتكار</string>
     <string name="page_albums">ئالبۇم</string>
     <string name="page_songs">ناخشا</string>
     <string name="page_playlists">چالىدىغان تىزىم</string>
-    <string name="page_genres">ئېقىم</string>
-    <string name="page_now_playing">چېلىۋاتىدۇ</string>
     <string name="page_play_queue">چالىدىغان ئۆچىرەت</string>
     <string name="header_albums">ئالبۇم</string>
-    <string name="header_top_songs">مودا ناخشىلار</string>
     <string name="header_all_songs">ھەممە ناخشا</string>
     <string name="menu_settings">تەڭشەكلەر</string>
     <string name="menu_shuffle_item">تەرتىپسىز</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">تەرتىپسىز مودا ناخشىلار</string>
     <string name="menu_shuffle_recent">تەرتىپسىز يېقىندا قويۇلغان</string>
     <string name="menu_shuffle_last_added">تەرتىپسىز يېقىندا قوشۇلغان</string>
-    <string name="menu_play_all">ھەممىنى قويۇش</string>
     <string name="menu_sort_by">تەرتىپى</string>
     <string name="menu_clear_list">تىزىملىكنى تازىلاش</string>
-    <string name="menu_clear_recents">يېقىنقىنى تازىلاش</string>
     <string name="menu_clear_queue">ئۆچىرەتنى تازىلاش</string>
     <string name="menu_save_queue">سەپنى قويۇش تىزىملىكىگە قوشۇش</string>
     <string name="menu_equalizer">تەڭشىگۈچ</string>
     <string name="add_to_playlist">چالىدىغان تىزىمغا قوش</string>
     <string name="add_to_queue">ئۆچرەتكە قوشۇش</string>
-    <string name="remove_from_recent">يېقىنقىدىن چىقىرىۋېتىش</string>
     <string name="remove_from_queue">ئۆچرەتتىن چىقىرىۋېتىش</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ئالبۇم</string>
     <string name="sort_order_entry_year">يىل</string>
     <string name="sort_order_entry_duration">داۋاملىشىش ۋاقتى</string>
-    <string name="sort_order_entry_date_added">قوشقان ۋاقىت</string>
-    <string name="sort_order_entry_track_list">ناخشا تىزىمى</string>
     <string name="sort_order_entry_number_of_songs">ناخشا سانى</string>
     <string name="sort_order_entry_number_of_albums">ناخشا توپلىمى سانى</string>
     <string name="sort_order_entry_filename">ھۆججەت ئىسمى</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">بۇنىڭدىن يېنىۋالغىلى بولمايدۇ</string>
     <string name="delete_warning">بۇ مەشغۇلات غەملەنگەن سۈرەت تۈرلىرىنى مەڭگۈلۈك ئۆچۈرۈۋېتىدۇ</string>
     <string name="new_photo">رەسىم يىغقۇچتىن سۈرەت تاللاڭ</string>
-    <string name="google_search">Google ئىزدەش</string>
     <string name="use_default">كۆڭۈلدىكى سۈرەتنى ئىشلەت</string>
-    <string name="old_photo">كونا سۈرەتنى ئىشلىتىش</string>
     <string name="context_menu_play_selection">قويۇش</string>
     <string name="context_menu_play_next">كېيىنكىنى چال</string>
     <string name="context_menu_play_album">پىلاستىنكىنى قويۇش</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">قايتىلاش</string>
     <string name="accessibility_repeat_all">ھەممىنى قايتىلاش</string>
     <string name="accessibility_repeat_one">بىرنى قايتىلاش</string>
-    <string name="accessibility_queue">سەپنى ئېچىش</string>
-    <string name="accessibility_browse">مۇزىكا كۆرۈش</string>
     <string name="set_as_ringtone"><xliff:g id="name" example="Alarm Bell">%s</xliff:g> نى قوڭغۇراق ئاۋازىغا تەڭشە</string>
-    <string name="playlist_renamed">چالىدىغان تىزىم ئاتى ئۆزگەرتىلدى</string>
     <string name="settings_storage_category">ساقلىغۇچ</string>
     <string name="settings_delete_cache_title">غەملەكنى تازىلاش</string>
     <string name="settings_delete_cache_summary">غەملەنگەن ھەممە سۈرەتلەرنى چىقىرىۋەت</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">مۇزىكا: 4 \u00d7 1</string>
     <string name="app_widget_large">مۇزىكا: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">مۇزىكا: 4 \u00d7 2 (نۆۋەتلىشىدۇ)</string>
-    <string name="app_widget_recent">يېقىندا قويۇلغان مۇزىكا</string>
     <string name="no_effects_for_you">تەڭشىگۈچنى ئاچالمىدى.</string>
-    <string name="empty_music">سىز USB سىمى ئارقىلىق نەغمىنى كومپيۇتېرىڭىزدىن ئۈسكۈنىگە كۆچۈرۈڭ.</string>
-    <string name="empty_favorite">سىز يىغقۇچقا قوشقان ناخشا بۇ جايدا كۆرۈنىدۇ.</string>
     <string name="empty_recent_main">يېقىنقى مۇزىكا يوق</string>
     <string name="empty_recent">بۇ يەردە سىز يېقىندا قويغان مۇزىكىلار كۆرۈنىدۇ.</string>
     <string name="empty_playlist_main">تىزىملىكتە مۇزىكا يوقكەن</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ نەغمە ناخشا</string>
     <string name="header_5_plus_albums">5+ پىلاستىنكا</string>
     <string name="header_other">"باشقا"</string>
-    <string name="footer_search_artists">بارلىق ئارتىسنى كۆرسىتىش</string>
-    <string name="footer_search_albums">بارلىق پىلاستىنكىنى كۆرسىتىش</string>
-    <string name="footer_search_songs">بارلىق ناخشىنى كۆرسىتىش</string>
-    <string name="footer_search_playlists">بارلىق قويۇش تىزىملىكىنى كۆرسىتىش</string>
-    <string name="search_title_artists">بارلىق \"%s\" ئارتىس</string>
-    <string name="search_title_albums">بارلىق \"%s\" پىلاستىنكا</string>
-    <string name="search_title_songs">بارلىق \"%s\" ناخشا</string>
-    <string name="search_title_playlists">بارلىق \"%s\" قويۇش تېزىملىكى</string>
     <string name="duration_format"><xliff:g id="HOURS">%1$d</xliff:g> سائەت <xliff:g id="MINUTES">%2$d</xliff:g> مىنۇت</string>
 </resources>

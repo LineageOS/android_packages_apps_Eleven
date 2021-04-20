@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">音乐</string>
-    <string name="page_recent">最近播放</string>
     <string name="page_artists">艺术家</string>
     <string name="page_albums">专辑</string>
     <string name="page_songs">歌曲</string>
     <string name="page_playlists">播放列表</string>
-    <string name="page_genres">类型</string>
-    <string name="page_now_playing">正在播放</string>
     <string name="page_play_queue">播放队列</string>
     <string name="header_albums">专辑</string>
-    <string name="header_top_songs">热门歌曲</string>
     <string name="header_all_songs">所有歌曲</string>
     <string name="menu_settings">设置</string>
     <string name="menu_shuffle_item">随机播放</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">随机最热门歌曲</string>
     <string name="menu_shuffle_recent">随机最近播放的歌曲</string>
     <string name="menu_shuffle_last_added">随机最后添加的歌曲</string>
-    <string name="menu_play_all">全部播放</string>
     <string name="menu_sort_by">排序方式</string>
     <string name="menu_clear_list">清除列表</string>
-    <string name="menu_clear_recents">清除最近播放列表</string>
     <string name="menu_clear_queue">清除队列</string>
     <string name="menu_save_queue">保存队列到播放列表</string>
     <string name="menu_equalizer">均衡器</string>
     <string name="add_to_playlist">添加到播放列表</string>
     <string name="add_to_queue">添加到队列</string>
-    <string name="remove_from_recent">从最近播放列表移除</string>
     <string name="remove_from_queue">从队列移除</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">专辑</string>
     <string name="sort_order_entry_year">发行年份</string>
     <string name="sort_order_entry_duration">长度</string>
-    <string name="sort_order_entry_date_added">日期已添加</string>
-    <string name="sort_order_entry_track_list">曲目列表</string>
     <string name="sort_order_entry_number_of_songs">歌曲数量</string>
     <string name="sort_order_entry_number_of_albums">专辑数量</string>
     <string name="sort_order_entry_filename">文件名</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">此操作不能被撤消</string>
     <string name="delete_warning">这将永久删除缓存的图像</string>
     <string name="new_photo">从图库中选择照片</string>
-    <string name="google_search">Google 搜索</string>
     <string name="use_default">使用默认照片</string>
-    <string name="old_photo">使用旧照片</string>
     <string name="context_menu_play_selection">播放</string>
     <string name="context_menu_play_next">播放下一首</string>
     <string name="context_menu_play_album">播放专辑</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">重复</string>
     <string name="accessibility_repeat_all">全部重复</string>
     <string name="accessibility_repeat_one">单曲重复</string>
-    <string name="accessibility_queue">打开队列</string>
-    <string name="accessibility_browse">浏览音乐</string>
     <string name="set_as_ringtone">设置“<xliff:g id="name" example="Alarm Bell">%s</xliff:g>”为铃声</string>
-    <string name="playlist_renamed">播放列表已被重命名</string>
     <string name="settings_storage_category">存储</string>
     <string name="settings_delete_cache_title">清除缓存</string>
     <string name="settings_delete_cache_summary">清除所有缓存的图像</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">音乐：4 \u00d7 1</string>
     <string name="app_widget_large">音乐：4 \u00d7 1</string>
     <string name="app_widget_large_alt">音乐：4 \u00d7 2 (交替)</string>
-    <string name="app_widget_recent">最近听过的音乐</string>
     <string name="no_effects_for_you">无法打开均衡器。</string>
-    <string name="empty_music">请使用 USB 数据线把音乐从您的计算机复制到您的设备中。</string>
-    <string name="empty_favorite">您标记为收藏的歌曲将在这里显示。</string>
     <string name="empty_recent_main">没有最近的歌曲</string>
     <string name="empty_recent">这里会显示您最近听过的歌曲。</string>
     <string name="empty_playlist_main">播放列表中没有歌曲</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ 首歌曲</string>
     <string name="header_5_plus_albums">5+ 张专辑</string>
     <string name="header_other">"其他"</string>
-    <string name="footer_search_artists">显示所有艺术家</string>
-    <string name="footer_search_albums">显示所有专辑</string>
-    <string name="footer_search_songs">显示所有歌曲</string>
-    <string name="footer_search_playlists">显示所有播放列表</string>
-    <string name="search_title_artists">所有的 \"%s\" 艺术家</string>
-    <string name="search_title_albums">所有的 \"%s\" 专辑</string>
-    <string name="search_title_songs">所有的 \"%s\" 歌曲</string>
-    <string name="search_title_playlists">所有的 \"%s\" 播放列表</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">音乐播放</string>
 </resources>

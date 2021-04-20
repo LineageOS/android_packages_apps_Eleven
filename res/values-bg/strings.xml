@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Музика</string>
-    <string name="page_recent">Пресни</string>
     <string name="page_artists">Изпълнители</string>
     <string name="page_albums">Албуми</string>
     <string name="page_songs">Песни</string>
     <string name="page_playlists">Списъци за изпълнение</string>
-    <string name="page_genres">Жанрове</string>
-    <string name="page_now_playing">Сега се изпълнява</string>
     <string name="page_play_queue">На опашката за възпроизвеждане</string>
     <string name="header_albums">Албуми</string>
-    <string name="header_top_songs">Топ песни</string>
     <string name="header_all_songs">Всички песни</string>
     <string name="menu_settings">Настройки</string>
     <string name="menu_shuffle_item">Разбъркване</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Развъркване на топ песните</string>
     <string name="menu_shuffle_recent">Разбъркване на скоро слушаните</string>
     <string name="menu_shuffle_last_added">Разбъркване на последно добавените</string>
-    <string name="menu_play_all">Възпроизвеждане на всички</string>
     <string name="menu_sort_by">Сортирай по</string>
     <string name="menu_clear_list">Изчисти списъка</string>
-    <string name="menu_clear_recents">Изчистване на скорошните</string>
     <string name="menu_clear_queue">Изчистване на опашката за изпълнение</string>
     <string name="menu_save_queue">Запазване на опашката за изпълнение в списъка за изпълнение</string>
     <string name="menu_equalizer">Еквалайзер</string>
     <string name="add_to_playlist">Добави към списък за изпълниние</string>
     <string name="add_to_queue">Добавяне към опашката за изпълнение</string>
-    <string name="remove_from_recent">Премахване от последно изпълнявани</string>
     <string name="remove_from_queue">Премахване от опашката за изпълнение</string>
     <string name="sort_order_entry_az">А-Я</string>
     <string name="sort_order_entry_za">Я-А</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Албум</string>
     <string name="sort_order_entry_year">Година</string>
     <string name="sort_order_entry_duration">Времетраене</string>
-    <string name="sort_order_entry_date_added">Дата на добавяне</string>
-    <string name="sort_order_entry_track_list">Списък с песни</string>
     <string name="sort_order_entry_number_of_songs">Брой на песните</string>
     <string name="sort_order_entry_number_of_albums">Брой на албумите</string>
     <string name="sort_order_entry_filename">Име на файла</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Това не може да бъде отменено</string>
     <string name="delete_warning">Това завинаги ще изтрие записите в кеша</string>
     <string name="new_photo">Изберете снимка от Галерия</string>
-    <string name="google_search">Търсене в Google</string>
     <string name="use_default">Използване снимка по подразбиране</string>
-    <string name="old_photo">Използвай стара снимка</string>
     <string name="context_menu_play_selection">Изпълни</string>
     <string name="context_menu_play_next">Следваща песен</string>
     <string name="context_menu_play_album">Изпълни албум</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Повтори</string>
     <string name="accessibility_repeat_all">Повтори всички</string>
     <string name="accessibility_repeat_one">Повтори една</string>
-    <string name="accessibility_queue">Отвори опашка за изпълнение</string>
-    <string name="accessibility_browse">Прегледайте музиката</string>
     <string name="set_as_ringtone">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" е зададена, като тон на звънене.</string>
-    <string name="playlist_renamed">Преименувай списъка за изпълнение</string>
     <string name="settings_storage_category">Хранилище</string>
     <string name="settings_delete_cache_title">Изтриване на кеша</string>
     <string name="settings_delete_cache_summary">Премахва всички кеширани изображения</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Музика: 4 \u00d7 1</string>
     <string name="app_widget_large">Музика: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музика: 4 \u00d7 2 (алтернативен)</string>
-    <string name="app_widget_recent">Музика: наскоро слушана</string>
     <string name="no_effects_for_you">Еквалайзера не може да бъде отворен.</string>
-    <string name="empty_music">За да копирате музика от вашия компютър към вашето устройство, използвайте USB кабел.</string>
-    <string name="empty_favorite">Песните маркирани като любими ще бъдат показани тук.</string>
     <string name="empty_recent_main">Няма скорошни песни</string>
     <string name="empty_recent">Песните който сте слушали последно ще се покажат тук.</string>
     <string name="empty_playlist_main">Няма песни в списъка за изпълнение</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ песни</string>
     <string name="header_5_plus_albums">5+ албума</string>
     <string name="header_other">"Други"</string>
-    <string name="footer_search_artists">Покажи всички изпълнители</string>
-    <string name="footer_search_albums">Покажи всички албуми</string>
-    <string name="footer_search_songs">Покажи всички песни</string>
-    <string name="footer_search_playlists">Покажи всички списъци за изпълнение</string>
-    <string name="search_title_artists">Всички изпълнители на \"%s\"</string>
-    <string name="search_title_albums">Всички албуми на \"%s\"</string>
-    <string name="search_title_songs">Всички песни на \"%s\"</string>
-    <string name="search_title_playlists">Всички списъци за изпълнение \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s </xliff:g> <xliff:g id="minutes">%2$s </xliff:g></string>
     <string name="channel_music">Възпроизвеждане на музика</string>
 </resources>

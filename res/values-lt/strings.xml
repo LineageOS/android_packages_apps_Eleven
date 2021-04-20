@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Muzika</string>
-    <string name="page_recent">Nauja</string>
     <string name="page_artists">Atlikėjai</string>
     <string name="page_albums">Albumai</string>
     <string name="page_songs">Dainos</string>
     <string name="page_playlists">Grojaraščiai</string>
-    <string name="page_genres">Žanrai</string>
-    <string name="page_now_playing">Dabar leidžiama</string>
     <string name="page_play_queue">Paleisti eilėje</string>
     <string name="header_albums">Albumai</string>
-    <string name="header_top_songs">Top dainos</string>
     <string name="header_all_songs">Visos dainos</string>
     <string name="menu_settings">Nustatymai</string>
     <string name="menu_shuffle_item">Maišyti</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Maišyti top takelius</string>
     <string name="menu_shuffle_recent">Maišyti naujausiai leistas</string>
     <string name="menu_shuffle_last_added">Maišyti neseniai pridėtas</string>
-    <string name="menu_play_all">Paleisti viską</string>
     <string name="menu_sort_by">Rūšiuoti pagal</string>
     <string name="menu_clear_list">Išvalyti sąrašą</string>
-    <string name="menu_clear_recents">Išvalyti naujausias</string>
     <string name="menu_clear_queue">Išvalyti eilę</string>
     <string name="menu_save_queue">Išsaugoti eilę į grojaraštį</string>
     <string name="menu_equalizer">Vienodintuvas</string>
     <string name="add_to_playlist">Pridėti į grojaraštį</string>
     <string name="add_to_queue">Pridėti į eilę</string>
-    <string name="remove_from_recent">Pašalinti iš naujausių</string>
     <string name="remove_from_queue">Pašalinti iš eilės</string>
     <string name="sort_order_entry_az">A - Z</string>
     <string name="sort_order_entry_za">Z - A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Albumą</string>
     <string name="sort_order_entry_year">Metus</string>
     <string name="sort_order_entry_duration">Trukmę</string>
-    <string name="sort_order_entry_date_added">Pridėjimo datą</string>
-    <string name="sort_order_entry_track_list">Takelių sąrašą</string>
     <string name="sort_order_entry_number_of_songs">Dainų skaičių</string>
     <string name="sort_order_entry_number_of_albums">Albumų skaičių</string>
     <string name="sort_order_entry_filename">Failo pavadinimą</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Tai negali būti atšaukta</string>
     <string name="delete_warning">Visam laikui bus ištrinti talpyklos vaizdo įrašai</string>
     <string name="new_photo">Pasirinkite nuotrauką iš galerijos</string>
-    <string name="google_search">„Google“ paieška</string>
     <string name="use_default">Naudoti numatytąją nuotrauką</string>
-    <string name="old_photo">Naudoti seną nuotrauką</string>
     <string name="context_menu_play_selection">Paleisti</string>
     <string name="context_menu_play_next">Paleisti kitą</string>
     <string name="context_menu_play_album">Paleisti albumą</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Pakartoti</string>
     <string name="accessibility_repeat_all">Pakartoti visus</string>
     <string name="accessibility_repeat_one">Pakartoti vieną</string>
-    <string name="accessibility_queue">Atidaryti eilę</string>
-    <string name="accessibility_browse">Naršyti muziką</string>
     <string name="set_as_ringtone">„<xliff:g id="name" example="Alarm Bell">%s</xliff:g>“ nustatytas kaip skambėjimo tonas</string>
-    <string name="playlist_renamed">Grojaraštis pervardytas</string>
     <string name="settings_storage_category">Saugykla</string>
     <string name="settings_delete_cache_title">Ištrinti talpyklą</string>
     <string name="settings_delete_cache_summary">Pašalinti visus talpyklos vaizdus</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Muzika: 4 \u00d7 1</string>
     <string name="app_widget_large">Muzika: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muzika: 4 \u00d7 2 (pakaitinis)</string>
-    <string name="app_widget_recent">Muzika: naujausiai klausyta</string>
     <string name="no_effects_for_you">Nepavyko atidaryti vienodintuvo.</string>
-    <string name="empty_music">Kad kopijuotumėte muziką iš kompiuterio į savo įrenginį, naudokite USB kabelį.</string>
-    <string name="empty_favorite">Dainas, kurias pažymite kaip mėgstamas bus rodomos čia.</string>
     <string name="empty_recent_main">Nėra naujausių dainų</string>
     <string name="empty_recent">Naujausiai klausytos dainos bus rodomos čia.</string>
     <string name="empty_playlist_main">Nėra dainų grojaraštyje</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ dainų</string>
     <string name="header_5_plus_albums">5+ albumai</string>
     <string name="header_other">"Kita"</string>
-    <string name="footer_search_artists">Rodyti visus atlikėjus</string>
-    <string name="footer_search_albums">Rodyti visus albumus</string>
-    <string name="footer_search_songs">Rodyti visas dainas</string>
-    <string name="footer_search_playlists">Rodyti visus grojaraščius</string>
-    <string name="search_title_artists">Visi \"%s\" atlikėjai</string>
-    <string name="search_title_albums">Visi \"%s\" albumai</string>
-    <string name="search_title_songs">Visos \"%s\" dainos</string>
-    <string name="search_title_playlists">Visi \"%s\" grojaraščiai</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

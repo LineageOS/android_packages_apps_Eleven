@@ -16,12 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> исполнитель</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> исполнителя</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> исполнителей</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> исполнителей</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> альбом</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> альбома</item>
@@ -33,12 +27,6 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> трека</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> треков</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> треков</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> жанр</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> жанра</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> жанров</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> жанров</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g> ч.</item>
@@ -69,12 +57,6 @@
         <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> трека добавлены в очередь.</item>
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> треков добавлены в очередь.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> треков добавлены в очередь.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> трек добавлен в избранное.</item>
-        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> трека добавлены в избранное.</item>
-        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> треков добавлены в избранное.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> треков добавлены в избранное.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> трек удален.</item>

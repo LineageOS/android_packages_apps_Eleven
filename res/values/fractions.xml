@@ -15,7 +15,4 @@
  -->
 <resources>
 
-    <item name="tab_width_screen_percentage" type="fraction">75.0%</item>
-    <item name="tab_height_screen_percentage" type="fraction">42.0%</item>
-
 </resources>

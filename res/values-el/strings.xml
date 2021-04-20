@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Μουσική</string>
-    <string name="page_recent">Πρόσφατα</string>
     <string name="page_artists">Καλλιτέχνες</string>
     <string name="page_albums">Άλμπουμ</string>
     <string name="page_songs">Τραγούδια</string>
     <string name="page_playlists">Λίστες αναπαραγωγής</string>
-    <string name="page_genres">Είδη</string>
-    <string name="page_now_playing">Παίζει Τώρα</string>
     <string name="page_play_queue">Ουρά αναπαραγωγής</string>
     <string name="header_albums">Άλμπουμ</string>
-    <string name="header_top_songs">Κορυφαία τραγούδια</string>
     <string name="header_all_songs">Όλα τα τραγούδια</string>
     <string name="menu_settings">Ρυθμίσεις</string>
     <string name="menu_shuffle_item">Τυχαία αναπαραγωγή</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Τυχαία αναπαραγωγή κορυφαίων κομματιών</string>
     <string name="menu_shuffle_recent">Τυχαία αναπαραγωγή προσφάτων</string>
     <string name="menu_shuffle_last_added">Τυχαία αναπαραγωγή τελευταίων αφίξεων</string>
-    <string name="menu_play_all">Αναπαραγωγή όλων</string>
     <string name="menu_sort_by">Ταξινόμηση κατά</string>
     <string name="menu_clear_list">Εκκαθάριση λίστας</string>
-    <string name="menu_clear_recents">Εκκαθάριση προσφάτων</string>
     <string name="menu_clear_queue">Εκκαθάριση ουράς</string>
     <string name="menu_save_queue">Αποθήκευση ουράς σε λίστα αναπαραγωγής</string>
     <string name="menu_equalizer">Ισοσταθμιστής</string>
     <string name="add_to_playlist">Προσθήκη στη λίστα αναπαραγωγής</string>
     <string name="add_to_queue">Προσθήκη στην ουρά</string>
-    <string name="remove_from_recent">Κατάργηση από τα πρόσφατα</string>
     <string name="remove_from_queue">Κατάργηση από την ουρά</string>
     <string name="sort_order_entry_az">Α-Ω</string>
     <string name="sort_order_entry_za">Ω-Α</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Άλμπουμ</string>
     <string name="sort_order_entry_year">Έτος</string>
     <string name="sort_order_entry_duration">Διάρκεια</string>
-    <string name="sort_order_entry_date_added">Ημερομηνία προσθήκης</string>
-    <string name="sort_order_entry_track_list">Λίστα κομματιών</string>
     <string name="sort_order_entry_number_of_songs">Αριθμός τραγουδιών</string>
     <string name="sort_order_entry_number_of_albums">Αριθμός άλμπουμ</string>
     <string name="sort_order_entry_filename">Όνομα αρχείου</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Αυτό δεν μπορεί να αναιρεθεί</string>
     <string name="delete_warning">Αυτό θα διαγράψει μόνιμα τις προσωρινά αποθηκευμένες εικόνες</string>
     <string name="new_photo">Επιλέξτε φωτογραφία από τη Συλλογή</string>
-    <string name="google_search">Αναζήτηση Google</string>
     <string name="use_default">Χρήση προεπιλεγμένης φωτογραφίας</string>
-    <string name="old_photo">Χρήση παλιάς φωτογραφίας</string>
     <string name="context_menu_play_selection">Αναπαραγωγή</string>
     <string name="context_menu_play_next">Αναπαραγωγή επόμενου</string>
     <string name="context_menu_play_album">Αναπαραγωγή άλμπουμ</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Επανάληψη</string>
     <string name="accessibility_repeat_all">Επανάληψη όλων</string>
     <string name="accessibility_repeat_one">Επανάληψη ενός</string>
-    <string name="accessibility_queue">Άνοιγμα ουράς</string>
-    <string name="accessibility_browse">Περιήγηση μουσικής</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ορίστηκε ως ήχος κλήσης</string>
-    <string name="playlist_renamed">Η λίστα αναπαραγωγής μετονομάστηκε</string>
     <string name="settings_storage_category">Αποθ. χώρος</string>
     <string name="settings_delete_cache_title">Διαγράφη προσωρινής μνήμης</string>
     <string name="settings_delete_cache_summary">Κατάργηση όλων των προσωρινά αποθηκευμένων εικόνων</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Μουσική: 4 \u00d7 1</string>
     <string name="app_widget_large">Μουσική: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Μουσική: 4 \u00d7 2 (εναλλακτικό)</string>
-    <string name="app_widget_recent">Μουσική: ακούστηκαν πρόσφατα</string>
     <string name="no_effects_for_you">Δεν ήταν δυνατό το άνοιγμα του ισοσταθμιστή.</string>
-    <string name="empty_music">Για να αντιγράψετε μουσική από τον υπολογιστή στη συσκευή σας, χρησιμοποιήστε ένα καλώδιο USB.</string>
-    <string name="empty_favorite">Τραγούδια που έχετε επιλέξει ως αγαπημένα θα εμφανίζονται εδώ.</string>
     <string name="empty_recent_main">Δεν υπάρχουν πρόσφατα τραγούδια</string>
     <string name="empty_recent">Τραγούδια που ακούσατε πρόσφατα θα εμφανίζονται εδώ.</string>
     <string name="empty_playlist_main">Δεν υπάρχουν τραγούδια στη λίστα αναπαραγωγής</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ τραγούδια</string>
     <string name="header_5_plus_albums">5+ άλμπουμ</string>
     <string name="header_other">"Άλλα"</string>
-    <string name="footer_search_artists">Εμφάνιση όλων των καλλιτεχνών</string>
-    <string name="footer_search_albums">Εμφάνιση όλων των άλμπουμ</string>
-    <string name="footer_search_songs">Εμφάνιση όλων των τραγουδιών</string>
-    <string name="footer_search_playlists">Εμφάνιση όλων των λιστών αναπαραγωγής</string>
-    <string name="search_title_artists">Όλοι οι καλλιτέχνες \"%s\"</string>
-    <string name="search_title_albums">Όλα τα άλμπουμ \"%s\"</string>
-    <string name="search_title_songs">Όλα τα τραγούδια \"%s\"</string>
-    <string name="search_title_playlists">Όλες οι λίστες αναπαραγωγής \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Αναπαραγωγή μουσικής</string>
 </resources>

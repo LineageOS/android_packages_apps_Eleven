@@ -16,10 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> આર્ટિસ્ટ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> આર્ટિસ્ટો</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> આલ્બમ</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> આલ્બમ્સ</item>
@@ -27,10 +23,6 @@
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ગીત</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ગીતો</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> ઝાનર</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ઝાનરો</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g> કલાક</item>
@@ -51,10 +43,6 @@
     <plurals name="NNNtrackstoqueue">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> હરોળમાં ગીત ઉમેરાયું.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> હરોળમાં ગીતો ઉમેર્યા.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> ફેવરિટમાં ગીત ઉમેરાણું.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> ફેવરિટમાં ગીતો ઉમેરાણાં.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> ગીત રદ કરવામાં આવ્યું.</item>

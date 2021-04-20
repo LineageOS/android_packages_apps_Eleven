@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Muzyk</string>
-    <string name="page_recent">Resint</string>
     <string name="page_artists">Artysten</string>
     <string name="page_albums">Albums</string>
     <string name="page_songs">Nûmers</string>
     <string name="page_playlists">Ofspyllisten</string>
-    <string name="page_genres">Sjenres</string>
-    <string name="page_now_playing">Spilet no</string>
     <string name="page_play_queue">Wachtrige</string>
     <string name="header_albums">Albums</string>
-    <string name="header_top_songs">Bêste nûmers</string>
     <string name="header_all_songs">Alle nûmers</string>
     <string name="menu_settings">Ynstellingen</string>
     <string name="menu_shuffle_item">Mjokselje</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Bêste nûmers mjokselje</string>
     <string name="menu_shuffle_recent">Resinte nrs. mjokselje</string>
     <string name="menu_shuffle_last_added">Lêst tafoege mjokselje</string>
-    <string name="menu_play_all">Alles ôfspylje</string>
     <string name="menu_sort_by">Sortearje op</string>
     <string name="menu_clear_list">List wiskje</string>
-    <string name="menu_clear_recents">Resinte items wiskje</string>
     <string name="menu_clear_queue">Wachtrige wiskje</string>
     <string name="menu_save_queue">Wachtrige bewarje as ôfspyllist</string>
     <string name="menu_equalizer">Equalizer</string>
     <string name="add_to_playlist">Tafoegje oan ôfspyllist</string>
     <string name="add_to_queue">Tafoegje oan wachtrige</string>
-    <string name="remove_from_recent">Fuortsmite út resint</string>
     <string name="remove_from_queue">Fuortsmite út wachtrige</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Jier</string>
     <string name="sort_order_entry_duration">Doer</string>
-    <string name="sort_order_entry_date_added">Datum tafoege</string>
-    <string name="sort_order_entry_track_list">Tracklist</string>
     <string name="sort_order_entry_number_of_songs">Oantal nûmers</string>
     <string name="sort_order_entry_number_of_albums">Oantal albums</string>
     <string name="sort_order_entry_filename">Bestânsnamme</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Dit kin net ûngedien makke wurde</string>
     <string name="delete_warning">Hjirmei wurde alle bewarre ôfbyldingen permanint fuortsmiten</string>
     <string name="new_photo">Selektearje foto út Galerij</string>
-    <string name="google_search">Sykje mei Google</string>
     <string name="use_default">Standertfoto brûke</string>
-    <string name="old_photo">Alde foto brûke</string>
     <string name="context_menu_play_selection">Ofspylje</string>
     <string name="context_menu_play_next">Folgjende ôfspylje</string>
     <string name="context_menu_play_album">Album ôfspylje</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Werhelje</string>
     <string name="accessibility_repeat_all">Alles werhelje</string>
     <string name="accessibility_repeat_one">Ien werhelje</string>
-    <string name="accessibility_queue">Wachtrige iepenje</string>
-    <string name="accessibility_browse">Muzyk ferkenne</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ynsteld as beltoan</string>
-    <string name="playlist_renamed">Namme ôfspyllist wizige</string>
     <string name="settings_storage_category">Unthâld</string>
     <string name="settings_delete_cache_title">Buffer wiskje</string>
     <string name="settings_delete_cache_summary">Alle buffere ôfbyldingen fuortsmite</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Muzyk: 4 \u00d7 1</string>
     <string name="app_widget_large">Muzyk: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muzyk: 4 \u00d7 2 (alternatyf)</string>
-    <string name="app_widget_recent">Muzyk: resint belústere</string>
     <string name="no_effects_for_you">Kin equalizer net iepenje.</string>
-    <string name="empty_music">Om muzyk fan jo kompjûter te kopiearjen nei jo apparaat, kinne jo in USB-kabel brûke.</string>
-    <string name="empty_favorite">Jo favorite nûmers wurde hjir toand.</string>
     <string name="empty_recent_main">Gjin resinte nûmers</string>
     <string name="empty_recent">Nûmers dêr\'t jo resint nei lústere hawwe wurde hjir toand.</string>
     <string name="empty_playlist_main">Gjin nûmers yn ôfspyllist</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ nûmers</string>
     <string name="header_5_plus_albums">5+ albums</string>
     <string name="header_other">"Oare"</string>
-    <string name="footer_search_artists">Alle artysten toane</string>
-    <string name="footer_search_albums">Alle albums toane</string>
-    <string name="footer_search_songs">Alle nûmers toane</string>
-    <string name="footer_search_playlists">Alle ôfspyllisten toane</string>
-    <string name="search_title_artists">Alle ‘%s’ artysten</string>
-    <string name="search_title_albums">Alle ‘%s’ albums</string>
-    <string name="search_title_songs">Alle ‘%s’ nûmers</string>
-    <string name="search_title_playlists">Alle ‘%s’ ôfspyllisten</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Ofspyljen fan muzyk</string>
 </resources>

@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musique</string>
-    <string name="page_recent">Récents</string>
     <string name="page_artists">Artistes</string>
     <string name="page_albums">Albums</string>
     <string name="page_songs">Titres</string>
     <string name="page_playlists">Listes de lecture</string>
-    <string name="page_genres">Genres</string>
-    <string name="page_now_playing">Lecture en cours</string>
     <string name="page_play_queue">Lire la file d\'attente</string>
     <string name="header_albums">Albums</string>
-    <string name="header_top_songs">Titres populaires</string>
     <string name="header_all_songs">Tous les titres</string>
     <string name="menu_settings">Paramètres</string>
     <string name="menu_shuffle_item">Lecture aléatoire</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Lecture aléatoire des titres les plus populaires</string>
     <string name="menu_shuffle_recent">Lecture aléatoire des titres récemment joués</string>
     <string name="menu_shuffle_last_added">Lecture aléatoire des derniers titres ajoutés</string>
-    <string name="menu_play_all">Tout lire</string>
     <string name="menu_sort_by">Trier par</string>
     <string name="menu_clear_list">Effacer la liste</string>
-    <string name="menu_clear_recents">Effacer les récents</string>
     <string name="menu_clear_queue">Effacer la liste d\'attente</string>
     <string name="menu_save_queue">Enregistrer la file d\'attente dans la liste de lecture</string>
     <string name="menu_equalizer">Égaliseur</string>
     <string name="add_to_playlist">Ajouter à liste de lecture</string>
     <string name="add_to_queue">Ajouter à la file d\'attente</string>
-    <string name="remove_from_recent">Supprimer des récents</string>
     <string name="remove_from_queue">Supprimer de la file d\'attente</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Année</string>
     <string name="sort_order_entry_duration">Durée</string>
-    <string name="sort_order_entry_date_added">Date d\'ajout</string>
-    <string name="sort_order_entry_track_list">Liste des pistes</string>
     <string name="sort_order_entry_number_of_songs">Nombre de titres</string>
     <string name="sort_order_entry_number_of_albums">Nombre d\'albums</string>
     <string name="sort_order_entry_filename">Nom de fichier</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Cette action ne peut pas être annulée</string>
     <string name="delete_warning">Cette action supprimera définitivement le cache des images</string>
     <string name="new_photo">Choisir une photo de la Galerie</string>
-    <string name="google_search">Recherche Google</string>
     <string name="use_default">Utiliser la photo par défaut</string>
-    <string name="old_photo">Utiliser l\'ancienne photo</string>
     <string name="context_menu_play_selection">Lire</string>
     <string name="context_menu_play_next">Lire le suivant</string>
     <string name="context_menu_play_album">Lire l\'album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Répéter</string>
     <string name="accessibility_repeat_all">Tout répéter</string>
     <string name="accessibility_repeat_one">Répéter un</string>
-    <string name="accessibility_queue">Ouvrir la file d\'attente</string>
-    <string name="accessibility_browse">Parcourir la musique</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' défini comme sonnerie</string>
-    <string name="playlist_renamed">Liste de lecture renommée</string>
     <string name="settings_storage_category">Stockage</string>
     <string name="settings_delete_cache_title">Supprimer le cache</string>
     <string name="settings_delete_cache_summary">Supprimer toutes les images du cache</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Musique : 4 \u00d7 1</string>
     <string name="app_widget_large">Musique : 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musique : 4 \u00d7 2 (alterné)</string>
-    <string name="app_widget_recent">Musique : récemment écouté</string>
     <string name="no_effects_for_you">L\'égaliseur ne peut pas être ouvert.</string>
-    <string name="empty_music">Utilisez un câble USB pour copier de la musique depuis votre ordinateur vers votre appareil.</string>
-    <string name="empty_favorite">Vos titres favoris seront affichés ici.</string>
     <string name="empty_recent_main">Aucun titre récent</string>
     <string name="empty_recent">Les titres écoutés récemment seront affichés ici.</string>
     <string name="empty_playlist_main">Aucun titre dans la liste de lecture</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">Plus de 10 titres</string>
     <string name="header_5_plus_albums">Plus de 5 albums</string>
     <string name="header_other">"Autres"</string>
-    <string name="footer_search_artists">Afficher tous les artistes</string>
-    <string name="footer_search_albums">Afficher tous les albums</string>
-    <string name="footer_search_songs">Afficher tous les titres</string>
-    <string name="footer_search_playlists">Afficher toutes les listes de lecture</string>
-    <string name="search_title_artists">Tous les artistes \"%s\"</string>
-    <string name="search_title_albums">Tous les albums \"%s\"</string>
-    <string name="search_title_songs">Tous les titres \"%s\"</string>
-    <string name="search_title_playlists">Toutes les listes de lecture \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Lecture de musique</string>
 </resources>

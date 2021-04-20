@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musiikki</string>
-    <string name="page_recent">Äskettäin kuunnellut</string>
     <string name="page_artists">Esittäjät</string>
     <string name="page_albums">Albumit</string>
     <string name="page_songs">Kappaleet</string>
     <string name="page_playlists">Soittolistat</string>
-    <string name="page_genres">Tyylilajit</string>
-    <string name="page_now_playing">Nyt soi</string>
     <string name="page_play_queue">Toistojono</string>
     <string name="header_albums">Albumi</string>
-    <string name="header_top_songs">Suosituimmat kappaleet</string>
     <string name="header_all_songs">Kaikki kappaleet</string>
     <string name="menu_settings">Asetukset</string>
     <string name="menu_shuffle_item">Sekoita</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Sekoita suosituimmat kappaleet</string>
     <string name="menu_shuffle_recent">Sekoita äskettäin kuunnellut</string>
     <string name="menu_shuffle_last_added">Sekoita viimeksi lisätyt</string>
-    <string name="menu_play_all">Toista kaikki</string>
     <string name="menu_sort_by">Lajittelujärjestys</string>
     <string name="menu_clear_list">Tyhjennä lista</string>
-    <string name="menu_clear_recents">Tyhjennä äskettäin kuunnellut</string>
     <string name="menu_clear_queue">Tyhjennä jono</string>
     <string name="menu_save_queue">Tallenna jono soittolistalle</string>
     <string name="menu_equalizer">Taajuuskorjain</string>
     <string name="add_to_playlist">Lisää soittolistalle</string>
     <string name="add_to_queue">Lisää jonoon</string>
-    <string name="remove_from_recent">Poista äskettäin kuunnelluista</string>
     <string name="remove_from_queue">Poista jonosta</string>
     <string name="sort_order_entry_az">A-Ö</string>
     <string name="sort_order_entry_za">Ö-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Albumi</string>
     <string name="sort_order_entry_year">Vuosi</string>
     <string name="sort_order_entry_duration">Pituus</string>
-    <string name="sort_order_entry_date_added">Lisäyspäivämäärä</string>
-    <string name="sort_order_entry_track_list">Kappalelista</string>
     <string name="sort_order_entry_number_of_songs">Kappaleiden määrä</string>
     <string name="sort_order_entry_number_of_albums">Albumeiden määrä</string>
     <string name="sort_order_entry_filename">Tiedostonimi</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Tätä ei voi perua</string>
     <string name="delete_warning">Kaikki välimuistissa olevat kuvat poistetaan pysyvästi</string>
     <string name="new_photo">Valitse valokuva galleriasta</string>
-    <string name="google_search">Google-haku</string>
     <string name="use_default">Käytä oletusvalokuvaa</string>
-    <string name="old_photo">Käytä vanhaa valokuvaa</string>
     <string name="context_menu_play_selection">Toista</string>
     <string name="context_menu_play_next">Toista seuraava</string>
     <string name="context_menu_play_album">Toista albumi</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Uudelleentoisto</string>
     <string name="accessibility_repeat_all">Uudelleentoista kaikki</string>
     <string name="accessibility_repeat_one">Uudelleentoista yksi</string>
-    <string name="accessibility_queue">Avaa jono</string>
-    <string name="accessibility_browse">Selaa musiikkia</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' asetettu soittoääneksi</string>
-    <string name="playlist_renamed">Soittolista nimetty uudelleen</string>
     <string name="settings_storage_category">Tallennustila</string>
     <string name="settings_delete_cache_title">Poista välimuisti</string>
     <string name="settings_delete_cache_summary">Poista kaikki välimuistissa olevat kuvat</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Musiikki: 4 \u00d7 1</string>
     <string name="app_widget_large">Musiikki: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musiikki: 4 \u00d7 2 (vaihtoehtoinen)</string>
-    <string name="app_widget_recent">Musiikki: äskettäin kuunneltu</string>
     <string name="no_effects_for_you">Taajuuskorjainta ei voitu avata.</string>
-    <string name="empty_music">Kopioi musiikkia tietokoneelta laitteeseen käyttämällä USB-kaapelia.</string>
-    <string name="empty_favorite">Suosikeiksi merkitsemäsi kappaleet näkyvät tässä.</string>
     <string name="empty_recent_main">Ei äskettäin kuunneltuja</string>
     <string name="empty_recent">Kuuntelemasi albumit näkyvät tässä.</string>
     <string name="empty_playlist_main">Ei kappaleita soittolistalla</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">Yli 10 kappaletta</string>
     <string name="header_5_plus_albums">Yli 5 albumia</string>
     <string name="header_other">"Muut"</string>
-    <string name="footer_search_artists">Näytä kaikki esittäjät</string>
-    <string name="footer_search_albums">Näytä kaikki albumit</string>
-    <string name="footer_search_songs">Näytä kaikki kappaleet</string>
-    <string name="footer_search_playlists">Näytä kaikki soittolistat</string>
-    <string name="search_title_artists">Kaikki \"%s\" esittäjää</string>
-    <string name="search_title_albums">Kaikki \"%s\" albumia</string>
-    <string name="search_title_songs">Kaikki \"%s\" kappaletta</string>
-    <string name="search_title_playlists">Kaikki \"%s\" soittolistaa</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Musiikin toisto</string>
 </resources>

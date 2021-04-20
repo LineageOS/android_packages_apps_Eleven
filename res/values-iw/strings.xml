@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">מוזיקה</string>
-    <string name="page_recent">אחרונים</string>
     <string name="page_artists">אמנים</string>
     <string name="page_albums">אלבומים</string>
     <string name="page_songs">שירים</string>
     <string name="page_playlists">רשימות השמעה</string>
-    <string name="page_genres">ז\'אנרים</string>
-    <string name="page_now_playing">מנגן כעת</string>
     <string name="page_play_queue">תור השמעה</string>
     <string name="header_albums">אלבומים</string>
-    <string name="header_top_songs">שירים מובילים</string>
     <string name="header_all_songs">כל השירים</string>
     <string name="menu_settings">הגדרות</string>
     <string name="menu_shuffle_item">ערבב</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">ערבב רצועות מובילות</string>
     <string name="menu_shuffle_recent">ערבב שירים שהושמעו לאחרונה</string>
     <string name="menu_shuffle_last_added">ערבב שירים שנוספו לאחרונה</string>
-    <string name="menu_play_all">נגן הכל</string>
     <string name="menu_sort_by">מיין לפי</string>
     <string name="menu_clear_list">נקה רשימה</string>
-    <string name="menu_clear_recents">נקה רשימת אחרונים</string>
     <string name="menu_clear_queue">נקה את התור</string>
     <string name="menu_save_queue">שמור את התור לרשימת השמעה</string>
     <string name="menu_equalizer">אקולייזר</string>
     <string name="add_to_playlist">הוסף לרשימת השמעה</string>
     <string name="add_to_queue">הוסף לתור</string>
-    <string name="remove_from_recent">הסר מרשימת האחרונים</string>
     <string name="remove_from_queue">הסר מהתור</string>
     <string name="sort_order_entry_az">א-ת / A-Z</string>
     <string name="sort_order_entry_za">ת-א / Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">אלבום</string>
     <string name="sort_order_entry_year">שנה</string>
     <string name="sort_order_entry_duration">משך</string>
-    <string name="sort_order_entry_date_added">תאריך הוספה</string>
-    <string name="sort_order_entry_track_list">רשימת רצועות</string>
     <string name="sort_order_entry_number_of_songs">מספר שירים</string>
     <string name="sort_order_entry_number_of_albums">מספר אלבומים</string>
     <string name="sort_order_entry_filename">שם קובץ</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">פעולה זו אינה ניתנת לביטול</string>
     <string name="delete_warning">פעולה זו תמחק לתמיד את התמונות שבמטמון</string>
     <string name="new_photo">בחר תמונה מהגלריה</string>
-    <string name="google_search">חיפוש Google</string>
     <string name="use_default">השתמש בתמונת ברירת מחדל</string>
-    <string name="old_photo">השתמש בתמונה ישנה</string>
     <string name="context_menu_play_selection">נגן</string>
     <string name="context_menu_play_next">נגן את הבא</string>
     <string name="context_menu_play_album">נגן אלבום</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">חזור</string>
     <string name="accessibility_repeat_all">חזור על הכול</string>
     <string name="accessibility_repeat_one">חזור על נוכחי</string>
-    <string name="accessibility_queue">פתח את תור ההשמעה</string>
-    <string name="accessibility_browse">הצג מוזיקה</string>
     <string name="set_as_ringtone">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" נקבע כרינגטון</string>
-    <string name="playlist_renamed">שונה שם רשימת ההשמעה</string>
     <string name="settings_storage_category">אחסון</string>
     <string name="settings_delete_cache_title">מחק מטמון</string>
     <string name="settings_delete_cache_summary">מסיר את כל התמונות שבמטמון</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">מוזיקה: 4 \u00d7 1</string>
     <string name="app_widget_large">מוזיקה: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">מוזיקה: 4 \u00d7 2 (חלופי)</string>
-    <string name="app_widget_recent">מוזיקה: הושמעו לאחרונה</string>
     <string name="no_effects_for_you">האקולייזר לא הצליח להיפתח.</string>
-    <string name="empty_music">כדי להעתיק מוזיקה מהמחשב למכשיר השתמש בכבל USB.</string>
-    <string name="empty_favorite">שירים שסומנו כמועדפים יוצגו כאן.</string>
     <string name="empty_recent_main">אין שירים אחרונים</string>
     <string name="empty_recent">שירים שהאזנת להם לאחרונה יופיעו כאן.</string>
     <string name="empty_playlist_main">אין שירים ברשימת ההשמעה</string>
@@ -151,14 +134,6 @@
     <string name="header_10_plus_songs">10+ שירים</string>
     <string name="header_5_plus_albums">5+ אלבומים</string>
     <string name="header_other">"אחר"</string>
-    <string name="footer_search_artists">הצג את כל האמנים</string>
-    <string name="footer_search_albums">הצג את כל האלבומים</string>
-    <string name="footer_search_songs">הצג את כל השירים</string>
-    <string name="footer_search_playlists">הצג את כל רשימות ההשמעה</string>
-    <string name="search_title_artists">כל \"%s\" האמנים</string>
-    <string name="search_title_albums">כל \"%s\" האלבומים</string>
-    <string name="search_title_songs">כל \"%s\" השירים</string>
-    <string name="search_title_playlists">כל \"%s\" רשימות ההשמעה</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">נגינת שמע</string>
 </resources>

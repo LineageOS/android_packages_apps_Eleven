@@ -15,8 +15,4 @@
  -->
 <resources>
 
-    <color name="alert">@color/red</color>
-    <color name="confirm">@color/orange</color>
-    <color name="info">@color/green</color>
-
 </resources>

@@ -16,7 +16,6 @@
   limitations under the License.
 -->
 <org.lineageos.eleven.widgets.SquareView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/square_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 

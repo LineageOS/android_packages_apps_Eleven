@@ -16,12 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> umělec</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> umělci</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> umělců</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> umělců</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> album</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> alba</item>
@@ -33,12 +27,6 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> skladby</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> skladeb</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> skladeb</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> žánr</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> žánry</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> žánrů</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> žánrů</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>h</item>
@@ -69,12 +57,6 @@
         <item quantity="few">Do fronty přidány <xliff:g id="number" example="1">%d</xliff:g> skladby.</item>
         <item quantity="many">Do fronty přidáno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
         <item quantity="other">Do fronty přidáno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one">Do oblíbených byla přidána <xliff:g id="number" example="1">%d</xliff:g> skladba.</item>
-        <item quantity="few">Do oblíbených byly přidány <xliff:g id="number" example="2">%d</xliff:g> skladby.</item>
-        <item quantity="many">Do oblíbených bylo přidáno <xliff:g id="number" example="5">%d</xliff:g> skladeb.</item>
-        <item quantity="other">Do oblíbených bylo přidáno <xliff:g id="number" example="5">%d</xliff:g> skladeb.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one">Odstraněna <xliff:g id="songs_to_delete" example="1">%d</xliff:g> skladba.</item>

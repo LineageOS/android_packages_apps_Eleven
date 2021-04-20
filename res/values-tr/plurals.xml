@@ -16,10 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> sanatçı</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> sanatçı</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> albüm</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> albüm</item>
@@ -27,10 +23,6 @@
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> şarkı</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> şarkı</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> tür</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> tür</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>sa</item>
@@ -51,10 +43,6 @@
     <plurals name="NNNtrackstoqueue">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> şarkı kuyruğa eklendi.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> şarkı kuyruğa eklendi.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> şarkı favorilere eklendi.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> şarkı favorilere eklendi.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> şarkı silindi.</item>

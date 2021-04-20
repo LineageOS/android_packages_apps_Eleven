@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">సంగీతం</string>
-    <string name="page_recent">ఇటీవలివి</string>
     <string name="page_artists">ఆర్టిస్టులు</string>
     <string name="page_albums">ఆల్బమ్‌లు</string>
     <string name="page_songs">పాటలు</string>
     <string name="page_playlists">ప్లేజాబితాలు</string>
-    <string name="page_genres">శైలులు</string>
-    <string name="page_now_playing">ఇప్పుడు ప్లే చేయబడుతున్నది</string>
     <string name="page_play_queue">ప్లే నిరీక్షణ క్రమం</string>
     <string name="header_albums">ఆల్బమ్‌లు</string>
-    <string name="header_top_songs">ఉత్తమ పాటలు</string>
     <string name="header_all_songs">అన్ని పాటలు</string>
     <string name="menu_settings">సెట్టింగ్‌లు</string>
     <string name="menu_shuffle_item">మార్చు</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">ఉత్తమ పాటలను కలగాపులగం చేయుము</string>
     <string name="menu_shuffle_recent">ఇటీవల ప్లే చేయబడిన వాటిని కలగాపులగం చేయుము</string>
     <string name="menu_shuffle_last_added">ఆఖరిన జోడించబడిన వాటిని కలగాపులగం చేయుము</string>
-    <string name="menu_play_all">అన్నీ ప్లే చేయండి</string>
     <string name="menu_sort_by">దీనిద్వారా క్రమబద్ధీకరణ</string>
     <string name="menu_clear_list">జాబితాను క్లియర్ చేయి</string>
-    <string name="menu_clear_recents">ఇటీవలి వాటిని క్లియర్ చేయుము</string>
     <string name="menu_clear_queue">నిరీక్షణ క్రమాన్ని క్లియర్ చేయుము</string>
     <string name="menu_save_queue">నిరీక్షణ క్రమాన్ని ప్లేజాబితాకు సేవ్ చేయుము</string>
     <string name="menu_equalizer">ఈక్వలైజర్</string>
     <string name="add_to_playlist">ప్లేజాబితాకు చేర్చు</string>
     <string name="add_to_queue">నిరీక్షణ క్రమానికి జోడించుము</string>
-    <string name="remove_from_recent">ఇటీవలి వాటి నుండి తొలగించుము</string>
     <string name="remove_from_queue">నిరీక్షణ క్రమం నుండి తొలిగించుము</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ఆల్బమ్</string>
     <string name="sort_order_entry_year">సంవత్సరం</string>
     <string name="sort_order_entry_duration">వ్యవధి</string>
-    <string name="sort_order_entry_date_added">చేర్చబడిన తేదీ</string>
-    <string name="sort_order_entry_track_list">ట్రాక్ జాబితా</string>
     <string name="sort_order_entry_number_of_songs">పాటల సంఖ్య</string>
     <string name="sort_order_entry_number_of_albums">ఆల్బముల సంఖ్య</string>
     <string name="sort_order_entry_filename">ఫైల్ పేరు</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">ఈ చర్యని రద్దు చేయడం సాధ్యపడదు</string>
     <string name="delete_warning">ఇది శాశ్వతంగా క్యాష్ చేసిన చిత్రాల ఎంట్రీలను తొలిగిస్తుంది</string>
     <string name="new_photo">గ్యాలరీ నుండి ఫోటోను ఎంచుకోండి</string>
-    <string name="google_search">Google శోధన</string>
     <string name="use_default">స్వయంసిద్ధ ఫోటోను ఉపయోగించుము</string>
-    <string name="old_photo">పాత ఫోటోను ఉపయోగించుము</string>
     <string name="context_menu_play_selection">ప్లే చేయి</string>
     <string name="context_menu_play_next">తరువాతి దానిని ప్లే చేయుము</string>
     <string name="context_menu_play_album">ఆల్బమును ప్లే చేయుము</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">పునరావృతం చేయండి</string>
     <string name="accessibility_repeat_all">అన్నింటినీ పునరావృతం చేయుము</string>
     <string name="accessibility_repeat_one">ఒకదానిని పునరావృతం చేయుము</string>
-    <string name="accessibility_queue">నిరీక్షణ క్రమాన్ని తెరువుము</string>
-    <string name="accessibility_browse">సంగీతాన్ని బ్రౌజ్ చేయుము</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' న్ని రింగ్‌టోనుగా సెట్ చేయుము</string>
-    <string name="playlist_renamed">ప్లేజాబితా పేరు మార్చబడింది</string>
     <string name="settings_storage_category">నిల్వ</string>
     <string name="settings_delete_cache_title">కాషును తొలిగించుము</string>
     <string name="settings_delete_cache_summary">కాష్ చేయబడిన అన్ని చిత్రాలను తొలిగించుము</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">సంగీతం: 4 \u00d7 1</string>
     <string name="app_widget_large">సంగీతం: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">సంగీతం: 4 \u00d7 2 (ప్రత్యామ్నాయ)</string>
-    <string name="app_widget_recent">సంగీతం: ఇటీవల విన్నవి</string>
     <string name="no_effects_for_you">ఈక్వలైజరును తెరవడం సాధ్యపడలేదు.</string>
-    <string name="empty_music">మీ కంప్యూటర్ నుండి మీ యొక్క పరికరానికి సంగీతాన్ని కాపీ చేసేందుకు, USB కేబులును ఉపయోగించండి.</string>
-    <string name="empty_favorite">మీరు ఇష్టమైనవిగా గుర్తించిన పాటలు ఇక్కడ చూపించబడతాయి.</string>
     <string name="empty_recent_main">ఇటీవలి పాటలు ఏమీ లేవు</string>
     <string name="empty_recent">మీరు ఇటీవల విన్న పాటలు ఇక్కడ చూపించబడతాయి.</string>
     <string name="empty_playlist_main">ప్లేజాబితాలో పాటలు లేవు</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ పాటలు</string>
     <string name="header_5_plus_albums">5+ ఆల్బములు</string>
     <string name="header_other">""ఇతర""</string>
-    <string name="footer_search_artists">అందరు కళాకారులను చూపుము</string>
-    <string name="footer_search_albums">అన్ని ఆల్బములను చూపుము</string>
-    <string name="footer_search_songs">అన్ని పాటలను చూపుము</string>
-    <string name="footer_search_playlists">అన్ని ప్లేజాబితాలను చూపుము</string>
-    <string name="search_title_artists">అందరు \"%s\" కళాకారులు</string>
-    <string name="search_title_albums">అన్ని \"%s\" ఆల్బములు</string>
-    <string name="search_title_songs">అన్ని \"%s\" పాటలు</string>
-    <string name="search_title_playlists">అన్ని \"%s\" ప్లేజాబితాలు</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

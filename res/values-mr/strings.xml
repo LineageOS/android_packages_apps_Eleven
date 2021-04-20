@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">संगीत</string>
-    <string name="page_recent">अलीकडील</string>
     <string name="page_artists">कलाकार</string>
     <string name="page_albums">अल्बम्स</string>
     <string name="page_songs">गाणी</string>
     <string name="page_playlists">प्लेलिस्ट</string>
-    <string name="page_genres">जेनेर्स</string>
-    <string name="page_now_playing">आता प्ले करत आहे</string>
     <string name="page_play_queue">प्ले रांग</string>
     <string name="header_albums">अल्बम्स</string>
-    <string name="header_top_songs">सर्वोच्च गाणी</string>
     <string name="header_all_songs">सर्व गाणी</string>
     <string name="menu_settings">सेटिंग्ज</string>
     <string name="menu_shuffle_item">शफल</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">सर्वोच्च ट्रॅक्स शफल करा</string>
     <string name="menu_shuffle_recent">अलीकडेच प्ले केलेले शफल करा</string>
     <string name="menu_shuffle_last_added">शेवटचे जोडलेले शफल करा</string>
-    <string name="menu_play_all">सर्व प्ले करा</string>
     <string name="menu_sort_by">नुसार क्रमवारी लावा</string>
     <string name="menu_clear_list">सूची साफ करा</string>
-    <string name="menu_clear_recents">अलीकडील साफ करा</string>
     <string name="menu_clear_queue">रांग साफ करा</string>
     <string name="menu_save_queue">रांग प्लेलिस्टमध्ये जतन करा</string>
     <string name="menu_equalizer">संतुलक</string>
     <string name="add_to_playlist">प्लेलिस्टमध्ये जोडा</string>
     <string name="add_to_queue">रांगेत जोडा</string>
-    <string name="remove_from_recent">अलीकडील मधून काढा</string>
     <string name="remove_from_queue">रांगेतून काढा</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">अल्बम</string>
     <string name="sort_order_entry_year">वर्ष</string>
     <string name="sort_order_entry_duration">कालावधी</string>
-    <string name="sort_order_entry_date_added">तारीख जोडली</string>
-    <string name="sort_order_entry_track_list">ट्रॅक यादी</string>
     <string name="sort_order_entry_number_of_songs">गाण्यांची संख्या</string>
     <string name="sort_order_entry_number_of_albums">अल्बम्सची संख्या</string>
     <string name="sort_order_entry_filename">फाइलनाव</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">हे पुनर्स्थापित करता येत नाही</string>
     <string name="delete_warning">यामुळे कॅशे केलेल्या प्रतिमा प्रविष्ठी कायमस्वरूपी हटवल्या जातील</string>
     <string name="new_photo">गॅलरीमधून फोटो निवडा</string>
-    <string name="google_search">Google शोध</string>
     <string name="use_default">डिफॉल्ट फोटो वापरा</string>
-    <string name="old_photo">जुना फोटो वापरा</string>
     <string name="context_menu_play_selection">प्ले करा</string>
     <string name="context_menu_play_next">पुढील प्ले करा</string>
     <string name="context_menu_play_album">अल्बम प्ले करा</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">पुनरावृत्ती</string>
     <string name="accessibility_repeat_all">सर्व पुनरावृत्ती करा</string>
     <string name="accessibility_repeat_one">एक पुनरावृत्ती करा</string>
-    <string name="accessibility_queue">रांग उघडा</string>
-    <string name="accessibility_browse">संगीत ब्राउझ करा</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' रींग टोन म्हणून सेट करा</string>
-    <string name="playlist_renamed">प्लेलिस्ट पुनर्नामित केली</string>
     <string name="settings_storage_category">संचयन</string>
     <string name="settings_delete_cache_title">कॅशे हटवा</string>
     <string name="settings_delete_cache_summary">सर्व कॅशे केलेल्या प्रतिमा काढा</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">संगीत: 4 \u00d7 1</string>
     <string name="app_widget_large">संगीत: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">संगीत: 4 \u00d7 2 (पर्यायी)</string>
-    <string name="app_widget_recent">संगीत: अलीकडेच ऐकलेले</string>
     <string name="no_effects_for_you">इक्वेलायझर उघडता आला नाही.</string>
-    <string name="empty_music">तुमच्या कॉम्प्युटरवरून तुमच्या डिव्हाइसला कॉपी करण्यासाठी, एक USB केबल वापरा.</string>
-    <string name="empty_favorite">तुम्ही मनपसंत म्हणून खूण केलेली गाणी इथे दाखवली जातील.</string>
     <string name="empty_recent_main">हल्लीची गाणी नाहीत</string>
     <string name="empty_recent">तुम्ही अलीकडेच ऐकलेली गाणी इथे दाखवली जातील.</string>
     <string name="empty_playlist_main">प्लेलिस्टमध्ये गाणी नाहीत</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ गाणी</string>
     <string name="header_5_plus_albums">5+ अल्बम्स</string>
     <string name="header_other">""इतर""</string>
-    <string name="footer_search_artists">सर्व कलाकार दर्शवा</string>
-    <string name="footer_search_albums">सर्व अल्बम्स दर्शवा</string>
-    <string name="footer_search_songs">सर्व गाणी दर्शवा</string>
-    <string name="footer_search_playlists">सर्व प्लेलिस्ट दर्शवा</string>
-    <string name="search_title_artists">सर्व \"%s\" कलाकार</string>
-    <string name="search_title_albums">सर्व \"%s\" अल्बम्स</string>
-    <string name="search_title_songs">सर्व \"%s\" गाणी</string>
-    <string name="search_title_playlists">सर्व \"%s\" प्लेलिस्ट</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

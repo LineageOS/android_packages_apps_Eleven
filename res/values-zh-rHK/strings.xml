@@ -17,13 +17,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="page_recent">最近播放</string>
     <string name="page_songs">歌曲</string>
     <string name="page_playlists">播放清單</string>
-    <string name="page_genres">內容類型</string>
-    <string name="page_now_playing">正在播放</string>
     <string name="page_play_queue">播放佇列</string>
-    <string name="header_top_songs">熱門歌曲</string>
     <string name="header_all_songs">所有歌曲</string>
     <string name="menu_settings">設定</string>
     <string name="menu_shuffle_item">隨機播放</string>
@@ -34,15 +30,12 @@
     <string name="menu_shuffle_top_tracks">隨機播放熱門歌曲</string>
     <string name="menu_shuffle_recent">隨機播放最近播放過的歌曲</string>
     <string name="menu_shuffle_last_added">隨機播放最近新增的歌曲</string>
-    <string name="menu_play_all">播放所有歌曲</string>
     <string name="menu_sort_by">排序依據</string>
     <string name="menu_clear_list">清除清單</string>
-    <string name="menu_clear_recents">清除最近播放</string>
     <string name="menu_clear_queue">清除佇列</string>
     <string name="menu_equalizer">等化器</string>
     <string name="add_to_playlist">新增至播放清單</string>
     <string name="add_to_queue">新增至佇列</string>
-    <string name="remove_from_recent">從最近播放中移除</string>
     <string name="remove_from_queue">從佇列中移除</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -50,8 +43,6 @@
     <string name="sort_order_entry_album">專輯</string>
     <string name="sort_order_entry_year">年份</string>
     <string name="sort_order_entry_duration">持續時間</string>
-    <string name="sort_order_entry_date_added">已加入日期</string>
-    <string name="sort_order_entry_track_list">曲目清單</string>
     <string name="sort_order_entry_number_of_songs">歌曲數量</string>
     <string name="sort_order_entry_filename">檔案名稱</string>
     <string name="playlist_last_added">最後新增</string>
@@ -70,9 +61,7 @@
     <string name="cannot_be_undone">此操作無法復原</string>
     <string name="delete_warning">這將永久刪除快取圖像項</string>
     <string name="new_photo">從圖片庫中選擇相片</string>
-    <string name="google_search">Google 搜尋</string>
     <string name="use_default">使用預設相片</string>
-    <string name="old_photo">使用舊圖片</string>
     <string name="context_menu_play_selection">播放</string>
     <string name="context_menu_play_next">播放下一首</string>
     <string name="context_menu_play_album">播放專輯</string>
@@ -93,9 +82,6 @@
     <string name="accessibility_repeat">重複播放</string>
     <string name="accessibility_repeat_all">全部重複播放</string>
     <string name="accessibility_repeat_one">單曲重複播放</string>
-    <string name="accessibility_queue">打開佇列</string>
-    <string name="accessibility_browse">瀏覽音樂</string>
-    <string name="playlist_renamed">已重新命名播放清單</string>
     <string name="settings_storage_category">儲存空間</string>
     <string name="settings_delete_cache_title">刪除快取</string>
     <string name="settings_delete_cache_summary">移除所有快取圖像</string>
@@ -108,10 +94,7 @@
     <string name="app_widget_small">音樂：4 \u00d7 1</string>
     <string name="app_widget_large">音樂：4 \u00d7 2</string>
     <string name="app_widget_large_alt">音樂：4 \u00d7 2（交替）</string>
-    <string name="app_widget_recent">音樂：最近聽過</string>
     <string name="no_effects_for_you">無法打開等化器。</string>
-    <string name="empty_music">使用 USB 連接線將音樂從電腦複製至裝置。</string>
-    <string name="empty_favorite">您標記為最愛的歌曲將在這裏顯示。</string>
     <string name="empty_recent_main">無最近播放的歌曲</string>
     <string name="empty_recent">您最近聽過的歌曲將在這裏顯示。</string>
     <string name="empty_playlist_main">播放清單中沒有歌曲</string>
@@ -142,13 +125,5 @@
     <string name="header_10_plus_songs">10 首以上歌曲</string>
     <string name="header_5_plus_albums">5 張以上專輯</string>
     <string name="header_other">"其他"</string>
-    <string name="footer_search_artists">顯示所有演出者</string>
-    <string name="footer_search_albums">顯示所有專輯</string>
-    <string name="footer_search_songs">顯示所有歌曲</string>
-    <string name="footer_search_playlists">顯示所有播放清單</string>
-    <string name="search_title_artists">所有「%s」演出者</string>
-    <string name="search_title_albums">所有「%s」專輯</string>
-    <string name="search_title_songs">所有「%s」歌曲</string>
-    <string name="search_title_playlists">所有「%s」播放清單</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>
