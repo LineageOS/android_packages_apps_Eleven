@@ -869,6 +869,9 @@ public final class MusicUtils {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "getIdForPlaylist(" + name + ")");
         }
+        if (name == null) {
+            return -1;
+        }
 
         try (Cursor cursor = context.getContentResolver().query(Playlists.EXTERNAL_CONTENT_URI,
                 new String[]{BaseColumns._ID}, PlaylistsColumns.NAME + "=?",
@@ -910,6 +913,9 @@ public final class MusicUtils {
      * @return The ID for an artist.
      */
     public static long getIdForArtist(final Context context, final String name) {
+        if (name == null) {
+            return -1;
+        }
         try (Cursor cursor = context.getContentResolver().query(
                 MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI, new String[]{BaseColumns._ID},
                 ArtistColumns.ARTIST + "=?", new String[]{name}, ArtistColumns.ARTIST)) {
