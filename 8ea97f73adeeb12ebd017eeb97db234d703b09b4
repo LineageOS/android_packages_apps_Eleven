@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3591562a_82063919",
+        "filename": "res/values-sw600dp/dimens.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T19:45:41Z",
+      "side": 0,
+      "message": "newline at end",
+      "revId": "8ea97f73adeeb12ebd017eeb97db234d703b09b4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
