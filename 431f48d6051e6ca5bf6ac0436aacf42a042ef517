@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13293e03_eba36572",
+        "filename": "res/layout/fragment_music_browser_phone.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2021-04-20T14:38:50Z",
+      "side": 1,
+      "message": "Editor -\u003e Code Style -\u003e XML -\u003e Other -\u003e Keep line breaks",
+      "range": {
+        "startLine": 1,
+        "startChar": 38,
+        "endLine": 1,
+        "endChar": 42
+      },
+      "revId": "431f48d6051e6ca5bf6ac0436aacf42a042ef517",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
