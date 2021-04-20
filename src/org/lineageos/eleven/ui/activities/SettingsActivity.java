@@ -23,22 +23,26 @@ import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.view.MenuItem;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
 
 import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
+
+import java.util.Locale;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceFragmentCompat;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -88,6 +92,23 @@ public class SettingsActivity extends AppCompatActivity {
                             .show();
                     return true;
                 });
+            }
+
+            final Preference appVersion = findPreference("app_version");
+            if (appVersion != null) {
+                PackageInfo packageInfo;
+                try {
+                    packageInfo = getActivity().getPackageManager().getPackageInfo(
+                            getActivity().getPackageName(), 0);
+                } catch (PackageManager.NameNotFoundException nnfe) {
+                    packageInfo = null;
+                }
+
+                if (packageInfo != null) {
+                    final String versionString = String.format(Locale.ROOT,
+                            "%s (%d)", packageInfo.versionName, packageInfo.versionCode);
+                    appVersion.setSummary(versionString);
+                }
             }
 
             PreferenceUtils.getInstance(getContext()).setOnSharedPreferenceChangeListener(this);

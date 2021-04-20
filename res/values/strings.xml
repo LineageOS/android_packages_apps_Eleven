@@ -125,6 +125,9 @@
     <string name="settings_shake_to_play">Shake to Play</string>
     <string name="settings_shake_to_play_summary">Shake your device to play next song</string>
 
+    <string name="settings_about_category">About</string>
+    <string name="settings_version_title">Version</string>
+
     <!-- App widget -->
     <string name="app_widget_small">Music: 4 \u00d7 1</string>
     <string name="app_widget_large">Music: 4 \u00d7 2</string>

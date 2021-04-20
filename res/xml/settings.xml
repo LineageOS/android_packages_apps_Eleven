@@ -2,7 +2,8 @@
 <!--
   Copyright (C) 2012 Andrew Neal
   Copyright (C) 2014 The CyanogenMod Project
-  Copyright (C) 2017-2020 The LineageOS Project
+  Copyright (C) 2017-2021 The LineageOS Project
+  Copyright (C) 2021 SHIFT GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -16,7 +17,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <PreferenceCategory android:title="@string/settings_general_category" >
 
@@ -48,7 +50,7 @@
 
     </PreferenceCategory>
 
-    <!-- Storage catetory -->
+    <!-- Storage category -->
     <PreferenceCategory android:title="@string/settings_storage_category" >
 
         <!-- Delete cache -->
@@ -56,5 +58,15 @@
             android:key="delete_cache"
             android:summary="@string/settings_delete_cache_summary"
             android:title="@string/settings_delete_cache_title" />
+    </PreferenceCategory>
+
+    <!-- About category -->
+    <PreferenceCategory android:title="@string/settings_about_category" >
+
+        <!-- Version -->
+        <Preference
+            android:key="app_version"
+            android:title="@string/settings_version_title"
+            tools:summary="4.0.1" />
     </PreferenceCategory>
 </PreferenceScreen>
