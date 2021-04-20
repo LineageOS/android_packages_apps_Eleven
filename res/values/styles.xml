@@ -86,14 +86,6 @@
         <item name="android:background">@color/header_action_bar_color</item>
     </style>
 
-    <!-- Sets the action bar menu icon -->
-    <style name="ActionOverFlowButton" parent="@style/Widget.AppCompat.ActionButton">
-        <item name="android:src">@drawable/menu_button_light</item>
-        <item name="android:minWidth">0dip</item>
-        <item name="android:paddingLeft">8dip</item>
-        <item name="android:paddingRight">8dip</item>
-    </style>
-
     <!-- The list item main text style/color -->
     <style name="ListItemMainText">
         <item name="android:textColor">@color/list_item_text_color</item>
@@ -137,15 +129,6 @@
     </style>
 
     <!-- Shortcut Activity theme -->
-    <style name="Theme.Transparent" parent="@style/Theme.AppCompat.NoActionBar">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/transparent</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsFloating">true</item>
-        <item name="android:backgroundDimEnabled">false</item>
-    </style>
-
     <style name="Theme.AudioPreview" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@color/transparent</item>
@@ -183,17 +166,6 @@
 
     <style name="BottomActionBarLineTwo" parent="@style/BottomActionBarText">
         <item name="android:textSize">@dimen/text_size_extra_micro</item>
-    </style>
-
-    <!-- Bottom Action Bar Image Buttons -->
-    <style name="BottomActionBarItem">
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:gravity">center|right</item>
-        <item name="android:paddingLeft">@dimen/bottom_action_bar_item_padding_left</item>
-        <item name="android:paddingRight">@dimen/bottom_action_bar_item_padding_right</item>
-        <item name="android:scaleType">centerInside</item>
     </style>
 
     <style name="HeaderTabTextStyle" parent="android:style/Widget.Material.ActionBar.TabText">
