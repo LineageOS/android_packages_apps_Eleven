@@ -64,14 +64,14 @@ android {
             applicationIdSuffix ".dev"
 
             debuggable true
-            proguardFiles 'proguard.cfg', 'proguard-debug.cfg'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             minifyEnabled true
             shrinkResources true
             zipAlignEnabled true
         }
         release {
             debuggable false
-            proguardFiles 'proguard.cfg'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard.cfg'
             minifyEnabled true
             shrinkResources true
             zipAlignEnabled true
