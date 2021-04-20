@@ -15,6 +15,9 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Defaults -->
+    <color name="default_artwork_color">#323c46</color>
+
     <!-- Background colors for LetterTileDrawables definitions. -->
     <color name="letter_tile_purple_color">@color/purple</color>
     <color name="letter_tile_blue_color">@color/blue</color>
