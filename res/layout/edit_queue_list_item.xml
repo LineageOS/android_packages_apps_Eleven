@@ -16,7 +16,6 @@
   limitations under the License.
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/edit_track_list_parent"
     android:layout_width="match_parent"
     android:layout_height="@dimen/item_normal_height" >
 
@@ -28,7 +27,6 @@
         android:src="@drawable/gripper_light" />
 
     <FrameLayout
-        android:id="@+id/edit_track_list_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/edit_track_list_item_handle"
