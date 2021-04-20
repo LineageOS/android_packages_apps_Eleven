@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c150654b_26eee591",
+        "filename": "src/org/lineageos/eleven/menu/PhotoSelectionDialog.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:15:55Z",
+      "side": 1,
+      "message": "fix copyright while touching the file anyway, its not \"021\"",
+      "revId": "b074479671fda9a96a47da09215ed368274f2a34",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
