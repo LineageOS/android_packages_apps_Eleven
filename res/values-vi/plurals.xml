@@ -16,17 +16,11 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> nghệ sĩ</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="other"><xliff:g id="count">%d</xliff:g> album</item>
     </plurals>
     <plurals name="Nsongs">
         <item quantity="other"><xliff:g id="count">%d</xliff:g> bài hát</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> thể loại</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="other"><xliff:g id="hours">%d</xliff:g>giờ</item>
@@ -42,9 +36,6 @@
     </plurals>
     <plurals name="NNNtrackstoqueue">
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> bài hát đã thêm vào hàng đợi.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> bài hát đã thêm vào yêu thích.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> bài hát đã bị xóa.</item>

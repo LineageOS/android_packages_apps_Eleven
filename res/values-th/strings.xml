@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">เพลง</string>
-    <string name="page_recent">ล่าสุด</string>
     <string name="page_artists">ศิลปิน</string>
     <string name="page_albums">อัลบั้ม</string>
     <string name="page_songs">เพลง</string>
     <string name="page_playlists">รายการเพลง</string>
-    <string name="page_genres">ประเภท</string>
-    <string name="page_now_playing">กำลังเล่น</string>
     <string name="page_play_queue">คิวเล่น</string>
     <string name="header_albums">อัลบั้ม</string>
-    <string name="header_top_songs">เพลงยอดนิยม</string>
     <string name="header_all_songs">เพลงทั้งหมด</string>
     <string name="menu_settings">การตั้งค่า</string>
     <string name="menu_shuffle_item">สลับ</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">สลับแทรคยอดนิยม</string>
     <string name="menu_shuffle_recent">สลับเพลงที่เล่นล่าสุด</string>
     <string name="menu_shuffle_last_added">สลับเพิ่มล่าสุด</string>
-    <string name="menu_play_all">เล่นทั้งหมด</string>
     <string name="menu_sort_by">เรียงโดย</string>
     <string name="menu_clear_list">ล้างรายการ</string>
-    <string name="menu_clear_recents">ล้างรายการล่าสุด</string>
     <string name="menu_clear_queue">ล้างคิว</string>
     <string name="menu_save_queue">บันทึกคิวไปยังรายการที่จะเล่น</string>
     <string name="menu_equalizer">Equalizer</string>
     <string name="add_to_playlist">เพิ่มไปยังรายการเพลง</string>
     <string name="add_to_queue">เพิ่มไปยังคิว</string>
-    <string name="remove_from_recent">นำออกจากรายการล่าสุด</string>
     <string name="remove_from_queue">ลบออกจากคิว</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">อัลบั้ม</string>
     <string name="sort_order_entry_year">ปี</string>
     <string name="sort_order_entry_duration">ระยะเวลา</string>
-    <string name="sort_order_entry_date_added">วันที่เพิ่ม</string>
-    <string name="sort_order_entry_track_list">รายการแทร็ค</string>
     <string name="sort_order_entry_number_of_songs">จำนวนเพลง</string>
     <string name="sort_order_entry_number_of_albums">จำนวนอัลบั้ม</string>
     <string name="sort_order_entry_filename">ชื่อไฟล์</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">การกระทำนี้ไม่สามารถยกเลิกได้</string>
     <string name="delete_warning">การกระทำนี้จะลบรูปภาพที่แคชอย่างถาวร</string>
     <string name="new_photo">เลือกรูปจากแกลเลอรี</string>
-    <string name="google_search">ค้นหาด้วย Google</string>
     <string name="use_default">เลือกรูปเริ่มต้น</string>
-    <string name="old_photo">ใช้รูปเก่า</string>
     <string name="context_menu_play_selection">เล่น</string>
     <string name="context_menu_play_next">เล่นรายการถัดไป</string>
     <string name="context_menu_play_album">เล่นอัลบั้ม</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">ซ้ำ</string>
     <string name="accessibility_repeat_all">เล่นซ้ำทั้งหมด</string>
     <string name="accessibility_repeat_one">ซ้ำหนึ่งครั้ง</string>
-    <string name="accessibility_queue">เปิดคิว</string>
-    <string name="accessibility_browse">เรียกดูเพลง</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ตั้งเป็นเสียงเรียกเข้า</string>
-    <string name="playlist_renamed">เปลี่ยนชื่อรายการเพลง</string>
     <string name="settings_storage_category">แหล่งเก็บข้อมูล</string>
     <string name="settings_delete_cache_title">ล้างแคช</string>
     <string name="settings_delete_cache_summary">ลบรูปที่แคชทั้งหมดออก</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">เพลง: 4 \u00d7 1</string>
     <string name="app_widget_large">เพลง: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">เพลง: 4 \u00d7 2 (สลับ)</string>
-    <string name="app_widget_recent">เพลง: ที่ฟังเมื่อเร็ว ๆ นี้</string>
     <string name="no_effects_for_you">ไม่สามารถเปิด equalizer ได้</string>
-    <string name="empty_music">ในการคัดลอกเพลงจากคอมพิวเตอร์ไปยังอุปกรณ์ ให้ใช้สาย USB</string>
-    <string name="empty_favorite">เพลงที่ทำเป็นรายการโปรดจะแสดงที่นี่</string>
     <string name="empty_recent_main">ไม่มีเพลงล่าสุด</string>
     <string name="empty_recent">เพลงที่ฟังล่าสุดจะแสดงที่นี่</string>
     <string name="empty_playlist_main">ไม่มีเพลงในรายการที่เล่น</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ เพลง</string>
     <string name="header_5_plus_albums">5+ อัลบั้ม</string>
     <string name="header_other">"อื่น ๆ"</string>
-    <string name="footer_search_artists">แสดงศิลปินทั้งหมด</string>
-    <string name="footer_search_albums">แสดงอัลบั้มทั้งหมด</string>
-    <string name="footer_search_songs">แสดงเพลงทั้งหมด</string>
-    <string name="footer_search_playlists">แสดงรายการที่เล่นทั้งหมด</string>
-    <string name="search_title_artists">ศิลปิน \"%s\" ทั้งหมด</string>
-    <string name="search_title_albums">อัลบั้ม \"%s\" ทั้งหมด</string>
-    <string name="search_title_songs">เพลง \"%s\" ทั้งหมด</string>
-    <string name="search_title_playlists">รายการเพลง \"%s\" ทั้งหมด</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">เล่นเพลง</string>
 </resources>

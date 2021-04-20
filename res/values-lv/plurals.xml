@@ -16,11 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="zero"><xliff:g id="count">%d</xliff:g> izpildītājs</item>
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> izpildītājs</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> izpildītāji</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> albums</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> albums</item>
@@ -30,11 +25,6 @@
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> dziesma</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> dziesma</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> dziesmas</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="zero"><xliff:g id="count">%d</xliff:g> žanrs</item>
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> žanrs</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> žanri</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="zero"><xliff:g id="hours">%d</xliff:g>h</item>
@@ -60,11 +50,6 @@
         <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> dziesma pievienota rindai.</item>
         <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> dziesma pievienota rindai.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> dziesmas pievienotas rindai.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> dziesma pievienota favorītiem.</item>
-        <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> dziesma pievienota favorītiem.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> dziesmas pievienotas favorītiem.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="zero"><xliff:g id="songs_to_delete">%d</xliff:g> dziesma izdzēsta.</item>

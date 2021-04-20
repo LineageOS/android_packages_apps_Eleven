@@ -18,15 +18,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">ಸಂಗೀತ</string>
-    <string name="page_recent">ಇತ್ತೀಚಿನ</string>
     <string name="page_artists">ಕಲಾವಿದರು</string>
     <string name="page_songs">ಹಾಡುಗಳು</string>
     <string name="page_playlists">ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
-    <string name="page_genres">ಪ್ರಕಾರಗಳು</string>
-    <string name="page_now_playing">ಈಗ ಪ್ಲೇ ಆಗುತ್ತಿರುವ</string>
     <string name="page_play_queue">ಪ್ಲೇ ಸರದಿ</string>
     <string name="header_albums">ಆಲ್ಬಂಗಳು</string>
-    <string name="header_top_songs">ಟಾಪ್ ಹಾಡುಗಳು</string>
     <string name="header_all_songs">ಎಲ್ಲಾ ಹಾಡುಗಳು</string>
     <string name="menu_settings">ಸೆಟ್ಟಿಂಗ್ಸ್</string>
     <string name="menu_shuffle_item">ಷಫಲ್</string>
@@ -37,16 +33,13 @@
     <string name="menu_shuffle_top_tracks">ಟಾಪ್ ಟ್ರ್ಯಾಕ್‍ಗಳನ್ನು ಷಫಲ್ ಮಾಡಿ</string>
     <string name="menu_shuffle_recent">ಇತ್ತೀಚೆಗೆ ಪ್ಲೇ ಮಾಡಿದ್ದನ್ನು ಷಫಲ್ ಮಾಡಿ</string>
     <string name="menu_shuffle_last_added">ಕೊನೆಯದಾಗಿ ಸೇರಿಸಿದನ್ನು ಷಫಲ್ ಮಾಡಿ</string>
-    <string name="menu_play_all">ಎಲ್ಲವನ್ನು ಪ್ಲೇ ಮಾಡಿ</string>
     <string name="menu_sort_by">ಇದರಿಂದ ಶೋಧಿಸಿ</string>
     <string name="menu_clear_list">ಪಟ್ಟಿ ತೆರವುಗೊಳಿಸಿ</string>
-    <string name="menu_clear_recents">ಇತ್ತೀಚಿನವನ್ನು ತೆರವುಗೊಳಿಸಿ</string>
     <string name="menu_clear_queue">ಸರದಿಯನ್ನು ತೆರವುಗೊಳಿಸಿ</string>
     <string name="menu_save_queue">ಸರದಿಯನ್ನು ಪ್ಲೇಪಟ್ಟಿಗೆ ಉಳಿಸಿ</string>
     <string name="menu_equalizer">ಸಮಕಾರಕ</string>
     <string name="add_to_playlist">ಪ್ಲೇಪಟ್ಟಿಗೆ ಸೇರಿಸಿ</string>
     <string name="add_to_queue">ಸರದಿಗೆ ಸೇರಿಸಿ</string>
-    <string name="remove_from_recent">ಇತ್ತೀಚಿನವುಗಳಿಂದ ತೆಗೆ</string>
     <string name="remove_from_queue">ಸರದಿಯಿಂದ ತೆಗೆ</string>
     <string name="sort_order_entry_az">ಅ-ಅಃ</string>
     <string name="sort_order_entry_za">ಅಃ-ಅ</string>
@@ -54,8 +47,6 @@
     <string name="sort_order_entry_album">ಆಲ್ಬಂ</string>
     <string name="sort_order_entry_year">ವರ್ಷ</string>
     <string name="sort_order_entry_duration">ಕಾಲಾವಧಿ</string>
-    <string name="sort_order_entry_date_added">ಸೇರಿಸಿದ ದಿನಾಂಕ</string>
-    <string name="sort_order_entry_track_list">ಟ್ರ್ಯಾಕ್  ಪಟ್ಟಿ</string>
     <string name="sort_order_entry_number_of_songs">ಹಾಡುಗಳ ಸಂಖ್ಯೆ</string>
     <string name="sort_order_entry_number_of_albums">ಆಲ್ಬಂಗಳ ಸಂಖ್ಯೆ</string>
     <string name="sort_order_entry_filename">ಕಡತದ ಹೆಸರು</string>
@@ -76,9 +67,7 @@
     <string name="cannot_be_undone">ಇದನ್ನು ಹಿಂತಿರುಗಿಸಲಾಗುವುದಿಲ್ಲ</string>
     <string name="delete_warning">ಇದು ನಗದುಮಾಡಿರುವ ಚಿತ್ರ ನಮೂದುಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಅಳಿಸಿಹಾಕುತ್ತದೆ</string>
     <string name="new_photo">ಗ್ಯಾಲರಿಯಿಂದ ಫೋಟೋ ಆರಿಸಿ</string>
-    <string name="google_search">ಗೂಗಲ್ ಸರ್ಚ್</string>
     <string name="use_default">ಡೀಫಾಲ್ಟ್ ಫೋಟೋವನ್ನು ಉಪಯೋಗಿಸಿ</string>
-    <string name="old_photo">ಹಳೆಯ ಫೋಟೋ ಉಪಯೋಗಿಸಿ</string>
     <string name="context_menu_play_selection">ಪ್ಲೇ</string>
     <string name="context_menu_play_next">ನಂತರ ಪ್ಲೇಮಾಡು</string>
     <string name="context_menu_play_album">ಆಲ್ಬಂ ಪ್ಲೇ ಮಾಡು</string>
@@ -100,10 +89,7 @@
     <string name="accessibility_repeat">ಪುನರಾವರ್ತಿಸು</string>
     <string name="accessibility_repeat_all">ಎಲ್ಲವನ್ನು ಪುನರಾವರ್ತಿಸು</string>
     <string name="accessibility_repeat_one">ಒಂದನ್ನು ಪುನರಾವರ್ತಿಸು</string>
-    <string name="accessibility_queue">ಸರದಿಯನ್ನು ತೆರೆ</string>
-    <string name="accessibility_browse">ಸಂಗೀತವನ್ನು ಬ್ರೌಸ್ ಮಾಡಿ</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ರಿಂಗ್‍ಟೋನ್ ಆಗಿ ಹೊಂದಿಸಲಾಗಿದೆ</string>
-    <string name="playlist_renamed">ಪ್ಲೇಪಟ್ಟಿ ಮರುಹೆಸರಿಸಲಾಗಿದೆ</string>
     <string name="settings_storage_category">ಸಂಗ್ರಹಣೆ</string>
     <string name="settings_delete_cache_title">ನಗದನ್ನು ಅಳಿಸು</string>
     <string name="settings_delete_cache_summary">ಎಲ್ಲಾ ನಗದು ಮಾಡಿದ ಚಿತ್ರಗಳನ್ನು ತೆಗೆ</string>
@@ -116,10 +102,7 @@
     <string name="app_widget_small">ಸಂಗೀತ: 4 \u00d7 1</string>
     <string name="app_widget_large">ಸಂಗೀತ: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">ಸಂಗೀತ: 4 \u00d7 2 (ಪರ್ಯಾಯ)</string>
-    <string name="app_widget_recent">ಸಂಗೀತ: ಇತ್ತೀಚೆಗೆ ಆಲಿಸಿದ</string>
     <string name="no_effects_for_you">ಸಮಾನಕಾರಕವನ್ನು ತೆರೆಯಲಾಗುವುದಿಲ್ಲ.</string>
-    <string name="empty_music">ನಿಮ್ಮ ಸಂಗೀತವನ್ನು ನಿಮ್ಮ ಕಂಪ್ಯೂಟರ್‍‍ನಿಂದ ನಿಮ್ಮ ಸಾಧನಕ್ಕೆ ನಕಲಿಸಲು, ಯು‍ಎಸ್‍ಬಿ ಕೇಬಲ್ ಉಪಯೋಗಿಸಿ.</string>
-    <string name="empty_favorite">ನೀವು ಫೇವರಿಟ್ಸ್ ಎಂದು ಗುರುತಿಸಿದ ಹಾಡುಗಳನ್ನು ಇಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾಗುತ್ತದೆ.</string>
     <string name="empty_recent_main">ಯಾವುದೇ ಇತ್ತೀಚಿನ ಹಾಡುಗಳಿಲ್ಲ</string>
     <string name="empty_recent">ನೀವು ಇತ್ತೀಚೆಗೆ ಆಲಿಸಿದ ಹಾಡುಗಳು ಇಲ್ಲಿ ಕಾಣಿಸುತ್ತದೆ.</string>
     <string name="empty_playlist_main">ಪ್ಲೇಪಟ್ಟಿಯಲ್ಲಿ ಯಾವುದೇ ಹಾಡುಗಳಿಲ್ಲ</string>
@@ -150,14 +133,6 @@
     <string name="header_10_plus_songs">10+ ಹಾಡುಗಳು</string>
     <string name="header_5_plus_albums">5+ ಆಲ್ಬಂಗಳು</string>
     <string name="header_other">"ಇತರೆ"</string>
-    <string name="footer_search_artists">ಎಲ್ಲಾ ಕಲಾವಿದರನ್ನು ಪ್ರದರ್ಶಿಸು</string>
-    <string name="footer_search_albums">ಎಲ್ಲಾ ಆಲ್ಬಂಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
-    <string name="footer_search_songs">ಎಲ್ಲಾ ಹಾಡುಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
-    <string name="footer_search_playlists">ಎಲ್ಲಾ ಪ್ಲೇಪಟ್ಟಿಗಳನ್ನು ಪ್ರದರ್ಶಿಸು</string>
-    <string name="search_title_artists">ಎಲ್ಲಾ \"%s\" ಕಲಾವಿದರು</string>
-    <string name="search_title_albums">ಎಲ್ಲಾ \"%s\" ಆಲ್ಬಂಗಳು</string>
-    <string name="search_title_songs">ಎಲ್ಲಾ \"%s\" ಹಾಡುಗಳು</string>
-    <string name="search_title_playlists">ಎಲ್ಲಾ \"%s\" ಪ್ಲೇಪಟ್ಟಿಗಳು</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">ಸಂಗೀತ ಪುನರಾಡಿಸು</string>
 </resources>

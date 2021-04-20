@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">സംഗീതം</string>
-    <string name="page_recent">അടുത്തിടെയുള്ളത്</string>
     <string name="page_artists">ആർട്ടിസ്റ്റുകൾ</string>
     <string name="page_albums">ആൽബങ്ങൾ</string>
     <string name="page_songs">ഗാനങ്ങൾ</string>
     <string name="page_playlists">പ്ലേലിസ്റ്റുകൾ</string>
-    <string name="page_genres">വിഭാഗങ്ങൾ</string>
-    <string name="page_now_playing">ഇപ്പോൾ പ്ലേ ചെയ്യുന്നു</string>
     <string name="page_play_queue">ക്യൂ പ്ലേ ചെയ്യുന്നു</string>
     <string name="header_albums">ആൽബങ്ങൾ</string>
-    <string name="header_top_songs">മുന്‍നിര ഗാനങ്ങൾ</string>
     <string name="header_all_songs">ഗാനങ്ങൾ എല്ലാം</string>
     <string name="menu_settings">ക്രമീകരണം</string>
     <string name="menu_shuffle_item">ഷഫിൾ ചെയ്യുക</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">മുനിര ട്രാക്കുകൾ ഷഫിൾ ചെയ്യുക</string>
     <string name="menu_shuffle_recent">സമീപകാലത്ത് പ്ലേ ചെയ്തത് ഷഫിൾ ചെയ്യുക</string>
     <string name="menu_shuffle_last_added">അവസാനം ചേർത്തത് ഷഫിൾ ചെയ്യുക</string>
-    <string name="menu_play_all">എല്ലാം പ്ലേ ചെയ്യുക</string>
     <string name="menu_sort_by">ഇതുപ്രകാരം അടുക്കുക</string>
     <string name="menu_clear_list">ലിസ്റ്റ് മായ്‌ക്കുക</string>
-    <string name="menu_clear_recents">സമീപകാലത്തുള്ളത് മായ്ക്കുക</string>
     <string name="menu_clear_queue">ക്യൂ മായ്ക്കുക</string>
     <string name="menu_save_queue">പ്ലേലിസ്റ്റിലേക്ക് ക്യൂ സംരക്ഷിക്കുക</string>
     <string name="menu_equalizer">ഇക്വലൈസർ</string>
     <string name="add_to_playlist">പ്ലേലിസ്റ്റിൽ ചേർക്കുക</string>
     <string name="add_to_queue">ക്യൂവിൽ ചേർക്കുക</string>
-    <string name="remove_from_recent">സമീപകാലത്തുള്ളവയില്‍ നിന്ന് നീക്കം ചെയ്യുക</string>
     <string name="remove_from_queue">ക്യൂവിൽ നിന്ന് നീക്കം ചെയ്യുക</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ആൽബം</string>
     <string name="sort_order_entry_year">വര്‍ഷം</string>
     <string name="sort_order_entry_duration">ദൈർഘ്യം</string>
-    <string name="sort_order_entry_date_added">ചേർത്ത തീയതി</string>
-    <string name="sort_order_entry_track_list">ട്രാക്ക് ലിസ്റ്റ്</string>
     <string name="sort_order_entry_number_of_songs">ഗാനങ്ങളുടെ എണ്ണം</string>
     <string name="sort_order_entry_number_of_albums">ആൽബങ്ങളും എണ്ണം</string>
     <string name="sort_order_entry_filename">ഫയല്‍നാമം</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">ഇത് പൂര്‍വ്വസ്ഥിതിയിലാക്കാന്‍ കഴിയില്ല</string>
     <string name="delete_warning">ഈ കാഷെ ചെയ്ത ഇമേജ് എൻട്രികൾ ശാശ്വതമായി ഇല്ലാതാക്കുന്നതാണ്</string>
     <string name="new_photo">ഗാലറിയിൽ നിന്നും ഫോട്ടോ തിരഞ്ഞെടുക്കുക</string>
-    <string name="google_search">ഗൂഗിള്‍ തിരയല്‍</string>
     <string name="use_default">ഡിഫോള്‍ട്ട് ഫോട്ടോ ഉപയോഗിക്കുക</string>
-    <string name="old_photo">പഴയ ഫോട്ടോ ഉപയോഗിക്കുക</string>
     <string name="context_menu_play_selection">പ്ലേ ചെയ്യുക</string>
     <string name="context_menu_play_next">അടുത്തത് പ്ലേ ചെയ്യുക</string>
     <string name="context_menu_play_album">ആൽബം പ്ലേ ചെയ്യുക</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">ആവർത്തിക്കുക</string>
     <string name="accessibility_repeat_all">എല്ലാം ആവർത്തിക്കുക</string>
     <string name="accessibility_repeat_one">ഒരിക്കല്‍ ആവർത്തിക്കുക</string>
-    <string name="accessibility_queue">ക്യൂ തുറക്കുക</string>
-    <string name="accessibility_browse">സംഗീതം ബ്രൗസ് ചെയ്യുക</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' റിംഗ്ടോൺ ആയി സജ്ജമാക്കി</string>
-    <string name="playlist_renamed">പ്ലേലിസ്റ്റിന്റെ പേര് മാറ്റി</string>
     <string name="settings_storage_category">സംഭരണം</string>
     <string name="settings_delete_cache_title">കാഷെ ഇല്ലാതാക്കുക</string>
     <string name="settings_delete_cache_summary">കാഷെ ചെയ്ത ചിത്രങ്ങൾ എല്ലാം  നീക്കം ചെയ്യുക</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">സംഗീതം: 4 \u00d7 1</string>
     <string name="app_widget_large">സംഗീതം: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">സംഗീതം: 4 \u00d7 2 (ഇതരമാര്‍ഗ്ഗം)</string>
-    <string name="app_widget_recent">സംഗീതം: സമീപകാലത്ത് കേട്ടത്</string>
     <string name="no_effects_for_you">ഈക്വലൈസര്‍ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
-    <string name="empty_music">നിങ്ങളുടെ കമ്പ്യൂട്ടറിൽ നിന്ന് നിങ്ങളുടെ ഉപകരണത്തിലേക്ക് സംഗീതം പകർത്തുന്നതിന്, ഒരു USB കേബിൾ ഉപയോഗിക്കുക.</string>
-    <string name="empty_favorite">പ്രിയപ്പെട്ടവയായി നിങ്ങള്‍  അടയാളപ്പെടുത്തുക ഗാനങ്ങൾ ഇവിടെ കാണിക്കുന്നതാണ്.</string>
     <string name="empty_recent_main">സമീപകാലത്തുള്ള ഗാനങ്ങൾ ഇല്ല</string>
     <string name="empty_recent">നിങ്ങൾ അടുത്തിടെ കേട്ട ഗാനങ്ങൾ ഇവിടെ കാണിക്കുന്നതാണ്.</string>
     <string name="empty_playlist_main">പ്ലേലിസ്റ്റില്‍ ഗാനങ്ങൾ ഇല്ല</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ ഗാനങ്ങൾ</string>
     <string name="header_5_plus_albums">5+ ആൽബങ്ങൾ</string>
     <string name="header_other">""മറ്റുള്ളവ""</string>
-    <string name="footer_search_artists">എല്ലാ ആര്‍ട്ടിസ്റ്റുകളെയും കാണിക്കുക</string>
-    <string name="footer_search_albums">എല്ലാ ആൽബങ്ങളും കാണിക്കുക</string>
-    <string name="footer_search_songs">എല്ലാ ഗാനങ്ങളും കാണിക്കുക</string>
-    <string name="footer_search_playlists">എല്ലാ പ്ലേലിസ്റ്റുകളും കാണിക്കുക</string>
-    <string name="search_title_artists">\"%s\" ആര്‍ട്ടിസ്റ്റുകള്‍ എല്ലാം</string>
-    <string name="search_title_albums">\"%s\" ആൽബങ്ങൾ എല്ലാം</string>
-    <string name="search_title_songs">\"%s\" പാട്ടുകൾ എല്ലാം</string>
-    <string name="search_title_playlists">\"%s\" പ്ലേലിസ്റ്റുകൾ എല്ലാം</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

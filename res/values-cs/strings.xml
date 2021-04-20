@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Hudba</string>
-    <string name="page_recent">Nedávné</string>
     <string name="page_artists">Umělci</string>
     <string name="page_albums">Alba</string>
     <string name="page_songs">Skladby</string>
     <string name="page_playlists">Seznamy skladeb</string>
-    <string name="page_genres">Žánry</string>
-    <string name="page_now_playing">Přehrává se</string>
     <string name="page_play_queue">Fronta přehrávání</string>
     <string name="header_albums">Alba</string>
-    <string name="header_top_songs">Nejlepší skladby</string>
     <string name="header_all_songs">Všechny skladby</string>
     <string name="menu_settings">Nastavení</string>
     <string name="menu_shuffle_item">Náhodně</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Náhodně nejlepší skladby</string>
     <string name="menu_shuffle_recent">Náhodně nedávno přehrávané</string>
     <string name="menu_shuffle_last_added">Náhodně naposledy přidané</string>
-    <string name="menu_play_all">Přehrát vše</string>
     <string name="menu_sort_by">Řadit podle</string>
     <string name="menu_clear_list">Vyčistit seznam</string>
-    <string name="menu_clear_recents">Vyčistit nedávné</string>
     <string name="menu_clear_queue">Vyčistit frontu</string>
     <string name="menu_save_queue">Uložit frontu do seznamu skladeb</string>
     <string name="menu_equalizer">Ekvalizér</string>
     <string name="add_to_playlist">Přidat do seznamu skladeb</string>
     <string name="add_to_queue">Přidat do fronty</string>
-    <string name="remove_from_recent">Odebrat z nedávných</string>
     <string name="remove_from_queue">Odebrat z fronty</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Alba</string>
     <string name="sort_order_entry_year">Roku</string>
     <string name="sort_order_entry_duration">Délky</string>
-    <string name="sort_order_entry_date_added">Data přidání</string>
-    <string name="sort_order_entry_track_list">Seznamu stop</string>
     <string name="sort_order_entry_number_of_songs">Počtu skladeb</string>
     <string name="sort_order_entry_number_of_albums">Počtu alb</string>
     <string name="sort_order_entry_filename">Jména souboru</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Tuto operaci nelze vrátit</string>
     <string name="delete_warning">Tímto trvale odstraníte stáhnuté obrázky</string>
     <string name="new_photo">Zvolte obrázek z Galerie</string>
-    <string name="google_search">Vyhledávání Google</string>
     <string name="use_default">Použít výchozí obrázek</string>
-    <string name="old_photo">Použít starý obrázek</string>
     <string name="context_menu_play_selection">Přehrát</string>
     <string name="context_menu_play_next">Přehrát další</string>
     <string name="context_menu_play_album">Přehrát album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Opakovat</string>
     <string name="accessibility_repeat_all">Opakovat vše</string>
     <string name="accessibility_repeat_one">Opakovat jednu</string>
-    <string name="accessibility_queue">Otevřít frontu</string>
-    <string name="accessibility_browse">Procházet hudbu</string>
     <string name="set_as_ringtone">„<xliff:g id="name" example="Alarm Bell">%s</xliff:g>“ nastaveno jako vyzvánění</string>
-    <string name="playlist_renamed">Seznam skladeb přejmenován</string>
     <string name="settings_storage_category">Úložiště</string>
     <string name="settings_delete_cache_title">Smazat cache</string>
     <string name="settings_delete_cache_summary">Odstranit všechny uložené obrázky</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Hudba: 4 \u00d7 1</string>
     <string name="app_widget_large">Hudba: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Hudba: 4 \u00d7 2 (alternativní)</string>
-    <string name="app_widget_recent">Hudba: nedávno poslouchané</string>
     <string name="no_effects_for_you">Nelze otevřít ekvalizér.</string>
-    <string name="empty_music">Pro kopírování hudebních souborů z počítače do zařízení použijte USB kabel.</string>
-    <string name="empty_favorite">Zde budou zobrazeny všechny skladby označené jako oblíbené.</string>
     <string name="empty_recent_main">Žádné naposledy přehrávané</string>
     <string name="empty_recent">Zde budou zobrazeny všechny nedávno přehrávané skladby.</string>
     <string name="empty_playlist_main">Žádné skladby v seznamu skladeb</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">Více jak 10 skladeb</string>
     <string name="header_5_plus_albums">Více jak 5 alb</string>
     <string name="header_other">"Jiné"</string>
-    <string name="footer_search_artists">Zobrazit všechny umělce</string>
-    <string name="footer_search_albums">Zobrazit všechna alba</string>
-    <string name="footer_search_songs">Zobrazit všechny skladby</string>
-    <string name="footer_search_playlists">Zobrazit všechny seznamy skladeb</string>
-    <string name="search_title_artists">Vše od umělce „%s“</string>
-    <string name="search_title_albums">Vše v albu „%s“</string>
-    <string name="search_title_songs">Všechny skladby \"%s\"</string>
-    <string name="search_title_playlists">Všechny v seznamu skladeb „%s“</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Přehrávání hudby</string>
 </resources>

@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Nhạc</string>
-    <string name="page_recent">Gần đây</string>
     <string name="page_artists">Nghệ sĩ</string>
     <string name="page_albums">Album</string>
     <string name="page_songs">Bài hát</string>
     <string name="page_playlists">Danh sách phát</string>
-    <string name="page_genres">Thể loại</string>
-    <string name="page_now_playing">Đang phát</string>
     <string name="page_play_queue">Phát danh sách chờ</string>
     <string name="header_albums">Album</string>
-    <string name="header_top_songs">Bài hát thường nghe</string>
     <string name="header_all_songs">Tất cả bài hát</string>
     <string name="menu_settings">Cài đặt</string>
     <string name="menu_shuffle_item">Phát ngẫu nhiên</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Phát ngẫu nhiên bài hát thường nghe</string>
     <string name="menu_shuffle_recent">Phát ngẫu nhiên những bài hát nghe gần đây</string>
     <string name="menu_shuffle_last_added">Phát ngẫu nhiên những bài hát vừa thêm</string>
-    <string name="menu_play_all">Phát tất cả</string>
     <string name="menu_sort_by">Xếp theo</string>
     <string name="menu_clear_list">Xoá danh sách</string>
-    <string name="menu_clear_recents">Xoá danh sách nghe gần đây</string>
     <string name="menu_clear_queue">Xoá danh sách chờ</string>
     <string name="menu_save_queue">Lưu hàng chờ vào danh sách phát</string>
     <string name="menu_equalizer">Bộ chỉnh âm</string>
     <string name="add_to_playlist">Thêm vào danh sách phát</string>
     <string name="add_to_queue">Thêm vào danh sách chờ</string>
-    <string name="remove_from_recent">Xoá khỏi danh sách nghe gần đây</string>
     <string name="remove_from_queue">Xoá khỏi danh sách chờ</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Năm</string>
     <string name="sort_order_entry_duration">Thời lượng</string>
-    <string name="sort_order_entry_date_added">Ngày thêm</string>
-    <string name="sort_order_entry_track_list">Danh sách bài hát</string>
     <string name="sort_order_entry_number_of_songs">Số của bài hát</string>
     <string name="sort_order_entry_number_of_albums">Số của album</string>
     <string name="sort_order_entry_filename">Tên tập tin</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Không thể hoàn tác điều này</string>
     <string name="delete_warning">Điều này sẽ xoá vĩnh viễn các mục nhập ảnh đã lưu trong bộ nhớ đệm</string>
     <string name="new_photo">Chọn ảnh từ Bộ sưu tập</string>
-    <string name="google_search">Tìm bằng Google</string>
     <string name="use_default">Dùng ảnh mặc định</string>
-    <string name="old_photo">Dùng ảnh cũ</string>
     <string name="context_menu_play_selection">Phát</string>
     <string name="context_menu_play_next">Phát tiếp theo</string>
     <string name="context_menu_play_album">Phát album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Lặp lại</string>
     <string name="accessibility_repeat_all">Lặp lại tất cả</string>
     <string name="accessibility_repeat_one">Lặp lại một bài hát</string>
-    <string name="accessibility_queue">Mở danh sách chờ</string>
-    <string name="accessibility_browse">Duyệt nhạc</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' được đặt làm nhạc chuông</string>
-    <string name="playlist_renamed">Đã đổi tên danh sách phát</string>
     <string name="settings_storage_category">Lưu trữ</string>
     <string name="settings_delete_cache_title">Xoá bộ nhớ đệm</string>
     <string name="settings_delete_cache_summary">Xoá tất cả ảnh đã có trong bộ nhớ đệm</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Nghe nhạc: 4 \u00d7 1</string>
     <string name="app_widget_large">Nghe nhạc: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Nghe nhạc: 4 \u00d7 2 (kiểu khác)</string>
-    <string name="app_widget_recent">Nghe nhạc: đã nghe gần đây</string>
     <string name="no_effects_for_you">Không thể mở bộ chỉnh âm.</string>
-    <string name="empty_music">Để chép nhạc từ máy tính sang thiết bị, hãy dùng cáp USB.</string>
-    <string name="empty_favorite">Bài hát bạn đã đánh dấu là yêu thích sẽ hiện tại đây.</string>
     <string name="empty_recent_main">Không có bài hát nào nghe gần đây</string>
     <string name="empty_recent">Bài hát bạn đã nghe gần đây sẽ hiện tại đây.</string>
     <string name="empty_playlist_main">Không có bài hát nào trong danh sách phát</string>
@@ -151,14 +134,6 @@
     <string name="header_10_plus_songs">10 bài hát trở lên</string>
     <string name="header_5_plus_albums">5 album trở lên</string>
     <string name="header_other">"Khác"</string>
-    <string name="footer_search_artists">Hiện tất cả nghệ sĩ</string>
-    <string name="footer_search_albums">Hiện tất cả album</string>
-    <string name="footer_search_songs">Hiện tất cả bài hát</string>
-    <string name="footer_search_playlists">Hiện tất cả danh sách phát</string>
-    <string name="search_title_artists">Tất cả về nghệ sĩ \"%s\"</string>
-    <string name="search_title_albums">Tất cả về album \"%s\"</string>
-    <string name="search_title_songs">Tất cả về bài hát \"%s\"</string>
-    <string name="search_title_playlists">Tất cả về danh sách phát \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Điều khiển nhạc</string>
 </resources>

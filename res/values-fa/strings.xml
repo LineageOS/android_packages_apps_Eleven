@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">موسیقی</string>
-    <string name="page_recent">اخیر</string>
     <string name="page_artists">هنرمندان</string>
     <string name="page_albums">آلبوم‌ها</string>
     <string name="page_songs">آهنگ‌ها</string>
     <string name="page_playlists">لیست‌های پخش</string>
-    <string name="page_genres">ژانرها</string>
-    <string name="page_now_playing">درحال پخش</string>
     <string name="page_play_queue">صف پخش</string>
     <string name="header_albums">آلبوم‌ها</string>
-    <string name="header_top_songs">آهنگ‌های عالی</string>
     <string name="header_all_songs">تمام آهنگ‌ها</string>
     <string name="menu_settings">تنظیمات</string>
     <string name="menu_shuffle_item">تصادفی</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">آهنگ‌های عالی تصادفی</string>
     <string name="menu_shuffle_recent">اخیرا پخش‌شده تصادفی</string>
     <string name="menu_shuffle_last_added">آخرین افزوده‌شده تصادفی</string>
-    <string name="menu_play_all">پخش همه</string>
     <string name="menu_sort_by">مرتب‌سازی براساس</string>
     <string name="menu_clear_list">پاک کردن لیست</string>
-    <string name="menu_clear_recents">پاک کردن لیست اخیر</string>
     <string name="menu_clear_queue">پاک کردن صف</string>
     <string name="menu_save_queue">ذخیره صف در لیست پخش</string>
     <string name="menu_equalizer">اکولایزر</string>
     <string name="add_to_playlist">افزودن به لیست پخش</string>
     <string name="add_to_queue">افزودن به صف</string>
-    <string name="remove_from_recent">حذف از لیست اخیر</string>
     <string name="remove_from_queue">حذف از صف</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">آلبوم</string>
     <string name="sort_order_entry_year">سال</string>
     <string name="sort_order_entry_duration">مدت زمان</string>
-    <string name="sort_order_entry_date_added">تاریخ اضافه شدن</string>
-    <string name="sort_order_entry_track_list">لیست آهنگ</string>
     <string name="sort_order_entry_number_of_songs">تعداد آهنگ‌ها</string>
     <string name="sort_order_entry_number_of_albums">تعداد آلبوم‌ها</string>
     <string name="sort_order_entry_filename">نام فایل</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">این کار برگشت‌پذیر نیست</string>
     <string name="delete_warning">این کار تصاویر ذخیره شده را برای همیشه حذف می‌کند</string>
     <string name="new_photo">انتخاب عکس از گالری</string>
-    <string name="google_search">جستجوی گوگل</string>
     <string name="use_default">استفاده از عکس پیش‌فرض</string>
-    <string name="old_photo">استفاده از عکس قبلی</string>
     <string name="context_menu_play_selection">پخش</string>
     <string name="context_menu_play_next">پخش بعدی</string>
     <string name="context_menu_play_album">پخش آلبوم</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">تکرار</string>
     <string name="accessibility_repeat_all">تکرار همه</string>
     <string name="accessibility_repeat_one">تکرار یکی</string>
-    <string name="accessibility_queue">باز کردن صف</string>
-    <string name="accessibility_browse">مرور موسیقی</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' به‌عنوان صدای زنگ تنظیم شد</string>
-    <string name="playlist_renamed">نام لیست پخش تغییر کرد</string>
     <string name="settings_storage_category">ذخیره‌سازی</string>
     <string name="settings_delete_cache_title">حذف حافظه نهان</string>
     <string name="settings_delete_cache_summary">حذف همه تصاویر ذخیره شده</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">موسیقی: ۴ \u00d7 ۱</string>
     <string name="app_widget_large">موسیقی: ۴ \u00d7 ۲</string>
     <string name="app_widget_large_alt">موسیقی: ۴ \u00d7 ۲ (جایگزین)</string>
-    <string name="app_widget_recent">موسیقی: شنیده‎شده اخیر</string>
     <string name="no_effects_for_you">اکولایزر باز نمی‌شود.</string>
-    <string name="empty_music">برای کپی موسیقی از کامپیوتر به دستگاهتان، از یک کابل USB استفاده کنید.</string>
-    <string name="empty_favorite">آهنگ‌هایی علامت‌گذاری‌شده به عنوان موردعلاقه در اینجا نشان داده می‌شوند.</string>
     <string name="empty_recent_main">آهنگ اخیری وجود ندارد</string>
     <string name="empty_recent">آهنگ‌های تازه شنیده شده در اینجا نمایش داده خواهند شد.</string>
     <string name="empty_playlist_main">هیچ آهنگی در لیست پخش نیست</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">+۱۰ آهنگ</string>
     <string name="header_5_plus_albums">+۵ آلبوم</string>
     <string name="header_other">"دیگر"</string>
-    <string name="footer_search_artists">نمایش همه هنرمندان</string>
-    <string name="footer_search_albums">نمایش همه آلبوم‌ها</string>
-    <string name="footer_search_songs">نمایش همه آهنگ‌ها</string>
-    <string name="footer_search_playlists">نمایش همه لیست‌های پخش</string>
-    <string name="search_title_artists">تمام «%s» هنرمند</string>
-    <string name="search_title_albums">تمام «%s» آلبوم</string>
-    <string name="search_title_songs">تمام «%s» آهنگ</string>
-    <string name="search_title_playlists">تمام «%s» لیست پخش</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

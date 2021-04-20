@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Музика</string>
-    <string name="page_recent">Нещодавні</string>
     <string name="page_artists">Виконавці</string>
     <string name="page_albums">Альбоми</string>
     <string name="page_songs">Композиції</string>
     <string name="page_playlists">Списки відтворення</string>
-    <string name="page_genres">Жанри</string>
-    <string name="page_now_playing">Зараз грає</string>
     <string name="page_play_queue">Відтворити чергу</string>
     <string name="header_albums">Альбоми</string>
-    <string name="header_top_songs">Топ-композиції</string>
     <string name="header_all_songs">Всі композиції</string>
     <string name="menu_settings">Налаштування</string>
     <string name="menu_shuffle_item">Перемішати</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Перемішати топ-композицій</string>
     <string name="menu_shuffle_recent">Перемішати нещодавно відтворені</string>
     <string name="menu_shuffle_last_added">Перемішати останні додані</string>
-    <string name="menu_play_all">Відтворити усе</string>
     <string name="menu_sort_by">Сортувати за</string>
     <string name="menu_clear_list">Очистити список</string>
-    <string name="menu_clear_recents">Очистити нещодавні</string>
     <string name="menu_clear_queue">Очистити чергу</string>
     <string name="menu_save_queue">Зберегти чергу до списку відтворення</string>
     <string name="menu_equalizer">Еквалайзер</string>
     <string name="add_to_playlist">Додати до списку відтворення</string>
     <string name="add_to_queue">Додати до черги</string>
-    <string name="remove_from_recent">Видалити з нещодавніх</string>
     <string name="remove_from_queue">Видалити з черги</string>
     <string name="sort_order_entry_az">А-Я</string>
     <string name="sort_order_entry_za">Я-А</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Альбом</string>
     <string name="sort_order_entry_year">Рік</string>
     <string name="sort_order_entry_duration">Тривалість</string>
-    <string name="sort_order_entry_date_added">Дата додавання</string>
-    <string name="sort_order_entry_track_list">Трек-лист</string>
     <string name="sort_order_entry_number_of_songs">Кількість пісень</string>
     <string name="sort_order_entry_number_of_albums">Кількість альбомів</string>
     <string name="sort_order_entry_filename">Назва файлу</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Цю дію не можна відмінити</string>
     <string name="delete_warning">Це призведе до остаточного видалення записів кешованих зображень</string>
     <string name="new_photo">Вибрати фото з галереї</string>
-    <string name="google_search">Пошук Google</string>
     <string name="use_default">Використовувати типове фото</string>
-    <string name="old_photo">Використовувати старе фото</string>
     <string name="context_menu_play_selection">Грати</string>
     <string name="context_menu_play_next">Грати наступну</string>
     <string name="context_menu_play_album">Відтворити альбом</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Повторення</string>
     <string name="accessibility_repeat_all">Повторити все</string>
     <string name="accessibility_repeat_one">Повторити одну</string>
-    <string name="accessibility_queue">Відкрити чергу</string>
-    <string name="accessibility_browse">Огляд музики</string>
     <string name="set_as_ringtone">«<xliff:g id="name" example="Alarm Bell">%s</xliff:g>» встановити як мелодію дзвінка</string>
-    <string name="playlist_renamed">Список відтворення перейменовано</string>
     <string name="settings_storage_category">Сховище</string>
     <string name="settings_delete_cache_title">Видалити кеш</string>
     <string name="settings_delete_cache_summary">Видалити всі кешовані зображення</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Музика: 4 \u00d7 1</string>
     <string name="app_widget_large">Музика: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музика: 4 \u00d7 2 (альтернативний)</string>
-    <string name="app_widget_recent">Музика: нещодавно прослухані</string>
     <string name="no_effects_for_you">Неможливо відкрити еквалайзер.</string>
-    <string name="empty_music">Використовуйте USB-кабель для копіювання музики з комп’ютера.</string>
-    <string name="empty_favorite">Тут відображатимуться улюблені пісні.</string>
     <string name="empty_recent_main">Немає останніх композицій</string>
     <string name="empty_recent">Пісні, які ви слухали нещодавно, з\'являться тут.</string>
     <string name="empty_playlist_main">Немає пісень у списку відтворення</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10 + пісні</string>
     <string name="header_5_plus_albums">5 + альбоми</string>
     <string name="header_other">"Інші"</string>
-    <string name="footer_search_artists">Показати всіх виконавців</string>
-    <string name="footer_search_albums">Показати всі альбоми</string>
-    <string name="footer_search_songs">Показати всі композиції</string>
-    <string name="footer_search_playlists">Показати всі списки відтворення</string>
-    <string name="search_title_artists">Всі \"%s\" виконавців</string>
-    <string name="search_title_albums">Всі \"%s\" альбомів</string>
-    <string name="search_title_songs">Всі \"%s\" пісень</string>
-    <string name="search_title_playlists">Усі \"%s\" списків відтворення</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>
