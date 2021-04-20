@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (C) 2012 Andrew Neal
   Copyright (C) 2014 The CyanogenMod Project
+  Copyright (C) 2021 The LineageOS Project
+  Copyright (C) 2021 SHIFT GmbH
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -15,26 +16,20 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <org.lineageos.eleven.widgets.ViewPagerTabs
+        android:id="@+id/fragment_home_phone_pager_titles"
+        style="@style/HeaderTabTextStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="@dimen/tpi_height"
+        android:elevation="@dimen/action_bar_elevation" />
 
-        <org.lineageos.eleven.widgets.ViewPagerTabs
-            android:id="@+id/fragment_home_phone_pager_titles"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/tpi_height"
-            android:elevation="@dimen/action_bar_elevation"
-            style="@style/HeaderTabTextStyle" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/fragment_home_phone_pager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/fragment_home_phone_pager_titles" />
-    </RelativeLayout>
-
-</FrameLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fragment_home_phone_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fragment_home_phone_pager_titles" />
+</RelativeLayout>
