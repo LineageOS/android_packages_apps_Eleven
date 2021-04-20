@@ -1,0 +1,25 @@
+<!--
+     Copyright (C) 2021 The LineageOS Project
+     Copyright (C) 2021 SHIFT GmbH
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <path
+        android:fillColor="#ffffff"
+        android:pathData="M32,44.2857C32,43.7334 32.4477,43.2857 33,43.2857H61.8571C62.4094,43.2857 62.8571,43.7334 62.8571,44.2857V47.4286C62.8571,47.9809 62.4094,48.4286 61.8571,48.4286H33C32.4477,48.4286 32,47.9809 32,47.4286V44.2857ZM32,34C32,33.4477 32.4477,33 33,33H61.8571C62.4094,33 62.8571,33.4477 62.8571,34V37.1429C62.8571,37.6951 62.4094,38.1429 61.8571,38.1429H33C32.4477,38.1429 32,37.6951 32,37.1429V34ZM32,54.5714C32,54.0191 32.4477,53.5714 33,53.5714H51.5714C52.1237,53.5714 52.5714,54.0191 52.5714,54.5714V57.7143C52.5714,58.2666 52.1237,58.7143 51.5714,58.7143H33C32.4477,58.7143 32,58.2666 32,57.7143V54.5714ZM59.2288,54.4801C58.5623,54.0802 57.7143,54.5603 57.7143,55.3376V67.2338C57.7143,68.0111 58.5623,68.4912 59.2288,68.0913L69.1423,62.1432C69.7896,61.7548 69.7896,60.8166 69.1423,60.4282L59.2288,54.4801Z" />
+</vector>
