@@ -28,7 +28,6 @@
             layout="@layout/playlist_detail_header" />
 
         <FrameLayout
-            android:id="@+id/list_base_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

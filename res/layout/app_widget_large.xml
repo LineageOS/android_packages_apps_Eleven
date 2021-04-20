@@ -34,7 +34,6 @@
         android:scaleType="fitXY" />
 
     <LinearLayout
-        android:id="@+id/app_widget_large_buttons"
         android:layout_width="wrap_content"
         android:layout_row="0"
         android:layout_column="1"
