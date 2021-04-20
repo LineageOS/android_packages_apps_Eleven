@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4284815a_9cc7c2d0",
+        "filename": "src/org/lineageos/eleven/ui/fragments/AlbumFragment.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T17:52:17Z",
+      "side": 1,
+      "message": "can be moved to the previous line now",
+      "revId": "b83c0d0cc43bd8ba3302c69bc967aea9e9c61666",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
