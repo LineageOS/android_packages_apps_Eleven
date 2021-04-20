@@ -23,8 +23,6 @@
     <dimen name="text_size_small">14sp</dimen>
     <dimen name="text_size_medium">16sp</dimen>
     <dimen name="text_size_large">22sp</dimen>
-    <dimen name="text_size_x_large">24sp</dimen>
-    <dimen name="text_size_dayum">34sp</dimen>
 
     <!-- Frequently used spacing between elements in many layouts -->
     <dimen name="standard_padding">16.0dp</dimen>
@@ -35,29 +33,14 @@
 
     <!-- List and grid view padding -->
     <dimen name="list_preferred_item_padding">14.0dip</dimen>
-    <dimen name="list_menu_item_padding_right">4.0dip</dimen>
     <dimen name="list_item_general_margin">16.0dip</dimen>
-    <dimen name="list_item_menu_button_width">24.0dip</dimen>
-    <dimen name="list_item_menu_button_height">30.0dip</dimen>
     <dimen name="list_item_padding_top">12.0dip</dimen>
     <dimen name="list_item_padding_bottom">12.0dip</dimen>
     <dimen name="list_item_header_size">16.0sp</dimen>
-    <dimen name="list_item_footer_size">18.0sp</dimen>
     <dimen name="list_item_main_text_size">@dimen/text_size_small</dimen>
     <dimen name="list_item_secondary_text_size">@dimen/text_size_micro</dimen>
     <dimen name="list_item_queue_text_padding_left">15.0dip</dimen>
 
-    <!-- List view fast scroll padding left -->
-    <dimen name="fast_scroll_padding_left">8dp</dimen>
-    <!-- List view fast scroll padding right -->
-    <dimen name="fast_scroll_padding_right">8dp</dimen>
-    <!-- grid view vertical and horizontal spacing -->
-    <dimen name="grid_item_horizontal_spacing">8dp</dimen>
-    <dimen name="grid_item_vertical_spacing">8dp</dimen>
-    <!-- List item detailed height -->
-    <dimen name="list_item_detailed_height">128dp</dimen>
-    <!-- Top margin of "line_two" -->
-    <dimen name="list_item_line_two_margin_top">8dp</dimen>
     <!-- Left padding in the grid text -->
     <dimen name="grid_item_padding_left">8dp</dimen>
     <dimen name="grid_item_padding_right">8dp</dimen>
@@ -65,7 +48,6 @@
     <dimen name="grid_bottom_height">56dip</dimen>
     <!-- Grid and list item normal height -->
     <dimen name="item_normal_height">70.0dip</dimen>
-    <dimen name="item_short_height">60.0dip</dimen>
     <dimen name="list_item_image_height">50.0dip</dimen>
     <dimen name="list_item_image_width">50.0dip</dimen>
     <dimen name="list_item_top_track_image_size">26.0dip</dimen>
@@ -74,42 +56,19 @@
 
     <!-- Bottom Action Bar -->
     <dimen name="bottom_action_bar_height">50.0dip</dimen>
-    <dimen name="bottom_action_bar_item_width">56.0dip</dimen>
-    <dimen name="bottom_action_bar_item_padding_left">12.0dip</dimen>
-    <dimen name="bottom_action_bar_item_padding_right">12.0dip</dimen>
-    <dimen name="bottom_action_bar_album_art_width">30.0dip</dimen>
-    <dimen name="bottom_action_bar_album_art_height">30.0dip</dimen>
     <dimen name="bottom_action_bar_info_padding_left">5.0dip</dimen>
     <dimen name="bab_progress_size">35.0dip</dimen>
     <dimen name="bab_progress_padding_left">16.0dip</dimen>
     <dimen name="bab_progress_padding_right">22.0dip</dimen>
 
     <!-- Notification template -->
-    <dimen name="notification_big_icon_height">64.0dip</dimen>
-    <dimen name="notification_big_icon_width">64.0dip</dimen>
     <dimen name="notification_info_container_padding_left">8.0dip</dimen>
-    <dimen name="notification_info_container_padding_bottom">4.0dip</dimen>
-    <dimen name="notification_action_padding">8.0dip</dimen>
-    <dimen name="notification_action_height">48.0dip</dimen>
-    <dimen name="notification_action_width">48.0dip</dimen>
 
     <!-- Notification template expanded -->
-    <dimen name="notification_expanded_height">128dp</dimen>
-    <dimen name="notification_expanded_buttons_divider_padding">1dip</dimen>
-    <dimen name="notification_expanded_button_height">48dp</dimen>
     <dimen name="notification_expanded_button_padding">10dp</dimen>
-    <dimen name="notification_expanded_content_padding_top">8dp</dimen>
-    <dimen name="notification_expanded_collapse_padding">8dp</dimen>
 
-    <!-- Height of the shadow asset under the photo -->
-    <dimen name="profile_photo_shadow_height">10.0dip</dimen>
-    <!-- Height of the text label in the carousel -->
-    <dimen name="profile_carousel_label_height">45.0dip</dimen>
-    <dimen name="profile_indicator_height">5.0dip</dimen>
-    <dimen name="profile_label_padding">16.0dip</dimen>
     <!-- playlist detail header -->
     <dimen name="playlist_detail_header_height">240.0dip</dimen>
-    <dimen name="faux_playlist_detail_header_height">190.0dip</dimen>
     <dimen name="playlist_detail_header_bottom_height">40.0dip</dimen>
 
     <!-- Audio player Buttons (play/pause/shuffle/repeat/next/previous)-->
@@ -118,55 +77,21 @@
     <dimen name="audio_player_controls_end_button_margin">18.0dip</dimen>
     <dimen name="audio_player_controls_main_button_width">100.0dip</dimen>
     <dimen name="audio_player_controls_main_button_height">100.0dip</dimen>
-    <dimen name="audio_player_controls_top_button_width">26.0dip</dimen>
-    <dimen name="audio_player_controls_top_button_height">30.0dip</dimen>
-    <dimen name="audio_player_controls_side_width">83.0dip</dimen>
-    <dimen name="audio_player_control_padding_top">26.0dip</dimen>
-
-    <!-- Audio player track text settings-->
-    <dimen name="audio_player_track_name_padding_side">36.0dip</dimen>
-    <dimen name="audio_player_header_padding_bottom">15.0dip</dimen>
-    <dimen name="audio_player_track_text_size">14sp</dimen>
 
     <!-- Audio player time text settings-->
-    <dimen name="audio_player_time_text_padding">3.0dip</dimen>
     <dimen name="audio_player_time_text_size">@dimen/text_size_micro</dimen>
-
-    <dimen name="audio_player_divider_length">86.0dip</dimen>
-    <dimen name="audio_player_divider_height">1.0dip</dimen>
-    <dimen name="audio_player_divider_horizontal_offset">8.0dip</dimen>
 
     <!-- App Widgets -->
     <dimen name="app_widget_large_min_width">250dp</dimen>
     <dimen name="app_widget_large_min_height">110dp</dimen>
-    <dimen name="app_widget_scrollable_min_height">70dp</dimen>
-    <dimen name="app_widget_scrollable_min_resize_height">110dp</dimen>
     <dimen name="app_widget_large_alternate_artwork_size">80dp</dimen>
     <dimen name="app_widget_small_min_width">80dp</dimen>
     <dimen name="app_widget_small_min_height">80dp</dimen>
-    <dimen name="app_widget_small_info_container_padding_left">8dp</dimen>
-    <dimen name="app_widget_small_info_container_padding_right">8dp</dimen>
-    <dimen name="app_widget_small_artwork_size">56dp</dimen>
-    <dimen name="app_widget_small_button_padding">8dp</dimen>
-    <dimen name="app_widget_small_button_height">48dp</dimen>
-    <dimen name="app_widget_tiny_height">70dp</dimen>
-    <dimen name="app_widget_tiny_width">70dp</dimen>
-    <dimen name="app_widget_padding">0dp</dimen>
-    <dimen name="app_widget_bottom_margin">4dp</dimen>
     <dimen name="app_widget_radius">8dp</dimen>
-
-    <!-- Shadow height -->
-    <dimen name="shadow_height">5.0dip</dimen>
-
-    <!-- Colorstrip -->
-    <dimen name="colorstrip_height">2.0dip</dimen>
 
     <!-- Drag and drop -->
     <dimen name="drag_and_drop_width">24.0dip</dimen>
     <dimen name="drag_and_drop_height">50.0dip</dimen>
-
-    <!-- Color scheme dialog -->
-    <dimen name="color_scheme_dialog_row_padding">8.0dip</dimen>
 
     <!-- Sliding Panel -->
     <dimen name="sliding_panel_indicator_height">60.0dip</dimen>
@@ -176,12 +101,7 @@
     <dimen name="header_bar_height">56.0dip</dimen>
     <dimen name="header_bar_up_width">30.0dip</dimen>
     <dimen name="header_bar_menu_button_width">38.0dip</dimen>
-    <dimen name="header_bar_custom_button_width">48.0dip</dimen>
     <dimen name="header_bar_button_height">48.0dip</dimen>
-    <dimen name="header_bar_button_padding_small">5.0dip</dimen>
-    <dimen name="header_bar_button_padding_large">10.0dip</dimen>
-    <dimen name="header_bar_padding_left">16.0dp</dimen>
-    <dimen name="header_bar_button_container_padding">8.0dp</dimen>
 
     <!-- Title Page Indicator Settings -->
     <dimen name="tpi_height">48dp</dimen>
@@ -215,9 +135,4 @@
     <dimen name="preview_layout_margin">20dp</dimen>
     <dimen name="preview_title_textSize">12sp</dimen>
     <dimen name="preview_artist_textSize">10sp</dimen>
-
-    <!-- Audio Player Controls Card -->
-    <dimen name="audio_player_controls_card_corner_radius">2dp</dimen>
-    <dimen name="audio_player_controls_card_content_padding">8dp</dimen>
-    <dimen name="audio_player_controls_card_elevation">4dp</dimen>
 </resources>
