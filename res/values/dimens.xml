@@ -151,5 +151,8 @@
     <dimen name="preview_title_textSize">12sp</dimen>
     <dimen name="preview_artist_textSize">10sp</dimen>
 
+    <dimen name="list_icon_default">36dp</dimen>
+    <dimen name="list_icon_large">112dp</dimen>
+
     <!-- Audio Player Controls Card -->
 </resources>
