@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "881fb196_507f11e6",
+        "filename": "res/layout/square_image_view.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "5f67f23f140f7a6b4836e5f042faaaa63f86858a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72d61086_66703a8f",
+        "filename": "res/menu/album_sort_by.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "5f67f23f140f7a6b4836e5f042faaaa63f86858a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a05b91a_3769ba09",
+        "filename": "res/menu/artist_sort_by.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "5f67f23f140f7a6b4836e5f042faaaa63f86858a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97f63ad1_8b8b8d14",
+        "filename": "res/menu/song_sort_by.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 1,
+      "message": "add newline at end",
+      "revId": "5f67f23f140f7a6b4836e5f042faaaa63f86858a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14e7e722_eb791bc6",
+        "filename": "res/values/appmsg_colors.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 1,
+      "message": "file can be removed now I think?",
+      "revId": "5f67f23f140f7a6b4836e5f042faaaa63f86858a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "026cd72f_d5f7b12c",
+        "filename": "res/values/fractions.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 1,
+      "message": "file can be removed now?",
+      "revId": "5f67f23f140f7a6b4836e5f042faaaa63f86858a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

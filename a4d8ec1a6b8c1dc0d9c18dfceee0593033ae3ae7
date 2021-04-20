@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8fb77407_c6f7adb0",
+        "filename": "res/layout/album_detail_song.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-20T18:47:57Z",
+      "side": 0,
+      "message": "add newline at end",
+      "revId": "a4d8ec1a6b8c1dc0d9c18dfceee0593033ae3ae7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
