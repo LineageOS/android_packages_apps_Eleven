@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d20e71f_944d1585",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-04-21T08:16:58Z",
+      "side": 1,
+      "message": "should be BlurBitmapWorkerTask, not Blut...",
+      "revId": "bbdafe86e95c13c88d71758d9349fb360a56ef48",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
