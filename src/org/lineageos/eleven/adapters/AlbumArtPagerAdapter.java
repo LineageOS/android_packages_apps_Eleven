@@ -240,7 +240,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
                 }
 
                 mTask = new AlbumArtistLoader(this, getActivity());
-                ElevenUtils.execute(false, mTask, mAudioId);
+                ElevenUtils.execute(mTask, mAudioId);
             }
 
         }
