@@ -23,7 +23,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 
 import org.lineageos.eleven.ui.fragments.AlbumFragment;
@@ -106,16 +105,9 @@ public final class PreferenceUtils {
      *              in {@link MusicBrowserPhoneFragment}.
      */
     public void setStartPage(final int value) {
-        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(final Void... unused) {
-                final SharedPreferences.Editor editor = mPreferences.edit();
-                editor.putInt(START_PAGE, value);
-                editor.apply();
-
-                return null;
-            }
-        }, (Void[]) null);
+        final SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putInt(START_PAGE, value);
+        editor.apply();
     }
 
     /**
@@ -131,7 +123,6 @@ public final class PreferenceUtils {
     public void removeOnSharedPreferenceChangeListener(OnSharedPreferenceChangeListener listener) {
         mPreferences.unregisterOnSharedPreferenceChangeListener(listener);
     }
-
 
     /**
      * Returns the last page the user was on when the app was exited.
@@ -149,16 +140,9 @@ public final class PreferenceUtils {
      * @param value The new sort order
      */
     private void setSortOrder(final String key, final String value) {
-        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(final Void... unused) {
-                final SharedPreferences.Editor editor = mPreferences.edit();
-                editor.putString(key, value);
-                editor.apply();
-
-                return null;
-            }
-        }, (Void[]) null);
+        final SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putString(key, value);
+        editor.apply();
     }
 
     /**
