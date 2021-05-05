@@ -143,7 +143,7 @@ public final class ImageCache {
      * @param context     The {@link Context} to use
      */
     private void init(final Context context) {
-        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(final Void... unused) {
@@ -482,7 +482,7 @@ public final class ImageCache {
      * cache first
      */
     public void flush() {
-        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(final Void... unused) {
@@ -504,7 +504,7 @@ public final class ImageCache {
      * Clears the disk and memory caches
      */
     public void clearCaches() {
-        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(final Void... unused) {
@@ -530,7 +530,7 @@ public final class ImageCache {
      * thread.
      */
     public void close() {
-        ElevenUtils.execute(false, new AsyncTask<Void, Void, Void>() {
+        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(final Void... unused) {
