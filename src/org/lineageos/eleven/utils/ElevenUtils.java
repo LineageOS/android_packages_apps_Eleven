@@ -57,20 +57,13 @@ public final class ElevenUtils {
     /**
      * Execute an {@link AsyncTask} on a thread pool
      *
-     * @param forceSerial True to force the task to run in serial order
      * @param task        Task to execute
      * @param args        Optional arguments to pass to
      *                    {@link AsyncTask#execute(Object[])}
-     * @param <T>         Task argument type
      */
     @SafeVarargs
-    public static <T> void execute(final boolean forceSerial, final AsyncTask<T, ?, ?> task,
-                                   final T... args) {
-        if (forceSerial) {
-            task.execute(args);
-        } else {
-            task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, args);
-        }
+    public static <T> void execute(final AsyncTask<T, ?, ?> task, final T... args) {
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, args);
     }
 
     /**
