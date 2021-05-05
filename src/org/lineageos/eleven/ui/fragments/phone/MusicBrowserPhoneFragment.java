@@ -148,7 +148,7 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
     @Override
     public void onPause() {
         super.onPause();
-        // Save the last page the use was on
+        // Save the last page the user was on
         mPreferences.setStartPage(mViewPager.getCurrentItem());
     }
 
