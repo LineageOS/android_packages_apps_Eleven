@@ -461,7 +461,7 @@ public abstract class ImageWorker {
                         new AsyncTaskContainer(bitmapWorkerTask);
                 imageView.setTag(asyncTaskContainer);
                 try {
-                    ElevenUtils.execute(false, bitmapWorkerTask,
+                    ElevenUtils.execute(bitmapWorkerTask,
                             artistName, albumName, String.valueOf(albumId));
                 } catch (RejectedExecutionException e) {
                     // Executor has exhausted queue space
@@ -522,7 +522,7 @@ public abstract class ImageWorker {
             final AsyncTaskContainer asyncTaskContainer = new AsyncTaskContainer(bitmapWorkerTask);
             imageView.setTag(asyncTaskContainer);
             try {
-                ElevenUtils.execute(false, bitmapWorkerTask);
+                ElevenUtils.execute(bitmapWorkerTask);
             } catch (RejectedExecutionException e) {
                 // Executor has exhausted queue space
             }
@@ -552,7 +552,7 @@ public abstract class ImageWorker {
             albumScrimImage.setTag(asyncTaskContainer);
 
             try {
-                ElevenUtils.execute(false, blurWorkerTask, artistName, albumName,
+                ElevenUtils.execute(blurWorkerTask, artistName, albumName,
                         String.valueOf(albumId));
             } catch (RejectedExecutionException e) {
                 // Executor has exhausted queue space, show default artwork
