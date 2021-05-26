@@ -18,7 +18,6 @@
  */
 package org.lineageos.eleven.utils;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.ContentUris;
