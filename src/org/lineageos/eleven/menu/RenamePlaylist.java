@@ -20,8 +20,10 @@ package org.lineageos.eleven.menu;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.os.Bundle;
+import android.net.Uri;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 import android.text.Editable;
@@ -87,12 +89,12 @@ public class RenamePlaylist extends BasePlaylistDialog {
         }
 
         final ContentResolver resolver = activity.getContentResolver();
+        final Uri uri = ContentUris.withAppendedId(
+                            MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
+                            mRenameId);
         final ContentValues values = new ContentValues(1);
         values.put(Audio.Playlists.NAME, playlistName);
-        resolver.update(Audio.Playlists.EXTERNAL_CONTENT_URI, values,
-                MediaStore.Audio.Playlists._ID + "=?", new String[]{
-                        String.valueOf(mRenameId)
-                });
+        resolver.update(uri, values, null, null);
         final Dialog dialog = getDialog();
         if (dialog != null) {
             dialog.dismiss();
