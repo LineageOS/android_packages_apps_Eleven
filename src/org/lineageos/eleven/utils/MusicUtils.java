@@ -1326,8 +1326,6 @@ public final class MusicUtils {
 
         // sort the list but ignore case
         menuItemMap.sort(new IgnoreCaseComparator());
-        // add new_playlist to the top of the sorted list
-        menuItemMap.add(0, context.getString(R.string.new_playlist));
 
         return menuItemMap;
     }
