@@ -339,7 +339,7 @@ public class MusicPlaybackService extends Service
      */
     public static final int MAX_HISTORY_SIZE = 1000;
 
-    private static final String ACTION_AUDIO_PLAYER = BuildConstants.PACKAGE_NAME + ".AUDIO_PLAYER";
+    private static final String ACTION_AUDIO_PLAYER = "org.lineageos.eleven.AUDIO_PLAYER";
 
     private static final String CHANNEL_NAME = "eleven_playback";
 
