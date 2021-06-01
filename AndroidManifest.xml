@@ -26,6 +26,11 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="29" />
 
+    <!-- Android Studio will complain about not being able to
+         resove the symbol, but it compiles with no problem.
+         Do not remove for as long as there are officially supported
+         devices that were supported in 14.1 -->
+    <!-- suppress AndroidElementNotAllowed -->
     <original-package android:name="com.cyanogenmod.eleven" />
 
     <!-- Used for caching and creating new playlists -->

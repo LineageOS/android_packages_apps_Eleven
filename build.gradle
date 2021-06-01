@@ -108,7 +108,7 @@ android {
 
     sourceSets {
         main {
-            manifest.srcFile 'AndroidManifest-gradle.xml'
+            manifest.srcFile 'AndroidManifest.xml'
 
             aidl.srcDirs = ['src']
             assets.srcDirs = ['assets']
