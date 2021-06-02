@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "93d0fb77_a918aa5d",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2021-06-02T07:20:31Z",
+      "side": 1,
+      "message": "I have at least 3 devices that have upgraded from 14.1 all the way up to 18.1 with all migrations working perfectly, so we can\u0027t remove this yet.",
+      "parentUuid": "14174261_315eef40",
+      "range": {
+        "startLine": 31,
+        "startChar": 9,
+        "endLine": 32,
+        "endChar": 48
+      },
+      "revId": "f895b633ed582d01f8e54323b9a1bb6d4b48b48b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7a5255de_4e094b9d",
         "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
         "patchSetId": 1
