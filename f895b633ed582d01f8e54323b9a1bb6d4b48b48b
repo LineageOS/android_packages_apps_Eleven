@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "14174261_315eef40",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2021-06-02T07:07:41Z",
+      "side": 1,
+      "message": "actually, doesn\u0027t Updater prevent major android version upgrades and such upgrades require a manual installation?\n\nmaybe it is save to assume, that noone kept upgrading from 14.1 all the way to 18.1 without doing a single factory reset and we can remove this alltogether?\n\nwe talk about a timeline of November-ish 2016, more than 4 years.",
+      "range": {
+        "startLine": 31,
+        "startChar": 9,
+        "endLine": 32,
+        "endChar": 48
+      },
+      "revId": "f895b633ed582d01f8e54323b9a1bb6d4b48b48b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7a5255de_4e094b9d",
         "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
         "patchSetId": 1
