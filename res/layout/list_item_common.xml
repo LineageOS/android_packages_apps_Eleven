@@ -75,7 +75,7 @@
             android:id="@+id/popup_menu_button"
             android:layout_width="@dimen/overflow_width"
             android:layout_height="@dimen/overflow_height"
-            android:foreground="?android:selectableItemBackgroundBorderless"
+            android:background="?android:selectableItemBackgroundBorderless"
             android:src="@drawable/menu_button" />
     </LinearLayout>
 </merge>
