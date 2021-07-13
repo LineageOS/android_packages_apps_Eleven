@@ -116,28 +116,12 @@ public class AppWidgetSmall extends AppWidgetBase {
         final CharSequence albumName = service.getAlbumName();
         final CharSequence artistName = service.getArtistName();
         final Bitmap bitmap = service.getAlbumArt(true).getBitmap();
-
+        
         // Set the titles and artwork
-        if (!TextUtils.isEmpty(trackName) || !TextUtils.isEmpty(artistName)) {
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_one, trackName);
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_two, albumName);
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_three, artistName);
-        }
+        appWidgetView.setTextViewText(R.id.app_widget_small_line_one, trackName);
+        appWidgetView.setTextViewText(R.id.app_widget_small_line_two, artistName);
+        appWidgetView.setTextViewText(R.id.app_widget_small_line_three, albumName);
         appWidgetView.setImageViewBitmap(R.id.app_widget_small_image, bitmap);
-
-        // Set correct drawable for pause state
-        final boolean isPlaying = service.isPlaying();
-        if (isPlaying) {
-            appWidgetView.setImageViewResource(R.id.app_widget_small_play,
-                    R.drawable.btn_playback_pause_widget);
-            appWidgetView.setContentDescription(R.id.app_widget_small_play,
-                    service.getString(R.string.accessibility_pause));
-        } else {
-            appWidgetView.setImageViewResource(R.id.app_widget_small_play,
-                    R.drawable.btn_playback_play_widget);
-            appWidgetView.setContentDescription(R.id.app_widget_small_play,
-                    service.getString(R.string.accessibility_play));
-        }
 
         // Link actions buttons to intents
         linkButtons(service, appWidgetView);
@@ -162,9 +146,5 @@ public class AppWidgetSmall extends AppWidgetBase {
         pendingIntent = PendingIntent.getActivity(context, 0, action, 0);
         views.setOnClickPendingIntent(R.id.app_widget_small_info_container, pendingIntent);
         views.setOnClickPendingIntent(R.id.app_widget_small_image, pendingIntent);
-
-        // Play and pause
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION, serviceName);
-        views.setOnClickPendingIntent(R.id.app_widget_small_play, pendingIntent);
     }
 }
