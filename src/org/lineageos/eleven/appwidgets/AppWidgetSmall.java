@@ -116,15 +116,22 @@ public class AppWidgetSmall extends AppWidgetBase {
         final CharSequence albumName = service.getAlbumName();
         final CharSequence artistName = service.getArtistName();
         final Bitmap bitmap = service.getAlbumArt(true).getBitmap();
-
+        
         // Set the titles and artwork
+<<<<<<< HEAD   (447540 Eleven: remove double-ripple from list item more-button)
         if (!TextUtils.isEmpty(trackName) || !TextUtils.isEmpty(artistName)) {
             appWidgetView.setTextViewText(R.id.app_widget_small_line_one, trackName);
             appWidgetView.setTextViewText(R.id.app_widget_small_line_two, albumName);
             appWidgetView.setTextViewText(R.id.app_widget_small_line_three, artistName);
         }
+=======
+        appWidgetView.setTextViewText(R.id.app_widget_small_line_one, trackName);
+        appWidgetView.setTextViewText(R.id.app_widget_small_line_two, artistName);
+        appWidgetView.setTextViewText(R.id.app_widget_small_line_three, albumName);
+>>>>>>> CHANGE (3213a4 Eleven: Make small widget better.)
         appWidgetView.setImageViewBitmap(R.id.app_widget_small_image, bitmap);
 
+<<<<<<< HEAD   (447540 Eleven: remove double-ripple from list item more-button)
         // Set correct drawable for pause state
         final boolean isPlaying = service.isPlaying();
         if (isPlaying) {
@@ -139,6 +146,8 @@ public class AppWidgetSmall extends AppWidgetBase {
                     service.getString(R.string.accessibility_play));
         }
 
+=======
+>>>>>>> CHANGE (3213a4 Eleven: Make small widget better.)
         // Link actions buttons to intents
         linkButtons(service, appWidgetView);
 
@@ -162,9 +171,12 @@ public class AppWidgetSmall extends AppWidgetBase {
         pendingIntent = PendingIntent.getActivity(context, 0, action, 0);
         views.setOnClickPendingIntent(R.id.app_widget_small_info_container, pendingIntent);
         views.setOnClickPendingIntent(R.id.app_widget_small_image, pendingIntent);
+<<<<<<< HEAD   (447540 Eleven: remove double-ripple from list item more-button)
 
         // Play and pause
         pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION, serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_small_play, pendingIntent);
+=======
+>>>>>>> CHANGE (3213a4 Eleven: Make small widget better.)
     }
 }
