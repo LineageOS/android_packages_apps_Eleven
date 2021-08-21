@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Mūzika</string>
-    <string name="page_recent">Nesenie</string>
     <string name="page_artists">Izpildītāji</string>
     <string name="page_albums">Albumi</string>
     <string name="page_songs">Dziesmas</string>
     <string name="page_playlists">Atskaņošanas saraksti</string>
-    <string name="page_genres">Žanri</string>
-    <string name="page_now_playing">Šobrīd atskaņo</string>
     <string name="page_play_queue">Atskaņošanas rinda</string>
     <string name="header_albums">Albumi</string>
-    <string name="header_top_songs">Labākās dziesmas</string>
     <string name="header_all_songs">Visas dziesmas</string>
     <string name="menu_settings">Iestatījumi</string>
     <string name="menu_shuffle_item">Jaukt</string>
@@ -38,15 +34,12 @@
     <string name="menu_shuffle_top_tracks">Jaukt labākās dziesmas</string>
     <string name="menu_shuffle_recent">Jaukt nesen atskaņoto</string>
     <string name="menu_shuffle_last_added">Jaukt nesen pievienoto</string>
-    <string name="menu_play_all">Atskaņot visu</string>
     <string name="menu_sort_by">Kārtot pēc</string>
     <string name="menu_clear_list">Notīrīt sarakstu</string>
-    <string name="menu_clear_recents">Notīrīt nesenos</string>
     <string name="menu_clear_queue">Notīrīt rindu</string>
     <string name="menu_equalizer">Ekvalaizers</string>
     <string name="add_to_playlist">Pievienot atskaņošanas sarakstam</string>
     <string name="add_to_queue">Pievienot rindai</string>
-    <string name="remove_from_recent">Izņemt no nesenajiem</string>
     <string name="remove_from_queue">Izņemt no rindas</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -54,8 +47,6 @@
     <string name="sort_order_entry_album">Albums</string>
     <string name="sort_order_entry_year">Gads</string>
     <string name="sort_order_entry_duration">Ilgums</string>
-    <string name="sort_order_entry_date_added">Pievienošanas datums</string>
-    <string name="sort_order_entry_track_list">Dziesmu saraksts</string>
     <string name="sort_order_entry_number_of_songs">Dziesmu skaits</string>
     <string name="sort_order_entry_number_of_albums">Albumu skaits</string>
     <string name="sort_order_entry_filename">Faila nosaukums</string>
@@ -76,9 +67,7 @@
     <string name="cannot_be_undone">To nevar atsaukt</string>
     <string name="delete_warning">Kešoto attēlu ieraksti tiks dzēsti neatgriezeniski</string>
     <string name="new_photo">Izvēlēties foto no galerijas</string>
-    <string name="google_search">Google meklēšana</string>
     <string name="use_default">Izmantot noklusēto foto</string>
-    <string name="old_photo">Izmantot agrāko foto</string>
     <string name="context_menu_play_selection">Atskaņot</string>
     <string name="context_menu_play_next">Atskaņot nākamo</string>
     <string name="context_menu_more_by_artist">Vairāk no izpildītāja</string>
@@ -99,10 +88,7 @@
     <string name="accessibility_repeat">Atkārtot</string>
     <string name="accessibility_repeat_all">Atkārtot visu</string>
     <string name="accessibility_repeat_one">Atkārtot vienu</string>
-    <string name="accessibility_queue">Atvērt rindu</string>
-    <string name="accessibility_browse">Pārlūkot mūziku</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ir uzstadīts kā zvana signāls</string>
-    <string name="playlist_renamed">Atskaņošanas saraksts ir pārsaukts</string>
     <string name="settings_storage_category">Krātuve</string>
     <string name="settings_delete_cache_title">Dzēst kešatmiņu</string>
     <string name="settings_delete_cache_summary">Dzēst visas kešotās bildes</string>
@@ -113,10 +99,7 @@
     <string name="app_widget_small">Mūzika: 4 \u00d7 1</string>
     <string name="app_widget_large">Mūzika: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Mūzika: 4 \u00d7 2 (alternatīvā)</string>
-    <string name="app_widget_recent">Mūzika: nesen klaustītie</string>
     <string name="no_effects_for_you">Ekvalaizeru nevar atvērt.</string>
-    <string name="empty_music">Lai kopētu mūziku no datora uz šo iekārtu, izmantojiet USB kabeli.</string>
-    <string name="empty_favorite">Izlasei pievienotās dziesmas tiks parādītas šeit.</string>
     <string name="empty_recent_main">Nav neseno dziesmu</string>
     <string name="empty_recent">Nesen klausītās dziesmas tiks parādītas šeit.</string>
     <string name="empty_playlist_main">Atskaņošanas sarakstā nav dziesmu</string>
@@ -147,13 +130,5 @@
     <string name="header_10_plus_songs">10 + dziesmas</string>
     <string name="header_5_plus_albums">5 + albumi</string>
     <string name="header_other">"Cits"</string>
-    <string name="footer_search_artists">Parādīt visus māksliniekus</string>
-    <string name="footer_search_albums">Parādīt visus albumus</string>
-    <string name="footer_search_songs">Rādīt visas dziesmas</string>
-    <string name="footer_search_playlists">Parādīt visus atskaņošanas sarakstus</string>
-    <string name="search_title_artists">Visi \"%s\" mākslinieki</string>
-    <string name="search_title_albums">Visi \"%s\" albumi</string>
-    <string name="search_title_songs">Visas \"%s\" dziesmas</string>
-    <string name="search_title_playlists">Visi \"%s\" atskaņošanas saraksti</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

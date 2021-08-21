@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musiek</string>
-    <string name="page_recent">Onlangs</string>
     <string name="page_artists">Kunstenaars</string>
     <string name="page_albums">Albums</string>
     <string name="page_songs">Liedjies</string>
     <string name="page_playlists">Speellys</string>
-    <string name="page_genres">Genres</string>
-    <string name="page_now_playing">Speel tans</string>
     <string name="page_play_queue">Speel waglys</string>
     <string name="header_albums">Albums</string>
-    <string name="header_top_songs">Beste Liedjies</string>
     <string name="header_all_songs">Alle Liedjies</string>
     <string name="menu_settings">Instellings</string>
     <string name="menu_shuffle_item">Skommel</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Skommel beste liedjies</string>
     <string name="menu_shuffle_recent">Skommel onlangs gespeel</string>
     <string name="menu_shuffle_last_added">Skommel laaste bygevoeg</string>
-    <string name="menu_play_all">Speel almal</string>
     <string name="menu_sort_by">Sorteer volgens</string>
     <string name="menu_clear_list">Verwyder alle items</string>
-    <string name="menu_clear_recents">Verwyder onlangse items</string>
     <string name="menu_clear_queue">Vee waglys uit</string>
     <string name="menu_save_queue">Stoor wag items na snitlys</string>
     <string name="menu_equalizer">Klankmenger</string>
     <string name="add_to_playlist">Voeg by speellys</string>
     <string name="add_to_queue">Voeg by waglys</string>
-    <string name="remove_from_recent">Verwyder vanuit onlangse lys</string>
     <string name="remove_from_queue">Verwyder vanuit waglys</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Jaar</string>
     <string name="sort_order_entry_duration">Tydsduur</string>
-    <string name="sort_order_entry_date_added">Datum bygevoeg</string>
-    <string name="sort_order_entry_track_list">Speellys</string>
     <string name="sort_order_entry_number_of_songs">Aantal liedjies</string>
     <string name="sort_order_entry_number_of_albums">Aantal albums</string>
     <string name="sort_order_entry_filename">Leêrnaam</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Hierdie kan nie ongedaan gemaak word nie</string>
     <string name="delete_warning">Dit sal permanent kasgeheue foto inskrywings verwyder</string>
     <string name="new_photo">Kies foto vanuit Galery</string>
-    <string name="google_search">Google soektog</string>
     <string name="use_default">Gebruik verstekfoto</string>
-    <string name="old_photo">Gebruik ou foto</string>
     <string name="context_menu_play_selection">Speel</string>
     <string name="context_menu_play_next">Speel volgende</string>
     <string name="context_menu_play_album">Speel album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Herhaal</string>
     <string name="accessibility_repeat_all">Herhaal almal</string>
     <string name="accessibility_repeat_one">Herhaal eenkeer</string>
-    <string name="accessibility_queue">Maak waglys oop</string>
-    <string name="accessibility_browse">Kyk na musiek</string>
     <string name="set_as_ringtone">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" gestel as luitoon</string>
-    <string name="playlist_renamed">Speellys is hernoem</string>
     <string name="settings_storage_category">Berging</string>
     <string name="settings_delete_cache_title">Verwyder kasgeheue</string>
     <string name="settings_delete_cache_summary">Verwyder alle kasgeheue foto\'s</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Musiek: 4 \u00d7 1</string>
     <string name="app_widget_large">Musiek: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musiek: 4 \u00d7 2 (alternatief)</string>
-    <string name="app_widget_recent">Musiek: onlangs geluister</string>
     <string name="no_effects_for_you">Die equalizer kon nie oopgemaak word nie.</string>
-    <string name="empty_music">Om musiek van jou rekenaar na jou toestel te kopieer, gebruik \'n USB-kabel.</string>
-    <string name="empty_favorite">Liedjies wat jy gemerk het as gunstelinge word hier vertoon.</string>
     <string name="empty_recent_main">Geen onlangse liedjies</string>
     <string name="empty_recent">Liedjies wat jy onlangs geluister het, sal hier vertoon.</string>
     <string name="empty_playlist_main">Geen liedjies in speellys</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ liedjies</string>
     <string name="header_5_plus_albums">5+ albums</string>
     <string name="header_other">"Ander"</string>
-    <string name="footer_search_artists">Wys alle kunstenaars</string>
-    <string name="footer_search_albums">Wys alle albums</string>
-    <string name="footer_search_songs">Wys alle liedjies</string>
-    <string name="footer_search_playlists">Wys alle speel waglyste</string>
-    <string name="search_title_artists">Alle \"%s\" kunstenaars</string>
-    <string name="search_title_albums">Alle \"%s\" albums</string>
-    <string name="search_title_songs">Alle \"%s\" liedjies</string>
-    <string name="search_title_playlists">Alle \"%s\" speellyste</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

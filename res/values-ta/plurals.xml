@@ -16,10 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> கலைஞர்</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> கலைஞர்கள்</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ஆல்பம்</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ஆல்பங்கள்</item>
@@ -27,10 +23,6 @@
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> பாடல்</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> பாடல்கள்</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> வகை</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> வகைகள்</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> பாடல் இசைப்பட்டியலில் சேர்க்கப்பட்டது.</item>
@@ -43,10 +35,6 @@
     <plurals name="NNNtrackstoqueue">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> பாடல் சாரையில் சேர்க்கப்பட்டது.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> பாடல்கள் சாரையில் சேர்க்கப்பட்டன.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> பாடல் விருப்பங்களில் சேர்க்கப்பட்டது.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> பாடல்கள் விருப்பங்களில் சேர்க்கப்பட்டன.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> பாடல் நீக்கப்பட்டது.</item>

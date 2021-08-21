@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Glazba</string>
-    <string name="page_recent">Nedavno</string>
     <string name="page_artists">Umjetnici</string>
     <string name="page_albums">Albumi</string>
     <string name="page_songs">Pjesme</string>
     <string name="page_playlists">Playliste</string>
-    <string name="page_genres">Žanrovi</string>
-    <string name="page_now_playing">Sada svira</string>
     <string name="page_play_queue">Za reprodukciju</string>
     <string name="header_albums">Albumi</string>
-    <string name="header_top_songs">Top pjesme</string>
     <string name="header_all_songs">Sve pjesme</string>
     <string name="menu_settings">Postavke</string>
     <string name="menu_shuffle_item">Miješaj</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Miješanje najizvođenijih pjesama</string>
     <string name="menu_shuffle_recent">Miješaj nedavno svirane</string>
     <string name="menu_shuffle_last_added">Miješaj zadnje dodane</string>
-    <string name="menu_play_all">Sviraj sve</string>
     <string name="menu_sort_by">Sortiraj po</string>
     <string name="menu_clear_list">Očisti popis</string>
-    <string name="menu_clear_recents">Očisti nedavno</string>
     <string name="menu_clear_queue">Očisti red</string>
     <string name="menu_save_queue">Spremi red čekanja u playlistu</string>
     <string name="menu_equalizer">Ekvalizer</string>
     <string name="add_to_playlist">Dodaj u playlistu</string>
     <string name="add_to_queue">Dodaj u red</string>
-    <string name="remove_from_recent">Ukloni iz nedavnih</string>
     <string name="remove_from_queue">Ukloni iz reda</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Godina</string>
     <string name="sort_order_entry_duration">Dužina</string>
-    <string name="sort_order_entry_date_added">Dodano datuma</string>
-    <string name="sort_order_entry_track_list">Popis pjesama</string>
     <string name="sort_order_entry_number_of_songs">Broj pjesama</string>
     <string name="sort_order_entry_number_of_albums">Broj albuma</string>
     <string name="sort_order_entry_filename">Naziv datoteke</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Ovo se ne može poništiti</string>
     <string name="delete_warning">Ovo će trajno izbrisati podatke spremljenih slika</string>
     <string name="new_photo">Odaberi sliku iz galerije</string>
-    <string name="google_search">Google pretraga</string>
     <string name="use_default">Koristi zadanu sliku</string>
-    <string name="old_photo">Koristi staru sliku</string>
     <string name="context_menu_play_selection">Sviraj</string>
     <string name="context_menu_play_next">Sviraj sljedeću</string>
     <string name="context_menu_play_album">Reproduciraj album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Ponovi</string>
     <string name="accessibility_repeat_all">Ponovi sve</string>
     <string name="accessibility_repeat_one">Ponovi jedan</string>
-    <string name="accessibility_queue">Otvori red</string>
-    <string name="accessibility_browse">Pretraži glazbu</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' postavljeno kao zvuk zvona</string>
-    <string name="playlist_renamed">Playlista preimenovana</string>
     <string name="settings_storage_category">Pohrana</string>
     <string name="settings_delete_cache_title">Obriši predmemoriju</string>
     <string name="settings_delete_cache_summary">Obriši sve cachirane slike</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Glazba: 4 \u00d7 1</string>
     <string name="app_widget_large">Glazba: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Glazba: 4 \u00d7 2 (rezervna)</string>
-    <string name="app_widget_recent">Glazba: nedavno slušano</string>
     <string name="no_effects_for_you">Ekvalizer se ne može otvoriti.</string>
-    <string name="empty_music">Za kopiranje glazbe s računala na uređaj, koristite USB kabel.</string>
-    <string name="empty_favorite">Pjesme koje označite kao favorite biti će prikazane ovdje.</string>
     <string name="empty_recent_main">Nema nedavnih pjesama</string>
     <string name="empty_recent">Pjesme koje ste slušali će se pojaviti ovdje.</string>
     <string name="empty_playlist_main">Nema pjesama u popisu za reproduciranje</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10 + pjesama</string>
     <string name="header_5_plus_albums">5 + albuma</string>
     <string name="header_other">"Ostalo"</string>
-    <string name="footer_search_artists">Pokaži sve autore</string>
-    <string name="footer_search_albums">Pokaži sve albume</string>
-    <string name="footer_search_songs">Pokaži sve pjesme</string>
-    <string name="footer_search_playlists">Pokaži sve popise</string>
-    <string name="search_title_artists">Sve \"%s\" umjetnika</string>
-    <string name="search_title_albums">Svi \"%s\" albuma</string>
-    <string name="search_title_songs">Sve \"%s\" pjesme</string>
-    <string name="search_title_playlists">Svi \"%s\" popisi za reproduciranje</string>
     <string name="duration_format"><xliff:g id="hours">%1$s </xliff:g> <xliff:g id="minutes">%2$s </xliff:g></string>
 </resources>

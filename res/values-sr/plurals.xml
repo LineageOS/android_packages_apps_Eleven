@@ -16,11 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> уметник</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> уметника</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> уметника</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> албум</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> албума</item>
@@ -30,11 +25,6 @@
         <item quantity="one"><xliff:g id="count">%d</xliff:g> песма</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> песме</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> песама</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> жанр</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> жанра</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> жанрова</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>ч</item>
@@ -60,11 +50,6 @@
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> песма додата у ред.</item>
         <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> песме додате у ред.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> песама додато у ред.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> песма додата у омиљене.</item>
-        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> песме додате у омиљене.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> песама додато у омиљене.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> песма је избрисана.</item>

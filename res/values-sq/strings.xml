@@ -18,15 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Muzika</string>
-    <string name="page_recent">Së fundmi</string>
     <string name="page_artists">Artistët</string>
     <string name="page_albums">Albumet</string>
     <string name="page_songs">Këngët</string>
     <string name="page_playlists">Listat e Këngëve</string>
-    <string name="page_genres">Zhanret</string>
     <string name="header_albums">Albumet</string>
     <string name="header_all_songs">Të gjitha këngët</string>
-    <string name="menu_play_all">Luaji të gjitha</string>
     <string name="menu_sort_by">Rendit sipas</string>
     <string name="menu_clear_list">Hiqe listën</string>
     <string name="add_to_queue">Shto në radhë</string>
@@ -50,9 +47,7 @@
     <string name="create_playlist_prompt">Emri i listës së këngëve</string>
     <string name="delete_dialog_title">Dëshiron ta fshish <xliff:g id="item" example="album">%s</xliff:g>?</string>
     <string name="new_photo">Zgjidh një foto nga Galeria</string>
-    <string name="google_search">Kërkimi në Google</string>
     <string name="use_default">Përdor foton e paracaktuar</string>
-    <string name="old_photo">Përdor foto të vjetër</string>
     <string name="context_menu_play_selection">Luaj</string>
     <string name="context_menu_rename_playlist">Riemërto</string>
     <string name="context_menu_delete">Fshi</string>
@@ -62,14 +57,12 @@
     <string name="accessibility_prev">E mëparshmja</string>
     <string name="accessibility_repeat">Përsërit</string>
     <string name="accessibility_repeat_all">Përsëriti të gjitha</string>
-    <string name="playlist_renamed">Lista u riemërtua</string>
     <string name="settings_storage_category">Memoria</string>
     <string name="settings_delete_cache_summary">Hiqi të gjitha imazhet e ruajtura</string>
     <string name="settings_use_blur_title">Zbeh sfondin</string>
     <string name="app_widget_small">Muzika: 4\u00d7 1</string>
     <string name="app_widget_large">Muzika: 4\u00d7 2</string>
     <string name="app_widget_large_alt">Muzika: 4 \u00d7 2 (alternative)</string>
-    <string name="app_widget_recent">Muzika: dëgjuar së fundmi</string>
     <string name="header_unknown_year">Viti i panjohur</string>
     <string name="header_less_than_30s">Më pak se 30 sekonda</string>
     <string name="header_30_to_60_seconds">30 - 60 sekonda</string>
@@ -86,14 +79,6 @@
     <string name="header_5_to_9_songs">5 - 9 këngë</string>
     <string name="header_10_plus_songs">10+ këngë</string>
     <string name="header_5_plus_albums">5+ albume</string>
-    <string name="footer_search_artists">Trego të gjithë artistët</string>
-    <string name="footer_search_albums">Trego të gjithë albumet</string>
-    <string name="footer_search_songs">Trego të gjitha këngët</string>
-    <string name="footer_search_playlists">Trego të gjitha listat e këngëve</string>
-    <string name="search_title_artists">Të gjithë artistët \"%s\"</string>
-    <string name="search_title_albums">Të gjithë albumet \"%s\"</string>
-    <string name="search_title_songs">Të gjitha këngët \"%s\"</string>
-    <string name="search_title_playlists">Të gjitha listat e këngëve \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Luaj muzikë</string>
 </resources>

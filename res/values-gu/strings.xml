@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">સંગીત</string>
-    <string name="page_recent">તાજેતરનું</string>
     <string name="page_artists">કલાકારો</string>
     <string name="page_albums">આલબ્મ્સ</string>
     <string name="page_songs">ગીતો</string>
     <string name="page_playlists">પ્લેસૂચિઓ</string>
-    <string name="page_genres">ઝૉનરાં</string>
-    <string name="page_now_playing">હાલ પ્લે થાય છે</string>
     <string name="page_play_queue">હરોળ પ્લે કરો</string>
     <string name="header_albums">આલબ્મ્સ</string>
-    <string name="header_top_songs">ટોપ ગીતો</string>
     <string name="header_all_songs">તમામ ગીતો</string>
     <string name="menu_settings">સેટિંગ્સ</string>
     <string name="menu_shuffle_item">પીસો</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">ટોપ ટ્રૅક્સ શફલ કરો</string>
     <string name="menu_shuffle_recent">તાજેતર પ્લે કરેલ શફલ કરો</string>
     <string name="menu_shuffle_last_added">છેલ્લું ઉમેરેલ શફલ કરો</string>
-    <string name="menu_play_all">તમામ પ્લે કરો</string>
     <string name="menu_sort_by">ના દ્વારા ગોઠવો</string>
     <string name="menu_clear_list">સૂચિ સાફ કરો</string>
-    <string name="menu_clear_recents">તાજેતરના સાફ કરો</string>
     <string name="menu_clear_queue">હરોળ સાફ કરો</string>
     <string name="menu_save_queue">હરોળને પ્લેલિસ્ટમાં સેવ કરો</string>
     <string name="menu_equalizer">ઇક્વીલાઇઝર</string>
     <string name="add_to_playlist">પ્લેસૂચિ ઉમેરો</string>
     <string name="add_to_queue">હરોળમાં ઍડ કરો</string>
-    <string name="remove_from_recent">રિસન્ટમાંથી કાઢી નાંખો</string>
     <string name="remove_from_queue">હરોળમાંથી કાઢી નાંખો</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">આલ્બમ</string>
     <string name="sort_order_entry_year">વર્ષ</string>
     <string name="sort_order_entry_duration">અવધિ</string>
-    <string name="sort_order_entry_date_added">તારીખ ઉમેરી</string>
-    <string name="sort_order_entry_track_list">ટ્રૅક સૂચી</string>
     <string name="sort_order_entry_number_of_songs">ગીતોની સંખ્યા</string>
     <string name="sort_order_entry_number_of_albums">આલ્બમની સંખ્યા</string>
     <string name="sort_order_entry_filename">ફાઇલનું નામ</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">આ ક્રિયા પૂર્વવત થઈ શકે નહીં.</string>
     <string name="delete_warning">આનાથી કૅશ કરેલ ઇમેજ એન્ટ્રીઓ કાયમી ભૂંસાઇ જશે</string>
     <string name="new_photo">ગૅલેરીમાંથી ફોટા પસંદ કરો</string>
-    <string name="google_search">ગૂગલ સર્ચ</string>
     <string name="use_default">ડિફૉલ્ટ ફોટો વાપરો</string>
-    <string name="old_photo">જૂનો ફોટો વાપરો</string>
     <string name="context_menu_play_selection">ચલાવો</string>
     <string name="context_menu_play_next">આગામી પ્લે કરો</string>
     <string name="context_menu_play_album">આલ્બમ પ્લે કરો</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">પુનરાવર્તન</string>
     <string name="accessibility_repeat_all">તમામ પુનરાવર્તિત કરો</string>
     <string name="accessibility_repeat_one">એક પુનરાવર્તિત કરો</string>
-    <string name="accessibility_queue">હરોળ ખોલો</string>
-    <string name="accessibility_browse">મ્યુઝિક બ્રાઉઝ કરો</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' રિંગટોન તરીકે સેટ કરો</string>
-    <string name="playlist_renamed">પ્લેલિસ્ટનું પુન:નામકરણ કર્યું</string>
     <string name="settings_storage_category">સ્ટોરેજ</string>
     <string name="settings_delete_cache_title">કૅશ રદ કરો</string>
     <string name="settings_delete_cache_summary">તમામ કૅશ ઇમેજ કાઢી નાંખો</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">મ્યુઝિક: 4 \u00d7 1</string>
     <string name="app_widget_large">મ્યુઝિક: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">મ્યુઝિક: 4 \u00d7 2 (વૈકલ્પિક)</string>
-    <string name="app_widget_recent">મ્યુઝિક: તાજેતરમાં સાંભળેલ</string>
     <string name="no_effects_for_you">ઇક્વલાઇઝર ખોલી શકાયું નહીં.</string>
-    <string name="empty_music">તમારા કમ્પ્યુટરમાંથી તમારા ડિવાઇસ પર મ્યુઝિક કૉપિ કરવા USB કેબલનો ઉપયોગ કરો.</string>
-    <string name="empty_favorite">ફેવરિટ તરીકે તમે અંકિત કરેલ ગીતો અહીં દર્શાવવામાં આવશે.</string>
     <string name="empty_recent_main">કોઇ તાજેતરનાં ગીતો નહીં</string>
     <string name="empty_recent">તમે તાજેતરમાં સાંભળેલ ગીતો અહીં દેખાશે.</string>
     <string name="empty_playlist_main">પ્લેલિસ્ટમાં કોઇ ગીતો નહીં</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ ગીતો</string>
     <string name="header_5_plus_albums">5+ આલ્બોમો</string>
     <string name="header_other">""અન્ય""</string>
-    <string name="footer_search_artists">તમામ આર્ટિસ્ટો દર્શાવો</string>
-    <string name="footer_search_albums">તમામ આલ્બમો દર્શાવો</string>
-    <string name="footer_search_songs">તમામ ગીતો દર્શાવો</string>
-    <string name="footer_search_playlists">તમામ પ્લેલિસ્ટો દર્શાવો</string>
-    <string name="search_title_artists">તમામ \"%s\" આર્ટિસ્ટો</string>
-    <string name="search_title_albums">તમામ \"%s\" આલ્બમો</string>
-    <string name="search_title_songs">તમામ \"%s\" ગીતો</string>
-    <string name="search_title_playlists">તમામ \"%s\" પ્લેલિસ્ટો</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

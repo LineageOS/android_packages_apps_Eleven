@@ -16,10 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one">Artista <xliff:g id="count">%d</xliff:g></item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> artista</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one">Album <xliff:g id="count">%d</xliff:g></item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> album</item>
@@ -27,10 +23,6 @@
     <plurals name="Nsongs">
         <item quantity="one">Abesti <xliff:g id="count">%d</xliff:g></item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> abesti</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one">Genero <xliff:g id="count">%d</xliff:g></item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> genero</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>o</item>
@@ -51,10 +43,6 @@
     <plurals name="NNNtrackstoqueue">
         <item quantity="one">Abesti <xliff:g id="number" example="1">%d</xliff:g> gehitu da ilarara.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> abesti gehitu dira ilarara.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one">Abesti <xliff:g id="number" example="1">%d</xliff:g> gehitu da gogokoetara.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> abesti bat gehitu dira gogokoetara.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one">Abesti <xliff:g id="songs_to_delete" example="1">%d</xliff:g>  ezabatu da.</item>

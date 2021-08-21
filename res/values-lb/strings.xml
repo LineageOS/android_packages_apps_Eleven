@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musek</string>
-    <string name="page_recent">Rezent</string>
     <string name="page_artists">Interpreten</string>
     <string name="page_albums">Alben</string>
     <string name="page_songs">Musekstécker</string>
     <string name="page_playlists">Ofspilllëschten</string>
-    <string name="page_genres">Genren</string>
-    <string name="page_now_playing">Gëtt ofgespillt</string>
     <string name="page_play_queue">Waardeschlaang ofspillen</string>
     <string name="header_albums">Alben</string>
-    <string name="header_top_songs">Top-Lidder</string>
     <string name="header_all_songs">All d\'Lidder</string>
     <string name="menu_settings">Astellungen</string>
     <string name="menu_shuffle_item">Mëschen</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Top-Lidder mëschen</string>
     <string name="menu_shuffle_recent">\"VIru kuerzem ofgespillt\" mëschen</string>
     <string name="menu_shuffle_last_added">\"Fir d\'lescht dobäigesat\" mëschen</string>
-    <string name="menu_play_all">All ofspillen</string>
     <string name="menu_sort_by">Zortéieren no</string>
     <string name="menu_clear_list">Lëscht eidel maachen</string>
-    <string name="menu_clear_recents">Rezent eidel maachen</string>
     <string name="menu_clear_queue">Waardeschlaang eidel maachen</string>
     <string name="menu_save_queue">Waardeschläif an eng Ofspilllëscht späicheren</string>
     <string name="menu_equalizer">Equalizer</string>
     <string name="add_to_playlist">An d\'Ofspilllëscht setzen</string>
     <string name="add_to_queue">Un d\'Waardeschlaang hänken</string>
-    <string name="remove_from_recent">Aus der \"Viru kuerzem gelauschtert\"-Lëscht läschen</string>
     <string name="remove_from_queue">Aus der Waardeschlaang läschen</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Joer</string>
     <string name="sort_order_entry_duration">Dauer</string>
-    <string name="sort_order_entry_date_added">Datum dobäigesat</string>
-    <string name="sort_order_entry_track_list">Lidderlëscht</string>
     <string name="sort_order_entry_number_of_songs">Unzuel u Museksstécker</string>
     <string name="sort_order_entry_number_of_albums">Unzuel vun Alben</string>
     <string name="sort_order_entry_filename">Fichiersnumm</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Dat kann net réckgängeg gemaach ginn</string>
     <string name="delete_warning">Heiduerch ginn all d\'tëschegespäichert Biller definitiv geläscht</string>
     <string name="new_photo">Foto aus der Galerie auswielen</string>
-    <string name="google_search">Google-Sich</string>
     <string name="use_default">Standardfoto benotzen</string>
-    <string name="old_photo">Al Foto benotzen</string>
     <string name="context_menu_play_selection">Ofspillen</string>
     <string name="context_menu_play_next">Als nächst ofspillen</string>
     <string name="context_menu_play_album">Album ofspillen</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Widderhuelen</string>
     <string name="accessibility_repeat_all">All widderhuelen</string>
     <string name="accessibility_repeat_one">Eent widderhuelen</string>
-    <string name="accessibility_queue">Waardeschlaang opmaachen</string>
-    <string name="accessibility_browse">Musek duerchsichen</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' als Schelltoun setzen</string>
-    <string name="playlist_renamed">Ofspilllëscht ëmbenannt</string>
     <string name="settings_storage_category">Späicher</string>
     <string name="settings_delete_cache_title">Tëschespäicher läschen</string>
     <string name="settings_delete_cache_summary">All d\'tëschegespäichert Biller läschen</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Musek: 4 \u00d7 1</string>
     <string name="app_widget_large">Musek: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musek: 4 \u00d7 2 (alternativ)</string>
-    <string name="app_widget_recent">Musek: viru kuerzem gelauschtert</string>
     <string name="no_effects_for_you">Den Equalizer konnt net opgemaach ginn.</string>
-    <string name="empty_music">Benotz en USB-Kabel fir Musek vun dengem Computer op den Apparat z\'iwwerdroen.</string>
-    <string name="empty_favorite">Lidder, déi s du als Favorit markéiert hues, ginn hei ugewisen.</string>
     <string name="empty_recent_main">Keng rezent Lidder</string>
     <string name="empty_recent">Lidder, déi s du viru kuerzem gelauschtert hues, ginn hei ugewisen.</string>
     <string name="empty_playlist_main">Keng Lidder an der Ofspilllëscht</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10 oder méi Lidder</string>
     <string name="header_5_plus_albums">5 oder méi Alben</string>
     <string name="header_other">"Aner"</string>
-    <string name="footer_search_artists">All d\'Interpreten uweisen</string>
-    <string name="footer_search_albums">All d\'Alben uweisen</string>
-    <string name="footer_search_songs">All d\'Lidder uweisen</string>
-    <string name="footer_search_playlists">All d\'Ofspilllëschten uweisen</string>
-    <string name="search_title_artists">All \"%s\" Interpreten</string>
-    <string name="search_title_albums">All \"%s\" Alben</string>
-    <string name="search_title_songs">All \"%s\" Lidder</string>
-    <string name="search_title_playlists">All \"%s\" Ofspilllëschten</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

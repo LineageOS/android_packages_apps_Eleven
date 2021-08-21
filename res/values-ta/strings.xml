@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">இசை</string>
-    <string name="page_recent">சமீபத்தியவை</string>
     <string name="page_artists">கலைஞர்கள்</string>
     <string name="page_albums">ஆல்பங்கள்</string>
     <string name="page_songs">பாடல்கள்</string>
     <string name="page_playlists">இசைப்பட்டியல்கள்</string>
-    <string name="page_genres">வகைகள்</string>
-    <string name="page_now_playing">இப்போது இயங்குகிறது</string>
     <string name="page_play_queue">இயக்க சாரை</string>
     <string name="header_albums">ஆல்பங்கள்</string>
-    <string name="header_top_songs">முதன்மையான பாடல்கள்</string>
     <string name="header_all_songs">அனைத்து பாடல்கள்</string>
     <string name="menu_settings">அமைப்புகள்</string>
     <string name="menu_shuffle_item">குலை</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">குலை முதன்மையான தடங்கள்</string>
     <string name="menu_shuffle_recent">குலை சமீபத்திய்ல் இயக்கியதை</string>
     <string name="menu_shuffle_last_added">குலை கடைசியாக சேர்த்ததை</string>
-    <string name="menu_play_all">அனைத்தையும் இயக்கு</string>
     <string name="menu_sort_by">இதன்படி வரிசைப்படுத்து</string>
     <string name="menu_clear_list">பட்டியலை அழி</string>
-    <string name="menu_clear_recents">சமீபத்தியதை அழி</string>
     <string name="menu_clear_queue">சாரை அழி</string>
     <string name="menu_save_queue">சாரை இசைப்பட்டியலில் சேமி</string>
     <string name="menu_equalizer">ஈக்வலைசர்</string>
     <string name="add_to_playlist">இசைப்பட்டியலுக்குச் சேர்</string>
     <string name="add_to_queue">சாரையுடன் சேர்</string>
-    <string name="remove_from_recent">சமீபத்தியதில் இருந்து நீக்கு</string>
     <string name="remove_from_queue">சாரையில் இருந்து நீக்கு</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ஆல்பம்</string>
     <string name="sort_order_entry_year">ஆண்டு</string>
     <string name="sort_order_entry_duration">கால அளவு</string>
-    <string name="sort_order_entry_date_added">சேர்க்கப்பட்ட தேதி</string>
-    <string name="sort_order_entry_track_list">தட பட்டியல்</string>
     <string name="sort_order_entry_number_of_songs">பாடல்களின் எண்ணிக்கை</string>
     <string name="sort_order_entry_number_of_albums">ஆல்பங்களின் எண்ணிக்கை</string>
     <string name="sort_order_entry_filename">கோப்புப்பெயர்</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">இதை செயல்நீக்க முடியாது</string>
     <string name="delete_warning">இது நிரந்தரமாக தேக்கிய பட உள்ளீடுகளை நீக்கிவிடும்</string>
     <string name="new_photo">கேலரியிலிருந்து படத்தைத் தேர்வுசெய்க</string>
-    <string name="google_search">Google தேடல்</string>
     <string name="use_default">இயல்புநிலை புகைப்படத்தை பயன்படுத்தவும்</string>
-    <string name="old_photo">பழைய புகைப்படத்தை பயன்படுத்தவும்</string>
     <string name="context_menu_play_selection">இயக்கு</string>
     <string name="context_menu_play_next">அடுத்ததை இயக்கு</string>
     <string name="context_menu_play_album">ஆல்பத்தை இயக்கு</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">மீண்டும்</string>
     <string name="accessibility_repeat_all">அனைத்தையும் மீண்டும் இயக்கு</string>
     <string name="accessibility_repeat_one">ஒன்றை மீண்டும் இயக்கு</string>
-    <string name="accessibility_queue">சாரையை திற</string>
-    <string name="accessibility_browse">இசையை உலாவு</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ஐ ரிங்டோனாக அமை</string>
-    <string name="playlist_renamed">இசைப்பட்டியல் மறுபெயரிடப்பட்டது</string>
     <string name="settings_storage_category">சேமிப்பிடம்</string>
     <string name="settings_delete_cache_title">தேக்கத்தை நீக்கு</string>
     <string name="settings_delete_cache_summary">தேக்கப்பட்ட படங்கள் அனைத்தையும் நீக்கு</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">இசை: 4 \u00d7 1</string>
     <string name="app_widget_large">இசை: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">இசை: 4 \u00d7 2 (மாற்று)</string>
-    <string name="app_widget_recent">இசை:சமீபத்தில் கேட்டது</string>
     <string name="no_effects_for_you">சமமாக்கியை திறக்க முடியவில்லை.</string>
-    <string name="empty_music">உங்கள் கணினியில் இருந்து உங்கள் கருவிக்கு இசையை நகலெடுக்க, ஒரு USB கம்பி இழையை பயன்படுத்தவும்</string>
-    <string name="empty_favorite">நீங்கள் விருப்பமானது என்று குறிப்பிடும் பாடல்கள் இங்கே காட்டப்படும்.</string>
     <string name="empty_recent_main">சமீபத்திய பாடல்கள் இல்லை</string>
     <string name="empty_recent">நீங்கள் சமீபத்தில் கேட்ட பாடல்கள் இங்கே காட்டப்படும்.</string>
     <string name="empty_playlist_main">இசைப்பட்டியலில் பாடல்கள் இல்லை.</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ பாடல்கள்</string>
     <string name="header_5_plus_albums">5+ ஆல்பம்கள்</string>
     <string name="header_other">""மற்றவை""</string>
-    <string name="footer_search_artists">அனைத்து கலைஞர்களையும் காண்பி</string>
-    <string name="footer_search_albums">அனைத்து ஆல்பங்களையும் காண்பி</string>
-    <string name="footer_search_songs">அனைத்து பாடல்களையும் காண்பி</string>
-    <string name="footer_search_playlists">அனைத்து இசைப்பட்டியல்களையும் காண்பி</string>
-    <string name="search_title_artists">அனைத்து \”%s\" கலைஞர்கள்</string>
-    <string name="search_title_albums">அனைத்து \”%s\"  ஆல்பங்கள்</string>
-    <string name="search_title_songs">அனைத்து \”%s\" பாடல்கள்</string>
-    <string name="search_title_playlists">அனைத்து \”%s\" இசைப்பட்டியல்கள்</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

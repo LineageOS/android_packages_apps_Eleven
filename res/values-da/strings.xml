@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musik</string>
-    <string name="page_recent">Seneste</string>
     <string name="page_artists">Kunstnere</string>
     <string name="page_albums">Album</string>
     <string name="page_songs">Sange</string>
     <string name="page_playlists">Afspilningslister</string>
-    <string name="page_genres">Genrer</string>
-    <string name="page_now_playing">Afspiller Nu</string>
     <string name="page_play_queue">Afspilningskø</string>
     <string name="header_albums">Album</string>
-    <string name="header_top_songs">Top Sange</string>
     <string name="header_all_songs">Alle Sange</string>
     <string name="menu_settings">Indstillinger</string>
     <string name="menu_shuffle_item">Bland</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Bland top spor</string>
     <string name="menu_shuffle_recent">Bland senest afspillede</string>
     <string name="menu_shuffle_last_added">Bland senest tilføjede</string>
-    <string name="menu_play_all">Afspil alle</string>
     <string name="menu_sort_by">Sortér efter</string>
     <string name="menu_clear_list">Ryd liste</string>
-    <string name="menu_clear_recents">Ryd seneste</string>
     <string name="menu_clear_queue">Ryd kø</string>
     <string name="menu_save_queue">Gem kø til afspilningsliste</string>
     <string name="menu_equalizer">Udligner</string>
     <string name="add_to_playlist">Føj til afspilningsliste</string>
     <string name="add_to_queue">Føj til kø</string>
-    <string name="remove_from_recent">Fjern fra seneste</string>
     <string name="remove_from_queue">Fjern fra kø</string>
     <string name="sort_order_entry_az">A-Å</string>
     <string name="sort_order_entry_za">Å-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">År</string>
     <string name="sort_order_entry_duration">Varighed</string>
-    <string name="sort_order_entry_date_added">Dato tilføjet</string>
-    <string name="sort_order_entry_track_list">Sporliste</string>
     <string name="sort_order_entry_number_of_songs">Antal sange</string>
     <string name="sort_order_entry_number_of_albums">Antal album</string>
     <string name="sort_order_entry_filename">Filnavn</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Dette kan ikke fortrydes</string>
     <string name="delete_warning">Dette vil permanent slette de lagrede billedposter</string>
     <string name="new_photo">Vælg fotografi fra Galleri</string>
-    <string name="google_search">Google-søgning</string>
     <string name="use_default">Brug standard-fotografi</string>
-    <string name="old_photo">Brug gammelt fotografi</string>
     <string name="context_menu_play_selection">Afspil</string>
     <string name="context_menu_play_next">Afspil næste</string>
     <string name="context_menu_play_album">Afspil album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Gentag</string>
     <string name="accessibility_repeat_all">Gentag alle</string>
     <string name="accessibility_repeat_one">Gentag én</string>
-    <string name="accessibility_queue">Åbn kø</string>
-    <string name="accessibility_browse">Gennemse musik</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' angivet som ringetone</string>
-    <string name="playlist_renamed">Afspilningsliste omdøbt</string>
     <string name="settings_storage_category">Lagerplads</string>
     <string name="settings_delete_cache_title">Slet lokalt lager</string>
     <string name="settings_delete_cache_summary">Fjern alle lokalt lagrede billeder</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">Musik: 4 \u00d7 1</string>
     <string name="app_widget_large">Musik: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musik: 4 \u00d7 2 (afvekslende)</string>
-    <string name="app_widget_recent">Musik: senest lyttet til</string>
     <string name="no_effects_for_you">Udligneren kunne ikke åbnes.</string>
-    <string name="empty_music">Brug et USB-kabel til at kopiere musik, fra din computer til din enhed.</string>
-    <string name="empty_favorite">Sange du markerer som favoritter, vil blive vist her.</string>
     <string name="empty_recent_main">Ingen seneste sange</string>
     <string name="empty_recent">Sange du har lyttet til på det seneste, vil blive vist her.</string>
     <string name="empty_playlist_main">Ingen sange i afspilningsliste</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ sange</string>
     <string name="header_5_plus_albums">5+ album</string>
     <string name="header_other">"Andre"</string>
-    <string name="footer_search_artists">Vis alle kunstnere</string>
-    <string name="footer_search_albums">Vis alle album</string>
-    <string name="footer_search_songs">Vis alle sange</string>
-    <string name="footer_search_playlists">Vis alle afspilningslister</string>
-    <string name="search_title_artists">Alle \"%s\" kunstnere</string>
-    <string name="search_title_albums">Alle \"%s\" album</string>
-    <string name="search_title_songs">Alle \"%s\" sange</string>
-    <string name="search_title_playlists">Alle \"%s\" afspilningslister</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

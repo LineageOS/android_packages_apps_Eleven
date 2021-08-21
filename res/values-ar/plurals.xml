@@ -16,14 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="zero"><xliff:g id="count">%d</xliff:g> فنان</item>
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> فنانين</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> فنانين</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> فنانين</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> فنانين</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> فنانين</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> ألبوم</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ألبومات</item>
@@ -39,14 +31,6 @@
         <item quantity="few"><xliff:g id="count">%d</xliff:g> أغاني</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> أغاني</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> أغاني</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="zero"><xliff:g id="count">%d</xliff:g> نوع</item>
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> أنواع</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> أنواع</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> أنواع</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> أنواع</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> أنواع</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="zero"><xliff:g id="hours">%d</xliff:g>س</item>
@@ -87,14 +71,6 @@
         <item quantity="few"><xliff:g id="number" example="27"> %d </xliff:g> أغاني أُضيفت إلى قائمة الانتظار.</item>
         <item quantity="many"><xliff:g id="number" example="27"> %d </xliff:g> أغاني أُضيفت إلى قائمة الانتظار.</item>
         <item quantity="other"><xliff:g id="number" example="27"> %d </xliff:g> أغاني أُضيفت إلى قائمة الانتظار.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="zero"><xliff:g id="number" example="27"> %d </xliff:g> أغنية أضيفت إلى القائمة المفضلة.</item>
-        <item quantity="one"><xliff:g id="number" example="27"> %d </xliff:g> أغنيات أضيفت إلى القائمة المفضلة.</item>
-        <item quantity="two"><xliff:g id="number" example="27"> %d </xliff:g> أغنيات أضيفت إلى القائمة المفضلة.</item>
-        <item quantity="few"><xliff:g id="number" example="27"> %d </xliff:g> أغنيات أضيفت إلى القائمة المفضلة.</item>
-        <item quantity="many"><xliff:g id="number" example="27"> %d </xliff:g> أغنيات أضيفت إلى القائمة المفضلة.</item>
-        <item quantity="other"><xliff:g id="number" example="27"> %d </xliff:g> أغنيات أضيفت إلى القائمة المفضلة.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="zero">تم حذف <xliff:g id="songs_to_delete"> %d </xliff:g> أغنية.</item>
