@@ -44,8 +44,6 @@ android_app {
 
     product_specific: true,
 
-    jni_libs: ["librsjni"],
-
     optimize: {
         proguard_flags_files: ["proguard.cfg"],
         enabled: false,
