@@ -114,6 +114,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
     private long mSelectedId = -1;
 
+    private boolean mIgnoreAfterRequest;
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -506,8 +508,15 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
                 PreferenceUtils.getInstance(activity).getShowVisualizer()) {
             if (PreferenceUtils.canRecordAudio(activity)) {
                 mVisualizerView.setVisible(true);
+                mIgnoreAfterRequest = false;
             } else {
-                PreferenceUtils.requestRecordAudio(activity);
+                if (mIgnoreAfterRequest) {
+                    mIgnoreAfterRequest = false;
+                    mVisualizerView.setVisible(false);
+                } else {
+                    mIgnoreAfterRequest = true;
+                    PreferenceUtils.requestRecordAudio(activity);
+                }
             }
         } else {
             mVisualizerView.setVisible(false);
