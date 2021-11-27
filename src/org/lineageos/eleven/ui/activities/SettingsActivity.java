@@ -18,21 +18,26 @@
  */
 package org.lineageos.eleven.ui.activities;
 
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.Manifest.permission;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreference;
 
 import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.R;
@@ -69,6 +74,8 @@ public class SettingsActivity extends AppCompatActivity {
     public static class SettingsFragment extends PreferenceFragmentCompat implements
             ServiceConnection, SharedPreferences.OnSharedPreferenceChangeListener {
 
+        private SwitchPreference mShowVisualizer;
+
         private MusicUtils.ServiceToken mToken;
 
         private IElevenService mService;
@@ -90,7 +97,16 @@ public class SettingsActivity extends AppCompatActivity {
                 });
             }
 
-            PreferenceUtils.getInstance(getContext()).setOnSharedPreferenceChangeListener(this);
+            PreferenceUtils prefUtils = PreferenceUtils.getInstance(getContext());
+            prefUtils.setOnSharedPreferenceChangeListener(this);
+
+            mShowVisualizer = findPreference(PreferenceUtils.SHOW_VISUALIZER);
+            if (mShowVisualizer != null) {
+                // Otherwise we wouldn't notice if the permission has been denied via the Settings
+                // app since the last time
+                mShowVisualizer.setChecked(prefUtils.getShowVisualizer() &&
+                    PreferenceUtils.canRecordAudio(getActivity()));
+            }
         }
 
         @Override
@@ -139,7 +155,7 @@ public class SettingsActivity extends AppCompatActivity {
                     final boolean showVisualizer = sharedPreferences.getBoolean(key, false);
                     if (showVisualizer && activity != null &&
                             !PreferenceUtils.canRecordAudio(activity)) {
-                        PreferenceUtils.requestRecordAudio(activity);
+                        requestRecordAudio();
                     }
                     break;
                 }
@@ -162,6 +178,32 @@ public class SettingsActivity extends AppCompatActivity {
                     break;
                 }
             }
+        }
+
+        /* We can't call PreferenceUtils.requestRecordAudio since it's called from activity context
+           and we need requestPermissions to be called for the fragment so
+           onRequestPermissionsResult gets called */
+        private void requestRecordAudio() {
+            requestPermissions(new String[]{permission.RECORD_AUDIO},
+                PreferenceUtils.PERMISSION_REQUEST_RECORD_AUDIO);
+        }
+
+        @Override
+        public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                               @NonNull int[] grantResults) {
+            if (requestCode == PreferenceUtils.PERMISSION_REQUEST_RECORD_AUDIO) {
+                boolean showRationale = shouldShowRequestPermissionRationale(permissions[0]);
+                if (grantResults.length == 0 || grantResults[0] != PERMISSION_GRANTED) {
+                    mShowVisualizer.setChecked(false);
+                    if (!showRationale) {
+                        new AlertDialog.Builder(getContext())
+                            .setMessage(R.string.visualizer_perm_denied)
+                            .setPositiveButton(android.R.string.ok, null)
+                            .show();
+                    }
+                }
+            }
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

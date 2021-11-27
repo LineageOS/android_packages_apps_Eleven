@@ -71,7 +71,8 @@ public final class PreferenceUtils {
     // shake to play flag
     public static final String SHAKE_TO_PLAY = "shake_to_play";
 
-    private static final int PERMISSION_REQUEST_RECORD_AUDIO = 1;
+    public static final int PERMISSION_REQUEST_STORAGE = 1;
+    public static final int PERMISSION_REQUEST_RECORD_AUDIO = 2;
 
     private static PreferenceUtils sInstance;
 
