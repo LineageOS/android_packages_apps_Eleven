@@ -16,6 +16,8 @@
  */
 package org.lineageos.eleven.ui.activities;
 
+import static org.lineageos.eleven.utils.PreferenceUtils.PERMISSION_REQUEST_STORAGE;
+
 import android.Manifest;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
@@ -74,7 +76,6 @@ public class HomeActivity extends SlidingPanelActivity implements
     private static final int NEW_PHOTO = 1;
     public static final int EQUALIZER = 2;
 
-    private static final int PERMISSION_REQUEST_STORAGE = 1;
     private Bundle mSavedInstanceState;
 
     private String mKey;
