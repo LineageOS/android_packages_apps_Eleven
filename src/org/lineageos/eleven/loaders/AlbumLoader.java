@@ -98,14 +98,8 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
                     continue;
                 }
 
-                // Create a new album
+                // Create a new album and add everything up
                 final Album album = new Album(id, albumName, artist, songCount, year);
-
-                if (cursor instanceof SortedCursor) {
-                    album.mBucketLabel = (String)((SortedCursor) cursor).getExtraData();
-                }
-
-                // Add everything up
                 mAlbumsList.add(album);
             } while (cursor.moveToNext());
         }

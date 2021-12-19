@@ -204,7 +204,7 @@ public class PlaylistFragment extends MusicBrowserFragment implements
 
     @Override
     public void restartLoader() {
-        restartLoader(null, this);
+        restartLoader(this);
     }
 
     @Override

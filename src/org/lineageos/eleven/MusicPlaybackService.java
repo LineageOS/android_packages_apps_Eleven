@@ -1658,7 +1658,6 @@ public class MusicPlaybackService extends Service
                 .setContentText(text)
                 .setColor(artwork.getVibrantColor())
                 .setWhen(mNotificationPostTime)
-                .setShowWhen(false)
                 .setStyle(style)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .addAction(prevAction)
@@ -3424,6 +3423,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressWarnings("unused")
     private static final class ServiceStub extends IElevenService.Stub {
 
         private final WeakReference<MusicPlaybackService> mService;
