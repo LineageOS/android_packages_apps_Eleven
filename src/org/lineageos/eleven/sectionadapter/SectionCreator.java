@@ -38,7 +38,7 @@ public class SectionCreator<T> extends WrappedAsyncTaskLoader<SectionListContain
      * @param <T> type of item to load
      */
     public static abstract class SimpleListLoader<T> extends WrappedAsyncTaskLoader<List<T>> {
-        protected Context mContext;
+        protected final Context mContext;
 
         public SimpleListLoader(Context context) {
             super(context);

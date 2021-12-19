@@ -195,6 +195,7 @@ public class ViewDragHelper {
          * @see #EDGE_RIGHT
          * @see #EDGE_BOTTOM
          */
+        @SuppressWarnings("EmptyMethod")
         public void onEdgeTouched(int edgeFlags, int pointerId) {
         }
 
@@ -207,6 +208,7 @@ public class ViewDragHelper {
          * @param edgeFlags A combination of edge flags describing the edge(s) locked
          * @return true to lock the edge, false to leave it unlocked
          */
+        @SuppressWarnings("SameReturnValue")
         public boolean onEdgeLock(int edgeFlags) {
             return false;
         }
@@ -222,6 +224,7 @@ public class ViewDragHelper {
          * @see #EDGE_RIGHT
          * @see #EDGE_BOTTOM
          */
+        @SuppressWarnings("EmptyMethod")
         public void onEdgeDragStarted(int edgeFlags, int pointerId) {
         }
 
@@ -242,6 +245,7 @@ public class ViewDragHelper {
          * @param child Child view to check
          * @return range of horizontal motion in pixels
          */
+        @SuppressWarnings("SameReturnValue")
         public int getViewHorizontalDragRange(View child) {
             return 0;
         }
@@ -285,6 +289,7 @@ public class ViewDragHelper {
          * @param dx    Proposed change in position for left
          * @return The new clamped position for left
          */
+        @SuppressWarnings("SameReturnValue")
         public int clampViewPositionHorizontal(View child, int left, int dx) {
             return 0;
         }
@@ -476,15 +481,14 @@ public class ViewDragHelper {
      *
      * @param finalLeft Settled left edge position for the captured view
      * @param finalTop  Settled top edge position for the captured view
-     * @return true if animation should continue through {@link #continueSettling(boolean)} calls
      */
-    public boolean settleCapturedViewAt(int finalLeft, int finalTop) {
+    public void settleCapturedViewAt(int finalLeft, int finalTop) {
         if (!mReleaseInProgress) {
             throw new IllegalStateException("Cannot settleCapturedViewAt outside of a call to " +
                     "Callback#onViewReleased");
         }
 
-        return forceSettleCapturedViewAt(finalLeft, finalTop,
+        forceSettleCapturedViewAt(finalLeft, finalTop,
                 (int) mVelocityTracker.getXVelocity(mActivePointerId),
                 (int) mVelocityTracker.getYVelocity(mActivePointerId));
     }
@@ -961,8 +965,6 @@ public class ViewDragHelper {
                     final int idy = (int) (y - mLastMotionY[mActivePointerId]);
 
                     dragTo(mCapturedView.getLeft() + idx, mCapturedView.getTop() + idy, idx, idy);
-
-                    saveLastMotion(ev);
                 } else {
                     // Check to see if any pointer is now over a draggable view.
                     final int pointerCount = ev.getPointerCount();
@@ -985,8 +987,8 @@ public class ViewDragHelper {
                             break;
                         }
                     }
-                    saveLastMotion(ev);
                 }
+                saveLastMotion(ev);
                 break;
             }
 

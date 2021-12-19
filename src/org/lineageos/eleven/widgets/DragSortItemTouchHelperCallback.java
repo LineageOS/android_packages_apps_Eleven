@@ -46,6 +46,7 @@ public class DragSortItemTouchHelperCallback extends ItemTouchHelper.Callback {
             return false;
         }
 
+        //noinspection deprecation
         mListener.onItemMove(source.getAdapterPosition(), target.getAdapterPosition());
         return true;
     }

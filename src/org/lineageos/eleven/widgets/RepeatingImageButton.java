@@ -23,7 +23,6 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
 
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.content.ContextCompat;
@@ -33,9 +32,9 @@ import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
- * A {@link ImageButton} that will repeatedly call a 'listener' method as long
- * as the button is pressed, otherwise functions like a typecal
- * {@link ImageButton}
+ * A {@link AppCompatImageButton} that will repeatedly call a 'listener' method as long
+ * as the button is pressed, otherwise functions like a typical
+ * {@link AppCompatImageButton}
  */
 public class RepeatingImageButton extends AppCompatImageButton implements OnClickListener {
 
@@ -51,7 +50,6 @@ public class RepeatingImageButton extends AppCompatImageButton implements OnClic
      * @param context The {@link Context} to use
      * @param attrs   The attributes of the XML tag that is inflating the view.
      */
-    @SuppressWarnings("deprecation")
     public RepeatingImageButton(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         setPadding(0, 0, 0, 0);

@@ -24,10 +24,6 @@ package org.lineageos.eleven;
  */
 public final class Config {
 
-    /* This class is never initiated. */
-    public Config() {
-    }
-
     /**
      * Used to distinguish album art from artist images
      */
@@ -75,8 +71,8 @@ public final class Config {
         RecentlyPlayed(-2, R.string.playlist_recently_played),
         TopTracks(-3, R.string.playlist_top_tracks);
 
-        public long mId;
-        public int mTitleId;
+        public final long mId;
+        public final int mTitleId;
 
         SmartPlaylistType(long id, int titleId) {
             mId = id;

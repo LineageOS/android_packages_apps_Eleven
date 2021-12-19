@@ -19,10 +19,8 @@ package org.lineageos.eleven.ui.activities;
 import static org.lineageos.eleven.utils.PreferenceUtils.PERMISSION_REQUEST_STORAGE;
 
 import android.Manifest;
-import android.animation.Animator;
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -229,8 +227,7 @@ public class HomeActivity extends SlidingPanelActivity implements
                 protected BitmapWithColors doInBackground(Void... params) {
                     ImageFetcher imageFetcher = ImageFetcher.getInstance(HomeActivity.this);
                     return imageFetcher.getArtwork(
-                            MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                            MusicUtils.getArtistName(), true);
+                            MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(), true);
                 }
                 @Override
                 protected void onPostExecute(BitmapWithColors bmc) {

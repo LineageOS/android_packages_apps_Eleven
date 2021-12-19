@@ -53,7 +53,7 @@ public abstract class ImageWorker {
      * Tracks which images we've tried to download and prevents it from trying again
      * In the future we might want to throw this into a db
      */
-    public static Set<String> sKeys = Collections.synchronizedSet(new HashSet<>());
+    public static final Set<String> sKeys = Collections.synchronizedSet(new HashSet<>());
 
     /**
      * Default transition drawable fade time
@@ -73,7 +73,7 @@ public abstract class ImageWorker {
     /**
      * The Context to use
      */
-    protected Context mContext;
+    protected final Context mContext;
 
     /**
      * Disk and memory caches
@@ -324,6 +324,7 @@ public abstract class ImageWorker {
      * @return Retrieve the currently active work task (if any) associated with
      * this {@link View}. null if there is no such task.
      */
+    @SuppressWarnings("rawtypes")
     public static BitmapWorkerTask getBitmapWorkerTask(final View view) {
         AsyncTaskContainer asyncTask = getAsyncTaskContainer(view);
         if (asyncTask != null) {
@@ -447,7 +448,7 @@ public abstract class ImageWorker {
                 loadDefaultImage(imageView, imageType, null, key);
             }
 
-            if (executePotentialWork(key, imageView) && !mImageCache.isDiskCachePaused()) {
+            if (executePotentialWork(key, imageView)) {
                 Drawable fromDrawable = imageView.getDrawable();
                 if (fromDrawable == null) {
                     fromDrawable = mTransparentDrawable;
@@ -507,7 +508,7 @@ public abstract class ImageWorker {
         // even though we may have found the image in the cache, we want to check if the playlist
         // has been updated, or it's been too long since the last update and change the image
         // accordingly
-        if (executePotentialWork(key, imageView) && !mImageCache.isDiskCachePaused()) {
+        if (executePotentialWork(key, imageView)) {
             // since a playlist's image can change based on changes to the playlist
             // set the from drawable to be the existing image (if it exists) instead of transparent
             // and fade from there
@@ -543,7 +544,7 @@ public abstract class ImageWorker {
             return;
         }
 
-        if (executePotentialWork(key, albumScrimImage) && !mImageCache.isDiskCachePaused()) {
+        if (executePotentialWork(key, albumScrimImage)) {
             // Otherwise run the worker task
             final BlurBitmapWorkerTask blurWorkerTask = new BlurBitmapWorkerTask(key,
                     albumScrimImage, ImageType.ALBUM, mTransparentDrawable, mContext);

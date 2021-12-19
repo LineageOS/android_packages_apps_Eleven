@@ -40,55 +40,55 @@ public class MusicHolder extends RecyclerView.ViewHolder {
     /**
      * This is the artist or album image
      */
-    public WeakReference<ImageView> mImage;
+    public final WeakReference<ImageView> mImage;
 
     /**
      * This is the first line displayed in the list or grid
      *
      * see getView() of a specific adapter for more detailed info
      */
-    public WeakReference<TextView> mLineOne;
+    public final WeakReference<TextView> mLineOne;
 
     /**
      * This is displayed on the right side of the first line in the list or grid
      *
      * see getView() of a specific adapter for more detailed info
      */
-    public WeakReference<TextView> mLineOneRight;
+    public final WeakReference<TextView> mLineOneRight;
 
     /**
      * This is the second line displayed in the list or grid
      *
      * see getView() of a specific adapter for more detailed info
      */
-    public WeakReference<TextView> mLineTwo;
+    public final WeakReference<TextView> mLineTwo;
 
     /**
      * The container for the circular progress bar and play/pause button
      *
      * see getView() of a specific adapter for more detailed info
      */
-    public WeakReference<PlayPauseButtonContainer> mPlayPauseProgressButton;
+    public final WeakReference<PlayPauseButtonContainer> mPlayPauseProgressButton;
 
     /**
      * The Padding container for the circular progress bar
      */
-    public WeakReference<View> mPlayPauseProgressContainer;
+    public final WeakReference<View> mPlayPauseProgressContainer;
 
     /**
      * The song indicator for the currently playing track
      */
-    public WeakReference<View> mNowPlayingIndicator;
+    public final WeakReference<View> mNowPlayingIndicator;
 
     /**
      * The divider for the list item
      */
-    public WeakReference<View> mDivider;
+    public final WeakReference<View> mDivider;
 
     /**
      * The divider for the list item
      */
-    public WeakReference<PopupMenuButton> mPopupMenuButton;
+    public final WeakReference<PopupMenuButton> mPopupMenuButton;
 
     /**
      * Constructor of <code>ViewHolder</code>

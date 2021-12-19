@@ -21,19 +21,18 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.ImageButton;
 
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.content.ContextCompat;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.ElevenUtils;
 
-public abstract class AudioButton extends ImageButton
+public abstract class AudioButton extends AppCompatImageButton
         implements OnClickListener, OnLongClickListener {
-    public static float ACTIVE_ALPHA = 1.0f;
-    public static float INACTIVE_ALPHA = 0.4f;
+    public static final float ACTIVE_ALPHA = 1.0f;
+    public static final float INACTIVE_ALPHA = 0.4f;
 
-    @SuppressWarnings("deprecation")
     public AudioButton(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         setPadding(0, 0, 0, 0);

@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Used to query {@link MediaStore.Audio.Media.EXTERNAL_CONTENT_URI} and return
+ * Used to query MediaStore.Audio.Media.EXTERNAL_CONTENT_URI and return
  * the songs on a user's device.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
@@ -46,12 +46,12 @@ public class SongLoader extends SectionCreator.SimpleListLoader<Song> {
     /**
      * The result
      */
-    protected ArrayList<Song> mSongList = Lists.newArrayList();
+    protected final ArrayList<Song> mSongList = Lists.newArrayList();
 
     /**
      * Additional selection filter
      */
-    protected String mSelection;
+    protected final String mSelection;
 
     /**
      * @param context The {@link Context} to use
