@@ -159,15 +159,6 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                     break;
                 }
-                case PreferenceUtils.USE_BLUR: {
-                    final boolean useBlur = sharedPreferences.getBoolean(key, false);
-                    if (activity != null) {
-                        final ImageFetcher fetcher = ImageFetcher.getInstance(activity);
-                        fetcher.setUseBlur(useBlur);
-                        fetcher.clearCaches();
-                    }
-                    break;
-                }
                 case PreferenceUtils.SHAKE_TO_PLAY: {
                     final boolean enableShakeToPlay = sharedPreferences.getBoolean(key, false);
                     try {

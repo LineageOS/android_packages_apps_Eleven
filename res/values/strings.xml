@@ -120,7 +120,6 @@
     <string name="settings_delete_cache_summary">Remove all cached images</string>
     <string name="settings_general_category">General</string>
     <string name="settings_show_music_visualization_title">Show music visualization</string>
-    <string name="settings_use_blur_title">Blur background</string>
     <string name="settings_show_lyrics_title">Show song lyrics</string>
     <string name="settings_show_lyrics_summary">For songs that have an srt file</string>
     <string name="settings_shake_to_play">Shake to Play</string>

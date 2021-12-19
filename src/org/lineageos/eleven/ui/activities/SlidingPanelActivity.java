@@ -35,7 +35,6 @@ import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
 import org.lineageos.eleven.ui.fragments.QueueFragment;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
-import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.colors.ColorExtractor;
 import org.lineageos.eleven.widgets.AlbumScrimImage;
 
@@ -65,8 +64,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     // this is the blurred image that goes behind the now playing and queue fragments
     private AlbumScrimImage mAlbumScrimImage;
 
-    private boolean mUseBlur;
-
     /**
      * Opens the now playing screen
      */
@@ -91,8 +88,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     @Override
     protected void init(final Bundle savedInstanceState) {
         super.init(savedInstanceState);
-
-        mUseBlur = PreferenceUtils.getInstance(this).getUseBlur();
 
         mTargetNavigatePanel = Panel.None;
 
@@ -189,12 +184,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        // recreate activity if blur preference has changed to apply changes
-        final boolean useBlur = PreferenceUtils.getInstance(this).getUseBlur();
-        if (mUseBlur != useBlur) {
-            recreate();
-        }
     }
 
     @Override
