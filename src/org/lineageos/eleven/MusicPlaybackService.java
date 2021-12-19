@@ -18,6 +18,7 @@
 package org.lineageos.eleven;
 
 import android.Manifest.permission;
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -674,7 +675,8 @@ public class MusicPlaybackService extends Service
         shutdownIntent.setAction(SHUTDOWN);
 
         mAlarmManager = getSystemService(AlarmManager.class);
-        mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent, 0);
+        mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent,
+                PendingIntent.FLAG_IMMUTABLE);
 
         // Bring the queue back
         reloadQueue();
@@ -748,7 +750,7 @@ public class MusicPlaybackService extends Service
 
         PendingIntent pi = PendingIntent.getBroadcast(this, 0,
                 new Intent(this, MediaButtonIntentReceiver.class),
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         mSession.setMediaButtonReceiver(pi);
     }
 
@@ -1606,7 +1608,8 @@ public class MusicPlaybackService extends Service
 
         Intent nowPlayingIntent = new Intent(ACTION_AUDIO_PLAYER)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent clickIntent = PendingIntent.getActivity(this, 0, nowPlayingIntent, 0);
+        PendingIntent clickIntent = PendingIntent.getActivity(this, 0, nowPlayingIntent,
+                PendingIntent.FLAG_IMMUTABLE);
         BitmapWithColors artwork = getAlbumArt(false);
 
         if (mNotificationPostTime == 0) {
@@ -1650,7 +1653,6 @@ public class MusicPlaybackService extends Service
                 .setContentText(text)
                 .setColor(artwork.getVibrantColor())
                 .setWhen(mNotificationPostTime)
-                .setShowWhen(false)
                 .setStyle(style)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .addAction(prevAction)
@@ -1664,7 +1666,7 @@ public class MusicPlaybackService extends Service
         Intent intent = new Intent(action);
         intent.setComponent(serviceName);
 
-        return PendingIntent.getService(this, 0, intent, 0);
+        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
     }
 
     /**
@@ -2834,9 +2836,8 @@ public class MusicPlaybackService extends Service
             return mCachedBitmapWithColors[targetIndex];
         }
 
-        // otherwise get the artwork (or defaultartwork if none found)
-        final BitmapWithColors bitmap = mImageFetcher.getArtwork(albumName,
-                albumId, artistName, smallBitmap);
+        // otherwise get the artwork (or default artwork if none found)
+        final BitmapWithColors bitmap = mImageFetcher.getArtwork(albumName, albumId, smallBitmap);
 
         // if the key is different, clear the bitmaps first
         if (!key.equals(mCachedKey)) {
@@ -3415,6 +3416,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressWarnings("unused")
     private static final class ServiceStub extends IElevenService.Stub {
 
         private final WeakReference<MusicPlaybackService> mService;
@@ -3649,6 +3651,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class QueueUpdateTask extends AsyncTask<Void, Void, List<MediaSession.QueueItem>> {
         private final long[] mQueue;
 

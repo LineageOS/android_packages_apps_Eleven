@@ -1564,7 +1564,7 @@ public final class MusicUtils {
                 name.endsWith(", a") || name.endsWith(",a")) {
             name = name.substring(0, name.lastIndexOf(','));
         }
-        name = name.replaceAll("[\\[\\]\\(\\)\"'.,?!]", "").trim();
+        name = name.replaceAll("[\\[\\]()\"'.,?!]", "").trim();
 
         return name;
     }

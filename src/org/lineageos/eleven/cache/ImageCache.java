@@ -34,7 +34,6 @@ import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -107,12 +106,6 @@ public final class ImageCache {
     private final HashSet<ICacheListener> mListeners = new HashSet<>();
 
     private static ImageCache sInstance;
-
-    /**
-     * Used to temporarily pause the disk cache while scrolling
-     */
-    private boolean mPauseDiskAccess = false;
-    private final Object mPauseLock = new Object();
 
     static {
         mArtworkUri = Uri.parse("content://media/external/audio/albumart");
@@ -375,7 +368,6 @@ public final class ImageCache {
             return getBitmapFromMemCache(data);
         }
 
-        waitUntilUnpaused();
         final String key = hashKeyForDisk(data);
         if (mDiskCache != null) {
             InputStream inputStream = null;
@@ -457,7 +449,6 @@ public final class ImageCache {
             return null;
         }
         Bitmap artwork = null;
-        waitUntilUnpaused();
 
         ParcelFileDescriptor parcelFileDescriptor = null;
         try {
@@ -468,7 +459,7 @@ public final class ImageCache {
                 artwork = BitmapFactory.decodeFileDescriptor(fileDescriptor);
             }
         } catch (final IllegalStateException e) {
-            // Log.e(TAG, "IllegalStateExcetpion - getArtworkFromFile - ", e);
+            // Log.e(TAG, "IllegalStateException - getArtworkFromFile - ", e);
         } catch (final FileNotFoundException e) {
             // Log.e(TAG, "FileNotFoundException - getArtworkFromFile - ", e);
         } catch (final OutOfMemoryError evict) {
@@ -584,48 +575,6 @@ public final class ImageCache {
             Log.e(TAG, "removeFromCache(" + key + ")", e);
         }
         flush();
-    }
-
-    /**
-     * Used to temporarily pause the disk cache while the user is scrolling to
-     * improve scrolling.
-     *
-     * @param pause True to temporarily pause the disk cache, false otherwise.
-     */
-    public void setPauseDiskCache(final boolean pause) {
-        synchronized (mPauseLock) {
-            if (mPauseDiskAccess != pause) {
-                mPauseDiskAccess = pause;
-                if (!pause) {
-                    mPauseLock.notify();
-
-                    for (ICacheListener listener : mListeners) {
-                        listener.onCacheResumed();
-                    }
-                }
-            }
-        }
-    }
-
-    private void waitUntilUnpaused() {
-        synchronized (mPauseLock) {
-            if (Looper.myLooper() != Looper.getMainLooper()) {
-                while (mPauseDiskAccess) {
-                    try {
-                        mPauseLock.wait();
-                    } catch (InterruptedException e) {
-                        // ignored, we'll start waiting again
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * @return True if the user is scrolling, false otherwise.
-     */
-    public boolean isDiskCachePaused() {
-        return mPauseDiskAccess;
     }
 
     public void addCacheListener(ICacheListener listener) {

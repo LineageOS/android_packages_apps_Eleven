@@ -184,11 +184,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
 
@@ -197,11 +192,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         if (mUseBlur != useBlur) {
             recreate();
         }
-    }
-
-    @Override
-    public int setContentView() {
-        return R.layout.activity_base;
     }
 
     @Override

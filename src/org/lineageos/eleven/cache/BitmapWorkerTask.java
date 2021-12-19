@@ -54,12 +54,12 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
 
     protected final Resources mResources;
 
-    protected boolean mScaleImgToView;
+    protected final boolean mScaleImgToView;
 
     /**
      * The key used to store cached entries
      */
-    public String mKey;
+    public final String mKey;
 
     /**
      * Constructor of <code>BitmapWorkerTask</code>

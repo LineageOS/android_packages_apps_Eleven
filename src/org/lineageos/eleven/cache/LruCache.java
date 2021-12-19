@@ -81,36 +81,7 @@ public class LruCache<K, V> {
             this.missCount++;
         }
 
-        /*
-         * Attempt to create a value. This may take a long time, and the map may
-         * be different when create() returns. If a conflicting value was added
-         * to the map while create() was working, we leave that value in the map
-         * and release the created value.
-         */
-
-        final V createdValue = create(key);
-        if (createdValue == null) {
-            return null;
-        }
-
-        synchronized (this) {
-            mapValue = map.put(key, createdValue);
-
-            if (mapValue != null) {
-                /* There was a conflict so undo that last put */
-                this.map.put(key, mapValue);
-            } else {
-                this.size += safeSizeOf(key, createdValue);
-            }
-        }
-
-        if (mapValue != null) {
-            entryRemoved(false, key, createdValue, mapValue);
-            return mapValue;
-        } else {
-            trimToSize(maxSize);
-            return createdValue;
-        }
+        return null;
     }
 
     /**
@@ -119,6 +90,7 @@ public class LruCache<K, V> {
      *
      * @return the previous value mapped by {@code key}.
      */
+    @SuppressWarnings("UnusedReturnValue")
     public final V put(final K key, final V value) {
         if (key == null || value == null) {
             throw new NullPointerException("key == null || value == null");
@@ -131,10 +103,6 @@ public class LruCache<K, V> {
             if (previous != null) {
                 this.size -= safeSizeOf(key, previous);
             }
-        }
-
-        if (previous != null) {
-            entryRemoved(false, key, previous, value);
         }
 
         trimToSize(maxSize);
@@ -165,8 +133,6 @@ public class LruCache<K, V> {
                 this.map.remove(key);
                 this.size -= safeSizeOf(key, value);
             }
-
-            entryRemoved(true, key, value, null);
         }
     }
 
@@ -175,6 +141,7 @@ public class LruCache<K, V> {
      *
      * @return the previous value mapped by {@code key}.
      */
+    @SuppressWarnings("UnusedReturnValue")
     public final V remove(final K key) {
         if (key == null) {
             throw new NullPointerException("key == null");
@@ -188,48 +155,7 @@ public class LruCache<K, V> {
             }
         }
 
-        if (previous != null) {
-            entryRemoved(false, key, previous, null);
-        }
-
         return previous;
-    }
-
-    /**
-     * Called for entries that have been evicted or removed. This method is
-     * invoked when a value is evicted to make space, removed by a call to
-     * {@link #remove}, or replaced by a call to {@link #put}. The default
-     * implementation does nothing.
-     * <p>
-     * The method is called without synchronization: other threads may access
-     * the cache while this method is executing.
-     *
-     * @param evicted  true if the entry is being removed to make space, false if
-     *                 the removal was caused by a {@link #put} or {@link #remove}.
-     * @param newValue the new value for {@code key}, if it exists. If non-null,
-     *                 this removal was caused by a {@link #put}. Otherwise it was
-     *                 caused by an eviction or a {@link #remove}.
-     */
-    protected void entryRemoved(final boolean evicted, final K key, final V oldValue,
-                                final V newValue) {
-    }
-
-    /**
-     * Called after a cache miss to compute a value for the corresponding key.
-     * Returns the computed value or null if no value can be computed. The
-     * default implementation returns null.
-     * <p>
-     * The method is called without synchronization: other threads may access
-     * the cache while this method is executing.
-     * <p>
-     * If a value for {@code key} exists in the cache when this method returns,
-     * the created value will be released with {@link #entryRemoved} and
-     * discarded. This can occur when multiple threads request the same key at
-     * the same time (causing multiple values to be created), or when one thread
-     * calls {@link #put} while another is creating a value for the same key.
-     */
-    protected V create(final K key) {
-        return null;
     }
 
     private int safeSizeOf(final K key, final V value) {
@@ -252,7 +178,7 @@ public class LruCache<K, V> {
     }
 
     /**
-     * Clear the cache, calling {@link #entryRemoved} on each removed entry.
+     * Clear the cache, calling {@link #trimToSize} on each removed entry.
      */
     public final void evictAll() {
         trimToSize(-1); // -1 will evict 0-sized elements

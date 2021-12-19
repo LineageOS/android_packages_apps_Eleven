@@ -35,10 +35,12 @@ import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.SquareImageView;
 
+import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -165,7 +167,6 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         private static final String ID = BuildConstants.PACKAGE_NAME +
                 ".adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
 
-        private View mRootView;
         private AlbumArtistLoader mTask;
         private SquareImageView mImageView;
         private long mAudioId = NO_TRACK_ID;
@@ -191,8 +192,9 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         @SuppressLint("InflateParams")
         public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                                  final Bundle savedInstanceState) {
-            mRootView = inflater.inflate(R.layout.album_art_fragment, null);
-            return mRootView;
+            View rootView = inflater.inflate(R.layout.album_art_fragment, null);
+            mImageView = rootView.findViewById(R.id.audio_player_album_art);
+            return rootView;
         }
 
         @Override
@@ -214,9 +216,8 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         }
 
         @Override
-        public void onActivityCreated(final Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-            mImageView = mRootView.findViewById(R.id.audio_player_album_art);
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
             loadImageAsync();
         }
 
@@ -271,18 +272,18 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
      * This looks up the album and artist details for a track
      */
     private static class AlbumArtistLoader extends AsyncTask<Long, Void, AlbumArtistDetails> {
-        private final Context mContext;
+        private final WeakReference<Context> mContext;
         private final AlbumArtFragment mFragment;
 
         public AlbumArtistLoader(final AlbumArtFragment albumArtFragment, final Context context) {
-            mContext = context;
+            mContext = new WeakReference<>(context);
             mFragment = albumArtFragment;
         }
 
         @Override
         protected AlbumArtistDetails doInBackground(final Long... params) {
             long id = params[0];
-            return MusicUtils.getAlbumArtDetails(mContext, id);
+            return MusicUtils.getAlbumArtDetails(mContext.get(), id);
         }
 
         @Override

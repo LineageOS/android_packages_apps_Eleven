@@ -82,7 +82,8 @@
                 class="org.lineageos.eleven.ui.fragments.AudioPlayerFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                tools:ignore="FragmentTagUsage" />
         </LinearLayout>
 
         <LinearLayout
@@ -113,7 +114,8 @@
                 class="org.lineageos.eleven.ui.fragments.QueueFragment"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                tools:ignore="FragmentTagUsage" />
         </LinearLayout>
     </org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
 </org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
