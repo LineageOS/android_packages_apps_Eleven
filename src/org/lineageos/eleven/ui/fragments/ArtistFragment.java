@@ -206,7 +206,7 @@ public class ArtistFragment extends MusicBrowserFragment implements
     @Override
     public void restartLoader() {
         // Update the list when the user deletes any items
-        restartLoader(null, this);
+        restartLoader(this);
     }
 
     @Override

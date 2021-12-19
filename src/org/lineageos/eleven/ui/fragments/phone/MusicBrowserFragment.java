@@ -39,7 +39,7 @@ public abstract class MusicBrowserFragment extends Fragment {
         getContainingLoaderManager().initLoader(getLoaderId(), null, callback);
     }
 
-    protected void restartLoader(Bundle args, LoaderManager.LoaderCallbacks<?> callback) {
-        getContainingLoaderManager().restartLoader(getLoaderId(), args, callback);
+    protected void restartLoader(LoaderManager.LoaderCallbacks<?> callback) {
+        getContainingLoaderManager().restartLoader(getLoaderId(), null, callback);
     }
 }
