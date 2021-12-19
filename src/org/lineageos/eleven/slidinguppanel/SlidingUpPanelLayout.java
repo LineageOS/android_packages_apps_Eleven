@@ -268,6 +268,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
          *
          * @param panel The child view that was slid to a anchored position
          */
+        @SuppressWarnings("unused")
         void onPanelAnchored(View panel);
 
         /**
@@ -275,6 +276,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
          *
          * @param panel The child view that was slid to a hidden position
          */
+        @SuppressWarnings("unused")
         void onPanelHidden(View panel);
     }
 
@@ -814,8 +816,10 @@ public class SlidingUpPanelLayout extends ViewGroup {
                 screenY >= viewLocation[1] && screenY < viewLocation[1] + mDragView.getHeight();
     }
 
-    private boolean expandPanel(float mSlideOffset) {
-        return mFirstLayout || smoothSlideTo(mSlideOffset);
+    private void expandPanel(float mSlideOffset) {
+        if (!mFirstLayout) {
+            smoothSlideTo(mSlideOffset);
+        }
     }
 
     /*
@@ -956,19 +960,17 @@ public class SlidingUpPanelLayout extends ViewGroup {
      *
      * @param slideOffset position to animate to
      */
-    boolean smoothSlideTo(float slideOffset) {
+    void smoothSlideTo(float slideOffset) {
         if (!isSlidingEnabled()) {
             // Nothing to do.
-            return false;
+            return;
         }
 
         int panelTop = computePanelTopPosition(slideOffset);
         if (mDragHelper.smoothSlideViewTo(mSlideableView, mSlideableView.getLeft(), panelTop)) {
             setAllChildrenVisible();
             ViewCompat.postInvalidateOnAnimation(this);
-            return true;
         }
-        return false;
     }
 
     @Override

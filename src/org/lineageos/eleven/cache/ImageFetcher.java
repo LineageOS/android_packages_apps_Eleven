@@ -203,13 +203,11 @@ public class ImageFetcher extends ImageWorker {
      *
      * @param albumName  The name of the current album
      * @param albumId    The ID of the current album
-     * @param artistName The album artist in case we should have to download
-     *                   missing artwork
      * @param smallArtwork Get the small version of the default artwork if no artwork exists
      * @return The album art as an {@link Bitmap}
      */
     public BitmapWithColors getArtwork(final String albumName, final long albumId,
-            final String artistName, boolean smallArtwork) {
+                                       boolean smallArtwork) {
         final String key = String.valueOf(albumId);
         final Bitmap artwork = getArtworkBitmap(albumName, albumId);
         if (artwork != null) {
@@ -241,7 +239,6 @@ public class ImageFetcher extends ImageWorker {
      *
      * @param albumName  The album name the cache key needs to be generated.
      * @param artistName The artist name the cache key needs to be generated.
-     * @return
      */
     public static String generateAlbumCacheKey(final String albumName, final String artistName) {
         if (albumName == null || artistName == null) {

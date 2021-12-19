@@ -73,7 +73,6 @@ public class LetterTileDrawable extends Drawable {
 
     private String mDisplayName;
     private String mIdentifier;
-    private float mScale = 1.0f;
     private float mOffset = 0.0f;
     private boolean mIsCircle = false;
 
@@ -157,6 +156,7 @@ public class LetterTileDrawable extends Drawable {
         }
 
         // Draw letter/digit only if the first character is an english letter
+        final float scale = 1.0f;
         if (mDisplayName != null && !mDisplayName.isEmpty()
                 && isEnglishLetter(mDisplayName.charAt(0))) {
             int numChars = 1;
@@ -170,7 +170,7 @@ public class LetterTileDrawable extends Drawable {
             }
 
             // Scale text by canvas bounds and user selected scaling factor
-            sPaint.setTextSize(mScale * sLetterToTileRatio * minDimension);
+            sPaint.setTextSize(scale * sLetterToTileRatio * minDimension);
             //sPaint.setTextSize(sTileLetterFontSize);
             sPaint.getTextBounds(sChars, 0, numChars, sRect);
             sPaint.setColor(sTileFontColor);
@@ -188,7 +188,7 @@ public class LetterTileDrawable extends Drawable {
             // height ratio.
             final Rect destRect = copyBounds();
 
-            drawBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), canvas, destRect, mScale,
+            drawBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), canvas, destRect, scale,
                     mOffset, mPaint);
         }
     }

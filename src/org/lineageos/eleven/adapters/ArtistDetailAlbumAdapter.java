@@ -24,9 +24,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -40,8 +38,6 @@ import java.util.Collections;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ArtistDetailAlbumAdapter
@@ -144,9 +140,9 @@ public class ArtistDetailAlbumAdapter
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView art;
-        public TextView description;
-        public PopupMenuButton popupButton;
+        public final ImageView art;
+        public final TextView description;
+        public final PopupMenuButton popupButton;
 
         public ViewHolder(View root) {
             super(root);

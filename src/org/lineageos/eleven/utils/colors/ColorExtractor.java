@@ -16,7 +16,6 @@
  */
 package org.lineageos.eleven.utils.colors;
 
-import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
 import org.lineageos.eleven.cache.ImageFetcher;
@@ -57,7 +56,7 @@ public class ColorExtractor {
                 return null;
             }
 
-            return imageFetcher.getArtwork(albumName, albumId, artistName, true);
+            return imageFetcher.getArtwork(albumName, albumId, true);
         }
 
         @Override

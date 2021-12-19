@@ -174,15 +174,6 @@ public class AlbumAdapter extends RecyclerView.Adapter<MusicHolder> implements I
     }
 
     /**
-     * @param pause True to temporarily pause the disk cache, false otherwise.
-     */
-    public void setPauseDiskCache(final boolean pause) {
-        if (mImageFetcher != null) {
-            mImageFetcher.setPauseDiskCache(pause);
-        }
-    }
-
-    /**
      * Flushes the disk cache.
      */
     public void flush() {

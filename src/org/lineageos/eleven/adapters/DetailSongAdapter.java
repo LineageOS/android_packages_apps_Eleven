@@ -213,10 +213,10 @@ public abstract class DetailSongAdapter extends RecyclerView.Adapter<DetailSongA
     protected abstract Holder newHolder(View root, ImageFetcher fetcher);
 
     protected static abstract class Holder extends RecyclerView.ViewHolder {
-        protected ImageFetcher fetcher;
-        protected TextView title;
-        protected PopupMenuButton popupMenuButton;
-        protected ImageView playIcon;
+        protected final ImageFetcher fetcher;
+        protected final TextView title;
+        protected final PopupMenuButton popupMenuButton;
+        protected final ImageView playIcon;
 
         protected Holder(View root, ImageFetcher fetcher) {
             super(root);

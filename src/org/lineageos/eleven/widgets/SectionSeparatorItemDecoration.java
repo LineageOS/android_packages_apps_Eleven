@@ -22,7 +22,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Build;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.SparseArray;

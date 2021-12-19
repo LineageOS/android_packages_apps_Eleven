@@ -39,7 +39,7 @@ public class TopTracksLoader extends SongLoader {
         RecentSongs,
     }
 
-    protected QueryType mQueryType;
+    protected final QueryType mQueryType;
 
     public TopTracksLoader(final Context context, QueryType type) {
         super(context);

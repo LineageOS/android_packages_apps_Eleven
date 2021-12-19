@@ -18,6 +18,7 @@
 package org.lineageos.eleven;
 
 import android.Manifest.permission;
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -1392,12 +1393,10 @@ public class MusicPlaybackService extends Service
      * Creates a shuffled playlist used for party mode
      */
     private boolean makeAutoShuffleList() {
-        Cursor cursor = null;
-        try {
-            cursor = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                    new String[]{
-                            MediaStore.Audio.Media._ID
-                    }, MediaStore.Audio.Media.IS_MUSIC + "=1", null, null);
+        try (Cursor cursor = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                new String[]{
+                        MediaStore.Audio.Media._ID
+                }, MediaStore.Audio.Media.IS_MUSIC + "=1", null, null)) {
             if (cursor == null || cursor.getCount() == 0) {
                 return false;
             }
@@ -1409,11 +1408,7 @@ public class MusicPlaybackService extends Service
             }
             mAutoShuffleList = list;
             return true;
-        } catch (final RuntimeException e) {
-        } finally {
-            if (cursor != null) {
-                cursor.close();
-            }
+        } catch (final RuntimeException ignored) {
         }
         return false;
     }
@@ -1655,7 +1650,6 @@ public class MusicPlaybackService extends Service
                 .setContentText(text)
                 .setColor(artwork.getVibrantColor())
                 .setWhen(mNotificationPostTime)
-                .setShowWhen(false)
                 .setStyle(style)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .addAction(prevAction)
@@ -2333,7 +2327,6 @@ public class MusicPlaybackService extends Service
     /**
      * Gets the track id at a given position in the queue
      *
-     * @param position
      * @return track id in the queue position
      */
     public long getQueueItemAtPosition(int position) {
@@ -2842,7 +2835,7 @@ public class MusicPlaybackService extends Service
 
         // otherwise get the artwork (or defaultartwork if none found)
         final BitmapWithColors bitmap = mImageFetcher.getArtwork(albumName,
-                albumId, artistName, smallBitmap);
+                albumId, smallBitmap);
 
         // if the key is different, clear the bitmaps first
         if (!key.equals(mCachedKey)) {
@@ -3421,6 +3414,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressWarnings("unused")
     private static final class ServiceStub extends IElevenService.Stub {
 
         private final WeakReference<MusicPlaybackService> mService;
@@ -3656,6 +3650,7 @@ public class MusicPlaybackService extends Service
 
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class QueueUpdateTask extends AsyncTask<Void, Void, List<MediaSession.QueueItem>> {
         private final long[] mQueue;
 

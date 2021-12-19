@@ -124,6 +124,9 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
             // Start on the last page the user was on
             navigateToPage(mPreferences.getStartPage());
         }
+
+        // Enable the options menu
+        setHasOptionsMenu(true);
     }
 
     public void setDefaultPageIdx(final int pageIdx) {
@@ -136,13 +139,6 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         if (idx != INVALID_PAGE_INDEX && mViewPager != null) {
             mViewPager.setCurrentItem(idx);
         }
-    }
-
-    @Override
-    public void onActivityCreated(final Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        // Enable the options menu
-        setHasOptionsMenu(true);
     }
 
     @Override

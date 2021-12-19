@@ -34,7 +34,6 @@ import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -375,7 +374,7 @@ public final class ImageCache {
             return getBitmapFromMemCache(data);
         }
 
-        waitUntilUnpaused();
+        waitUntilResumed();
         final String key = hashKeyForDisk(data);
         if (mDiskCache != null) {
             InputStream inputStream = null;
@@ -457,7 +456,7 @@ public final class ImageCache {
             return null;
         }
         Bitmap artwork = null;
-        waitUntilUnpaused();
+        waitUntilResumed();
 
         ParcelFileDescriptor parcelFileDescriptor = null;
         try {
@@ -607,7 +606,7 @@ public final class ImageCache {
         }
     }
 
-    private void waitUntilUnpaused() {
+    private void waitUntilResumed() {
         synchronized (mPauseLock) {
             if (Looper.myLooper() != Looper.getMainLooper()) {
                 while (mPauseDiskAccess) {

@@ -33,7 +33,7 @@ public class Playlist {
     /**
      * The unique Id of the playlist
      */
-    public long mPlaylistId;
+    public final long mPlaylistId;
 
     /**
      * The playlist name
@@ -43,7 +43,7 @@ public class Playlist {
     /**
      * The number of songs in this playlist
      */
-    public int mSongCount;
+    public final int mSongCount;
 
     /**
      * Constructor of <code>Genre</code>

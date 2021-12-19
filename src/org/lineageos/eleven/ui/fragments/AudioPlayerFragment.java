@@ -27,6 +27,7 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
 import android.text.Html;
@@ -117,26 +118,6 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     private boolean mIgnoreAfterRequest;
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        // Control the media volume
-        final FragmentActivity activity = getActivity();
-        if (activity != null) {
-            activity.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        }
-
-        // Initialize the image fetcher/cache
-        mImageFetcher = ElevenUtils.getImageFetcher(getActivity());
-
-        // Initialize the handler used to update the current time
-        mTimeHandler = new TimeHandler(this);
-
-        // Initialize the broadcast receiver
-        mPlaybackStatus = new PlaybackStatus(this);
-    }
-
-    @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container,
                 final Bundle savedInstanceState) {
         // The View for the fragment's UI
@@ -159,6 +140,22 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
+
+        // Control the media volume
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        }
+
+        // Initialize the image fetcher/cache
+        mImageFetcher = ElevenUtils.getImageFetcher(getActivity());
+
+        // Initialize the handler used to update the current time
+        mTimeHandler = new TimeHandler(Looper.getMainLooper());
+        mTimeHandler.setFragment(this);
+
+        // Initialize the broadcast receiver
+        mPlaybackStatus = new PlaybackStatus(this);
     }
 
     @Override
@@ -542,12 +539,13 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
      */
     private static final class TimeHandler extends Handler {
 
-        private final WeakReference<AudioPlayerFragment> mAudioPlayer;
+        private WeakReference<AudioPlayerFragment> mAudioPlayer;
 
-        /**
-         * Constructor of <code>TimeHandler</code>
-         */
-        TimeHandler(final AudioPlayerFragment player) {
+        public TimeHandler(@NonNull Looper looper) {
+            super(looper);
+        }
+
+        public void setFragment(final AudioPlayerFragment player) {
             mAudioPlayer = new WeakReference<>(player);
         }
 

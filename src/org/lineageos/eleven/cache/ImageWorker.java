@@ -53,7 +53,7 @@ public abstract class ImageWorker {
      * Tracks which images we've tried to download and prevents it from trying again
      * In the future we might want to throw this into a db
      */
-    public static Set<String> sKeys = Collections.synchronizedSet(new HashSet<>());
+    public static final Set<String> sKeys = Collections.synchronizedSet(new HashSet<>());
 
     /**
      * Default transition drawable fade time
@@ -73,7 +73,7 @@ public abstract class ImageWorker {
     /**
      * The Context to use
      */
-    protected Context mContext;
+    protected final Context mContext;
 
     /**
      * Disk and memory caches
@@ -324,6 +324,7 @@ public abstract class ImageWorker {
      * @return Retrieve the currently active work task (if any) associated with
      * this {@link View}. null if there is no such task.
      */
+    @SuppressWarnings("rawtypes")
     public static BitmapWorkerTask getBitmapWorkerTask(final View view) {
         AsyncTaskContainer asyncTask = getAsyncTaskContainer(view);
         if (asyncTask != null) {

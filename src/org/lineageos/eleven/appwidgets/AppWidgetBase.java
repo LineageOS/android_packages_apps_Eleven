@@ -29,6 +29,6 @@ public abstract class AppWidgetBase extends AppWidgetProvider {
                                                final ComponentName serviceName) {
         Intent intent = new Intent(action);
         intent.setComponent(serviceName);
-        return PendingIntent.getService(context, 0, intent, 0);
+        return PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
     }
 }

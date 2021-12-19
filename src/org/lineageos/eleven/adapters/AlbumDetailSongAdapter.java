@@ -49,8 +49,8 @@ public class AlbumDetailSongAdapter extends DetailSongAdapter {
     }
 
     private static class AlbumHolder extends Holder {
-        TextView duration;
-        Context context;
+        final TextView duration;
+        final Context context;
 
         protected AlbumHolder(View root, ImageFetcher fetcher, Context context) {
             super(root, fetcher);

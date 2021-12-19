@@ -131,7 +131,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         }
 
         // Set the layout
-        setContentView(setContentView());
+        setContentView(R.layout.activity_base);
 
         mToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
@@ -440,11 +440,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         // Set the album art
         ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
     }
-
-    /**
-     * @return The resource ID to be inflated.
-     */
-    public abstract int setContentView();
 
     /**
      * handle pending playback requests

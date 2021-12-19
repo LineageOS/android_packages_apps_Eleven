@@ -47,12 +47,12 @@ public class SongLoader extends SectionCreator.SimpleListLoader<Song> {
     /**
      * The result
      */
-    protected ArrayList<Song> mSongList = Lists.newArrayList();
+    protected final ArrayList<Song> mSongList = Lists.newArrayList();
 
     /**
      * Additional selection filter
      */
-    protected String mSelection;
+    protected final String mSelection;
 
     /**
      * @param context The {@link Context} to use

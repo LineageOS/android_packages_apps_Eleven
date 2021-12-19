@@ -313,14 +313,12 @@ public final class MusicUtils {
     /**
      * Changes to the previous track.
      *
-     * @NOTE The AIDL isn't used here in order to properly use the previous
-     * action. When the user is shuffling, because {@link
-     * MusicPlaybackService#openCurrentAndNext()} is used, the user won't
-     * be able to travel to the previously skipped track. To remedy this,
-     * {@link MusicPlaybackService#openCurrent()} is called in {@link
-     * MusicPlaybackService#prev(boolean)}. {@code #startService(Intent intent)}
-     * is called here to specifically invoke the onStartCommand used by
-     * {@link MusicPlaybackService}, which states if the current position
+     * <p>NOTE:</p>The AIDL isn't used here in order to properly use the previous
+     * action. When the user is shuffling, because MusicPlaybackService#openCurrentAndNext()
+     * is used, the user won't be able to travel to the previously skipped track. To remedy this,
+     * MusicPlaybackService#openCurrent() is called in MusicPlaybackService#prev(boolean)}.
+     * {@code #startService(Intent intent)} is called here to specifically invoke the onStartCommand
+     * used by{@link MusicPlaybackService}, which states if the current position
      * less than 2000 ms, start the track over, otherwise move to the
      * previously listened track.
      */
@@ -1563,7 +1561,7 @@ public final class MusicUtils {
                 name.endsWith(", a") || name.endsWith(",a")) {
             name = name.substring(0, name.lastIndexOf(','));
         }
-        name = name.replaceAll("[\\[\\]\\(\\)\"'.,?!]", "").trim();
+        name = name.replaceAll("[\\[\\]()\"'.,?!]", "").trim();
 
         return name;
     }

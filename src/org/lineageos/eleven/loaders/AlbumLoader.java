@@ -52,7 +52,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     /**
      * Additional selection filter
      */
-    protected Long mArtistId;
+    protected final Long mArtistId;
 
     /**
      * @param context The {@link Context} to use
@@ -98,14 +98,8 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
                     continue;
                 }
 
-                // Create a new album
+                // Create a new album and add everything up
                 final Album album = new Album(id, albumName, artist, songCount, year);
-
-                if (cursor instanceof SortedCursor) {
-                    album.mBucketLabel = (String)((SortedCursor) cursor).getExtraData();
-                }
-
-                // Add everything up
                 mAlbumsList.add(album);
             } while (cursor.moveToNext());
         }
