@@ -30,24 +30,24 @@ public class MusicPlaybackTrack implements Parcelable {
     /**
      * The track id
      */
-    public long mId;
+    public final long mId;
 
     /**
      * Where was this track added from? Artist id/Album id/Playlist id
      */
-    public long mSourceId;
+    public final long mSourceId;
 
     /**
      * Where was this track added from?  Artist/Album/Playlist
      */
-    public Config.IdType mSourceType;
+    public final Config.IdType mSourceType;
 
     /**
      * This is only used for playlists since it is possible that a playlist can contain the same
      * song multiple times.  So to prevent the song indicator showing up multiple times, we need
      * to keep track of the position
      */
-    public int mSourcePosition;
+    public final int mSourcePosition;
 
     /**
      * Parcelable creator

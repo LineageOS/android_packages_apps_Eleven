@@ -67,6 +67,7 @@ public class ShakeDetector implements SensorEventListener {
      *
      * @return true if the device supports shake detection.
      */
+    @SuppressWarnings("UnusedReturnValue")
     public boolean start(SensorManager sensorManager) {
         // Already started?
         if (accelerometer != null) {

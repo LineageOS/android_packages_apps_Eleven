@@ -260,6 +260,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
          *
          * @param panel The child view that was slid to a anchored position
          */
+        @SuppressWarnings("unused")
         void onPanelAnchored(View panel);
 
         /**
@@ -267,6 +268,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
          *
          * @param panel The child view that was slid to a hidden position
          */
+        @SuppressWarnings("unused")
         void onPanelHidden(View panel);
     }
 

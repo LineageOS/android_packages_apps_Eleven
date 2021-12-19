@@ -31,22 +31,22 @@ public class Artist {
     /**
      * The unique Id of the artist
      */
-    public long mArtistId;
+    public final long mArtistId;
 
     /**
      * The artist name
      */
-    public String mArtistName;
+    public final String mArtistName;
 
     /**
      * The number of albums for the artist
      */
-    public int mAlbumNumber;
+    public final int mAlbumNumber;
 
     /**
      * The number of songs for the artist
      */
-    public int mSongNumber;
+    public final int mSongNumber;
 
     /**
      * Bucket label for the artist name if it exists

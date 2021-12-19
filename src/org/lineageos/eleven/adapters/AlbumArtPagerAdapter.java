@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -33,13 +34,12 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import org.lineageos.eleven.BuildConstants;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.cache.ICacheListener;
-import org.lineageos.eleven.cache.ImageCache;
 import org.lineageos.eleven.model.AlbumArtistDetails;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.widgets.SquareImageView;
 
+import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -160,11 +160,10 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
      * The fragments to be displayed inside this adapter.  This wraps the album art
      * and handles loading the album art for a given audio id
      */
-    public static class AlbumArtFragment extends Fragment implements ICacheListener {
+    public static class AlbumArtFragment extends Fragment {
         private static final String ID = BuildConstants.PACKAGE_NAME +
                 ".adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
 
-        private View mRootView;
         private AlbumArtistLoader mTask;
         private SquareImageView mImageView;
         private long mAudioId = NO_TRACK_ID;
@@ -183,22 +182,20 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
 
             final Bundle args = getArguments();
             mAudioId = args == null ? NO_TRACK_ID : args.getLong(ID, NO_TRACK_ID);
-            ImageCache.getInstance(getActivity()).addCacheListener(this);
         }
 
         @Override
         @SuppressLint("InflateParams")
         public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                                  final Bundle savedInstanceState) {
-            mRootView = inflater.inflate(R.layout.album_art_fragment, null);
-            return mRootView;
+            View rootView = inflater.inflate(R.layout.album_art_fragment, null);
+            mImageView = rootView.findViewById(R.id.audio_player_album_art);
+            return rootView;
         }
 
         @Override
         public void onDestroy() {
             super.onDestroy();
-
-            ImageCache.getInstance(getActivity()).removeCacheListener(this);
         }
 
         @Override
@@ -213,9 +210,8 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         }
 
         @Override
-        public void onActivityCreated(final Bundle savedInstanceState) {
-            super.onActivityCreated(savedInstanceState);
-            mImageView = mRootView.findViewById(R.id.audio_player_album_art);
+        public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
             loadImageAsync();
         }
 
@@ -259,29 +255,24 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
                     mImageView
             );
         }
-
-        @Override
-        public void onCacheResumed() {
-            loadImageAsync();
-        }
     }
 
     /**
      * This looks up the album and artist details for a track
      */
     private static class AlbumArtistLoader extends AsyncTask<Long, Void, AlbumArtistDetails> {
-        private Context mContext;
-        private AlbumArtFragment mFragment;
+        private final WeakReference<Context> mContext;
+        private final AlbumArtFragment mFragment;
 
         public AlbumArtistLoader(final AlbumArtFragment albumArtFragment, final Context context) {
-            mContext = context;
+            mContext = new WeakReference<>(context);
             mFragment = albumArtFragment;
         }
 
         @Override
         protected AlbumArtistDetails doInBackground(final Long... params) {
             long id = params[0];
-            return MusicUtils.getAlbumArtDetails(mContext, id);
+            return MusicUtils.getAlbumArtDetails(mContext.get(), id);
         }
 
         @Override
