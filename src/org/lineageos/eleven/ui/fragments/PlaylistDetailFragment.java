@@ -145,10 +145,6 @@ public class PlaylistDetailFragment extends DetailFragment implements
         mPopupMenuHelper = new SongPopupMenuHelper(getActivity(), getChildFragmentManager()) {
             @Override
             public Song getSong(int position) {
-                if (position == 0) {
-                    return null;
-                }
-
                 return mAdapter.getItem(position);
             }
 
@@ -274,6 +270,7 @@ public class PlaylistDetailFragment extends DetailFragment implements
     public void onLoadFinished(@NonNull final Loader<List<Song>> loader, final List<Song> data) {
         Handler handler = new Handler(requireActivity().getMainLooper());
         if (data.isEmpty()) {
+            mLoadingEmptyContainer.setVisibility(View.VISIBLE);
             mLoadingEmptyContainer.showNoResults();
 
             // hide the header container
