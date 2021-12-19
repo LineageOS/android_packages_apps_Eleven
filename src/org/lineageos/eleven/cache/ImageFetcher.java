@@ -307,8 +307,8 @@ public class ImageFetcher extends ImageWorker {
      * @param reqHeight The requested height of the resulting bitmap
      * @return The value to be used for inSampleSize
      */
-    public static final int calculateInSampleSize(final BitmapFactory.Options options,
-                                                  final int reqWidth, final int reqHeight) {
+    public static int calculateInSampleSize(final BitmapFactory.Options options,
+                                            final int reqWidth, final int reqHeight) {
         /* Raw height and width of image */
         final int height = options.outHeight;
         final int width = options.outWidth;

@@ -117,7 +117,7 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPopupMenuHelper = new PopupMenuHelper(getActivity(), getFragmentManager()) {
+        mPopupMenuHelper = new PopupMenuHelper(getActivity(), getChildFragmentManager()) {
             private Song mSong;
             private int mSelectedPosition;
             private MusicPlaybackTrack mSelectedTrack;

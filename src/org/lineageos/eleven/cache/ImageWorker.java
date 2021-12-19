@@ -125,7 +125,7 @@ public abstract class ImageWorker {
     /**
      * Adds a new image to the memory and disk caches
      *
-     * @param data   The key used to store the image
+     * @param key    The key used to store the image
      * @param bitmap The {@link Bitmap} to cache
      */
     public void addBitmapToCache(final String key, final Bitmap bitmap) {
@@ -163,7 +163,7 @@ public abstract class ImageWorker {
         }
 
         // Finally, add the new image to the cache
-        if (bitmap != null && key != null && imageCache != null) {
+        if (bitmap != null) {
             imageCache.addBitmapToCache(key, bitmap);
         }
 
