@@ -27,12 +27,6 @@ import java.util.LinkedList;
 public final class Lists {
 
     /**
-     * This class is never instantiated
-     */
-    public Lists() {
-    }
-
-    /**
      * Creates an empty {@code ArrayList} instance.
      * <p>
      * <b>Note:</b> if you only need an <i>immutable</i> empty List, use

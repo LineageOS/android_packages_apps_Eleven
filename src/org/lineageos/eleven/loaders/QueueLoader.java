@@ -79,7 +79,8 @@ public class QueueLoader extends WrappedAsyncTaskLoader<List<Song>> {
                 final int year = cursor.getInt(6);
 
                 // Create a new song
-                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs, year);
+                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs,
+                        year);
 
                 // Add everything up
                 mSongList.add(song);

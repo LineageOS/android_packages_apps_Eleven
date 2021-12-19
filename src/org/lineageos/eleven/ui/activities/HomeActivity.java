@@ -71,7 +71,8 @@ public class HomeActivity extends SlidingPanelActivity implements
     private static final String ACTION_PREFIX = HomeActivity.class.getName();
     public static final String ACTION_VIEW_ARTIST_DETAILS = ACTION_PREFIX + ".view.ArtistDetails";
     public static final String ACTION_VIEW_ALBUM_DETAILS = ACTION_PREFIX + ".view.AlbumDetails";
-    public static final String ACTION_VIEW_PLAYLIST_DETAILS = ACTION_PREFIX + ".view.PlaylistDetails";
+    public static final String ACTION_VIEW_PLAYLIST_DETAILS =
+            ACTION_PREFIX + ".view.PlaylistDetails";
     public static final String ACTION_VIEW_SMART_PLAYLIST = ACTION_PREFIX + ".view.SmartPlaylist";
     public static final String EXTRA_BROWSE_PAGE_IDX = "BrowsePageIndex";
 
@@ -226,8 +227,7 @@ public class HomeActivity extends SlidingPanelActivity implements
                 protected BitmapWithColors doInBackground(Void... params) {
                     ImageFetcher imageFetcher = ImageFetcher.getInstance(HomeActivity.this);
                     return imageFetcher.getArtwork(
-                            MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                            MusicUtils.getArtistName(), true);
+                            MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(), true);
                 }
 
                 @Override

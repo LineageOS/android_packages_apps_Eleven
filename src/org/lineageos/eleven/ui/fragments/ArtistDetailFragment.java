@@ -110,8 +110,8 @@ public class ArtistDetailFragment extends DetailFragment implements IChildFragme
                 @Override
                 public Loader<List<Album>> onCreateLoader(int id, @Nullable Bundle args) {
                     return args == null
-                            ? new Loader<>(getContext())
-                            : new AlbumLoader(getContext(), args.getLong(Config.ID));
+                            ? new Loader<>(requireContext())
+                            : new AlbumLoader(requireContext(), args.getLong(Config.ID));
                 }
 
                 @Override

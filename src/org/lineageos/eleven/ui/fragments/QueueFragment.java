@@ -198,6 +198,9 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         mAdapter.setPopupMenuClickedListener((v, position) ->
                 mPopupMenuHelper.showPopupMenu(v, position));
         mDragSortHelper = new ItemTouchHelper(new DragSortItemTouchHelperCallback(this));
+
+        // Initialize the broadcast receiver
+        mQueueUpdateListener = new QueueUpdateListener(this);
     }
 
     @Override
@@ -219,14 +222,6 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
         setupNoResultsContainer(mLoadingEmptyContainer.getNoResultsContainer());
         mLoadingEmptyContainer.setVisibility(View.VISIBLE);
         return rootView;
-    }
-
-    @Override
-    public void onActivityCreated(final Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        // Initialize the broadcast receiver
-        mQueueUpdateListener = new QueueUpdateListener(this);
     }
 
     @Override

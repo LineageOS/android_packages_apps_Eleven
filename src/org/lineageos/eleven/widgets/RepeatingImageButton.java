@@ -23,7 +23,6 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
 
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.content.ContextCompat;
@@ -33,9 +32,9 @@ import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
 
 /**
- * A {@link ImageButton} that will repeatedly call a 'listener' method as long
- * as the button is pressed, otherwise functions like a typecal
- * {@link ImageButton}
+ * A {@link AppCompatImageButton} that will repeatedly call a 'listener' method as long
+ * as the button is pressed, otherwise functions like a typical
+ * {@link AppCompatImageButton}
  */
 public class RepeatingImageButton extends AppCompatImageButton implements OnClickListener {
 
