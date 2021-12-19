@@ -34,14 +34,14 @@ public class ColorPanelView extends View {
 
     private static final int BORDER_COLOR = 0xff6E6E6E;
 
+    private final static int PAINT_COLOR = 0xff000000;
+
     /**
      * The width in pixels of the border surrounding the color panel.
      */
     private final static float BORDER_WIDTH_PX = 1;
 
     private static float mDensity = 1f;
-
-    private int mColor = 0xff000000;
 
     private Paint mBorderPaint;
 
@@ -82,7 +82,7 @@ public class ColorPanelView extends View {
             mAlphaPattern.draw(canvas);
         }
 
-        mColorPaint.setColor(mColor);
+        mColorPaint.setColor(PAINT_COLOR);
         canvas.drawRect(rect, mColorPaint);
     }
 
@@ -121,18 +121,4 @@ public class ColorPanelView extends View {
                 Math.round(mColorRect.right), Math.round(mColorRect.bottom));
     }
 
-    /**
-     * Set the color that should be shown by this view.
-     */
-    public void setColor(final int color) {
-        mColor = color;
-        invalidate();
-    }
-
-    /**
-     * Get the color currently show by this view.
-     */
-    public int getColor() {
-        return mColor;
-    }
 }

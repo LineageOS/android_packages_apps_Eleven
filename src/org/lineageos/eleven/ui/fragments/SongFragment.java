@@ -62,7 +62,8 @@ public class SongFragment extends BasicSongFragment {
         SongLoader songLoader = new SongLoader(context);
 
         // get the song comparison method to create the headers with
-        SectionCreatorUtils.IItemCompare<Song> songComparison = SectionCreatorUtils.createSongComparison(context);
+        SectionCreatorUtils.IItemCompare<Song> songComparison =
+                SectionCreatorUtils.createSongComparison(context);
 
         // return the wrapped section creator
         return new SectionCreator<>(context, songLoader, songComparison);

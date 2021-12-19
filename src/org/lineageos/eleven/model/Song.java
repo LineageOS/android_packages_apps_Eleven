@@ -31,37 +31,37 @@ public class Song {
     /**
      * The unique Id of the song
      */
-    public long mSongId;
+    public final long mSongId;
 
     /**
      * The song name
      */
-    public String mSongName;
+    public final String mSongName;
 
     /**
      * The song artist
      */
-    public String mArtistName;
+    public final String mArtistName;
 
     /**
      * The song album
      */
-    public String mAlbumName;
+    public final String mAlbumName;
 
     /**
      * The album id
      */
-    public long mAlbumId;
+    public final long mAlbumId;
 
     /**
      * The song duration in seconds
      */
-    public int mDuration;
+    public final int mDuration;
 
     /**
      * The year the song was recorded
      */
-    public int mYear;
+    public final int mYear;
 
     /**
      * Bucket label for the name - may not necessarily be the name - for example songs sorted by

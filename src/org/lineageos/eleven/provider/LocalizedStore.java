@@ -182,7 +182,8 @@ public class LocalizedStore {
             // But assume that ICU versions are only able to change on Android version upgrades and
             // use SDK INT as identifier.
             PropertiesStore.getInstance(mContext).storeProperty(
-                    PropertiesStore.DbProperties.ICU_VERSION, String.valueOf(Build.VERSION.SDK_INT));
+                    PropertiesStore.DbProperties.ICU_VERSION,
+                    String.valueOf(Build.VERSION.SDK_INT));
             PropertiesStore.getInstance(mContext).storeProperty(PropertiesStore.DbProperties.LOCALE,
                     locales.toString());
 
@@ -192,7 +193,8 @@ public class LocalizedStore {
         }
 
         if (DEBUG) {
-            Log.i(TAG, "Locale change completed in " + (SystemClock.elapsedRealtime() - start) + "ms");
+            Log.i(TAG, "Locale change completed in " + (SystemClock.elapsedRealtime() - start) +
+                    "ms");
         }
     }
 
@@ -256,7 +258,8 @@ public class LocalizedStore {
                             updateAlbumData(db, albumId, cursor.getString(5), artistId);
                         }
 
-                        updateSongData(db, cursor.getLong(0), cursor.getString(1), artistId, albumId);
+                        updateSongData(db, cursor.getLong(0), cursor.getString(1), artistId,
+                                albumId);
                     } while (cursor.moveToNext());
                 }
             } finally {
@@ -445,7 +448,7 @@ public class LocalizedStore {
             return sortedCursor;
         }
 
-        return cursor;
+        return null;
     }
 
     /**

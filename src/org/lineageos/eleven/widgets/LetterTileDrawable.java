@@ -154,6 +154,7 @@ public class LetterTileDrawable extends Drawable {
         }
 
         // Draw letter/digit only if the first character is an english letter
+        final float scale = 1.0f;
         if (mDisplayName != null && !mDisplayName.isEmpty()
                 && isEnglishLetter(mDisplayName.charAt(0))) {
             int numChars = 1;
@@ -278,12 +279,12 @@ public class LetterTileDrawable extends Drawable {
      * Assigns the vertical offset of the position of the letter tile to the ContactDrawable
      *
      * @param offset The provided offset must be within the range of -0.5f to 0.5f.
-     *               If set to -0.5f, the letter will be shifted upwards by 0.5 times the height of the canvas
-     *               it is being drawn on, which means it will be drawn with the center of the letter starting
-     *               at the top edge of the canvas.
-     *               If set to 0.5f, the letter will be shifted downwards by 0.5 times the height of the canvas
-     *               it is being drawn on, which means it will be drawn with the center of the letter starting
-     *               at the bottom edge of the canvas.
+     *               If set to -0.5f, the letter will be shifted upwards by 0.5 times the height of
+     *               the canvas it is being drawn on, which means it will be drawn with the center
+     *               of the letter starting at the top edge of the canvas.
+     *               If set to 0.5f, the letter will be shifted downwards by 0.5 times the height of
+     *               the canvas it is being drawn on, which means it will be drawn with the center
+     *               of the letter starting at the bottom edge of the canvas.
      *               The default is 0.0f.
      */
     public void setOffset(float offset) {

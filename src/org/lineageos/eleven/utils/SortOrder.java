@@ -27,12 +27,6 @@ import android.provider.MediaStore;
 public final class SortOrder {
 
     /**
-     * This class is never instantiated
-     */
-    public SortOrder() {
-    }
-
-    /**
      * Artist sort order entries.
      */
     public interface ArtistSortOrder {

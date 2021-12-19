@@ -17,7 +17,6 @@
  */
 package org.lineageos.eleven.ui.fragments.profile;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -85,7 +84,7 @@ public class TopTracksFragment extends SmartPlaylistFragment implements ISetupAc
     }
 
     public void setupActionBar() {
-        final Activity activity = getActivity();
+        final FragmentActivity activity = getActivity();
         if (activity instanceof BaseActivity) {
             final BaseActivity baseActivity = (BaseActivity) activity;
             baseActivity.setupActionBar(R.string.playlist_top_tracks);

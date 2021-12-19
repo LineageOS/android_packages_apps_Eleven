@@ -56,7 +56,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     final int mTextSize;
     final boolean mTextAllCaps;
     int mPrevSelected = -1;
-    int mSidePadding;
+    final int mSidePadding;
 
     private static final ViewOutlineProvider VIEW_BOUNDS_OUTLINE_PROVIDER =
             new ViewOutlineProvider() {

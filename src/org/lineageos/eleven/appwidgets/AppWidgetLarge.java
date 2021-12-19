@@ -71,7 +71,8 @@ public class AppWidgetLarge extends AppWidgetBase {
         pushUpdate(context, appWidgetIds, appWidgetViews);
     }
 
-    private void pushUpdate(final Context context, final int[] appWidgetIds, final RemoteViews views) {
+    private void pushUpdate(final Context context, final int[] appWidgetIds,
+                            final RemoteViews views) {
         final AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         if (appWidgetIds != null) {
             appWidgetManager.updateAppWidget(appWidgetIds, views);
@@ -155,20 +156,23 @@ public class AppWidgetLarge extends AppWidgetBase {
         // Home
         action = new Intent(context, HomeActivity.class);
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        pendingIntent = PendingIntent.getActivity(context, 0, action, 0);
+        pendingIntent = PendingIntent.getActivity(context, 0, action, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.app_widget_large_info_container, pendingIntent);
         views.setOnClickPendingIntent(R.id.app_widget_large_image, pendingIntent);
 
         // Previous track
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.PREVIOUS_ACTION, serviceName);
+        pendingIntent = buildPendingIntent(context, MusicPlaybackService.PREVIOUS_ACTION,
+                serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_large_previous, pendingIntent);
 
         // Play and pause
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION, serviceName);
+        pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION,
+                serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_large_play, pendingIntent);
 
         // Next track
-        pendingIntent = buildPendingIntent(context, MusicPlaybackService.NEXT_ACTION, serviceName);
+        pendingIntent = buildPendingIntent(context, MusicPlaybackService.NEXT_ACTION,
+                serviceName);
         views.setOnClickPendingIntent(R.id.app_widget_large_next, pendingIntent);
     }
 

@@ -18,6 +18,7 @@
 package org.lineageos.eleven;
 
 import android.Manifest.permission;
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -104,104 +105,106 @@ public class MusicPlaybackService extends Service
     private static final String TAG = "MusicPlaybackService";
     private static final boolean D = false;
 
+    private static final String PKG_NAME = BuildConstants.PACKAGE_NAME;
+
     /**
      * Indicates that the music has paused or resumed
      */
-    public static final String PLAYSTATE_CHANGED = BuildConstants.PACKAGE_NAME + ".playstatechanged";
+    public static final String PLAYSTATE_CHANGED = PKG_NAME + ".playstatechanged";
 
     /**
      * Indicates that music playback position within
      * a title was changed
      */
-    public static final String POSITION_CHANGED = BuildConstants.PACKAGE_NAME + ".positionchanged";
+    public static final String POSITION_CHANGED = PKG_NAME + ".positionchanged";
 
     /**
      * Indicates the meta data has changed in some way, like a track change
      */
-    public static final String META_CHANGED = BuildConstants.PACKAGE_NAME + ".metachanged";
+    public static final String META_CHANGED = PKG_NAME + ".metachanged";
 
     /**
      * Indicates the queue has been updated
      */
-    public static final String QUEUE_CHANGED = BuildConstants.PACKAGE_NAME + ".queuechanged";
+    public static final String QUEUE_CHANGED = PKG_NAME + ".queuechanged";
 
     /**
      * Indicates a queue item has been moved
      */
-    public static final String QUEUE_MOVED = BuildConstants.PACKAGE_NAME + ".queuemoved";
+    public static final String QUEUE_MOVED = PKG_NAME + ".queuemoved";
 
     /**
      * Indicates the queue has been updated
      */
-    public static final String PLAYLIST_CHANGED = BuildConstants.PACKAGE_NAME + ".playlistchanged";
+    public static final String PLAYLIST_CHANGED = PKG_NAME + ".playlistchanged";
 
     /**
      * Indicates the repeat mode changed
      */
-    public static final String REPEATMODE_CHANGED = BuildConstants.PACKAGE_NAME + ".repeatmodechanged";
+    public static final String REPEATMODE_CHANGED = PKG_NAME + ".repeatmodechanged";
 
     /**
      * Indicates the shuffle mode changed
      */
-    public static final String SHUFFLEMODE_CHANGED = BuildConstants.PACKAGE_NAME + ".shufflemodechanged";
+    public static final String SHUFFLEMODE_CHANGED = PKG_NAME + ".shufflemodechanged";
 
     /**
      * Indicates the track fails to play
      */
-    public static final String TRACK_ERROR = BuildConstants.PACKAGE_NAME + ".trackerror";
+    public static final String TRACK_ERROR = PKG_NAME + ".trackerror";
 
     /**
      * For backwards compatibility reasons, also provide sticky
      * broadcasts under the music package
      */
-    public static final String ELEVEN_PACKAGE_NAME = BuildConstants.PACKAGE_NAME;
+    public static final String ELEVEN_PACKAGE_NAME = PKG_NAME;
     public static final String MUSIC_PACKAGE_NAME = "com.android.music";
 
     /**
      * Called to indicate a general service commmand. Used in
      * {@link MediaButtonIntentReceiver}
      */
-    public static final String SERVICECMD = BuildConstants.PACKAGE_NAME + ".musicservicecommand";
+    public static final String SERVICECMD = PKG_NAME + ".musicservicecommand";
 
     /**
      * Called to go toggle between pausing and playing the music
      */
-    public static final String TOGGLEPAUSE_ACTION = BuildConstants.PACKAGE_NAME + ".togglepause";
+    public static final String TOGGLEPAUSE_ACTION = PKG_NAME + ".togglepause";
 
     /**
      * Called to go to pause the playback
      */
-    public static final String PAUSE_ACTION = BuildConstants.PACKAGE_NAME + ".pause";
+    public static final String PAUSE_ACTION = PKG_NAME + ".pause";
 
     /**
      * Called to go to stop the playback
      */
-    public static final String STOP_ACTION = BuildConstants.PACKAGE_NAME + ".stop";
+    public static final String STOP_ACTION = PKG_NAME + ".stop";
 
     /**
      * Called to go to the previous track or the beginning of the track if partway through the track
      */
-    public static final String PREVIOUS_ACTION = BuildConstants.PACKAGE_NAME + ".previous";
+    public static final String PREVIOUS_ACTION = PKG_NAME + ".previous";
 
     /**
      * Called to go to the previous track regardless of how far in the current track the playback is
      */
-    public static final String PREVIOUS_FORCE_ACTION = BuildConstants.PACKAGE_NAME + ".previous.force";
+    public static final String PREVIOUS_FORCE_ACTION = PKG_NAME + ".previous.force";
 
     /**
      * Called to go to the next track
      */
-    public static final String NEXT_ACTION = BuildConstants.PACKAGE_NAME + ".next";
+    public static final String NEXT_ACTION = PKG_NAME + ".next";
 
     /**
      * Called to change the repeat mode
      */
-    public static final String REPEAT_ACTION = BuildConstants.PACKAGE_NAME + ".repeat";
+    public static final String REPEAT_ACTION = PKG_NAME + ".repeat";
 
     /**
      * Called to change the shuffle mode
      */
-    public static final String SHUFFLE_ACTION = BuildConstants.PACKAGE_NAME + ".shuffle";
+    public static final String SHUFFLE_ACTION = PKG_NAME + ".shuffle";
 
     public static final String FROM_MEDIA_BUTTON = "frommediabutton";
 
@@ -211,17 +214,17 @@ public class MusicPlaybackService extends Service
      * Used to easily notify a list that it should refresh. i.e. A playlist
      * changes
      */
-    public static final String REFRESH = BuildConstants.PACKAGE_NAME + ".refresh";
+    public static final String REFRESH = PKG_NAME + ".refresh";
 
     /**
      * Used by the alarm intent to shutdown the service after being idle
      */
-    private static final String SHUTDOWN = BuildConstants.PACKAGE_NAME + ".shutdown";
+    private static final String SHUTDOWN = PKG_NAME + ".shutdown";
 
     /**
      * Called to notify of a timed text
      */
-    public static final String NEW_LYRICS = BuildConstants.PACKAGE_NAME + ".lyrics";
+    public static final String NEW_LYRICS = PKG_NAME + ".lyrics";
 
     public static final String CMDNAME = "command";
 
@@ -672,7 +675,8 @@ public class MusicPlaybackService extends Service
         shutdownIntent.setAction(SHUTDOWN);
 
         mAlarmManager = getSystemService(AlarmManager.class);
-        mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent, 0);
+        mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent,
+                PendingIntent.FLAG_IMMUTABLE);
 
         // Bring the queue back
         reloadQueue();
@@ -746,7 +750,7 @@ public class MusicPlaybackService extends Service
 
         PendingIntent pi = PendingIntent.getBroadcast(this, 0,
                 new Intent(this, MediaButtonIntentReceiver.class),
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         mSession.setMediaButtonReceiver(pi);
     }
 
@@ -1605,7 +1609,8 @@ public class MusicPlaybackService extends Service
 
         Intent nowPlayingIntent = new Intent(ACTION_AUDIO_PLAYER)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        PendingIntent clickIntent = PendingIntent.getActivity(this, 0, nowPlayingIntent, 0);
+        PendingIntent clickIntent = PendingIntent.getActivity(this, 0, nowPlayingIntent,
+                PendingIntent.FLAG_IMMUTABLE);
         BitmapWithColors artwork = getAlbumArt(false);
 
         if (mNotificationPostTime == 0) {
@@ -1649,7 +1654,6 @@ public class MusicPlaybackService extends Service
                 .setContentText(text)
                 .setColor(artwork.getVibrantColor())
                 .setWhen(mNotificationPostTime)
-                .setShowWhen(false)
                 .setStyle(style)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .addAction(prevAction)
@@ -1663,7 +1667,7 @@ public class MusicPlaybackService extends Service
         Intent intent = new Intent(action);
         intent.setComponent(serviceName);
 
-        return PendingIntent.getService(this, 0, intent, 0);
+        return PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
     }
 
     /**
@@ -1896,7 +1900,8 @@ public class MusicPlaybackService extends Service
         final String[] projection = {
                 column
         };
-        try (Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null)) {
+        try (Cursor cursor = context.getContentResolver().query(uri, projection, null, null,
+                null)) {
             if (cursor != null && cursor.moveToFirst()) {
                 return cursor.getString(0);
             }
@@ -2834,9 +2839,8 @@ public class MusicPlaybackService extends Service
             return mCachedBitmapWithColors[targetIndex];
         }
 
-        // otherwise get the artwork (or defaultartwork if none found)
-        final BitmapWithColors bitmap = mImageFetcher.getArtwork(albumName,
-                albumId, artistName, smallBitmap);
+        // otherwise get the artwork (or default artwork if none found)
+        final BitmapWithColors bitmap = mImageFetcher.getArtwork(albumName, albumId, smallBitmap);
 
         // if the key is different, clear the bitmaps first
         if (!key.equals(mCachedKey)) {
@@ -3414,6 +3418,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressWarnings("unused")
     private static final class ServiceStub extends IElevenService.Stub {
 
         private final WeakReference<MusicPlaybackService> mService;
@@ -3648,6 +3653,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class QueueUpdateTask extends AsyncTask<Void, Void, List<MediaSession.QueueItem>> {
         private final long[] mQueue;
 
