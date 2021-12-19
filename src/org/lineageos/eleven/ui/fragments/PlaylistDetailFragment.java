@@ -146,10 +146,6 @@ public class PlaylistDetailFragment extends DetailFragment implements
         mPopupMenuHelper = new SongPopupMenuHelper(getActivity(), getChildFragmentManager()) {
             @Override
             public Song getSong(int position) {
-                if (position == 0) {
-                    return null;
-                }
-
                 return mAdapter.getItem(position);
             }
 
@@ -274,6 +270,10 @@ public class PlaylistDetailFragment extends DetailFragment implements
         Handler handler = new Handler(requireActivity().getMainLooper());
         if (data.isEmpty()) {
             mLoadingEmptyContainer.showNoResults();
+            // need to call this after showNoResults, otherwise removing any would
+            // clear the whole list (not only visibly but it's gone even when re-entering the
+            // playlist)
+            mLoadingEmptyContainer.setVisibility(View.VISIBLE);
 
             // hide the header container
             mHeaderContainer.setVisibility(View.INVISIBLE);
