@@ -445,7 +445,7 @@ public class LocalizedStore {
             return sortedCursor;
         }
 
-        return cursor;
+        return null;
     }
 
     /**

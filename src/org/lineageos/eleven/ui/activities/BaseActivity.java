@@ -45,8 +45,6 @@ import androidx.fragment.app.FragmentActivity;
 import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.MusicStateListener;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.cache.ICacheListener;
-import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.MusicUtils;
@@ -67,7 +65,7 @@ import java.util.ArrayList;
  * @author Andrew Neal (andrewdneal@gmail.com)
  */
 public abstract class BaseActivity extends AppCompatActivity implements ServiceConnection,
-        MusicStateListener, ICacheListener {
+        MusicStateListener {
 
     /**
      * Play-state and meta change listener
@@ -131,7 +129,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         }
 
         // Set the layout
-        setContentView(setContentView());
+        setContentView(R.layout.activity_base);
 
         mToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
@@ -143,9 +141,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
                 ContextCompat.getColor(this, R.color.background_color));
         // Initialize the bottom action bar
         initBottomActionBar();
-
-        // listen to changes to the cache status
-        ImageFetcher.getInstance(this).addCacheListener(this);
     }
 
     public boolean isInitialized() {
@@ -239,9 +234,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
         // Remove any music status listeners
         mMusicStateListener.clear();
-
-        // remove cache listeners
-        ImageFetcher.getInstance(this).removeCacheListener(this);
     }
 
     public void setupActionBar(int resId) {
@@ -434,17 +426,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
             mMusicStateListener.remove(status);
         }
     }
-
-    @Override
-    public void onCacheResumed() {
-        // Set the album art
-        ElevenUtils.getImageFetcher(this).loadCurrentArtwork(mAlbumArt);
-    }
-
-    /**
-     * @return The resource ID to be inflated.
-     */
-    public abstract int setContentView();
 
     /**
      * handle pending playback requests

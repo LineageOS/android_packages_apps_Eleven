@@ -37,8 +37,8 @@ public class SectionCreatorUtils {
     }
 
     public static class Section {
-        public SectionType mType;
-        public String mIdentifier;
+        public final SectionType mType;
+        public final String mIdentifier;
 
         public Section(final SectionType type, final String identifier) {
             mType = type;
@@ -51,7 +51,7 @@ public class SectionCreatorUtils {
      *
      * @param <T> type of item to compare
      */
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "SameReturnValue"})
     public static class IItemCompare<T> {
         /**
          * Compares to items and returns a section divider T if there should
@@ -124,7 +124,7 @@ public class SectionCreatorUtils {
      * @param <T> the type of item to compare
      */
     public static abstract class LocalizedCompare<T> extends IItemCompare<T> {
-        protected Context mContext;
+        protected final Context mContext;
         private boolean mStopSectionCreation;
 
         public LocalizedCompare(Context context) {
@@ -201,7 +201,7 @@ public class SectionCreatorUtils {
      * @param <T> the type of item to compare
      */
     public static abstract class BoundedIntCompare<T> extends IntCompare<T> {
-        protected Context mContext;
+        protected final Context mContext;
 
         public BoundedIntCompare(Context context) {
             mContext = context;

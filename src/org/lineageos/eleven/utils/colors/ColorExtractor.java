@@ -57,7 +57,7 @@ public class ColorExtractor {
                 return null;
             }
 
-            return imageFetcher.getArtwork(albumName, albumId, artistName, true);
+            return imageFetcher.getArtwork(albumName, albumId, true);
         }
 
         @Override
