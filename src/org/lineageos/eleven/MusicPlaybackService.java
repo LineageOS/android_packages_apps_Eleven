@@ -19,6 +19,7 @@
 package org.lineageos.eleven;
 
 import android.Manifest.permission;
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -1659,7 +1660,6 @@ public class MusicPlaybackService extends Service
                 .setContentText(text)
                 .setColor(artwork.getVibrantColor())
                 .setWhen(mNotificationPostTime)
-                .setShowWhen(false)
                 .setStyle(style)
                 .setVisibility(Notification.VISIBILITY_PUBLIC)
                 .addAction(prevAction)
@@ -3425,6 +3425,7 @@ public class MusicPlaybackService extends Service
         }
     }
 
+    @SuppressWarnings("unused")
     private static final class ServiceStub extends IElevenService.Stub {
 
         private final WeakReference<MusicPlaybackService> mService;

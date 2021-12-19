@@ -161,7 +161,7 @@ public class AppWidgetSmall extends AppWidgetBase {
         // Home
         action = new Intent(context, HomeActivity.class);
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        pendingIntent = PendingIntent.getActivity(context, 0, action, 0);
+        pendingIntent = PendingIntent.getActivity(context, 0, action, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.app_widget_small_info_container, pendingIntent);
         views.setOnClickPendingIntent(R.id.app_widget_small_image, pendingIntent);
 

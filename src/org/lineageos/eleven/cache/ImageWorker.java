@@ -163,7 +163,7 @@ public abstract class ImageWorker {
         }
 
         // Finally, add the new image to the cache
-        if (bitmap != null && key != null && imageCache != null) {
+        if (bitmap != null) {
             imageCache.addBitmapToCache(key, bitmap);
         }
 
