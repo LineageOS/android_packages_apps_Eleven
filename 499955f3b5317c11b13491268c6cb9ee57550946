@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56b5ade9_087eeff3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-12-19T22:28:43Z",
+      "side": 1,
+      "message": "Hey Alex,\nsince you were aware of the removal and prepared for it you might want to take a look at fixing it instead of my approach? 😊\nThanks",
+      "revId": "499955f3b5317c11b13491268c6cb9ee57550946",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
