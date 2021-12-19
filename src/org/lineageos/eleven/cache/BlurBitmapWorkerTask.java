@@ -116,7 +116,8 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
                 output = input;
             } else {
                 // if we aren't creating a new bitmap, create a new output bitmap
-                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(), input.getConfig());
+                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(),
+                        input.getConfig());
             }
 
             // run the blur multiple times

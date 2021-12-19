@@ -26,8 +26,9 @@ import android.widget.ImageView;
 public class ImageUtils {
 
     /**
-     * Scale the bitmap to an image view. The bitmap will fill the image view bounds. The bitmap will be scaled
-     * while maintaining the aspect ratio and cropped if it exceeds the image-view bounds.
+     * Scale the bitmap to an image view. The bitmap will fill the image view bounds.
+     * The bitmap will be scaled while maintaining the aspect ratio and cropped if it exceeds
+     * the image-view bounds.
      */
     public static Bitmap scaleBitmapForImageView(Bitmap src, ImageView imageView) {
         if (src == null || imageView == null) {
@@ -72,7 +73,8 @@ public class ImageUtils {
         if (drawable.getIntrinsicWidth() <= 0 || drawable.getIntrinsicHeight() <= 0) {
             bitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
         } else {
-            bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+            bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                    drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
         }
 
         final Canvas canvas = new Canvas(bitmap);

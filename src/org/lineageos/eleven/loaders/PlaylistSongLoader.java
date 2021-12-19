@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Used to query {@link MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI} and
+ * Used to query MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI and
  * return the songs for a particular playlist.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
@@ -75,8 +75,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
             boolean runCleanup = false;
 
             // if the raw playlist count differs from the mapped playlist count (ie the raw mapping
-            // table vs the mapping table join the audio table) that means the playlist mapping table
-            // is messed up
+            // table vs the mapping table join the audio table) that means the playlist mapping
+            // table is messed up
             if (cursor.getCount() != playlistCount) {
                 Log.w(TAG, "Count Differs - raw is: " + playlistCount + " while cursor is " +
                         cursor.getCount());
@@ -150,7 +150,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
                         .getColumnIndexOrThrow(AudioColumns.YEAR));
 
                 // Create a new song
-                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs, year);
+                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs,
+                        year);
 
                 // Add everything up
                 mSongList.add(song);

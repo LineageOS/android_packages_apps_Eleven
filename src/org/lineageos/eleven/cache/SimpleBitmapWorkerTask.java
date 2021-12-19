@@ -53,7 +53,8 @@ public class SimpleBitmapWorkerTask extends BitmapWorkerTask<String, Void, Trans
 
         final Bitmap bitmap = getBitmapInBackground(params);
         if (mScaleImgToView) {
-            Bitmap scaledBitmap = ImageUtils.scaleBitmapForImageView(bitmap, getAttachedImageView());
+            Bitmap scaledBitmap = ImageUtils.scaleBitmapForImageView(bitmap,
+                    getAttachedImageView());
             return createImageTransitionDrawable(scaledBitmap);
         } else {
             return createImageTransitionDrawable(bitmap);

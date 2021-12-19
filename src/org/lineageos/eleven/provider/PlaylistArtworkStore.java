@@ -146,7 +146,8 @@ public class PlaylistArtworkStore {
      * @param columnName      the column to update to the current time
      * @param countColumnName the column to set the # of songs to based on the playlist
      */
-    private void updateOrInsertTime(final long playlistId, final String columnName, final String countColumnName) {
+    private void updateOrInsertTime(final long playlistId, final String columnName,
+                                    final String countColumnName) {
         final SQLiteDatabase database = mMusicDatabase.getWritableDatabase();
         database.beginTransaction();
 

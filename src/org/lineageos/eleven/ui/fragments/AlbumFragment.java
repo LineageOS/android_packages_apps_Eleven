@@ -26,6 +26,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -119,12 +120,12 @@ public class AlbumFragment extends MusicBrowserFragment implements
     }
 
     @Override
-    public void onActivityCreated(final Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         // Enable the options menu
         setHasOptionsMenu(true);
         // Start the loader
-        initLoader(null, this);
+        initLoader(this);
     }
 
     @Override
@@ -187,7 +188,7 @@ public class AlbumFragment extends MusicBrowserFragment implements
     @Override
     public void restartLoader() {
         // Update the list when the user deletes any items
-        restartLoader(null, this);
+        restartLoader(this);
     }
 
     @Override

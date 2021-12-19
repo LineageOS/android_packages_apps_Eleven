@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Used to query {@link MediaStore.Audio.Media.EXTERNAL_CONTENT_URI} and return
+ * Used to query MediaStore.Audio.Media.EXTERNAL_CONTENT_URI and return
  * the Song the user added over the past four of weeks.
  *
  * @author Andrew Neal (andrewdneal@gmail.com)
@@ -84,7 +84,8 @@ public class LastAddedLoader extends SectionCreator.SimpleListLoader<Song> {
                 final int year = cursor.getInt(6);
 
                 // Create a new song
-                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs, year);
+                final Song song = new Song(id, songName, artist, album, albumId, durationInSecs,
+                        year);
 
                 // Add everything up
                 mSongList.add(song);

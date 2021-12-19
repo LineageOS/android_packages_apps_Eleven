@@ -37,8 +37,8 @@ public class SectionCreatorUtils {
     }
 
     public static class Section {
-        public SectionType mType;
-        public String mIdentifier;
+        public final SectionType mType;
+        public final String mIdentifier;
 
         public Section(final SectionType type, final String identifier) {
             mType = type;
@@ -51,7 +51,7 @@ public class SectionCreatorUtils {
      *
      * @param <T> type of item to compare
      */
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "SameReturnValue"})
     public static class IItemCompare<T> {
         /**
          * Compares to items and returns a section divider T if there should
@@ -77,8 +77,8 @@ public class SectionCreatorUtils {
          * be a section divider between first and second
          *
          * @param first      the first element in the list.
-         * @param second     the second element in the list. If null, it is checking to see if we need
-         *                   a divider at the end of the list
+         * @param second     the second element in the list. If null, it is checking to see if we
+         *                   need a divider at the end of the list
          * @param items      the source list of items that we are creating footers from
          * @param firstIndex index of the first item we are looking at
          * @return String the expected separator label or null if none
@@ -124,7 +124,7 @@ public class SectionCreatorUtils {
      * @param <T> the type of item to compare
      */
     public static abstract class LocalizedCompare<T> extends IItemCompare<T> {
-        protected Context mContext;
+        protected final Context mContext;
         private boolean mStopSectionCreation;
 
         public LocalizedCompare(Context context) {
@@ -201,7 +201,7 @@ public class SectionCreatorUtils {
      * @param <T> the type of item to compare
      */
     public static abstract class BoundedIntCompare<T> extends IntCompare<T> {
-        protected Context mContext;
+        protected final Context mContext;
 
         public BoundedIntCompare(Context context) {
             mContext = context;

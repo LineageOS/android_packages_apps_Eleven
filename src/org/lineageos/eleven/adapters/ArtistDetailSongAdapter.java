@@ -48,8 +48,8 @@ public class ArtistDetailSongAdapter extends DetailSongAdapter {
     }
 
     private static class ArtistHolder extends Holder {
-        ImageView art;
-        TextView album;
+        final ImageView art;
+        final TextView album;
 
         protected ArtistHolder(View root, ImageFetcher fetcher) {
             super(root, fetcher);

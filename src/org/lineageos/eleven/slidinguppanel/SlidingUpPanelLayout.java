@@ -260,6 +260,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
          *
          * @param panel The child view that was slid to a anchored position
          */
+        @SuppressWarnings("unused")
         void onPanelAnchored(View panel);
 
         /**
@@ -267,6 +268,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
          *
          * @param panel The child view that was slid to a hidden position
          */
+        @SuppressWarnings("unused")
         void onPanelHidden(View panel);
     }
 
@@ -580,7 +582,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
         final int childCount = getChildCount();
 
         if (childCount != 2 && childCount != 3) {
-            throw new IllegalStateException("Sliding up panel layout must have exactly 2 or 3 children!");
+            throw new IllegalStateException(
+                    "Sliding up panel layout must have exactly 2 or 3 children!");
         }
 
         if (childCount == 2) {
@@ -607,7 +610,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
             final View child = getChildAt(i);
             final LayoutParams lp = (LayoutParams) child.getLayoutParams();
 
-            // We always measure the sliding panel in order to know it's height (needed for show panel)
+            // We always measure the sliding panel in order to know it's height
+            // (needed for show panel)
             if (child.getVisibility() == GONE && child == mMainView) {
                 continue;
             }
@@ -636,7 +640,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
             }
 
             if (child == mSlideableView) {
-                mSlideRange = MeasureSpec.getSize(childHeightSpec) - mPanelHeight + mSlidePanelOffset;
+                mSlideRange = MeasureSpec.getSize(childHeightSpec) - mPanelHeight +
+                        mSlidePanelOffset;
                 childHeightSpec += mSlidePanelOffset;
             }
 
@@ -689,7 +694,8 @@ public class SlidingUpPanelLayout extends ViewGroup {
 
             if (!mIsSlidingUp) {
                 if (child == mMainView && !mOverlayContent) {
-                    childTop = computePanelTopPosition(mSlideOffset) + mSlideableView.getMeasuredHeight();
+                    childTop = computePanelTopPosition(mSlideOffset) +
+                            mSlideableView.getMeasuredHeight();
                 }
             }
             final int childBottom = childTop + childHeight;
