@@ -39,10 +39,6 @@ import org.lineageos.eleven.cache.ImageFetcher;
  */
 public final class ElevenUtils {
 
-    /* This class is never initiated */
-    public ElevenUtils() {
-    }
-
     /**
      * Used to determine if the device is currently in landscape mode
      *

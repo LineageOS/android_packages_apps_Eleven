@@ -60,7 +60,8 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     private SlidingUpPanelLayout mSecondPanel;
     protected Panel mTargetNavigatePanel;
 
-    private final ShowPanelClickListener mShowMusicPlayer = new ShowPanelClickListener(Panel.MusicPlayer);
+    private final ShowPanelClickListener mShowMusicPlayer =
+            new ShowPanelClickListener(Panel.MusicPlayer);
 
     // this is the blurred image that goes behind the now playing and queue fragments
     private AlbumScrimImage mAlbumScrimImage;
@@ -176,14 +177,10 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         // set the drag view offset to allow the panel to go past the top of the viewport
         // since the previous view's is hiding the slide offset, we need to subtract that
         // from action bat height
-        int slideOffset = getResources().getDimensionPixelOffset(R.dimen.sliding_panel_indicator_height);
+        int slideOffset = getResources().getDimensionPixelOffset(
+                R.dimen.sliding_panel_indicator_height);
         slideOffset -= ElevenUtils.getActionBarHeight(this);
         mSecondPanel.setSlidePanelOffset(slideOffset);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
     }
 
     @Override
@@ -195,11 +192,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         if (mUseBlur != useBlur) {
             recreate();
         }
-    }
-
-    @Override
-    public int setContentView() {
-        return R.layout.activity_base;
     }
 
     @Override
@@ -288,13 +280,6 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     @Override
     public void onMetaChanged() {
         super.onMetaChanged();
-
-        updateScrimImage();
-    }
-
-    @Override
-    public void onCacheResumed() {
-        super.onCacheResumed();
 
         updateScrimImage();
     }

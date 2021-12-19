@@ -27,8 +27,8 @@ import java.util.TreeMap;
  * @param <T> the type of item that the list contains
  */
 public class SectionListContainer<T> {
-    public TreeMap<Integer, SectionCreatorUtils.Section> mSections;
-    public List<T> mListResults;
+    public final TreeMap<Integer, SectionCreatorUtils.Section> mSections;
+    public final List<T> mListResults;
 
     public SectionListContainer(final TreeMap<Integer, SectionCreatorUtils.Section> sections,
                                 final List<T> results) {

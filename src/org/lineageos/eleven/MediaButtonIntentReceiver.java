@@ -34,7 +34,8 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
     static {
         KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_HEADSETHOOK, MusicPlaybackService.CMDHEADSETHOOK);
         KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_MEDIA_STOP, MusicPlaybackService.CMDSTOP);
-        KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE, MusicPlaybackService.CMDTOGGLEPAUSE);
+        KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE,
+                MusicPlaybackService.CMDTOGGLEPAUSE);
         KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_MEDIA_NEXT, MusicPlaybackService.CMDNEXT);
         KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_MEDIA_PREVIOUS, MusicPlaybackService.CMDPREVIOUS);
         KEY_CODE_MAPPING.put(KeyEvent.KEYCODE_MEDIA_PAUSE, MusicPlaybackService.CMDPAUSE);

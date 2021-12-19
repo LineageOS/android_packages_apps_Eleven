@@ -27,7 +27,7 @@ import org.lineageos.eleven.provider.SongPlayCount.SongPlayCountColumns;
 import java.util.ArrayList;
 
 /**
- * Used to query {@link android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI} and return
+ * Used to query MediaStore.Audio.Media.EXTERNAL_CONTENT_URI and return
  * a sorted list of songs based on either the TopTracks or the RecentSongs
  */
 public class TopTracksLoader extends SongLoader {
@@ -39,7 +39,7 @@ public class TopTracksLoader extends SongLoader {
         RecentSongs,
     }
 
-    protected QueryType mQueryType;
+    protected final QueryType mQueryType;
 
     public TopTracksLoader(final Context context, QueryType type) {
         super(context);
@@ -60,8 +60,8 @@ public class TopTracksLoader extends SongLoader {
         if (retCursor != null) {
             ArrayList<Long> missingIds = retCursor.getMissingIds();
             if (missingIds != null && missingIds.size() > 0) {
-                // for each unfound id, remove it from the database
-                // this codepath should only really be hit if the user removes songs
+                // for each not found id, remove it from the database
+                // this code-path should only really be hit if the user removes songs
                 // outside of the Eleven app
                 for (long id : missingIds) {
                     if (mQueryType == QueryType.TopTracks) {

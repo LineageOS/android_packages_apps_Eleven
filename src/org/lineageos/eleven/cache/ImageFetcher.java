@@ -101,17 +101,16 @@ public class ImageFetcher extends ImageWorker {
      */
     public void loadAlbumImage(final String artistName, final String albumName, final long albumId,
                                final ImageView imageView) {
-        loadImage(generateAlbumCacheKey(albumName, artistName), artistName, albumName, albumId, imageView,
-                ImageType.ALBUM);
+        loadImage(generateAlbumCacheKey(albumName, artistName), artistName, albumName, albumId,
+                imageView, ImageType.ALBUM);
     }
 
     /**
      * Used to fetch the current artwork.
      */
     public void loadCurrentArtwork(final ImageView imageView) {
-        loadImage(getCurrentCacheKey(),
-                MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                imageView, ImageType.ALBUM);
+        loadImage(getCurrentCacheKey(), MusicUtils.getArtistName(), MusicUtils.getAlbumName(),
+                MusicUtils.getCurrentAlbumId(), imageView, ImageType.ALBUM);
     }
 
     public void updateScrimImage(final AlbumScrimImage image,
@@ -127,9 +126,8 @@ public class ImageFetcher extends ImageWorker {
      * Used to fetch the current artwork blurred.
      */
     private void loadCurrentBlurredArtwork(final AlbumScrimImage image) {
-        loadBlurImage(getCurrentCacheKey(),
-                MusicUtils.getArtistName(), MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(),
-                image);
+        loadBlurImage(getCurrentCacheKey(), MusicUtils.getArtistName(), MusicUtils.getAlbumName(),
+                MusicUtils.getCurrentAlbumId(), image);
     }
 
     private void loadCurrentGradientArtwork(final ColorExtractor.Callback callback) {
@@ -155,17 +153,9 @@ public class ImageFetcher extends ImageWorker {
     /**
      * Used to fetch artist images. It also scales the image to fit the image view, if necessary.
      */
-    public void loadArtistImage(final String key, final ImageView imageView, boolean scaleImgToView) {
+    public void loadArtistImage(final String key, final ImageView imageView,
+                                boolean scaleImgToView) {
         loadImage(key, key, null, -1, imageView, ImageType.ARTIST, scaleImgToView);
-    }
-
-    /**
-     * @param pause True to temporarily pause the disk cache, false otherwise.
-     */
-    public void setPauseDiskCache(final boolean pause) {
-        if (mImageCache != null) {
-            mImageCache.setPauseDiskCache(pause);
-        }
     }
 
     /**
@@ -178,18 +168,6 @@ public class ImageFetcher extends ImageWorker {
 
         // clear the keys of images we've already downloaded
         sKeys.clear();
-    }
-
-    public void addCacheListener(ICacheListener listener) {
-        if (mImageCache != null) {
-            mImageCache.addCacheListener(listener);
-        }
-    }
-
-    public void removeCacheListener(ICacheListener listener) {
-        if (mImageCache != null) {
-            mImageCache.removeCacheListener(listener);
-        }
     }
 
     /**
@@ -205,15 +183,13 @@ public class ImageFetcher extends ImageWorker {
      * Finds cached or downloads album art. Used in {@link MusicPlaybackService}
      * to set the current album art in the notification and lock screen
      *
-     * @param albumName    The name of the current album
-     * @param albumId      The ID of the current album
-     * @param artistName   The album artist in case we should have to download
-     *                     missing artwork
+     * @param albumName  The name of the current album
+     * @param albumId    The ID of the current album
      * @param smallArtwork Get the small version of the default artwork if no artwork exists
      * @return The album art as an {@link Bitmap}
      */
     public BitmapWithColors getArtwork(final String albumName, final long albumId,
-                                       final String artistName, boolean smallArtwork) {
+                                       boolean smallArtwork) {
         final String key = String.valueOf(albumId);
         final Bitmap artwork = getArtworkBitmap(albumName, albumId);
         if (artwork != null) {

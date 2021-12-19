@@ -66,7 +66,6 @@ public class SongPlayCount {
 
         long msSinceEpoch = System.currentTimeMillis();
         mNumberOfWeeksSinceEpoch = (int) (msSinceEpoch / ONE_WEEK_IN_MS);
-        mDatabaseUpdated = false;
     }
 
     public void onCreate(final SQLiteDatabase db) {
