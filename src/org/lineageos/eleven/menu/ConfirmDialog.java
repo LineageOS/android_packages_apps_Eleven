@@ -51,7 +51,7 @@ public class ConfirmDialog extends DialogFragment {
         args.putInt(OK_ID, okId);
         frag.setArguments(args);
         frag.setTargetFragment(target, requestCode);
-        frag.show(target.getFragmentManager(), "ConfirmDialog");
+        frag.show(target.getChildFragmentManager(), "ConfirmDialog");
     }
 
     @NonNull

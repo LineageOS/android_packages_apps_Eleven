@@ -73,8 +73,8 @@ public class QueueSongAdapter extends RecyclerView.Adapter<MusicHolder> implemen
     /**
      * Source id and type
      */
-    protected long mSourceId;
-    protected Config.IdType mSourceType;
+    protected final long mSourceId;
+    protected final Config.IdType mSourceType;
 
     private final Context mContext;
     private final Consumer<Integer> mOnItemClickListener;

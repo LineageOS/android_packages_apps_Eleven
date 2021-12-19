@@ -101,7 +101,8 @@
             android:background="?android:selectableItemBackground"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
-            android:src="@drawable/btn_playback_pause_widget" />
+            android:src="@drawable/btn_playback_pause_widget"
+            android:contentDescription="@string/accessibility_play" />
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_next"

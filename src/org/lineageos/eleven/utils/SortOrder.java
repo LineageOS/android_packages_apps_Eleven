@@ -27,12 +27,6 @@ import android.provider.MediaStore;
 public final class SortOrder {
 
     /**
-     * This class is never instantiated
-     */
-    public SortOrder() {
-    }
-
-    /**
      * Artist sort order entries.
      */
     public interface ArtistSortOrder {
@@ -93,9 +87,6 @@ public final class SortOrder {
         /* Song sort order duration */
         String SONG_DURATION = MediaStore.Audio.Media.DURATION + " DESC";
 
-        /* Song sort order date */
-        String SONG_DATE = MediaStore.Audio.Media.DATE_ADDED + " DESC";
-
         /* Song sort order filename */
         String SONG_FILENAME = MediaStore.Audio.Media.DATA;
     }
@@ -104,9 +95,6 @@ public final class SortOrder {
      * Album song sort order entries.
      */
     public interface AlbumSongSortOrder {
-        /* Album song sort order A-Z */
-        String SONG_A_Z = MediaStore.Audio.Media.DEFAULT_SORT_ORDER;
-
         /* Album song sort order track list */
         String SONG_TRACK_LIST = String.format("CAST(%s as int), %s",
                 MediaStore.Audio.Media.TRACK, MediaStore.Audio.Media.DEFAULT_SORT_ORDER);

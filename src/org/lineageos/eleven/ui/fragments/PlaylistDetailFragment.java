@@ -103,6 +103,7 @@ public class PlaylistDetailFragment extends DetailFragment implements
     @Override
     protected void onViewCreated() {
         super.onViewCreated();
+        LoaderManager.getInstance(this).initLoader(0, getArguments(), this);
         setupHero();
         setupSongList();
     }
@@ -129,13 +130,6 @@ public class PlaylistDetailFragment extends DetailFragment implements
     @Override
     protected void playShuffled() {
         MusicUtils.playPlaylist(getActivity(), mPlaylistId, true);
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        LoaderManager.getInstance(this).initLoader(0, getArguments(), this);
     }
 
     @Override

@@ -33,20 +33,6 @@ public class SimpleBitmapWorkerTask extends BitmapWorkerTask<String, Void, Trans
     /**
      * Constructor of <code>BitmapWorkerTask</code>
      *
-     * @param key          the key of the image to store to
-     * @param imageView    The {@link ImageView} to use.
-     * @param imageType    The type of image URL to fetch for.
-     * @param fromDrawable what drawable to transition from
-     */
-    public SimpleBitmapWorkerTask(final String key, final ImageView imageView,
-                                  final ImageType imageType, final Drawable fromDrawable,
-                                  final Context context) {
-        super(key, imageView, imageType, fromDrawable, context);
-    }
-
-    /**
-     * Constructor of <code>BitmapWorkerTask</code>
-     *
      * @param key            the key of the image to store to
      * @param imageView      The {@link ImageView} to use.
      * @param imageType      The type of image URL to fetch for.

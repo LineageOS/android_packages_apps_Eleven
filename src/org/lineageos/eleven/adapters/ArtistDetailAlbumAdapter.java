@@ -139,9 +139,9 @@ public class ArtistDetailAlbumAdapter
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView art;
-        public TextView description;
-        public PopupMenuButton popupButton;
+        public final ImageView art;
+        public final TextView description;
+        public final PopupMenuButton popupButton;
 
         public ViewHolder(View root) {
             super(root);

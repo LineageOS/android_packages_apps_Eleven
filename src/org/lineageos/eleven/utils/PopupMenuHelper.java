@@ -57,9 +57,9 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
         Queue,
     }
 
-    protected Activity mActivity;
+    protected final Activity mActivity;
     protected PopupMenuType mType;
-    protected FragmentManager mFragmentManager;
+    protected final FragmentManager mFragmentManager;
 
     public PopupMenuHelper(final Activity activity, final FragmentManager fragmentManager) {
         mActivity = activity;
@@ -113,6 +113,7 @@ public abstract class PopupMenuHelper implements PopupMenu.OnMenuItemClickListen
     /**
      * @return the group id to be used for pop up menu inflating
      */
+    @SuppressWarnings("SameReturnValue")
     protected int getGroupId() {
         return 0;
     }
