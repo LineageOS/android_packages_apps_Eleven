@@ -28,9 +28,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Looper;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
@@ -41,8 +39,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
 import org.lineageos.eleven.cache.disklrucache.DiskLruCache;
-import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.IoUtils;
+import org.lineageos.eleven.utils.TaskExecutor;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -53,8 +51,6 @@ import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
-
-import androidx.annotation.NonNull;
 
 /**
  * This class holds the memory and disk bitmap caches.
@@ -109,6 +105,8 @@ public final class ImageCache {
 
     private static ImageCache sInstance;
 
+    private static TaskExecutor sTaskExecutor;
+
     /**
      * Used to temporarily pause the disk cache while scrolling
      */
@@ -147,15 +145,8 @@ public final class ImageCache {
      * @param context     The {@link Context} to use
      */
     private void init(final Context context) {
-        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
-
-            @Override
-            protected Void doInBackground(final Void... unused) {
-                // Initialize the disk cahe in a background thread
-                initDiskCache(context);
-                return null;
-            }
-        }, (Void[]) null);
+        sTaskExecutor = new TaskExecutor();
+        sTaskExecutor.runTask(() -> initDiskCache(context));
         // Set up the memory cache
         initLruCache(context);
     }
@@ -486,20 +477,15 @@ public final class ImageCache {
      * cache first
      */
     public void flush() {
-        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
-
-            @Override
-            protected Void doInBackground(final Void... unused) {
-                if (mDiskCache != null) {
-                    try {
-                        if (!mDiskCache.isClosed()) {
-                            mDiskCache.flush();
-                        }
-                    } catch (final IOException e) {
-                        Log.e(TAG, "flush", e);
+        sTaskExecutor.runTask(() -> {
+            if (mDiskCache != null) {
+                try {
+                    if (!mDiskCache.isClosed()) {
+                        mDiskCache.flush();
                     }
+                } catch (final IOException e) {
+                    Log.e(TAG, "flush", e);
                 }
-                return null;
             }
         });
     }
@@ -508,23 +494,18 @@ public final class ImageCache {
      * Clears the disk and memory caches
      */
     public void clearCaches() {
-        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
-
-            @Override
-            protected Void doInBackground(final Void... unused) {
-                // Clear the disk cache
-                try {
-                    if (mDiskCache != null) {
-                        mDiskCache.delete();
-                        mDiskCache = null;
-                    }
-                } catch (final IOException e) {
-                    Log.e(TAG, "clearCaches", e);
+        sTaskExecutor.runTask(() -> {
+            // Clear the disk cache
+            try {
+                if (mDiskCache != null) {
+                    mDiskCache.delete();
+                    mDiskCache = null;
                 }
-                // Clear the memory cache
-                evictAll();
-                return null;
+            } catch (final IOException e) {
+                Log.e(TAG, "clearCaches", e);
             }
+            // Clear the memory cache
+            evictAll();
         });
     }
 
@@ -534,21 +515,16 @@ public final class ImageCache {
      * thread.
      */
     public void close() {
-        ElevenUtils.execute(new AsyncTask<Void, Void, Void>() {
-
-            @Override
-            protected Void doInBackground(final Void... unused) {
-                if (mDiskCache != null) {
-                    try {
-                        if (!mDiskCache.isClosed()) {
-                            mDiskCache.close();
-                            mDiskCache = null;
-                        }
-                    } catch (final IOException e) {
-                        Log.e(TAG, "close", e);
+        sTaskExecutor.runTask(() -> {
+            if (mDiskCache != null) {
+                try {
+                    if (!mDiskCache.isClosed()) {
+                        mDiskCache.close();
+                        mDiskCache = null;
                     }
+                } catch (final IOException e) {
+                    Log.e(TAG, "close", e);
                 }
-                return null;
             }
         });
     }

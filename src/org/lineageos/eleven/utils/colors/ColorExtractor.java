@@ -16,34 +16,25 @@
  */
 package org.lineageos.eleven.utils.colors;
 
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
-
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
+
+import java.util.concurrent.Callable;
 
 public class ColorExtractor {
     public interface Callback {
         void onColorExtracted(final BitmapWithColors bitmapWithColors);
     }
 
-    public static void extractColors(final ImageFetcher imageFetcher,
-                                     final ColorExtractor.Callback callback) {
-        new ColorExtractionTask(imageFetcher, callback).execute();
-    }
-
-    private static class ColorExtractionTask extends AsyncTask<Void, Void, BitmapWithColors> {
+    public static class ColorExtractionTask implements Callable<BitmapWithColors> {
         private final ImageFetcher imageFetcher;
-        private final ColorExtractor.Callback callback;
 
-        ColorExtractionTask(final ImageFetcher imageFetcher,
-                            final ColorExtractor.Callback callback) {
+        public ColorExtractionTask(final ImageFetcher imageFetcher) {
             this.imageFetcher = imageFetcher;
-            this.callback = callback;
         }
 
         @Override
-        protected BitmapWithColors doInBackground(Void... voids) {
+        public BitmapWithColors call() {
             if (imageFetcher == null) {
                 return null;
             }
@@ -58,13 +49,6 @@ public class ColorExtractor {
             }
 
             return imageFetcher.getArtwork(albumName, albumId, artistName, true);
-        }
-
-        @Override
-        protected void onPostExecute(final BitmapWithColors bitmapWithColors) {
-            if (callback != null) {
-                callback.onColorExtracted(bitmapWithColors);
-            }
         }
     }
 }

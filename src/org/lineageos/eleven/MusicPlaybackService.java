@@ -51,7 +51,6 @@ import android.media.audiofx.AudioEffect;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -80,6 +79,7 @@ import org.lineageos.eleven.provider.MusicPlaybackState;
 import org.lineageos.eleven.provider.RecentStore;
 import org.lineageos.eleven.provider.SongPlayCount;
 import org.lineageos.eleven.service.MusicPlaybackTrack;
+import org.lineageos.eleven.utils.TaskExecutor;
 import org.lineageos.eleven.utils.colors.BitmapWithColors;
 import org.lineageos.eleven.utils.Lists;
 import org.lineageos.eleven.utils.PreferenceUtils;
@@ -96,6 +96,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Random;
 import java.util.TreeSet;
+import java.util.concurrent.Callable;
 
 /**
  * A background {@link Service} used to keep music playing between activities
@@ -522,6 +523,8 @@ public class MusicPlaybackService extends Service
 
     private QueueUpdateTask mQueueUpdateTask;
 
+    private TaskExecutor mTaskExecutor;
+
     /**
      * Image cache
      */
@@ -683,6 +686,8 @@ public class MusicPlaybackService extends Service
         reloadQueue();
         notifyChange(QUEUE_CHANGED);
         notifyChange(META_CHANGED);
+
+        mTaskExecutor = new TaskExecutor();
     }
 
     private void setUpMediaSession() {
@@ -1591,10 +1596,14 @@ public class MusicPlaybackService extends Service
 
     private synchronized void updateMediaSessionQueue() {
         if (mQueueUpdateTask != null) {
-            mQueueUpdateTask.cancel(true);
+            mQueueUpdateTask.cancel();
         }
         mQueueUpdateTask = new QueueUpdateTask(getQueue());
-        mQueueUpdateTask.execute();
+        mTaskExecutor.runTask(mQueueUpdateTask, result -> {
+            if (result != null) {
+                mSession.setQueue((List<MediaSession.QueueItem>)result);
+            }
+        });
     }
 
     private Notification buildNotification() {
@@ -3661,15 +3670,20 @@ public class MusicPlaybackService extends Service
 
     }
 
-    private class QueueUpdateTask extends AsyncTask<Void, Void, List<MediaSession.QueueItem>> {
+    private class QueueUpdateTask implements Callable<List<MediaSession.QueueItem>> {
         private final long[] mQueue;
+        private boolean mIsCancelled;
 
         public QueueUpdateTask(long[] queue) {
             mQueue = queue != null ? Arrays.copyOf(queue, queue.length) : null;
         }
 
+        public void cancel() {
+            mIsCancelled = true;
+        }
+
         @Override
-        protected List<MediaSession.QueueItem> doInBackground(Void... params) {
+        public List<MediaSession.QueueItem> call() {
             if (mQueue == null || mQueue.length == 0) {
                 return null;
             }
@@ -3698,13 +3712,17 @@ public class MusicPlaybackService extends Service
                 final int titleColumnIndex = c.getColumnIndexOrThrow(AudioColumns.TITLE);
                 final int artistColumnIndex = c.getColumnIndexOrThrow(AudioColumns.ARTIST);
 
-                while (c.moveToNext() && !isCancelled()) {
+                while (c.moveToNext() && !mIsCancelled) {
                     final MediaDescription desc = new MediaDescription.Builder()
                             .setTitle(c.getString(titleColumnIndex))
                             .setSubtitle(c.getString(artistColumnIndex))
                             .build();
                     final long id = c.getLong(idColumnIndex);
                     descsById.put(id, desc);
+                }
+
+                if (mIsCancelled) {
+                    return null;
                 }
 
                 List<MediaSession.QueueItem> items = new ArrayList<>();
@@ -3720,13 +3738,6 @@ public class MusicPlaybackService extends Service
                 return items;
             } finally {
                 c.close();
-            }
-        }
-
-        @Override
-        protected void onPostExecute(List<MediaSession.QueueItem> items) {
-            if (!isCancelled()) {
-                mSession.setQueue(items);
             }
         }
     }

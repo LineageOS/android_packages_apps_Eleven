@@ -28,6 +28,7 @@ import org.lineageos.eleven.MusicPlaybackService;
 import org.lineageos.eleven.cache.PlaylistWorkerTask.PlaylistWorkerType;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
+import org.lineageos.eleven.utils.TaskExecutor;
 import org.lineageos.eleven.utils.colors.BitmapWithColors;
 import org.lineageos.eleven.utils.colors.ColorExtractor;
 import org.lineageos.eleven.widgets.AlbumScrimImage;
@@ -48,6 +49,8 @@ public class ImageFetcher extends ImageWorker {
     private static ImageFetcher sInstance = null;
     private boolean mUseBlur;
 
+    private static TaskExecutor sTaskExecutor;
+
     /**
      * Creates a new instance of {@link ImageFetcher}.
      *
@@ -67,6 +70,7 @@ public class ImageFetcher extends ImageWorker {
     public static ImageFetcher getInstance(final Context context) {
         if (sInstance == null) {
             sInstance = new ImageFetcher(context.getApplicationContext());
+            sTaskExecutor = new TaskExecutor();
         }
         return sInstance;
     }
@@ -133,7 +137,11 @@ public class ImageFetcher extends ImageWorker {
             return;
         }
 
-        ColorExtractor.extractColors(this, callback);
+        sTaskExecutor.runTask(new ColorExtractor.ColorExtractionTask(this), result -> {
+            if (callback != null) {
+                callback.onColorExtracted(result);
+            }
+        });
     }
 
     public static String getCurrentCacheKey() {

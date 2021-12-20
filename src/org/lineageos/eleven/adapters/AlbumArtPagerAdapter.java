@@ -18,7 +18,6 @@ package org.lineageos.eleven.adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,13 +32,16 @@ import org.lineageos.eleven.cache.ImageCache;
 import org.lineageos.eleven.model.AlbumArtistDetails;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
+import org.lineageos.eleven.utils.TaskExecutor;
 import org.lineageos.eleven.widgets.SquareImageView;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.concurrent.Callable;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
@@ -166,7 +168,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
                 ".adapters.AlbumArtPagerAdapter.AlbumArtFragment.ID";
 
         private View mRootView;
-        private AlbumArtistLoader mTask;
+        private TaskExecutor mTaskExecutor;
         private SquareImageView mImageView;
         private long mAudioId = NO_TRACK_ID;
 
@@ -185,6 +187,9 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
             final Bundle args = getArguments();
             mAudioId = args == null ? NO_TRACK_ID : args.getLong(ID, NO_TRACK_ID);
             ImageCache.getInstance(getActivity()).addCacheListener(this);
+
+            mTaskExecutor = new TaskExecutor();
+            getLifecycle().addObserver(mTaskExecutor);
         }
 
         @SuppressLint("InflateParams")
@@ -207,9 +212,9 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
             super.onDestroyView();
 
             // if we are destroying our view, cancel our task and null it
-            if (mTask != null) {
-                mTask.cancel(true);
-                mTask = null;
+            if (mTaskExecutor != null) {
+                mTaskExecutor.terminate(null);
+                mTaskExecutor = null;
             }
         }
 
@@ -234,16 +239,22 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
             if (details != null) {
                 loadImageAsync(details);
             } else {
-                // Cancel any previous tasks
-                if (mTask != null) {
-                    mTask.cancel(true);
-                    mTask = null;
-                }
+                mTaskExecutor.runTask(new AlbumArtistLoader(getActivity(), mAudioId), result -> {
+                    if (result != null) {
+                        if (DEBUG) {
+                            Log.d(TAG, "[" + mAudioId + "] Loading image: "
+                                    + result.mAlbumId + ","
+                                    + result.mAlbumName + ","
+                                    + result.mArtistName);
+                        }
 
-                mTask = new AlbumArtistLoader(this, getActivity());
-                ElevenUtils.execute(mTask, mAudioId);
+                        AlbumArtPagerAdapter.addAlbumArtistDetails(result);
+                        loadImageAsync(result);
+                    } else if (DEBUG) {
+                        Log.d(TAG, "No Image found for audioId: " + mAudioId);
+                    }
+                });
             }
-
         }
 
         /**
@@ -253,6 +264,7 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
          */
         private void loadImageAsync(AlbumArtistDetails details) {
             // load the actual image
+            Log.d("MICHAEL", "getActivity: " + getActivity());
             ElevenUtils.getImageFetcher(getActivity()).loadAlbumImage(
                     details.mArtistName,
                     details.mAlbumName,
@@ -270,36 +282,18 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
     /**
      * This looks up the album and artist details for a track
      */
-    private static class AlbumArtistLoader extends AsyncTask<Long, Void, AlbumArtistDetails> {
+    private static class AlbumArtistLoader implements Callable<AlbumArtistDetails> {
         private final Context mContext;
-        private final AlbumArtFragment mFragment;
+        private final long mAudioId;
 
-        public AlbumArtistLoader(final AlbumArtFragment albumArtFragment, final Context context) {
+        public AlbumArtistLoader(final Context context, final long albumId) {
             mContext = context;
-            mFragment = albumArtFragment;
+            mAudioId = albumId;
         }
 
         @Override
-        protected AlbumArtistDetails doInBackground(final Long... params) {
-            long id = params[0];
-            return MusicUtils.getAlbumArtDetails(mContext, id);
-        }
-
-        @Override
-        protected void onPostExecute(final AlbumArtistDetails result) {
-            if (result != null) {
-                if (DEBUG) {
-                    Log.d(TAG, "[" + mFragment.mAudioId + "] Loading image: "
-                            + result.mAlbumId + ","
-                            + result.mAlbumName + ","
-                            + result.mArtistName);
-                }
-
-                AlbumArtPagerAdapter.addAlbumArtistDetails(result);
-                mFragment.loadImageAsync(result);
-            } else if (DEBUG) {
-                Log.d(TAG, "No Image found for audioId: " + mFragment.mAudioId);
-            }
+        public AlbumArtistDetails call() {
+            return MusicUtils.getAlbumArtDetails(mContext, mAudioId);
         }
     }
 }
