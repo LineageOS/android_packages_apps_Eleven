@@ -16,6 +16,24 @@
       "message": "Hey Alex,\nsince you were aware of the removal and prepared for it you might want to take a look at fixing it instead of my approach? 😊\nThanks",
       "revId": "499955f3b5317c11b13491268c6cb9ee57550946",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6d5eab6_52ba51a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2021-12-20T07:24:07Z",
+      "side": 1,
+      "message": "\u003e Hey Alex,\n\u003e since you were aware of the removal and prepared for it you might want to take a look at fixing it instead of my approach? 😊\n\u003e Thanks\n\nI don\u0027t have lineage-19.0 running yet, but i will do once i have 😊\nIf you do not want to wait for me, you can switch to RenderEffect[1]\n\n[1] - https://developer.android.com/reference/android/graphics/RenderEffect",
+      "parentUuid": "56b5ade9_087eeff3",
+      "revId": "499955f3b5317c11b13491268c6cb9ee57550946",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
