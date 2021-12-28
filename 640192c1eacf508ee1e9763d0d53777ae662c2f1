@@ -1,6 +1,24 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "586c88e1_ae8aeec5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2021-12-28T14:12:16Z",
+      "side": 1,
+      "message": "Sorry, scripted votes...",
+      "revId": "640192c1eacf508ee1e9763d0d53777ae662c2f1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "92f62dab_7096e3ea",
         "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
@@ -14,10 +32,10 @@
       "side": 1,
       "message": "not sure, but for RTLlanguages it would make sense to have the format in strings.xml with xliff tags?",
       "revId": "640192c1eacf508ee1e9763d0d53777ae662c2f1",
-      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
-      "unresolved": true
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "594334db_6b2e0b14",
         "filename": "src/org/lineageos/eleven/ui/fragments/AudioPlayerFragment.java",
@@ -32,8 +50,7 @@
       "message": "I\u0027m not sure. If that is the case, then it would be out of scope for this patch. This is simply mirroring what is shown in the notification, so all 3 should be fixed at once.",
       "parentUuid": "92f62dab_7096e3ea",
       "revId": "640192c1eacf508ee1e9763d0d53777ae662c2f1",
-      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
-      "unresolved": true
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
