@@ -42,13 +42,10 @@ android {
         applicationId "org.lineageos.eleven"
 
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 31
 
-        versionCode 401
-        versionName '4.0.1'
-
-        renderscriptTargetApi 19
-        renderscriptSupportModeEnabled true
+        versionCode 410
+        versionName '4.1.0'
     }
 
     buildTypes {
@@ -108,7 +105,6 @@ android {
             aidl.srcDirs = ['src']
             assets.srcDirs = ['assets']
             java.srcDirs = ['src']
-            renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             resources.srcDirs = ['res']
         }
