@@ -23,7 +23,7 @@
     tools:ignore="GradleOverrides">
 
     <uses-sdk
-        android:minSdkVersion="28"
+        android:minSdkVersion="31"
         android:targetSdkVersion="30" />
 
     <!-- Android Studio will complain about not being able to

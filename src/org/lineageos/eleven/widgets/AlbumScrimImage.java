@@ -20,6 +20,8 @@ package org.lineageos.eleven.widgets;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.RenderEffect;
+import android.graphics.Shader;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -37,6 +39,8 @@ import androidx.core.content.ContextCompat;
 
 public class AlbumScrimImage extends FrameLayout {
     private static final int COLOR_GREY_30 = 0x4c000000;
+
+    private static final float BLUR_RADIUS = 50f;
 
     private ImageView mImageView;
     private View mScrimView;
@@ -72,6 +76,8 @@ public class AlbumScrimImage extends FrameLayout {
      * Transitions the image to the default state (default blur artwork)
      */
     public void transitionToDefaultState() {
+        clearBlurEffect();
+
         // if we are already showing the default artwork and we are transitioning to the
         // default artwork then don't do the transition at all
         if (mUsingDefaultArtwork) {
@@ -112,6 +118,16 @@ public class AlbumScrimImage extends FrameLayout {
 
         mImageView.setImageDrawable(gradientDrawable);
         mUsingDefaultArtwork = false;
+    }
+
+    public void applyBlurEffect() {
+        final RenderEffect blurEffect = RenderEffect.createBlurEffect(
+                BLUR_RADIUS, BLUR_RADIUS, Shader.TileMode.CLAMP);
+        mImageView.setRenderEffect(blurEffect);
+    }
+
+    public void clearBlurEffect() {
+        mImageView.setRenderEffect(null);
     }
 
     private Drawable createDefaultArtworkDrawable() {
