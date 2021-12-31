@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2210728_134691f2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2021-12-31T11:37:08Z",
+      "side": 1,
+      "message": "I sometimes seem to lose the blur effect though when pausing and resuming, did not figure out a way to reproduce it 100% though. It happens randomly.\n\nI have also not touched all of the bitmap workers and did the bare minimum to get it to work.\nNeither do i know if there are issues with RenderEffects on different devices or if everything \"just works\".\nTested on axolotl (sdm845) so far.",
+      "revId": "9463b28a57e1a798f1db0b246835e88b7f6352f9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
