@@ -20,11 +20,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
-import android.renderscript.Allocation;
-import android.renderscript.Element;
-import android.renderscript.RenderScript;
-import android.renderscript.ScriptIntrinsicBlur;
-import android.util.Log;
 import android.widget.ImageView;
 
 import org.lineageos.eleven.cache.ImageWorker.ImageType;
@@ -41,14 +36,6 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
 
     private static final String TAG = BlurBitmapWorkerTask.class.getSimpleName();
 
-    // if the image is too small, the blur will look bad post scale up so we use the min size
-    // to scale up before bluring
-    private static final int MIN_BITMAP_SIZE = 500;
-    // number of times to run the blur
-    private static final int NUM_BLUR_RUNS = 8;
-    // 25f is the max blur radius possible
-    private static final float BLUR_RADIUS = 25f;
-
     // container for the result
     public static class ResultContainer {
         public TransitionDrawable mImageViewBitmapDrawable;
@@ -59,11 +46,6 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
      * The {@link org.lineageos.eleven.widgets.AlbumScrimImage} used to set the result
      */
     private final WeakReference<AlbumScrimImage> mBlurScrimImage;
-
-    /**
-     * RenderScript used to blur the image
-     */
-    private static RenderScript sRenderScript;
 
     /**
      * Constructor of <code>BlurBitmapWorkerTask</code>
@@ -79,10 +61,6 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
         super(key, albumScrimImage.getImageView(), imageType, fromDrawable, context);
         mBlurScrimImage = new WeakReference<>(albumScrimImage);
 
-        if (sRenderScript == null) {
-            sRenderScript = RenderScript.create(mContext);
-        }
-
         // use the existing image as the drawable and if it doesn't exist fallback to transparent
         mFromDrawable = albumScrimImage.getImageView().getDrawable();
         if (mFromDrawable == null) {
@@ -96,57 +74,14 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
             return null;
         }
 
-        Bitmap bitmap = getBitmapInBackground(params);
-
-        ResultContainer result = new ResultContainer();
-
-        Bitmap output;
-
+        final ResultContainer result = new ResultContainer();
+        final Bitmap bitmap = getBitmapInBackground(params);
         if (bitmap != null) {
-            // now create the blur bitmap
-            Bitmap input = bitmap;
-
-            // if the image is too small, scale it up before running through the blur
-            if (input.getWidth() < MIN_BITMAP_SIZE || input.getHeight() < MIN_BITMAP_SIZE) {
-                float multiplier = Math.max(MIN_BITMAP_SIZE / (float) input.getWidth(),
-                        MIN_BITMAP_SIZE / (float) input.getHeight());
-                input = Bitmap.createScaledBitmap(bitmap, (int) (input.getWidth() * multiplier),
-                        (int) (input.getHeight() * multiplier), true);
-                // since we created a new bitmap, we can re-use the bitmap for our output
-                output = input;
-            } else {
-                // if we aren't creating a new bitmap, create a new output bitmap
-                output = Bitmap.createBitmap(input.getWidth(), input.getHeight(),
-                        input.getConfig());
-            }
-
-            // run the blur multiple times
-            for (int i = 0; i < NUM_BLUR_RUNS; i++) {
-                try {
-                    final Allocation inputAlloc = Allocation.createFromBitmap(sRenderScript, input);
-                    final Allocation outputAlloc = Allocation.createTyped(sRenderScript,
-                            inputAlloc.getType());
-                    final ScriptIntrinsicBlur script = ScriptIntrinsicBlur.create(sRenderScript,
-                            Element.U8_4(sRenderScript));
-
-                    script.setRadius(BLUR_RADIUS);
-                    script.setInput(inputAlloc);
-                    script.forEach(outputAlloc);
-                    outputAlloc.copyTo(output);
-
-                    // if we run more than 1 blur, the new input should be the old output
-                    input = output;
-                } catch (RuntimeException e) {
-                    Log.w(TAG, "Cannot blur image. " + e.getMessage());
-                    break;
-                }
-            }
-
             // Set the scrim color to be 50% gray
             result.mPaletteColor = 0x7f000000;
 
             // create the bitmap transition drawable
-            result.mImageViewBitmapDrawable = createImageTransitionDrawable(output,
+            result.mImageViewBitmapDrawable = createImageTransitionDrawable(bitmap,
                     ImageWorker.FADE_IN_TIME_SLOW, true);
 
             return result;
@@ -171,6 +106,7 @@ public class BlurBitmapWorkerTask extends BitmapWorkerTask<String, Void,
                 // set the transition drawable
                 albumScrimImage.setTransitionDrawable(resultContainer.mImageViewBitmapDrawable,
                         paletteTransition);
+                albumScrimImage.applyBlurEffect();
             }
         }
     }
