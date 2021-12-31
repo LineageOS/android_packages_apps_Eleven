@@ -26,6 +26,7 @@ import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.Manifest.permission;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
@@ -95,6 +96,11 @@ public class SettingsActivity extends AppCompatActivity {
                             .show();
                     return true;
                 });
+            }
+
+            // Since we use RenderEffect, we need to make sure we run >= Android S
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+                getPreferenceScreen().removePreference(findPreference(PreferenceUtils.USE_BLUR));
             }
 
             PreferenceUtils prefUtils = PreferenceUtils.getInstance(getContext());
