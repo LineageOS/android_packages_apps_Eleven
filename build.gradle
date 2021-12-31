@@ -22,7 +22,7 @@ allprojects {
 tasks.register("updateGradleWrapper", Wrapper) {
     // https://docs.gradle.org/current/release-notes.html
     // https://github.com/gradle/gradle/releases
-    gradleVersion = '7.0'
+    gradleVersion = '7.3.3'
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
