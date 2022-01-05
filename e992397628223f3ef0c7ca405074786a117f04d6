@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a87458b6_1d819a2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30262
+      },
+      "writtenOn": "2022-01-05T06:28:03Z",
+      "side": 1,
+      "message": "Could it be that one of these changes on Eleven caused the issue: https://gitlab.com/LineageOS/issues/android/-/issues/4294",
+      "revId": "e992397628223f3ef0c7ca405074786a117f04d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
