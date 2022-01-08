@@ -16,16 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Used to indicate the number of artists -->
+    <!-- Used to indicate the number of albums for an artist -->
+    <!-- Used to indicate the number of songs for an album -->
+    <!-- Used to indicate the number of genres -->
+    <!-- Used to show a shortened version of hours-->
+    <!-- Used to show a shortened version of minutes -->
+    <!-- Toasts after adding song(s) to playlists -->
+    <!-- Toasts after removing song(s) from playlists -->
     <plurals name="NNNtracksfromplaylist">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> трэк выдалены з плэйліста.</item>
         <item quantity="few"><xliff:g id="number" example="3">%d</xliff:g> трэкі выдалены з плэйліста.</item>
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> трэкаў выдалена з плэйліста.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> трэкаў выдалена з плэйліста.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to queue -->
     <plurals name="NNNtrackstoqueue">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> трэк дададзены ў чаргу.</item>
         <item quantity="few"><xliff:g id="number" example="3">%d</xliff:g> трэкі дададзены ў чаргу.</item>
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> трэкаў дададзена ў чаргу.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> трэкаў дададзена ў чаргу.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to the favorites list -->
+    <!-- Toast confirming that song(s) was/were deleted. -->
 </resources>

@@ -18,16 +18,30 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Mùsica</string>
+    <!-- Page titles -->
+    <!-- Section Headers -->
+    <!-- Option menu items -->
     <string name="menu_settings">Cunfiguratziones</string>
+    <!-- Playlist items -->
+    <!-- Sort orders -->
     <string name="sort_order_entry_artist">Artista</string>
     <string name="sort_order_entry_year">Annu</string>
     <string name="sort_order_entry_duration">Longària</string>
+    <!-- Default playlist names -->
+    <!-- AlertDialog items -->
     <string name="save">Sarva</string>
     <string name="cancel">Annulla</string>
     <string name="overwrite">Subraiscrie</string>
     <string name="clear">Isbòida</string>
+    <!-- Context menu items -->
     <string name="context_menu_delete">Iscantzella</string>
+    <!-- Content descriptions -->
+    <!-- Toast messages -->
+    <!-- Settings -->
     <string name="settings_general_category">Generale</string>
+    <!-- App widget -->
+    <!-- Empty list / error messages -->
+    <!-- Section Headers -->
     <string name="header_less_than_30s">Prus pagu de 30 segundos</string>
     <string name="header_30_to_60_seconds">30 - 60 segundos</string>
     <string name="header_1_to_2_minutes">1 - 2 minutos</string>

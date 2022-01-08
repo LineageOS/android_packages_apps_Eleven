@@ -17,8 +17,22 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Page titles -->
+    <!-- Section Headers -->
+    <!-- Option menu items -->
+    <!-- Playlist items -->
+    <!-- Sort orders -->
+    <!-- Default playlist names -->
+    <!-- AlertDialog items -->
+    <!-- Context menu items -->
+    <!-- Content descriptions -->
+    <!-- Toast messages -->
+    <!-- Settings -->
     <string name="settings_use_blur_title">ფონის დაბინდვა</string>
+    <!-- App widget -->
     <string name="app_widget_small">მუსიკა: 4 \u00d7 1</string>
     <string name="app_widget_large">მუსიკა: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">მუსიკა: 4 \u00d7 2 (alternativ)</string>
+    <!-- Empty list / error messages -->
+    <!-- Section Headers -->
 </resources>

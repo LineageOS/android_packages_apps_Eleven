@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Used to indicate the number of artists -->
+    <!-- Used to indicate the number of albums for an artist -->
     <plurals name="Nalbums">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> ألبوم</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ألبومات</item>
@@ -24,6 +26,7 @@
         <item quantity="many"><xliff:g id="count">%d</xliff:g> ألبومات</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> ألبومات</item>
     </plurals>
+    <!-- Used to indicate the number of songs for an album -->
     <plurals name="Nsongs">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> أغنية</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> أغاني</item>
@@ -32,6 +35,8 @@
         <item quantity="many"><xliff:g id="count">%d</xliff:g> أغاني</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> أغاني</item>
     </plurals>
+    <!-- Used to indicate the number of genres -->
+    <!-- Used to show a shortened version of hours-->
     <plurals name="Nhours">
         <item quantity="zero"><xliff:g id="hours">%d</xliff:g>س</item>
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>س</item>
@@ -40,6 +45,7 @@
         <item quantity="many"><xliff:g id="hours">%d</xliff:g>س</item>
         <item quantity="other"><xliff:g id="hours">%d</xliff:g>س</item>
     </plurals>
+    <!-- Used to show a shortened version of minutes -->
     <plurals name="Nminutes">
         <item quantity="zero"><xliff:g id="minutes">%d</xliff:g>ق</item>
         <item quantity="one"><xliff:g id="minutes">%d</xliff:g>ق</item>
@@ -48,6 +54,7 @@
         <item quantity="many"><xliff:g id="minutes">%d</xliff:g>ق</item>
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g>ق</item>
     </plurals>
+    <!-- Toasts after adding song(s) to playlists -->
     <plurals name="NNNtrackstoplaylist">
         <item quantity="zero"><xliff:g id="number" example="1"> %d </xliff:g> أغنية أضيفت إلى قائمة التشغيل.</item>
         <item quantity="one"><xliff:g id="number" example="1"> %d </xliff:g> أغنيات أضيفت إلى قائمة التشغيل.</item>
@@ -56,6 +63,7 @@
         <item quantity="many"><xliff:g id="number" example="1"> %d </xliff:g> أغنيات أضيفت إلى قائمة التشغيل.</item>
         <item quantity="other"><xliff:g id="number" example="1"> %d </xliff:g> أغنيات أضيفت إلى قائمة التشغيل.</item>
     </plurals>
+    <!-- Toasts after removing song(s) from playlists -->
     <plurals name="NNNtracksfromplaylist">
         <item quantity="zero"><xliff:g id="number" example="1">%d</xliff:g> أغنية حذفت من قائمة التشغيل.</item>
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> أغنيات حذفت من قائمة التشغيل.</item>
@@ -64,6 +72,7 @@
         <item quantity="many"><xliff:g id="number" example="1">%d</xliff:g> أغنيات حذفت من قائمة التشغيل.</item>
         <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> أغنيات حذفت من قائمة التشغيل.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to queue -->
     <plurals name="NNNtrackstoqueue">
         <item quantity="zero"><xliff:g id="number" example="27"> %d </xliff:g> أغنية أُضيفت إلى قائمة الانتظار.</item>
         <item quantity="one"><xliff:g id="number" example="27"> %d </xliff:g> أغاني أُضيفت إلى قائمة الانتظار.</item>
@@ -72,6 +81,8 @@
         <item quantity="many"><xliff:g id="number" example="27"> %d </xliff:g> أغاني أُضيفت إلى قائمة الانتظار.</item>
         <item quantity="other"><xliff:g id="number" example="27"> %d </xliff:g> أغاني أُضيفت إلى قائمة الانتظار.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to the favorites list -->
+    <!-- Toast confirming that song(s) was/were deleted. -->
     <plurals name="NNNtracksdeleted">
         <item quantity="zero">تم حذف <xliff:g id="songs_to_delete"> %d </xliff:g> أغنية.</item>
         <item quantity="one">تم حذف <xliff:g id="songs_to_delete"> %d </xliff:g> أغنيات.</item>

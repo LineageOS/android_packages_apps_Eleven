@@ -16,48 +16,59 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Used to indicate the number of artists -->
+    <!-- Used to indicate the number of albums for an artist -->
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> album</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> alba</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> alb</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> alb</item>
     </plurals>
+    <!-- Used to indicate the number of songs for an album -->
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> skladba</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> skladby</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> skladeb</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> skladeb</item>
     </plurals>
+    <!-- Used to indicate the number of genres -->
+    <!-- Used to show a shortened version of hours-->
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>h</item>
         <item quantity="few"><xliff:g id="hours">%d</xliff:g>h</item>
         <item quantity="many"><xliff:g id="hours">%d</xliff:g>h</item>
         <item quantity="other"><xliff:g id="hours">%d</xliff:g>h</item>
     </plurals>
+    <!-- Used to show a shortened version of minutes -->
     <plurals name="Nminutes">
         <item quantity="one"><xliff:g id="minutes">%d</xliff:g>m</item>
         <item quantity="few"><xliff:g id="minutes">%d</xliff:g>m</item>
         <item quantity="many"><xliff:g id="minutes">%d</xliff:g>m</item>
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
     </plurals>
+    <!-- Toasts after adding song(s) to playlists -->
     <plurals name="NNNtrackstoplaylist">
         <item quantity="one">Do seznamu skladeb přidána <xliff:g id="number" example="1">%d</xliff:g> skladba.</item>
         <item quantity="few">Do seznamu skladeb přidány <xliff:g id="number" example="1">%d</xliff:g> skladby.</item>
         <item quantity="many">Do seznamu skladeb přidáno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
         <item quantity="other">Do seznamu skladeb přidáno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
     </plurals>
+    <!-- Toasts after removing song(s) from playlists -->
     <plurals name="NNNtracksfromplaylist">
         <item quantity="one">Ze seznamu skladeb odebrána <xliff:g id="number" example="1">%d</xliff:g> skladba.</item>
         <item quantity="few">Ze seznamu skladeb odebrány <xliff:g id="number" example="1">%d</xliff:g> skladby.</item>
         <item quantity="many">Ze seznamu skladeb odebráno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
         <item quantity="other">Ze seznamu skladeb odebráno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to queue -->
     <plurals name="NNNtrackstoqueue">
         <item quantity="one">Do fronty přidána <xliff:g id="number" example="1">%d</xliff:g> skladba.</item>
         <item quantity="few">Do fronty přidány <xliff:g id="number" example="1">%d</xliff:g> skladby.</item>
         <item quantity="many">Do fronty přidáno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
         <item quantity="other">Do fronty přidáno <xliff:g id="number" example="1">%d</xliff:g> skladeb.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to the favorites list -->
+    <!-- Toast confirming that song(s) was/were deleted. -->
     <plurals name="NNNtracksdeleted">
         <item quantity="one">Odstraněna <xliff:g id="songs_to_delete" example="1">%d</xliff:g> skladba.</item>
         <item quantity="few">Odstraněny <xliff:g id="songs_to_delete" example="1">%d</xliff:g> skladby.</item>

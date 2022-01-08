@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">เพลง</string>
+    <!-- Page titles -->
     <string name="page_artists">ศิลปิน</string>
     <string name="page_albums">อัลบั้ม</string>
     <string name="page_songs">เพลง</string>
     <string name="page_playlists">รายการเพลง</string>
     <string name="page_play_queue">คิวเล่น</string>
+    <!-- Section Headers -->
     <string name="header_albums">อัลบั้ม</string>
     <string name="header_all_songs">เพลงทั้งหมด</string>
+    <!-- Option menu items -->
     <string name="menu_settings">การตั้งค่า</string>
     <string name="menu_shuffle_item">สลับ</string>
     <string name="menu_shuffle_all">สลับทั้งหมด</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">ล้างคิว</string>
     <string name="menu_save_queue">บันทึกคิวไปยังรายการที่จะเล่น</string>
     <string name="menu_equalizer">Equalizer</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">เพิ่มไปยังรายการเพลง</string>
     <string name="add_to_queue">เพิ่มไปยังคิว</string>
     <string name="remove_from_queue">ลบออกจากคิว</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
     <string name="sort_order_entry_artist">ศิลปิน</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">จำนวนเพลง</string>
     <string name="sort_order_entry_number_of_albums">จำนวนอัลบั้ม</string>
     <string name="sort_order_entry_filename">ชื่อไฟล์</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">เพิ่มล่าสุด</string>
     <string name="playlist_recently_played">เพิ่งเล่น</string>
     <string name="playlist_top_tracks">แทร็คยอดนิยมของฉัน</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">รายการเพลงใหม่</string>
     <string name="save">บันทึก</string>
     <string name="cancel">ยกเลิก</string>
@@ -69,6 +76,7 @@
     <string name="delete_warning">การกระทำนี้จะลบรูปภาพที่แคชอย่างถาวร</string>
     <string name="new_photo">เลือกรูปจากแกลเลอรี</string>
     <string name="use_default">เลือกรูปเริ่มต้น</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">เล่น</string>
     <string name="context_menu_play_next">เล่นรายการถัดไป</string>
     <string name="context_menu_play_album">เล่นอัลบั้ม</string>
@@ -81,6 +89,7 @@
     <string name="context_menu_use_as_ringtone">ใช้เป็นเสียงเรียกเข้า</string>
     <string name="context_menu_remove_from_playlist">นำออกจากรายการเพลง</string>
     <string name="context_menu_change_image">เปลี่ยนรูปภาพ</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">เล่น</string>
     <string name="accessibility_pause">พักชั่วคราว</string>
     <string name="accessibility_next">ถัดไป</string>
@@ -90,7 +99,9 @@
     <string name="accessibility_repeat">ซ้ำ</string>
     <string name="accessibility_repeat_all">เล่นซ้ำทั้งหมด</string>
     <string name="accessibility_repeat_one">ซ้ำหนึ่งครั้ง</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ตั้งเป็นเสียงเรียกเข้า</string>
+    <!-- Settings -->
     <string name="settings_storage_category">แหล่งเก็บข้อมูล</string>
     <string name="settings_delete_cache_title">ล้างแคช</string>
     <string name="settings_delete_cache_summary">ลบรูปที่แคชทั้งหมดออก</string>
@@ -101,9 +112,11 @@
     <string name="settings_show_lyrics_summary">สำหรับเพลงที่มีไฟล์ srt</string>
     <string name="settings_shake_to_play">เขย่าเพื่อเล่น</string>
     <string name="settings_shake_to_play_summary">เขย่าอุปกรณ์ของคุณเพื่อเล่นเพลงถัดไป</string>
+    <!-- App widget -->
     <string name="app_widget_small">เพลง: 4 \u00d7 1</string>
     <string name="app_widget_large">เพลง: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">เพลง: 4 \u00d7 2 (สลับ)</string>
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">ไม่สามารถเปิด equalizer ได้</string>
     <string name="empty_recent_main">ไม่มีเพลงล่าสุด</string>
     <string name="empty_recent">เพลงที่ฟังล่าสุดจะแสดงที่นี่</string>
@@ -118,6 +131,7 @@
     <string name="empty_queue_main">ไม่มีเพลงในคิวเล่น</string>
     <string name="empty_queue_secondary">ในการเพิ่มเพลงไปยังรายการที่เล่น ให้แตะเมนูตัวเลือกบนเพลงหรือศิลปินและเลือก \"เพิ่มไปยังคิวเล่น\"</string>
     <string name="error_playing_track">ไม่สามารถเล่นเพลง %1$s</string>
+    <!-- Section Headers -->
     <string name="header_unknown_year">ไม่ทราบปี</string>
     <string name="header_less_than_30s">น้อยกว่า 30 วินาที</string>
     <string name="header_30_to_60_seconds">30 - 60 วินาที</string>

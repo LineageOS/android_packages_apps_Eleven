@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Muusika</string>
+    <!-- Page titles -->
     <string name="page_artists">Esitajad</string>
     <string name="page_albums">Albumid</string>
     <string name="page_songs">Laulud</string>
     <string name="page_playlists">Esitusloendid</string>
     <string name="page_play_queue">Esitlusjärjekord</string>
+    <!-- Section Headers -->
     <string name="header_albums">Albumid</string>
     <string name="header_all_songs">Kõik laulud</string>
+    <!-- Option menu items -->
     <string name="menu_settings">Seaded</string>
     <string name="menu_shuffle_item">Juhuesitus</string>
     <string name="menu_shuffle_all">Juhuesita kõik</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">Kustuta järjekord</string>
     <string name="menu_save_queue">Salvesta esitlusjärjekord esitlusloendisse</string>
     <string name="menu_equalizer">Ekvalaiser</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">Lisa esitusloendisse</string>
     <string name="add_to_queue">Lisa järjekorda</string>
     <string name="remove_from_queue">Eemalda järjekorrast</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
     <string name="sort_order_entry_artist">Esitaja</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">Laulude arv</string>
     <string name="sort_order_entry_number_of_albums">Albumite arv</string>
     <string name="sort_order_entry_filename">Faili nimi</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">Viimati lisatud</string>
     <string name="playlist_recently_played">Viimati esitatud</string>
     <string name="playlist_top_tracks">Minu top lood</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">Uus esitusloend</string>
     <string name="save">Salvesta</string>
     <string name="cancel">Tühista</string>
@@ -69,6 +76,7 @@
     <string name="delete_warning">See toiming kustutab puhverdatud pildid alatiseks</string>
     <string name="new_photo">Vali foto galeriist</string>
     <string name="use_default">Kasuta vaikimisi pilti</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">Esita</string>
     <string name="context_menu_play_next">Esita järgmine</string>
     <string name="context_menu_play_album">Esita album</string>
@@ -81,6 +89,7 @@
     <string name="context_menu_use_as_ringtone">Kasuta telefoni helinana</string>
     <string name="context_menu_remove_from_playlist">Eemalda esitusloendist</string>
     <string name="context_menu_change_image">Muuda pilti</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">Esita</string>
     <string name="accessibility_pause">Paus</string>
     <string name="accessibility_next">Järgmine</string>
@@ -90,7 +99,9 @@
     <string name="accessibility_repeat">Korda</string>
     <string name="accessibility_repeat_all">Korda kõiki</string>
     <string name="accessibility_repeat_one">Korda ühte</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' sea telefoni helinaks</string>
+    <!-- Settings -->
     <string name="settings_storage_category">Mälu</string>
     <string name="settings_delete_cache_title">Kustuta vahemälu</string>
     <string name="settings_delete_cache_summary">Eemalda kõik puhverdatud pildid</string>
@@ -101,9 +112,11 @@
     <string name="settings_show_lyrics_summary">Lauludele, millel on srt-fail</string>
     <string name="settings_shake_to_play">Raputa mängimiseks</string>
     <string name="settings_shake_to_play_summary">Raputa seadet järgmiseks lauluks</string>
+    <!-- App widget -->
     <string name="app_widget_small">Muusika: 4 \u00d7 1</string>
     <string name="app_widget_large">Muusika: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muusika: 4 \u00d7 2 (alternatiiv)</string>
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">Ekvalaiserit ei saanud avada.</string>
     <string name="empty_recent_main">Puuduvad hiljutised laulud</string>
     <string name="empty_recent">Hiljuti kuulatud laulud kuvatakse siin.</string>
@@ -118,6 +131,7 @@
     <string name="empty_queue_main">Esitlusjärjekorras ei ole ühtegi laulu</string>
     <string name="empty_queue_secondary">Lugude lisamiseks esitlusjärjekorda, koputa laulu, albumi või artisti lisavalikute menüül ja vali \"Lisa järjekorda\".</string>
     <string name="error_playing_track">Ei saa mängida laulu %1$s</string>
+    <!-- Section Headers -->
     <string name="header_unknown_year">Teadmata aasta</string>
     <string name="header_less_than_30s">Vähem kui 30 sekundit</string>
     <string name="header_30_to_60_seconds">30 - 60 sekundit</string>

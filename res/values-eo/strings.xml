@@ -17,16 +17,30 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Page titles -->
     <string name="page_artists">Artistoj</string>
     <string name="page_albums">Albumoj</string>
     <string name="page_songs">Kantoj</string>
+    <!-- Section Headers -->
     <string name="header_albums">Albumoj</string>
+    <!-- Option menu items -->
     <string name="menu_settings">Agordoj</string>
+    <!-- Playlist items -->
+    <!-- Sort orders -->
     <string name="sort_order_entry_artist">Artisto</string>
     <string name="sort_order_entry_album">Albumo</string>
     <string name="sort_order_entry_year">Jaro</string>
+    <!-- Default playlist names -->
+    <!-- AlertDialog items -->
     <string name="save">Konservi</string>
     <string name="cancel">Nuligi</string>
+    <!-- Context menu items -->
+    <!-- Content descriptions -->
+    <!-- Toast messages -->
+    <!-- Settings -->
+    <!-- App widget -->
+    <!-- Empty list / error messages -->
+    <!-- Section Headers -->
     <string name="header_unknown_year">Nekonata jaro</string>
     <string name="header_30_to_60_seconds">30 - 60 sekundoj</string>
     <string name="header_1_to_2_minutes">1 - 2 minutoj</string>

@@ -16,6 +16,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Used to indicate the number of artists -->
+    <!-- Used to indicate the number of albums for an artist -->
     <plurals name="Nalbums">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> casgliadau</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> casgliad</item>
@@ -24,6 +26,7 @@
         <item quantity="many"><xliff:g id="count">%d</xliff:g> chasgliad</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> casgliad</item>
     </plurals>
+    <!-- Used to indicate the number of songs for an album -->
     <plurals name="Nsongs">
         <item quantity="zero"><xliff:g id="count">%d</xliff:g> traciau</item>
         <item quantity="one"><xliff:g id="count">%d</xliff:g> trac</item>
@@ -32,6 +35,8 @@
         <item quantity="many"><xliff:g id="count">%d</xliff:g> thrac</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> trac</item>
     </plurals>
+    <!-- Used to indicate the number of genres -->
+    <!-- Used to show a shortened version of hours-->
     <plurals name="Nhours">
         <item quantity="zero"><xliff:g id="hours">%d</xliff:g>a</item>
         <item quantity="one"><xliff:g id="hours">%d</xliff:g>a</item>
@@ -40,6 +45,7 @@
         <item quantity="many"><xliff:g id="hours">%d</xliff:g>a</item>
         <item quantity="other"><xliff:g id="hours">%d</xliff:g>a</item>
     </plurals>
+    <!-- Used to show a shortened version of minutes -->
     <plurals name="Nminutes">
         <item quantity="zero"><xliff:g id="minutes">%d</xliff:g>m</item>
         <item quantity="one"><xliff:g id="minutes">%d</xliff:g>m</item>
@@ -48,6 +54,7 @@
         <item quantity="many"><xliff:g id="minutes">%d</xliff:g>m</item>
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
     </plurals>
+    <!-- Toasts after adding song(s) to playlists -->
     <plurals name="NNNtrackstoplaylist">
         <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> traciau wedi\'u hychwanegu i\'r rhestr chwarae.</item>
         <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'i ychwanegu i\'r rhestr chwarae.</item>
@@ -56,6 +63,7 @@
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> thrac wedi\'u hychwanegu i\'r rhestr chwarae.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u hychwanegu i\'r rhestr chwarae.</item>
     </plurals>
+    <!-- Toasts after removing song(s) from playlists -->
     <plurals name="NNNtracksfromplaylist">
         <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> traciau wedi\'u tynnu o\'r rhestr chwarae.</item>
         <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'i dynnu o\'r rhestr chwarae.</item>
@@ -64,6 +72,7 @@
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> thrac wedi\'u tynnu o\'r rhestr chwarae.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u tynnu o\'r rhestr chwarae.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to queue -->
     <plurals name="NNNtrackstoqueue">
         <item quantity="zero"><xliff:g id="number" example="27">%d</xliff:g> traciau wedi\'u hychwanegu i\'r ciw.</item>
         <item quantity="one"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'i ychwanegu i\'r ciw.</item>
@@ -72,6 +81,8 @@
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> thrac wedi\'u hychwanegu i\'r ciw.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> trac wedi\'u hychwanegu i\'r ciw.</item>
     </plurals>
+    <!-- Toasts after adding song(s) to the favorites list -->
+    <!-- Toast confirming that song(s) was/were deleted. -->
     <plurals name="NNNtracksdeleted">
         <item quantity="zero"><xliff:g id="songs_to_delete">%d</xliff:g> traciau wedi\'u dileu.</item>
         <item quantity="one"><xliff:g id="songs_to_delete">%d</xliff:g> trac wedi\'i ddileu.</item>

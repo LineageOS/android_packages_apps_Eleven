@@ -17,15 +17,29 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Page titles -->
     <string name="page_albums">Hljómplötur</string>
+    <!-- Section Headers -->
     <string name="header_albums">Hljómplötur</string>
+    <!-- Option menu items -->
+    <!-- Playlist items -->
+    <!-- Sort orders -->
+    <!-- Default playlist names -->
+    <!-- AlertDialog items -->
     <string name="delete_warning">Þetta mun eyða endanlega myndafærslum í skyndiminni</string>
+    <!-- Context menu items -->
     <string name="context_menu_fetch_album_art">Sækja umslagsmyndir</string>
     <string name="context_menu_fetch_artist_image">Sækja mynd af flytjanda</string>
+    <!-- Content descriptions -->
+    <!-- Toast messages -->
+    <!-- Settings -->
     <string name="settings_delete_cache_summary">Fjarlægja allar myndir úr skyndiminni</string>
+    <!-- App widget -->
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">Ekki var hægt að opna tónjafnarann.</string>
     <string name="empty_playlist_secondary">Til að bæta lögum á þennan spilunarlista, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta á spilunarlista\".</string>
     <string name="empty_queue_secondary">Til að bæta lögum í spilunarbiðröðina þína, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta í biðröð\".</string>
     <string name="error_playing_track">Get ekki spilað lagið %1$s</string>
+    <!-- Section Headers -->
     <string name="header_5_plus_albums">5+ hljómplötur</string>
 </resources>

@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Музика</string>
+    <!-- Page titles -->
     <string name="page_artists">Изпълнители</string>
     <string name="page_albums">Албуми</string>
     <string name="page_songs">Песни</string>
     <string name="page_playlists">Списъци за изпълнение</string>
     <string name="page_play_queue">На опашката за възпроизвеждане</string>
+    <!-- Section Headers -->
     <string name="header_albums">Албуми</string>
     <string name="header_all_songs">Всички песни</string>
+    <!-- Option menu items -->
     <string name="menu_settings">Настройки</string>
     <string name="menu_shuffle_item">Разбъркване</string>
     <string name="menu_shuffle_all">Разбъркване на всички</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">Изчистване на опашката за изпълнение</string>
     <string name="menu_save_queue">Запазване на опашката за изпълнение в списъка за изпълнение</string>
     <string name="menu_equalizer">Еквалайзер</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">Добави към списък за изпълниние</string>
     <string name="add_to_queue">Добавяне към опашката за изпълнение</string>
     <string name="remove_from_queue">Премахване от опашката за изпълнение</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">А-Я</string>
     <string name="sort_order_entry_za">Я-А</string>
     <string name="sort_order_entry_artist">Изпълнител</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">Брой на песните</string>
     <string name="sort_order_entry_number_of_albums">Брой на албумите</string>
     <string name="sort_order_entry_filename">Име на файла</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">Последно добавени</string>
     <string name="playlist_recently_played">Последно изпълнени</string>
     <string name="playlist_top_tracks">Моите топ песни</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">Нов списък за изпълнение</string>
     <string name="save">Запиши</string>
     <string name="cancel">Отказ</string>
@@ -69,6 +76,7 @@
     <string name="delete_warning">Това завинаги ще изтрие записите в кеша</string>
     <string name="new_photo">Изберете снимка от Галерия</string>
     <string name="use_default">Използване снимка по подразбиране</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">Изпълни</string>
     <string name="context_menu_play_next">Следваща песен</string>
     <string name="context_menu_play_album">Изпълни албум</string>
@@ -81,6 +89,7 @@
     <string name="context_menu_use_as_ringtone">Използвай като тон на звънене</string>
     <string name="context_menu_remove_from_playlist">Премахни от списъка за изпълнение</string>
     <string name="context_menu_change_image">Промяна на изображението</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">Изпълни</string>
     <string name="accessibility_pause">Пауза</string>
     <string name="accessibility_next">Следваща</string>
@@ -90,7 +99,9 @@
     <string name="accessibility_repeat">Повтори</string>
     <string name="accessibility_repeat_all">Повтори всички</string>
     <string name="accessibility_repeat_one">Повтори една</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">\"<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\" е зададена, като тон на звънене.</string>
+    <!-- Settings -->
     <string name="settings_storage_category">Хранилище</string>
     <string name="settings_delete_cache_title">Изтриване на кеша</string>
     <string name="settings_delete_cache_summary">Премахва всички кеширани изображения</string>
@@ -101,9 +112,11 @@
     <string name="settings_show_lyrics_summary">За песни, които имат srt файл</string>
     <string name="settings_shake_to_play">Разтърсете, за да изпълни</string>
     <string name="settings_shake_to_play_summary">Разтърсете устройството, за да изпълни следващата песен</string>
+    <!-- App widget -->
     <string name="app_widget_small">Музика: 4 \u00d7 1</string>
     <string name="app_widget_large">Музика: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музика: 4 \u00d7 2 (алтернативен)</string>
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">Еквалайзера не може да бъде отворен.</string>
     <string name="empty_recent_main">Няма скорошни песни</string>
     <string name="empty_recent">Песните който сте слушали последно ще се покажат тук.</string>
@@ -118,6 +131,7 @@
     <string name="empty_queue_main">Няма песни в опашката за възпроизвеждане</string>
     <string name="empty_queue_secondary">За да добавите песни към опашката за изпълнение, натиснете менюто опции по песен, албум или изпълнител и изберете \"Добави към опашката за изпълнение\".</string>
     <string name="error_playing_track">Не може да изпълни песента %1$s</string>
+    <!-- Section Headers -->
     <string name="header_unknown_year">Неизвестна година</string>
     <string name="header_less_than_30s">По-малко от 30 секунди</string>
     <string name="header_30_to_60_seconds">30 - 60 секунди</string>

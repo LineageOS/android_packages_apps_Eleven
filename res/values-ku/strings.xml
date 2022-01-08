@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">مۆسیقا</string>
+    <!-- Page titles -->
     <string name="page_artists">هونەرمەند</string>
     <string name="page_albums">ئەلبوم</string>
     <string name="page_songs">گۆرانییەکان</string>
     <string name="page_playlists">لیستی لێدان</string>
     <string name="page_play_queue">لێدانی ڕیزکراو</string>
+    <!-- Section Headers -->
     <string name="header_albums">ئەلبوم</string>
     <string name="header_all_songs">هەموو گۆرانیەکان</string>
+    <!-- Option menu items -->
     <string name="menu_settings">ڕێکخستن</string>
     <string name="menu_shuffle_item">ڕیزکراو</string>
     <string name="menu_shuffle_all">هه‌ڕه‌مه‌کی</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">پاککردنه‌وه‌ی ڕیزه‌کان</string>
     <string name="menu_save_queue">پاشەکەوتکردنی ریزی ڕێزکراو بۆ لێدان</string>
     <string name="menu_equalizer">یه‌کسانکه‌ری ده‌نگ</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">زیادکردن بۆ لێدراوه‌کان</string>
     <string name="add_to_queue">زیادکردن بۆ ڕیزکراوه‌کان</string>
     <string name="remove_from_queue">سڕینه‌وه‌ له‌ ڕیزه‌کان</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
     <string name="sort_order_entry_artist">هونه‌رمه‌ند</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">ژماره‌ی گۆرانییه‌کان</string>
     <string name="sort_order_entry_number_of_albums">ژماره‌ی ئه‌لبومه‌کان</string>
     <string name="sort_order_entry_filename">ناوی په‌ڕگه‌</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">دوایین زیادکردن</string>
     <string name="playlist_recently_played">تازە لێدراو</string>
     <string name="playlist_top_tracks">تراکی لوتکەکانم</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">لیستی لێدانی تازه‌</string>
     <string name="save">پاشەکەوتکردن</string>
     <string name="cancel">لابردن</string>
@@ -65,6 +72,7 @@
     <string name="delete_warning">ئه‌مه‌ واته‌ سڕینه‌وه‌ی هه‌موو وێنه‌ خه‌زنکراوه‌کان به‌ گشتی</string>
     <string name="new_photo">هه‌ڵبژاردنی وینه‌یه‌ک له‌ گه‌له‌ری</string>
     <string name="use_default">به‌کارهێنانی وێنه‌ی سه‌ره‌تایی</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">لێدان</string>
     <string name="context_menu_play_next">لێدانی داهاتوو</string>
     <string name="context_menu_more_by_artist">زیاتر له‌لایه‌ن هونه‌رمه‌نده‌وه‌</string>
@@ -75,6 +83,7 @@
     <string name="context_menu_remove_from_recent">سڕینه‌وه‌ له‌ تازه‌کان</string>
     <string name="context_menu_use_as_ringtone">خستنه‌ سه‌ر زه‌نگ</string>
     <string name="context_menu_remove_from_playlist">سڕینه‌وه‌ له‌ لیستی لێدراوه‌کان</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">لێدان</string>
     <string name="accessibility_pause">وه‌ستان</string>
     <string name="accessibility_next">دواتر</string>
@@ -84,11 +93,16 @@
     <string name="accessibility_repeat">دوبارەکردنەوە</string>
     <string name="accessibility_repeat_all">دووباره‌کردنه‌وه‌ی هه‌مووی</string>
     <string name="accessibility_repeat_one">دووباره‌کردنه‌وه‌ی یه‌کدانه‌</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' خستنه‌ سه‌ر زه‌نگ</string>
+    <!-- Settings -->
     <string name="settings_storage_category">بیرگەی</string>
     <string name="settings_delete_cache_title">سڕینه‌وه‌ی حه‌شارگه‌</string>
     <string name="settings_delete_cache_summary">سڕینه‌وه‌ی هه‌موو وێنه‌ حه‌شارگه‌کان</string>
+    <!-- App widget -->
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">یه‌کسانکه‌ری ده‌نگ ناکرێته‌وه‌.</string>
     <string name="empty_recent">ئه‌و ئه‌لبومانه‌ی که‌ گوێت لێگرتوون لێره‌ نیشان ئه‌درێن ، گۆرانی لێبده‌.</string>
     <string name="empty_last_added">ئه‌و گۆرانیانه‌ی که‌ زیادکراون له‌ مانگی پێشوو لێره‌ نیشان ئه‌درێن.</string>
+    <!-- Section Headers -->
 </resources>

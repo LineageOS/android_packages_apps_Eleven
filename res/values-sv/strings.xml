@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musik</string>
+    <!-- Page titles -->
     <string name="page_artists">Artister</string>
     <string name="page_albums">Album</string>
     <string name="page_songs">Låtar</string>
     <string name="page_playlists">Spellistor</string>
     <string name="page_play_queue">Spelkö</string>
+    <!-- Section Headers -->
     <string name="header_albums">Album</string>
     <string name="header_all_songs">Alla låtar</string>
+    <!-- Option menu items -->
     <string name="menu_settings">Inställningar</string>
     <string name="menu_shuffle_item">Blanda</string>
     <string name="menu_shuffle_all">Blanda alla</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">Rensa kö</string>
     <string name="menu_save_queue">Spara kö till spellistan</string>
     <string name="menu_equalizer">Equalizer</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">Lägg till spellista</string>
     <string name="add_to_queue">Lägg till kö</string>
     <string name="remove_from_queue">Ta bort från kö</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Ö</string>
     <string name="sort_order_entry_za">Ö-A</string>
     <string name="sort_order_entry_artist">Artist</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">Antal låtar</string>
     <string name="sort_order_entry_number_of_albums">Antal album</string>
     <string name="sort_order_entry_filename">Filnamn</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">Senast tillagda</string>
     <string name="playlist_recently_played">Senast spelade</string>
     <string name="playlist_top_tracks">Min topplista</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">Ny spellista</string>
     <string name="save">Spara</string>
     <string name="cancel">Avbryt</string>
@@ -69,6 +76,7 @@
     <string name="delete_warning">Detta kommer ta bort cachade bilder permanent</string>
     <string name="new_photo">Välj foto från Galleri</string>
     <string name="use_default">Använd standardfoto</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">Spela</string>
     <string name="context_menu_play_next">Spela nästa</string>
     <string name="context_menu_play_album">Spela album</string>
@@ -81,6 +89,7 @@
     <string name="context_menu_use_as_ringtone">Använd som ringsignal</string>
     <string name="context_menu_remove_from_playlist">Ta bort från spellista</string>
     <string name="context_menu_change_image">Ändra bild</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">Spela</string>
     <string name="accessibility_pause">Pausa</string>
     <string name="accessibility_next">Nästa</string>
@@ -90,7 +99,9 @@
     <string name="accessibility_repeat">Upprepa</string>
     <string name="accessibility_repeat_all">Upprepa alla</string>
     <string name="accessibility_repeat_one">Upprepa en</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' välj som ringsignal</string>
+    <!-- Settings -->
     <string name="settings_storage_category">Lagring</string>
     <string name="settings_delete_cache_title">Ta bort cache</string>
     <string name="settings_delete_cache_summary">Ta bort alla cachade bilder</string>
@@ -100,9 +111,11 @@
     <string name="settings_show_lyrics_summary">För låtar som har en srt-fil</string>
     <string name="settings_shake_to_play">Skaka för att spela</string>
     <string name="settings_shake_to_play_summary">Skaka din enhet för att spela nästa låt</string>
+    <!-- App widget -->
     <string name="app_widget_small">Musik: 4 \u00d7 1</string>
     <string name="app_widget_large">Musik: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musik: 4 \u00d7 2 (alternativ)</string>
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">Equalizern kunde inte öppnas.</string>
     <string name="empty_recent_main">Inga senaste låtar</string>
     <string name="empty_recent">Låtar du lyssnat på nyligen kommer visas här.</string>
@@ -117,6 +130,7 @@
     <string name="empty_queue_main">Inga sånger i spelkön</string>
     <string name="empty_queue_secondary">För att lägga till sånger till din spelkö, tryck på alternativmenyn på en låt, album eller artist och välj \"Lägg till i spellista\".</string>
     <string name="error_playing_track">Kunde inte spela spår %1$s</string>
+    <!-- Section Headers -->
     <string name="header_unknown_year">Okänt år</string>
     <string name="header_less_than_30s">Mindre än 30 sekunder</string>
     <string name="header_30_to_60_seconds">30 - 60 sekunder</string>

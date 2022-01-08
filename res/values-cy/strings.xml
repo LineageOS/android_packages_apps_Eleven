@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Cerddoriaeth</string>
+    <!-- Page titles -->
     <string name="page_artists">Artistiaid</string>
     <string name="page_albums">Casgliadau</string>
     <string name="page_songs">Traciau</string>
     <string name="page_playlists">Rhestri caneuon</string>
     <string name="page_play_queue">Ciw Chwarae</string>
+    <!-- Section Headers -->
     <string name="header_albums">Casgliadau</string>
     <string name="header_all_songs">Pob Trac</string>
+    <!-- Option menu items -->
     <string name="menu_settings">Gosodiadau</string>
     <string name="menu_shuffle_item">Cymysgu</string>
     <string name="menu_shuffle_all">Cymysgu\'r cwbl</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">Clirio\'r ciw</string>
     <string name="menu_save_queue">Cadw\'r ciw i\'r rhestr chwarae</string>
     <string name="menu_equalizer">Cydraddolydd</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">Ychwanegu i\'r rhestr chwarae</string>
     <string name="add_to_queue">Ychwanegu i\'r ciw</string>
     <string name="remove_from_queue">Tynnu o\'r ciw</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">A i Y</string>
     <string name="sort_order_entry_za">Y i A</string>
     <string name="sort_order_entry_artist">Artist</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">Nifer o draciau</string>
     <string name="sort_order_entry_number_of_albums">Nifer o gasgliadau</string>
     <string name="sort_order_entry_filename">Enw ffeil</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">Ychwanegwyd diwethaf</string>
     <string name="playlist_recently_played">Chwaraewyd yn ddiweddar</string>
     <string name="playlist_top_tracks">Fy hoff draciau</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">Rhestr chwarae newydd</string>
     <string name="save">Cadw</string>
     <string name="cancel">Diddymu</string>
@@ -69,6 +76,7 @@
     <string name="delete_warning">Bydd hyn yn dileu delweddau wedi\'u cadw dros dro</string>
     <string name="new_photo">Dewis lun o\'r oriel</string>
     <string name="use_default">Defnyddio llun rhagosodedig</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">Chwarae</string>
     <string name="context_menu_play_next">Chwarae\'r nesaf</string>
     <string name="context_menu_play_album">Chwarae casgliad</string>
@@ -81,6 +89,7 @@
     <string name="context_menu_use_as_ringtone">Defnyddio fel tôn canu</string>
     <string name="context_menu_remove_from_playlist">Tynnu o\'r rhestr chwarae</string>
     <string name="context_menu_change_image">Newid llun</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">Chwarae</string>
     <string name="accessibility_pause">Seibio</string>
     <string name="accessibility_next">Nesaf</string>
@@ -90,7 +99,9 @@
     <string name="accessibility_repeat">Ailchwarae</string>
     <string name="accessibility_repeat_all">Ailchwarae\'r cwbl</string>
     <string name="accessibility_repeat_one">Ailchwarae un</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">Gosodwyd \'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' fel y tôn caniad</string>
+    <!-- Settings -->
     <string name="settings_storage_category">Storfa</string>
     <string name="settings_delete_cache_title">Dileu\'r cof dros dro</string>
     <string name="settings_delete_cache_summary">Dileu pob delwedd wedi\'i chadw dros dro</string>
@@ -101,9 +112,11 @@
     <string name="settings_show_lyrics_summary">Ar gyfer caneuon sydd gyda ffeil srt</string>
     <string name="settings_shake_to_play">Ysgwyd i Chwarae</string>
     <string name="settings_shake_to_play_summary">Ysgwyd dy ddyfais i chwarae\'r trac nesaf</string>
+    <!-- App widget -->
     <string name="app_widget_small">Cerddoriaeth: 4 \u00d7 1</string>
     <string name="app_widget_large">Cerddoriaeth 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Cerddoriaeth 4 \u00d7 2 (amgen)</string>
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">Methwyd ag agor y cydraddolydd.</string>
     <string name="empty_recent_main">Dim traciau diweddar</string>
     <string name="empty_recent">Bydd traciau rwyt wedi gwrando arnynt yn ddiweddar yn ymddangos yma.</string>
@@ -118,6 +131,7 @@
     <string name="empty_queue_main">Does dim traciau yn y ciw chwarae</string>
     <string name="empty_queue_secondary">I ychwanegu traciau i dy Giw Chwarae, tapia\'r ddewislen dewisiadau ar drac, casgliad neu artist a dewis \"Ychwanegu i\'r ciw\".</string>
     <string name="error_playing_track">Methu â chwarae trac %1$s</string>
+    <!-- Section Headers -->
     <string name="header_unknown_year">Blwyddyn anhysbys</string>
     <string name="header_less_than_30s">Byrrach na 30 eiliad</string>
     <string name="header_30_to_60_seconds">30 i 60 eiliad</string>

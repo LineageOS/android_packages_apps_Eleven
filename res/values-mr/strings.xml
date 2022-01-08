@@ -18,13 +18,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">संगीत</string>
+    <!-- Page titles -->
     <string name="page_artists">कलाकार</string>
     <string name="page_albums">अल्बम्स</string>
     <string name="page_songs">गाणी</string>
     <string name="page_playlists">प्लेलिस्ट</string>
     <string name="page_play_queue">प्ले रांग</string>
+    <!-- Section Headers -->
     <string name="header_albums">अल्बम्स</string>
     <string name="header_all_songs">सर्व गाणी</string>
+    <!-- Option menu items -->
     <string name="menu_settings">सेटिंग्ज</string>
     <string name="menu_shuffle_item">शफल</string>
     <string name="menu_shuffle_all">सर्व शफल करा</string>
@@ -39,9 +42,11 @@
     <string name="menu_clear_queue">रांग साफ करा</string>
     <string name="menu_save_queue">रांग प्लेलिस्टमध्ये जतन करा</string>
     <string name="menu_equalizer">संतुलक</string>
+    <!-- Playlist items -->
     <string name="add_to_playlist">प्लेलिस्टमध्ये जोडा</string>
     <string name="add_to_queue">रांगेत जोडा</string>
     <string name="remove_from_queue">रांगेतून काढा</string>
+    <!-- Sort orders -->
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
     <string name="sort_order_entry_artist">कलाकार</string>
@@ -51,9 +56,11 @@
     <string name="sort_order_entry_number_of_songs">गाण्यांची संख्या</string>
     <string name="sort_order_entry_number_of_albums">अल्बम्सची संख्या</string>
     <string name="sort_order_entry_filename">फाइलनाव</string>
+    <!-- Default playlist names -->
     <string name="playlist_last_added">शेवटचे जोडले</string>
     <string name="playlist_recently_played">अलीकडेच प्ले केले</string>
     <string name="playlist_top_tracks">माझे सर्वोच्च ट्रॅक्स</string>
+    <!-- AlertDialog items -->
     <string name="new_playlist">नवीन प्लेलिस्ट</string>
     <string name="save">जतन करा</string>
     <string name="cancel">रद्द करा</string>
@@ -69,6 +76,7 @@
     <string name="delete_warning">यामुळे कॅशे केलेल्या प्रतिमा प्रविष्ठी कायमस्वरूपी हटवल्या जातील</string>
     <string name="new_photo">गॅलरीमधून फोटो निवडा</string>
     <string name="use_default">डिफॉल्ट फोटो वापरा</string>
+    <!-- Context menu items -->
     <string name="context_menu_play_selection">प्ले करा</string>
     <string name="context_menu_play_next">पुढील प्ले करा</string>
     <string name="context_menu_play_album">अल्बम प्ले करा</string>
@@ -81,6 +89,7 @@
     <string name="context_menu_use_as_ringtone">रींग टोन म्हणून वापरा</string>
     <string name="context_menu_remove_from_playlist">प्लेलिस्टतून काढा</string>
     <string name="context_menu_change_image">प्रतिमा बदला</string>
+    <!-- Content descriptions -->
     <string name="accessibility_play">प्ले करा</string>
     <string name="accessibility_pause">विराम द्या</string>
     <string name="accessibility_next">पुढील</string>
@@ -90,7 +99,9 @@
     <string name="accessibility_repeat">पुनरावृत्ती</string>
     <string name="accessibility_repeat_all">सर्व पुनरावृत्ती करा</string>
     <string name="accessibility_repeat_one">एक पुनरावृत्ती करा</string>
+    <!-- Toast messages -->
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' रींग टोन म्हणून सेट करा</string>
+    <!-- Settings -->
     <string name="settings_storage_category">संचयन</string>
     <string name="settings_delete_cache_title">कॅशे हटवा</string>
     <string name="settings_delete_cache_summary">सर्व कॅशे केलेल्या प्रतिमा काढा</string>
@@ -100,14 +111,16 @@
     <string name="settings_show_lyrics_summary">srt फाइल असलेल्या गाण्यांसाठी</string>
     <string name="settings_shake_to_play">प्ले करण्यासाठी हलवा</string>
     <string name="settings_shake_to_play_summary">पुढील गाणे प्ले करण्यासाठी तुमचे डिव्हाइस हलवा</string>
+    <!-- App widget -->
     <string name="app_widget_small">संगीत: 4 \u00d7 1</string>
     <string name="app_widget_large">संगीत: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">संगीत: 4 \u00d7 2 (पर्यायी)</string>
+    <!-- Empty list / error messages -->
     <string name="no_effects_for_you">इक्वेलायझर उघडता आला नाही.</string>
     <string name="empty_recent_main">हल्लीची गाणी नाहीत</string>
     <string name="empty_recent">तुम्ही अलीकडेच ऐकलेली गाणी इथे दाखवली जातील.</string>
     <string name="empty_playlist_main">प्लेलिस्टमध्ये गाणी नाहीत</string>
-    <string name="empty_playlist_secondary">प्लेलिस्टमध्ये गाणी जोडण्यासाठी, गाणे, अल्बम किंवा कलाकारावरील पर्याय मेनू टॅप करा आणि \"प्लेलिस्टमध्ये जोडा\" निवडा.</string>
+    <string name="empty_playlist_secondary">प्लेलिस्टमध्ये गाणी जोडण्यासाठी, गाणे, अल्बम किंवा कलाकारावरील पर्याय मेनू टॅप करा आणि \&quot;प्लेलिस्टमध्ये जोडा\&quot; निवडा.</string>
     <string name="empty_top_tracks_main">सर्वोच्च ट्रॅक्स नाहीत</string>
     <string name="empty_top_tracks_secondary">तुम्ही जी गाणी सर्वाधिक ऐकता ती या यादीमध्ये जोडली जातील.</string>
     <string name="empty_last_added_main">कोणतीही गाणी अलीकडे जोडलेली नाहीत</string>
@@ -115,8 +128,9 @@
     <string name="empty_generic_main">कोणतेही संगीत सापडले नाही</string>
     <string name="empty_generic_secondary">तुमच्या कॉम्प्युटरवरून तुमच्या डिव्हाइसला कॉपी करण्यासाठी, एक USB केबल वापरा.</string>
     <string name="empty_queue_main">प्ले रांगेमध्ये गाणी नाहीत</string>
-    <string name="empty_queue_secondary">प्ले रांगेमध्ये गाणी जोडण्यासाठी, गाणे, अल्बम किंवा कलाकारावरील पर्याय मेनू टॅप करा आणि \"प्ले रांगेमध्ये जोडा\" निवडा.</string>
+    <string name="empty_queue_secondary">प्ले रांगेमध्ये गाणी जोडण्यासाठी, गाणे, अल्बम किंवा कलाकारावरील पर्याय मेनू टॅप करा आणि \&quot;प्ले रांगेमध्ये जोडा\&quot; निवडा.</string>
     <string name="error_playing_track">ट्रॅक प्ले करण्यात अक्षम %1$s</string>
+    <!-- Section Headers -->
     <string name="header_unknown_year">अज्ञात वर्ष</string>
     <string name="header_less_than_30s">30 सेकंदांहून कमी</string>
     <string name="header_30_to_60_seconds">30 - 60 सेकंद</string>
@@ -133,6 +147,6 @@
     <string name="header_5_to_9_songs">5 - 9 गाणी</string>
     <string name="header_10_plus_songs">10+ गाणी</string>
     <string name="header_5_plus_albums">5+ अल्बम्स</string>
-    <string name="header_other">""इतर""</string>
+    <string name="header_other">"&quot;इतर&quot;"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>
