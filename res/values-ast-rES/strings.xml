@@ -96,6 +96,7 @@
     <string name="settings_delete_cache_summary">Desanicia toles imáxenes na caché</string>
     <string name="settings_general_category">Xeneral</string>
     <string name="settings_show_music_visualization_title">Amosar visualización musical</string>
+    <string name="settings_use_blur_title">Desenfocar el fondu</string>
     <string name="settings_show_lyrics_title">Amosar les lletres de les canciones</string>
     <string name="settings_show_lyrics_summary">Pa canciones que tengan un ficheru srt</string>
     <string name="settings_shake_to_play">Xiringar pa reproducir</string>
