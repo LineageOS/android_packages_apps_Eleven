@@ -110,6 +110,7 @@
     <string name="settings_delete_cache_summary">إزالة كافة الصور المخزنة مؤقتاً</string>
     <string name="settings_general_category">عام</string>
     <string name="settings_show_music_visualization_title">إظهار المرئيات مع الموسيقى</string>
+    <string name="settings_use_blur_title">خلفية ضبابية</string>
     <string name="settings_show_lyrics_title">عرض كلمات الأغاني</string>
     <string name="settings_show_lyrics_summary">للأغاني التي تحتوي على ملف srt</string>
     <string name="settings_shake_to_play">هز للتشغيل</string>

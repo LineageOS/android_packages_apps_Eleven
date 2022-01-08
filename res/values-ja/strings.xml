@@ -110,6 +110,7 @@
     <string name="settings_delete_cache_summary">すべてのキャッシュされた画像を削除する</string>
     <string name="settings_general_category">全般</string>
     <string name="settings_show_music_visualization_title">音楽の視覚エフェクトを表示</string>
+    <string name="settings_use_blur_title">背景のぼかし</string>
     <string name="settings_show_lyrics_title">歌詞を表示</string>
     <string name="settings_show_lyrics_summary">srtファイルがある曲向け</string>
     <string name="settings_shake_to_play">シェイクで再生</string>

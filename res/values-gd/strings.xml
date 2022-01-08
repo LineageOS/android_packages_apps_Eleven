@@ -18,7 +18,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Ceòl</string>
-    <string name="page_recent">O chionn ghoirid</string>
+    <string name="page_recent">O chionn goirid</string>
     <string name="page_artists">Luchd-ciùil</string>
     <string name="page_albums">Albaman</string>
     <string name="page_songs">Òrain</string>
@@ -36,18 +36,18 @@
     <string name="menu_shuffle_album">Cuir an t-albam air thuaiream</string>
     <string name="menu_shuffle_artist">Cuir an neach-ciùil air thuaiream</string>
     <string name="menu_shuffle_top_tracks">Cuir brod nan òran air thuaiream</string>
-    <string name="menu_shuffle_recent">Cuir na chaidh a chluich o chionn ghoirid air thuaiream</string>
-    <string name="menu_shuffle_last_added">Cuir an fheadhainn a chuir thu ris o chionn ghoirid air thuaiream</string>
+    <string name="menu_shuffle_recent">Cuir na chaidh a chluich o chionn goirid air thuaiream</string>
+    <string name="menu_shuffle_last_added">Cuir na chuir thu ris mu dheireadh air thuaiream</string>
     <string name="menu_play_all">Cluich na h-uile</string>
     <string name="menu_sort_by">Seòrsaich a-rèir</string>
     <string name="menu_clear_list">Falamhaich an liosta</string>
-    <string name="menu_clear_recents">Falamhaich na chluich thu o chionn ghoirid</string>
+    <string name="menu_clear_recents">Falamhaich na chluich thu o chionn goirid</string>
     <string name="menu_clear_queue">Falamhaich an ciutha</string>
     <string name="menu_save_queue">Sàbhail an ciutha ann an liosta-chluich</string>
     <string name="menu_equalizer">Cothromaiche</string>
     <string name="add_to_playlist">Cuir ri liosta-chluich</string>
     <string name="add_to_queue">Cuir ris a’ chiutha</string>
-    <string name="remove_from_recent">Thoir air falbh o na chluich thu o chionn ghoirid</string>
+    <string name="remove_from_recent">Thoir air falbh o na chluich thu o chionn goirid</string>
     <string name="remove_from_queue">Thoir air falbh on chiutha</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -60,8 +60,8 @@
     <string name="sort_order_entry_number_of_songs">Co mheud òran</string>
     <string name="sort_order_entry_number_of_albums">Co mheud albam</string>
     <string name="sort_order_entry_filename">Ainm an fhaidhle</string>
-    <string name="playlist_last_added">Fear mu dheireadh a chuir thu ris</string>
-    <string name="playlist_recently_played">Air a chluich o chionn ghoirid</string>
+    <string name="playlist_last_added">Na chuir thu ris mu dheireadh</string>
+    <string name="playlist_recently_played">Air a chluich o chionn goirid</string>
     <string name="playlist_top_tracks">Brod nan traca agam</string>
     <string name="new_playlist">Liosta-chluich ùr</string>
     <string name="save">Sàbhail</string>
@@ -72,13 +72,13 @@
     <string name="create_playlist_prompt">Ainm na liosta-chluich</string>
     <string name="delete_dialog_title">A bheil thu airson <xliff:g id="item" example="album">%s</xliff:g> a sguabadh às?</string>
     <string name="clear_top_tracks_title">A bheil thu airson brod nan traca fhalamhachadh?</string>
-    <string name="clear_recent_title">A bheil thu airson na chluich thu o chionn ghoirid fhalamhachadh?</string>
-    <string name="clear_last_added">A bheil thu airson am fear mu dheireadh a chuir thu ris fhalamhachadh?</string>
+    <string name="clear_recent_title">Am falamhaich thu na chluich thu o chionn goirid?</string>
+    <string name="clear_last_added">A bheil thu airson na chuir thu ris mu dheireadh fhalamhachadh?</string>
     <string name="cannot_be_undone">Chan urrainn dhut seo a neo-dhèanamh</string>
     <string name="delete_warning">Sguabaidh seo às na dealbhan gu buan a chaidh a chur san tasgadan</string>
     <string name="new_photo">Tagh dealbh on ghailearaidh</string>
     <string name="google_search">Lorg Google</string>
-    <string name="use_default">Cleachd an dealbh tùsail</string>
+    <string name="use_default">Cleachd an dealbh bunaiteach</string>
     <string name="old_photo">Cleachd seann-dealbh</string>
     <string name="context_menu_play_selection">Cluich</string>
     <string name="context_menu_play_next">Cluich an ath-fhear</string>
@@ -88,7 +88,7 @@
     <string name="context_menu_delete">Sguab às</string>
     <string name="context_menu_fetch_album_art">Faigh obair-ealain an albaim</string>
     <string name="context_menu_fetch_artist_image">Faigh dealbh an neach-chiùil</string>
-    <string name="context_menu_remove_from_recent">Thoir air falbh o na chluich thu o chionn ghoirid</string>
+    <string name="context_menu_remove_from_recent">Thoir air falbh o na chluich thu o chionn goirid</string>
     <string name="context_menu_use_as_ringtone">Cleachd mar sheirm</string>
     <string name="context_menu_remove_from_playlist">Thoir air falbh on liosta-chluich</string>
     <string name="context_menu_change_image">Atharraich an dealbh</string>
@@ -103,13 +103,14 @@
     <string name="accessibility_repeat_one">Ath-chluich aonan</string>
     <string name="accessibility_queue">Fosgail an ciutha</string>
     <string name="accessibility_browse">Rùraich an ceòl</string>
-    <string name="set_as_ringtone">Suidhich “<xliff:g id="name" example="Alarm Bell">%s</xliff:g>” mar sheirm</string>
+    <string name="set_as_ringtone">Chaidh “<xliff:g id="name" example="Alarm Bell">%s</xliff:g>” a shuidheachadh mar sheirm</string>
     <string name="playlist_renamed">Chaidh ainm ùr a thoirt air an liosta-chluich</string>
     <string name="settings_storage_category">Stòras</string>
     <string name="settings_delete_cache_title">Sguab an tasgadan às</string>
     <string name="settings_delete_cache_summary">Thoir air falbh gach dealbh san tasgadan</string>
     <string name="settings_general_category">Coitcheann</string>
     <string name="settings_show_music_visualization_title">Seall fir-chlis a’ chiùil</string>
+    <string name="settings_use_blur_title">Cuir sgleò air a’ chùlaibh</string>
     <string name="settings_show_lyrics_title">Seall faclan nan òran</string>
     <string name="settings_show_lyrics_summary">Airson òrain aig a bheil faidhle srt</string>
     <string name="settings_shake_to_play">Crath airson cluich</string>
@@ -117,25 +118,25 @@
     <string name="app_widget_small">Ceòl: 4 \u00d7 1</string>
     <string name="app_widget_large">Ceòl: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Ceòl: 4 \u00d7 2 (roghainn eile)</string>
-    <string name="app_widget_recent">Ceòl: Air èisteachd o chionn ghoirid</string>
+    <string name="app_widget_recent">Ceòl: Air èisteachd o chionn goirid</string>
     <string name="no_effects_for_you">Cha b’ urrainn dhuinn an cothromaiche fhosgladh.</string>
     <string name="empty_music">Cleachd càball USB airson lethbhreac dhen cheòl air a’ choimpiutair agad a chur air an uidheam agad.</string>
     <string name="empty_favorite">Nochdaidh òrain a chomharraich thu mar annsachdan an-seo.</string>
-    <string name="empty_recent_main">Cha do chluich thu òran o chionn ghoirid</string>
-    <string name="empty_recent">Nochdaidh òrain ris an do dh’èist thu o chionn ghoirid an-seo.</string>
+    <string name="empty_recent_main">Cha do chluich thu òran o chionn goirid</string>
+    <string name="empty_recent">Nochdaidh òrain ris an do dh’èist thu o chionn goirid an-seo.</string>
     <string name="empty_playlist_main">Chan eil òran sam bith air an liosta-chluich</string>
     <string name="empty_playlist_secondary">Airson òrain a chur ris an liosta-chluich seo, thoir gnogag air clàr-taice nan roghainnean aig òran, albam no neach-ciùil agus tagh “Cuir ri liosta-chluich”.</string>
     <string name="empty_top_tracks_main">Chan eil brod traca agad</string>
     <string name="empty_top_tracks_secondary">Thèid na h-òrain ris an èist thu gu tric a chur ris an liosta seo.</string>
-    <string name="empty_last_added_main">Cha deach òran sam bith a chur ris o chionn ghoirid</string>
+    <string name="empty_last_added_main">Cha deach òran sam bith a chur ris o chionn goirid</string>
     <string name="empty_last_added">Nochdaidh òrain an-seo a chuir thu ris thairis air a’ mhìos seo chaidh.</string>
     <string name="empty_generic_main">Cha deach ceòl a lorg</string>
     <string name="empty_generic_secondary">Cleachd càball USB airson lethbhreac dhen cheòl air a’ choimpiutair agad a chur air an uidheam agad.</string>
     <string name="empty_queue_main">Chan eil òran sam bith sa chiutha</string>
-    <string name="empty_queue_secondary">Airson òrain a chur ris a’ chiutha chluich, thoir gnogag air clàr-taice nan roghainnean aig òran, albam no neach-ciùil agus tagh “Cuir ris a’ chiutha chluich”.</string>
+    <string name="empty_queue_secondary">Airson òrain a chur ris a’ chiutha chluich, thoir gnogag air clàr-taice nan roghainnean aig òran, albam no neach-ciùil agus tagh “Cuir ris a’ chiutha”.</string>
     <string name="error_playing_track">Cha ghabh an traca %1$s a chluich</string>
     <string name="header_unknown_year">Bliadhna neo-aithnichte</string>
-    <string name="header_less_than_30s">Nas lugha na 30 diog</string>
+    <string name="header_less_than_30s">Nas giorra na 30 diog</string>
     <string name="header_30_to_60_seconds">Eadar 30 is 60 diog</string>
     <string name="header_1_to_2_minutes">Eadar mionaid is 2 mhionaid</string>
     <string name="header_2_to_3_minutes">Eadar 2 is 3 mionaidean</string>

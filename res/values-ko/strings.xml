@@ -120,7 +120,7 @@
     <string name="app_widget_large_alt">음악: 4 \u00d7 2 (다른 배치)</string>
     <string name="app_widget_recent">음악: 최근에 들은 곡</string>
     <string name="no_effects_for_you">이퀄라이저를 열 수 없습니다.</string>
-    <string name="empty_music">컴퓨터에서 기기로 음악을 복사하려면 USB 케이블을 사용하십시오.</string>
+    <string name="empty_music">컴퓨터에서 기기로 음악을 복사하려면 USB 케이블을 사용하세요.</string>
     <string name="empty_favorite">즐겨찾기에 추가한 음악들이 여기에 표시됩니다.</string>
     <string name="empty_recent_main">최근에 재생된 곡 없음</string>
     <string name="empty_recent">최근에 들은 음악들이 여기에 표시됩니다.</string>
@@ -131,7 +131,7 @@
     <string name="empty_last_added_main">최근에 추가된 곡 없음</string>
     <string name="empty_last_added">지난 한 달 동안 추가된 음악들이 여기에 표시됩니다.</string>
     <string name="empty_generic_main">음악 없음</string>
-    <string name="empty_generic_secondary">컴퓨터에서 기기로 음악을 복사하려면 USB 케이블을 사용하십시오.</string>
+    <string name="empty_generic_secondary">컴퓨터에서 기기로 음악을 복사하려면 USB 케이블을 사용하세요.</string>
     <string name="empty_queue_main">대기열에 노래 없음</string>
     <string name="empty_queue_secondary">노래를 재생 대기열에 추가하려면 노래, 앨범, 또는 아티스트의 옵션 메뉴를 탭하여 연 뒤 \"대기열에 추가\"를 선택하십시오.</string>
     <string name="error_playing_track">%1$s 트랙을 재생할 수 없음</string>
