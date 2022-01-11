@@ -110,6 +110,8 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
     private Drawable mActionBarBackground;
 
+    private boolean mRequestingPermissions;
+
     /**
      * Called when all requirements (like permissions) are satisfied and we are ready
      * to initialize the app.
@@ -141,10 +143,21 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
                 ContextCompat.getColor(this, R.color.background_color));
         // Initialize the bottom action bar
         initBottomActionBar();
+
+        // if we are requesting permissions on app launch, we skip binding
+        // at onStart() and need to bind after we got permissions and call init()
+        // to ensure the UI is properly set up.
+        if (mRequestingPermissions) {
+            mToken = MusicUtils.bindToService(this, this);
+        }
     }
 
     public boolean isInitialized() {
         return mToken != null;
+    }
+
+    public void setRequestingPermissions(final boolean requestingPermissions) {
+        mRequestingPermissions = requestingPermissions;
     }
 
     @Override
@@ -195,8 +208,10 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
     protected void onStart() {
         super.onStart();
 
-        // Bind Eleven's service
-        mToken = MusicUtils.bindToService(this, this);
+        // Bind Eleven's service, if all permissions are granted
+        if (!mRequestingPermissions) {
+            mToken = MusicUtils.bindToService(this, this);
+        }
 
         final IntentFilter filter = new IntentFilter();
         // Play and pause changes
