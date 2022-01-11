@@ -42,7 +42,7 @@ android {
         applicationId "org.lineageos.eleven"
 
         minSdkVersion 28
-        targetSdkVersion 30
+        targetSdkVersion 31
 
         versionCode 410
         versionName '4.1.0'

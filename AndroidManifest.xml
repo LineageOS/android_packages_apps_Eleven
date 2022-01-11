@@ -24,7 +24,7 @@
 
     <uses-sdk
         android:minSdkVersion="28"
-        android:targetSdkVersion="30" />
+        android:targetSdkVersion="31" />
 
     <!-- Android Studio will complain about not being able to
          resove the symbol, but it compiles with no problem.
@@ -111,13 +111,15 @@
         <!-- Used to set options -->
         <activity
             android:name="org.lineageos.eleven.ui.activities.SettingsActivity"
+            android:exported="false"
             android:label="@string/menu_settings"
             android:theme="@style/Eleven.Theme.ActionBar.Overlay"/>
         <!-- Audio Preview -->
         <activity
             android:name=".ui.activities.preview.AudioPreviewActivity"
-            android:launchMode="singleTask"
             android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
             android:taskAffinity=""
             android:theme="@style/Theme.AudioPreview">
             <intent-filter>
@@ -195,13 +197,17 @@
                 android:resource="@xml/app_widget_large_alternate" />
         </receiver>
         <!-- Media button receiver -->
-        <receiver android:name="org.lineageos.eleven.MediaButtonIntentReceiver" >
+        <receiver
+            android:name="org.lineageos.eleven.MediaButtonIntentReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
         <!-- Used to recalculate sorting of songs based on the user's locale -->
-        <receiver android:name=".locale.LocaleChangeReceiver">
+        <receiver
+            android:name=".locale.LocaleChangeReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED"/>
             </intent-filter>
@@ -209,6 +215,7 @@
         <!-- Music service -->
         <service
             android:name="org.lineageos.eleven.MusicPlaybackService"
+            android:exported="false"
             android:label="@string/app_name"
             android:process=":main" />
     </application>
