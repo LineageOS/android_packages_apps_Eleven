@@ -533,6 +533,8 @@ public class HomeActivity extends SlidingPanelActivity implements
         }
 
         if (needRequest) {
+            setRequestingPermissions(true);
+
             int count = permissionList.size();
             if (count > 0) {
                 String[] permissionArray = new String[count];
