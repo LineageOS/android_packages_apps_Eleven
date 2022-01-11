@@ -79,28 +79,6 @@
     </issue>
 
     <issue
-        id="OldTargetApi"
-        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
-        errorLine1="        android:targetSdkVersion=&quot;30&quot; />"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="AndroidManifest.xml"
-            line="27"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="OldTargetApi"
-        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
-        errorLine1="        targetSdkVersion 30"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="build.gradle"
-            line="45"
-            column="9"/>
-    </issue>
-
-    <issue
         id="Range"
         message="Value must be ≥ 0 (was -1)"
         errorLine1="            columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID);"
@@ -399,39 +377,6 @@
             file="AndroidManifest.xml"
             line="65"
             column="6"/>
-    </issue>
-
-    <issue
-        id="IntentFilterExportedReceiver"
-        message="As of Android 12, `android:exported` must be set; use `true` to make the activity \&#xA;available to other apps, and `false` otherwise."
-        errorLine1="        &lt;activity"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="AndroidManifest.xml"
-            line="117"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="IntentFilterExportedReceiver"
-        message="As of Android 12, `android:exported` must be set; use `true` to make the activity \&#xA;available to other apps, and `false` otherwise."
-        errorLine1="        &lt;receiver android:name=&quot;org.lineageos.eleven.MediaButtonIntentReceiver&quot; >"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="AndroidManifest.xml"
-            line="198"
-            column="10"/>
-    </issue>
-
-    <issue
-        id="IntentFilterExportedReceiver"
-        message="As of Android 12, `android:exported` must be set; use `true` to make the activity \&#xA;available to other apps, and `false` otherwise."
-        errorLine1="        &lt;receiver android:name=&quot;.locale.LocaleChangeReceiver&quot;>"
-        errorLine2="         ~~~~~~~~">
-        <location
-            file="AndroidManifest.xml"
-            line="204"
-            column="10"/>
     </issue>
 
     <issue
