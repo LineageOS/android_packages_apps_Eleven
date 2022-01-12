@@ -69,6 +69,7 @@
     <string name="delete_warning">Això esborrarà permanentment les imatges de la memòria cau</string>
     <string name="new_photo">Tria una foto de la galeria</string>
     <string name="use_default">Utilitza la foto predefinida</string>
+    <string name="visualizer_perm_denied">S\'ha denegat el permís d\'enregistrament d\'àudio, activeu-lo des de l\'aplicació Configuració per activar la visualització de música</string>
     <string name="context_menu_play_selection">Reprodueix</string>
     <string name="context_menu_play_next">Reprodueix el següent</string>
     <string name="context_menu_play_album">Reprodueix àlbum</string>

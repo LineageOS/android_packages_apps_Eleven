@@ -69,6 +69,7 @@
     <string name="delete_warning">Αυτό θα διαγράψει μόνιμα τις προσωρινά αποθηκευμένες εικόνες</string>
     <string name="new_photo">Επιλέξτε φωτογραφία από τη Συλλογή</string>
     <string name="use_default">Χρήση προεπιλεγμένης φωτογραφίας</string>
+    <string name="visualizer_perm_denied">Δεν δόθηκε άδεια εγγραφής ήχου, ενεργοποιήστε την από την εφαρμογή Ρυθμίσεις για να ενεργοποιήσετε την οπτικοποίηση μουσικής</string>
     <string name="context_menu_play_selection">Αναπαραγωγή</string>
     <string name="context_menu_play_next">Αναπαραγωγή επόμενου</string>
     <string name="context_menu_play_album">Αναπαραγωγή άλμπουμ</string>
