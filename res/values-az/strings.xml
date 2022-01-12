@@ -16,6 +16,23 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musiqi</string>
     <string name="page_artists">Sənətkarlar</string>
@@ -69,6 +86,7 @@
     <string name="delete_warning">Bu, gizli yaddaşda olan təsvirləri birdəfəlik siləcək</string>
     <string name="new_photo">Qalereyadan foto seçin</string>
     <string name="use_default">İlkin fotodan istifadə et</string>
+    <string name="visualizer_perm_denied">Səsyazma icazəsi rədd edildi, musiqi vizuallaşdırmanı fəallaşdırmaq üçün Tənzimləmələrdən fəallaşdırın</string>
     <string name="context_menu_play_selection">Oynat</string>
     <string name="context_menu_play_next">Sonrakını çal</string>
     <string name="context_menu_play_album">Albomu oynat</string>
@@ -95,7 +113,7 @@
     <string name="settings_delete_cache_title">Gizli yaddaşı sil</string>
     <string name="settings_delete_cache_summary">Gizli yaddaşdakı bütün təsvirləri sil</string>
     <string name="settings_general_category">Ümumi</string>
-    <string name="settings_show_music_visualization_title">Musiqi əyaniləşdiricini göstər</string>
+    <string name="settings_show_music_visualization_title">Musiqi vizuallaşdırıcını göstər</string>
     <string name="settings_use_blur_title">Bulanıq arxaplan</string>
     <string name="settings_show_lyrics_title">Mahnı sözlərini göstər</string>
     <string name="settings_show_lyrics_summary">srt faylı olan mahnılar üçün</string>

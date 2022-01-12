@@ -16,6 +16,23 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Música</string>
     <string name="page_artists">Artistas</string>
@@ -96,6 +113,7 @@
     <string name="settings_delete_cache_summary">Eliminar todas las imágenes almacenadas</string>
     <string name="settings_general_category">General</string>
     <string name="settings_show_music_visualization_title">Mostrar visualización musical</string>
+    <string name="settings_use_blur_title">Desenfocar el fondo</string>
     <string name="settings_show_lyrics_title">Mostrar las letras de las canciones</string>
     <string name="settings_show_lyrics_summary">Para canciones que tienen un archivo srt</string>
     <string name="settings_shake_to_play">Agitar para reproducir</string>

@@ -16,6 +16,23 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">音乐</string>
     <string name="page_artists">艺术家</string>
@@ -69,6 +86,7 @@
     <string name="delete_warning">这将永久删除缓存的图像</string>
     <string name="new_photo">从图库中选择照片</string>
     <string name="use_default">使用默认照片</string>
+    <string name="visualizer_perm_denied">录音权限被拒绝，从设置中启用它以启用音乐可视化</string>
     <string name="context_menu_play_selection">播放</string>
     <string name="context_menu_play_next">播放下一首</string>
     <string name="context_menu_play_album">播放专辑</string>

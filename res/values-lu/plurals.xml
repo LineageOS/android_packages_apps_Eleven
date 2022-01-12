@@ -33,35 +33,35 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <plurals name="Nalbums">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> álbum</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> álbumes</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> Album</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> Alben</item>
     </plurals>
     <plurals name="Nsongs">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> canción</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> canciones</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> Lidd</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> Lidder</item>
     </plurals>
     <plurals name="Nhours">
-        <item quantity="one"><xliff:g id="hours">%d</xliff:g>h</item>
-        <item quantity="other"><xliff:g id="hours">%d</xliff:g>h</item>
+        <item quantity="one"><xliff:g id="hours">%d</xliff:g> St.</item>
+        <item quantity="other"><xliff:g id="hours">%d</xliff:g> St.</item>
     </plurals>
     <plurals name="Nminutes">
-        <item quantity="one"><xliff:g id="minutes">%d</xliff:g>m</item>
-        <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g> Min.</item>
+        <item quantity="other"><xliff:g id="minutes">%d</xliff:g> Min.</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> canción amestada a la llista.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> canciones amestaes a la llista.</item>
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> Lidd an d\'Ofspilllëscht dobäigesat.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> Lidder an d\'Ofspilllëscht dobäigesat.</item>
     </plurals>
     <plurals name="NNNtracksfromplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> canción desaniciada de la llista.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> canciones desaniciaes de la llista.</item>
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> Lidd vun der Ofspilllëscht geläscht.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> Lidder vun der Ofspilllëscht geläscht.</item>
     </plurals>
     <plurals name="NNNtrackstoqueue">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> canción amestada a la cola.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> canciones amestaes a la cola.</item>
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> Lidd an d\'Ofspilllëscht dobäigesat.</item>
+        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> Lidder an d\'Ofspilllëscht dobäigesat.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
-        <item quantity="one">Desanicióse <xliff:g id="songs_to_delete" example="1">%d</xliff:g> canción.</item>
-        <item quantity="other">Desaniciáronse <xliff:g id="songs_to_delete" example="1">%d</xliff:g> canciones.</item>
+        <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> Lidd gouf geläscht.</item>
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> Lidder goufe geläscht.</item>
     </plurals>
 </resources>
