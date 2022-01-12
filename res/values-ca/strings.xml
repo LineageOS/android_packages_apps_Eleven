@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Música</string>
-    <string name="page_recent">Recent</string>
     <string name="page_artists">Artistes</string>
     <string name="page_albums">Àlbums</string>
     <string name="page_songs">Cançons</string>
     <string name="page_playlists">Llistes de reproducció</string>
-    <string name="page_genres">Gèneres</string>
-    <string name="page_now_playing">Ara sona</string>
     <string name="page_play_queue">Reprodueix cua</string>
     <string name="header_albums">Àlbums</string>
-    <string name="header_top_songs">Cançons més escoltades</string>
     <string name="header_all_songs">Totes les cançons</string>
     <string name="menu_settings">Configuració</string>
     <string name="menu_shuffle_item">Barreja</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Barreja els temes més escoltats</string>
     <string name="menu_shuffle_recent">Barreja els reproduïts recentment</string>
     <string name="menu_shuffle_last_added">Barreja els darrers afegits</string>
-    <string name="menu_play_all">Reprodueix tot</string>
     <string name="menu_sort_by">Ordena per</string>
     <string name="menu_clear_list">Neteja la llista</string>
-    <string name="menu_clear_recents">Neteja els recents</string>
     <string name="menu_clear_queue">Neteja la cua</string>
     <string name="menu_save_queue">Desa-ho en cua a la llista de reproducció</string>
     <string name="menu_equalizer">Equalitzador</string>
     <string name="add_to_playlist">Afegeix a la llista de reproducció</string>
     <string name="add_to_queue">Afegeix a la cua</string>
-    <string name="remove_from_recent">Treu dels recents</string>
     <string name="remove_from_queue">Treu de la cua</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Àlbum</string>
     <string name="sort_order_entry_year">Any</string>
     <string name="sort_order_entry_duration">Duració</string>
-    <string name="sort_order_entry_date_added">Data d\'addició</string>
-    <string name="sort_order_entry_track_list">Llista de pistes</string>
     <string name="sort_order_entry_number_of_songs">Nombre de cançons</string>
     <string name="sort_order_entry_number_of_albums">Nombre d\'àlbums</string>
     <string name="sort_order_entry_filename">Nom del fitxer</string>
@@ -77,9 +68,8 @@
     <string name="cannot_be_undone">Això no es podrà desfer</string>
     <string name="delete_warning">Això esborrarà permanentment les imatges de la memòria cau</string>
     <string name="new_photo">Tria una foto de la galeria</string>
-    <string name="google_search">Cerca a Google</string>
     <string name="use_default">Utilitza la foto predefinida</string>
-    <string name="old_photo">Utilitza la foto antiga</string>
+    <string name="visualizer_perm_denied">S\'ha denegat el permís d\'enregistrament d\'àudio, activeu-lo des de l\'aplicació Configuració per activar la visualització de música</string>
     <string name="context_menu_play_selection">Reprodueix</string>
     <string name="context_menu_play_next">Reprodueix el següent</string>
     <string name="context_menu_play_album">Reprodueix àlbum</string>
@@ -101,10 +91,7 @@
     <string name="accessibility_repeat">Repeteix</string>
     <string name="accessibility_repeat_all">Repeteix tot</string>
     <string name="accessibility_repeat_one">Repeteix un</string>
-    <string name="accessibility_queue">Obre la cua</string>
-    <string name="accessibility_browse">Navega per la música</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' establert com a to de trucada</string>
-    <string name="playlist_renamed">Llista de reproducció reanomenada</string>
     <string name="settings_storage_category">Emmagatzematge</string>
     <string name="settings_delete_cache_title">Esborra memòria cau</string>
     <string name="settings_delete_cache_summary">Treu totes les imatges de la memòria cau</string>
@@ -118,10 +105,7 @@
     <string name="app_widget_small">Música: 4 \u00d7 1</string>
     <string name="app_widget_large">Música: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Música: 4 \u00d7 2 (alternatiu)</string>
-    <string name="app_widget_recent">Música: recentment escoltada</string>
     <string name="no_effects_for_you">L\'equalitzador no s\'ha pogut obrir.</string>
-    <string name="empty_music">Per copiar música del teu ordenador al teu dispositiu, utilitza un cable USB.</string>
-    <string name="empty_favorite">Les cançons que marquis com a preferides es mostraran aquí.</string>
     <string name="empty_recent_main">Cap cançó recent</string>
     <string name="empty_recent">Les cançons que has escoltat recentment apareixeran aquí.</string>
     <string name="empty_playlist_main">Sense cançons a la llista de reproducció</string>
@@ -152,14 +136,6 @@
     <string name="header_10_plus_songs">10+ cançons</string>
     <string name="header_5_plus_albums">5+ àlbums</string>
     <string name="header_other">"Altres"</string>
-    <string name="footer_search_artists">Mostra tots els artistes</string>
-    <string name="footer_search_albums">Mostra tots els àlbums</string>
-    <string name="footer_search_songs">Mostra totes les cançons</string>
-    <string name="footer_search_playlists">Mostra totes les llistes de reproducció</string>
-    <string name="search_title_artists">Tots els artistes de \"%s\"</string>
-    <string name="search_title_albums">Tots els àlbums de \"%s\"</string>
-    <string name="search_title_songs">Totes les cançons de \"%s\"</string>
-    <string name="search_title_playlists">Totes les llistes de reproducció de \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Reproducció de música</string>
 </resources>

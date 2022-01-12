@@ -16,12 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one">אמן <xliff:g id="count">%d</xliff:g></item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> אמנים</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> אמנים</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> אמנים</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one">אלבום <xliff:g id="count">%d</xliff:g></item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> אלבומים</item>
@@ -33,12 +27,6 @@
         <item quantity="two"><xliff:g id="count">%d</xliff:g> שירים</item>
         <item quantity="many"><xliff:g id="count">%d</xliff:g> שירים</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> שירים</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one">ז\'אנר <xliff:g id="count">%d</xliff:g></item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> ז\'אנרים</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> ז\'אנרים</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ז\'אנרים</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one">ש\' <xliff:g id="hours">%d</xliff:g></item>
@@ -69,12 +57,6 @@
         <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לתור ההשמעה.</item>
         <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לתור ההשמעה.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לתור ההשמעה.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one">שיר <xliff:g id="number" example="1">%d</xliff:g> נוסף למועדפים.</item>
-        <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו למועדפים.</item>
-        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו למועדפים.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו למועדפים.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one">שיר <xliff:g id="songs_to_delete" example="1">%d</xliff:g> נמחק.</item>

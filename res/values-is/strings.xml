@@ -28,8 +28,4 @@
     <string name="empty_queue_secondary">Til að bæta lögum í spilunarbiðröðina þína, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta í biðröð\".</string>
     <string name="error_playing_track">Get ekki spilað lagið %1$s</string>
     <string name="header_5_plus_albums">5+ hljómplötur</string>
-    <string name="footer_search_artists">Birta alla flytjendur</string>
-    <string name="footer_search_albums">Birta allar hljómplötur</string>
-    <string name="search_title_artists">Allir \"%s\" flytjendur</string>
-    <string name="search_title_albums">Allar \"%s\" hljómplötur</string>
 </resources>

@@ -16,10 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> изпълнител</item>
-        <item quantity="other"><xliff:g id="count">%d </xliff:g> изпълнители</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> албум</item>
         <item quantity="other"><xliff:g id="count">%d </xliff:g> албума</item>
@@ -27,10 +23,6 @@
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d </xliff:g> песен</item>
         <item quantity="other"><xliff:g id="count">%d </xliff:g> песни</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> жанр</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> жанра</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g> ч</item>
@@ -51,10 +43,6 @@
     <plurals name="NNNtrackstoqueue">
         <item quantity="one"><xliff:g id="number" example="1">%d </xliff:g> песен е добавена към опашката.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> песни са добавени към опашката.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d </xliff:g> песен е добавена към \"Предпочитани\".</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d </xliff:g> песни са добавени към \"Предпочитани\".</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d </xliff:g> песен е изтрита.</item>

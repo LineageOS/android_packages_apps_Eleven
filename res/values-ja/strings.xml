@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">音楽</string>
-    <string name="page_recent">最近の曲</string>
     <string name="page_artists">アーティスト</string>
     <string name="page_albums">アルバム</string>
     <string name="page_songs">曲</string>
     <string name="page_playlists">プレイリスト</string>
-    <string name="page_genres">ジャンル</string>
-    <string name="page_now_playing">再生中 </string>
     <string name="page_play_queue">再生キュー</string>
     <string name="header_albums">アルバム</string>
-    <string name="header_top_songs">トップ曲</string>
     <string name="header_all_songs">すべての曲</string>
     <string name="menu_settings">設定</string>
     <string name="menu_shuffle_item">シャッフル</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">トップトラックでシャッフル</string>
     <string name="menu_shuffle_recent">最近再生した曲でシャッフル</string>
     <string name="menu_shuffle_last_added">最近追加した曲でシャッフル</string>
-    <string name="menu_play_all">すべて再生</string>
     <string name="menu_sort_by">並べ替え</string>
     <string name="menu_clear_list">リストを消去</string>
-    <string name="menu_clear_recents">最近の曲を消去</string>
     <string name="menu_clear_queue">キューを消去</string>
     <string name="menu_save_queue">プレイリストにキューを保存</string>
     <string name="menu_equalizer">イコライザー</string>
     <string name="add_to_playlist">プレイリストに追加</string>
     <string name="add_to_queue">キューに追加</string>
-    <string name="remove_from_recent">最近の曲から削除</string>
     <string name="remove_from_queue">キューから削除</string>
     <string name="sort_order_entry_az">昇順</string>
     <string name="sort_order_entry_za">降順</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">アルバム</string>
     <string name="sort_order_entry_year">年</string>
     <string name="sort_order_entry_duration">再生時間</string>
-    <string name="sort_order_entry_date_added">追加日</string>
-    <string name="sort_order_entry_track_list">トラックリスト</string>
     <string name="sort_order_entry_number_of_songs">曲数</string>
     <string name="sort_order_entry_number_of_albums">アルバム数</string>
     <string name="sort_order_entry_filename">ファイル名</string>
@@ -77,9 +68,8 @@
     <string name="cannot_be_undone">この操作は元に戻せません</string>
     <string name="delete_warning">キャッシュされた画像エントリーを完全に削除します</string>
     <string name="new_photo">ギャラリーから写真を選択</string>
-    <string name="google_search">Google検索</string>
     <string name="use_default">デフォルトの写真を使用</string>
-    <string name="old_photo">以前の写真を使用</string>
+    <string name="visualizer_perm_denied">音声録音の許可が拒否されました。音楽ビジュアライザーを有効にするには設定アプリから許可を有効化して下さい。</string>
     <string name="context_menu_play_selection">再生</string>
     <string name="context_menu_play_next">次に再生</string>
     <string name="context_menu_play_album">アルバムを再生</string>
@@ -101,10 +91,7 @@
     <string name="accessibility_repeat">リピート</string>
     <string name="accessibility_repeat_all">すべてリピート</string>
     <string name="accessibility_repeat_one">1曲リピート</string>
-    <string name="accessibility_queue">キューを開く</string>
-    <string name="accessibility_browse">音楽を参照</string>
     <string name="set_as_ringtone">[<xliff:g id="name" example="Alarm Bell">%s</xliff:g>]を着信音として設定しました</string>
-    <string name="playlist_renamed">プレイリスト名を変更しました</string>
     <string name="settings_storage_category">ストレージ</string>
     <string name="settings_delete_cache_title">キャッシュを削除</string>
     <string name="settings_delete_cache_summary">すべてのキャッシュされた画像を削除する</string>
@@ -118,10 +105,7 @@
     <string name="app_widget_small">音楽: 4 \u00d7 1</string>
     <string name="app_widget_large">音楽: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">音楽: 4 \u00d7 2（別バージョン）</string>
-    <string name="app_widget_recent">音楽: 最近聴いた曲</string>
     <string name="no_effects_for_you">イコライザーを開けませんでした。</string>
-    <string name="empty_music">パソコンから端末に音楽をコピーするには、USBケーブルを使用してください。</string>
-    <string name="empty_favorite">お気に入りに追加した曲がここに表示されます。</string>
     <string name="empty_recent_main">最近の曲はありません</string>
     <string name="empty_recent">最近聴いた曲がここに表示されます。</string>
     <string name="empty_playlist_main">プレイリストに曲がありません</string>
@@ -152,14 +136,6 @@
     <string name="header_10_plus_songs">10曲以上</string>
     <string name="header_5_plus_albums">5枚以上</string>
     <string name="header_other">"その他"</string>
-    <string name="footer_search_artists">すべてのアーティストを表示</string>
-    <string name="footer_search_albums">すべてのアルバムを表示</string>
-    <string name="footer_search_songs">すべての曲を表示</string>
-    <string name="footer_search_playlists">すべてのプレイリストを表示</string>
-    <string name="search_title_artists">「%s」を含むすべてのアーティスト</string>
-    <string name="search_title_albums">[%s]を含むすべてのアルバム</string>
-    <string name="search_title_songs">[%s]を含むすべての曲</string>
-    <string name="search_title_playlists">[%s]を含むすべてのプレイリスト</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g><xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">音楽の再生</string>
 </resources>

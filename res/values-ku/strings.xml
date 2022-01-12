@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">مۆسیقا</string>
-    <string name="page_recent">تازه‌کان</string>
     <string name="page_artists">هونەرمەند</string>
     <string name="page_albums">ئەلبوم</string>
     <string name="page_songs">گۆرانییەکان</string>
     <string name="page_playlists">لیستی لێدان</string>
-    <string name="page_genres">چه‌شنه‌کان</string>
-    <string name="page_now_playing">لێدانی ئێستا</string>
     <string name="page_play_queue">لێدانی ڕیزکراو</string>
     <string name="header_albums">ئەلبوم</string>
-    <string name="header_top_songs">گۆرانیەکانی لوتکە</string>
     <string name="header_all_songs">هەموو گۆرانیەکان</string>
     <string name="menu_settings">ڕێکخستن</string>
     <string name="menu_shuffle_item">ڕیزکراو</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">تراکی لوتکەی ڕیزکراو</string>
     <string name="menu_shuffle_recent">لێدراوی تازەی ڕیزکراو</string>
     <string name="menu_shuffle_last_added">ڕیزکردنەوەی تازا زیادکراو</string>
-    <string name="menu_play_all">لێدانی هه‌مووی</string>
     <string name="menu_sort_by">ڕیزکردن به‌پێی</string>
     <string name="menu_clear_list">پاکردنەوەی خشتەکە</string>
-    <string name="menu_clear_recents">پاککردنه‌وه‌ی تازه‌کان</string>
     <string name="menu_clear_queue">پاککردنه‌وه‌ی ڕیزه‌کان</string>
     <string name="menu_save_queue">پاشەکەوتکردنی ریزی ڕێزکراو بۆ لێدان</string>
     <string name="menu_equalizer">یه‌کسانکه‌ری ده‌نگ</string>
     <string name="add_to_playlist">زیادکردن بۆ لێدراوه‌کان</string>
     <string name="add_to_queue">زیادکردن بۆ ڕیزکراوه‌کان</string>
-    <string name="remove_from_recent">سڕینه‌وه‌ له‌ تازه‌کان</string>
     <string name="remove_from_queue">سڕینه‌وه‌ له‌ ڕیزه‌کان</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ئه‌لبوم</string>
     <string name="sort_order_entry_year">ساڵ</string>
     <string name="sort_order_entry_duration">ماوه‌</string>
-    <string name="sort_order_entry_date_added">ڕۆژی زیادکردنی</string>
-    <string name="sort_order_entry_track_list">لیستی تراکه‌کان</string>
     <string name="sort_order_entry_number_of_songs">ژماره‌ی گۆرانییه‌کان</string>
     <string name="sort_order_entry_number_of_albums">ژماره‌ی ئه‌لبومه‌کان</string>
     <string name="sort_order_entry_filename">ناوی په‌ڕگه‌</string>
@@ -73,9 +64,7 @@
     <string name="cannot_be_undone">ئه‌مه‌ دواتر ناتوانی بیگه‌ڕێنیته‌وه‌</string>
     <string name="delete_warning">ئه‌مه‌ واته‌ سڕینه‌وه‌ی هه‌موو وێنه‌ خه‌زنکراوه‌کان به‌ گشتی</string>
     <string name="new_photo">هه‌ڵبژاردنی وینه‌یه‌ک له‌ گه‌له‌ری</string>
-    <string name="google_search">گه‌ڕانی گۆگڵ</string>
     <string name="use_default">به‌کارهێنانی وێنه‌ی سه‌ره‌تایی</string>
-    <string name="old_photo">به‌کارهێنانی وێنه‌ی کۆن</string>
     <string name="context_menu_play_selection">لێدان</string>
     <string name="context_menu_play_next">لێدانی داهاتوو</string>
     <string name="context_menu_more_by_artist">زیاتر له‌لایه‌ن هونه‌رمه‌نده‌وه‌</string>
@@ -96,14 +85,10 @@
     <string name="accessibility_repeat_all">دووباره‌کردنه‌وه‌ی هه‌مووی</string>
     <string name="accessibility_repeat_one">دووباره‌کردنه‌وه‌ی یه‌کدانه‌</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' خستنه‌ سه‌ر زه‌نگ</string>
-    <string name="playlist_renamed">ناوی لیستی لێدان گۆڕا</string>
     <string name="settings_storage_category">بیرگەی</string>
     <string name="settings_delete_cache_title">سڕینه‌وه‌ی حه‌شارگه‌</string>
     <string name="settings_delete_cache_summary">سڕینه‌وه‌ی هه‌موو وێنه‌ حه‌شارگه‌کان</string>
-    <string name="app_widget_recent">ئه‌پۆڵۆ:تازه‌ترین که‌ گوێلێگیراون</string>
     <string name="no_effects_for_you">یه‌کسانکه‌ری ده‌نگ ناکرێته‌وه‌.</string>
-    <string name="empty_music">بۆ له‌به‌رگرتنه‌وه‌ی گۆرانی له‌ کۆمپیوته‌ر بۆ ئامێره‌که‌ت ، کێبڵی USB به‌کاربهێنه‌.</string>
-    <string name="empty_favorite">ئه‌و گۆرانیانه‌ی په‌سه‌ندن له‌لات لێره‌ نیشان ده‌درێن.</string>
     <string name="empty_recent">ئه‌و ئه‌لبومانه‌ی که‌ گوێت لێگرتوون لێره‌ نیشان ئه‌درێن ، گۆرانی لێبده‌.</string>
     <string name="empty_last_added">ئه‌و گۆرانیانه‌ی که‌ زیادکراون له‌ مانگی پێشوو لێره‌ نیشان ئه‌درێن.</string>
 </resources>

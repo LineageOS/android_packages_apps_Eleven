@@ -16,9 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Ngenres">
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> 種內容類型</item>
-    </plurals>
     <plurals name="Nhours">
         <item quantity="other"><xliff:g id="hours">%d</xliff:g> 小時</item>
     </plurals>
@@ -33,9 +30,6 @@
     </plurals>
     <plurals name="NNNtrackstoqueue">
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> 首歌曲已新增至佇列。</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> 首歌曲已新增至最愛。</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> 首歌曲已刪除。</item>

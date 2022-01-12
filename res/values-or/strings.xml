@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">ସଙ୍ଗୀତ</string>
-    <string name="page_recent">ସାମ୍ପ୍ରତିକ</string>
     <string name="page_artists">କଳାକାରଗଣ</string>
     <string name="page_albums">ଆଲବମଗୁଡିକ</string>
     <string name="page_songs">ସଙ୍ଗୀତଗୁଡିକ</string>
     <string name="page_playlists">ଚାଳନାତାଲିକା‌ଗୁଡିକ</string>
-    <string name="page_genres">ଜେନେରେସ୍‍</string>
-    <string name="page_now_playing">ବର୍ତ୍ତମାନ ଚାଳନ କରନ୍ତୁ</string>
     <string name="page_play_queue">ପ୍ଲେ ଧାଡି</string>
     <string name="header_albums">ଆଲବମଗୁଡିକ</string>
-    <string name="header_top_songs">ଶ୍ରେଷ୍ଠ ଗୀତଗୁଡିକ</string>
     <string name="header_all_songs">ସମସ୍ତ ସଂଗୀତ</string>
     <string name="menu_settings">ସେଟିଂସ୍</string>
     <string name="menu_shuffle_item">ସଫଲ୍</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">ଶୀ‍ର୍ଷ ଟ୍ରାକ୍‍  ସ୍ଥାନ ବଦଳ କରନ୍ତୁ</string>
     <string name="menu_shuffle_recent">ସମ୍ପ୍ରତି ପ୍ଲେ ସ୍ଥାନ ବଦଳ କରନ୍ତୁ</string>
     <string name="menu_shuffle_last_added">ଶେଷରେ ଯାହା ଯୋଗ ହୋଇଛି ତାହା ସ୍ଥାନ ବଦଳ କରନ୍ତୁ</string>
-    <string name="menu_play_all">ସମସ୍ତ ଚାଳନ କରନ୍ତୁ</string>
     <string name="menu_sort_by">ଦ୍ଵାରା ସର୍ଟ୍</string>
     <string name="menu_clear_list">ତାଲିକା ଖାଲି କରନ୍ତୁ</string>
-    <string name="menu_clear_recents">ସମ୍ପ୍ରତି ଖାଲି କରନ୍ତୁ</string>
     <string name="menu_clear_queue">ଧାଡି ଖାଲି କରନ୍ତୁ</string>
     <string name="menu_save_queue">ଚାଳନତାଲିକାରେ ଧାଡି ସଂରକ୍ଷଣ କରନ୍ତୁ</string>
     <string name="menu_equalizer">ସମାନକାରୀ</string>
     <string name="add_to_playlist">ଚାଳନତାଲିକାରେ ଯୋଡନ୍ତୁ</string>
     <string name="add_to_queue">ଧାଡି ଯୋଗ କରନ୍ତୁ</string>
-    <string name="remove_from_recent">ସମ୍ପ୍ରତିରୁ ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="remove_from_queue">ଧାଡିରୁ  ଅପସାରଣ କରନ୍ତୁ</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ଆଲ୍‍ବମ୍‍</string>
     <string name="sort_order_entry_year">ବ‍ର୍ଷ</string>
     <string name="sort_order_entry_duration">ଅବଧି</string>
-    <string name="sort_order_entry_date_added">ତାରିଖ ଯୋଗ କରାଯାଇଛି</string>
-    <string name="sort_order_entry_track_list">ଟ୍ରାକ୍‍ ତାଲିକା</string>
     <string name="sort_order_entry_number_of_songs">ଗୀତ ସଂଖ୍ୟା</string>
     <string name="sort_order_entry_number_of_albums">ଆଲ୍‍ବମ୍‍ ସଂଖ୍ୟା</string>
     <string name="sort_order_entry_filename">ଫାଇଲ୍‌ ନାମ</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">ଏହା ଅନ୍‍ଡନ୍‍ ହୋଇପାରିବ ନାହିଁ</string>
     <string name="delete_warning">ଏହା କ୍ୟାଚ୍‍ରେ ଥିବା ଚିତ୍ର ପ୍ରବେଶ ‍ସ୍ଥାୟୀ ଭାବେ ବିଲୋପ କରିଦେବ</string>
     <string name="new_photo">ଗ୍ୟାଲେରୀରୁ ଫଟୋ ପରିବର୍ତ୍ତନ କରନ୍ତୁ</string>
-    <string name="google_search">Google ସନ୍ଧାନ</string>
     <string name="use_default">ଡିଫଲ୍ଟ ଫଟୋ ବ୍ୟବହାର କରନ୍ତୁ</string>
-    <string name="old_photo">ପୁରୁଣା ଫଟୋ ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="context_menu_play_selection">ଚଳାଅ</string>
     <string name="context_menu_play_next">ପରବର୍ତ୍ତୀ ପ୍ଲେ କରନ୍ତୁ</string>
     <string name="context_menu_play_album">ଆଲ୍‍ବମ୍‍ ପ୍ଲେ କରନ୍ତୁ</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">ପୁନରାବୃତ୍ତି</string>
     <string name="accessibility_repeat_all">ସମସ୍ତ ପୁନରାବୃତ୍ତି</string>
     <string name="accessibility_repeat_one">ଏକ ପୁନରାବୃତ୍ତି</string>
-    <string name="accessibility_queue">ଧାଡି ଖୋଲନ୍ତୁ</string>
-    <string name="accessibility_browse">ଗୀତ ବ୍ରାଉଜ୍‍ କରନ୍ତୁ</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ରିଙ୍ଗ୍‍ଟୋନ୍‍ ଭାବେ ସେଟ୍‍ କରନ୍ତୁ</string>
-    <string name="playlist_renamed">ପ୍ଲେତାଲିକା ପୁନଃନାମ ହୋଇଛି।</string>
     <string name="settings_storage_category">ଷ୍ଟୋରେଜ୍</string>
     <string name="settings_delete_cache_title">କ୍ୟାସେ ବିଲୋପ କରନ୍ତୁ</string>
     <string name="settings_delete_cache_summary">ସମସ୍ତ କ୍ୟାସେର ଚିତ୍ର ଅପସାରଣ କରନ୍ତୁ</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">ସଙ୍ଗୀତ: 4 \u00d7 1</string>
     <string name="app_widget_large">ସଙ୍ଗୀତ: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">ସଙ୍ଗୀତ: 4 \u00d7 2 (ବିକଳ୍ପ)</string>
-    <string name="app_widget_recent">ସଙ୍ଗୀତ: ସମ୍ପ୍ରତି ଶୁଣାଯାଇଥିବା</string>
     <string name="no_effects_for_you">ଇକ୍ୱାଲାଇଜର୍‍ ଖୋଲାଯାଇପାରିବ ନାହିଁ।</string>
-    <string name="empty_music">ସଙ୍ଗୀତ ଆପଣଙ୍କ କମ୍ପ୍ୟୁଟରରୁ ଆପଣଙ୍କ ଡିଭାଇସ୍‍କୁ କପି କରିବା ପାଇଁ, ଏକ USB ତାର ବ୍ୟବହାର କରନ୍ତୁ।</string>
-    <string name="empty_favorite">ଆପଣ ପସନ୍ଦିତାସମୂହ ଚିହ୍ନିତ କରିଥିବା ଗୀତଗୁଡିକ ଏଠାରେ ଦେଖାଯିବ।</string>
     <string name="empty_recent_main">କୌଣସି ସମ୍ପ୍ରତି ଗୀତ ନାହିଁ</string>
     <string name="empty_recent">ସମ୍ପ୍ରତି ଆପଣ ଶୁଣୁଥିବା ଗୀତଗୁଡିକ ଏଠାରେ ପ୍ରଦର୍ଶନ କରିବା।</string>
     <string name="empty_playlist_main">ଚାଳନତାଲିକାରେ କିଛି ଗୀତ ନାହିଁ</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ ଗୀତ</string>
     <string name="header_5_plus_albums">5+ ଆଲ୍‍ବମ୍‍</string>
     <string name="header_other">""ଅନ୍ୟାନ୍ୟ""</string>
-    <string name="footer_search_artists">ସମସ୍ତ କଳାକାର ଦେଖାନ୍ତୁ</string>
-    <string name="footer_search_albums">ସମସ୍ତ ଆଲ୍‍ବମ୍‍ ଦେଖାନ୍ତୁ</string>
-    <string name="footer_search_songs">ସମସ୍ତ ଗୀତ ଦେଖାନ୍ତୁ</string>
-    <string name="footer_search_playlists">ସମସ୍ତ ପ୍ଲେତାଲିକା ପ୍ରଦର୍ଶନ କରନ୍ତୁ</string>
-    <string name="search_title_artists">ସମ୍ସ୍ତ \"%s\" କଳାକାର</string>
-    <string name="search_title_albums">ସମ୍ସ୍ତ \"%s\" ଆଲ୍‍ବମ୍‍</string>
-    <string name="search_title_songs">ସମ୍ସ୍ତ \"%s\" ଗୀତ</string>
-    <string name="search_title_playlists">ସମ୍ସ୍ତ \"%s\" ପ୍ଲେତାଲିକା</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Muziek</string>
-    <string name="page_recent">Recent</string>
     <string name="page_artists">Artiesten</string>
     <string name="page_albums">Albums</string>
     <string name="page_songs">Nummers</string>
     <string name="page_playlists">Afspeellijsten</string>
-    <string name="page_genres">Genres</string>
-    <string name="page_now_playing">Nu afspelen</string>
     <string name="page_play_queue">Wachtrij</string>
     <string name="header_albums">Albums</string>
-    <string name="header_top_songs">Beste nummers</string>
     <string name="header_all_songs">Alle nummers</string>
     <string name="menu_settings">Instellingen</string>
     <string name="menu_shuffle_item">Shuffle</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Shuffle beste nummers</string>
     <string name="menu_shuffle_recent">Shuffle recente nrs.</string>
     <string name="menu_shuffle_last_added">Shuffle laatst toegevoegd</string>
-    <string name="menu_play_all">Alles afspelen</string>
     <string name="menu_sort_by">Sorteren op</string>
     <string name="menu_clear_list">Lijst wissen</string>
-    <string name="menu_clear_recents">Recente items wissen</string>
     <string name="menu_clear_queue">Wachtrij wissen</string>
     <string name="menu_save_queue">Wachtrij opslaan als afspeellijst</string>
     <string name="menu_equalizer">Equalizer</string>
     <string name="add_to_playlist">Toevoegen aan afspeellijst</string>
     <string name="add_to_queue">Toevoegen aan wachtrij</string>
-    <string name="remove_from_recent">Verwijderen uit recente</string>
     <string name="remove_from_queue">Verwijderen uit wachtrij</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Jaar</string>
     <string name="sort_order_entry_duration">Duur</string>
-    <string name="sort_order_entry_date_added">Datum toegevoegd</string>
-    <string name="sort_order_entry_track_list">Tracklist</string>
     <string name="sort_order_entry_number_of_songs">Aantal nummers</string>
     <string name="sort_order_entry_number_of_albums">Aantal albums</string>
     <string name="sort_order_entry_filename">Bestandsnaam</string>
@@ -77,9 +68,8 @@
     <string name="cannot_be_undone">Dit kan niet ongedaan worden gemaakt</string>
     <string name="delete_warning">Hiermee worden alle opgeslagen afbeeldingen permanent verwijderd</string>
     <string name="new_photo">Afbeelding selecteren uit Galerij</string>
-    <string name="google_search">Google Zoeken</string>
     <string name="use_default">Standaardafbeelding</string>
-    <string name="old_photo">Oude afbeelding</string>
+    <string name="visualizer_perm_denied">toestemming VOOR Audio-opname  is geweigerd; schakel deze in vanuit Instellingen om muziek-visualisatie in te schakelen</string>
     <string name="context_menu_play_selection">Afspelen</string>
     <string name="context_menu_play_next">Volgende afspelen</string>
     <string name="context_menu_play_album">Album afspelen</string>
@@ -101,10 +91,7 @@
     <string name="accessibility_repeat">Herhalen</string>
     <string name="accessibility_repeat_all">Alles herhalen</string>
     <string name="accessibility_repeat_one">Eén herhalen</string>
-    <string name="accessibility_queue">Wachtrij openen</string>
-    <string name="accessibility_browse">Muziek verkennen</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ingesteld als beltoon</string>
-    <string name="playlist_renamed">Naam afspeellijst gewijzigd</string>
     <string name="settings_storage_category">Opslag</string>
     <string name="settings_delete_cache_title">Cache wissen</string>
     <string name="settings_delete_cache_summary">Opgeslagen afbeeldingen verwijderen</string>
@@ -118,10 +105,7 @@
     <string name="app_widget_small">Muziek: 4 \u00d7 1</string>
     <string name="app_widget_large">Muziek: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muziek: 4 \u00d7 2 (alternatief)</string>
-    <string name="app_widget_recent">Muziek: recent beluisterd</string>
     <string name="no_effects_for_you">Kan equalizer niet openen.</string>
-    <string name="empty_music">Om muziek van uw computer te kopiëren naar uw apparaat, kunt u een USB-kabel gebruiken.</string>
-    <string name="empty_favorite">Uw favoriete nummers worden hier getoond.</string>
     <string name="empty_recent_main">Geen recente nummers</string>
     <string name="empty_recent">Nummers waar u recent naar hebt geluisterd worden hier getoond.</string>
     <string name="empty_playlist_main">Geen nummers in afspeellijst</string>
@@ -152,14 +136,6 @@
     <string name="header_10_plus_songs">10+ nummers</string>
     <string name="header_5_plus_albums">5+ albums</string>
     <string name="header_other">"Overig"</string>
-    <string name="footer_search_artists">Alle artiesten tonen</string>
-    <string name="footer_search_albums">Alle albums tonen</string>
-    <string name="footer_search_songs">Alle nummers tonen</string>
-    <string name="footer_search_playlists">Alle afspeellijsten tonen</string>
-    <string name="search_title_artists">Alle \"%s\" artiesten</string>
-    <string name="search_title_albums">Alle \"%s\" albums</string>
-    <string name="search_title_songs">Alle \"%s\" nummers</string>
-    <string name="search_title_playlists">Alle \"%s\" afspeellijsten</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Afspelen van muziek</string>
 </resources>

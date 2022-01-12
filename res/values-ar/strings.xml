@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">موسيقى</string>
-    <string name="page_recent">حديث</string>
     <string name="page_artists">فنانون</string>
     <string name="page_albums">ألبومات</string>
     <string name="page_songs">أغاني</string>
     <string name="page_playlists">قوائم تشغيل</string>
-    <string name="page_genres">أنواع</string>
-    <string name="page_now_playing">قيد التشغيل</string>
     <string name="page_play_queue">قائمة انتظار التشغيل</string>
     <string name="header_albums">ألبومات</string>
-    <string name="header_top_songs">الأغاني الأعلى</string>
     <string name="header_all_songs">كل الأغاني</string>
     <string name="menu_settings">إعدادات</string>
     <string name="menu_shuffle_item">خلْط</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">خلط الأغاني الأعلى</string>
     <string name="menu_shuffle_recent">خلط الأغاني التي أذيعت مؤخراً</string>
     <string name="menu_shuffle_last_added">خلط آخر أغاني أضيفت</string>
-    <string name="menu_play_all">تشغيل الكل</string>
     <string name="menu_sort_by">الترتيب حسب</string>
     <string name="menu_clear_list">مسح القائمة</string>
-    <string name="menu_clear_recents">مسح الأغاني الأخيرة</string>
     <string name="menu_clear_queue">مسح قائمة الانتظار</string>
     <string name="menu_save_queue">حفظ قائمة الانتظار إلى قائمة التشغيل</string>
     <string name="menu_equalizer">المعادل</string>
     <string name="add_to_playlist">إضافة إلى قائمة التشغيل</string>
     <string name="add_to_queue">إضافة إلى قائمة الانتظار</string>
-    <string name="remove_from_recent">إزالة من الأغاني الأخيرة</string>
     <string name="remove_from_queue">إزالة من قائمة الانتظار</string>
     <string name="sort_order_entry_az">من الألف إلى الياء</string>
     <string name="sort_order_entry_za">من الياء إلى الألف</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">ألبوم</string>
     <string name="sort_order_entry_year">السنة</string>
     <string name="sort_order_entry_duration">المدة</string>
-    <string name="sort_order_entry_date_added">تاريخ الإضافة</string>
-    <string name="sort_order_entry_track_list">قائمة الأغاني</string>
     <string name="sort_order_entry_number_of_songs">عدد الأغاني</string>
     <string name="sort_order_entry_number_of_albums">عدد الألبومات</string>
     <string name="sort_order_entry_filename">اختر الملف</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">لا يمكن التراجع عن هذا</string>
     <string name="delete_warning">سيؤدي هذا إلى حذف إدخالات الصورة المخزنة مؤقتاً بشكل دائم</string>
     <string name="new_photo">اختيار صورة من معرض الصور</string>
-    <string name="google_search">بحث جوجل</string>
     <string name="use_default">استخدام الصورة الافتراضية</string>
-    <string name="old_photo">استخدام الصور القديمة</string>
     <string name="context_menu_play_selection">تشغيل</string>
     <string name="context_menu_play_next">تشغيل التالي</string>
     <string name="context_menu_play_album">تشغيل الألبوم</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">تكرار</string>
     <string name="accessibility_repeat_all">تكرار كل</string>
     <string name="accessibility_repeat_one">تكرار واحدة</string>
-    <string name="accessibility_queue">فتح قائمة الانتظار</string>
-    <string name="accessibility_browse">استعراض الموسيقى</string>
     <string name="set_as_ringtone">تعيين \'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' كنغمة رنين</string>
-    <string name="playlist_renamed">تمت إعادة تسميته قائمة التشغيل</string>
     <string name="settings_storage_category">التخزين</string>
     <string name="settings_delete_cache_title">حذف ذاكرة التخزين المؤقت</string>
     <string name="settings_delete_cache_summary">إزالة كافة الصور المخزنة مؤقتاً</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">موسيقى: 4 \u00d7 1</string>
     <string name="app_widget_large">موسيقى: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">موسيقى: 4 \u00d7 2 (بالتبادل)</string>
-    <string name="app_widget_recent">الموسيقى: ما استمعت إليه مؤخراً</string>
     <string name="no_effects_for_you">تعذر فتح المعادل.</string>
-    <string name="empty_music">لنسخ ملفات الموسيقى من الكمبيوتر إلى الجهاز الخاص بك، استخدم كبل USB.</string>
-    <string name="empty_favorite">الأغاني التي وضعت عليها علامة المفضلة ستظهر هنا.</string>
     <string name="empty_recent_main">لا توجد أغاني حديثة.</string>
     <string name="empty_recent">الأغاني التي استمعت إليها مؤخراً ستظهر هنا.</string>
     <string name="empty_playlist_main">لا توجد أغاني في قائمة التشغيل</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10 + أغاني</string>
     <string name="header_5_plus_albums">5 + ألبومات</string>
     <string name="header_other">"أخرى"</string>
-    <string name="footer_search_artists">إظهار جميع الفنانين</string>
-    <string name="footer_search_albums">إظهار جميع الألبومات</string>
-    <string name="footer_search_songs">إظهار جميع الأغاني</string>
-    <string name="footer_search_playlists">إظهار جميع قوائم التشغيل</string>
-    <string name="search_title_artists">جميع الفنانين \"%s\"</string>
-    <string name="search_title_albums">جميع ألبومات \"%s\"</string>
-    <string name="search_title_songs">جميع أغاني \"%s\"</string>
-    <string name="search_title_playlists">جميع قوائم التشغيل \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">تشغيل الموسيقى</string>
 </resources>

@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Cerddoriaeth</string>
-    <string name="page_recent">Diweddar</string>
     <string name="page_artists">Artistiaid</string>
     <string name="page_albums">Casgliadau</string>
     <string name="page_songs">Traciau</string>
     <string name="page_playlists">Rhestri caneuon</string>
-    <string name="page_genres">Genres</string>
-    <string name="page_now_playing">Yn Chwarae Nawr</string>
     <string name="page_play_queue">Ciw Chwarae</string>
     <string name="header_albums">Casgliadau</string>
-    <string name="header_top_songs">Traciau Poblogaidd</string>
     <string name="header_all_songs">Pob Trac</string>
     <string name="menu_settings">Gosodiadau</string>
     <string name="menu_shuffle_item">Cymysgu</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Cymysgu\'r traciau poblogaidd</string>
     <string name="menu_shuffle_recent">Cymysgu\'r traciau chwaraewyd diweddar</string>
     <string name="menu_shuffle_last_added">Cymysgu\'r traciau ychwanegwyd diwethaf</string>
-    <string name="menu_play_all">Chwarae\'r cwbl</string>
     <string name="menu_sort_by">Trefnu yn ôl</string>
     <string name="menu_clear_list">Clirio\'r rhestr</string>
-    <string name="menu_clear_recents">Clirio\'r traciau diweddar</string>
     <string name="menu_clear_queue">Clirio\'r ciw</string>
     <string name="menu_save_queue">Cadw\'r ciw i\'r rhestr chwarae</string>
     <string name="menu_equalizer">Cydraddolydd</string>
     <string name="add_to_playlist">Ychwanegu i\'r rhestr chwarae</string>
     <string name="add_to_queue">Ychwanegu i\'r ciw</string>
-    <string name="remove_from_recent">Tynnu o\'r traciau diweddar</string>
     <string name="remove_from_queue">Tynnu o\'r ciw</string>
     <string name="sort_order_entry_az">A i Y</string>
     <string name="sort_order_entry_za">Y i A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Casgliad</string>
     <string name="sort_order_entry_year">Blwyddyn</string>
     <string name="sort_order_entry_duration">Hyd</string>
-    <string name="sort_order_entry_date_added">Dyddiad ychwanegwyd</string>
-    <string name="sort_order_entry_track_list">Rhestr traciau</string>
     <string name="sort_order_entry_number_of_songs">Nifer o draciau</string>
     <string name="sort_order_entry_number_of_albums">Nifer o gasgliadau</string>
     <string name="sort_order_entry_filename">Enw ffeil</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Nid yw\'n bosib dadwneud hyn.</string>
     <string name="delete_warning">Bydd hyn yn dileu delweddau wedi\'u cadw dros dro</string>
     <string name="new_photo">Dewis lun o\'r oriel</string>
-    <string name="google_search">Chwilio Google</string>
     <string name="use_default">Defnyddio llun rhagosodedig</string>
-    <string name="old_photo">Defnyddio hen lun</string>
     <string name="context_menu_play_selection">Chwarae</string>
     <string name="context_menu_play_next">Chwarae\'r nesaf</string>
     <string name="context_menu_play_album">Chwarae casgliad</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Ailchwarae</string>
     <string name="accessibility_repeat_all">Ailchwarae\'r cwbl</string>
     <string name="accessibility_repeat_one">Ailchwarae un</string>
-    <string name="accessibility_queue">Agor y ciw</string>
-    <string name="accessibility_browse">Pori traciau</string>
     <string name="set_as_ringtone">Gosodwyd \'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' fel y tôn caniad</string>
-    <string name="playlist_renamed">Ailenwyd y rhestr chwarae</string>
     <string name="settings_storage_category">Storfa</string>
     <string name="settings_delete_cache_title">Dileu\'r cof dros dro</string>
     <string name="settings_delete_cache_summary">Dileu pob delwedd wedi\'i chadw dros dro</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Cerddoriaeth: 4 \u00d7 1</string>
     <string name="app_widget_large">Cerddoriaeth 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Cerddoriaeth 4 \u00d7 2 (amgen)</string>
-    <string name="app_widget_recent">Cerddoriaeth: chwaraewyd yn ddiweddar</string>
     <string name="no_effects_for_you">Methwyd ag agor y cydraddolydd.</string>
-    <string name="empty_music">I gopïo cerddoriaeth o dy gyfrifiadur i dy ddyfais, defnyddia gebl USB.</string>
-    <string name="empty_favorite">Bydd traciau rwyt yn eu nodi fel ffefrynnau yn ymddangos yma.</string>
     <string name="empty_recent_main">Dim traciau diweddar</string>
     <string name="empty_recent">Bydd traciau rwyt wedi gwrando arnynt yn ddiweddar yn ymddangos yma.</string>
     <string name="empty_playlist_main">Does dim traciau yn y rhestr chwarae</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ o draciau</string>
     <string name="header_5_plus_albums">5+ casgliad</string>
     <string name="header_other">"Arall"</string>
-    <string name="footer_search_artists">Dangos pob artist</string>
-    <string name="footer_search_albums">Dangos pob casgliad</string>
-    <string name="footer_search_songs">Dangos pob trac</string>
-    <string name="footer_search_playlists">Dangos pob rhestr chwarae</string>
-    <string name="search_title_artists">Pob artist \"%s\"</string>
-    <string name="search_title_albums">Pob \"%s\" casgliad</string>
-    <string name="search_title_songs">Pob trac \"%s\"</string>
-    <string name="search_title_playlists">Pob rhestr chwarae \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Chwarae cerddoriaeth</string>
 </resources>

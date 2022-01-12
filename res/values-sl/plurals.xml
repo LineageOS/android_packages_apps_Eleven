@@ -16,12 +16,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nartists">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> izvajalec</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> izvajalca</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> izvajalci</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> izvajalcev</item>
-    </plurals>
     <plurals name="Nalbums">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> album</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> albuma</item>
@@ -33,12 +27,6 @@
         <item quantity="two"><xliff:g id="count">%d</xliff:g> skladbi</item>
         <item quantity="few"><xliff:g id="count">%d</xliff:g> skladbe</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> skladb</item>
-    </plurals>
-    <plurals name="Ngenres">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> žanr</item>
-        <item quantity="two"><xliff:g id="count">%d</xliff:g> žanra</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> žanri</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> žanrov</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one"><xliff:g id="hours">%d</xliff:g> ura</item>
@@ -69,12 +57,6 @@
         <item quantity="two"><xliff:g id="number" example="1">%d</xliff:g> skladbi dodani v čakalno vrsto.</item>
         <item quantity="few"><xliff:g id="number" example="1">%d</xliff:g> skladbe dodane v čakalno vrsto.</item>
         <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> skladb dodanih v čakalno vrsto.</item>
-    </plurals>
-    <plurals name="NNNtrackstofavorites">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> skladba dodana k priljubljenim.</item>
-        <item quantity="two"><xliff:g id="number" example="1">%d</xliff:g> skladbi dodani k priljubljenim.</item>
-        <item quantity="few"><xliff:g id="number" example="1">%d</xliff:g> skladbe dodane k priljubljenim.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> skladb dodanih k priljubljenim.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> skladba je bila izbrisana.</item>

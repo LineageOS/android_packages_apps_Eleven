@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Muzică</string>
-    <string name="page_recent">Recent</string>
     <string name="page_artists">Artiști</string>
     <string name="page_albums">Albume</string>
     <string name="page_songs">Melodii</string>
     <string name="page_playlists">Liste de redare</string>
-    <string name="page_genres">Genuri</string>
-    <string name="page_now_playing">Rulează acum</string>
     <string name="page_play_queue">Coadă de redare</string>
     <string name="header_albums">Albume</string>
-    <string name="header_top_songs">Melodii de top</string>
     <string name="header_all_songs">Toate melodiile</string>
     <string name="menu_settings">Setări</string>
     <string name="menu_shuffle_item">Amestecare</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Amestecă melodiile de top</string>
     <string name="menu_shuffle_recent">Amestecă melodiile redate recent</string>
     <string name="menu_shuffle_last_added">Amestecă ultimele adăugate</string>
-    <string name="menu_play_all">Redă tot</string>
     <string name="menu_sort_by">Sortare după</string>
     <string name="menu_clear_list">Curăță lista</string>
-    <string name="menu_clear_recents">Curăță recent</string>
     <string name="menu_clear_queue">Curăță coada</string>
     <string name="menu_save_queue">Salvați lista pentru redare</string>
     <string name="menu_equalizer">Egalizator</string>
     <string name="add_to_playlist">Adaugă la lista de redare</string>
     <string name="add_to_queue">Adaugă la coadă</string>
-    <string name="remove_from_recent">Elimină din recente</string>
     <string name="remove_from_queue">Elimină din coadă</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">An</string>
     <string name="sort_order_entry_duration">Durată</string>
-    <string name="sort_order_entry_date_added">Data adăugării</string>
-    <string name="sort_order_entry_track_list">Lista de melodii</string>
     <string name="sort_order_entry_number_of_songs">Numărul de melodii</string>
     <string name="sort_order_entry_number_of_albums">Numărul de albume</string>
     <string name="sort_order_entry_filename">Nume fișier</string>
@@ -77,9 +68,8 @@
     <string name="cannot_be_undone">Această acțiune nu poate fi anulată</string>
     <string name="delete_warning">Aceasta va șterge permanent imaginile păstrate în cache</string>
     <string name="new_photo">Alege poza din Galerie</string>
-    <string name="google_search">Căutare pe Google</string>
     <string name="use_default">Utilizare foto implicită</string>
-    <string name="old_photo">Utilizare foto veche</string>
+    <string name="visualizer_perm_denied">Permisiunea de înregistrare audio a fost refuzată, activați-o din aplicația Setări pentru a activa vizualizarea muzicii</string>
     <string name="context_menu_play_selection">Redare</string>
     <string name="context_menu_play_next">Redă următoarea</string>
     <string name="context_menu_play_album">Redă album</string>
@@ -101,10 +91,7 @@
     <string name="accessibility_repeat">Repetă</string>
     <string name="accessibility_repeat_all">Repetă toate</string>
     <string name="accessibility_repeat_one">Repetă una</string>
-    <string name="accessibility_queue">Deschide coada</string>
-    <string name="accessibility_browse">Răsfoire muzică</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' este ton de apel</string>
-    <string name="playlist_renamed">Listă de redare redenumită</string>
     <string name="settings_storage_category">Stocare</string>
     <string name="settings_delete_cache_title">Șterge cache-ul</string>
     <string name="settings_delete_cache_summary">Elimină toate imaginile din cache</string>
@@ -118,10 +105,7 @@
     <string name="app_widget_small">Muzică: 4 \u00d7 1</string>
     <string name="app_widget_large">Muzică: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muzică: 4 \u00d7 2 (alternativ)</string>
-    <string name="app_widget_recent">Muzică: recent ascultate</string>
     <string name="no_effects_for_you">Egalizatorul nu a putut fi deschis.</string>
-    <string name="empty_music">Pentru a copia muzică de pe calculator în dispozitivul dvs, folosiți un cablu USB.</string>
-    <string name="empty_favorite">Melodiile marcate de dvs ca favorite vor fi afișate aici.</string>
     <string name="empty_recent_main">Nicio melodie recentă</string>
     <string name="empty_recent">Melodiile redate recent vor fi afișate aici.</string>
     <string name="empty_playlist_main">Nicio melodie în lista de redare</string>
@@ -152,14 +136,6 @@
     <string name="header_10_plus_songs">10+ melodii</string>
     <string name="header_5_plus_albums">5+ albume</string>
     <string name="header_other">"Altele"</string>
-    <string name="footer_search_artists">Arată toți artiștii</string>
-    <string name="footer_search_albums">Arată toate albumele</string>
-    <string name="footer_search_songs">Arată toate melodiile</string>
-    <string name="footer_search_playlists">Arată toate listele de redare</string>
-    <string name="search_title_artists">Toți \"%s\" artiștii</string>
-    <string name="search_title_albums">Toate \"%s\" albumele</string>
-    <string name="search_title_songs">Toate \"%s\" melodiile</string>
-    <string name="search_title_playlists">Toate \"%s\" listele de redare</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Redare muzică</string>
 </resources>

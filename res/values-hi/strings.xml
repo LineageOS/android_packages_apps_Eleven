@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">संगील</string>
-    <string name="page_recent">हाल के</string>
     <string name="page_artists">कलाकार</string>
     <string name="page_albums">एल्बम</string>
     <string name="page_songs">गाने</string>
     <string name="page_playlists">प्लेसूचियाँ</string>
-    <string name="page_genres">शैलियाँ</string>
-    <string name="page_now_playing">इस समय बज रहा है</string>
     <string name="page_play_queue">प्ले कतार</string>
     <string name="header_albums">एल्बम</string>
-    <string name="header_top_songs">शीर्ष गाने</string>
     <string name="header_all_songs">सब गाने</string>
     <string name="menu_settings">सेटिंग</string>
     <string name="menu_shuffle_item">शफ़ल करें</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">शीर्ष ट्रैकों को शफ़ल करें</string>
     <string name="menu_shuffle_recent">हाल के प्ले किए को शफ़ल करें</string>
     <string name="menu_shuffle_last_added">अंतिम बार जोड़े गए को शफ़ल करें</string>
-    <string name="menu_play_all">सबको बजाएँ</string>
     <string name="menu_sort_by">इसके अनुसार छाँटें</string>
     <string name="menu_clear_list">सूची को साफ़ करें</string>
-    <string name="menu_clear_recents">हाल को साफ़ करें</string>
     <string name="menu_clear_queue">कतार को साफ़ करें</string>
     <string name="menu_save_queue">कतार को प्लेसूची में सहेजें</string>
     <string name="menu_equalizer">तुल्यकारक</string>
     <string name="add_to_playlist">प्लेसूची में जोड़ें</string>
     <string name="add_to_queue">कतार में जोड़ें</string>
-    <string name="remove_from_recent">हाल से हटाएँ</string>
     <string name="remove_from_queue">कतार से हटाएँ</string>
     <string name="sort_order_entry_az">अ-ह</string>
     <string name="sort_order_entry_za">ह-अ</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">एल्बम</string>
     <string name="sort_order_entry_year">वर्ष</string>
     <string name="sort_order_entry_duration">अवधि</string>
-    <string name="sort_order_entry_date_added">जोड़ने की तिथि</string>
-    <string name="sort_order_entry_track_list">ट्रैक सूची</string>
     <string name="sort_order_entry_number_of_songs">गानों की गिनती</string>
     <string name="sort_order_entry_number_of_albums">एल्बमों की संख्या</string>
     <string name="sort_order_entry_filename">फ़ाइल का नाम</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">इसे पलटा नहीं जा सकेगा</string>
     <string name="delete_warning">यह कैश की गई छवि प्रविष्टियों को हमेशा के लिए मिटा देगा</string>
     <string name="new_photo">गैलरी से फ़ोटो चुनें</string>
-    <string name="google_search">गूगल खोज</string>
     <string name="use_default">डिफ़ॉल्ट फ़ोटो का उपयोग करें</string>
-    <string name="old_photo">पुरानी फ़ोटो का उपयोग करें</string>
     <string name="context_menu_play_selection">बजाएँ</string>
     <string name="context_menu_play_next">अगला बजाएँ</string>
     <string name="context_menu_play_album">एल्बम को चलाएँ</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">दुहराएँ</string>
     <string name="accessibility_repeat_all">सबको दुहराएँ</string>
     <string name="accessibility_repeat_one">एक को दुहराएँ</string>
-    <string name="accessibility_queue">कतार खोलें</string>
-    <string name="accessibility_browse">संगीत को ब्राउज़ करें</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' को रिंगटोन के रूप में सेट करें</string>
-    <string name="playlist_renamed">प्लेसूची को नया नाम दिया गया</string>
     <string name="settings_storage_category">भंडारण</string>
     <string name="settings_delete_cache_title">कैश को हटाएँ</string>
     <string name="settings_delete_cache_summary">कैश की गई सभी छवियों को निकालें</string>
@@ -117,10 +103,7 @@
     <string name="app_widget_small">संगीत: 4 \u00d7 1</string>
     <string name="app_widget_large">संगीत: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">संगीत: 4 \u00d7 2 (एक को छोड़कर एक)</string>
-    <string name="app_widget_recent">संगीत: हाल में सुना गया</string>
     <string name="no_effects_for_you">तुल्यकारक को खोला नहीं जा सका।</string>
-    <string name="empty_music">अपने कंप्यूटर से अपने उपकरण में संगीत को कॉपी करने के लिए यूएसबी केबल का उपयोग करें।</string>
-    <string name="empty_favorite">आप जिन गानों को पसंदीदा के रूप में चिह्नित करेंगे, वे यहाँ दिखाई देंगे।</string>
     <string name="empty_recent_main">हाल वाले के गाने नहीं हैं</string>
     <string name="empty_recent">आपने हाल में जो गाने सुने हैं, वे यहाँ दिखाई देंगे।</string>
     <string name="empty_playlist_main">प्लेसूची में कोई गाने नहीं हैं</string>
@@ -151,13 +134,5 @@
     <string name="header_10_plus_songs">10+ गाने</string>
     <string name="header_5_plus_albums">5+ गाने</string>
     <string name="header_other">"अन्य"</string>
-    <string name="footer_search_artists">सब कलाकारों को दिखाएँ</string>
-    <string name="footer_search_albums">सब एल्बम दिखाएँ</string>
-    <string name="footer_search_songs">सब गाने दिखाएँ</string>
-    <string name="footer_search_playlists">सब प्लेसूचियाँ दिखाएँ</string>
-    <string name="search_title_artists">सभी \"%s\" कलाकार</string>
-    <string name="search_title_albums">सभी \"%s\" एल्बम</string>
-    <string name="search_title_songs">सभी \"%s\" गाने</string>
-    <string name="search_title_playlists">सभी \"%s\" प्लेसूचियाँ</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

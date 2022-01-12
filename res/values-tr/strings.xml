@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Müzik</string>
-    <string name="page_recent">Son çalınanlar</string>
     <string name="page_artists">Sanatçılar</string>
     <string name="page_albums">Albümler</string>
     <string name="page_songs">Şarkılar</string>
     <string name="page_playlists">Çalma listeleri</string>
-    <string name="page_genres">Türler</string>
-    <string name="page_now_playing">Şimdi Çalınıyor</string>
     <string name="page_play_queue">Kuyruğu Çal</string>
     <string name="header_albums">Albümler</string>
-    <string name="header_top_songs">Üst Şarkılar</string>
     <string name="header_all_songs">Tüm Şarkılar</string>
     <string name="menu_settings">Ayarlar</string>
     <string name="menu_shuffle_item">Karıştır</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">En çok dinlenenleri karıştır</string>
     <string name="menu_shuffle_recent">Son çalınanları karıştır</string>
     <string name="menu_shuffle_last_added">Son eklenenleri karıştır</string>
-    <string name="menu_play_all">Tümünü çal</string>
     <string name="menu_sort_by">Sıralama ölçütü:</string>
     <string name="menu_clear_list">Listeyi temizle</string>
-    <string name="menu_clear_recents">Sonkileri temizle</string>
     <string name="menu_clear_queue">Kuyruğu sil</string>
     <string name="menu_save_queue">Kuyruğu çalma listesine kaydet</string>
     <string name="menu_equalizer">Ekolayzer</string>
     <string name="add_to_playlist">Çalma listesine ekle</string>
     <string name="add_to_queue">Kuyruğa ekle</string>
-    <string name="remove_from_recent">Sonkilerden kaldır</string>
     <string name="remove_from_queue">Kuyruktan çıkar</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Albüm</string>
     <string name="sort_order_entry_year">Yıl</string>
     <string name="sort_order_entry_duration">Süre</string>
-    <string name="sort_order_entry_date_added">Eklenme tarihi</string>
-    <string name="sort_order_entry_track_list">Parça listesi</string>
     <string name="sort_order_entry_number_of_songs">Şarkı sayısı</string>
     <string name="sort_order_entry_number_of_albums">Albüm sayısı</string>
     <string name="sort_order_entry_filename">Dosya adı</string>
@@ -77,9 +68,8 @@
     <string name="cannot_be_undone">Bu işlem geri alınamaz</string>
     <string name="delete_warning">Bu, önbelleğe alınmış resimleri kalıcı olarak silecek</string>
     <string name="new_photo">Galeriden fotoğraf seç</string>
-    <string name="google_search">Google arama</string>
     <string name="use_default">Varsayılan fotoğrafı kullan</string>
-    <string name="old_photo">Eski fotoğrafı kullan</string>
+    <string name="visualizer_perm_denied">Ses kayıt izni reddedildi, Müzik görselleştirmeyi Ayarlar uygulamasından açınız</string>
     <string name="context_menu_play_selection">Çal</string>
     <string name="context_menu_play_next">Sonrakini çal</string>
     <string name="context_menu_play_album">Albümü oynat</string>
@@ -101,10 +91,7 @@
     <string name="accessibility_repeat">Tekrarla</string>
     <string name="accessibility_repeat_all">Tümünü tekrarla</string>
     <string name="accessibility_repeat_one">Birini tekrarla</string>
-    <string name="accessibility_queue">Kuyruğu aç</string>
-    <string name="accessibility_browse">Müziğe gözat</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' zil sesi olarak ayarlandı</string>
-    <string name="playlist_renamed">Çalma listesi yeniden adlandırıldı</string>
     <string name="settings_storage_category">Depolama</string>
     <string name="settings_delete_cache_title">Önbelleği sil</string>
     <string name="settings_delete_cache_summary">Ön belleğe alınmış tüm resimleri sil</string>
@@ -118,10 +105,7 @@
     <string name="app_widget_small">Müzik: 4 \u00d7 1</string>
     <string name="app_widget_large">Müzik: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Müzik: 4 \u00d7 2 (değiştir)</string>
-    <string name="app_widget_recent">Müzik: son zamanlarda dinlenen</string>
     <string name="no_effects_for_you">Ekolayzer açılamadı.</string>
-    <string name="empty_music">Bilgisayarınızdan cihazınıza müzik kopyalamak için USB kablo kullanın.</string>
-    <string name="empty_favorite">Favori işaretlediğiniz şarkılar burada gözükecek.</string>
     <string name="empty_recent_main">Son çalınan şarkı yok</string>
     <string name="empty_recent">Son zamanlarda dinlediğiniz şarkılar burada gösterilecek.</string>
     <string name="empty_playlist_main">Çalma listesinde şarkı yok</string>
@@ -152,14 +136,6 @@
     <string name="header_10_plus_songs">10+ şarkı</string>
     <string name="header_5_plus_albums">5+ albüm</string>
     <string name="header_other">"Diğer"</string>
-    <string name="footer_search_artists">Tüm sanatçıları göster</string>
-    <string name="footer_search_albums">Tüm albümleri göster</string>
-    <string name="footer_search_songs">Tüm şarkıları göster</string>
-    <string name="footer_search_playlists">Tüm listeleri göster</string>
-    <string name="search_title_artists">Tüm \"%s\" sanatçıları</string>
-    <string name="search_title_albums">Tüm \"%s\" albümleri</string>
-    <string name="search_title_songs">Tüm \"%s\" şarkıları</string>
-    <string name="search_title_playlists">Tüm \"%s\" çalma listeleri</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Müzik çalma</string>
 </resources>

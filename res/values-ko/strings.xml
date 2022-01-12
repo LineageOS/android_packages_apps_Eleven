@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">음악</string>
-    <string name="page_recent">최근</string>
     <string name="page_artists">아티스트</string>
     <string name="page_albums">앨범</string>
     <string name="page_songs">음악</string>
     <string name="page_playlists">재생목록</string>
-    <string name="page_genres">장르</string>
-    <string name="page_now_playing">재생 중</string>
     <string name="page_play_queue">재생 대기열</string>
     <string name="header_albums">앨범</string>
-    <string name="header_top_songs">자주 듣는 곡들</string>
     <string name="header_all_songs">모든 노래</string>
     <string name="menu_settings">설정</string>
     <string name="menu_shuffle_item">셔플</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">자주 듣는 곡들 셔플</string>
     <string name="menu_shuffle_recent">최근 재생 셔플</string>
     <string name="menu_shuffle_last_added">최근 추가 셔플</string>
-    <string name="menu_play_all">모두 재생</string>
     <string name="menu_sort_by">정렬</string>
     <string name="menu_clear_list">목록 비우기</string>
-    <string name="menu_clear_recents">최근 목록 비우기</string>
     <string name="menu_clear_queue">대기열 비우기</string>
     <string name="menu_save_queue">큐를 재생 목록으로 저장</string>
     <string name="menu_equalizer">이퀄라이저</string>
     <string name="add_to_playlist">재생목록에 추가</string>
     <string name="add_to_queue">대기열에 추가</string>
-    <string name="remove_from_recent">최근 재생 목록에서 제거</string>
     <string name="remove_from_queue">대기열에서 제거</string>
     <string name="sort_order_entry_az">오름차순</string>
     <string name="sort_order_entry_za">내림차순</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">앨범</string>
     <string name="sort_order_entry_year">연도</string>
     <string name="sort_order_entry_duration">길이</string>
-    <string name="sort_order_entry_date_added">추가된 날짜</string>
-    <string name="sort_order_entry_track_list">트랙 목록</string>
     <string name="sort_order_entry_number_of_songs">음악 수</string>
     <string name="sort_order_entry_number_of_albums">앨범 수</string>
     <string name="sort_order_entry_filename">파일명</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">이 작업은 되돌릴 수 없습니다</string>
     <string name="delete_warning">임시 저장된 이미지들이 영구적으로 제거됩니다</string>
     <string name="new_photo">갤러리에서 사진 선택</string>
-    <string name="google_search">Google 검색</string>
     <string name="use_default">기본 사진 사용</string>
-    <string name="old_photo">이전 사진 사용</string>
     <string name="context_menu_play_selection">재생</string>
     <string name="context_menu_play_next">다음 곡 재생</string>
     <string name="context_menu_play_album">앨범 재생</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">반복</string>
     <string name="accessibility_repeat_all">모두 반복</string>
     <string name="accessibility_repeat_one">한 곡 반복</string>
-    <string name="accessibility_queue">대기열 열기</string>
-    <string name="accessibility_browse">음악 탐색</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\'이(가) 벨소리로 지정되었습니다</string>
-    <string name="playlist_renamed">재생목록의 이름이 변경되었습니다</string>
     <string name="settings_storage_category">저장소</string>
     <string name="settings_delete_cache_title">캐시 제거</string>
     <string name="settings_delete_cache_summary">임시 저장된 모든 이미지 제거</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">음악: 4 \u00d7 1</string>
     <string name="app_widget_large">음악: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">음악: 4 \u00d7 2 (다른 배치)</string>
-    <string name="app_widget_recent">음악: 최근에 들은 곡</string>
     <string name="no_effects_for_you">이퀄라이저를 열 수 없습니다.</string>
-    <string name="empty_music">컴퓨터에서 기기로 음악을 복사하려면 USB 케이블을 사용하세요.</string>
-    <string name="empty_favorite">즐겨찾기에 추가한 음악들이 여기에 표시됩니다.</string>
     <string name="empty_recent_main">최근에 재생된 곡 없음</string>
     <string name="empty_recent">최근에 들은 음악들이 여기에 표시됩니다.</string>
     <string name="empty_playlist_main">재생목록에 음악 없음</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10곡 이상의 음악</string>
     <string name="header_5_plus_albums">5개 이상의 앨범</string>
     <string name="header_other">"기타"</string>
-    <string name="footer_search_artists">모든 아티스트 보기</string>
-    <string name="footer_search_albums">모든 앨범 보기</string>
-    <string name="footer_search_songs">모든 음악 보기</string>
-    <string name="footer_search_playlists">모든 재생목록 보기</string>
-    <string name="search_title_artists">모든 \"%s\" 아티스트</string>
-    <string name="search_title_albums">모든 \"%s\" 앨범</string>
-    <string name="search_title_songs">모든 \"%s\" 음악</string>
-    <string name="search_title_playlists">모든 \"%s\" 재생목록</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">음악 재생</string>
 </resources>

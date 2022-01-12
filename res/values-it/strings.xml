@@ -18,16 +18,12 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Musica</string>
-    <string name="page_recent">Recente</string>
     <string name="page_artists">Artisti</string>
     <string name="page_albums">Album</string>
     <string name="page_songs">Canzoni</string>
     <string name="page_playlists">Playlist</string>
-    <string name="page_genres">Generi</string>
-    <string name="page_now_playing">In riproduzione</string>
     <string name="page_play_queue">Coda di riproduzione</string>
     <string name="header_albums">Album</string>
-    <string name="header_top_songs">Canzoni preferite</string>
     <string name="header_all_songs">Tutte le canzoni</string>
     <string name="menu_settings">Impostazioni</string>
     <string name="menu_shuffle_item">Riproduzione casuale</string>
@@ -38,16 +34,13 @@
     <string name="menu_shuffle_top_tracks">Riproduzione casuale delle canzoni più ascoltate</string>
     <string name="menu_shuffle_recent">Riproduzione casuale delle canzoni più recenti</string>
     <string name="menu_shuffle_last_added">Riproduzione casuale nuove canzoni</string>
-    <string name="menu_play_all">Riproduci tutto</string>
     <string name="menu_sort_by">Ordina per</string>
     <string name="menu_clear_list">Elimina lista</string>
-    <string name="menu_clear_recents">Elimina recenti</string>
     <string name="menu_clear_queue">Elimina coda</string>
     <string name="menu_save_queue">Salva coda su playlist</string>
     <string name="menu_equalizer">Equalizzatore</string>
     <string name="add_to_playlist">Aggiungi alla playlist</string>
     <string name="add_to_queue">Aggiungi alla coda</string>
-    <string name="remove_from_recent">Rimuovi da recenti</string>
     <string name="remove_from_queue">Rimuovi dalla coda</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
@@ -55,8 +48,6 @@
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Anno</string>
     <string name="sort_order_entry_duration">Durata</string>
-    <string name="sort_order_entry_date_added">Data aggiunta</string>
-    <string name="sort_order_entry_track_list">Elenco brani</string>
     <string name="sort_order_entry_number_of_songs">Numero canzoni</string>
     <string name="sort_order_entry_number_of_albums">Numero album</string>
     <string name="sort_order_entry_filename">Nome file</string>
@@ -77,9 +68,7 @@
     <string name="cannot_be_undone">Quest\'azione non può essere annullata</string>
     <string name="delete_warning">Le immagini memorizzate nella cache verranno eliminate permanentemente</string>
     <string name="new_photo">Scegli foto dalla galleria</string>
-    <string name="google_search">Ricerca Google</string>
     <string name="use_default">Usa foto predefinita</string>
-    <string name="old_photo">Usa foto vecchia</string>
     <string name="context_menu_play_selection">Riproduci</string>
     <string name="context_menu_play_next">Riproduci dopo</string>
     <string name="context_menu_play_album">Riproduci album</string>
@@ -101,10 +90,7 @@
     <string name="accessibility_repeat">Ripeti</string>
     <string name="accessibility_repeat_all">Ripeti tutto</string>
     <string name="accessibility_repeat_one">Ripeti singolo</string>
-    <string name="accessibility_queue">Apri coda</string>
-    <string name="accessibility_browse">Sfoglia musica</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' impostata come suoneria</string>
-    <string name="playlist_renamed">Playlist rinominata</string>
     <string name="settings_storage_category">Archivio</string>
     <string name="settings_delete_cache_title">Cancella cache</string>
     <string name="settings_delete_cache_summary">Rimuovi immagini memorizzate in cache</string>
@@ -118,10 +104,7 @@
     <string name="app_widget_small">Musica: 4 \u00d7 1</string>
     <string name="app_widget_large">Musica: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musica: 4 \u00d7 2 (alternativo)</string>
-    <string name="app_widget_recent">Musica: ascoltati recentemente</string>
     <string name="no_effects_for_you">L\'equalizzazione non può essere aperto.</string>
-    <string name="empty_music">Per copiare musica dal tuo computer al tuo dispositivo, utilizza un cavo USB.</string>
-    <string name="empty_favorite">Le canzoni segnate come preferite saranno mostrate qui.</string>
     <string name="empty_recent_main">Nessuna canzone recente</string>
     <string name="empty_recent">Le canzoni che hai ascoltato recentemente saranno mostrate qui.</string>
     <string name="empty_playlist_main">Nessuna canzone nella playlist</string>
@@ -152,14 +135,6 @@
     <string name="header_10_plus_songs">10+ canzoni</string>
     <string name="header_5_plus_albums">5+ album</string>
     <string name="header_other">"Altro"</string>
-    <string name="footer_search_artists">Visualizza tutti gli artisti</string>
-    <string name="footer_search_albums">Visualizza tutti gli album</string>
-    <string name="footer_search_songs">Visualizza tutte le canzoni</string>
-    <string name="footer_search_playlists">Visualizza tutte le playlist</string>
-    <string name="search_title_artists">Tutti gli artisti \"%s\"</string>
-    <string name="search_title_albums">Tutti gli album \"%s\"</string>
-    <string name="search_title_songs">Tutte le canzoni \"%s\"</string>
-    <string name="search_title_playlists">Tutte le playlist \"%s\"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Riproduzione musicale</string>
 </resources>
