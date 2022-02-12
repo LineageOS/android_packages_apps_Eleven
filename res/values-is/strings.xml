@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="page_albums">Hljómplötur</string>
+    <string name="header_albums">Hljómplötur</string>
+    <string name="delete_warning">Þetta mun eyða endanlega myndafærslum í skyndiminni</string>
+    <string name="context_menu_fetch_album_art">Sækja umslagsmyndir</string>
+    <string name="context_menu_fetch_artist_image">Sækja mynd af flytjanda</string>
+    <string name="settings_delete_cache_summary">Fjarlægja allar myndir úr skyndiminni</string>
+    <string name="settings_download_only_on_wifi_title">Aðeins hlaða niður á Wi-Fi neti</string>
+    <string name="settings_download_only_on_wifi_summary">Til að minnka kostnað vegna gagnamagns, ekki sækja meðan verið er á farsímanetum</string>
+    <string name="settings_download_missing_artwork_title">Sækja umslagsmyndir sem vantar</string>
+    <string name="settings_download_artist_images_title">Sækja myndir af flytjendum sem vantar</string>
+    <string name="settings_lockscreen_album_art">Umslagsmynd á læsiskjá</string>
+    <string name="settings_lockscreen_album_art_summary">Setja umslagsmyndir í staðinn fyrir bakgrunn á læsiskjá</string>
+    <string name="no_effects_for_you">Ekki var hægt að opna tónjafnarann.</string>
+    <string name="empty_search">Engar leitarniðurstöður fundust</string>
+    <string name="empty_search_check">Athugaðu hvort þetta sé rétt stafsett eða prófaðu ný leitarorð.</string>
+    <string name="empty_playlist_secondary">Til að bæta lögum á þennan spilunarlista, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta á spilunarlista\".</string>
+    <string name="empty_queue_secondary">Til að bæta lögum í spilunarbiðröðina þína, ýttu þá á valmyndina á lagi, hljómplötu eða flytjanda og veldu \"Bæta í biðröð\".</string>
+    <string name="error_playing_track">Get ekki spilað lagið %1$s</string>
+    <string name="header_5_plus_albums">5+ hljómplötur</string>
+    <string name="footer_search_artists">Birta alla flytjendur</string>
+    <string name="footer_search_albums">Birta allar hljómplötur</string>
+    <string name="search_title_artists">Allir \"%s\" flytjendur</string>
+    <string name="search_title_albums">Allar \"%s\" hljómplötur</string>
+</resources>
