@@ -69,6 +69,7 @@
     <string name="delete_warning">キャッシュされた画像エントリーを完全に削除します</string>
     <string name="new_photo">ギャラリーから写真を選択</string>
     <string name="use_default">デフォルトの写真を使用</string>
+    <string name="visualizer_perm_denied">音声録音の許可が拒否されました。音楽ビジュアライザーを有効にするには設定アプリから許可を有効化して下さい。</string>
     <string name="context_menu_play_selection">再生</string>
     <string name="context_menu_play_next">次に再生</string>
     <string name="context_menu_play_album">アルバムを再生</string>

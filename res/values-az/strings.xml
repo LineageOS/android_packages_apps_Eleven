@@ -69,6 +69,7 @@
     <string name="delete_warning">Bu, gizli yaddaşda olan təsvirləri birdəfəlik siləcək</string>
     <string name="new_photo">Qalereyadan foto seçin</string>
     <string name="use_default">İlkin fotodan istifadə et</string>
+    <string name="visualizer_perm_denied">Səsyazma icazəsi rədd edildi, musiqi vizuallaşdırmanı fəallaşdırmaq üçün Tənzimləmələrdən fəallaşdırın</string>
     <string name="context_menu_play_selection">Oynat</string>
     <string name="context_menu_play_next">Sonrakını çal</string>
     <string name="context_menu_play_album">Albomu oynat</string>
@@ -95,7 +96,7 @@
     <string name="settings_delete_cache_title">Gizli yaddaşı sil</string>
     <string name="settings_delete_cache_summary">Gizli yaddaşdakı bütün təsvirləri sil</string>
     <string name="settings_general_category">Ümumi</string>
-    <string name="settings_show_music_visualization_title">Musiqi əyaniləşdiricini göstər</string>
+    <string name="settings_show_music_visualization_title">Musiqi vizuallaşdırıcını göstər</string>
     <string name="settings_use_blur_title">Bulanıq arxaplan</string>
     <string name="settings_show_lyrics_title">Mahnı sözlərini göstər</string>
     <string name="settings_show_lyrics_summary">srt faylı olan mahnılar üçün</string>

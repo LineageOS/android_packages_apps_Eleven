@@ -69,6 +69,7 @@
     <string name="delete_warning">Hiermee worden alle opgeslagen afbeeldingen permanent verwijderd</string>
     <string name="new_photo">Afbeelding selecteren uit Galerij</string>
     <string name="use_default">Standaardafbeelding</string>
+    <string name="visualizer_perm_denied">toestemming VOOR Audio-opname  is geweigerd; schakel deze in vanuit Instellingen om muziek-visualisatie in te schakelen</string>
     <string name="context_menu_play_selection">Afspelen</string>
     <string name="context_menu_play_next">Volgende afspelen</string>
     <string name="context_menu_play_album">Album afspelen</string>

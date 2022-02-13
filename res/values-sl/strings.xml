@@ -69,6 +69,7 @@
     <string name="delete_warning">To bo trajno izbrisalo vnose predpomnjenih slik</string>
     <string name="new_photo">Izberite fotografijo iz galerije</string>
     <string name="use_default">Uporabi privzeto fotografijo</string>
+    <string name="visualizer_perm_denied">Dovoljenje za snemanje zvoka je bilo zavrnjeno, omogočite ga iz aplikacijie Nastavitve, da omogočite vizualizatorja glasbe</string>
     <string name="context_menu_play_selection">Predvajaj</string>
     <string name="context_menu_play_next">Predvajaj naslednjo</string>
     <string name="context_menu_play_album">Predvajaj album</string>

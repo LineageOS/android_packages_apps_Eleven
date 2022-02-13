@@ -69,6 +69,7 @@
     <string name="delete_warning">Bu, önbelleğe alınmış resimleri kalıcı olarak silecek</string>
     <string name="new_photo">Galeriden fotoğraf seç</string>
     <string name="use_default">Varsayılan fotoğrafı kullan</string>
+    <string name="visualizer_perm_denied">Ses kayıt izni reddedildi, Müzik görselleştirmeyi Ayarlar uygulamasından açınız</string>
     <string name="context_menu_play_selection">Çal</string>
     <string name="context_menu_play_next">Sonrakini çal</string>
     <string name="context_menu_play_album">Albümü oynat</string>

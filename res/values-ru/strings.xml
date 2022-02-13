@@ -69,6 +69,7 @@
     <string name="delete_warning">Кэшированные изображения будут удалены.</string>
     <string name="new_photo">Выбрать из Галереи</string>
     <string name="use_default">Изображение по умолчанию</string>
+    <string name="visualizer_perm_denied">Разрешение на запись звука было отклонено, включите его в настройках устройства, чтобы активировать визуализацию музыки</string>
     <string name="context_menu_play_selection">Воспроизвести</string>
     <string name="context_menu_play_next">Воспр. следующим</string>
     <string name="context_menu_play_album">Воспр. альбом</string>

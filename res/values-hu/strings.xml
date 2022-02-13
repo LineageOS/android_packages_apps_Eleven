@@ -69,6 +69,7 @@
     <string name="delete_warning">Ezzel végleg törli a gyorsítótárazott képeket</string>
     <string name="new_photo">Kép kiválasztása a Galériából</string>
     <string name="use_default">Alapértelmezett kép használata</string>
+    <string name="visualizer_perm_denied">Nincs jogosultság az audiófelvételhez, engedélyezze a Beállitásokban, hogy használhassa a zenei vizualizációt.</string>
     <string name="context_menu_play_selection">Lejátszás</string>
     <string name="context_menu_play_next">Következő lejátszása</string>
     <string name="context_menu_play_album">Album lejátszása</string>

@@ -69,6 +69,7 @@
     <string name="delete_warning">这将永久删除缓存的图像</string>
     <string name="new_photo">从图库中选择照片</string>
     <string name="use_default">使用默认照片</string>
+    <string name="visualizer_perm_denied">录音权限被拒绝，从设置中启用它以启用音乐可视化</string>
     <string name="context_menu_play_selection">播放</string>
     <string name="context_menu_play_next">播放下一首</string>
     <string name="context_menu_play_album">播放专辑</string>

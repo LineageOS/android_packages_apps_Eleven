@@ -69,6 +69,7 @@
     <string name="delete_warning">Aceasta va șterge permanent imaginile păstrate în cache</string>
     <string name="new_photo">Alege poza din Galerie</string>
     <string name="use_default">Utilizare foto implicită</string>
+    <string name="visualizer_perm_denied">Permisiunea de înregistrare audio a fost refuzată, activați-o din aplicația Setări pentru a activa vizualizarea muzicii</string>
     <string name="context_menu_play_selection">Redare</string>
     <string name="context_menu_play_next">Redă următoarea</string>
     <string name="context_menu_play_album">Redă album</string>
