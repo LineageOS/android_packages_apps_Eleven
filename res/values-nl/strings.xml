@@ -171,4 +171,5 @@
     <string name="search_title_songs">Alle \"%s\" nummers</string>
     <string name="search_title_playlists">Alle \"%s\" afspeellijsten</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Afspelen van muziek</string>
 </resources>

@@ -115,7 +115,7 @@
     <string name="settings_download_missing_artwork_title">Əskik albom üz qabıqlarını endir</string>
     <string name="settings_download_artist_images_title">Əskik sənətkar şəkillərini endir</string>
     <string name="settings_general_category">Ümumi</string>
-    <string name="settings_show_music_visualization_title">Musiqi əyaniləşdiricini göstər</string>
+    <string name="settings_show_music_visualization_title">Musiqi vizuallaşdırıcını göstər</string>
     <string name="settings_show_lyrics_title">Mahnı sözlərini göstər</string>
     <string name="settings_show_lyrics_summary">srt faylı olan mahnılar üçün</string>
     <string name="settings_shake_to_play">Oynatmaq üçün silkələyin</string>

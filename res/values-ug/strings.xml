@@ -170,5 +170,5 @@
     <string name="search_title_albums">بارلىق \"%s\" پىلاستىنكا</string>
     <string name="search_title_songs">بارلىق \"%s\" ناخشا</string>
     <string name="search_title_playlists">بارلىق \"%s\" قويۇش تېزىملىكى</string>
-    <string name="duration_format"><xliff:g id="HOURS">%1$d</xliff:g> سائەت <xliff:g id="MINUTES">%2$d</xliff:g> مىنۇت</string>
+    <string name="duration_format"><xliff:g id="HOURS">%1$s</xliff:g> سائەت <xliff:g id="MINUTES">%2$s</xliff:g> مىنۇت</string>
 </resources>
