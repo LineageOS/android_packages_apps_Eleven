@@ -69,6 +69,7 @@
     <string name="delete_warning">Alle zwischengespeicherten Bilder werden hiermit endgültig gelöscht.</string>
     <string name="new_photo">Foto aus Galerie auswählen</string>
     <string name="use_default">Standardfoto verwenden</string>
+    <string name="visualizer_perm_denied">Berechtigung zur Audioaufnahme wurde verweigert. Erlaube sie in den App-Einstellungen, um die Musikvisualisierung zu aktivieren.</string>
     <string name="context_menu_play_selection">Wiedergeben</string>
     <string name="context_menu_play_next">Als nächstes wiedergeben</string>
     <string name="context_menu_play_album">Album wiedergeben</string>
@@ -100,7 +101,7 @@
     <string name="settings_show_lyrics_title">Songtexte zeigen</string>
     <string name="settings_show_lyrics_summary">Für Titel mit einer SRT-Datei</string>
     <string name="settings_shake_to_play">Zum Abspielen schütteln</string>
-    <string name="settings_shake_to_play_summary">Schütteln Sie Ihr Gerät, um den nächsten Titel abzuspielen.</string>
+    <string name="settings_shake_to_play_summary">Schüttel dein Gerät, um den nächsten Titel abzuspielen.</string>
     <string name="app_widget_small">Musik: 4 \u00d7 1</string>
     <string name="app_widget_large">Musik: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musik: 4 \u00d7 2 (alternativ)</string>
@@ -108,15 +109,15 @@
     <string name="empty_recent_main">Keine kürzlich gespielten Titel</string>
     <string name="empty_recent">Zuletzt gehörte Titel werden hier angezeigt.</string>
     <string name="empty_playlist_main">Keine Titel in der Wiedergabeliste</string>
-    <string name="empty_playlist_secondary">Tippen Sie im Optionsmenü auf einen Titel, Künstler oder ein Album und wählen Sie \"Zur Wiedergabeliste hinzufügen\", um den jeweiligen Eintrag zu dieser Liste hinzuzufügen.</string>
+    <string name="empty_playlist_secondary">Tippe im Optionsmenü auf einen Titel, Künstler oder ein Album und wähle \"Zur Wiedergabeliste hinzufügen\", um den jeweiligen Eintrag zu dieser Liste hinzuzufügen.</string>
     <string name="empty_top_tracks_main">Keine Toptitel</string>
     <string name="empty_top_tracks_secondary">Meistgespielte Titel werden dieser Liste hinzugefügt.</string>
     <string name="empty_last_added_main">Keine kürzlich hinzugefügten Titel</string>
     <string name="empty_last_added">Hier werden Titel angezeigt, die innerhalb des letzten Monats hinzugefügt wurden.</string>
     <string name="empty_generic_main">Keine Musik gefunden</string>
-    <string name="empty_generic_secondary">Verwenden Sie ein USB-Kabel, um Musik von Ihrem Computer auf das Gerät zu kopieren.</string>
+    <string name="empty_generic_secondary">Verwende ein USB-Kabel, um Musik von deinem Computer auf dein Gerät zu kopieren.</string>
     <string name="empty_queue_main">Keine Titel in der Warteschlange</string>
-    <string name="empty_queue_secondary">Um Titel zur Warteschlange hinzuzufügen, wählen Sie im Optionsmenü eines Titels, Albums oder Interpreten \"Zur Warteschlange hinzufügen\".</string>
+    <string name="empty_queue_secondary">Um Titel zur Warteschlange hinzuzufügen, wähle im Optionsmenü eines Titels, Albums oder Interpreten \"Zur Warteschlange hinzufügen\".</string>
     <string name="error_playing_track">Der Titel \"%1$s\" konnte nicht abgespielt werden.</string>
     <string name="header_unknown_year">Unbekanntes Jahr</string>
     <string name="header_less_than_30s">Weniger als 30 Sekunden</string>
