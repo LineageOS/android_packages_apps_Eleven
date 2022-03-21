@@ -103,9 +103,9 @@ public class PlaylistDetailFragment extends DetailFragment implements
     @Override
     protected void onViewCreated() {
         super.onViewCreated();
-        LoaderManager.getInstance(this).initLoader(0, getArguments(), this);
         setupHero();
         setupSongList();
+        LoaderManager.getInstance(this).initLoader(0, getArguments(), this);
     }
 
     private void lookupName() {
