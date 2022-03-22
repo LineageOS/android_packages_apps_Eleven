@@ -16,6 +16,24 @@
       "message": "As seen in https://gitlab.com/CalyxOS/calyxos/-/issues/939\nNot tested, but makes sense to me",
       "revId": "a3f87c3cf61400f8d4c61a768f02b50856e5ca43",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e01fc26c_6ca8708a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2022-03-22T06:19:43Z",
+      "side": 1,
+      "message": "we also got a report \"music app crashes when opening a playlist\" from users too, but i did not investigate it yet.\n\nLGTM",
+      "parentUuid": "dcf91183_5b4b8685",
+      "revId": "a3f87c3cf61400f8d4c61a768f02b50856e5ca43",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
