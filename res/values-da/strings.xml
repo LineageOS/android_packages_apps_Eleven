@@ -107,7 +107,7 @@
     <string name="empty_recent_main">Ingen seneste sange</string>
     <string name="empty_recent">Sange du har lyttet til på det seneste, vil blive vist her.</string>
     <string name="empty_playlist_main">Ingen sange i afspilningsliste</string>
-    <string name="empty_playlist_secondary">Tryk på valgmulighedsmenuen på en sang, et album, eller en kunstner, og vælg \"Føj til afspilningsliste\", for at føje sange til denne afspilningsliste.</string>
+    <string name="empty_playlist_secondary">Tryk på valgmulighedsmenuen, på en sang, et album, eller en kunstner, og vælg \"Føj til afspilningsliste\", for at føje sange til denne afspilningsliste.</string>
     <string name="empty_top_tracks_main">Ingen top spor</string>
     <string name="empty_top_tracks_secondary">De sange, du lytter mest til, vil blive føjet til denne liste.</string>
     <string name="empty_last_added_main">Ingen sange tilføjet for nylig</string>
@@ -135,5 +135,4 @@
     <string name="header_5_plus_albums">5+ album</string>
     <string name="header_other">"Andre"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
-    <string name="channel_music">Musikafspilning</string>
 </resources>

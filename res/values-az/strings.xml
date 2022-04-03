@@ -71,7 +71,7 @@
     <string name="use_default">İlkin fotodan istifadə et</string>
     <string name="visualizer_perm_denied">Səsyazma icazəsi rədd edildi, musiqi vizuallaşdırmanı fəallaşdırmaq üçün Tənzimləmələrdən fəallaşdırın</string>
     <string name="context_menu_play_selection">Oynat</string>
-    <string name="context_menu_play_next">Sonrakını çal</string>
+    <string name="context_menu_play_next">Sonrakını oynat</string>
     <string name="context_menu_play_album">Albomu oynat</string>
     <string name="context_menu_more_by_artist">Sənətçidən daha çox</string>
     <string name="context_menu_rename_playlist">Yenidən adlandır</string>
@@ -115,7 +115,7 @@
     <string name="empty_last_added_main">Son vaxtlar mahnı əlavə edilməyib</string>
     <string name="empty_last_added">Keçən ay əlavə edilmiş mahnılar burada göstəriləcək.</string>
     <string name="empty_generic_main">Musiqi tapılmadı</string>
-    <string name="empty_generic_secondary">Kompüterinizdən cihazınıza musiqi kopyalamaq üçün USB naqildən istifadə edin.</string>
+    <string name="empty_generic_secondary">Komputerinizdən cihazınıza musiqi kopyalamaq üçün USB naqildən istifadə edin.</string>
     <string name="empty_queue_main">Çalma növbəsində mahnı yoxdur</string>
     <string name="empty_queue_secondary">Çalma Növbəsinə mahnı əlavə etmək üçün, seçimlərdən \"Növbəyə əlavə et\"i seçin.</string>
     <string name="error_playing_track">%1$s mahnısı oynadıla bilmir</string>
@@ -137,5 +137,5 @@
     <string name="header_5_plus_albums">5+ albom</string>
     <string name="header_other">"Digər"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
-    <string name="channel_music">Musiqi oynatma</string>
+    <string name="channel_music">Musiqi oxutma</string>
 </resources>

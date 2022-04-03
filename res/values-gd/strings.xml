@@ -69,6 +69,7 @@
     <string name="delete_warning">Sguabaidh seo às na dealbhan gu buan a chaidh a chur san tasgadan</string>
     <string name="new_photo">Tagh dealbh on ghailearaidh</string>
     <string name="use_default">Cleachd an dealbh bunaiteach</string>
+    <string name="visualizer_perm_denied">Chaidh cead clàradh fuaime a dhiùltadh, cuir an comas e o aplacaid nan “Roghainnean” airson fir-chlis a’ chiùil a chur an comas</string>
     <string name="context_menu_play_selection">Cluich</string>
     <string name="context_menu_play_next">Cluich an ath-fhear</string>
     <string name="context_menu_play_album">Cluich an t-albam</string>

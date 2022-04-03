@@ -69,6 +69,7 @@
     <string name="delete_warning">임시 저장된 이미지들이 영구적으로 제거됩니다</string>
     <string name="new_photo">갤러리에서 사진 선택</string>
     <string name="use_default">기본 사진 사용</string>
+    <string name="visualizer_perm_denied">오디오 녹음 권한이 거부되어 있습니다. 음악 시각화를 사용하려면 설정 앱에서 권한을 허용해 주세요.</string>
     <string name="context_menu_play_selection">재생</string>
     <string name="context_menu_play_next">다음 곡 재생</string>
     <string name="context_menu_play_album">앨범 재생</string>

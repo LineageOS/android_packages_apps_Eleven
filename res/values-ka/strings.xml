@@ -17,8 +17,17 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="menu_shuffle_recent">ბოლოს დაკრულები არეულად</string>
+    <string name="playlist_recently_played">ბოლოს დაკრული</string>
+    <string name="overwrite">ჩანაცვლება</string>
+    <string name="clear_recent_title">გასუფთავდეს ბოლოს დაკრულები?</string>
+    <string name="context_menu_remove_from_recent">მოცილება ბოლოებიდან</string>
     <string name="settings_use_blur_title">ფონის დაბინდვა</string>
     <string name="app_widget_small">მუსიკა: 4 \u00d7 1</string>
     <string name="app_widget_large">მუსიკა: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">მუსიკა: 4 \u00d7 2 (alternativ)</string>
+    <string name="empty_recent_main">ბოლო ჩანაწერები არაა</string>
+    <string name="empty_recent">ბოლოს მოსმენილი სიმღერები გამოჩნდება აქ.</string>
+    <string name="empty_last_added_main">ბოლოს დამატებული სიმღერები არაა</string>
+    <string name="empty_last_added">ჩანაწერები, რომლებიც გასულ თვეში დაამატეთ, გამოჩნდება აქ.</string>
 </resources>

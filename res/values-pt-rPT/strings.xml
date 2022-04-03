@@ -69,6 +69,7 @@
     <string name="delete_warning">Isto vai remover permanentemente as imagens em cache</string>
     <string name="new_photo">Escolher foto da Galeria</string>
     <string name="use_default">Usar foto padrão</string>
+    <string name="visualizer_perm_denied">A permissão para gravação de áudio foi negada. Ative-a nas definições do dispositivo para ativar a visualização de música</string>
     <string name="context_menu_play_selection">Reproduzir</string>
     <string name="context_menu_play_next">Reproduzir próxima</string>
     <string name="context_menu_play_album">Reproduzir o álbum</string>

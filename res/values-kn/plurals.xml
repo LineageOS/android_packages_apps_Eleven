@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <plurals name="Nalbums">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> ಆಲ್ಬಂ</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಆಲ್ಬಂಗಳು</item>
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> ಇಡುವಹಿ</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> ಇಡುವಹಿಗಳು</item>
     </plurals>
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> ಹಾಡು</item>

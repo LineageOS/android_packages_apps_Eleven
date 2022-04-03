@@ -25,24 +25,24 @@
         <item quantity="other"><xliff:g id="count">%d</xliff:g> canciones</item>
     </plurals>
     <plurals name="Nhours">
-        <item quantity="one"><xliff:g id="hours">%d</xliff:g>h</item>
-        <item quantity="other"><xliff:g id="hours">%d</xliff:g>h</item>
+        <item quantity="one"><xliff:g id="hours">%d</xliff:g> h</item>
+        <item quantity="other"><xliff:g id="hours">%d</xliff:g> h</item>
     </plurals>
     <plurals name="Nminutes">
-        <item quantity="one"><xliff:g id="minutes">%d</xliff:g>m</item>
-        <item quantity="other"><xliff:g id="minutes">%d</xliff:g>m</item>
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g> m</item>
+        <item quantity="other"><xliff:g id="minutes">%d</xliff:g> m</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> canción amestada a la llista.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> canciones amestaes a la llista.</item>
+        <item quantity="one">Amestóse <xliff:g id="number" example="1">%d</xliff:g> canción a la llista de reproducción.</item>
+        <item quantity="other">Amestáronse <xliff:g id="number" example="1">%d</xliff:g> canciones a la llista de reproducción.</item>
     </plurals>
     <plurals name="NNNtracksfromplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> canción desaniciada de la llista.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> canciones desaniciaes de la llista.</item>
+        <item quantity="one">Quitóse <xliff:g id="number" example="1">%d</xliff:g> canción de la llista de reproducción.</item>
+        <item quantity="other">Quitáronse <xliff:g id="number" example="1">%d</xliff:g> canciones de la llista de reproducción.</item>
     </plurals>
     <plurals name="NNNtrackstoqueue">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> canción amestada a la cola.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> canciones amestaes a la cola.</item>
+        <item quantity="one">Amestóse <xliff:g id="number" example="1">%d</xliff:g> canción a la cola</item>
+        <item quantity="other">Amestáronse <xliff:g id="number" example="1">%d</xliff:g> canciones a la cola</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one">Desanicióse <xliff:g id="songs_to_delete" example="1">%d</xliff:g> canción.</item>

@@ -69,6 +69,7 @@
     <string name="delete_warning">Điều này sẽ xoá vĩnh viễn các mục nhập ảnh đã lưu trong bộ nhớ đệm</string>
     <string name="new_photo">Chọn ảnh từ Bộ sưu tập</string>
     <string name="use_default">Dùng ảnh mặc định</string>
+    <string name="visualizer_perm_denied">Quyền ghi âm thanh đã bị từ chối, hãy bật quyền đó từ ứng dụng Cài đặt để bật hoạt ảnh âm nhạc</string>
     <string name="context_menu_play_selection">Phát</string>
     <string name="context_menu_play_next">Phát tiếp theo</string>
     <string name="context_menu_play_album">Phát album</string>
@@ -96,6 +97,7 @@
     <string name="settings_delete_cache_summary">Xoá tất cả ảnh đã có trong bộ nhớ đệm</string>
     <string name="settings_general_category">Tổng quát</string>
     <string name="settings_show_music_visualization_title">Hiện trực quan hoá nhạc</string>
+    <string name="settings_use_blur_title">Làm mờ ảnh nền</string>
     <string name="settings_show_lyrics_title">Hiện lời bài hát</string>
     <string name="settings_show_lyrics_summary">Đối với bài hát có tập tin srt</string>
     <string name="settings_shake_to_play">Lắc để phát</string>
@@ -135,5 +137,5 @@
     <string name="header_5_plus_albums">5 album trở lên</string>
     <string name="header_other">"Khác"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
-    <string name="channel_music">Điều khiển nhạc</string>
+    <string name="channel_music">Trình phát nhạc</string>
 </resources>
