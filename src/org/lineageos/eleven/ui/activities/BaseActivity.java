@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2019-2021 The LineageOS Project
+ * Copyright (C) 2019-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -300,8 +300,10 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
         // Track name
         mTrackName = findViewById(R.id.bottom_action_bar_line_one);
+        findViewById(R.id.bottom_action_bar_line_one).setSelected(true);
         // Artist name
         mArtistName = findViewById(R.id.bottom_action_bar_line_two);
+        findViewById(R.id.bottom_action_bar_line_two).setSelected(true);
         // Album art
         mAlbumArt = findViewById(R.id.bottom_action_bar_album_art);
         // Open to the currently playing album profile
