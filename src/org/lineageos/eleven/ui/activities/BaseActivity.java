@@ -299,9 +299,11 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         mPlayPauseButtonContainer.enableAndShow();
 
         // Track name
-        mTrackName = findViewById(R.id.bottom_action_bar_line_one);
+         mTrackName = findViewById(R.id.bottom_action_bar_line_one);
+        findViewById(R.id.bottom_action_bar_line_one).setSelected(true);
         // Artist name
         mArtistName = findViewById(R.id.bottom_action_bar_line_two);
+        findViewById(R.id.bottom_action_bar_line_two).setSelected(true);
         // Album art
         mAlbumArt = findViewById(R.id.bottom_action_bar_album_art);
         // Open to the currently playing album profile
