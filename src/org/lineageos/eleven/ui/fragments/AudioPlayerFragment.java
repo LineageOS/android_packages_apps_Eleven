@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2014 The CyanogenMod Project
- * Copyright (C) 2018-2021 The LineageOS Project
+ * Copyright (C) 2018-2022 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -344,6 +344,8 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Title text
         mSongTitle = mRootView.findViewById(R.id.header_bar_song_title);
         mArtistName = mRootView.findViewById(R.id.header_bar_artist_title);
+        mSongTitle.findViewById(R.id.header_bar_song_title).setSelected(true);
+        mArtistName.findViewById(R.id.header_bar_artist_title).setSelected(true);
     }
 
     /**
