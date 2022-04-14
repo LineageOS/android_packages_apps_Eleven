@@ -44,10 +44,22 @@
 
         <TextView
             android:id="@+id/bottom_action_bar_line_one"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit ="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
             style="@style/BottomActionBarLineOne" />
 
         <TextView
             android:id="@+id/bottom_action_bar_line_two"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit ="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
             style="@style/BottomActionBarLineTwo"
             android:layout_below="@+id/bottom_action_bar_line_one" />
 
