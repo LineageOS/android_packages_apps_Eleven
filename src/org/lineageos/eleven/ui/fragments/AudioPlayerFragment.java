@@ -167,24 +167,48 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         // Shuffle all
         inflater.inflate(R.menu.shuffle_all, playerMenu);
-        if (MusicUtils.getQueueSize() > 0) {
-            // ringtone, and equalizer
-            inflater.inflate(R.menu.audio_player, playerMenu);
-
-            final FragmentActivity activity = getActivity();
-            if (activity != null && !NavUtils.hasEffectsPanel(activity)) {
-                playerMenu.removeItem(R.id.menu_audio_player_equalizer);
-            }
-
-            // save queue/clear queue
-            inflater.inflate(R.menu.queue, playerMenu);
-        }
+        // ringtone, and equalizer
+        inflater.inflate(R.menu.audio_player, playerMenu);
+        // save queue/clear queue
+        inflater.inflate(R.menu.queue, playerMenu);
         // Settings
         inflater.inflate(R.menu.activity_base, playerMenu);
 
         final int playerMenuSize = playerMenu.size();
         for (int i = 0; i < playerMenuSize; i++) {
             playerMenu.getItem(i).setOnMenuItemClickListener(this::onOptionsItemSelected);
+        }
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+
+        final Menu playerMenu = mPlayerToolBar.getMenu();
+
+        // Remove R.menu.audio_player by default
+        playerMenu.findItem(R.id.menu_audio_player_add_to_playlist).setVisible(false);
+        playerMenu.findItem(R.id.menu_audio_player_equalizer).setVisible(false);
+        playerMenu.findItem(R.id.menu_audio_player_ringtone).setVisible(false);
+        playerMenu.findItem(R.id.menu_audio_player_more_by_artist).setVisible(false);
+        playerMenu.findItem(R.id.menu_audio_player_delete).setVisible(false);
+
+        // Remove R.menu.queue by default
+        playerMenu.findItem(R.id.menu_save_queue).setVisible(false);
+        playerMenu.findItem(R.id.menu_clear_queue).setVisible(false);
+
+        // Add items back if required
+        if (MusicUtils.getQueueSize() > 0) {
+            playerMenu.findItem(R.id.menu_audio_player_add_to_playlist);
+            final FragmentActivity activity = getActivity();
+            if (activity != null && NavUtils.hasEffectsPanel(activity)) {
+                playerMenu.findItem(R.id.menu_audio_player_equalizer).setVisible(true);
+            }
+            playerMenu.findItem(R.id.menu_audio_player_ringtone).setVisible(true);
+            playerMenu.findItem(R.id.menu_audio_player_more_by_artist).setVisible(true);
+            playerMenu.findItem(R.id.menu_audio_player_delete).setVisible(true);
+            playerMenu.findItem(R.id.menu_save_queue).setVisible(true);
+            playerMenu.findItem(R.id.menu_clear_queue).setVisible(true);
         }
     }
 
@@ -455,6 +479,11 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         } else {
             mAlbumArtViewPager.setVisibility(View.VISIBLE);
             mQueueEmpty.hideAll();
+        }
+
+        final FragmentActivity activity = getActivity();
+        if (activity != null) {
+            activity.invalidateOptionsMenu();
         }
     }
 
