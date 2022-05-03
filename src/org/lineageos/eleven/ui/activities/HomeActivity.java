@@ -375,37 +375,11 @@ public class HomeActivity extends SlidingPanelActivity implements
     @Override
     public boolean onOptionsItemSelected(final MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            navigateToTop();
+            onBackPressed();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * Navigates to the top Activity and places the view to the correct page
-     */
-    protected void navigateToTop() {
-        final Fragment topFragment = getTopFragment();
-        int targetFragmentIndex = MusicBrowserPhoneFragment.INVALID_PAGE_INDEX;
-        if (topFragment instanceof IChildFragment) {
-            targetFragmentIndex = ((IChildFragment) topFragment).getMusicFragmentParent().ordinal();
-        }
-
-        // If we are the top activity in the stack (as determined by the activity that has loaded
-        // the MusicBrowserPhoneFragment) then clear the back stack and move the browse fragment
-        // to the appropriate page as per Android up standards
-        if (mTopLevelActivity) {
-            clearBackStack();
-            MusicBrowserPhoneFragment musicFragment = (MusicBrowserPhoneFragment) getTopFragment();
-            musicFragment.setDefaultPageIdx(targetFragmentIndex);
-            showPanel(Panel.Browse);
-        } else {
-            // I've tried all other combinations with parent activities, support.NavUtils and
-            // there is no easy way to achieve what we want that I'm aware of, so clear everything
-            // and jump to the right page
-            NavUtils.goHome(this, targetFragmentIndex);
-        }
     }
 
     /**
