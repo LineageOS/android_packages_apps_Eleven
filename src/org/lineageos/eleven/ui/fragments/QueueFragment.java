@@ -194,7 +194,7 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
 
         // Create the adapter
         mAdapter = new QueueSongAdapter(requireActivity(), R.layout.edit_queue_list_item,
-                -1, Config.IdType.NA, this::onItemClick);
+                this::onItemClick);
         mAdapter.setPopupMenuClickedListener((v, position) ->
                 mPopupMenuHelper.showPopupMenu(v, position));
         mDragSortHelper = new ItemTouchHelper(new DragSortItemTouchHelperCallback(this));
