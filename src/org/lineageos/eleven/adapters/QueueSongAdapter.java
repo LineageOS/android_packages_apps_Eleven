@@ -70,12 +70,6 @@ public class QueueSongAdapter extends RecyclerView.Adapter<MusicHolder> implemen
      */
     private IPopupMenuCallback.IListener mListener;
 
-    /**
-     * Source id and type
-     */
-    protected final long mSourceId;
-    protected final Config.IdType mSourceType;
-
     private final Context mContext;
     private final Consumer<Integer> mOnItemClickListener;
 
@@ -84,20 +78,14 @@ public class QueueSongAdapter extends RecyclerView.Adapter<MusicHolder> implemen
      *
      * @param context    The {@link Context} to use.
      * @param layoutId   The resource Id of the view to inflate.
-     * @param sourceId   The source id that the adapter is created from
-     * @param sourceType The source type that the adapter is created from
      */
-    public QueueSongAdapter(final FragmentActivity context, final int layoutId, final long sourceId,
-                            final Config.IdType sourceType,
+    public QueueSongAdapter(final FragmentActivity context, final int layoutId,
                             final Consumer<Integer> onItemClickListener) {
         mContext = context;
         // Get the layout Id
         mLayoutId = layoutId;
         // Initialize the cache & image fetcher
         mImageFetcher = ElevenUtils.getImageFetcher(context);
-        // set the source id and type
-        mSourceId = sourceId;
-        mSourceType = sourceType;
         mOnItemClickListener = onItemClickListener;
         mSongs = new ArrayList<>();
     }
@@ -110,8 +98,6 @@ public class QueueSongAdapter extends RecyclerView.Adapter<MusicHolder> implemen
      */
     protected boolean showNowPlayingIndicator(final Song song) {
         return mCurrentlyPlayingTrack != null
-                && mCurrentlyPlayingTrack.mSourceId == mSourceId
-                && mCurrentlyPlayingTrack.mSourceType == mSourceType
                 && mCurrentlyPlayingTrack.mId == song.mSongId;
     }
 
