@@ -96,6 +96,7 @@
     <string name="settings_delete_cache_summary">Quitar todas las imágenes almacenadas</string>
     <string name="settings_general_category">General</string>
     <string name="settings_show_music_visualization_title">Mostrar la visualización de música</string>
+    <string name="settings_use_blur_title">Desenfoque de fondo</string>
     <string name="settings_show_lyrics_title">Mostrar las letras de las canciones</string>
     <string name="settings_show_lyrics_summary">Para canciones que tienen un archivo srt</string>
     <string name="settings_shake_to_play">Agitar para reproducir</string>
@@ -135,4 +136,5 @@
     <string name="header_5_plus_albums">Más de 5 álbumes</string>
     <string name="header_other">"Otros"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Reproducción de música</string>
 </resources>

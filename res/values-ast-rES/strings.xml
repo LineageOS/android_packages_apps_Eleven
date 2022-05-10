@@ -46,6 +46,7 @@
     <string name="context_menu_more_by_artist">Más del artista</string>
     <string name="context_menu_change_image">Camudar la imaxe</string>
     <string name="accessibility_play">Reproducir</string>
+    <string name="accessibility_pause">Posar</string>
     <string name="accessibility_next">Siguiente</string>
     <string name="accessibility_prev">Anterior</string>
     <string name="settings_storage_category">Almacenamientu</string>
@@ -56,14 +57,27 @@
     <string name="settings_show_lyrics_title">Amosar la lletra de les canciones</string>
     <string name="settings_shake_to_play">Ximelgar pa reproducir</string>
     <string name="settings_shake_to_play_summary">Ximielga\'l preséu pa reproducir la canción siguiente</string>
+    <string name="no_effects_for_you">Nun se pudo abrir l\'ecualizador.</string>
     <string name="empty_recent_main">Nun hai canciones de recién</string>
+    <string name="empty_recent">Equí apaecen les canciones que sentiesti apocayá.</string>
     <string name="empty_playlist_main">Nun hai canciones na llista</string>
     <string name="empty_top_tracks_secondary">Les canciones que más sientas amiéstense a esta llista.</string>
     <string name="empty_last_added">Equí apaecen les canciones qu\'amestesti l\'últimu mes.</string>
     <string name="empty_generic_secondary">Pa copiar música del ordenador al preséu, usa un cable USB.</string>
     <string name="empty_queue_main">Nun hai canciones na cola</string>
     <string name="error_playing_track">Nun ye posible reproducir la pista «%1$s»</string>
+    <string name="header_less_than_30s">Menos de 30 segundos</string>
+    <string name="header_30_to_60_seconds">30 - 60 segundos</string>
+    <string name="header_1_to_2_minutes">1 - 2 minutos</string>
+    <string name="header_2_to_3_minutes">2 - 3 minutos</string>
+    <string name="header_3_to_4_minutes">3 - 4 minutos</string>
+    <string name="header_4_to_5_minutes">4 - 5 minutos</string>
+    <string name="header_5_to_10_minutes">5 - 10 minutos</string>
+    <string name="header_10_to_30_minutes">10 - 30 minutos</string>
+    <string name="header_30_to_60_minutes">30 - 60 minutos</string>
     <string name="header_greater_than_60_minutes">Más de 60 minutos</string>
     <string name="header_1_song">1 canción</string>
+    <string name="header_2_to_4_songs">2 - 4 canciones</string>
+    <string name="header_5_to_9_songs">5 - 9 canciones</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

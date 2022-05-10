@@ -17,10 +17,54 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">მუსიკა</string>
+    <string name="page_artists">შემსრულებლები</string>
+    <string name="page_albums">კრებულები</string>
+    <string name="page_songs">სიმღერები</string>
+    <string name="page_playlists">დასაკრავი სია</string>
+    <string name="page_play_queue">დასაკრავების რიგი</string>
+    <string name="header_albums">კრებულები</string>
+    <string name="header_all_songs">ყველა სიმღერა</string>
+    <string name="menu_settings">პარამეტრები</string>
+    <string name="menu_shuffle_item">არეულად</string>
+    <string name="menu_shuffle_all">ყველა არეულად</string>
+    <string name="menu_shuffle_playlist">დასაკრავი სიიდან არეულად</string>
+    <string name="menu_shuffle_album">კრებულიდან არეულად</string>
+    <string name="menu_shuffle_artist">შემსრულებლები არეულად</string>
+    <string name="menu_shuffle_top_tracks">გამორჩეული ჩანაწერები არეულად</string>
     <string name="menu_shuffle_recent">ბოლოს დაკრულები არეულად</string>
+    <string name="menu_shuffle_last_added">ბოლოს დამატებულები არეულად</string>
+    <string name="menu_sort_by">დალაგება</string>
+    <string name="menu_clear_list">სიის გასუფთავება</string>
+    <string name="menu_clear_queue">რიგის გასუფთავება</string>
+    <string name="menu_save_queue">რიგის შენახვა დასაკრავ სიაში</string>
+    <string name="menu_equalizer">მათანაბრებელი</string>
+    <string name="add_to_playlist">დასაკრავ სიაში დამატება</string>
+    <string name="add_to_queue">რიგში დამატება</string>
+    <string name="remove_from_queue">რიგიდან მოცილება</string>
+    <string name="sort_order_entry_az">ანბანურად</string>
+    <string name="sort_order_entry_za">ანბანურის საპირ.</string>
+    <string name="sort_order_entry_artist">შემსრულებელი</string>
+    <string name="sort_order_entry_album">კრებული</string>
+    <string name="sort_order_entry_year">წელი</string>
+    <string name="sort_order_entry_duration">ხანგრძლივობა</string>
+    <string name="sort_order_entry_number_of_songs">სიმღერების რაოდენობა</string>
+    <string name="sort_order_entry_number_of_albums">კრებულების რაოდენობა</string>
+    <string name="sort_order_entry_filename">ფაილის სახელი</string>
+    <string name="playlist_last_added">ბოლოს დამატებული</string>
     <string name="playlist_recently_played">ბოლოს დაკრული</string>
+    <string name="playlist_top_tracks">რჩეული ჩანაწერები</string>
+    <string name="new_playlist">ახალი დასაკრავი სია</string>
+    <string name="save">შენახვა</string>
+    <string name="cancel">გაუქმება</string>
     <string name="overwrite">ჩანაცვლება</string>
+    <string name="clear">გასუფთავება</string>
+    <string name="new_playlist_name_template">დასაკრავი სია <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">დასაკრავი სიის სახელი</string>
+    <string name="clear_top_tracks_title">გასუფთავდეს რჩეული ჩანაწერები?</string>
     <string name="clear_recent_title">გასუფთავდეს ბოლოს დაკრულები?</string>
+    <string name="clear_last_added">გასუფთავდეს ბოლოს დამატებული?</string>
+    <string name="visualizer_perm_denied">ხმის ჩაწერა უარყოფილია, დართეთ ნება პარამეტრებიდან მუსიკის გამოსახვისთვის</string>
     <string name="context_menu_remove_from_recent">მოცილება ბოლოებიდან</string>
     <string name="settings_use_blur_title">ფონის დაბინდვა</string>
     <string name="app_widget_small">მუსიკა: 4 \u00d7 1</string>
@@ -30,4 +74,21 @@
     <string name="empty_recent">ბოლოს მოსმენილი სიმღერები გამოჩნდება აქ.</string>
     <string name="empty_last_added_main">ბოლოს დამატებული სიმღერები არაა</string>
     <string name="empty_last_added">ჩანაწერები, რომლებიც გასულ თვეში დაამატეთ, გამოჩნდება აქ.</string>
+    <string name="empty_generic_secondary">მუსიკალური ფაილების ასლის კომპიუტერიდან მოწყობილობაში გადასატანად გამოიყენეთ USB-სადენი.</string>
+    <string name="header_1_to_2_minutes">1 - 2 წუთი</string>
+    <string name="header_2_to_3_minutes">2 - 3 წუთი</string>
+    <string name="header_3_to_4_minutes">3 - 4 წუთი</string>
+    <string name="header_4_to_5_minutes">4 - 5 წუთი</string>
+    <string name="header_5_to_10_minutes">5–10 წუთი</string>
+    <string name="header_10_to_30_minutes">10–30 წუთი</string>
+    <string name="header_30_to_60_minutes">30–60 წუთი</string>
+    <string name="header_greater_than_60_minutes">60 წუთზე მეტი</string>
+    <string name="header_1_song">1 სიმღერა</string>
+    <string name="header_2_to_4_songs">2–4 სიმღერა</string>
+    <string name="header_5_to_9_songs">5–9 სიმღერა</string>
+    <string name="header_10_plus_songs">10+ სიმღერა</string>
+    <string name="header_5_plus_albums">5+ ალბომი</string>
+    <string name="header_other">"სხვა"</string>
+    <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">მუსიკის გაშვება</string>
 </resources>

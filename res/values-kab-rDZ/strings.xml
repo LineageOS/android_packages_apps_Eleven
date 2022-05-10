@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Aẓawan</string>
+    <string name="page_artists">Inaẓuren</string>
+    <string name="page_albums">Iseɣraz</string>
+    <string name="page_songs">Tizlatin</string>
+    <string name="page_playlists">Tibdarin n tɣuri</string>
+    <string name="page_play_queue">Urar tabdert n uraǧu</string>
+    <string name="header_albums">Iseɣraz</string>
+    <string name="header_all_songs">Tizlatin meṛṛa</string>
+    <string name="menu_settings">Iɣewwaṛen</string>
+    <string name="menu_shuffle_item">Taɣuri tagacurant</string>
+    <string name="menu_shuffle_all">Taɣuri tagacurant n tizlatin meṛṛa</string>
+    <string name="menu_shuffle_playlist">Taɣuri tagacurant n tabdart n tɣuri</string>
+    <string name="menu_shuffle_album">Taɣuri tagacurant n useɣrez</string>
+    <string name="menu_shuffle_artist">Taɣuri tagacurant n tezlatin unaẓur</string>
+    <string name="menu_sort_by">Smizzwer s</string>
+    <string name="menu_clear_list">Sfeḍ tabdart</string>
+    <string name="menu_clear_queue">Sfeḍ tabdert</string>
+    <string name="menu_save_queue">Sekles tabdert n uraǧu ɣer tabdert n tɣuri</string>
+    <string name="menu_equalizer">Amagday</string>
+    <string name="add_to_playlist">Rnu ar tabdart n tɣuri</string>
+    <string name="add_to_queue">Rnu ɣer tabdert n uraǧu</string>
+    <string name="remove_from_queue">Kkes seg tabdert n uraǧu</string>
+    <string name="sort_order_entry_az">A-Z</string>
+    <string name="sort_order_entry_za">Z-A</string>
+    <string name="sort_order_entry_artist">Anaẓur</string>
+    <string name="sort_order_entry_album">Iseɣrez</string>
+    <string name="sort_order_entry_year">Assegas</string>
+    <string name="sort_order_entry_duration">Tanzagt</string>
+    <string name="sort_order_entry_number_of_songs">Amḍan n tizlatin</string>
+    <string name="sort_order_entry_number_of_albums">Amḍan n iseɣraz</string>
+    <string name="sort_order_entry_filename">Isem n ufaylu</string>
+    <string name="playlist_last_added">Ttwarnan tagara-agi</string>
+    <string name="playlist_recently_played">Yettwaɣer melmi kan</string>
+    <string name="new_playlist">Tabdert n tɣuri tamaynutt</string>
+    <string name="save">Sekles</string>
+    <string name="cancel">Sefsex</string>
+    <string name="overwrite">Rkeḍ</string>
+    <string name="clear">Sfeḍ</string>
+    <string name="new_playlist_name_template">Tabdart n tɣuri <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">Isem n tbdart n tɣuri</string>
+    <string name="delete_dialog_title">Kkes <xliff:g id="item" example="album">%s</xliff:g>?</string>
+    <string name="clear_recent_title">Sfeḍ ayen yettwaɣren melmi kan?</string>
+    <string name="clear_last_added">Sfeḍ ayen yettwarnan melmi kan?</string>
+    <string name="cannot_be_undone">Ulac tuɣalin ar deffir</string>
+    <string name="delete_warning">Ayagi ad ikkes i lebda tuffirt n tugniwin</string>
+    <string name="new_photo">Fren tawlaft g tmidelt</string>
+    <string name="use_default">Seqdec tawlaft tamezwert</string>
+    <string name="context_menu_play_selection">Urar</string>
+    <string name="context_menu_play_next">Urar-d uḍfiṛ</string>
+    <string name="context_menu_play_album">Urar-d aseɣrez</string>
+    <string name="context_menu_more_by_artist">Ugar seg unaẓur</string>
+    <string name="context_menu_rename_playlist">Snifel isem</string>
+    <string name="context_menu_delete">Kkes</string>
+    <string name="context_menu_fetch_artist_image">Awi-d tugna unaẓur</string>
+    <string name="context_menu_remove_from_recent">Kkes seg ineggura</string>
+    <string name="context_menu_use_as_ringtone">Seqdec-it am uṭenṭen</string>
+    <string name="context_menu_remove_from_playlist">Kkes seg tebdart n tɣuri</string>
+    <string name="context_menu_change_image">Snifel tugna</string>
+    <string name="accessibility_play">Urar</string>
+    <string name="accessibility_pause">Steɛfu</string>
+    <string name="accessibility_next">Ɣer zdat</string>
+    <string name="accessibility_prev">Ar deffir</string>
+    <string name="accessibility_shuffle">Taɣuri tagacurant</string>
+    <string name="accessibility_shuffle_all">Taɣuri tagacurant n tizlatin meṛṛa</string>
+    <string name="accessibility_repeat">Ales</string>
+    <string name="accessibility_repeat_all">Ales i merra</string>
+    <string name="accessibility_repeat_one">Ales i yiwen</string>
+    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' ittwasbed am uṭenṭen</string>
+    <string name="settings_storage_category">Asekles</string>
+    <string name="settings_delete_cache_title">Kkes tuffirt</string>
+    <string name="settings_delete_cache_summary">Kkes akk tuffirt n tugniwin</string>
+    <string name="settings_general_category">Amatu</string>
+    <string name="settings_use_blur_title">Sluɣ agilal</string>
+    <string name="settings_show_lyrics_title">Sken imeslayen n tezlatin</string>
+    <string name="settings_show_lyrics_summary">I tezlatin isɛan afaylu srt</string>
+    <string name="app_widget_small">Aẓawan: 4 \u00d7 1</string>
+    <string name="app_widget_large">Aẓawan: 4 \u00d7 2</string>
+    <string name="empty_recent_main">Ulac tizlatin timaynutin</string>
+</resources>
