@@ -16,6 +16,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="Nalbums">
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> Iseɣrez</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> iseɣraz</item>
+    </plurals>
     <plurals name="Nsongs">
         <item quantity="one"><xliff:g id="count">%d</xliff:g> tizlit</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> tizlatin</item>

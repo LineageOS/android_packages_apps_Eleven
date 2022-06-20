@@ -95,4 +95,26 @@
     <string name="app_widget_small">Aẓawan: 4 \u00d7 1</string>
     <string name="app_widget_large">Aẓawan: 4 \u00d7 2</string>
     <string name="empty_recent_main">Ulac tizlatin timaynutin</string>
+    <string name="empty_playlist_main">Ulac tizlitt di tbdart n tɣuri</string>
+    <string name="empty_generic_main">Ulac aẓawan</string>
+    <string name="empty_generic_secondary">Akken ad tneɣleḍ aẓawan seg uselkim-ik·im ɣer yibenk-ik·im, seqdec agatu USB.</string>
+    <string name="empty_queue_main">Ulac tizlatin deg tebdart n uraǧu</string>
+    <string name="header_unknown_year">Aseggas arussin</string>
+    <string name="header_less_than_30s">Ddaw 30 n tasinin</string>
+    <string name="header_30_to_60_seconds">30 - 60 n tasinin</string>
+    <string name="header_1_to_2_minutes">1 - 2 n tisdatin</string>
+    <string name="header_2_to_3_minutes">2 - 3 n tisdatin</string>
+    <string name="header_3_to_4_minutes">3 - 4 n tisdatin</string>
+    <string name="header_4_to_5_minutes">4 - 5 n tisdatin</string>
+    <string name="header_5_to_10_minutes">5 - 10 n tisdatin</string>
+    <string name="header_10_to_30_minutes">10 - 30 n tisdatin</string>
+    <string name="header_30_to_60_minutes">30 - 60 n tisdatin</string>
+    <string name="header_greater_than_60_minutes">Ugar n 60 n tisdatin</string>
+    <string name="header_1_song">1 tizlit</string>
+    <string name="header_2_to_4_songs">2 - 4 tizlatin</string>
+    <string name="header_5_to_9_songs">5 - 9 tizlatin</string>
+    <string name="header_10_plus_songs">Ugar n 10 n tizlatin</string>
+    <string name="header_5_plus_albums">Ugar n 5 n iseɣraz</string>
+    <string name="header_other">"Wayeḍ"</string>
+    <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g><xliff:g id="minutes">%2$s</xliff:g></string>
 </resources>

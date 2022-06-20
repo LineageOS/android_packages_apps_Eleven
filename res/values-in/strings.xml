@@ -69,6 +69,7 @@
     <string name="delete_warning">Ini akan menghapus cache gambar secara permanen</string>
     <string name="new_photo">Pilih foto dari Galeri</string>
     <string name="use_default">Gunakan foto bawaan</string>
+    <string name="visualizer_perm_denied">Izin akses untuk merekam audio ditolak, izinkan melalui aplikasi Setelan untuk mengaktifkan visualisasi musik</string>
     <string name="context_menu_play_selection">Putar</string>
     <string name="context_menu_play_next">Putar selanjutnya</string>
     <string name="context_menu_play_album">Putar album</string>
