@@ -199,7 +199,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
 
         // Add items back if required
         if (MusicUtils.getQueueSize() > 0) {
-            playerMenu.findItem(R.id.menu_audio_player_add_to_playlist);
+            playerMenu.findItem(R.id.menu_audio_player_add_to_playlist).setVisible(true);
             final FragmentActivity activity = getActivity();
             if (activity != null && NavUtils.hasEffectsPanel(activity)) {
                 playerMenu.findItem(R.id.menu_audio_player_equalizer).setVisible(true);
