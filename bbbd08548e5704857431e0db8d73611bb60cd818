@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33abd47b_0028ae15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2022-10-08T05:49:24Z",
+      "side": 1,
+      "message": "Don\u0027t include this in the commit message",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 98
+      },
+      "revId": "bbbd08548e5704857431e0db8d73611bb60cd818",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
