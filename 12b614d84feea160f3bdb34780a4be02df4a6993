@@ -50,6 +50,23 @@
       "message": "This patch is ready for review.",
       "revId": "12b614d84feea160f3bdb34780a4be02df4a6993",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60781166_e63437b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 26981
+      },
+      "writtenOn": "2022-10-08T04:54:51Z",
+      "side": 1,
+      "message": "Link to Apk and Screen recording of this feature in action: https://drive.google.com/drive/folders/1ckrEIqFeunJfVF0UxX97iDucD8d7cgNR",
+      "revId": "12b614d84feea160f3bdb34780a4be02df4a6993",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
