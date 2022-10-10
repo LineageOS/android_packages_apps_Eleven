@@ -33,6 +33,23 @@
       "message": "Can you please stop messing around with reviewers? especially stop removing them? we get emails every time you change something anyway. Thanks...",
       "revId": "7d53adbd77526ea28b987ec6a61797d2abd5cf39",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d75bea05_86252f32",
+        "filename": "res/layout/bottom_action_bar.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2022-10-10T12:58:25Z",
+      "side": 1,
+      "message": "Missing newline",
+      "revId": "7d53adbd77526ea28b987ec6a61797d2abd5cf39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
