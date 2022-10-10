@@ -50,6 +50,24 @@
       "message": "Missing newline",
       "revId": "7d53adbd77526ea28b987ec6a61797d2abd5cf39",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f67c838e_c3664918",
+        "filename": "res/layout/bottom_action_bar.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-10-10T13:13:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d75bea05_86252f32",
+      "revId": "7d53adbd77526ea28b987ec6a61797d2abd5cf39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
