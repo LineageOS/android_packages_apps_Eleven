@@ -16,6 +16,23 @@
       "message": "This change is ready for review.",
       "revId": "7d53adbd77526ea28b987ec6a61797d2abd5cf39",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4ddc3af5_66ff7766",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2022-10-10T06:10:53Z",
+      "side": 1,
+      "message": "Can you please stop messing around with reviewers? especially stop removing them? we get emails every time you change something anyway. Thanks...",
+      "revId": "7d53adbd77526ea28b987ec6a61797d2abd5cf39",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
