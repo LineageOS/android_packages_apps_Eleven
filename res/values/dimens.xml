@@ -87,6 +87,7 @@
     <dimen name="app_widget_large_alternate_artwork_size">80dp</dimen>
     <dimen name="app_widget_small_min_width">80dp</dimen>
     <dimen name="app_widget_small_min_height">80dp</dimen>
+    <dimen name="app_widget_small_artwork_size">60dp</dimen>
     <dimen name="app_widget_radius">8dp</dimen>
 
     <!-- Drag and drop -->
