@@ -387,7 +387,7 @@ public class MusicPlaybackService extends Service
     private final IBinder mBinder = new ServiceStub(this);
 
     /**
-     * 4x1 widget
+     * Square widget
      */
     private final AppWidgetSmall mAppWidgetSmall = AppWidgetSmall.getInstance();
 
