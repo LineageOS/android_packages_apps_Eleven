@@ -155,7 +155,7 @@
                 <data android:mimeType="application/itunes" />
             </intent-filter>
         </activity>
-        <!-- 4x1 App Widget -->
+        <!-- Square App Widget -->
         <receiver
             android:name="org.lineageos.eleven.appwidgets.AppWidgetSmall"
             android:exported="false"
