@@ -127,7 +127,7 @@
     <string name="settings_shake_to_play_summary">Shake your device to play next song</string>
 
     <!-- App widget -->
-    <string name="app_widget_small">Music: 4 \u00d7 1</string>
+    <string name="app_widget_small">Music: Square</string>
     <string name="app_widget_large">Music: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Music: 4 \u00d7 2 (alternate)</string>
 
