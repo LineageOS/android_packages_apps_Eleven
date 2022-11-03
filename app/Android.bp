@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2020-2022 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,12 +18,19 @@ android_app {
     name: "Eleven",
 
     srcs: [
-        "src/org/lineageos/eleven/IElevenService.aidl",
-        "src/**/*.java",
-        "src_aosp/**/*.java",
+        "src/main/aidl/**/*.aidl",
+        "src/main/java/**/*.java",
+        "src/main/java_aosp/**/*.java",
     ],
+    resource_dirs: ["src/main/res"],
+    manifest: "src/main/AndroidManifest.xml",
 
-    resource_dirs: ["res"],
+    sdk_version: "current",
+    product_specific: true,
+    privileged: true,
+
+    required: ["privapp_whitelist_org.lineageos.eleven"],
+    overrides: ["Music"],
 
     static_libs: [
         "androidx.appcompat_appcompat",
@@ -36,20 +43,10 @@ android_app {
         "androidx.recyclerview_recyclerview",
     ],
 
-    overrides: ["Music"],
-
-    sdk_version: "current",
-
-    privileged: true,
-
-    product_specific: true,
-
     optimize: {
-        proguard_flags_files: ["proguard.cfg"],
+        proguard_flags_files: ["proguard-rules.pro"],
         enabled: false,
     },
-
-    required: ["privapp_whitelist_org.lineageos.eleven"],
 }
 
 prebuilt_etc {

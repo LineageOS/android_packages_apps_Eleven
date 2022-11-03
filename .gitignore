@@ -1,14 +1,10 @@
-/bin/
-/build/
-/gen/
-/local.properties
-
 *.iml
-**~
-**.DS_Store
-.gradle/
-.idea/
-
-# apk export folders
-/debug/
-/release/
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
