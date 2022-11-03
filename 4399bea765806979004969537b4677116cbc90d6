@@ -51,6 +51,24 @@
       "parentUuid": "92564b93_435a4a95",
       "revId": "4399bea765806979004969537b4677116cbc90d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e95a175b_371e336d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2022-11-03T14:36:10Z",
+      "side": 1,
+      "message": "Alright, but doesn\u0027t columnCount\u003d\"2\" and rowCount\u003d\"2\" make it always 2x2? It\u0027s just that app_widget_large is labeled as 4x2.",
+      "parentUuid": "d33977ae_219cb5d3",
+      "revId": "4399bea765806979004969537b4677116cbc90d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
