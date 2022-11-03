@@ -33,6 +33,24 @@
       "message": "Wouldn\u0027t it be better to rename it to 2x2?",
       "revId": "4399bea765806979004969537b4677116cbc90d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d33977ae_219cb5d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2022-11-03T14:14:22Z",
+      "side": 1,
+      "message": "We don\u0027t specify anywhere that it\u0027s 2x2, we just choose a (basically arbitrary) dp value that is the same for height and width (i.e. square). It may end up at 2x2 on most settings, but I couldn\u0027t confirm that it would always be of that format.\n\nAlso, Launcher shows the calculated area anyways when adding the widget, so the \"this will be XxY tiles\" naming is kind of redundant here.",
+      "parentUuid": "92564b93_435a4a95",
+      "revId": "4399bea765806979004969537b4677116cbc90d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
