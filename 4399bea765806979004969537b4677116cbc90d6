@@ -69,6 +69,24 @@
       "parentUuid": "d33977ae_219cb5d3",
       "revId": "4399bea765806979004969537b4677116cbc90d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "932079c3_0871bbd1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15734
+      },
+      "writtenOn": "2022-11-03T15:56:21Z",
+      "side": 1,
+      "message": "I had assumed that this would be the dimensions of the internal GridLayout, not what dictates the final width and height of the actual widget (much less how many tiles it will occupy in the end).\n\nIn any case, I\u0027d prefer \"Music: Square (2x2)\" over \"Music: 2x2 (2x2)\" (with the values in parentheses being the light gray text that Android renders in the widget picker overview anyways). This [1] is how it looks like currently (and it looks quite similar in earlier versions, at least when looking at what information is presented), so I can\u0027t imagine the name being \"Music: 2x2\" to be too useful.\n\n[1] https://i.imgur.com/EkAmZCi.png",
+      "parentUuid": "e95a175b_371e336d",
+      "revId": "4399bea765806979004969537b4677116cbc90d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
