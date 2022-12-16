@@ -16,6 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="Nsongs">
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> песня</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> песні</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> песень</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> песні</item>
+    </plurals>
     <plurals name="NNNtracksfromplaylist">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> песня выдалена са спіса прайгравання.</item>
         <item quantity="few"><xliff:g id="number" example="1">%d</xliff:g> песні выдалены са спіса прайгравання.</item>
