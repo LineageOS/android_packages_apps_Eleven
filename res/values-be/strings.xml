@@ -47,7 +47,7 @@
     <string name="sort_order_entry_artist">Выканаўца</string>
     <string name="sort_order_entry_album">Альбому</string>
     <string name="sort_order_entry_year">Году</string>
-    <string name="sort_order_entry_duration">Працягласці</string>
+    <string name="sort_order_entry_duration">Працягласць</string>
     <string name="sort_order_entry_number_of_songs">Колькасці песняў</string>
     <string name="sort_order_entry_number_of_albums">Колькасці альбомаў</string>
     <string name="sort_order_entry_filename">Назва файла</string>
@@ -67,7 +67,6 @@
     <string name="clear_last_added">Ачысціць нядаўна дададзеныя?</string>
     <string name="cannot_be_undone">Гэта дзеянне немагчыма адрабіць</string>
     <string name="delete_warning">Гэта прывядзе да незваротнага выдалення запісаў кэшаваных відарысаў</string>
-    <string name="new_photo">Выбраць фотаграфію з Галерэі</string>
     <string name="use_default">Выкарыстоўваць прадвызначаную фатаграфію</string>
     <string name="context_menu_play_selection">Прайграць</string>
     <string name="context_menu_play_next">Прайграць наступным</string>
@@ -90,7 +89,6 @@
     <string name="accessibility_repeat">Паўтор</string>
     <string name="accessibility_repeat_all">Паўтор усіх</string>
     <string name="accessibility_repeat_one">Паўтор песні </string>
-    <string name="set_as_ringtone">«<xliff:g id="name" example="Alarm Bell">%s</xliff:g>» зададзены ў якасці мелодыі званка</string>
     <string name="settings_storage_category">Сховішча</string>
     <string name="settings_delete_cache_title">Выдаліць кэш</string>
     <string name="settings_delete_cache_summary">Выдаліць усе кэшаваныя відарысы</string>
