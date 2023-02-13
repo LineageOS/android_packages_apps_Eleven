@@ -75,7 +75,6 @@
     <string name="context_menu_rename_playlist">Перайменаваць</string>
     <string name="context_menu_delete">Выдаліць</string>
     <string name="context_menu_fetch_album_art">Атрымаць вокладку альбома</string>
-    <string name="context_menu_fetch_artist_image">Загрузіць фота выканаўцы</string>
     <string name="context_menu_remove_from_recent">Выдаліць з нядаўніх</string>
     <string name="context_menu_use_as_ringtone">Выкарыстаць як мелодыю выкліку</string>
     <string name="context_menu_remove_from_playlist">Выдаліць са спіса прайгравання</string>
@@ -92,7 +91,7 @@
     <string name="settings_storage_category">Сховішча</string>
     <string name="settings_delete_cache_title">Выдаліць кэш</string>
     <string name="settings_delete_cache_summary">Выдаліць усе кэшаваныя відарысы</string>
-    <string name="settings_general_category">Агульнае</string>
+    <string name="settings_general_category">Агульныя</string>
     <string name="settings_show_music_visualization_title">Паказваць візуалізацыю музыкі</string>
     <string name="settings_use_blur_title">Размыццё фону</string>
     <string name="settings_show_lyrics_title">Паказваць тэкст песні</string>
