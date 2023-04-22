@@ -22,6 +22,13 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.widget.RemoteViews;
+
+import org.lineageos.eleven.R;
+import org.lineageos.eleven.cache.ImageCache;
+import org.lineageos.eleven.cache.ImageFetcher;
 
 public abstract class AppWidgetBase extends AppWidgetProvider {
 
@@ -30,5 +37,21 @@ public abstract class AppWidgetBase extends AppWidgetProvider {
         Intent intent = new Intent(action);
         intent.setComponent(serviceName);
         return PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+    }
+
+    public void showDefaults(Context context, RemoteViews appWidgetView) {
+        ImageFetcher imageFetcher = ImageFetcher.getInstance(context);
+        imageFetcher.setImageCache(ImageCache.getInstance(context));
+        Resources resources = context.getResources();
+        final CharSequence trackName = resources.getString(R.string.widget_track_name);
+        final CharSequence artistName = resources.getString(R.string.widget_artist_name);
+        final CharSequence albumName = resources.getString(R.string.widget_album_name);
+        final Bitmap bitmap = imageFetcher.getArtwork("", 0, true).getBitmap();
+
+        // Set the titles and artwork
+        appWidgetView.setTextViewText(R.id.app_widget_line_one, trackName);
+        appWidgetView.setTextViewText(R.id.app_widget_line_two, artistName);
+        appWidgetView.setTextViewText(R.id.app_widget_line_three, albumName);
+        appWidgetView.setImageViewBitmap(R.id.app_widget_image, bitmap);
     }
 }

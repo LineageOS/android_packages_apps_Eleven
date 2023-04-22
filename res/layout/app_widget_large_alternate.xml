@@ -21,11 +21,11 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_app_widget"
     android:columnCount="3"
-    android:padding="8dp"
+    android:padding="16dp"
     android:rowCount="2">
 
     <ImageView
-        android:id="@+id/app_widget_large_alternate_image"
+        android:id="@+id/app_widget_image"
         android:layout_width="@dimen/app_widget_large_alternate_artwork_size"
         android:layout_height="@dimen/app_widget_large_alternate_artwork_size"
         android:layout_row="0"
@@ -45,20 +45,20 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/app_widget_large_alternate_line_one"
+            android:id="@+id/app_widget_line_one"
             style="@style/NotificationText"
             android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/app_widget_large_alternate_line_two"
+            android:id="@+id/app_widget_line_two"
             style="@style/NotificationText"
             android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
 
         <TextView
-            android:id="@+id/app_widget_large_alternate_line_three"
+            android:id="@+id/app_widget_line_three"
             style="@style/NotificationText"
             android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
@@ -78,7 +78,7 @@
             android:id="@+id/app_widget_large_alternate_shuffle"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="?android:selectableItemBackground"
+            android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_shuffle"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
@@ -88,7 +88,7 @@
             android:id="@+id/app_widget_large_alternate_previous"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="?android:selectableItemBackground"
+            android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_prev"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
@@ -98,17 +98,17 @@
             android:id="@+id/app_widget_large_alternate_play"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="?android:selectableItemBackground"
+            android:background="?android:selectableItemBackgroundBorderless"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
-            android:src="@drawable/btn_playback_pause_widget"
+            android:src="@drawable/btn_playback_play_widget"
             android:contentDescription="@string/accessibility_play" />
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_next"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="?android:selectableItemBackground"
+            android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_next"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
@@ -118,7 +118,7 @@
             android:id="@+id/app_widget_large_alternate_repeat"
             android:layout_width="56dp"
             android:layout_height="56dp"
-            android:background="?android:selectableItemBackground"
+            android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_repeat"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"

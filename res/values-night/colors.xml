@@ -50,5 +50,5 @@
     <color name="list_item_header_text_color">@color/white</color>
 
     <!-- Separated and exposed values for themes -->
-    <color name="widget_background_color">@color/black</color>
+    <color name="widget_background_color">@android:color/system_accent2_800</color>
 </resources>

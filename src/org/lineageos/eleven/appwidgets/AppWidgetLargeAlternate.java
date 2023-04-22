@@ -70,6 +70,7 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
     private void defaultAppWidget(final Context context, final int[] appWidgetIds) {
         final RemoteViews appWidgetViews = new RemoteViews(context.getPackageName(),
                 R.layout.app_widget_large_alternate);
+        showDefaults(context, appWidgetViews);
         linkButtons(context, appWidgetViews);
         pushUpdate(context, appWidgetIds, appWidgetViews);
     }
@@ -123,10 +124,10 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         final Bitmap bitmap = service.getAlbumArt(true).getBitmap();
 
         // Set the titles and artwork
-        appWidgetView.setTextViewText(R.id.app_widget_large_alternate_line_one, trackName);
-        appWidgetView.setTextViewText(R.id.app_widget_large_alternate_line_two, artistName);
-        appWidgetView.setTextViewText(R.id.app_widget_large_alternate_line_three, albumName);
-        appWidgetView.setImageViewBitmap(R.id.app_widget_large_alternate_image, bitmap);
+        appWidgetView.setTextViewText(R.id.app_widget_line_one, trackName);
+        appWidgetView.setTextViewText(R.id.app_widget_line_two, artistName);
+        appWidgetView.setTextViewText(R.id.app_widget_line_three, albumName);
+        appWidgetView.setImageViewBitmap(R.id.app_widget_image, bitmap);
 
         // Set correct drawable for pause state
         final boolean isPlaying = service.isPlaying();
@@ -205,7 +206,7 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         pendingIntent = PendingIntent.getActivity(context, 0, action, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.app_widget_large_alternate_info_container,
                 pendingIntent);
-        views.setOnClickPendingIntent(R.id.app_widget_large_alternate_image, pendingIntent);
+        views.setOnClickPendingIntent(R.id.app_widget_image, pendingIntent);
 
         // Shuffle modes
         pendingIntent = buildPendingIntent(context, MusicPlaybackService.SHUFFLE_ACTION,
