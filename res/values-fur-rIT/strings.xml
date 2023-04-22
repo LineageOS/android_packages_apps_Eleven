@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Musiche</string>
+    <string name="page_artists">Artiscj</string>
+    <string name="page_albums">Albums</string>
+    <string name="page_songs">Cjançons</string>
+    <string name="page_playlists">Listis di riproduzion</string>
+    <string name="page_play_queue">Code di riproduzion</string>
+    <string name="header_albums">Albums</string>
+    <string name="header_all_songs">Dutis lis cjançons</string>
+    <string name="menu_settings">Impostazions</string>
+    <string name="menu_shuffle_item">Riproduzion casuâl</string>
+    <string name="menu_shuffle_all">Riproduzion casuâl di dut</string>
+    <string name="menu_shuffle_playlist">Riproduzion casuâl de liste di riproduzion</string>
+    <string name="menu_shuffle_album">Riproduzion casuâl dal album</string>
+    <string name="menu_shuffle_artist">Riproduzion casuâl dal artist</string>
+    <string name="menu_shuffle_top_tracks">Riproduzion casuâl dai tocs plui scoltâts</string>
+    <string name="menu_shuffle_recent">Riproduzion casuâl dai tocs riprodots di resint</string>
+    <string name="menu_shuffle_last_added">Riproduzion casuâl des ultimis cjançons zontadis</string>
+    <string name="menu_sort_by">Ordene par</string>
+    <string name="menu_clear_list">Nete la liste</string>
+    <string name="menu_clear_queue">Nete la code</string>
+    <string name="menu_save_queue">Salve la code te liste di riproduzion</string>
+    <string name="menu_equalizer">Ecualizadôr</string>
+    <string name="add_to_playlist">Zonte ae liste di riproduzion</string>
+    <string name="add_to_queue">Zonte ae code</string>
+    <string name="remove_from_queue">Gjave de code</string>
+    <string name="sort_order_entry_az">A-Z</string>
+    <string name="sort_order_entry_za">Z-A</string>
+    <string name="sort_order_entry_artist">Artist</string>
+    <string name="sort_order_entry_album">Album</string>
+    <string name="sort_order_entry_year">An</string>
+    <string name="sort_order_entry_duration">Durade</string>
+    <string name="sort_order_entry_number_of_songs">Numar di cjançons</string>
+    <string name="sort_order_entry_number_of_albums">Numar di albums</string>
+    <string name="sort_order_entry_filename">Non dal file</string>
+    <string name="playlist_last_added">Ultins zontâts</string>
+    <string name="playlist_recently_played">Scoltâts di resint</string>
+    <string name="playlist_top_tracks">Miei tocs preferîts</string>
+    <string name="new_playlist">Gnove liste di riproduzion</string>
+    <string name="save">Salve</string>
+    <string name="cancel">Anule</string>
+    <string name="overwrite">Sorescrîf</string>
+    <string name="clear">Nete</string>
+    <string name="new_playlist_name_template">Liste di riproduzion <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">Non liste di riproduzion</string>
+    <string name="delete_dialog_title">Eliminâ <xliff:g id="item" example="album">%s</xliff:g>?</string>
+    <string name="clear_top_tracks_title">Netâ vie i tocs preferîts?</string>
+    <string name="clear_recent_title">Netâ vie i riprodots di resint?</string>
+    <string name="clear_last_added">Netâ vie i ultins zontâts?</string>
+    <string name="cannot_be_undone">Cheste operazion e je ireversibile</string>
+    <string name="delete_warning">Lis imagjins te memorie cache a vignaran eliminadis par simpri</string>
+    <string name="new_photo">Sielç une foto de galarie</string>
+    <string name="use_default">Dopre la foto predefinide</string>
+    <string name="visualizer_perm_denied">Il permès pe regjistrazion audio al è stât dineât, abilitilu de aplicazion Impostazions par ativâ il visualizadôr musicâl</string>
+    <string name="context_menu_play_selection">Riprodûs</string>
+    <string name="context_menu_play_next">Riprodûs prossim</string>
+    <string name="context_menu_play_album">Riprodûs l\'album</string>
+    <string name="context_menu_more_by_artist">Altris dal artist</string>
+    <string name="context_menu_rename_playlist">Cambie non</string>
+    <string name="context_menu_delete">Elimine</string>
+    <string name="context_menu_fetch_album_art">Recupere cuvierte dal album</string>
+    <string name="context_menu_fetch_artist_image">Recupere imagjin dal artist</string>
+    <string name="context_menu_remove_from_recent">Gjave dai resints</string>
+    <string name="context_menu_use_as_ringtone">Dopre come sunarie</string>
+    <string name="context_menu_remove_from_playlist">Gjave de liste di riproduzion</string>
+    <string name="context_menu_change_image">Cambie imagjin</string>
+    <string name="accessibility_play">Riprodûs</string>
+    <string name="accessibility_pause">Pause</string>
+    <string name="accessibility_next">Sucessîf</string>
+    <string name="accessibility_prev">Precedent</string>
+    <string name="accessibility_shuffle">Riproduzion casuâl</string>
+    <string name="accessibility_shuffle_all">Riproduzion casuâl di dut</string>
+    <string name="accessibility_repeat">Ripet</string>
+    <string name="accessibility_repeat_all">Ripet dut</string>
+    <string name="accessibility_repeat_one">Ripet un</string>
+    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' met come sunarie</string>
+    <string name="settings_storage_category">Archivi</string>
+    <string name="settings_delete_cache_title">Scancele la cache</string>
+    <string name="settings_delete_cache_summary">Gjave dutis lis imagjins te cache</string>
+    <string name="settings_general_category">Gjenerâl</string>
+    <string name="settings_show_music_visualization_title">Mostre visualizazion musicâl</string>
+    <string name="settings_use_blur_title">Met fûr di fûc il fonts</string>
+    <string name="settings_show_lyrics_title">Mostre test de cjançon</string>
+    <string name="settings_show_lyrics_summary">Par cjanzons che a àn un file srt</string>
+    <string name="settings_shake_to_play">Scjasse par riprodusi</string>
+    <string name="settings_shake_to_play_summary">Scjasse il dispositîf par riprodusi la cjançon sucessive</string>
+    <string name="app_widget_small">Musiche: 4 \u00d7 1</string>
+    <string name="app_widget_large">Musiche: 4 \u00d7 2</string>
+    <string name="app_widget_large_alt">Musiche: 4 \u00d7 2 (alternatîf)</string>
+    <string name="no_effects_for_you">Nol è stât pussibil vierzi l\'ecualizadôr.</string>
+    <string name="empty_recent_main">Nissune cjançon resinte</string>
+    <string name="empty_recent">Lis cjançons che tu âs scoltât di resint a vignaran fûr achì.</string>
+    <string name="empty_playlist_main">Nissune cjançon te liste di riproduzion</string>
+    <string name="empty_playlist_secondary">Par zontâ cjançons ae cheste liste di riproduzion tocje il menù des opzions suntune cjançon, un album o un artist e selezione \"Zonte ae liste di riproduzion\".</string>
+    <string name="empty_top_tracks_main">Nissune cjançon preferide</string>
+    <string name="empty_top_tracks_secondary">Lis cjançons che tu scoltis di plui a vignaran zontadis a cheste liste.</string>
+    <string name="empty_last_added_main">Nissune cjançon zontade di resint</string>
+    <string name="empty_last_added">Lis cjançons che tu âs zontât tal ultin mês a vignaran mostradis achì.</string>
+    <string name="empty_generic_main">Nissune cjançon cjatade</string>
+    <string name="empty_generic_secondary">Par copiâ musiche dal to computer al dispositîf, dopre un cabli USB.</string>
+    <string name="empty_queue_main">Nissune cjançon te code di riproduzion</string>
+    <string name="empty_queue_secondary">Par zontâ cjançons ae tô code di riproduzion, tocje il menù des opzions suntune cjançon, un album o un artist e selezione \"Zonte ae code\".</string>
+    <string name="error_playing_track">Impussibil riprodusi la linie %1$s</string>
+    <string name="header_unknown_year">An no cognossût</string>
+    <string name="header_less_than_30s">Mancul di 30 seconts</string>
+    <string name="header_30_to_60_seconds">30 - 60 seconts</string>
+    <string name="header_1_to_2_minutes">1 - 2 minûts</string>
+    <string name="header_2_to_3_minutes">2 - 3 minûts</string>
+    <string name="header_3_to_4_minutes">3 - 4 minûts</string>
+    <string name="header_4_to_5_minutes">4 - 5 minûts</string>
+    <string name="header_5_to_10_minutes">5 - 10 minûts</string>
+    <string name="header_10_to_30_minutes">10 - 30 minûts</string>
+    <string name="header_30_to_60_minutes">30 - 60 minûts</string>
+    <string name="header_greater_than_60_minutes">Plui di 60 minûts</string>
+    <string name="header_1_song">1 cjançon</string>
+    <string name="header_2_to_4_songs">2 - 4 cjançons</string>
+    <string name="header_5_to_9_songs">5 - 9 cjançons</string>
+    <string name="header_10_plus_songs">10+ cjançons</string>
+    <string name="header_5_plus_albums">5+ albums</string>
+    <string name="header_other">"Altri"</string>
+    <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Riproduzion musicâl</string>
+</resources>
