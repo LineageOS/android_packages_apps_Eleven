@@ -68,6 +68,7 @@ public class AppWidgetSmall extends AppWidgetBase {
     private void defaultAppWidget(final Context context, final int[] appWidgetIds) {
         final RemoteViews appWidgetViews = new RemoteViews(context.getPackageName(),
                 R.layout.app_widget_small);
+        showDefaults(context, appWidgetViews);
         linkButtons(context, appWidgetViews);
         pushUpdate(context, appWidgetIds, appWidgetViews);
     }
@@ -120,11 +121,11 @@ public class AppWidgetSmall extends AppWidgetBase {
 
         // Set the titles and artwork
         if (!TextUtils.isEmpty(trackName) || !TextUtils.isEmpty(artistName)) {
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_one, trackName);
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_two, albumName);
-            appWidgetView.setTextViewText(R.id.app_widget_small_line_three, artistName);
+            appWidgetView.setTextViewText(R.id.app_widget_line_one, trackName);
+            appWidgetView.setTextViewText(R.id.app_widget_line_two, albumName);
+            appWidgetView.setTextViewText(R.id.app_widget_line_three, artistName);
         }
-        appWidgetView.setImageViewBitmap(R.id.app_widget_small_image, bitmap);
+        appWidgetView.setImageViewBitmap(R.id.app_widget_image, bitmap);
 
         // Set correct drawable for pause state
         final boolean isPlaying = service.isPlaying();
@@ -162,7 +163,7 @@ public class AppWidgetSmall extends AppWidgetBase {
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         pendingIntent = PendingIntent.getActivity(context, 0, action, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.app_widget_small_info_container, pendingIntent);
-        views.setOnClickPendingIntent(R.id.app_widget_small_image, pendingIntent);
+        views.setOnClickPendingIntent(R.id.app_widget_image, pendingIntent);
 
         // Play and pause
         pendingIntent = buildPendingIntent(context, MusicPlaybackService.TOGGLEPAUSE_ACTION,

@@ -68,6 +68,7 @@ public class AppWidgetLarge extends AppWidgetBase {
         final RemoteViews appWidgetViews = new RemoteViews(context.getPackageName(),
                 R.layout.app_widget_large);
         linkButtons(context, appWidgetViews);
+        showDefaults(context, appWidgetViews);
         pushUpdate(context, appWidgetIds, appWidgetViews);
     }
 
@@ -118,10 +119,10 @@ public class AppWidgetLarge extends AppWidgetBase {
         final Bitmap bitmap = service.getAlbumArt(true).getBitmap();
 
         // Set the titles and artwork
-        appWidgetView.setTextViewText(R.id.app_widget_large_line_one, trackName);
-        appWidgetView.setTextViewText(R.id.app_widget_large_line_two, artistName);
-        appWidgetView.setTextViewText(R.id.app_widget_large_line_three, albumName);
-        appWidgetView.setImageViewBitmap(R.id.app_widget_large_image, bitmap);
+        appWidgetView.setTextViewText(R.id.app_widget_line_one, trackName);
+        appWidgetView.setTextViewText(R.id.app_widget_line_two, artistName);
+        appWidgetView.setTextViewText(R.id.app_widget_line_three, albumName);
+        appWidgetView.setImageViewBitmap(R.id.app_widget_image, bitmap);
 
         // Set correct drawable for pause state
         final boolean isPlaying = service.isPlaying();
@@ -158,7 +159,7 @@ public class AppWidgetLarge extends AppWidgetBase {
         action.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         pendingIntent = PendingIntent.getActivity(context, 0, action, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.app_widget_large_info_container, pendingIntent);
-        views.setOnClickPendingIntent(R.id.app_widget_large_image, pendingIntent);
+        views.setOnClickPendingIntent(R.id.app_widget_image, pendingIntent);
 
         // Previous track
         pendingIntent = buildPendingIntent(context, MusicPlaybackService.PREVIOUS_ACTION,

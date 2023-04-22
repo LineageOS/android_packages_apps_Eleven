@@ -131,7 +131,7 @@
     <color name="visualizer_fill_color">#bffafafa</color>
 
     <!-- Separated and exposed values for themes -->
-    <color name="widget_background_color">@color/white</color>
+    <color name="widget_background_color">@android:color/system_accent2_100</color>
     <color name="activity_album_detail_background_color">@color/background_color</color>
     <color name="activity_artist_detail_background_color">@color/background_color</color>
     <color name="activity_base_background_color">@color/background_color</color>
