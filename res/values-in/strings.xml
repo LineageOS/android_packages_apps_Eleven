@@ -69,6 +69,7 @@
     <string name="delete_warning">Ini akan menghapus cache gambar secara permanen</string>
     <string name="new_photo">Pilih foto dari Galeri</string>
     <string name="use_default">Gunakan foto bawaan</string>
+    <string name="visualizer_perm_denied">Izin akses untuk merekam audio ditolak, izinkan melalui aplikasi Setelan untuk mengaktifkan visualisasi musik</string>
     <string name="context_menu_play_selection">Putar</string>
     <string name="context_menu_play_next">Putar selanjutnya</string>
     <string name="context_menu_play_album">Putar album</string>
@@ -96,6 +97,7 @@
     <string name="settings_delete_cache_summary">Hapus semua cache gambar</string>
     <string name="settings_general_category">Umum</string>
     <string name="settings_show_music_visualization_title">Tampilkan visualisasi musik</string>
+    <string name="settings_use_blur_title">Latar belakang blur</string>
     <string name="settings_show_lyrics_title">Tampilkan lirik lagu</string>
     <string name="settings_show_lyrics_summary">Untuk lagu-lagu yang memiliki berkas srt</string>
     <string name="settings_shake_to_play">Goyang untuk memutar</string>
