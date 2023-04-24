@@ -25,7 +25,7 @@
     <string name="page_play_queue">Cola de reproducción</string>
     <string name="header_albums">Álbumes</string>
     <string name="header_all_songs">Toles canciones</string>
-    <string name="menu_settings">Axustes</string>
+    <string name="menu_settings">Configuración</string>
     <string name="menu_shuffle_item">Debalar</string>
     <string name="menu_shuffle_all">Debalar too</string>
     <string name="menu_shuffle_playlist">Debalar la llista</string>
@@ -69,7 +69,7 @@
     <string name="delete_warning">Esta aición va desaniciar les entraes de les imáxenes de la caché</string>
     <string name="new_photo">Escoyer una semeya en Galería</string>
     <string name="use_default">Usar la semeya predeterminada</string>
-    <string name="visualizer_perm_denied">Negóse\'l permisu pa grabar audiu. Concédelu n\'aplicación «Axustes» p\'activar la visualización musical</string>
+    <string name="visualizer_perm_denied">Negóse\'l permisu pa grabar audiu. Concédelu n\'aplicación «Configuración» p\'activar la visualización musical</string>
     <string name="context_menu_play_selection">Reproducir</string>
     <string name="context_menu_play_next">Reproducir de siguío</string>
     <string name="context_menu_play_album">Reproducir l\'álbum</string>
