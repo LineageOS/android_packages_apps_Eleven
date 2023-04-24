@@ -102,7 +102,6 @@
     <string name="settings_show_lyrics_summary">სიმღერებისთვის, რომელთაც გააჩნია srt-ფაილი</string>
     <string name="settings_shake_to_play">შერხევით გაშვება</string>
     <string name="settings_shake_to_play_summary">შეარხიეთ თქვენი მოწყობილობა შემდეგ ჩანაწერზე გადასასვლელად</string>
-    <string name="app_widget_small">მუსიკა: 4 \u00d7 1</string>
     <string name="app_widget_large">მუსიკა: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">მუსიკა: 4 \u00d7 2 (alternativ)</string>
     <string name="no_effects_for_you">მათანაბრებლის გახსნა ვერ ხერხდება.</string>

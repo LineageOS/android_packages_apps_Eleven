@@ -101,7 +101,6 @@
     <string name="settings_show_lyrics_summary">Jos kappaleella on srt-tiedosto</string>
     <string name="settings_shake_to_play">Toista ravistamalla</string>
     <string name="settings_shake_to_play_summary">Ravista laitettasi toistaaksesi seuraavan kappaleen</string>
-    <string name="app_widget_small">Musiikki: 4 \u00d7 1</string>
     <string name="app_widget_large">Musiikki: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musiikki: 4 \u00d7 2 (vaihtoehtoinen)</string>
     <string name="no_effects_for_you">Taajuuskorjainta ei voitu avata.</string>

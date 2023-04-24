@@ -101,7 +101,6 @@
     <string name="settings_show_lyrics_summary">للأغاني التي تحتوي على ملف srt</string>
     <string name="settings_shake_to_play">هز للتشغيل</string>
     <string name="settings_shake_to_play_summary">هز جهازك لتشغيل الأغنية التالية</string>
-    <string name="app_widget_small">موسيقى: 4 \u00d7 1</string>
     <string name="app_widget_large">موسيقى: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">موسيقى: 4 \u00d7 2 (بالتبادل)</string>
     <string name="no_effects_for_you">تعذر فتح المعادل.</string>

@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">srt ફાઇલ હોય તેવા ગીતો માટે</string>
     <string name="settings_shake_to_play">પ્લે કરવા હલાવો</string>
     <string name="settings_shake_to_play_summary">આગામી ગીત પ્લે કરવા તમારી ડિવાઇસ હલાવો</string>
-    <string name="app_widget_small">મ્યુઝિક: 4 \u00d7 1</string>
     <string name="app_widget_large">મ્યુઝિક: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">મ્યુઝિક: 4 \u00d7 2 (વૈકલ્પિક)</string>
     <string name="no_effects_for_you">ઇક્વલાઇઝર ખોલી શકાયું નહીં.</string>

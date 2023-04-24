@@ -96,7 +96,6 @@
     <string name="settings_show_music_visualization_title">Rādīt mūzikas vizualizāciju</string>
     <string name="settings_show_lyrics_title">Rādīt dziesmu vārdus</string>
     <string name="settings_show_lyrics_summary">Dziesmām kam ir srt fails</string>
-    <string name="app_widget_small">Mūzika: 4 \u00d7 1</string>
     <string name="app_widget_large">Mūzika: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Mūzika: 4 \u00d7 2 (alternatīvā)</string>
     <string name="no_effects_for_you">Ekvalaizeru nevar atvērt.</string>

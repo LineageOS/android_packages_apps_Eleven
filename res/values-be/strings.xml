@@ -98,7 +98,6 @@
     <string name="settings_show_lyrics_summary">Для песень, якія маюць файл srt</string>
     <string name="settings_shake_to_play">Пераключэнне кампазіцый устрэсваннем</string>
     <string name="settings_shake_to_play_summary">Патрасіце прыладу для пераходу да наступнай песні</string>
-    <string name="app_widget_small">Музыка: 4 \u00d7 1</string>
     <string name="app_widget_large">Музыка: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музыка: 4 \u00d7 2 (альтэрнатыўны)</string>
     <string name="no_effects_for_you">Немагчыма адкрыць эквалайзер.</string>

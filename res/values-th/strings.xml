@@ -101,7 +101,6 @@
     <string name="settings_show_lyrics_summary">สำหรับเพลงที่มีไฟล์ srt</string>
     <string name="settings_shake_to_play">เขย่าเพื่อเล่น</string>
     <string name="settings_shake_to_play_summary">เขย่าอุปกรณ์ของคุณเพื่อเล่นเพลงถัดไป</string>
-    <string name="app_widget_small">เพลง: 4 \u00d7 1</string>
     <string name="app_widget_large">เพลง: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">เพลง: 4 \u00d7 2 (สลับ)</string>
     <string name="no_effects_for_you">ไม่สามารถเปิด equalizer ได้</string>

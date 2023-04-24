@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">srt கோப்பு உடைய பாடல்களுக்கு</string>
     <string name="settings_shake_to_play">இயக்க அசை</string>
     <string name="settings_shake_to_play_summary">அடுத்த பாடலை இயக்குவதற்கு உங்கள் சாதனத்தை அசைக்கவும்</string>
-    <string name="app_widget_small">இசை: 4 \u00d7 1</string>
     <string name="app_widget_large">இசை: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">இசை: 4 \u00d7 2 (மாற்று)</string>
     <string name="no_effects_for_you">சமமாக்கியை திறக்க முடியவில்லை.</string>

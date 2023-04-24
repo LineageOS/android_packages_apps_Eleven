@@ -102,7 +102,7 @@
     <string name="settings_show_lyrics_summary">Đối với bài hát có tập tin srt</string>
     <string name="settings_shake_to_play">Lắc để phát</string>
     <string name="settings_shake_to_play_summary">Lắc thiết bị để phát bài hát kế tiếp</string>
-    <string name="app_widget_small">Nghe nhạc: 4 \u00d7 1</string>
+    <string name="app_widget_small">Âm nhạc: Hình vuông</string>
     <string name="app_widget_large">Nghe nhạc: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Nghe nhạc: 4 \u00d7 2 (kiểu khác)</string>
     <string name="no_effects_for_you">Không thể mở bộ chỉnh âm.</string>

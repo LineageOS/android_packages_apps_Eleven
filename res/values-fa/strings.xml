@@ -61,7 +61,6 @@
     <string name="settings_show_lyrics_summary">برای آهنگ‌های دارای فایل srt</string>
     <string name="settings_shake_to_play">برای پخش بلرزانید</string>
     <string name="settings_shake_to_play_summary">برای پخش آهنگ بعدی، دستگاه خود را بلرزانید</string>
-    <string name="app_widget_small">موسیقی: ۴ \u00d7 ۱</string>
     <string name="app_widget_large">موسیقی: ۴ \u00d7 ۲</string>
     <string name="app_widget_large_alt">موسیقی: ۴ \u00d7 ۲ (جایگزین)</string>
     <string name="no_effects_for_you">اکولایزر باز نمی‌شود.</string>

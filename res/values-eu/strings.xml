@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">str fitxategia duten abestientzat</string>
     <string name="settings_shake_to_play">Astindu erreproduzitzeko</string>
     <string name="settings_shake_to_play_summary">Astindu zure gailua hurrengo abestia erreproduzitzeko</string>
-    <string name="app_widget_small">Musika: 4 \u00d7 1</string>
     <string name="app_widget_large">Musika: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musika: 4 \u00d7 2 (txandakatu)</string>
     <string name="no_effects_for_you">Ezin izan da ekualizadorea ireki.</string>

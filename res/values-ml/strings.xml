@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">srt ഫയൽ ഉള്ള ഗാനങ്ങള്‍ക്ക് വേണ്ടിയുള്ളത്</string>
     <string name="settings_shake_to_play">പ്ലേ ചെയ്യാന്‍ കുലുക്കുക</string>
     <string name="settings_shake_to_play_summary">അടുത്ത ഗാനം പ്ലേ ചെയ്യാന്‍ നിങ്ങളുടെ ഉപകരണം കുലുക്കുക</string>
-    <string name="app_widget_small">സംഗീതം: 4 \u00d7 1</string>
     <string name="app_widget_large">സംഗീതം: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">സംഗീതം: 4 \u00d7 2 (ഇതരമാര്‍ഗ്ഗം)</string>
     <string name="no_effects_for_you">ഈക്വലൈസര്‍ തുറക്കാൻ കഴിഞ്ഞില്ല.</string>
