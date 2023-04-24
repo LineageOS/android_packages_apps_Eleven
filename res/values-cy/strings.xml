@@ -69,6 +69,7 @@
     <string name="delete_warning">Bydd hyn yn dileu delweddau wedi\'u cadw dros dro</string>
     <string name="new_photo">Dewis lun o\'r oriel</string>
     <string name="use_default">Defnyddio llun rhagosodedig</string>
+    <string name="visualizer_perm_denied">Gwrthodwyd caniatâd recordio sain. Gellir ei alluogi yn yr ap Gosodiadau i alluogi delweddu cerddoriaeth.</string>
     <string name="context_menu_play_selection">Chwarae</string>
     <string name="context_menu_play_next">Chwarae\'r nesaf</string>
     <string name="context_menu_play_album">Chwarae casgliad</string>

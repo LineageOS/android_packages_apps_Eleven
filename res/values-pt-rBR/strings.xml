@@ -136,5 +136,4 @@
     <string name="header_5_plus_albums">Mais de 5 álbuns</string>
     <string name="header_other">"Outro"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
-    <string name="channel_music">Reprodução de música</string>
 </resources>
