@@ -102,7 +102,7 @@
     <string name="settings_show_lyrics_summary">Για τραγούδια που έχουν αρχείο srt</string>
     <string name="settings_shake_to_play">Ανακίνηση για αναπαραγωγή</string>
     <string name="settings_shake_to_play_summary">Κουνήστε τη συσκευή σας για αναπαραγωγή του επόμενου τραγουδιού</string>
-    <string name="app_widget_small">Μουσική: 4 \u00d7 1</string>
+    <string name="app_widget_small">Μουσική: Τετράγωνο</string>
     <string name="app_widget_large">Μουσική: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Μουσική: 4 \u00d7 2 (εναλλακτικό)</string>
     <string name="no_effects_for_you">Δεν ήταν δυνατό το άνοιγμα του ισοσταθμιστή.</string>

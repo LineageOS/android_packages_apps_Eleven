@@ -102,7 +102,6 @@
     <string name="settings_show_lyrics_summary">Ar gyfer caneuon sydd gyda ffeil srt</string>
     <string name="settings_shake_to_play">Ysgwyd i Chwarae</string>
     <string name="settings_shake_to_play_summary">Ysgwyd dy ddyfais i chwarae\'r trac nesaf</string>
-    <string name="app_widget_small">Cerddoriaeth: 4 \u00d7 1</string>
     <string name="app_widget_large">Cerddoriaeth 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Cerddoriaeth 4 \u00d7 2 (amgen)</string>
     <string name="no_effects_for_you">Methwyd ag agor y cydraddolydd.</string>

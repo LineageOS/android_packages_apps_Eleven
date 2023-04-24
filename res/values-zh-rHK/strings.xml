@@ -91,7 +91,6 @@
     <string name="settings_show_lyrics_summary">針對有 srt 檔的歌曲</string>
     <string name="settings_shake_to_play">搖動即可播放</string>
     <string name="settings_shake_to_play_summary">搖動您的裝置即可播放下一首歌曲</string>
-    <string name="app_widget_small">音樂：4 \u00d7 1</string>
     <string name="app_widget_large">音樂：4 \u00d7 2</string>
     <string name="app_widget_large_alt">音樂：4 \u00d7 2（交替）</string>
     <string name="no_effects_for_you">無法打開等化器。</string>

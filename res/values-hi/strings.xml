@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">एसआरटी फ़ाइल वाले गानों के लिए</string>
     <string name="settings_shake_to_play">बजाने के लिए हिलाएँ</string>
     <string name="settings_shake_to_play_summary">अगला गाना बजाने के लिए अपने उपकरण को हिलाएँ</string>
-    <string name="app_widget_small">संगीत: 4 \u00d7 1</string>
     <string name="app_widget_large">संगीत: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">संगीत: 4 \u00d7 2 (एक को छोड़कर एक)</string>
     <string name="no_effects_for_you">तुल्यकारक को खोला नहीं जा सका।</string>

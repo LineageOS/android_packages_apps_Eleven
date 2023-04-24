@@ -102,7 +102,7 @@
     <string name="settings_show_lyrics_summary">Pentru melodii care au un fișier srt</string>
     <string name="settings_shake_to_play">Scuturați pentru a reda</string>
     <string name="settings_shake_to_play_summary">Se agită dispozitivul pentru a reda melodia următoare</string>
-    <string name="app_widget_small">Muzică: 4 \u00d7 1</string>
+    <string name="app_widget_small">Muzică: Pătrat</string>
     <string name="app_widget_large">Muzică: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muzică: 4 \u00d7 2 (alternativ)</string>
     <string name="no_effects_for_you">Egalizatorul nu a putut fi deschis.</string>

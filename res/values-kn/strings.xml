@@ -97,7 +97,6 @@
     <string name="settings_show_lyrics_summary">srt ಕಡತ ಹೊಂದಿರುವ ಹಾಡುಗಳಿಗಾಗಿ</string>
     <string name="settings_shake_to_play">ಪ್ಲೇ ಮಾಡಲು ಕುಲುಕಿ</string>
     <string name="settings_shake_to_play_summary">ಮುಂದಿನ ಹಾಡನ್ನು ಪ್ಲೇ ಮಾಡಲು ನಿಮ್ಮ ಸಾಧನವನ್ನು ಕುಲುಕಿ</string>
-    <string name="app_widget_small">ಸಂಗೀತ: 4 \u00d7 1</string>
     <string name="app_widget_large">ಸಂಗೀತ: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">ಸಂಗೀತ: 4 \u00d7 2 (ಪರ್ಯಾಯ)</string>
     <string name="no_effects_for_you">ಸಮಾನಕಾರಕವನ್ನು ತೆರೆಯಲಾಗುವುದಿಲ್ಲ.</string>

@@ -102,7 +102,7 @@
     <string name="settings_show_lyrics_summary">Для песен, к которым имеется файл srt</string>
     <string name="settings_shake_to_play">Перекл. треков встряхиванием</string>
     <string name="settings_shake_to_play_summary">Встряхните устройство для перехода к следующему треку</string>
-    <string name="app_widget_small">Музыка: 4 \u00d7 1</string>
+    <string name="app_widget_small">Музыка: Квадрат</string>
     <string name="app_widget_large">Музыка: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музыка: 4 \u00d7 2 (альтернативный)</string>
     <string name="no_effects_for_you">Не удалось открыть эквалайзер.</string>

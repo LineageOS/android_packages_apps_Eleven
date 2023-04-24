@@ -102,7 +102,6 @@
     <string name="settings_show_lyrics_summary">Para cancións que teñen un ficheiro srt</string>
     <string name="settings_shake_to_play">Abanear para reproducir</string>
     <string name="settings_shake_to_play_summary">Abanea o teu dispositivo para reproducir a seguinte canción</string>
-    <string name="app_widget_small">Música: 4 \u00d7 1</string>
     <string name="app_widget_large">Música: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Música: 4 \u00d7 2 (alternativo)</string>
     <string name="no_effects_for_you">Non foi posíbel abrir o ecualizador.</string>

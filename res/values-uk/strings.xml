@@ -101,7 +101,6 @@
     <string name="settings_show_lyrics_summary">Для композицій що мають srt файл</string>
     <string name="settings_shake_to_play">Відтворення струсом</string>
     <string name="settings_shake_to_play_summary">Струшуйте пристрій для відтворення наступної пісні</string>
-    <string name="app_widget_small">Музика: 4 \u00d7 1</string>
     <string name="app_widget_large">Музика: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музика: 4 \u00d7 2 (альтернативний)</string>
     <string name="no_effects_for_you">Неможливо відкрити еквалайзер.</string>

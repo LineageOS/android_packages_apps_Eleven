@@ -102,7 +102,7 @@
     <string name="settings_show_lyrics_summary">srtファイルがある曲向け</string>
     <string name="settings_shake_to_play">シェイクで再生</string>
     <string name="settings_shake_to_play_summary">端末をシェイクして次の曲を再生する</string>
-    <string name="app_widget_small">音楽: 4 \u00d7 1</string>
+    <string name="app_widget_small">音楽: スクエア</string>
     <string name="app_widget_large">音楽: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">音楽: 4 \u00d7 2（別バージョン）</string>
     <string name="no_effects_for_you">イコライザーを開けませんでした。</string>

@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">srt ఫైల్ కలిగిన పాటల కొరకు</string>
     <string name="settings_shake_to_play">ప్లే చేసేందుకు కదపండి</string>
     <string name="settings_shake_to_play_summary">తరువాతి పాటను ప్లే చేసేందుకు మీ పరికరాన్ని కదపండి</string>
-    <string name="app_widget_small">సంగీతం: 4 \u00d7 1</string>
     <string name="app_widget_large">సంగీతం: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">సంగీతం: 4 \u00d7 2 (ప్రత్యామ్నాయ)</string>
     <string name="no_effects_for_you">ఈక్వలైజరును తెరవడం సాధ్యపడలేదు.</string>

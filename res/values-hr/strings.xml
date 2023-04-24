@@ -100,7 +100,6 @@
     <string name="settings_show_lyrics_summary">Za pjesme koje imaju srt datoteku</string>
     <string name="settings_shake_to_play">Protresi za reproduciranje</string>
     <string name="settings_shake_to_play_summary">Protresi uređaj na sljedeću pjesmu</string>
-    <string name="app_widget_small">Glazba: 4 \u00d7 1</string>
     <string name="app_widget_large">Glazba: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Glazba: 4 \u00d7 2 (rezervna)</string>
     <string name="no_effects_for_you">Ekvalizer se ne može otvoriti.</string>

@@ -101,7 +101,6 @@
     <string name="settings_show_lyrics_summary">Para canciones que tienen un archivo srt</string>
     <string name="settings_shake_to_play">Agitar para reproducir</string>
     <string name="settings_shake_to_play_summary">Agita tu dispositivo para reproducir la siguiente canción</string>
-    <string name="app_widget_small">Música: 4 \u00d7 1</string>
     <string name="app_widget_large">Música: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Música: 4 \u00d7 2 (alternativo)</string>
     <string name="no_effects_for_you">No se pudo abrir el ecualizador.</string>
