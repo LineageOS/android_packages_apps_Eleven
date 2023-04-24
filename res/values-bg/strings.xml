@@ -69,6 +69,7 @@
     <string name="delete_warning">Това завинаги ще изтрие записите в кеша</string>
     <string name="new_photo">Изберете снимка от Галерия</string>
     <string name="use_default">Използване снимка по подразбиране</string>
+    <string name="visualizer_perm_denied">Разрешението за аудиозапис е отказано, разрешете го от Настройките на приложението , за да активирате визуализацията на музика</string>
     <string name="context_menu_play_selection">Изпълни</string>
     <string name="context_menu_play_next">Следваща песен</string>
     <string name="context_menu_play_album">Изпълни албум</string>
