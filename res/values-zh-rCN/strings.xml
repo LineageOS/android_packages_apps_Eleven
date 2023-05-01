@@ -102,6 +102,7 @@
     <string name="settings_show_lyrics_summary">有一个 srt 文件与歌曲匹配</string>
     <string name="settings_shake_to_play">摇动播放</string>
     <string name="settings_shake_to_play_summary">摇动您的设备以播放下一首歌</string>
+    <string name="app_widget_small">音乐：正方形</string>
     <string name="app_widget_large">音乐：4 \u00d7 1</string>
     <string name="app_widget_large_alt">音乐：4 \u00d7 2 (交替)</string>
     <string name="no_effects_for_you">无法打开均衡器。</string>

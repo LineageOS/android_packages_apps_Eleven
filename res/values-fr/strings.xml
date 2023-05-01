@@ -102,6 +102,7 @@
     <string name="settings_show_lyrics_summary">Pour les titres ayant un fichier srt</string>
     <string name="settings_shake_to_play">Secouer pour lire</string>
     <string name="settings_shake_to_play_summary">Secouer votre appareil pour écouter le titre suivant</string>
+    <string name="app_widget_small">Musique : Carré</string>
     <string name="app_widget_large">Musique : 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musique : 4 \u00d7 2 (alterné)</string>
     <string name="no_effects_for_you">L\'égaliseur ne peut pas être ouvert.</string>

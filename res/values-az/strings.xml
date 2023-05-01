@@ -102,6 +102,7 @@
     <string name="settings_show_lyrics_summary">srt faylı olan mahnılar üçün</string>
     <string name="settings_shake_to_play">Oynatmaq üçün silkələyin</string>
     <string name="settings_shake_to_play_summary">Növbəti mahnını səsləndirmək üçün cihazınızı silkələyin</string>
+    <string name="app_widget_small">Musiqi: Kvadrat</string>
     <string name="app_widget_large">Musiqi: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Musiqi: 4 \u00d7 2 (alternativ)</string>
     <string name="no_effects_for_you">Ekvalayzer açılmadı.</string>
