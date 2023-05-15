@@ -102,6 +102,7 @@
     <string name="settings_show_lyrics_summary">Para músicas que têm um ficheiro .srt</string>
     <string name="settings_shake_to_play">Agitar para reproduzir</string>
     <string name="settings_shake_to_play_summary">Agite o seu dispositivo para reproduzir a próxima música</string>
+    <string name="app_widget_small">Música: Quadrado</string>
     <string name="app_widget_large">Música: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Música: 4 \u00d7 2 (alternativo)</string>
     <string name="no_effects_for_you">O equalizador não pôde ser aberto.</string>
@@ -137,4 +138,7 @@
     <string name="header_other">"Outro"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Reproduzir música</string>
+    <string name="widget_track_name">Nome da música</string>
+    <string name="widget_artist_name">Nome do artista</string>
+    <string name="widget_album_name">Nome do álbum</string>
 </resources>

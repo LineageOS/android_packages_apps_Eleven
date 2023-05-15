@@ -138,4 +138,7 @@
     <string name="header_other">"Altri"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Riproduzion musicâl</string>
+    <string name="widget_track_name">Non dal toc</string>
+    <string name="widget_artist_name">Non dal artist</string>
+    <string name="widget_album_name">Non dal album</string>
 </resources>
