@@ -454,6 +454,8 @@ public final class ImageCache {
             // Log.e(TAG, "IllegalStateException - getArtworkFromFile - ", e);
         } catch (final FileNotFoundException e) {
             // Log.e(TAG, "FileNotFoundException - getArtworkFromFile - ", e);
+        } catch (final IllegalArgumentException e) {
+            // Log.e(TAG, "IllegalArgumentException - getArtworkFromFile - ", e);
         } catch (final OutOfMemoryError evict) {
             // Log.e(TAG, "OutOfMemoryError - getArtworkFromFile - ", evict);
             evictAll();
