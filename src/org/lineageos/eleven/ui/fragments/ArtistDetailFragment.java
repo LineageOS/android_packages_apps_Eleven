@@ -35,7 +35,6 @@ import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.ArtistDetailAlbumAdapter;
 import org.lineageos.eleven.adapters.ArtistDetailSongAdapter;
-import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.loaders.AlbumLoader;
 import org.lineageos.eleven.loaders.SongLoader;
@@ -53,7 +52,7 @@ import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 import java.util.List;
 import java.util.TreeSet;
 
-public class ArtistDetailFragment extends DetailFragment implements IChildFragment {
+public class ArtistDetailFragment extends DetailFragment {
     private final int ALBUM_LOADER_ID = 0;
     private final int SONG_LOADER_ID = 1;
 
@@ -284,10 +283,5 @@ public class ArtistDetailFragment extends DetailFragment implements IChildFragme
         super.onMetaChanged();
 
         mSongAdapter.setCurrentlyPlayingTrack(MusicUtils.getCurrentTrack());
-    }
-
-    @Override
-    public PagerAdapter.MusicFragments getMusicFragmentParent() {
-        return PagerAdapter.MusicFragments.ARTIST;
     }
 }

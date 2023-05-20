@@ -171,7 +171,7 @@ public abstract class DetailSongAdapter extends RecyclerView.Adapter<DetailSongA
             toPlay[i] = getItem(i).mSongId;
         }
         // specify the song position to start playing
-        MusicUtils.playAll(mContext, toPlay, id, getSourceId(), getSourceType(), false);
+        MusicUtils.playAll(toPlay, id, getSourceId(), getSourceType(), false);
     }
 
     public void setData(List<Song> songs) {

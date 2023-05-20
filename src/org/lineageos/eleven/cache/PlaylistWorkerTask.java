@@ -79,7 +79,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
         mPlaylistId = playlistId;
         mWorkerType = type;
-        mPlaylistStore = PlaylistArtworkStore.getInstance(mContext);
+        mPlaylistStore = PlaylistArtworkStore.getInstance(mContext.get());
         mFoundInCache = foundInCache;
         mFallbackToDefaultImage = false;
     }
@@ -175,7 +175,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
         try {
             // gets the songs in the playlist
-            playlistCursor = PlaylistSongLoader.makePlaylistSongCursor(mContext, mPlaylistId);
+            playlistCursor = PlaylistSongLoader.makePlaylistSongCursor(mContext.get(), mPlaylistId);
             if (playlistCursor == null || !playlistCursor.moveToFirst()) {
                 return null;
             }
@@ -194,7 +194,8 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             }
 
             // find the sorted order for the playlist based on the top songs database
-            long[] order = SongPlayCount.getInstance(mContext).getTopPlayedResultsForList(songIds);
+            long[] order = SongPlayCount.getInstance(mContext.get())
+                    .getTopPlayedResultsForList(songIds);
 
             // create a new cursor that takes the playlist cursor and the sorted order
             sortedCursor = new SortedCursor(playlistCursor, order,
@@ -235,7 +236,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
 
             artistName = sortedCursor.getString(artistIndex);
             // try to load the bitmap
-            bitmap = ImageWorker.getBitmapInBackground(mContext, mImageCache, artistName,
+            bitmap = ImageWorker.getBitmapInBackground(mContext.get(), mImageCache, artistName,
                     -1, ImageType.ARTIST);
         } while (sortedCursor.moveToNext() && bitmap == null);
 
@@ -298,7 +299,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             // if we successfully added the key (ie the key didn't previously exist)
             if (keys.add(key)) {
                 // try to load the bitmap
-                bitmap = ImageWorker.getBitmapInBackground(mContext, mImageCache,
+                bitmap = ImageWorker.getBitmapInBackground(mContext.get(), mImageCache,
                         key, albumId, ImageType.ALBUM);
 
                 // if we got the bitmap, add it to the list
@@ -364,7 +365,7 @@ public class PlaylistWorkerTask extends BitmapWorkerTask<Void, Void, TransitionD
             if (transitionDrawable != null) {
                 imageView.setImageDrawable(transitionDrawable);
             } else if (mFallbackToDefaultImage) {
-                ImageFetcher.getInstance(mContext).loadDefaultImage(imageView,
+                ImageFetcher.getInstance(mContext.get()).loadDefaultImage(imageView,
                         ImageType.PLAYLIST, null, String.valueOf(mPlaylistId));
             }
         }

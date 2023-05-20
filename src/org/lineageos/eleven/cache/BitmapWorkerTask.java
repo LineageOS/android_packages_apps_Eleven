@@ -48,7 +48,7 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
      */
     protected Drawable mFromDrawable;
 
-    protected final Context mContext;
+    protected final WeakReference<Context> mContext;
 
     protected final ImageCache mImageCache;
 
@@ -88,9 +88,9 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
                             final Context context, final boolean scaleImgToView) {
         mKey = key;
 
-        mContext = context;
-        mImageCache = ImageCache.getInstance(mContext);
-        mResources = mContext.getResources();
+        mContext = new WeakReference<>(context);
+        mImageCache = ImageCache.getInstance(context);
+        mResources = context.getResources();
 
         mImageReference = new WeakReference<>(imageView);
         mImageType = imageType;
@@ -126,7 +126,7 @@ public abstract class BitmapWorkerTask<Params, Progress, Result>
      * @return Bitmap
      */
     protected Bitmap getBitmapInBackground(final String... params) {
-        return ImageWorker.getBitmapInBackground(mContext, mImageCache, mKey,
+        return ImageWorker.getBitmapInBackground(mContext.get(), mImageCache, mKey,
                 Long.parseLong(params[2]), mImageType);
     }
 

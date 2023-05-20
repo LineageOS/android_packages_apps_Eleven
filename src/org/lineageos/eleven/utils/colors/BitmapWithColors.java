@@ -59,6 +59,7 @@ public class BitmapWithColors {
             return dominant;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return "BitmapColors[vibrant=" + Integer.toHexString(mVibrantColor)

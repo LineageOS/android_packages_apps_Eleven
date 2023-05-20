@@ -29,17 +29,15 @@ import androidx.annotation.NonNull;
 import org.lineageos.eleven.Config.SmartPlaylistType;
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.menu.ConfirmDialog;
 import org.lineageos.eleven.model.Playlist;
-import org.lineageos.eleven.ui.fragments.IChildFragment;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PlaylistPopupMenuHelper;
 import org.lineageos.eleven.utils.PopupMenuHelper;
 import org.lineageos.eleven.utils.PopupMenuHelper.PopupMenuType;
 
 public abstract class SmartPlaylistFragment extends BasicSongFragment
-        implements ConfirmDialog.ConfirmCallback, IChildFragment {
+        implements ConfirmDialog.ConfirmCallback {
     /**
      * LoaderCallbacks identifier
      */
@@ -122,13 +120,9 @@ public abstract class SmartPlaylistFragment extends BasicSongFragment
         // enter the page.
         long[] songIds = getSongIdsFromAdapter();
         if (songIds != null) {
-            MusicUtils.playAll(getActivity(), songIds, position, getSmartPlaylistType().mId,
+            MusicUtils.playAll(songIds, position, getSmartPlaylistType().mId,
                     Config.IdType.Playlist, shuffle);
         }
-    }
-
-    public PagerAdapter.MusicFragments getMusicFragmentParent() {
-        return PagerAdapter.MusicFragments.PLAYLIST;
     }
 
     @Override

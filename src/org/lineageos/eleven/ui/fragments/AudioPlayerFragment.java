@@ -181,7 +181,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
     }
 
     @Override
-    public void onPrepareOptionsMenu(Menu menu) {
+    public void onPrepareOptionsMenu(@NonNull Menu menu) {
         super.onPrepareOptionsMenu(menu);
 
         final Menu playerMenu = mPlayerToolBar.getMenu();

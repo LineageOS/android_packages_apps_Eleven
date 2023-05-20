@@ -21,6 +21,8 @@ package org.lineageos.eleven.cache;
 
 import android.annotation.SuppressLint;
 
+import androidx.annotation.NonNull;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -194,6 +196,7 @@ public class LruCache<K, V> {
         return this.size;
     }
 
+    @NonNull
     @SuppressLint("DefaultLocale")
     @Override
     public synchronized final String toString() {

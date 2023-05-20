@@ -188,7 +188,7 @@ public class LocaleUtils {
         }
 
         mUtils = new LocaleUtilsBase(mLocales);
-        Log.i(TAG, "AddressBook Labels [" + mLocales.toString() + "]: "
+        Log.i(TAG, "AddressBook Labels [" + mLocales + "]: "
                 + getLabels().toString());
     }
 

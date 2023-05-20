@@ -49,7 +49,7 @@ import org.lineageos.eleven.widgets.LoadingEmptyContainer;
 
 import java.util.List;
 
-public class AlbumDetailFragment extends DetailFragment implements IChildFragment,
+public class AlbumDetailFragment extends DetailFragment implements
         LoaderManager.LoaderCallbacks<List<Song>> {
     private static final int LOADER_ID = 1;
 
@@ -209,11 +209,6 @@ public class AlbumDetailFragment extends DetailFragment implements IChildFragmen
         super.onMetaChanged();
 
         mSongAdapter.setCurrentlyPlayingTrack(MusicUtils.getCurrentTrack());
-    }
-
-    @Override
-    public PagerAdapter.MusicFragments getMusicFragmentParent() {
-        return PagerAdapter.MusicFragments.ALBUM;
     }
 
     @NonNull

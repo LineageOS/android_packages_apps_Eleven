@@ -130,7 +130,7 @@ public final class PreferenceUtils {
      *
      * @return The page to start on when the app is opened.
      */
-    public final int getStartPage() {
+    public int getStartPage() {
         return mPreferences.getInt(START_PAGE, DEFAULT_PAGE);
     }
 
@@ -158,7 +158,7 @@ public final class PreferenceUtils {
     /**
      * @return The sort order used for the artist list in {@link ArtistFragment}
      */
-    public final String getArtistSortOrder() {
+    public String getArtistSortOrder() {
         return mPreferences.getString(ARTIST_SORT_ORDER, SortOrder.ArtistSortOrder.ARTIST_A_Z);
     }
 
@@ -174,7 +174,7 @@ public final class PreferenceUtils {
     /**
      * @return The sort order used for the album list in {@link AlbumFragment}
      */
-    public final String getAlbumSortOrder() {
+    public String getAlbumSortOrder() {
         return mPreferences.getString(ALBUM_SORT_ORDER, SortOrder.AlbumSortOrder.ALBUM_A_Z);
     }
 
@@ -182,7 +182,7 @@ public final class PreferenceUtils {
      * @return The sort order used for the album song in
      * AlbumSongFragment
      */
-    public final String getAlbumSongSortOrder() {
+    public String getAlbumSongSortOrder() {
         return mPreferences.getString(ALBUM_SONG_SORT_ORDER,
                 SortOrder.AlbumSongSortOrder.SONG_TRACK_LIST);
     }
@@ -199,7 +199,7 @@ public final class PreferenceUtils {
     /**
      * @return The sort order used for the song list in {@link SongFragment}
      */
-    public final String getSongSortOrder() {
+    public String getSongSortOrder() {
         return mPreferences.getString(SONG_SORT_ORDER, SortOrder.SongSortOrder.SONG_A_Z);
     }
 
@@ -217,7 +217,7 @@ public final class PreferenceUtils {
     /**
      * @return Whether we want to show lyrics
      */
-    public final boolean getShowLyrics() {
+    public boolean getShowLyrics() {
         return mPreferences.getBoolean(SHOW_LYRICS, true);
     }
 
