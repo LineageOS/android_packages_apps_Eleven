@@ -29,8 +29,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import org.lineageos.eleven.BuildConstants;
 import org.lineageos.eleven.MusicPlaybackService;
@@ -47,9 +46,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * A {@link androidx.fragment.app.FragmentStatePagerAdapter} class for swiping between album art
+ * A {@link androidx.viewpager2.adapter.FragmentStateAdapter} class for swiping between album art
  */
-public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
+public class AlbumArtPagerAdapter extends FragmentStateAdapter {
     private static final boolean DEBUG = false;
     private static final String TAG = AlbumArtPagerAdapter.class.getSimpleName();
 
@@ -99,25 +98,27 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
     // the length of the playlist
     private int mPlaylistLen = 0;
 
-    public AlbumArtPagerAdapter(FragmentManager fm) {
-        super(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+    public AlbumArtPagerAdapter(Fragment f) {
+        super(f);
     }
 
-    @Override
+
     @NonNull
-    public Fragment getItem(final int position) {
+    @Override
+    public Fragment createFragment(int position) {
         long trackID = getTrackId(position);
         return AlbumArtFragment.newInstance(trackID);
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return mPlaylistLen;
     }
 
     public void setPlaylistLength(final int len) {
+        notifyItemRangeChanged(0, mPlaylistLen);
         mPlaylistLen = len;
-        notifyDataSetChanged();
+        notifyItemRangeChanged(0, mPlaylistLen);
     }
 
     /**
@@ -198,11 +199,6 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
         }
 
         @Override
-        public void onDestroy() {
-            super.onDestroy();
-        }
-
-        @Override
         public void onDestroyView() {
             super.onDestroyView();
 
@@ -242,7 +238,6 @@ public class AlbumArtPagerAdapter extends FragmentStatePagerAdapter {
                 mTask = new AlbumArtistLoader(this, getActivity());
                 mTask.execute(mAudioId);
             }
-
         }
 
         /**

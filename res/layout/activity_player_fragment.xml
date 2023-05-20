@@ -39,11 +39,12 @@
         <include
             android:id="@+id/main_album_flow"
             layout="@layout/main_album_flow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1:1"/>
 
         <org.lineageos.eleven.widgets.MainPlaybackControls
             android:id="@+id/main_playback_controls"
