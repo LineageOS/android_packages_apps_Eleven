@@ -15,44 +15,64 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<org.lineageos.eleven.widgets.SquareFrame
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:background="@drawable/default_artwork">
+    tools:background="@drawable/default_artwork"
+    app:layout_constraintDimensionRatio="1:1">
 
-    <org.lineageos.eleven.widgets.SquareViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/audio_player_album_art_viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <include
         layout="@layout/loading_empty_container"
-        tools:visibility="gone" />
+        tools:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <org.lineageos.eleven.widgets.VisualizerView
         android:id="@+id/visualizerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="bottom"
         android:gravity="bottom"
         android:visibility="visible"
-        tools:visibility="gone" />
+        tools:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/audio_player_lyrics"
-        android:layout_width="fill_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:alpha="0.0"
         android:background="@color/lyrics_background_color"
         android:gravity="center"
         android:minHeight="66dp"
-        android:paddingBottom="6dp"
         android:paddingLeft="15dp"
-        android:paddingRight="15dp"
         android:paddingTop="6dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="6dp"
         android:textColor="@color/audio_player_lyrics_text_color"
-        android:textSize="@dimen/text_size_small" />
-</org.lineageos.eleven.widgets.SquareFrame>
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Abcd" />
+</androidx.constraintlayout.widget.ConstraintLayout>
