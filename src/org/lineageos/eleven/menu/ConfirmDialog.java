@@ -23,6 +23,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import org.lineageos.eleven.R;
 
@@ -32,6 +33,7 @@ import org.lineageos.eleven.R;
 public class ConfirmDialog extends DialogFragment {
     private static final String TITLE_ID = "titleId";
     private static final String OK_ID = "okId";
+    private static final String REQUEST_CODE = "requestCode";
 
     public interface ConfirmCallback {
         void confirmOk(int requestCode);
@@ -49,9 +51,16 @@ public class ConfirmDialog extends DialogFragment {
         final Bundle args = new Bundle();
         args.putInt(TITLE_ID, titleId);
         args.putInt(OK_ID, okId);
+        args.putString(REQUEST_CODE, String.valueOf(requestCode));
         frag.setArguments(args);
-        frag.setTargetFragment(target, requestCode);
-        frag.show(target.getParentFragmentManager(), "ConfirmDialog");
+        FragmentManager fm = target.getParentFragmentManager();
+        fm.setFragmentResultListener(String.valueOf(requestCode),
+                target.getViewLifecycleOwner(), (key, result) -> {
+            if (target instanceof ConfirmCallback) {
+                ((ConfirmCallback) target).confirmOk(requestCode);
+            }
+        });
+        frag.show(fm, "ConfirmDialog");
     }
 
     @Override
@@ -61,13 +70,10 @@ public class ConfirmDialog extends DialogFragment {
         return new AlertDialog.Builder(getActivity())
                 .setTitle(args == null ? R.string.app_name : args.getInt(TITLE_ID))
                 .setMessage(R.string.cannot_be_undone)
-                .setPositiveButton(args == null ?
-                                android.R.string.ok : args.getInt(OK_ID),
+                .setPositiveButton(args == null ? android.R.string.ok : args.getInt(OK_ID),
                         (dialog, which) -> {
-                            Fragment target = getTargetFragment();
-                            if (target instanceof ConfirmCallback) {
-                                ((ConfirmCallback) target).confirmOk(getTargetRequestCode());
-                            }
+                            String requestCode = args == null ? "" : args.getString(REQUEST_CODE);
+                            getParentFragmentManager().setFragmentResult(requestCode, new Bundle());
                             dialog.dismiss();
                         })
                 .setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss())
