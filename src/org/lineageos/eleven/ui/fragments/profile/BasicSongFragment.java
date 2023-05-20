@@ -205,6 +205,7 @@ public abstract class BasicSongFragment extends Fragment implements
         Handler handler = new Handler(requireActivity().getMainLooper());
         if (data.mListResults.isEmpty()) {
             handler.post(() -> mAdapter.unload());
+            mLoadingEmptyContainer.setVisibility(View.VISIBLE);
             mLoadingEmptyContainer.showNoResults();
             return;
         }
