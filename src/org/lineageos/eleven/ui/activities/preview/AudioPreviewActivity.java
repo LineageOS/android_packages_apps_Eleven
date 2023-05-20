@@ -356,9 +356,6 @@ public class AudioPreviewActivity extends AppCompatActivity implements
                     title = cursor.getString(index);
                 }
                 break;
-            default:
-                title = null;
-                break;
         }
         cursor.close();
 

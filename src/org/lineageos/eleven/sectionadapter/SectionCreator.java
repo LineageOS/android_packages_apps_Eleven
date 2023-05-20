@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import org.lineageos.eleven.loaders.WrappedAsyncTaskLoader;
 import org.lineageos.eleven.utils.SectionCreatorUtils;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -39,17 +40,17 @@ public class SectionCreator<T> extends WrappedAsyncTaskLoader<SectionListContain
      * @param <T> type of item to load
      */
     public static abstract class SimpleListLoader<T> extends WrappedAsyncTaskLoader<List<T>> {
-        protected final Context mContext;
+        protected final WeakReference<Context> mContext;
 
         public SimpleListLoader(Context context) {
             super(context);
-            mContext = context;
+            mContext = new WeakReference<>(context);
         }
 
         @NonNull
         @Override
         public Context getContext() {
-            return mContext;
+            return mContext.get();
         }
     }
 

@@ -50,7 +50,6 @@ import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.ui.fragments.AlbumDetailFragment;
 import org.lineageos.eleven.ui.fragments.ArtistDetailFragment;
 import org.lineageos.eleven.ui.fragments.AudioPlayerFragment;
-import org.lineageos.eleven.ui.fragments.IChildFragment;
 import org.lineageos.eleven.ui.fragments.ISetupActionBar;
 import org.lineageos.eleven.ui.fragments.PlaylistDetailFragment;
 import org.lineageos.eleven.ui.fragments.RecentFragment;
@@ -60,7 +59,6 @@ import org.lineageos.eleven.ui.fragments.profile.TopTracksFragment;
 import org.lineageos.eleven.utils.AnimatorEndListener;
 import org.lineageos.eleven.utils.ElevenUtils;
 import org.lineageos.eleven.utils.MusicUtils;
-import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.colors.BitmapWithColors;
 
 import java.util.ArrayList;
@@ -381,17 +379,6 @@ public class HomeActivity extends SlidingPanelActivity implements
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    /**
-     * Immediately clears the back-stack
-     */
-    protected void clearBackStack() {
-        final FragmentManager fragmentManager = getSupportFragmentManager();
-        if (fragmentManager.getBackStackEntryCount() > 0) {
-            final int id = fragmentManager.getBackStackEntryAt(0).getId();
-            fragmentManager.popBackStackImmediate(id, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        }
     }
 
     @Override

@@ -18,7 +18,6 @@
 package org.lineageos.eleven;
 
 import android.Manifest.permission;
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;

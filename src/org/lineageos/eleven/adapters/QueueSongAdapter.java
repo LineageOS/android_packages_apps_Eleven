@@ -24,7 +24,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.lineageos.eleven.Config;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.model.Song;
 import org.lineageos.eleven.service.MusicPlaybackTrack;

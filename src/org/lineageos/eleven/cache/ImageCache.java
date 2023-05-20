@@ -49,7 +49,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashSet;
 
 /**
  * This class holds the memory and disk bitmap caches.
@@ -339,7 +338,7 @@ public final class ImageCache {
      * @param data Unique identifier for which item to get
      * @return The {@link Bitmap} if found in cache, null otherwise
      */
-    public final Bitmap getBitmapFromMemCache(final String data) {
+    public Bitmap getBitmapFromMemCache(final String data) {
         return (data == null || mLruCache == null) ? null : mLruCache.get(data);
     }
 
@@ -349,7 +348,7 @@ public final class ImageCache {
      * @param data Unique identifier for which item to get
      * @return The {@link Bitmap} if found in cache, null otherwise
      */
-    public final Bitmap getBitmapFromDiskCache(final String data) {
+    public Bitmap getBitmapFromDiskCache(final String data) {
         if (data == null) {
             return null;
         }
@@ -390,7 +389,7 @@ public final class ImageCache {
      * @param data Unique identifier for which item to get
      * @return The {@link Bitmap} if found in cache, null otherwise
      */
-    public final Bitmap getCachedBitmap(final String data) {
+    public Bitmap getCachedBitmap(final String data) {
         if (data == null) {
             return null;
         }
@@ -414,7 +413,7 @@ public final class ImageCache {
      * @param id      The ID of the album to find artwork for
      * @return The artwork for an album
      */
-    public final Bitmap getCachedArtwork(final Context context, final String data, final long id) {
+    public Bitmap getCachedArtwork(final Context context, final String data, final long id) {
         if (context == null || data == null) {
             return null;
         }
@@ -436,7 +435,7 @@ public final class ImageCache {
      * @param albumId The ID of the album to find artwork for
      * @return The artwork for an album
      */
-    public final Bitmap getArtworkFromFile(final Context context, final long albumId) {
+    public Bitmap getArtworkFromFile(final Context context, final long albumId) {
         if (albumId < 0) {
             return null;
         }

@@ -95,7 +95,6 @@ public final class MusicUtils {
             + " AND " + MediaStore.Audio.AudioColumns.TITLE + " != ''"; //$NON-NLS-2$
 
     public static final long UPDATE_FREQUENCY_MS = 500;
-    public static final long UPDATE_FREQUENCY_FAST_MS = 30;
 
     static {
         sEmptyList = new long[0];
@@ -719,7 +718,7 @@ public final class MusicUtils {
         final int len = cursor.getCount();
         final long[] list = new long[len];
         cursor.moveToFirst();
-        int columnIndex = -1;
+        int columnIndex;
         try {
             columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID);
         } catch (final IllegalArgumentException notaplaylist) {
@@ -777,17 +776,16 @@ public final class MusicUtils {
                                   boolean shuffle) {
         final long[] artistList = getSongListForArtist(context, artistId);
         if (artistList != null) {
-            playAll(context, artistList, position, artistId, IdType.Artist, shuffle);
+            playAll(artistList, position, artistId, IdType.Artist, shuffle);
         }
     }
 
     /**
-     * @param context      The {@link Context} to use.
      * @param list         The list of songs to play.
      * @param position     Specify where to start.
      * @param forceShuffle True to force a shuffle, false otherwise.
      */
-    public static void playAll(final Context context, final long[] list, int position,
+    public static void playAll(final long[] list, int position,
                                final long sourceId, final IdType sourceType,
                                final boolean forceShuffle) {
         IElevenService service = getService();
@@ -939,7 +937,7 @@ public final class MusicUtils {
                                  boolean shuffle) {
         final long[] albumList = getSongListForAlbum(context, albumId);
         if (albumList != null) {
-            playAll(context, albumList, position, albumId, IdType.Album, shuffle);
+            playAll(albumList, position, albumId, IdType.Album, shuffle);
         }
     }
 
@@ -1273,7 +1271,7 @@ public final class MusicUtils {
     public static void playPlaylist(final Context context, final long playlistId, boolean shuffle) {
         final long[] playlistList = getSongListForPlaylist(context, playlistId);
         if (playlistList != null) {
-            playAll(context, playlistList, -1, playlistId, IdType.Playlist, shuffle);
+            playAll(playlistList, -1, playlistId, IdType.Playlist, shuffle);
         }
     }
 
@@ -1450,7 +1448,7 @@ public final class MusicUtils {
         IElevenService service = getService();
         try {
             service.removeTracks(0, Integer.MAX_VALUE);
-        } catch (final RemoteException exc) {
+        } catch (final RemoteException | NullPointerException exc) {
             Log.e(TAG, "clearQueue()", exc);
         }
     }
