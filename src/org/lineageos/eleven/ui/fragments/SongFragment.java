@@ -45,7 +45,7 @@ public class SongFragment extends BasicSongFragment {
     public void playAll(int position) {
         final long[] list = mAdapter.getSongIds();
         if (list != null) {
-            MusicUtils.playAll(getActivity(), list, position, -1, Config.IdType.NA, false);
+            MusicUtils.playAll(list, position, -1, Config.IdType.NA, false);
         }
     }
 

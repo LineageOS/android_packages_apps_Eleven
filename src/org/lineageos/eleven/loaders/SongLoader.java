@@ -19,7 +19,6 @@ package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 import android.text.TextUtils;
 
@@ -127,7 +126,7 @@ public class SongLoader extends SectionCreator.SimpleListLoader<Song> {
      * @return cursor to load
      */
     protected Cursor getCursor() {
-        return makeSongCursor(mContext, mSelection);
+        return makeSongCursor(mContext.get(), mSelection);
     }
 
     /**

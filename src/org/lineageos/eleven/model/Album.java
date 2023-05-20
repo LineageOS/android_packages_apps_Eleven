@@ -31,27 +31,27 @@ public class Album {
     /**
      * The unique Id of the album
      */
-    public long mAlbumId;
+    public final long mAlbumId;
 
     /**
      * The name of the album
      */
-    public String mAlbumName;
+    public final String mAlbumName;
 
     /**
      * The album artist
      */
-    public String mArtistName;
+    public final String mArtistName;
 
     /**
      * The number of songs in the album
      */
-    public int mSongNumber;
+    public final int mSongNumber;
 
     /**
      * The year the album was released
      */
-    public String mYear;
+    public final String mYear;
 
     /**
      * Constructor of <code>Album</code>

@@ -157,17 +157,4 @@ public final class NavUtils {
         final Intent intent = new Intent(activity, SettingsActivity.class);
         activity.startActivity(intent);
     }
-
-    /**
-     * Opens to {@link org.lineageos.eleven.ui.activities.HomeActivity}.
-     *
-     * @param activity The {@link Activity} to use.
-     */
-    public static void goHome(final Activity activity, final int browseIndex) {
-        final Intent intent = new Intent(activity, HomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
-                | Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra(HomeActivity.EXTRA_BROWSE_PAGE_IDX, browseIndex);
-        activity.startActivity(intent);
-    }
 }

@@ -26,10 +26,10 @@ import java.io.FileOutputStream;
 import java.io.FilterOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -144,7 +144,7 @@ public final class DiskLruCache implements Closeable {
     private final File journalFileTmp;
     private final File journalFileBackup;
     private final int appVersion;
-    private long maxSize;
+    private final long maxSize;
     private final int valueCount;
     private long size = 0;
     private Writer journalWriter;
@@ -248,7 +248,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     private void readJournal() throws IOException {
-        StrictLineReader reader = new StrictLineReader(new FileInputStream(journalFile),
+        StrictLineReader reader = new StrictLineReader(Files.newInputStream(journalFile.toPath()),
                 Util.US_ASCII);
         try {
             String magic = reader.readLine();
@@ -359,8 +359,8 @@ public final class DiskLruCache implements Closeable {
             journalWriter.close();
         }
 
-        try (Writer writer = new BufferedWriter(
-                new OutputStreamWriter(new FileOutputStream(journalFileTmp), Util.US_ASCII))) {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                Files.newOutputStream(journalFileTmp.toPath()), Util.US_ASCII))) {
             writer.write(MAGIC);
             writer.write("\n");
             writer.write(VERSION_1);
@@ -510,6 +510,7 @@ public final class DiskLruCache implements Closeable {
             if (success) {
                 if (dirty.exists()) {
                     File clean = entry.getCleanFile(i);
+                    //noinspection ResultOfMethodCallIgnored
                     dirty.renameTo(clean);
                     long oldLength = entry.lengths[i];
                     long newLength = clean.length();

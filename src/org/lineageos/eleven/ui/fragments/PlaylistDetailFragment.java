@@ -36,7 +36,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.lineageos.eleven.Config;
 import org.lineageos.eleven.R;
-import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.adapters.ProfileSongAdapter;
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.loaders.PlaylistSongLoader;
@@ -57,8 +56,7 @@ import java.util.List;
 import java.util.TreeSet;
 
 public class PlaylistDetailFragment extends DetailFragment implements
-        LoaderManager.LoaderCallbacks<List<Song>>,
-        IChildFragment, DragSortListener {
+        LoaderManager.LoaderCallbacks<List<Song>>, DragSortListener {
 
     /**
      * LoaderCallbacks identifier
@@ -246,7 +244,7 @@ public class PlaylistDetailFragment extends DetailFragment implements
         Cursor cursor = PlaylistSongLoader.makePlaylistSongCursor(activity,
                 mPlaylistId);
         final long[] list = MusicUtils.getSongListForCursor(cursor);
-        MusicUtils.playAll(activity, list, position, mPlaylistId, Config.IdType.Playlist, false);
+        MusicUtils.playAll(list, position, mPlaylistId, Config.IdType.Playlist, false);
         cursor.close();
     }
 
@@ -351,11 +349,6 @@ public class PlaylistDetailFragment extends DetailFragment implements
         super.onPlaylistChanged();
 
         restartLoader();
-    }
-
-    @Override
-    public PagerAdapter.MusicFragments getMusicFragmentParent() {
-        return PagerAdapter.MusicFragments.PLAYLIST;
     }
 
     @Override

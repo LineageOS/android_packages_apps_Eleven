@@ -54,6 +54,7 @@ public class MusicHolder extends RecyclerView.ViewHolder {
      * <p>
      * getView() of a specific adapter for more detailed info
      */
+    @SuppressWarnings("unused")
     public final WeakReference<TextView> mLineOneRight;
 
     /**

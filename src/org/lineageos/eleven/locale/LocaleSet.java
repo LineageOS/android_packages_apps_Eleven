@@ -196,6 +196,7 @@ public class LocaleSet {
         return false;
     }
 
+    @NonNull
     @Override
     public final String toString() {
         StringBuilder builder = new StringBuilder();

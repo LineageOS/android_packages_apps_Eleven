@@ -51,9 +51,9 @@ public class TopTracksLoader extends SongLoader {
     protected Cursor getCursor() {
         SortedCursor retCursor = null;
         if (mQueryType == QueryType.TopTracks) {
-            retCursor = makeTopTracksCursor(mContext);
+            retCursor = makeTopTracksCursor(mContext.get());
         } else if (mQueryType == QueryType.RecentSongs) {
-            retCursor = makeRecentTracksCursor(mContext);
+            retCursor = makeRecentTracksCursor(mContext.get());
         }
 
         // clean up the databases with any ids not found
@@ -65,9 +65,9 @@ public class TopTracksLoader extends SongLoader {
                 // outside of the Eleven app
                 for (long id : missingIds) {
                     if (mQueryType == QueryType.TopTracks) {
-                        SongPlayCount.getInstance(mContext).removeItem(id);
+                        SongPlayCount.getInstance(mContext.get()).removeItem(id);
                     } else if (mQueryType == QueryType.RecentSongs) {
-                        RecentStore.getInstance(mContext).removeItem(id);
+                        RecentStore.getInstance(mContext.get()).removeItem(id);
                     }
                 }
             }
