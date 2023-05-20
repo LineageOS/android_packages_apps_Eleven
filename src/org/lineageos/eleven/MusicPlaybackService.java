@@ -50,7 +50,6 @@ import android.media.audiofx.AudioEffect;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -95,6 +94,8 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Random;
 import java.util.TreeSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * A background {@link Service} used to keep music playing between activities
@@ -1585,7 +1586,7 @@ public class MusicPlaybackService extends Service
 
     private synchronized void updateMediaSessionQueue() {
         if (mQueueUpdateTask != null) {
-            mQueueUpdateTask.cancel(true);
+            mQueueUpdateTask.cancel();
         }
         mQueueUpdateTask = new QueueUpdateTask(getQueue());
         mQueueUpdateTask.execute();
@@ -3653,16 +3654,32 @@ public class MusicPlaybackService extends Service
         }
     }
 
-    @SuppressLint("StaticFieldLeak")
-    private class QueueUpdateTask extends AsyncTask<Void, Void, List<MediaSession.QueueItem>> {
+    private class QueueUpdateTask {
         private final long[] mQueue;
+
+        private final ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
         public QueueUpdateTask(long[] queue) {
             mQueue = queue != null ? Arrays.copyOf(queue, queue.length) : null;
         }
 
-        @Override
-        protected List<MediaSession.QueueItem> doInBackground(Void... params) {
+        public void execute() {
+            Handler handler = new Handler(Looper.getMainLooper());
+
+            mExecutor.execute(() -> {
+                List<MediaSession.QueueItem> items = getQueuedItems();
+
+                handler.post(() -> {
+                    mSession.setQueue(items);
+                });
+            });
+        }
+
+        public void cancel() {
+            mExecutor.shutdownNow();
+        }
+
+        private List<MediaSession.QueueItem> getQueuedItems() {
             if (mQueue == null || mQueue.length == 0) {
                 return null;
             }
@@ -3691,7 +3708,7 @@ public class MusicPlaybackService extends Service
                 final int titleColumnIndex = c.getColumnIndexOrThrow(AudioColumns.TITLE);
                 final int artistColumnIndex = c.getColumnIndexOrThrow(AudioColumns.ARTIST);
 
-                while (c.moveToNext() && !isCancelled()) {
+                while (c.moveToNext()) {
                     final MediaDescription desc = new MediaDescription.Builder()
                             .setTitle(c.getString(titleColumnIndex))
                             .setSubtitle(c.getString(artistColumnIndex))
@@ -3713,13 +3730,6 @@ public class MusicPlaybackService extends Service
                 return items;
             } finally {
                 c.close();
-            }
-        }
-
-        @Override
-        protected void onPostExecute(List<MediaSession.QueueItem> items) {
-            if (!isCancelled()) {
-                mSession.setQueue(items);
             }
         }
     }
