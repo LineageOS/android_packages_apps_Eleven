@@ -17,9 +17,13 @@
 package org.lineageos.eleven.utils.colors;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 
 import org.lineageos.eleven.cache.ImageFetcher;
 import org.lineageos.eleven.utils.MusicUtils;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class ColorExtractor {
     public interface Callback {
@@ -31,9 +35,12 @@ public class ColorExtractor {
         new ColorExtractionTask(imageFetcher, callback).execute();
     }
 
-    private static class ColorExtractionTask extends AsyncTask<Void, Void, BitmapWithColors> {
+    private static class ColorExtractionTask {
         private final ImageFetcher imageFetcher;
         private final ColorExtractor.Callback callback;
+
+        private final Executor mExecutor = Executors.newSingleThreadExecutor();
+        private final Handler mHandler = new Handler();
 
         ColorExtractionTask(final ImageFetcher imageFetcher,
                             final ColorExtractor.Callback callback) {
@@ -41,8 +48,19 @@ public class ColorExtractor {
             this.callback = callback;
         }
 
-        @Override
-        protected BitmapWithColors doInBackground(Void... voids) {
+        public void execute() {
+            mExecutor.execute(() -> {
+                final BitmapWithColors bitmapWithColors = getArtwork();
+
+                mHandler.post(() -> {
+                    if (callback != null) {
+                        callback.onColorExtracted(bitmapWithColors);
+                    }
+                });
+            });
+        }
+
+        private BitmapWithColors getArtwork() {
             if (imageFetcher == null) {
                 return null;
             }
@@ -58,13 +76,6 @@ public class ColorExtractor {
             }
 
             return imageFetcher.getArtwork(albumName, albumId, true);
-        }
-
-        @Override
-        protected void onPostExecute(final BitmapWithColors bitmapWithColors) {
-            if (callback != null) {
-                callback.onColorExtracted(bitmapWithColors);
-            }
         }
     }
 }

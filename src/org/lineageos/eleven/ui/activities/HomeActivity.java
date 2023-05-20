@@ -27,9 +27,9 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
@@ -64,6 +64,8 @@ import org.lineageos.eleven.utils.NavUtils;
 import org.lineageos.eleven.utils.colors.BitmapWithColors;
 
 import java.util.ArrayList;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 public class HomeActivity extends SlidingPanelActivity implements
         FragmentManager.OnBackStackChangedListener {
@@ -222,22 +224,21 @@ public class HomeActivity extends SlidingPanelActivity implements
         if (mBrowsePanelActive || MusicUtils.getCurrentAlbumId() < 0) {
             updateStatusBarColor(Color.TRANSPARENT);
         } else {
-            new AsyncTask<Void, Void, BitmapWithColors>() {
-                @Override
-                protected BitmapWithColors doInBackground(Void... params) {
-                    ImageFetcher imageFetcher = ImageFetcher.getInstance(HomeActivity.this);
-                    return imageFetcher.getArtwork(
-                            MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(), true);
-                }
+            Executor executor = Executors.newSingleThreadExecutor();
+            Handler handler = new Handler(Looper.getMainLooper());
 
-                @Override
-                protected void onPostExecute(BitmapWithColors bmc) {
+            executor.execute(() -> {
+                ImageFetcher imageFetcher = ImageFetcher.getInstance(HomeActivity.this);
+                BitmapWithColors bmc = imageFetcher.getArtwork(
+                        MusicUtils.getAlbumName(), MusicUtils.getCurrentAlbumId(), true);
+
+                handler.post(() -> {
                     updateVisualizerColor(bmc != null
                             ? bmc.getContrastingColor() : Color.TRANSPARENT);
                     updateStatusBarColor(bmc != null
                             ? bmc.getVibrantDarkColor() : Color.TRANSPARENT);
-                }
-            }.execute();
+                });
+            });
         }
     }
 
