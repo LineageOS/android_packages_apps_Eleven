@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.App" parent="@style/Theme.Material3.DayNight">
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialAlertDialog</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryContainer">@android:color/system_accent2_600</item>
+        <item name="colorOnSurface">@android:color/system_neutral1_100</item>
+        <item name="colorOutline">@android:color/system_neutral2_400</item>
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+
+    <style name="ThemeOverlay.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorOnSurface">@android:color/system_neutral1_900</item>
+        <item name="colorSurface">@android:color/system_neutral1_900</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialogTheme</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Dialog_Button_Positive_Style</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Dialog_Button_Negative_Style</item>
+    </style>
+</resources>
