@@ -18,7 +18,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <!-- Main Material -->
-    <style name="Eleven.Theme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="Eleven.Theme" parent="@style/Theme.Material3.Light.NoActionBar">
         <item name="android:windowContentOverlay">@null</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="dropDownListViewStyle">@style/DropDownListView</item>
@@ -26,19 +26,50 @@
         <item name="textAppearanceLargePopupMenu">@style/LargePopupMenu</item>
         <item name="android:listViewStyle">@style/ListView</item>
         <item name="actionBarStyle">@style/ActionBar</item>
+        <item name="elevationOverlayEnabled">true</item>
+        <item name="elevationOverlayColor">?attr/colorPrimary</item>
         <item name="actionBarWidgetTheme">@style/ActionBarWidgetTheme</item>
         <item name="colorPrimary">@color/primary</item>
+        <item name="android:colorBackground">@color/background_color</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">false</item>
         <item name="android:windowAllowReturnTransitionOverlap">false</item>
-        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:navigationBarColor">@color/navbar_color</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
 
-    <style name="ActionBarWidgetTheme" parent="@style/Theme.AppCompat.DayNight">
+    <style name="ActionBarTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/default_text_color</item>
+        <item name="android:textColorPrimary">@color/default_text_color</item>
+    </style>
+
+    <style name="MaterialAlertDialogTheme" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearance.Dialog</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text">
+        <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="Dialog_Button_Positive_Style" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/accent</item>
+    </style>
+
+    <style name="Dialog_Button_Negative_Style" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/accent</item>
+    </style>
+
+    <style name="ShapeAppearance.Dialog" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <style name="ActionBarWidgetTheme" parent="@style/Theme.Material3.DayNight">
         <!-- This is the color of the search text hint in the action bar -->
         <item name="android:textColorHint">@color/search_hint_color</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
@@ -50,7 +81,7 @@
 
     <style name="TextAppearance.Widget.Event.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textStyle">normal</item>
-        <item name="android:fontFamily">?android:fontFamily</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <!-- Make the action bar not take up space -->
@@ -65,7 +96,7 @@
         <item name="android:dividerHeight">@dimen/divider_height</item>
     </style>
 
-    <style name="PopupMenu" parent="@style/Widget.AppCompat.PopupMenu"/>
+    <style name="PopupMenu" parent="@style/Widget.Material3.PopupMenu"/>
 
     <style name="DropDownListView" parent="@style/Widget.AppCompat.ListView.DropDown"/>
 
@@ -82,7 +113,7 @@
     </style>
 
     <!-- Sets the action bar title text style -->
-    <style name="ActionBar" parent="@style/Widget.AppCompat.ActionBar">
+    <style name="ActionBar" parent="@style/ThemeOverlay.Material3.ActionBar">
         <item name="android:background">@color/header_action_bar_color</item>
     </style>
 
@@ -173,17 +204,27 @@
         <item name="android:textSize">@dimen/tab_text_size</item>
     </style>
 
-    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar"/>
-    <style name="ToolBarThemeMP" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+    <style name="ToolBarTheme" parent="@style/ThemeOverlay.Material3.Toolbar.Surface"/>
+    <style name="ToolBarThemeMP" parent="@style/ThemeOverlay.Material3.Toolbar.Surface">
         <item name="colorControlNormal">@color/white</item>
     </style>
-
-    <style name="ToolBarPopupTheme" parent="@style/Theme.AppCompat.Light" />
 
     <style name="Eleven.Theme.PopupMenuOverlapAnchor">
         <item name="android:overlapAnchor">true</item>
         <item name="android:dropDownVerticalOffset">0dp</item>
         <item name="android:dropDownHorizontalOffset">0dp</item>
+    </style>
+
+
+    <!-- Collapsing toolbar style -->
+    <style name="Theme.Eleven.ToolbarCollapsed" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Theme.Eleven.ToolbarExpanded" parent="Theme.Eleven.ToolbarCollapsed">
+        <item name="android:textSize">36sp</item>
+        <item name="android:drawablePadding">10dp</item>
     </style>
 
     <!-- Use dp because the time decoration has constrained width and we don't want it to grow if
