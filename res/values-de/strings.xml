@@ -138,4 +138,7 @@
     <string name="header_other">"Anderes"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Musikwiedergabe</string>
+    <string name="widget_track_name">Name des Titels</string>
+    <string name="widget_artist_name">Name des Interpreten</string>
+    <string name="widget_album_name">Name des Albums</string>
 </resources>

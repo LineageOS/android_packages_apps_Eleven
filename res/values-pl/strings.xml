@@ -69,6 +69,7 @@
     <string name="delete_warning">Grafiki z pamięci podręcznej zostaną trwale usunięte</string>
     <string name="new_photo">Użyj zdjęcia z galerii</string>
     <string name="use_default">Użyj domyślnego zdjęcia</string>
+    <string name="visualizer_perm_denied">Odmówiono zezwolenia na nagrywanie dźwięku, włącz je w Ustawieniach systemu, aby włączyć wizualizację muzyki</string>
     <string name="context_menu_play_selection">Odtwórz</string>
     <string name="context_menu_play_next">Odtwórz następny</string>
     <string name="context_menu_play_album">Odtwórz album</string>
@@ -96,10 +97,12 @@
     <string name="settings_delete_cache_summary">Usuń wszystkie zapisane grafiki</string>
     <string name="settings_general_category">Ogólne</string>
     <string name="settings_show_music_visualization_title">Pokaż wizualizacje muzyki</string>
+    <string name="settings_use_blur_title">Rozmyj tło</string>
     <string name="settings_show_lyrics_title">Pokaż teksty piosenek</string>
     <string name="settings_show_lyrics_summary">Utwory, które mają plik srt</string>
     <string name="settings_shake_to_play">Potrząśnij, aby rozpocząć odtwarzanie</string>
-    <string name="settings_shake_to_play_summary">Wstrząśnij urządzenie, aby odtworzyć następny utwór</string>
+    <string name="settings_shake_to_play_summary">Potrząśnij urządzeniem, aby odtworzyć następny utwór</string>
+    <string name="app_widget_small">Muzyka: Kwadrat</string>
     <string name="app_widget_large">Muzyka: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Muzyka: 4×2 (alternatywny)</string>
     <string name="no_effects_for_you">Equalizer nie może zostać uruchomiony.</string>
@@ -134,4 +137,8 @@
     <string name="header_5_plus_albums">5+ Albumów</string>
     <string name="header_other">"Inny"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Odtwarzanie muzyki</string>
+    <string name="widget_track_name">Nazwa utworu</string>
+    <string name="widget_artist_name">Nazwa artysty</string>
+    <string name="widget_album_name">Nazwa albumu</string>
 </resources>
