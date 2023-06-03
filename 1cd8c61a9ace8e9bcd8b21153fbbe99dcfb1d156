@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69395421_7e69a8be",
+        "filename": "src/org/lineageos/eleven/cache/disklrucache/StrictLineReader.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2023-06-03T21:45:06Z",
+      "side": 1,
+      "message": "Unused",
+      "revId": "1cd8c61a9ace8e9bcd8b21153fbbe99dcfb1d156",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
