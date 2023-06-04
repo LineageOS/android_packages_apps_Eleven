@@ -18,6 +18,24 @@
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e14309e7_5ae0e490",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-06-04T09:10:19Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_packages_apps_Eleven/+/358071",
+      "parentUuid": "c3fdb97b_6b4a4576",
+      "revId": "1cd8c61a9ace8e9bcd8b21153fbbe99dcfb1d156",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69395421_7e69a8be",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-06-03T21:45:06Z",
       "side": 1,
       "message": "Unused",
+      "revId": "1cd8c61a9ace8e9bcd8b21153fbbe99dcfb1d156",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d51113f_2dc96dd3",
+        "filename": "src/org/lineageos/eleven/cache/disklrucache/StrictLineReader.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-06-04T09:10:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "69395421_7e69a8be",
       "revId": "1cd8c61a9ace8e9bcd8b21153fbbe99dcfb1d156",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
