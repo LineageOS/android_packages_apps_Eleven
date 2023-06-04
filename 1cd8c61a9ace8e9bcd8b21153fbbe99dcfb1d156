@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3fdb97b_6b4a4576",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2023-06-04T08:15:04Z",
+      "side": 1,
+      "message": "This seems to fix build errors caused by https://review.lineageos.org/c/LineageOS/android_packages_apps_Eleven/+/356819, should merge asap or split build fixes from the huge commit.",
+      "revId": "1cd8c61a9ace8e9bcd8b21153fbbe99dcfb1d156",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "69395421_7e69a8be",
