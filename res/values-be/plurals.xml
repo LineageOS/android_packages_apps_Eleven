@@ -16,22 +16,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <plurals name="Nsongs">
-        <item quantity="one"><xliff:g id="count">%d</xliff:g> песня</item>
-        <item quantity="few"><xliff:g id="count">%d</xliff:g> песні</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> песень</item>
-        <item quantity="other"><xliff:g id="count">%d</xliff:g> песні</item>
-    </plurals>
-    <plurals name="NNNtrackstoplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> песня дадзена ў спіс прайгравання.</item>
-        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> песні дадзены ў спіс прайгравання.</item>
-        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> песень дадзены ў спіс прайгравання.</item>
-        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> песні дадзены ў спіс прайгравання.</item>
-    </plurals>
-    <plurals name="NNNtracksfromplaylist">
-        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> песня выдалена са спіса прайгравання.</item>
-        <item quantity="few"><xliff:g id="number" example="1">%d</xliff:g> песні выдалены са спіса прайгравання.</item>
-        <item quantity="many"><xliff:g id="number" example="1">%d</xliff:g> песень выдалены са спіса прайгравання.</item>
-        <item quantity="other"><xliff:g id="number" example="1">%d</xliff:g> песні выдалены са спіса прайгравання.</item>
+    <plurals name="Nhours">
+        <item quantity="one"><xliff:g id="hours">%d</xliff:g>г</item>
+        <item quantity="few"><xliff:g id="hours">%d</xliff:g>г</item>
+        <item quantity="many"><xliff:g id="hours">%d</xliff:g>г</item>
+        <item quantity="other"><xliff:g id="hours">%d</xliff:g>г</item>
     </plurals>
 </resources>

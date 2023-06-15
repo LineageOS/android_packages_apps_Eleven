@@ -102,6 +102,7 @@
     <string name="settings_show_lyrics_summary">SRT 파일이 있는 곡만</string>
     <string name="settings_shake_to_play">흔들어 재생</string>
     <string name="settings_shake_to_play_summary">기기를 흔들어 다음 곡을 재생</string>
+    <string name="app_widget_small">음악: 사각형</string>
     <string name="app_widget_large">음악: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">음악: 4 \u00d7 2 (다른 배치)</string>
     <string name="no_effects_for_you">이퀄라이저를 열 수 없습니다.</string>
@@ -137,4 +138,7 @@
     <string name="header_other">"기타"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">음악 재생</string>
+    <string name="widget_track_name">트랙 이름</string>
+    <string name="widget_artist_name">아티스트 이름</string>
+    <string name="widget_album_name">앨범 이름</string>
 </resources>
