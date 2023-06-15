@@ -104,6 +104,7 @@
     <string name="settings_shake_to_play_summary">Ximielga\'l preséu pa reproducir la canción siguiente</string>
     <string name="app_widget_small">Música: 4 \u00d7 1</string>
     <string name="app_widget_large">Música: 4 \u00d7 2</string>
+    <string name="app_widget_large_alt">Música: 4 \u00d7 2 (alternativa)</string>
     <string name="no_effects_for_you">Nun se pudo abrir l\'ecualizador.</string>
     <string name="empty_recent_main">Nun hai canciones de recién</string>
     <string name="empty_recent">Equí apaecen les canciones que sentiesti apocayá.</string>

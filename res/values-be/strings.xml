@@ -48,7 +48,6 @@
     <string name="sort_order_entry_album">Альбому</string>
     <string name="sort_order_entry_year">Году</string>
     <string name="sort_order_entry_duration">Працягласць</string>
-    <string name="sort_order_entry_number_of_songs">Колькасці песняў</string>
     <string name="sort_order_entry_number_of_albums">Колькасці альбомаў</string>
     <string name="sort_order_entry_filename">Назва файла</string>
     <string name="playlist_last_added">Апошнія дададзеныя</string>
@@ -81,7 +80,6 @@
     <string name="context_menu_change_image">Змяніць відарыс</string>
     <string name="accessibility_play">Прайграць</string>
     <string name="accessibility_pause">Паўза</string>
-    <string name="accessibility_next">Наступная</string>
     <string name="accessibility_prev">Папярэдняя</string>
     <string name="accessibility_shuffle">Перамяшаць</string>
     <string name="accessibility_shuffle_all">Перамяшаць усё</string>
@@ -93,7 +91,6 @@
     <string name="settings_delete_cache_summary">Выдаліць усе кэшаваныя відарысы</string>
     <string name="settings_general_category">Агульныя</string>
     <string name="settings_show_music_visualization_title">Паказваць візуалізацыю музыкі</string>
-    <string name="settings_use_blur_title">Размыццё фону</string>
     <string name="settings_show_lyrics_title">Паказваць тэкст песні</string>
     <string name="settings_show_lyrics_summary">Для песень, якія маюць файл srt</string>
     <string name="settings_shake_to_play">Пераключэнне кампазіцый устрэсваннем</string>
@@ -102,14 +99,13 @@
     <string name="app_widget_large">Музыка: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музыка: 4 \u00d7 2 (альтэрнатыўны)</string>
     <string name="no_effects_for_you">Немагчыма адкрыць эквалайзер.</string>
-    <string name="empty_recent_main">Няма нядаўніх песень </string>
     <string name="empty_recent">Песні, якія вы слухалі нядаўна, будуць знаходзіцца тут.</string>
     <string name="empty_playlist_main">Няма песень у спісе прайгравання</string>
-    <string name="empty_top_tracks_main">Няма лепшых кампазіцый</string>
     <string name="empty_last_added_main">Няма апошніх дададзеных песень</string>
     <string name="empty_last_added">Песні, дададзеныя за апошні месяц, будуць паказаны тут.</string>
     <string name="empty_generic_main">Музыка не знойдзена</string>
     <string name="empty_generic_secondary">Каб скапіяваць музыку з камп\'ютара, скарыстайцеся кабелем USB.</string>
+    <string name="empty_queue_main">Няма песень у чарзе</string>
     <string name="header_unknown_year">Невядомы год</string>
     <string name="header_less_than_30s">Менш за 30 секунд</string>
     <string name="header_30_to_60_seconds">30 - 60 секунд</string>
