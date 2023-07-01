@@ -79,7 +79,6 @@
     <string name="context_menu_remove_from_playlist">Выдаліць са спіса прайгравання</string>
     <string name="context_menu_change_image">Змяніць відарыс</string>
     <string name="accessibility_play">Прайграць</string>
-    <string name="accessibility_pause">Паўза</string>
     <string name="accessibility_prev">Папярэдняя</string>
     <string name="accessibility_shuffle">Перамяшаць</string>
     <string name="accessibility_shuffle_all">Перамяшаць усё</string>
@@ -121,7 +120,6 @@
     <string name="header_5_to_9_songs">5 - 9 песень</string>
     <string name="header_10_plus_songs">Больш за 10 песень</string>
     <string name="header_5_plus_albums">Больш за 5 альбомаў</string>
-    <string name="header_other">"Іншыя"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Прайграванне музыкі</string>
 </resources>
