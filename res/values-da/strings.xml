@@ -69,6 +69,7 @@
     <string name="delete_warning">Dette vil permanent slette de lagrede billedposter</string>
     <string name="new_photo">Vælg fotografi fra Galleri</string>
     <string name="use_default">Brug standard-fotografi</string>
+    <string name="visualizer_perm_denied">Tilladelse til lydoptagelse blev nægtet, aktivér det fra Indstillinger for at aktivere musikvisualisering</string>
     <string name="context_menu_play_selection">Afspil</string>
     <string name="context_menu_play_next">Afspil næste</string>
     <string name="context_menu_play_album">Afspil album</string>
