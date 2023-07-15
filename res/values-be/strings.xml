@@ -27,7 +27,6 @@
     <string name="header_all_songs">Усе песні</string>
     <string name="menu_settings">Налады</string>
     <string name="menu_shuffle_item">Перамяшаць</string>
-    <string name="menu_shuffle_all">Перамяшаць усё</string>
     <string name="menu_shuffle_playlist">Перамяшаць спіс прайгравання</string>
     <string name="menu_shuffle_album">Перамяшаць альбом</string>
     <string name="menu_shuffle_artist">Перамяшаць выканаўца</string>
@@ -65,7 +64,6 @@
     <string name="clear_recent_title">Ачысціць нядаўна прайграныя?</string>
     <string name="clear_last_added">Ачысціць нядаўна дададзеныя?</string>
     <string name="cannot_be_undone">Гэта дзеянне немагчыма адрабіць</string>
-    <string name="delete_warning">Гэта прывядзе да незваротнага выдалення запісаў кэшаваных відарысаў</string>
     <string name="use_default">Выкарыстоўваць прадвызначаную фатаграфію</string>
     <string name="context_menu_play_selection">Прайграць</string>
     <string name="context_menu_play_next">Прайграць наступным</string>
@@ -75,16 +73,11 @@
     <string name="context_menu_delete">Выдаліць</string>
     <string name="context_menu_fetch_album_art">Атрымаць вокладку альбома</string>
     <string name="context_menu_remove_from_recent">Выдаліць з нядаўніх</string>
-    <string name="context_menu_use_as_ringtone">Выкарыстаць як мелодыю выкліку</string>
     <string name="context_menu_remove_from_playlist">Выдаліць са спіса прайгравання</string>
     <string name="context_menu_change_image">Змяніць відарыс</string>
     <string name="accessibility_play">Прайграць</string>
     <string name="accessibility_prev">Папярэдняя</string>
     <string name="accessibility_shuffle">Перамяшаць</string>
-    <string name="accessibility_shuffle_all">Перамяшаць усё</string>
-    <string name="accessibility_repeat">Паўтор</string>
-    <string name="accessibility_repeat_all">Паўтор усіх</string>
-    <string name="accessibility_repeat_one">Паўтор песні </string>
     <string name="settings_storage_category">Сховішча</string>
     <string name="settings_delete_cache_title">Выдаліць кэш</string>
     <string name="settings_delete_cache_summary">Выдаліць усе кэшаваныя відарысы</string>
@@ -98,10 +91,9 @@
     <string name="app_widget_large">Музыка: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Музыка: 4 \u00d7 2 (альтэрнатыўны)</string>
     <string name="no_effects_for_you">Немагчыма адкрыць эквалайзер.</string>
-    <string name="empty_recent">Песні, якія вы слухалі нядаўна, будуць знаходзіцца тут.</string>
     <string name="empty_playlist_main">Няма песень у спісе прайгравання</string>
+    <string name="empty_top_tracks_secondary">Песні, якія вы слухаеце найчасцей, будуць дададзены ў гэты спіс.</string>
     <string name="empty_last_added_main">Няма апошніх дададзеных песень</string>
-    <string name="empty_last_added">Песні, дададзеныя за апошні месяц, будуць паказаны тут.</string>
     <string name="empty_generic_main">Музыка не знойдзена</string>
     <string name="empty_generic_secondary">Каб скапіяваць музыку з камп\'ютара, скарыстайцеся кабелем USB.</string>
     <string name="empty_queue_main">Няма песень у чарзе</string>
