@@ -69,6 +69,7 @@
     <string name="delete_warning">這將永久刪除已快取的影像</string>
     <string name="new_photo">從相簿選擇相片</string>
     <string name="use_default">使用預設相片</string>
+    <string name="visualizer_perm_denied">錄音權限被拒絕，從「設定」應用程式中啟用它以啟用音樂視覺化</string>
     <string name="context_menu_play_selection">播放</string>
     <string name="context_menu_play_next">播放下一首</string>
     <string name="context_menu_play_album">播放專輯</string>
@@ -101,6 +102,7 @@
     <string name="settings_show_lyrics_summary">有 srt 檔的樂曲</string>
     <string name="settings_shake_to_play">搖動播放</string>
     <string name="settings_shake_to_play_summary">搖動您的裝置即可播放下一首樂曲</string>
+    <string name="app_widget_small">音樂：正方形</string>
     <string name="app_widget_large">音樂：4 \u00d7 2</string>
     <string name="app_widget_large_alt">音樂：4 \u00d7 2 (備用)</string>
     <string name="no_effects_for_you">無法開啟等化器。</string>
@@ -135,4 +137,8 @@
     <string name="header_5_plus_albums">超過 5 張專輯</string>
     <string name="header_other">"其他"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">音樂播放</string>
+    <string name="widget_track_name">曲目名稱</string>
+    <string name="widget_artist_name">演出者名稱</string>
+    <string name="widget_album_name">專輯名稱</string>
 </resources>
