@@ -22,4 +22,10 @@
         <item quantity="many"><xliff:g id="hours">%d</xliff:g>г</item>
         <item quantity="other"><xliff:g id="hours">%d</xliff:g>г</item>
     </plurals>
+    <plurals name="Nminutes">
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g>хв</item>
+        <item quantity="few"><xliff:g id="minutes">%d</xliff:g>хв</item>
+        <item quantity="many"><xliff:g id="minutes">%d</xliff:g>хв</item>
+        <item quantity="other"><xliff:g id="minutes">%d</xliff:g>хв</item>
+    </plurals>
 </resources>
