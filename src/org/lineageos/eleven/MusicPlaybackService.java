@@ -46,9 +46,11 @@ import android.media.MediaDescription;
 import android.media.MediaMetadata;
 import android.media.MediaPlayer;
 import android.media.audiofx.AudioEffect;
+import android.media.browse.MediaBrowser;
 import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -60,12 +62,14 @@ import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
 import android.provider.MediaStore.Audio.AudioColumns;
+import android.service.media.MediaBrowserService;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.LongSparseArray;
 import android.view.KeyEvent;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import org.lineageos.eleven.Config.IdType;
 import org.lineageos.eleven.appwidgets.AppWidgetLarge;
@@ -100,7 +104,7 @@ import java.util.concurrent.Executors;
  * A background {@link Service} used to keep music playing between activities
  * and when the user moves Eleven into the background.
  */
-public class MusicPlaybackService extends Service
+public class MusicPlaybackService extends MediaBrowserService
         implements AudioManager.OnAudioFocusChangeListener {
     private static final String TAG = "MusicPlaybackService";
     private static final boolean D = false;
@@ -555,6 +559,19 @@ public class MusicPlaybackService extends Service
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
         mIsBound = true;
         return mBinder;
+    }
+
+    @Nullable
+    @Override
+    public BrowserRoot onGetRoot(@NonNull String clientPackageName, int clientUid,
+                                 @Nullable Bundle bundle) {
+        return new BrowserRoot("root", null);
+    }
+
+    @Override
+    public void onLoadChildren(@NonNull String parentId,
+                               @NonNull Result<List<MediaBrowser.MediaItem>> result) {
+        result.detach();
     }
 
     @Override

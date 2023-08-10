@@ -18,8 +18,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="org.lineageos.eleven"
-    android:versionCode="411"
-    android:versionName="4.1.1"
+    android:versionCode="412"
+    android:versionName="4.1.2"
     tools:ignore="GradleOverrides">
 
     <uses-sdk
@@ -77,6 +77,9 @@
         android:largeHeap="@bool/config_largeHeap"
         android:taskAffinity="org.lineageos.eleven.task"
         android:theme="@style/Eleven.Theme">
+
+        <meta-data android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc"/>
 
         <!-- Main activity -->
         <activity
@@ -216,8 +219,12 @@
         <!-- Music service -->
         <service
             android:name="org.lineageos.eleven.MusicPlaybackService"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
-            android:process=":main" />
+            android:process=":main">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService"/>
+            </intent-filter>
+        </service>
     </application>
 </manifest>
