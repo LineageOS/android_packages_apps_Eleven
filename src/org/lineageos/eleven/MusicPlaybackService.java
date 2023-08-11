@@ -579,11 +579,17 @@ public class MusicPlaybackService extends MediaBrowserService
                 PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
                 null, null)) {
             while (c.moveToNext()) {
+                String albumName = c.getString(
+                        c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM));
+                long albumId = c.getLong(c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
+                Bitmap bitmap = mImageFetcher.getArtwork(albumName, albumId, true)
+                        .getBitmap();
                 MediaDescription mediaDesc = new MediaDescription.Builder()
                         .setTitle(c.getString(
                                 c.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)))
                         .setMediaId(c.getString(
                                 c.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)))
+                        .setIconBitmap(bitmap)
                         .build();
                 mediaItems.add(new MediaBrowser.MediaItem(mediaDesc,
                         MediaBrowser.MediaItem.FLAG_PLAYABLE));
