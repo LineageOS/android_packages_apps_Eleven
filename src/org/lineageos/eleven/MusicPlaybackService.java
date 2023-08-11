@@ -557,6 +557,9 @@ public class MusicPlaybackService extends MediaBrowserService
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
+        if (MediaBrowserService.SERVICE_INTERFACE.equals(intent.getAction())) {
+            return super.onBind(intent);
+        }
         mIsBound = true;
         return mBinder;
     }
@@ -571,7 +574,22 @@ public class MusicPlaybackService extends MediaBrowserService
     @Override
     public void onLoadChildren(@NonNull String parentId,
                                @NonNull Result<List<MediaBrowser.MediaItem>> result) {
-        result.detach();
+        List<MediaBrowser.MediaItem> mediaItems = new ArrayList<>();
+        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
+                null, null)) {
+            while (c.moveToNext()) {
+                MediaDescription mediaDesc = new MediaDescription.Builder()
+                        .setTitle(c.getString(
+                                c.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)))
+                        .setMediaId(c.getString(
+                                c.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)))
+                        .build();
+                mediaItems.add(new MediaBrowser.MediaItem(mediaDesc,
+                        MediaBrowser.MediaItem.FLAG_PLAYABLE));
+            }
+        }
+        result.sendResult(mediaItems);
     }
 
     @Override
@@ -769,6 +787,7 @@ public class MusicPlaybackService extends MediaBrowserService
                 new Intent(this, MediaButtonIntentReceiver.class),
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         mSession.setMediaButtonReceiver(pi);
+        setSessionToken(mSession.getSessionToken());
     }
 
     @Override
