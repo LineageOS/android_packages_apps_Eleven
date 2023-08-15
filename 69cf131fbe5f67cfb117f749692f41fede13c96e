@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "05e5dfd7_3d0c569d",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-08-15T17:44:27Z",
+      "side": 1,
+      "message": "{}",
+      "revId": "69cf131fbe5f67cfb117f749692f41fede13c96e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7766330_3e646514",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-08-15T17:44:27Z",
+      "side": 1,
+      "message": "100 chars",
+      "revId": "69cf131fbe5f67cfb117f749692f41fede13c96e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
