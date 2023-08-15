@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6db2ea7e_2ec949db",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-08-15T17:44:16Z",
+      "side": 1,
+      "message": "I would say bump version in a separate commit on top of the chain?",
+      "revId": "eab0e41aec22b7a6d4ba4e3024bdbfca8eb0b826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f855f264_54015e27",
+        "filename": "res/xml/automotive_app_desc.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-08-15T17:44:16Z",
+      "side": 1,
+      "message": "License header and newline",
+      "revId": "eab0e41aec22b7a6d4ba4e3024bdbfca8eb0b826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
