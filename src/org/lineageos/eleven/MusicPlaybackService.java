@@ -731,6 +731,7 @@ public class MusicPlaybackService extends MediaBrowserService
     private void setUpMediaSession() {
         mAudioAttributes = new AudioAttributes.Builder()
                 .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                .setUsage(AudioAttributes.USAGE_MEDIA)
                 .build();
         mAudioFocusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
                 .setAudioAttributes(mAudioAttributes)
