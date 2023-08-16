@@ -568,7 +568,10 @@ public class MusicPlaybackService extends MediaBrowserService
     @Override
     public BrowserRoot onGetRoot(@NonNull String clientPackageName, int clientUid,
                                  @Nullable Bundle bundle) {
-        return new BrowserRoot("root", null);
+        Bundle extras = new Bundle();
+        extras.putInt("android.media.browse.CONTENT_STYLE_BROWSABLE_HINT", 2); // grid item
+        extras.putInt("android.media.browse.CONTENT_STYLE_PLAYABLE_HINT", 1); // list item
+        return new BrowserRoot("root", extras);
     }
 
     @Override
