@@ -350,6 +350,18 @@ public class MusicPlaybackService extends MediaBrowserService
 
     private static final String CHANNEL_NAME = "eleven_playback";
 
+    private static final String CONTENT_STYLE_BROWSABLE_HINT =
+            "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT";
+
+    private static final String CONTENT_STYLE_PLAYABLE_HINT =
+            "android.media.browse.CONTENT_STYLE_PLAYABLE_HINT";
+
+    private static final String CONTENT_BROWSER_ROOT = "root";
+
+    private final int CONTENT_STYLE_GRID_ITEM = 2;
+
+    private final int CONTENT_STYLE_LIST_ITEM = 1;
+
     public interface TrackErrorExtra {
         /**
          * Name of the track that was unable to play
@@ -568,7 +580,10 @@ public class MusicPlaybackService extends MediaBrowserService
     @Override
     public BrowserRoot onGetRoot(@NonNull String clientPackageName, int clientUid,
                                  @Nullable Bundle bundle) {
-        return new BrowserRoot("root", null);
+        Bundle extras = new Bundle();
+        extras.putInt(CONTENT_STYLE_BROWSABLE_HINT, CONTENT_STYLE_GRID_ITEM);
+        extras.putInt(CONTENT_STYLE_PLAYABLE_HINT, CONTENT_STYLE_LIST_ITEM);
+        return new BrowserRoot(CONTENT_BROWSER_ROOT, extras);
     }
 
     @Override
