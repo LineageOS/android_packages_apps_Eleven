@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9aa9505e_ce2865c2",
+        "filename": "AndroidManifest.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-08-16T19:52:19Z",
+      "side": 1,
+      "message": "You removed it, but I don\u0027t see this bump nowhere else now",
+      "parentUuid": "6db2ea7e_2ec949db",
+      "revId": "eab0e41aec22b7a6d4ba4e3024bdbfca8eb0b826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f855f264_54015e27",
         "filename": "res/xml/automotive_app_desc.xml",
         "patchSetId": 1
@@ -49,6 +67,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "f855f264_54015e27",
+      "revId": "eab0e41aec22b7a6d4ba4e3024bdbfca8eb0b826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f4237b5_3e094969",
+        "filename": "res/xml/automotive_app_desc.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-08-16T19:52:19Z",
+      "side": 1,
+      "message": "Not the newline",
+      "parentUuid": "088568b1_eb2dd9bb",
       "revId": "eab0e41aec22b7a6d4ba4e3024bdbfca8eb0b826",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
