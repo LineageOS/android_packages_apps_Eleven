@@ -28,6 +28,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -92,9 +93,11 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Objects;
 import java.util.Random;
 import java.util.TreeSet;
 import java.util.concurrent.ExecutorService;
@@ -554,6 +557,17 @@ public class MusicPlaybackService extends MediaBrowserService
 
     private PowerManager.WakeLock mHeadsetHookWakeLock;
 
+    /**
+     * Resource URI for the application
+     */
+    private final String mResourceUri = "android.resource://" + PKG_NAME + "/drawable/";
+
+    /**
+     * Only used for Android Auto, as it can only access this service
+     */
+    private HashMap<String, List<MediaBrowser.MediaItem>> mMediaIdToChildren = new HashMap<>();
+    private ArrayList<Long> mSongs = new ArrayList<>(100);
+
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
@@ -578,25 +592,22 @@ public class MusicPlaybackService extends MediaBrowserService
     public void onLoadChildren(@NonNull String parentId,
                                @NonNull Result<List<MediaBrowser.MediaItem>> result) {
         List<MediaBrowser.MediaItem> mediaItems = new ArrayList<>();
-        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
-                null, null)) {
-            while (c.moveToNext()) {
-                String albumName = c.getString(
-                        c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM));
-                long albumId = c.getLong(c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
-                Bitmap bitmap = mImageFetcher.getArtwork(albumName, albumId, true)
-                        .getBitmap();
-                MediaDescription mediaDesc = new MediaDescription.Builder()
-                        .setTitle(c.getString(
-                                c.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)))
-                        .setMediaId(c.getString(
-                                c.getColumnIndexOrThrow(MediaStore.Audio.Media._ID)))
-                        .setIconBitmap(bitmap)
-                        .build();
-                mediaItems.add(new MediaBrowser.MediaItem(mediaDesc,
-                        MediaBrowser.MediaItem.FLAG_PLAYABLE));
-            }
+        switch (parentId) {
+            case "root":
+                result.sendResult(mMediaIdToChildren.get("root"));
+                return;
+            case "eleven_albums":
+                result.sendResult(setupAlbumRoot());
+                return;
+            case "eleven_artists":
+                result.sendResult(setupArtistRoot());
+                return;
+            case "eleven_playlists":
+                // TODO: Build playlist root
+                break;
+            default:
+                result.sendResult(mMediaIdToChildren.get(parentId));
+                return;
         }
         result.sendResult(mediaItems);
     }
@@ -726,6 +737,10 @@ public class MusicPlaybackService extends MediaBrowserService
         reloadQueue();
         notifyChange(QUEUE_CHANGED);
         notifyChange(META_CHANGED);
+
+        // Initialize the media tree. Only used for Android Auto
+        setupRootMediaItems();
+        setupSongRoot();
     }
 
     private void setUpMediaSession() {
@@ -2959,6 +2974,161 @@ public class MusicPlaybackService extends MediaBrowserService
                 Log.d(TAG, "ShakeToPlay destroyed!!!");
             }
         }
+    }
+
+    /**
+     * Setup root menu items for Android Auto to use
+     */
+    private void setupRootMediaItems() {
+        List<MediaBrowser.MediaItem> result = new ArrayList<>();
+        MediaDescription albums = new MediaDescription.Builder()
+                .setMediaId("eleven_albums")
+                .setTitle("Albums")
+                .setIconUri(Uri.parse(mResourceUri + getApplicationContext().getResources()
+                        .getResourceEntryName(R.drawable.ic_album)))
+                .build();
+        result.add(new MediaBrowser.MediaItem(albums, MediaBrowser.MediaItem.FLAG_BROWSABLE));
+        MediaDescription artists = new MediaDescription.Builder()
+                .setMediaId("eleven_artists")
+                .setTitle("Artists")
+                .setIconUri(Uri.parse(mResourceUri + getApplicationContext().getResources()
+                        .getResourceEntryName(R.drawable.ic_artist)))
+                .build();
+        result.add(new MediaBrowser.MediaItem(artists, MediaBrowser.MediaItem.FLAG_BROWSABLE));
+        MediaDescription playlists = new MediaDescription.Builder()
+                .setMediaId("eleven_playlists")
+                .setTitle("Playlists")
+                .setIconUri(Uri.parse(mResourceUri + getApplicationContext().getResources()
+                        .getResourceEntryName(R.drawable.ic_playlist)))
+                .build();
+        result.add(new MediaBrowser.MediaItem(playlists, MediaBrowser.MediaItem.FLAG_BROWSABLE));
+        MediaDescription songs = new MediaDescription.Builder()
+                .setMediaId("eleven_songs")
+                .setTitle("Songs")
+                .setIconUri(Uri.parse(mResourceUri + getApplicationContext().getResources()
+                        .getResourceEntryName(R.drawable.ic_playlist)))
+                .build();
+        result.add(new MediaBrowser.MediaItem(songs, MediaBrowser.MediaItem.FLAG_BROWSABLE));
+        mMediaIdToChildren.put("root", result);
+    }
+
+    private List<MediaBrowser.MediaItem> setupAlbumRoot() {
+        List<MediaBrowser.MediaItem> result = new ArrayList<>();
+        ArrayList<Long> mediaIds = new ArrayList<>();
+        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
+                null, null)) {
+            while (c.moveToNext()) {
+                String albumName = c.getString(
+                        c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM));
+                long albumId = c.getLong(c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
+                if (!mediaIds.contains(albumId)) {
+                    mediaIds.add(albumId);
+                }
+                else {
+                    continue;
+                }
+                Bitmap bitmap = mImageFetcher.getArtwork(albumName, albumId, true)
+                        .getBitmap();
+                MediaMetadata data = new MediaMetadata.Builder()
+                        .putString(MediaMetadata.METADATA_KEY_TITLE, albumName)
+                        .putString(MediaMetadata.METADATA_KEY_MEDIA_ID, "album_" + albumId)
+                        .putString(MediaMetadata.METADATA_KEY_ALBUM_ART_URI,
+                                ContentUris.withAppendedId(Uri.parse(
+                                                "content://media/external/audio/albumart"),
+                                        albumId).toString())
+                        .putBitmap(MediaMetadata.METADATA_KEY_DISPLAY_ICON, bitmap)
+                        .build();
+                result.add(new MediaBrowser.MediaItem(data.getDescription(),
+                        MediaBrowser.MediaItem.FLAG_BROWSABLE));
+            }
+        }
+        return result;
+    }
+
+    private List<MediaBrowser.MediaItem> setupArtistRoot() {
+        List<MediaBrowser.MediaItem> result = new ArrayList<>();
+        ArrayList<String> mediaIds = new ArrayList<>();
+        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
+                null, null)) {
+            while (c.moveToNext()) {
+                String artistName = c.getString(
+                        c.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST));
+                if (!mediaIds.contains(artistName)) {
+                    mediaIds.add(artistName);
+                }
+                else {
+                    continue;
+                }
+                // TODO: Get artist bitmap
+                //Bitmap bitmap = mImageFetcher.getArtwork(artistName, albumId, true)
+                        //.getBitmap();
+                MediaMetadata data = new MediaMetadata.Builder()
+                        .putString(MediaMetadata.METADATA_KEY_TITLE, artistName)
+                        .putString(MediaMetadata.METADATA_KEY_MEDIA_ID, "artist_" + artistName)
+                        /*.putString(MediaMetadata.METADATA_KEY_ALBUM_ART_URI,
+                                ContentUris.withAppendedId(Uri.parse(
+                                                "content://media/external/audio/albumart"),
+                                        albumId).toString())
+                        .putBitmap(MediaMetadata.METADATA_KEY_DISPLAY_ICON, bitmap)*/
+                        .build();
+                result.add(new MediaBrowser.MediaItem(data.getDescription(),
+                        MediaBrowser.MediaItem.FLAG_BROWSABLE));
+            }
+        }
+        return result;
+    }
+
+    private List<MediaBrowser.MediaItem> setupPlaylistRoot() {
+        // TODO: Get available playlists
+        return null;
+    }
+
+    private void setupSongRoot() {
+        List<MediaBrowser.MediaItem> result = new ArrayList<>();
+        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
+                null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER)) {
+            while (c.moveToNext()) {
+                String albumName = c.getString(
+                        c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM));
+                long albumId = c.getLong(c.getColumnIndexOrThrow(MediaStore.Audio.Media.ALBUM_ID));
+                String artistName = c.getString(
+                        c.getColumnIndexOrThrow(MediaStore.Audio.Media.ARTIST));
+                if (!mMediaIdToChildren.containsKey("album_" + albumId)) {
+                    mMediaIdToChildren.put("album_" + albumId, new ArrayList<>());
+                }
+                if (!mMediaIdToChildren.containsKey("artist_" + artistName)) {
+                    mMediaIdToChildren.put("artist_" + artistName, new ArrayList<>());
+                }
+                Bitmap bitmap = mImageFetcher.getArtwork(albumName, albumId, true)
+                        .getBitmap();
+                long mediaId = c.getLong(c.getColumnIndexOrThrow(MediaStore.Audio.Media._ID));
+                MediaMetadata data = new MediaMetadata.Builder()
+                        .putString(MediaMetadata.METADATA_KEY_ALBUM, albumName)
+                        .putString(MediaMetadata.METADATA_KEY_MEDIA_ID, String.valueOf(mediaId))
+                        .putString(MediaMetadata.METADATA_KEY_TITLE, c.getString(
+                                c.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)))
+                        .putString(MediaMetadata.METADATA_KEY_MEDIA_URI,
+                                ContentUris.withAppendedId(
+                                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, mediaId)
+                                        .toString())
+                        .putString(MediaMetadata.METADATA_KEY_ALBUM_ART_URI,
+                                ContentUris.withAppendedId(Uri.parse(
+                                        "content://media/external/audio/albumart"),
+                                        albumId).toString())
+                        .putBitmap(MediaMetadata.METADATA_KEY_DISPLAY_ICON, bitmap)
+                        .build();
+                MediaBrowser.MediaItem item = new MediaBrowser.MediaItem(data.getDescription(),
+                        MediaBrowser.MediaItem.FLAG_PLAYABLE);
+                Objects.requireNonNull(mMediaIdToChildren.get("album_" + albumId)).add(item);
+                Objects.requireNonNull(mMediaIdToChildren.get("artist_" + artistName)).add(item);
+                result.add(item);
+                mSongs.add(mediaId);
+            }
+        }
+        mMediaIdToChildren.put("eleven_songs", result);
     }
 
     private final BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
