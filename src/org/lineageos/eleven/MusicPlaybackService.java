@@ -806,6 +806,14 @@ public class MusicPlaybackService extends MediaBrowserService
                 }
                 return super.onMediaButtonEvent(mediaButtonIntent);
             }
+
+            @Override
+            public void onPlayFromMediaId(String mediaId, Bundle extras) {
+                int position = mSongs.indexOf(Long.parseLong(mediaId));
+                // TODO: Detect when played from playlist, album, or artist
+                open(mSongs.stream().mapToLong(i -> i).toArray(), position, -1, IdType.NA);
+                onPlay();
+            }
         });
 
         PendingIntent pi = PendingIntent.getBroadcast(this, 0,
