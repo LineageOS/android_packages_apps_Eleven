@@ -820,6 +820,9 @@ public class MusicPlaybackService extends MediaBrowserService
                 if (action.equals(SHUFFLE_ACTION)) {
                     cycleShuffle();
                 }
+                else if (action.equals(REPEAT_ACTION)) {
+                    cycleRepeat();
+                }
             }
         });
 
@@ -1628,6 +1631,10 @@ public class MusicPlaybackService extends MediaBrowserService
                 SHUFFLE_ACTION,
                 getString(R.string.menu_shuffle_item),
                 R.drawable.btn_playback_shuffle_all).build());
+        stateBuilder.addCustomAction(new PlaybackState.CustomAction.Builder(
+                REPEAT_ACTION,
+                getString(R.string.accessibility_repeat),
+                R.drawable.btn_playback_repeat_all).build());
 
         if (what.equals(PLAYSTATE_CHANGED) || what.equals(POSITION_CHANGED)) {
             mSession.setPlaybackState(stateBuilder.build());
