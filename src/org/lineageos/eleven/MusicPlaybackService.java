@@ -826,6 +826,13 @@ public class MusicPlaybackService extends MediaBrowserService
                 open(mSongs.stream().mapToLong(i -> i).toArray(), position, -1, IdType.NA);
                 onPlay();
             }
+
+            @Override
+            public void onCustomAction(@NonNull String action, @Nullable Bundle extras) {
+                if (action.equals(SHUFFLE_ACTION)) {
+                    cycleShuffle();
+                }
+            }
         });
 
         PendingIntent pi = PendingIntent.getBroadcast(this, 0,
@@ -1623,11 +1630,19 @@ public class MusicPlaybackService extends MediaBrowserService
                 PlaybackState.ACTION_SKIP_TO_PREVIOUS |
                 PlaybackState.ACTION_STOP;
 
+        PlaybackState.Builder stateBuilder = new PlaybackState.Builder()
+                .setActions(playBackStateActions)
+                .setActiveQueueItemId(getAudioId())
+                .setState(playState, position(), 1.0f);
+
+        // create custom action
+        stateBuilder.addCustomAction(new PlaybackState.CustomAction.Builder(
+                SHUFFLE_ACTION,
+                getString(R.string.menu_shuffle_item),
+                R.drawable.btn_playback_shuffle_all).build());
+
         if (what.equals(PLAYSTATE_CHANGED) || what.equals(POSITION_CHANGED)) {
-            mSession.setPlaybackState(new PlaybackState.Builder()
-                    .setActions(playBackStateActions)
-                    .setActiveQueueItemId(getAudioId())
-                    .setState(playState, position(), 1.0f).build());
+            mSession.setPlaybackState(stateBuilder.build());
         } else if (what.equals(META_CHANGED) || what.equals(QUEUE_CHANGED)
                 || QUEUE_MOVED.equals(what)) {
             Bitmap albumArt = getAlbumArt(false).getBitmap();
@@ -1657,10 +1672,7 @@ public class MusicPlaybackService extends MediaBrowserService
                 updateMediaSessionQueue();
             }
 
-            mSession.setPlaybackState(new PlaybackState.Builder()
-                    .setActions(playBackStateActions)
-                    .setActiveQueueItemId(getAudioId())
-                    .setState(playState, position(), 1.0f).build());
+            mSession.setPlaybackState(stateBuilder.build());
         }
     }
 
