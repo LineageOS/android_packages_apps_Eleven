@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3dd34693_1026a09c",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 572,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-08-26T19:35:39Z",
+      "side": 1,
+      "message": "Define at top of class (around L#351) and use down here:\nprivate static final String CONTENT_STYLE_BROWSABLE_HINT \u003d \"...\";\nprivate static final String CONTENT_STYLE_PLAYABLE_HINT\u003d \"...\";\nand\nprivate static final String BROWSER_ROOT \u003d \"root\";",
+      "revId": "8c01825275bb2a1aeddd353da79ab890601c1287",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
