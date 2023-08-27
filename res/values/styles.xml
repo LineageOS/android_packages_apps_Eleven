@@ -18,7 +18,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <!-- Main Material -->
-    <style name="Eleven.Theme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <style name="Eleven.Theme" parent="@style/Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowContentOverlay">@null</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="dropDownListViewStyle">@style/DropDownListView</item>
@@ -38,7 +38,7 @@
         <item name="android:windowLightNavigationBar">true</item>
     </style>
 
-    <style name="ActionBarWidgetTheme" parent="@style/Theme.AppCompat.DayNight">
+    <style name="ActionBarWidgetTheme" parent="@style/Theme.Material3.DayNight">
         <!-- This is the color of the search text hint in the action bar -->
         <item name="android:textColorHint">@color/search_hint_color</item>
         <item name="popupMenuStyle">@style/PopupMenu</item>
@@ -178,7 +178,7 @@
         <item name="colorControlNormal">@color/white</item>
     </style>
 
-    <style name="ToolBarPopupTheme" parent="@style/Theme.AppCompat.Light" />
+    <style name="ToolBarPopupTheme" parent="Theme.Material3.DayNight" />
 
     <style name="Eleven.Theme.PopupMenuOverlapAnchor">
         <item name="android:overlapAnchor">true</item>
