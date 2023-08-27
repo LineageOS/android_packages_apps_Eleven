@@ -57,6 +57,15 @@
     <style name="Eleven.Theme.ActionBar.Overlay" parent="@style/Eleven.Theme">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
+        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
+    </style>
+
+    <style name="AppPreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
+        <item name="switchPreferenceCompatStyle">@style/AppSwitchPreference</item>
+    </style>
+
+    <style name="AppSwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
+        <item name="widgetLayout">@layout/preference_material_switch</item>
     </style>
 
     <!-- Set the default list view divider color and size -->
