@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 Andrew Neal
+     Copyright (C) 2014 The CyanogenMod Project
+     Copyright (C) 2023 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Dynamic Colors -->
+    <color name="primary">@android:color/system_neutral1_900</color>
+    <color name="primary_dark">@android:color/system_neutral1_900</color>
+    <color name="accent">@android:color/system_accent1_100</color>
+    <color name="pastel_accent">@android:color/system_accent1_100</color>
+
+    <!-- Main Colors -->
+    <color name="background_color">@android:color/system_neutral1_900</color>
+
+    <!-- Color for the action bar -->
+    <color name="header_action_bar_color">@color/primary</color>
+    <color name="header_action_bar_cab">@android:color/system_neutral1_800</color>
+    <color name="header_action_bar_text_color">@color/white</color>
+    <color name="header_action_bar_text_color_active">@color/accent</color>
+    <color name="bottom_action_bar_text_color">@color/white</color>
+
+    <!-- Background color used on some page headers -->
+    <color name="page_header_background">@android:color/system_neutral1_900</color>
+
+    <!-- Separated and exposed values for themes -->
+    <color name="widget_background_color">@android:color/system_accent2_800</color>
+    <color name="activity_album_detail_background_color">@color/background_color</color>
+    <color name="activity_artist_detail_background_color">@color/background_color</color>
+    <color name="activity_base_background_color">@color/background_color</color>
+    <color name="album_detail_title_text_color">@color/default_text_color</color>
+    <color name="album_detail_song_count_and_year_text_color">@color/default_text_color</color>
+    <color name="album_detail_genre_text_color">@color/default_text_color</color>
+    <color name="album_detail_duration_text_color">@color/default_text_color</color>
+    <color name="artist_detail_header_albums_label_text_color">@color/list_item_header_text_color</color>
+    <color name="artist_detail_header_songs_label_text_color">@color/list_item_header_text_color</color>
+    <color name="position_number_color">@color/black</color>
+    <color name="audio_player_lyrics_text_color">@color/white</color>
+    <color name="audio_player_current_time_color">@color/white</color>
+    <color name="audio_player_total_time_color">@color/white</color>
+    <color name="number_of_songs_text_color">@color/accent</color>
+    <color name="duration_text_color">@color/accent</color>
+</resources>
