@@ -44,8 +44,9 @@
         android:background="?android:selectableItemBackgroundBorderless"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/btn_playback_play_widget"
-        tools:ignore="SpeakableTextPresentCheck" />
+        android:src="@drawable/btn_playback_play"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:tint="@color/widget_text" />
 
     <LinearLayout
         android:id="@+id/app_widget_small_info_container"
