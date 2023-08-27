@@ -133,12 +133,12 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         final boolean isPlaying = service.isPlaying();
         if (isPlaying) {
             appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_play,
-                    R.drawable.btn_playback_pause_widget);
+                    R.drawable.btn_playback_pause);
             appWidgetView.setContentDescription(R.id.app_widget_large_alternate_play,
                     service.getString(R.string.accessibility_pause));
         } else {
             appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_play,
-                    R.drawable.btn_playback_play_widget);
+                    R.drawable.btn_playback_play);
             appWidgetView.setContentDescription(R.id.app_widget_large_alternate_play,
                     service.getString(R.string.accessibility_play));
         }
@@ -147,19 +147,19 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         switch (service.getRepeatMode()) {
             case MusicPlaybackService.REPEAT_ALL:
                 appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_repeat,
-                        R.drawable.btn_playback_repeat_all_widget);
+                        R.drawable.btn_playback_repeat_all);
                 appWidgetView.setInt(R.id.app_widget_large_alternate_repeat, "setAlpha",
                         (int)(RepeatButton.ACTIVE_ALPHA * 255));
                 break;
             case MusicPlaybackService.REPEAT_CURRENT:
                 appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_repeat,
-                        R.drawable.btn_playback_repeat_one_widget);
+                        R.drawable.btn_playback_repeat_one);
                 appWidgetView.setInt(R.id.app_widget_large_alternate_repeat, "setAlpha",
                         (int)(RepeatButton.ACTIVE_ALPHA * 255));
                 break;
             default:
                 appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_repeat,
-                        R.drawable.btn_playback_repeat_all_widget);
+                        R.drawable.btn_playback_repeat_all);
                 appWidgetView.setInt(R.id.app_widget_large_alternate_repeat, "setAlpha",
                         (int)(RepeatButton.INACTIVE_ALPHA * 255));
                 break;
@@ -169,7 +169,7 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
         switch (service.getShuffleMode()) {
             case MusicPlaybackService.SHUFFLE_NONE:
                 appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_shuffle,
-                        R.drawable.btn_playback_shuffle_all_widget);
+                        R.drawable.btn_playback_shuffle_all);
                 appWidgetView.setInt(R.id.app_widget_large_alternate_shuffle, "setAlpha",
                         (int)(ShuffleButton.INACTIVE_ALPHA * 255));
                 break;
@@ -177,7 +177,7 @@ public class AppWidgetLargeAlternate extends AppWidgetBase {
             case MusicPlaybackService.SHUFFLE_NORMAL:
             default:
                 appWidgetView.setImageViewResource(R.id.app_widget_large_alternate_shuffle,
-                        R.drawable.btn_playback_shuffle_all_widget);
+                        R.drawable.btn_playback_shuffle_all);
                 appWidgetView.setInt(R.id.app_widget_large_alternate_shuffle, "setAlpha",
                         (int)(ShuffleButton.ACTIVE_ALPHA * 255));
                 break;
