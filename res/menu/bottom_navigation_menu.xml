@@ -1,0 +1,29 @@
+<!--
+     SPDX-FileCopyrightText: 2023 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/nav_artist"
+      android:enabled="true"
+      android:icon="@drawable/ic_artist"
+      android:title="@string/page_artists"/>
+
+  <item
+      android:id="@+id/nav_album"
+      android:enabled="true"
+      android:icon="@drawable/ic_album"
+      android:title="@string/page_albums"/>
+
+  <item
+      android:id="@+id/nav_songs"
+      android:enabled="true"
+      android:icon="@drawable/ic_song"
+      android:title="@string/page_songs"/>
+
+  <item
+      android:id="@+id/nav_playist"
+      android:enabled="true"
+      android:icon="@drawable/ic_playlist"
+      android:title="@string/page_playlists"/>
+</menu>
