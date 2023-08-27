@@ -24,7 +24,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.preference.PreferenceManager;
+
+import androidx.preference.PreferenceManager;
 
 import org.lineageos.eleven.ui.fragments.AlbumFragment;
 import org.lineageos.eleven.ui.fragments.ArtistFragment;
