@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "083e779f_70e53368",
+        "filename": "res/xml/automotive_app_desc.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-08-27T13:04:03Z",
+      "side": 1,
+      "message": "newline at end of file missing",
+      "revId": "07c970e4c41bb02eb0572c6904b1ebd825a6ce2b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
