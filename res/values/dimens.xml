@@ -36,7 +36,6 @@
     <dimen name="list_item_general_margin">16.0dip</dimen>
     <dimen name="list_item_padding_top">12.0dip</dimen>
     <dimen name="list_item_padding_bottom">12.0dip</dimen>
-    <dimen name="list_item_header_size">16.0sp</dimen>
     <dimen name="list_item_main_text_size">@dimen/text_size_small</dimen>
     <dimen name="list_item_secondary_text_size">@dimen/text_size_micro</dimen>
     <dimen name="list_item_queue_text_padding_left">15.0dip</dimen>
@@ -103,11 +102,6 @@
     <dimen name="header_bar_up_width">30.0dip</dimen>
     <dimen name="header_bar_menu_button_width">38.0dip</dimen>
     <dimen name="header_bar_button_height">48.0dip</dimen>
-
-    <!-- Title Page Indicator Settings -->
-    <dimen name="tpi_height">48dp</dimen>
-    <dimen name="tab_text_size">14sp</dimen>
-    <dimen name="tab_selected_underline_height">2dp</dimen>
 
     <dimen name="list_item_progress_width">45.0dip</dimen>
     <dimen name="list_item_progress_height">45.0dip</dimen>
