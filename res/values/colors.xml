@@ -57,8 +57,6 @@
 
     <!-- Color for the action bar -->
     <color name="header_action_bar_color">@color/primary</color>
-    <color name="header_action_bar_text_color">@color/black</color>
-    <color name="header_action_bar_text_color_active">@color/accent</color>
     <color name="bottom_action_bar_text_color">@color/white</color>
 
     <!-- Background color used on some page headers -->
@@ -79,8 +77,6 @@
     <color name="grid_list_item_text_color">#b3212121</color>
 
     <!-- Top title page colors -->
-    <color name="tab_ripple_color">@color/accent</color>
-    <color name="tab_selected_underline_color">@color/accent</color>
 
     <!-- Search Colors -->
     <color name="search_hint_color">@color/accent</color>

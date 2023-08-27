@@ -26,10 +26,14 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.adapters.PagerAdapter;
 import org.lineageos.eleven.adapters.PagerAdapter.MusicFragments;
 import org.lineageos.eleven.menu.CreateNewPlaylist;
+import org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout;
+import org.lineageos.eleven.ui.activities.SlidingPanelActivity;
 import org.lineageos.eleven.ui.fragments.AlbumFragment;
 import org.lineageos.eleven.ui.fragments.ArtistFragment;
 import org.lineageos.eleven.ui.fragments.BaseFragment;
@@ -37,7 +41,6 @@ import org.lineageos.eleven.ui.fragments.SongFragment;
 import org.lineageos.eleven.utils.MusicUtils;
 import org.lineageos.eleven.utils.PreferenceUtils;
 import org.lineageos.eleven.utils.SortOrder;
-import org.lineageos.eleven.widgets.ViewPagerTabs;
 
 /**
  * This class is used to hold the {@link ViewPager} used for swiping between the
@@ -57,6 +60,11 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
      * Pager
      */
     private ViewPager mViewPager;
+
+    /**
+     * Navigation bar
+     */
+    private BottomNavigationView mBottomNavigation;
 
     /**
      * VP's adapter
@@ -112,11 +120,62 @@ public class MusicBrowserPhoneFragment extends BaseFragment {
         // Offscreen pager loading limit
         mViewPager.setOffscreenPageLimit(mPagerAdapter.getCount() - 1);
 
-        // Initialize the tab strip
-        final ViewPagerTabs tabs = mRootView.findViewById(R.id.fragment_home_phone_pager_titles);
-        // Attach the ViewPager
-        tabs.setViewPager(mViewPager);
-        mViewPager.addOnPageChangeListener(tabs);
+        // Initialize the navigation bar
+        mBottomNavigation = getContainingActivity().findViewById(R.id.fragment_home_phone_pager_titles);
+        mBottomNavigation.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            // Pop all stacks if we navigate elsewhere and reset the panel
+            for (int i = 0; i < getParentFragmentManager().getBackStackEntryCount(); i++) {
+                getParentFragmentManager().popBackStack();
+            }
+            ((SlidingPanelActivity) getContainingActivity())
+                    .showPanel(SlidingPanelActivity.Panel.Browse);
+
+
+            if (id == R.id.nav_artist) {
+                mViewPager.setCurrentItem(0);
+            }
+            else if (id == R.id.nav_album) {
+                mViewPager.setCurrentItem(1);
+            }
+            else if (id == R.id.nav_songs) {
+                mViewPager.setCurrentItem(2);
+            }
+            else if (id == R.id.nav_playist) {
+                mViewPager.setCurrentItem(3);
+            }
+            return true;
+        });
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position) {
+                    case 0:
+                        mBottomNavigation.getMenu().findItem(R.id.nav_artist).setChecked(true);
+                        break;
+                    case 1:
+                        mBottomNavigation.getMenu().findItem(R.id.nav_album).setChecked(true);
+                        break;
+                    case 2:
+                        mBottomNavigation.getMenu().findItem(R.id.nav_songs).setChecked(true);
+                        break;
+                    case 3:
+                        mBottomNavigation.getMenu().findItem(R.id.nav_playist).setChecked(true);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         if (mDefaultPageIdx != INVALID_PAGE_INDEX) {
             navigateToPage(mDefaultPageIdx);
