@@ -38,7 +38,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import org.lineageos.eleven.IElevenService;
 import org.lineageos.eleven.R;
@@ -75,7 +75,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static class SettingsFragment extends PreferenceFragmentCompat implements
             ServiceConnection, SharedPreferences.OnSharedPreferenceChangeListener {
 
-        private SwitchPreference mShowVisualizer;
+        private SwitchPreferenceCompat mShowVisualizer;
 
         private MusicUtils.ServiceToken mToken;
 
