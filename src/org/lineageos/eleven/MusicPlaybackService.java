@@ -1647,7 +1647,7 @@ public class MusicPlaybackService extends Service
 
         return new Notification.Builder(this, CHANNEL_NAME)
                 .setChannelId(channel.getId())
-                .setSmallIcon(R.drawable.ic_notification)
+                .setSmallIcon(R.drawable.ic_song)
                 .setLargeIcon(artwork.getBitmap())
                 .setContentIntent(clickIntent)
                 .setContentTitle(getTrackName())
