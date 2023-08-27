@@ -51,7 +51,8 @@
             android:contentDescription="@string/accessibility_prev"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="centerCrop"
-            android:src="@drawable/btn_playback_previous_widget" />
+            android:src="@drawable/btn_playback_previous"
+            android:tint="@color/widget_text" />
 
         <ImageButton
             android:id="@+id/app_widget_large_play"
@@ -61,7 +62,8 @@
             android:contentDescription="@null"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="centerCrop"
-            android:src="@drawable/btn_playback_play_widget" />
+            android:src="@drawable/btn_playback_play"
+            android:tint="@color/widget_text"  />
 
         <ImageButton
             android:id="@+id/app_widget_large_next"
@@ -71,7 +73,8 @@
             android:contentDescription="@string/accessibility_next"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="centerCrop"
-            android:src="@drawable/btn_playback_next_widget" />
+            android:src="@drawable/btn_playback_next"
+            android:tint="@color/widget_text" />
     </LinearLayout>
 
     <LinearLayout
