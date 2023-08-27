@@ -68,7 +68,8 @@
                 android:layout_alignBottom="@+id/duration"
                 android:layout_marginEnd="4dp"
                 android:gravity="center"
-                android:src="@drawable/stopwatch_icon_small_grey" />
+                android:src="@drawable/stopwatch_icon"
+                android:tint="@color/album_detail_genre_text_color" />
 
             <TextView
                 android:id="@+id/duration"
