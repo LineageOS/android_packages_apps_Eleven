@@ -53,6 +53,6 @@
             android:drawablePadding="4dp"
             android:textColor="@color/duration_text_color"
             android:textSize="@dimen/text_size_micro"
-            app:drawableStartCompat="@drawable/stopwatch_icon_white" />
+            app:drawableStartCompat="@drawable/stopwatch_icon" />
     </LinearLayout>
 </RelativeLayout>
