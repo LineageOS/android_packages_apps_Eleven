@@ -17,106 +17,123 @@
   See the License for the specific language governing permissions and
   limitations under the License.
  -->
-<org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="bottom"
-    app:dragView="@+id/firstPanelDragArea"
-    app:dragViewClickable="false"
-    app:panelHeight="@dimen/bottom_action_bar_height"
-    app:shadowHeight="@dimen/sliding_panel_shadow_height"
-    app:slidePanelOffset="@dimen/bottom_action_bar_height">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:visibility="gone">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            android:elevation="@dimen/action_bar_elevation"
-            android:theme="@style/ToolBarTheme"
-            app:popupTheme="@style/ToolBarPopupTheme"
-            app:titleTextAppearance="@style/TextAppearance.Widget.Event.Toolbar.Title" />
-
-        <FrameLayout
-            android:id="@+id/activity_base_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </FrameLayout>
+    android:layout_height="match_parent">
 
     <org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout
-        android:id="@+id/sliding_layout2"
+        android:id="@+id/sliding_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/activity_base_background_color"
+        android:layout_height="0dp"
         android:gravity="bottom"
-        app:directOffset="true"
-        app:dragView="@+id/secondPanelDragArea"
-        app:fadeColor="@color/transparent"
-        app:panelHeight="@dimen/sliding_panel_indicator_height"
-        app:shadowHeight="@dimen/sliding_panel_shadow_height">
+        app:dragView="@+id/firstPanelDragArea"
+        app:dragViewClickable="false"
+        app:panelHeight="@dimen/bottom_action_bar_height"
+        app:shadowHeight="@dimen/sliding_panel_shadow_height"
+        app:slidePanelOffset="@dimen/bottom_action_bar_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fragment_home_phone_pager_titles">
 
-        <include
-            layout="@layout/album_scrim_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <LinearLayout
-            android:id="@+id/firstPanelDragArea"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            tools:visibility="gone">
 
-            <include layout="@layout/bottom_action_bar" />
-
-            <fragment
-                android:id="@+id/audioPlayerFragment"
-                class="org.lineageos.eleven.ui.fragments.AudioPlayerFragment"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                tools:ignore="FragmentTagUsage" />
-        </LinearLayout>
+                android:layout_height="?android:attr/actionBarSize"
+                android:elevation="@dimen/action_bar_elevation"
+                android:theme="@style/ToolBarTheme"
+                app:popupTheme="@style/ToolBarPopupTheme"
+                app:titleTextAppearance="@style/TextAppearance.Widget.Event.Toolbar.Title" />
 
-        <LinearLayout
+            <FrameLayout
+                android:id="@+id/activity_base_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout
+            android:id="@+id/sliding_layout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="@color/activity_base_background_color"
+            android:gravity="bottom"
+            app:directOffset="true"
+            app:dragView="@+id/secondPanelDragArea"
+            app:fadeColor="@color/transparent"
+            app:panelHeight="@dimen/sliding_panel_indicator_height"
+            app:shadowHeight="@dimen/sliding_panel_shadow_height">
+
+            <include
+                layout="@layout/album_scrim_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <LinearLayout
-                android:id="@+id/secondPanelDragArea"
+                android:id="@+id/firstPanelDragArea"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/sliding_panel_indicator_height"
-                    android:layout_gravity="center_horizontal"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/drag_indicator"
-                    android:contentDescription="@null" />
+                <include layout="@layout/bottom_action_bar" />
 
-                <include
-                    android:id="@+id/secondHeaderBar"
-                    layout="@layout/header_bar" />
+                <fragment
+                    android:id="@+id/audioPlayerFragment"
+                    class="org.lineageos.eleven.ui.fragments.AudioPlayerFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="FragmentTagUsage" />
             </LinearLayout>
 
-            <fragment
-                android:id="@+id/queueFragment"
-                class="org.lineageos.eleven.ui.fragments.QueueFragment"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                tools:ignore="FragmentTagUsage" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/secondPanelDragArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/sliding_panel_indicator_height"
+                        android:layout_gravity="center_horizontal"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/drag_indicator"
+                        android:contentDescription="@null" />
+
+                    <include
+                        android:id="@+id/secondHeaderBar"
+                        layout="@layout/header_bar" />
+                </LinearLayout>
+
+                <fragment
+                    android:id="@+id/queueFragment"
+                    class="org.lineageos.eleven.ui.fragments.QueueFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    tools:ignore="FragmentTagUsage" />
+            </LinearLayout>
+        </org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
     </org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
-</org.lineageos.eleven.slidinguppanel.SlidingUpPanelLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/fragment_home_phone_pager_titles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/action_bar_elevation"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
