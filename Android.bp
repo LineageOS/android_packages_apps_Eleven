@@ -34,7 +34,8 @@ android_app {
         "androidx.palette_palette",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
-        "androidx.viewpager2_viewpager2"
+        "androidx.viewpager2_viewpager2",
+        "com.google.android.material_material",
     ],
 
     overrides: ["Music"],
