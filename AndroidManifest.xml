@@ -67,7 +67,6 @@
 
     <application
         android:name="org.lineageos.eleven.ElevenApplication"
-        android:allowBackup="true"
         android:allowTaskReparenting="true"
         android:requestLegacyExternalStorage="true"
         android:hardwareAccelerated="@bool/config_hardwareAccelerated"
