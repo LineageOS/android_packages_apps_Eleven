@@ -102,6 +102,7 @@
     <dimen name="header_bar_up_width">30.0dip</dimen>
     <dimen name="header_bar_menu_button_width">38.0dip</dimen>
     <dimen name="header_bar_button_height">48.0dip</dimen>
+    <dimen name="header_bar_text_padding">12.0dip</dimen>
 
     <dimen name="list_item_progress_width">45.0dip</dimen>
     <dimen name="list_item_progress_height">45.0dip</dimen>
