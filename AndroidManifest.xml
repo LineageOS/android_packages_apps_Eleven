@@ -68,6 +68,7 @@
     <application
         android:name="org.lineageos.eleven.ElevenApplication"
         android:allowTaskReparenting="true"
+        android:enableOnBackInvokedCallback="true"
         android:requestLegacyExternalStorage="true"
         android:hardwareAccelerated="@bool/config_hardwareAccelerated"
         android:appCategory="audio"
