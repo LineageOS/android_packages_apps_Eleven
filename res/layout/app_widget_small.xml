@@ -45,8 +45,8 @@
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         android:src="@drawable/btn_playback_play"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:tint="@color/widget_text" />
+        android:tint="@color/material_dynamic_primary20"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:id="@+id/app_widget_small_info_container"
@@ -60,20 +60,17 @@
         <TextView
             android:id="@+id/app_widget_line_one"
             style="@style/NotificationText"
-            android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/app_widget_line_two"
             style="@style/NotificationText"
-            android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
 
         <TextView
             android:id="@+id/app_widget_line_three"
             style="@style/NotificationText"
-            android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 </GridLayout>
