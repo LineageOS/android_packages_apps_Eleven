@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.provider.MediaStore;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -343,8 +344,9 @@ public class QueueFragment extends Fragment implements LoaderManager.LoaderCallb
     private void setupNoResultsContainer(NoResultsContainer empty) {
         final Context context = getContext();
         if (context != null) {
-            int color = ContextCompat.getColor(context, R.color.no_results_light);
-            empty.setTextColor(color);
+            TypedValue typedValue = new TypedValue();
+            context.getTheme().resolveAttribute(R.attr.colorOnPrimaryContainer, typedValue, true);
+            empty.setTextColor(typedValue.data);
         }
         empty.setMainText(R.string.empty_queue_main);
         empty.setSecondaryText(R.string.empty_queue_secondary);

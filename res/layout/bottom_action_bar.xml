@@ -25,7 +25,6 @@
     android:clickable="true"
     android:orientation="horizontal"
     android:elevation="@dimen/action_bar_elevation"
-    android:background="@android:color/transparent"
     tools:ignore="ContentDescription" >
 
     <org.lineageos.eleven.widgets.SquareImageView

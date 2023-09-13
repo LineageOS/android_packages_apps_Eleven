@@ -29,6 +29,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -53,7 +54,9 @@ public class AlbumScrimImage extends FrameLayout {
     public AlbumScrimImage(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mDefaultArtworkColor = ContextCompat.getColor(getContext(), R.color.default_artwork_color);
+        TypedValue typedValue = new TypedValue();
+        context.getTheme().resolveAttribute(R.attr.colorPrimaryContainer, typedValue, true);
+        mDefaultArtworkColor = typedValue.data;
     }
 
     @Override
