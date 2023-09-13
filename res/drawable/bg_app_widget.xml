@@ -15,6 +15,6 @@
      limitations under the License.
 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/widget_background_color"/>
+    <solid android:color="@color/material_dynamic_primary90"/>
     <corners android:radius="@dimen/app_widget_radius"/>
 </shape>

@@ -17,87 +17,34 @@
 -->
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Main Material -->
-    <style name="Eleven.Theme" parent="@style/Theme.Material3.DayNight.NoActionBar">
+    <style name="Eleven.Theme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">?colorSurfaceContainer</item>
+        <item name="android:windowLightNavigationBar">?isLightTheme</item>
         <item name="android:windowContentOverlay">@null</item>
-        <item name="popupMenuStyle">@style/PopupMenu</item>
-        <item name="dropDownListViewStyle">@style/DropDownListView</item>
-        <item name="textAppearanceSmallPopupMenu">@style/SmallPopupMenu</item>
-        <item name="textAppearanceLargePopupMenu">@style/LargePopupMenu</item>
-        <item name="android:listViewStyle">@style/ListView</item>
-        <item name="actionBarStyle">@style/ActionBar</item>
-        <item name="actionBarWidgetTheme">@style/ActionBarWidgetTheme</item>
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/accent</item>
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">false</item>
         <item name="android:windowAllowReturnTransitionOverlap">false</item>
-        <item name="android:navigationBarColor">@color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowLightNavigationBar">true</item>
-    </style>
-
-    <style name="ActionBarWidgetTheme" parent="@style/Theme.Material3.DayNight">
-        <!-- This is the color of the search text hint in the action bar -->
-        <item name="android:textColorHint">@color/search_hint_color</item>
-        <item name="popupMenuStyle">@style/PopupMenu</item>
-        <item name="dropDownListViewStyle">@style/DropDownListView</item>
-        <item name="textAppearanceSmallPopupMenu">@style/SmallPopupMenu</item>
-        <item name="textAppearanceLargePopupMenu">@style/LargePopupMenu</item>
-        <item name="android:textColorPrimary">@color/black</item>
-    </style>
-
-    <style name="TextAppearance.Widget.Event.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textStyle">normal</item>
-        <item name="android:fontFamily">?android:fontFamily</item>
+        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
     </style>
 
     <!-- Make the action bar not take up space -->
     <style name="Eleven.Theme.ActionBar.Overlay" parent="@style/Eleven.Theme">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="preferenceTheme">@style/AppPreferenceThemeOverlay</item>
     </style>
 
-    <style name="AppPreferenceThemeOverlay" parent="@style/PreferenceThemeOverlay">
+    <style name="AppPreferenceThemeOverlay" parent="PreferenceThemeOverlay">
         <item name="switchPreferenceCompatStyle">@style/AppSwitchPreference</item>
     </style>
 
-    <style name="AppSwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
+    <style name="AppSwitchPreference" parent="Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/preference_material_switch</item>
     </style>
 
-    <!-- Set the default list view divider color and size -->
-    <style name="ListView" parent="@style/Widget.AppCompat.ListView">
-        <item name="divider">@color/list_item_divider_color</item>
-        <item name="android:dividerHeight">@dimen/divider_height</item>
-    </style>
-
-    <style name="PopupMenu" parent="@style/Widget.AppCompat.PopupMenu"/>
-
-    <style name="DropDownListView" parent="@style/Widget.AppCompat.ListView.DropDown"/>
-
-    <!-- Sets up the pop up menu text color and size -->
-    <style name="SmallPopupMenu" parent="@android:style/TextAppearance.Widget.PopupMenu.Small">
-        <item name="android:textColor">@color/menu_text_color</item>
-        <item name="android:textSize">@dimen/text_size_medium</item>
-    </style>
-
-    <!-- Sets up the pop up menu text color and size -->
-    <style name="LargePopupMenu" parent="@android:style/TextAppearance.Widget.PopupMenu.Large">
-        <item name="android:textColor">@color/menu_text_color</item>
-        <item name="android:textSize">@dimen/text_size_medium</item>
-    </style>
-
-    <!-- Sets the action bar title text style -->
-    <style name="ActionBar" parent="@style/Widget.AppCompat.ActionBar">
-        <item name="android:background">@color/header_action_bar_color</item>
-    </style>
-
-    <!-- The list item main text style/color -->
+    <!-- The list item main text style -->
     <style name="ListItemMainText">
-        <item name="android:textColor">@color/list_item_text_color</item>
         <item name="android:textSize">@dimen/list_item_main_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:ellipsize">end</item>
@@ -109,12 +56,10 @@
 
     <style name="ListItemMainText.Grid.Single" parent="ListItemMainText.Single">
         <item name="android:textSize">@dimen/text_size_micro</item>
-        <item name="android:textColor">@color/grid_list_item_text_color</item>
     </style>
 
-    <!-- The list item secondary text style/color -->
+    <!-- The list item secondary text style -->
     <style name="ListItemSecondaryText">
-        <item name="android:textColor">@color/list_item_text_color</item>
         <item name="android:textSize">@dimen/list_item_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:ellipsize">end</item>
@@ -126,21 +71,12 @@
 
     <style name="ListItemSecondaryText.Grid.Single" parent="ListItemSecondaryText.Single">
         <item name="android:textSize">@dimen/text_size_extra_micro</item>
-        <item name="android:textColor">@color/grid_list_item_text_color</item>
-    </style>
-
-    <style name="ListItemMainText.Light.Single" parent="ListItemMainText.Single">
-        <item name="android:textColor">@color/list_item_text_color_light</item>
-    </style>
-
-    <style name="ListItemSecondaryText.Light.Single" parent="ListItemSecondaryText.Single">
-        <item name="android:textColor">@color/list_item_text_color_light</item>
     </style>
 
     <!-- Shortcut Activity theme -->
-    <style name="Theme.AudioPreview" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.AudioPreview" parent="@style/Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
@@ -165,24 +101,17 @@
         <item name="android:paddingRight">16dp</item>
         <item name="android:gravity">top|left|center</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textColor">@color/bottom_action_bar_text_color</item>
+
     </style>
 
-    <style name="BottomActionBarLineOne" parent="@style/BottomActionBarText">
+    <style name="BottomActionBarLineOne" parent="BottomActionBarText">
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
-    <style name="BottomActionBarLineTwo" parent="@style/BottomActionBarText">
+    <style name="BottomActionBarLineTwo" parent="BottomActionBarText">
         <item name="android:textSize">@dimen/text_size_extra_micro</item>
     </style>
-
-    <style name="ToolBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar"/>
-    <style name="ToolBarThemeMP" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorControlNormal">@color/white</item>
-    </style>
-
-    <style name="ToolBarPopupTheme" parent="Theme.Material3.DayNight" />
 
     <style name="Eleven.Theme.PopupMenuOverlapAnchor">
         <item name="android:overlapAnchor">true</item>
@@ -197,7 +126,6 @@
         <item name="android:height">24dp</item>
         <item name="android:paddingHorizontal">16dp</item>
         <item name="android:paddingVertical">2dp</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:textSize" tools:ignore="SpUsage">16dp</item>
         <item name="verticalBias">0.5</item>
     </style>

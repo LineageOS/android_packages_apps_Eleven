@@ -22,7 +22,8 @@
             android:width="24dp"
             android:height="24dp"
             android:viewportWidth="24"
-            android:viewportHeight="24">
+            android:viewportHeight="24"
+            android:tint="?attr/colorControlNormal">
             <group
                 android:name="group"
                 android:pivotX="12"
@@ -30,7 +31,7 @@
                 <path
                     android:name="path"
                     android:pathData="M 8 5 L 8 19 L 19 12 Z"
-                    android:fillColor="@color/white"
+                    android:fillColor="@android:color/white"
                     android:strokeWidth="1"/>
             </group>
         </vector>

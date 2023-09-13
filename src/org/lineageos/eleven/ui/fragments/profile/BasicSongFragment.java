@@ -19,9 +19,11 @@ package org.lineageos.eleven.ui.fragments.profile;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -146,7 +148,9 @@ public abstract class BasicSongFragment extends Fragment implements
         // set the background on the root view
         final Context context = getContext();
         if (context != null) {
-            mRootView.setBackgroundColor(ContextCompat.getColor(context, R.color.background_color));
+            TypedValue c = new TypedValue();
+            context.getTheme().resolveAttribute(R.attr.colorSurface, c, true);
+            mRootView.setBackgroundColor(ContextCompat.getColor(context, c.resourceId));
         }
         // Initialize the list
         mListView = mRootView.findViewById(R.id.list_base);
