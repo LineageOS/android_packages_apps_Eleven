@@ -22,12 +22,16 @@ import android.os.StrictMode;
 import android.os.StrictMode.ThreadPolicy;
 import android.os.StrictMode.VmPolicy;
 
+import com.google.android.material.color.DynamicColors;
+
 import org.lineageos.eleven.cache.ImageCache;
 
 public class ElevenApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        DynamicColors.applyToActivitiesIfAvailable(this);
 
         if (BuildConfig.DEBUG) {
             enableStrictMode();
