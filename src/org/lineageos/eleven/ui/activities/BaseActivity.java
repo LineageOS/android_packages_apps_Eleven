@@ -138,9 +138,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
         setActionBarTitle(getString(R.string.app_name));
 
-        // set the background on the root view
-        getWindow().getDecorView().getRootView().setBackgroundColor(
-                ContextCompat.getColor(this, R.color.background_color));
         // Initialize the bottom action bar
         initBottomActionBar();
 
@@ -257,13 +254,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
 
     public void setupActionBar(String title) {
         setActionBarTitle(title);
-
-        if (mActionBarBackground == null) {
-            final int actionBarColor = ContextCompat.getColor(this,
-                    R.color.header_action_bar_color);
-            mActionBarBackground = new ColorDrawable(actionBarColor);
-            mToolBar.setBackground(mActionBarBackground);
-        }
     }
 
     public void setActionBarTitle(String title) {
@@ -271,10 +261,6 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         if (actionBar != null) {
             actionBar.setTitle(title);
         }
-    }
-
-    public void setActionBarAlpha(int alpha) {
-        mActionBarBackground.setAlpha(alpha);
     }
 
     public void setActionBarElevation(boolean isElevated) {

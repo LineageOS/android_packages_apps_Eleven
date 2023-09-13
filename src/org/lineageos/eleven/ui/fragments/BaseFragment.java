@@ -52,7 +52,6 @@ public abstract class BaseFragment extends Fragment
     public void setupActionBar() {
         final HomeActivity activity = getContainingActivity();
         activity.setupActionBar(getTitle());
-        activity.setActionBarAlpha(255);
         activity.setFragmentPadding(true);
         activity.setActionBarElevation(needsElevatedActionBar());
     }
@@ -66,12 +65,6 @@ public abstract class BaseFragment extends Fragment
                                    Bundle savedInstanceState) {
         // The View for the fragment's UI
         mRootView = (ViewGroup) inflater.inflate(getLayoutToInflate(), null);
-        // set the background color
-        final Context context = getContext();
-        if (context != null) {
-            mRootView.setBackgroundColor(ContextCompat.getColor(context,
-                    R.color.background_color));
-        }
         // eat any touches that fall through to the root so they aren't
         // passed on to fragments "behind" the current one.
         mRootView.setOnTouchListener((v, me) -> true);
