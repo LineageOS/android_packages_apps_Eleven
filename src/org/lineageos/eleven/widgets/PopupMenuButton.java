@@ -34,7 +34,6 @@ public class PopupMenuButton extends AppCompatImageView implements IPopupMenuCal
         super(context, attrs);
 
         setScaleType(ScaleType.CENTER_INSIDE);
-        setBackground(ContextCompat.getDrawable(context, R.drawable.selectable_background_light));
         setOnClickListener(this);
     }
 
