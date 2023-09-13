@@ -97,30 +97,36 @@
     <color name="lyrics_background_color">#b2212121</color>
 
     <!-- Letter tile colors -->
-    <color name="letter_tile_default_color">@color/grey</color>
-    <color name="letter_tile_font_color">@color/white</color>
+    <color name="letter_tile_default_color">@android:color/system_accent1_300</color>
+    <color name="letter_tile_font_color">@color/material_dynamic_neutral95</color>
     <array name="letter_tile_colors">
-        <item>@color/letter_tile_purple_color</item>
-        <item>@color/letter_tile_blue_color</item>
-        <item>@color/letter_tile_indigo_color</item>
-        <item>@color/letter_tile_teal_color</item>
-        <item>@color/letter_tile_light_green_color</item>
-        <item>@color/letter_tile_red_color</item>
-        <item>@color/letter_tile_grey_color</item>
-        <item>@color/letter_tile_deep_orange_color</item>
-        <item>@color/letter_tile_brown_color</item>
+        <item>@android:color/system_accent1_300</item>
+        <item>@android:color/system_accent2_300</item>
+        <item>@android:color/system_accent3_300</item>
+        <item>@android:color/system_accent1_400</item>
+        <item>@android:color/system_accent2_400</item>
+        <item>@android:color/system_accent3_400</item>
+        <item>@android:color/system_accent1_500</item>
+        <item>@android:color/system_accent2_500</item>
+        <item>@android:color/system_accent3_500</item>
+        <item>@android:color/system_accent1_600</item>
+        <item>@android:color/system_accent2_600</item>
+        <item>@android:color/system_accent3_600</item>
     </array>
 
     <array name="letter_tile_vibrant_dark_colors">
-        <item>@color/letter_tile_purple_color_dark</item>
-        <item>@color/letter_tile_blue_color_dark</item>
-        <item>@color/letter_tile_indigo_color_dark</item>
-        <item>@color/letter_tile_teal_color_dark</item>
-        <item>@color/letter_tile_light_green_color_dark</item>
-        <item>@color/letter_tile_red_color_dark</item>
-        <item>@color/letter_tile_grey_color_dark</item>
-        <item>@color/letter_tile_deep_orange_color_dark</item>
-        <item>@color/letter_tile_brown_color_dark</item>
+        <item>@android:color/system_accent1_600</item>
+        <item>@android:color/system_accent2_600</item>
+        <item>@android:color/system_accent3_600</item>
+        <item>@android:color/system_accent1_700</item>
+        <item>@android:color/system_accent2_700</item>
+        <item>@android:color/system_accent3_700</item>
+        <item>@android:color/system_accent1_800</item>
+        <item>@android:color/system_accent2_800</item>
+        <item>@android:color/system_accent3_800</item>
+        <item>@android:color/system_accent1_900</item>
+        <item>@android:color/system_accent2_900</item>
+        <item>@android:color/system_accent3_900</item>
     </array>
 
     <!-- Color for the visualizer bars -->
