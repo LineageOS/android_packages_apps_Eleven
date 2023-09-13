@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/activity_album_detail_background_color" >
+    android:background="?colorSurface" >
 
     <RelativeLayout
         android:id="@+id/header"
@@ -9,7 +9,6 @@
         android:layout_height="108dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:background="@color/page_header_background"
         android:elevation="2dp" >
 
         <ImageView
@@ -34,8 +33,7 @@
                 android:layout_alignParentTop="true"
                 android:singleLine="true"
                 android:textStyle="bold"
-                android:textSize="@dimen/text_size_large"
-                android:textColor="@color/album_detail_title_text_color" />
+                android:textSize="@dimen/text_size_large" />
 
             <TextView
                 android:id="@+id/song_count_and_year"
@@ -43,8 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
                 android:singleLine="true"
-                android:textSize="@dimen/text_size_micro"
-                android:textColor="@color/album_detail_song_count_and_year_text_color" />
+                android:textSize="@dimen/text_size_micro" />
 
             <TextView
                 android:id="@+id/genre"
@@ -54,7 +51,6 @@
                 android:layout_marginEnd="@dimen/standard_padding"
                 android:singleLine="true"
                 android:textSize="@dimen/text_size_micro"
-                android:textColor="@color/album_detail_genre_text_color"
                 android:visibility="gone"
                 android:layout_marginTop="4dp" />
 
@@ -68,8 +64,7 @@
                 android:layout_alignBottom="@+id/duration"
                 android:layout_marginEnd="4dp"
                 android:gravity="center"
-                android:src="@drawable/stopwatch_icon"
-                android:tint="@color/album_detail_genre_text_color" />
+                android:src="@drawable/stopwatch_icon" />
 
             <TextView
                 android:id="@+id/duration"
@@ -79,7 +74,6 @@
                 android:layout_toEndOf="@id/duration_icon"
                 android:singleLine="true"
                 android:textSize="@dimen/text_size_micro"
-                android:textColor="@color/album_detail_duration_text_color"
                 android:layout_marginTop="4dp" />
         </RelativeLayout>
 

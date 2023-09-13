@@ -1,12 +1,12 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/activity_artist_detail_background_color">
+    android:layout_height="match_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="?colorSurface">
 
         <include layout="@layout/loading_empty_container" />
 
@@ -24,7 +24,6 @@
             android:layout_marginStart="@dimen/list_item_general_margin"
             android:text="@string/header_albums"
             android:textAllCaps="true"
-            android:textColor="@color/artist_detail_header_albums_label_text_color"
             android:textSize="@dimen/text_size_medium" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -40,7 +39,6 @@
             android:layout_marginStart="@dimen/list_item_general_margin"
             android:text="@string/header_all_songs"
             android:textAllCaps="true"
-            android:textColor="@color/artist_detail_header_songs_label_text_color"
             android:textSize="@dimen/text_size_medium" />
 
         <androidx.recyclerview.widget.RecyclerView

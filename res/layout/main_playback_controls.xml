@@ -21,7 +21,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:background="@color/blue_dark"
     tools:layout_height="match_parent">
 
     <TextView
@@ -32,7 +31,7 @@
         android:gravity="center_vertical"
         android:paddingEnd="16dp"
         android:paddingStart="16dp"
-        android:textColor="@color/audio_player_current_time_color"
+        android:textColor="?colorOnPrimaryContainer"
         android:textSize="@dimen/audio_player_time_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/audio_player_seeker"
@@ -46,9 +45,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:progressBackgroundTint="@color/audio_player_seeker_progress_background_color"
-        android:progressTint="@color/audio_player_seeker_progress_color"
-        android:thumbTint="@color/audio_player_seeker_thumb_color"
+        android:progressBackgroundTint="?colorOnPrimaryContainer"
+        android:progressTint="?colorOnPrimaryContainer"
+        android:thumbTint="?colorOnPrimaryContainer"
         app:layout_constraintEnd_toStartOf="@+id/audio_player_total_time"
         app:layout_constraintStart_toEndOf="@+id/audio_player_current_time"
         app:layout_constraintTop_toTopOf="parent"
@@ -62,7 +61,7 @@
         android:gravity="center_vertical"
         android:paddingEnd="16dp"
         android:paddingStart="16dp"
-        android:textColor="@color/audio_player_total_time_color"
+        android:textColor="?colorOnPrimaryContainer"
         android:textSize="@dimen/audio_player_time_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/audio_player_seeker"

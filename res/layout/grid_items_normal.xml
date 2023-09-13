@@ -23,8 +23,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     card_view:cardElevation="4dp"
-    card_view:cardCornerRadius="8dp"
-    card_view:cardBackgroundColor="@color/cards_bg_color" >
+    card_view:cardCornerRadius="8dp" >
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:background="@drawable/bg_grid_item"
             android:layout_height="@dimen/grid_bottom_height"
             android:layout_gravity="bottom"
             android:orientation="horizontal">
@@ -51,7 +49,7 @@
                 <TextView
                     android:id="@+id/line_one"
                     style="@style/ListItemMainText.Grid.Single"
-                    android:textColor="@color/white"
+                    android:textColor="@android:color/white"
                     android:paddingBottom="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -59,7 +57,7 @@
                 <TextView
                     android:id="@+id/line_two"
                     style="@style/ListItemSecondaryText.Grid.Single"
-                    android:textColor="@color/white"
+                    android:textColor="@android:color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -70,7 +68,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/grid_item_padding_right"
-                android:src="@drawable/menu_button" />
+                android:src="@drawable/menu_button"
+                android:tint="@android:color/white" />
         </LinearLayout>
     </FrameLayout>
 </androidx.cardview.widget.CardView>

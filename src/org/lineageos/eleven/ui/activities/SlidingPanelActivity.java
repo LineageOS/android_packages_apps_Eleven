@@ -285,8 +285,7 @@ public abstract class SlidingPanelActivity extends BaseActivity {
     }
 
     private void updateScrimImage() {
-        ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage,
-                mColorExtractorCallback);
+        ElevenUtils.getImageFetcher(this).updateScrimImage(mAlbumScrimImage, null);
     }
 
     protected AudioPlayerFragment getAudioPlayerFragment() {
@@ -298,29 +297,12 @@ public abstract class SlidingPanelActivity extends BaseActivity {
         return (QueueFragment) getSupportFragmentManager().findFragmentById(R.id.queueFragment);
     }
 
-    private final ColorExtractor.Callback mColorExtractorCallback = (bitmapWithColors) -> {
-        if (bitmapWithColors == null) {
-            return;
-        }
-
-        // update scrim image
-        final int[] gradientColors = new int[]{
-                bitmapWithColors.getVibrantColor(), bitmapWithColors.getVibrantDarkColor()
-        };
-
-        final GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setColors(gradientColors);
-        mAlbumScrimImage.setGradientDrawable(gradientDrawable);
-    };
-
     protected void setupQueueHeaderBar(final View.OnClickListener headerClickListener) {
         final HeaderBar headerBar = findViewById(R.id.secondHeaderBar);
         headerBar.setFragment(getQueueFragment());
         headerBar.setTitleText(R.string.page_play_queue);
         headerBar.setBackgroundColor(Color.TRANSPARENT);
         headerBar.setHeaderClickListener(headerClickListener);
-
-        headerBar.hideBackButton();
     }
 
     private class ShowPanelClickListener implements View.OnClickListener {
