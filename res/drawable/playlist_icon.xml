@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--
+    SPDX-FileCopyrightText: Material Design Authors / Google LLC
+    SPDX-License-Identifier: Apache-2.0
+-->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-
+    android:viewportWidth="960"
+    android:viewportHeight="960"
+    android:tint="?attr/colorControlNormal"
+    android:autoMirrored="true">
     <path
-        android:pathData="M0 0h24v24H0z" />
-    <path
-        android:fillColor="@color/accent"
-        android:pathData="M22,6h-5v8.18c-0.31,-0.11 -0.65,-0.18 -1,-0.18c-1.66,0 -3,1.34 -3,3s1.34,3 3,3s3,-1.34 3,-3v-9h3L22,6L22,6zM15,6h-12v2h12L15,6L15,6zM15,10h-12v2h12L15,10L15,10zM11,14h-8v2h8L11,14L11,14zM15,17c0,-0.55 0.45,-1 1,-1c0.55,0 1,0.45 1,1s-0.45,1 -1,1C15.45,18 15,17.55 15,17z" />
+        android:fillColor="@android:color/white"
+        android:pathData="M640,800Q590,800 555,765Q520,730 520,680Q520,630 555,595Q590,560 640,560Q651,560 661,561.5Q671,563 680,568L680,240L880,240L880,320L760,320L760,680Q760,730 725,765Q690,800 640,800ZM120,640L120,560L440,560L440,640L120,640ZM120,480L120,400L600,400L600,480L120,480ZM120,320L120,240L600,240L600,320L120,320Z"/>
 </vector>
