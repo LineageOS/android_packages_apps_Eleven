@@ -118,10 +118,6 @@
     <dimen name="no_results_text_main">20.0sp</dimen>
     <dimen name="no_results_text_secondary">14.0sp</dimen>
 
-    <!-- General consensus is to leave dividers at 1px instead of having different
-    partial scaled up values for different resolutions -->
-    <dimen name="divider_height">1px</dimen>
-
     <item name="letter_to_tile_ratio" type="fraction">53%</item>
 
     <!-- Audio preview -->

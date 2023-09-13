@@ -167,7 +167,7 @@ public class VisualizerView extends View {
     }
 
     public void initialize(Context context) {
-        mColor = ContextCompat.getColor(context, R.color.visualizer_fill_color);
+        mColor = ContextCompat.getColor(context, android.R.color.white);
 
         mPaint = new Paint();
         mPaint.setAntiAlias(true);

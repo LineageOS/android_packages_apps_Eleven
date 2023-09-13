@@ -31,6 +31,8 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.color.MaterialColors;
+
 import org.lineageos.eleven.R;
 import org.lineageos.eleven.utils.SectionCreatorUtils;
 
@@ -57,8 +59,7 @@ public class SectionSeparatorItemDecoration extends RecyclerView.ItemDecoration 
                 mPaint.getTextSize());
         mPaint.setTextSize(textSize);
 
-        int textColor = attrs.getColor(R.styleable.SectionSeparator_android_textColor,
-                Color.BLACK);
+        int textColor = MaterialColors.getColor(context, R.attr.colorOnSurface, Color.BLACK);
         mPaint.setColor(textColor);
 
         mTextWidth = attrs.getDimensionPixelSize(R.styleable.SectionSeparator_android_width, 0);

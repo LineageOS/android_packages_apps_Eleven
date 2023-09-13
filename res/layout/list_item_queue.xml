@@ -21,8 +21,7 @@
     android:gravity="center_vertical"
     android:minHeight="@dimen/item_normal_height"
     android:paddingTop="@dimen/list_item_padding_top"
-    android:paddingBottom="@dimen/list_item_padding_bottom"
-    android:background="@android:color/transparent">
+    android:paddingBottom="@dimen/list_item_padding_bottom">
 
     <ImageView
         android:id="@+id/image"
@@ -43,17 +42,17 @@
 
         <TextView
             android:id="@+id/line_one"
-            style="@style/ListItemMainText.Light.Single"
+            style="@style/ListItemMainText.Single"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white" />
+            android:textColor="?colorOnSecondaryContainer" />
 
         <TextView
             android:id="@+id/line_two"
-            style="@style/ListItemSecondaryText.Light.Single"
+            style="@style/ListItemSecondaryText.Single"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white" />
+            android:textColor="?colorOnSecondaryContainer" />
     </LinearLayout>
 
     <FrameLayout
