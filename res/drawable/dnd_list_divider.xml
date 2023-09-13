@@ -19,7 +19,7 @@
        android:insetRight="@dimen/list_preferred_item_padding" >
 
     <shape>
-        <solid android:color="@color/list_item_divider_color" />
+        <solid android:color="?colorOnSurface" />
         <corners android:radius="1.0dip" />
     </shape>
 

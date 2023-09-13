@@ -56,7 +56,7 @@
                 android:layout_height="24dp"
                 android:layout_gravity="center_vertical|end"
                 android:layout_marginEnd="@dimen/grid_item_padding_right"
-                android:src="@drawable/menu_button_light" />
+                android:src="@drawable/menu_button" />
         </FrameLayout>
     </FrameLayout>
 </androidx.cardview.widget.CardView>
