@@ -24,7 +24,7 @@
         android:layout_width="@dimen/drag_and_drop_width"
         android:layout_height="@dimen/drag_and_drop_height"
         android:layout_centerVertical="true"
-        android:src="@drawable/gripper_light" />
+        android:src="@drawable/gripper" />
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -40,5 +40,5 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/dnd_list_divider_light" />
+        android:src="@drawable/dnd_list_divider" />
 </RelativeLayout>
