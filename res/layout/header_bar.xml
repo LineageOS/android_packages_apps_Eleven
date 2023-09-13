@@ -21,10 +21,8 @@
     android:enabled="false"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingStart="@dimen/drag_and_drop_width"
-    android:background="@color/header_action_bar_color"
-    android:elevation="@dimen/action_bar_elevation"
-    android:theme="@style/ToolBarTheme">
+    android:paddingStart="@dimen/standard_padding"
+    android:elevation="@dimen/action_bar_elevation">
 
     <ImageView
         android:id="@+id/header_bar_up"
@@ -33,18 +31,16 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="0"
         android:scaleType="centerCrop"
-        android:background="@drawable/selectable_background"
-        android:src="@drawable/btn_header_collapse"/>
+        android:src="@drawable/btn_header_collapse" />
 
     <TextView
         android:id="@+id/header_bar_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:paddingStart="@dimen/standard_padding"
         android:ellipsize="end"
         android:singleLine="true"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
         android:textSize="@dimen/text_size_medium"
         android:textStyle="bold" />
 
@@ -55,7 +51,6 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="0"
         android:scaleType="centerInside"
-        android:background="@drawable/selectable_background"
         android:src="@drawable/menu_button" />
 
 </org.lineageos.eleven.ui.HeaderBar>

@@ -47,20 +47,17 @@
         <TextView
             android:id="@+id/app_widget_line_one"
             style="@style/NotificationText"
-            android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_medium"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/app_widget_line_two"
             style="@style/NotificationText"
-            android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
 
         <TextView
             android:id="@+id/app_widget_line_three"
             style="@style/NotificationText"
-            android:textColor="@color/widget_text"
             android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 
@@ -76,58 +73,58 @@
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_shuffle"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_shuffle"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
             android:src="@drawable/btn_playback_shuffle_all"
-            android:tint="@color/widget_text" />
+            android:tint="@color/material_dynamic_primary20" />
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_previous"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_prev"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
             android:src="@drawable/btn_playback_previous"
-            android:tint="@color/widget_text" />
+            android:tint="@color/material_dynamic_primary20"/>
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_play"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?android:selectableItemBackgroundBorderless"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
             android:src="@drawable/btn_playback_play"
-            android:contentDescription="@string/accessibility_play"
-            android:tint="@color/widget_text" />
+            android:tint="@color/material_dynamic_primary20"
+            android:contentDescription="@string/accessibility_play" />
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_next"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_next"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
             android:src="@drawable/btn_playback_next"
-            android:tint="@color/widget_text" />
+            android:tint="@color/material_dynamic_primary20"/>
 
         <ImageButton
             android:id="@+id/app_widget_large_alternate_repeat"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
             android:background="?android:selectableItemBackgroundBorderless"
             android:contentDescription="@string/accessibility_repeat"
             android:padding="@dimen/notification_expanded_button_padding"
             android:scaleType="fitCenter"
             android:src="@drawable/btn_playback_repeat_all"
-            android:tint="@color/widget_text" />
+            android:tint="@color/material_dynamic_primary20"/>
     </LinearLayout>
 
 </GridLayout>

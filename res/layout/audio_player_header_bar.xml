@@ -14,56 +14,53 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/audio_player_header"
     android:layout_width="match_parent"
-    android:layout_height="?android:attr/actionBarSize"
-    android:background="@android:color/transparent"
-    android:elevation="@dimen/action_bar_elevation"
-    android:theme="@style/ToolBarThemeMP"
-    tools:background="@color/blue_dark">
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_weight="1"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/audio_player_header_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:layout_height="?android:attr/actionBarSize"
+        android:elevation="@dimen/action_bar_elevation" />
 
-        <TextView
-            android:id="@+id/header_bar_song_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:scrollHorizontally="true"
-            android:paddingHorizontal="@dimen/header_bar_text_padding"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_medium"
-            android:textStyle="bold"
-            tools:text="Really long and nice album title" />
+    <TextView
+        android:id="@+id/header_bar_song_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingHorizontal="@dimen/header_bar_text_padding"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        android:textColor="?colorOnPrimaryContainer"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        tools:text="Really long and nice album title" />
 
-        <TextView
-            android:id="@+id/header_bar_artist_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:scrollHorizontally="true"
-            android:paddingHorizontal="@dimen/header_bar_text_padding"
-            android:paddingBottom="@dimen/header_bar_text_padding"
-            android:textAllCaps="true"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_micro"
-            tools:text="Name of Artist" />
-    </LinearLayout>
-</androidx.appcompat.widget.Toolbar>
+    <TextView
+        android:id="@+id/header_bar_artist_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingHorizontal="@dimen/header_bar_text_padding"
+        android:paddingBottom="@dimen/header_bar_text_padding"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        android:textColor="?colorOnPrimaryContainer"
+        android:textSize="@dimen/text_size_micro"
+        tools:text="Name of Artist" />
+</LinearLayout>
