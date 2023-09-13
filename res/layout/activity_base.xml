@@ -46,10 +46,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
-                android:elevation="@dimen/action_bar_elevation"
-                android:theme="@style/ToolBarTheme"
-                app:popupTheme="@style/ToolBarPopupTheme"
-                app:titleTextAppearance="@style/TextAppearance.Widget.Event.Toolbar.Title" />
+                android:elevation="@dimen/action_bar_elevation" />
 
             <FrameLayout
                 android:id="@+id/activity_base_content"
@@ -62,11 +59,10 @@
             android:id="@+id/sliding_layout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/activity_base_background_color"
             android:gravity="bottom"
             app:directOffset="true"
             app:dragView="@+id/secondPanelDragArea"
-            app:fadeColor="@color/transparent"
+            app:fadeColor="@android:color/transparent"
             app:panelHeight="@dimen/sliding_panel_indicator_height"
             app:shadowHeight="@dimen/sliding_panel_shadow_height">
 
@@ -95,6 +91,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="?colorSecondaryContainer"
                 android:orientation="vertical">
 
                 <LinearLayout
