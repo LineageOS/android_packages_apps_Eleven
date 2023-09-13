@@ -32,7 +32,7 @@
         android:layout_height="@dimen/playlist_detail_header_bottom_height"
         android:layout_alignParentBottom="true"
         android:layout_gravity="center"
-        android:background="@color/header_shadow_color"
+        android:background="?colorSecondaryContainer"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -42,7 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:drawablePadding="4dp"
-            android:textColor="@color/number_of_songs_text_color"
             android:textSize="@dimen/text_size_micro"
             app:drawableStartCompat="@drawable/playlist_icon" />
 
@@ -51,7 +50,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="4dp"
-            android:textColor="@color/duration_text_color"
             android:textSize="@dimen/text_size_micro"
             app:drawableStartCompat="@drawable/stopwatch_icon" />
     </LinearLayout>
