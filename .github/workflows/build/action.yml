@@ -1,0 +1,29 @@
+name: build
+
+runs:
+    using: composite
+
+    steps:
+    - name: Setup JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'zulu'
+        java-version: 17
+
+    - name: Build with Gradle
+      shell: bash
+      run: ./gradlew assembleDebug
+
+    - name: Generate Android.bp
+      shell: bash
+      run: |
+        ./gradlew generateBp
+        if [[ ! -z $(git status -s) ]]; then
+          git status
+          exit -1
+        fi
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: ExactCalculator-debug.apk
+        path: build/outputs/apk/debug/ExactCalculator-debug.apk
