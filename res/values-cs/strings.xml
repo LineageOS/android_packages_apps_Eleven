@@ -102,6 +102,7 @@
     <string name="settings_show_lyrics_summary">U skladeb, které mají soubor srt</string>
     <string name="settings_shake_to_play">Zatřesením přehrát</string>
     <string name="settings_shake_to_play_summary">Zatřeste se zařízením pro přehrání další skladby</string>
+    <string name="app_widget_small">Hudba: čtverec</string>
     <string name="app_widget_large">Hudba: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Hudba: 4 \u00d7 2 (alternativní)</string>
     <string name="no_effects_for_you">Nelze otevřít ekvalizér.</string>
@@ -137,4 +138,7 @@
     <string name="header_other">"Jiné"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">Přehrávání hudby</string>
+    <string name="widget_track_name">Název skladby</string>
+    <string name="widget_artist_name">Jméno umělce</string>
+    <string name="widget_album_name">Název alba</string>
 </resources>
