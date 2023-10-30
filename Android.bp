@@ -26,16 +26,15 @@ android_app {
     resource_dirs: ["res"],
 
     static_libs: [
+        // DO NOT EDIT THIS SECTION MANUALLY
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
-        "androidx-constraintlayout_constraintlayout",
-        "androidx.core_core",
         "androidx.legacy_legacy-support-v4",
         "androidx.palette_palette",
         "androidx.preference_preference",
         "androidx.recyclerview_recyclerview",
-        "androidx.viewpager2_viewpager2",
-        "com.google.android.material_material",
+        "androidx-constraintlayout_constraintlayout",
+        "Eleven_com.google.android.material_material",
     ],
 
     overrides: ["Music"],
