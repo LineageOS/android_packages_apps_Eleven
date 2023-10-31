@@ -176,4 +176,7 @@
     <string name="widget_track_name">Track name</string>
     <string name="widget_artist_name">Artist name</string>
     <string name="widget_album_name">Album name</string>
+
+
+    <string name="request_perms">This app REQUIRES the read media audio permission</string>
 </resources>
