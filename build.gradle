@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath 'com.android.tools.build:gradle:7.4.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -22,7 +22,7 @@ allprojects {
 tasks.register("updateGradleWrapper", Wrapper) {
     // https://docs.gradle.org/current/release-notes.html
     // https://github.com/gradle/gradle/releases
-    gradleVersion = '7.3.3'
+    gradleVersion = '7.5'
     distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
 
@@ -31,7 +31,7 @@ tasks.register("updateGradleWrapper", Wrapper) {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -42,7 +42,7 @@ android {
         applicationId "org.lineageos.eleven"
 
         minSdkVersion 28
-        targetSdkVersion 31
+        targetSdkVersion 33
 
         versionCode 411
         versionName '4.1.1'
