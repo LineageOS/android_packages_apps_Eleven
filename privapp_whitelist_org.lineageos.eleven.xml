@@ -18,8 +18,10 @@
     <!-- Compatibility for upgrades from old package name -->
     <privapp-permissions package="com.cyanogenmod.eleven">
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.READ_MEDIA_AUDIO"/>
     </privapp-permissions>
     <privapp-permissions package="org.lineageos.eleven">
         <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.READ_MEDIA_AUDIO"/>
     </privapp-permissions>
 </permissions>
