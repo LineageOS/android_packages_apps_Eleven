@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b00cca8_216d4732",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-11-01T16:45:41Z",
+      "side": 1,
+      "message": "test built with gradle and seems to be working\ncurrently unable to build with soong.",
+      "revId": "ff80c085f15ad8a226693e7346ab24108bd5464d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
