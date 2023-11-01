@@ -16,6 +16,24 @@
       "message": "test built with gradle and seems to be working\ncurrently unable to build with soong.",
       "revId": "ff80c085f15ad8a226693e7346ab24108bd5464d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a0b7d33_d3c02de1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-11-01T19:53:36Z",
+      "side": 1,
+      "message": "i am currently unable to build it with soong.",
+      "parentUuid": "4b00cca8_216d4732",
+      "revId": "ff80c085f15ad8a226693e7346ab24108bd5464d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
