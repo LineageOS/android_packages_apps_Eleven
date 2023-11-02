@@ -34,6 +34,23 @@
       "parentUuid": "f125d1fc_bee047df",
       "revId": "5bfa2491dec4e847a5b0e8d2a21dfcd66dd0ec56",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d0cd5d30_85e63566",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2023-11-02T13:22:36Z",
+      "side": 1,
+      "message": "i have told you before that review labels mean a thing: https://wiki.lineageos.org/how-to/using-gerrit#reviewing-a-patch\nand yet i see you not only +1\u0027ing it on Code-Review but also setting verified, which you even admitted that you didn\u0027t.\nPlease don\u0027t add me as a reviewer on any further commits.",
+      "revId": "5bfa2491dec4e847a5b0e8d2a21dfcd66dd0ec56",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
