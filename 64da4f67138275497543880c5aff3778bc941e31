@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1657d363_17f4dd4b",
+        "filename": ".github/workflows/build/action.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-11-08T15:27:40Z",
+      "side": 1,
+      "message": "This is not exact calculator",
+      "revId": "64da4f67138275497543880c5aff3778bc941e31",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4db2182_d7ce910e",
+        "filename": ".github/workflows/build/action.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-11-08T15:27:40Z",
+      "side": 1,
+      "message": "see above",
+      "revId": "64da4f67138275497543880c5aff3778bc941e31",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc487fa4_c9c89056",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-11-08T15:27:40Z",
+      "side": 1,
+      "message": "please fix these issues",
+      "revId": "64da4f67138275497543880c5aff3778bc941e31",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
