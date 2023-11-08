@@ -16,6 +16,23 @@
       "message": "just what i get for carelessly rebasing on top of the other commits, and killing my own patchset 2...",
       "revId": "70c9662a3bae8f953b30ab4194cdce40497927d4",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2496f76_e0966eb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 32911
+      },
+      "writtenOn": "2023-11-08T16:18:17Z",
+      "side": 1,
+      "message": "it looks like it would work",
+      "revId": "70c9662a3bae8f953b30ab4194cdce40497927d4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
