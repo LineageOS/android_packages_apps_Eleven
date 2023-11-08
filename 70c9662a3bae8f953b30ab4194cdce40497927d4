@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cee57932_5f5c4cae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-11-08T15:43:27Z",
+      "side": 1,
+      "message": "just what i get for carelessly rebasing on top of the other commits, and killing my own patchset 2...",
+      "revId": "70c9662a3bae8f953b30ab4194cdce40497927d4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
