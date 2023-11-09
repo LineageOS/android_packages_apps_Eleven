@@ -221,7 +221,7 @@ public abstract class BaseActivity extends AppCompatActivity implements ServiceC
         filter.addAction(MusicPlaybackService.PLAYLIST_CHANGED);
         // If there is an error playing a track
         filter.addAction(MusicPlaybackService.TRACK_ERROR);
-        registerReceiver(mPlaybackStatus, filter);
+        registerReceiver(mPlaybackStatus, filter, RECEIVER_EXPORTED);
     }
 
     @Override
