@@ -736,7 +736,7 @@ public class MusicPlaybackService extends MediaBrowserService
         filter.addAction(SHUFFLE_ACTION);
         filter.addAction(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
         // Attach the broadcast listener
-        registerReceiver(mIntentReceiver, filter);
+        registerReceiver(mIntentReceiver, filter, Context.RECEIVER_EXPORTED);
 
         // Get events when MediaStore content changes
         mMediaStoreObserver = new MediaStoreObserver(mPlayerHandler);
@@ -1087,7 +1087,7 @@ public class MusicPlaybackService extends MediaBrowserService
             filter.addAction(Intent.ACTION_MEDIA_EJECT);
             filter.addAction(Intent.ACTION_MEDIA_MOUNTED);
             filter.addDataScheme("file");
-            registerReceiver(mUnmountReceiver, filter);
+            registerReceiver(mUnmountReceiver, filter, Context.RECEIVER_EXPORTED);
         }
     }
 

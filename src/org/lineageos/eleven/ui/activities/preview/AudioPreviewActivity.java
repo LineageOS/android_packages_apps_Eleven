@@ -468,7 +468,8 @@ public class AudioPreviewActivity extends AppCompatActivity implements
     private void registerNoisyAudioReceiver() {
         IntentFilter localIntentFilter = new IntentFilter();
         localIntentFilter.addAction(AudioManager.ACTION_AUDIO_BECOMING_NOISY);
-        registerReceiver(this.mAudioNoisyReceiver, localIntentFilter);
+        registerReceiver(this.mAudioNoisyReceiver, localIntentFilter,
+                Context.RECEIVER_EXPORTED);
         mIsReceiverRegistered = true;
     }
 
