@@ -325,7 +325,7 @@ public class AudioPlayerFragment extends Fragment implements ServiceConnection {
         // Register the intent filters
         final FragmentActivity activity = getActivity();
         if (activity != null) {
-            activity.registerReceiver(mPlaybackStatus, filter);
+            activity.registerReceiver(mPlaybackStatus, filter, Context.RECEIVER_EXPORTED);
         }
         // Refresh the current time
         final long next = refreshCurrentTime();
