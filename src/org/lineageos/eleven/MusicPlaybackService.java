@@ -34,6 +34,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ServiceInfo;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -2486,7 +2487,8 @@ public class MusicPlaybackService extends MediaBrowserService
                 cancelShutdown();
                 // Make sure we're started explicitly, so that we aren't killed when
                 // the player activity unbinds
-                startForegroundService(new Intent(this, MusicPlaybackService.class));
+                startForegroundService(new Intent(this, MusicPlaybackService.class),
+                        ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
             } else {
                 scheduleDelayedShutdown();
                 mLastPlayedTime = SystemClock.elapsedRealtime();

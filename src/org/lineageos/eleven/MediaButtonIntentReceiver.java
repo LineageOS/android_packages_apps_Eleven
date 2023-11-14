@@ -18,6 +18,7 @@ package org.lineageos.eleven;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
@@ -63,7 +64,7 @@ public class MediaButtonIntentReceiver extends WakefulBroadcastReceiver {
         i.putExtra(MusicPlaybackService.CMDNAME, command);
         i.putExtra(MusicPlaybackService.FROM_MEDIA_BUTTON, true);
         i.putExtra(MusicPlaybackService.TIMESTAMP, event.getEventTime());
-        context.startForegroundService(i);
+        context.startForegroundService(i, ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
 
         if (isOrderedBroadcast()) {
             abortBroadcast();
