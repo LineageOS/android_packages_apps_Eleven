@@ -223,8 +223,8 @@ public class PlaylistDetailFragment extends DetailFragment implements
         handler.post(() -> {
             mAdapter.remove(song);
 
-            final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external",
-                    mPlaylistId);
+            final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(
+                    MediaStore.VOLUME_EXTERNAL, mPlaylistId);
             final FragmentActivity activity = getActivity();
             if (activity != null) {
                 activity.getContentResolver().delete(uri,

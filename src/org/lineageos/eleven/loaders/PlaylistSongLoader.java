@@ -176,7 +176,8 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         Log.w(TAG, "Cleaning up playlist: " + playlistId);
 
         final int idCol = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID);
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
+        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL,
+                playlistId);
 
         ArrayList<ContentProviderOperation> ops = new ArrayList<>();
 
@@ -222,7 +223,7 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
      */
     private static int countPlaylist(final Context context, final long playlistId) {
         try (Cursor c = context.getContentResolver().query(
-                Playlists.Members.getContentUri("external", playlistId),
+                Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistId),
                 new String[]{Playlists.Members.AUDIO_ID,}, null, null,
                 Playlists.Members.DEFAULT_SORT_ORDER)) {
             // when we query using only the audio_id column we will get the raw mapping table
@@ -247,7 +248,7 @@ public class PlaylistSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         String mSelection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''";
         return context.getContentResolver().query(
-                MediaStore.Audio.Playlists.Members.getContentUri("external", playlistID),
+                MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistID),
                 new String[]{
                         /* 0 */
                         MediaStore.Audio.Playlists.Members._ID,
