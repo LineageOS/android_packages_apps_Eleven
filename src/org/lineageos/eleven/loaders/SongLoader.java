@@ -19,6 +19,7 @@ package org.lineageos.eleven.loaders;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.provider.MediaStore;
 import android.provider.MediaStore.Audio;
 import android.text.TextUtils;
 
@@ -178,7 +179,8 @@ public class SongLoader extends SectionCreator.SimpleListLoader<Song> {
 
         final String songSortOrder = PreferenceUtils.getInstance(context).getSongSortOrder();
 
-        Cursor cursor = context.getContentResolver().query(Audio.Media.EXTERNAL_CONTENT_URI,
+        Cursor cursor = context.getContentResolver().query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{
                         /* 0 */
                         Audio.Media._ID,
