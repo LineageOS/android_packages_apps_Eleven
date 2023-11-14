@@ -34,6 +34,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ServiceInfo;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -1017,7 +1018,8 @@ public class MusicPlaybackService extends MediaBrowserService
         }
 
         if (newNotifyMode == NOTIFY_MODE_FOREGROUND) {
-            startForeground(NOTIFICATION_ID, buildNotification());
+            startForeground(NOTIFICATION_ID, buildNotification(),
+                    ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
         } else if (newNotifyMode == NOTIFY_MODE_BACKGROUND) {
             mNotificationManager.notify(NOTIFICATION_ID, buildNotification());
         }
