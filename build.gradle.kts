@@ -32,7 +32,7 @@ android {
 
     defaultConfig {
         applicationId = "org.lineageos.eleven"
-        minSdk = 28
+        minSdk = 30
         targetSdk = 34
         versionCode = 420
         versionName = "4.2.0"
