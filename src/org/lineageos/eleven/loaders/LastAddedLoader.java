@@ -117,7 +117,8 @@ public class LastAddedLoader extends SectionCreator.SimpleListLoader<Song> {
                 " AND " + MediaStore.Audio.Media.DATE_ADDED + ">" +
                 cutoff;
 
-        return context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        return context.getContentResolver().query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{
                         /* 0 */
                         BaseColumns._ID,

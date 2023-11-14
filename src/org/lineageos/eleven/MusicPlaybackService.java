@@ -742,9 +742,11 @@ public class MusicPlaybackService extends MediaBrowserService
         // Get events when MediaStore content changes
         mMediaStoreObserver = new MediaStoreObserver(mPlayerHandler);
         getContentResolver().registerContentObserver(
-                MediaStore.Audio.Media.INTERNAL_CONTENT_URI, true, mMediaStoreObserver);
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_INTERNAL), true,
+                mMediaStoreObserver);
         getContentResolver().registerContentObserver(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, true, mMediaStoreObserver);
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL), true,
+                mMediaStoreObserver);
 
         // Initialize the delayed shutdown intent
         final Intent shutdownIntent = new Intent(this, MusicPlaybackService.class);
@@ -1248,7 +1250,8 @@ public class MusicPlaybackService extends MediaBrowserService
     private void updateCursor(final String selection, final String[] selectionArgs) {
         synchronized (this) {
             closeCursor();
-            mCursor = openCursorAndGoToFirst(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+            mCursor = openCursorAndGoToFirst(
+                    MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                     PROJECTION, selection, selectionArgs);
         }
         updateAlbumCursor();
@@ -1265,7 +1268,8 @@ public class MusicPlaybackService extends MediaBrowserService
     private void updateAlbumCursor() {
         long albumId = getAlbumId();
         if (albumId >= 0) {
-            mAlbumCursor = openCursorAndGoToFirst(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI,
+            mAlbumCursor = openCursorAndGoToFirst(
+                    MediaStore.Audio.Albums.getContentUri(MediaStore.VOLUME_EXTERNAL),
                     ALBUM_PROJECTION, "_id=" + albumId, null);
         } else {
             mAlbumCursor = null;
@@ -1326,8 +1330,8 @@ public class MusicPlaybackService extends MediaBrowserService
             updateCursor(mPlaylist.get(mPlayPos).mId);
             while (true) {
                 if (mCursor != null
-                        && openFile(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/"
-                        + mCursor.getLong(IDCOLIDX))) {
+                        && openFile(MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL)
+                        + "/" + mCursor.getLong(IDCOLIDX))) {
                     break;
                 }
 
@@ -1484,7 +1488,8 @@ public class MusicPlaybackService extends MediaBrowserService
         if (D) Log.d(TAG, "setNextTrack: next play position = " + mNextPlayPos);
         if (mNextPlayPos >= 0 && mPlaylist != null && mNextPlayPos < mPlaylist.size()) {
             final long id = mPlaylist.get(mNextPlayPos).mId;
-            mPlayer.setNextDataSource(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/" + id);
+            mPlayer.setNextDataSource(
+                    MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL) + "/" + id);
         } else {
             mPlayer.setNextDataSource(null);
         }
@@ -1495,7 +1500,7 @@ public class MusicPlaybackService extends MediaBrowserService
      */
     private boolean makeAutoShuffleList() {
         try (Cursor cursor = getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{MediaStore.Audio.Media._ID},
                 MediaStore.Audio.Media.IS_MUSIC + "= 1",
                 null,
@@ -1893,11 +1898,12 @@ public class MusicPlaybackService extends MediaBrowserService
                 }
 
                 if (id != -1 && path.startsWith(
-                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI.toString())) {
+                        MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL)
+                                .toString())) {
                     updateCursor(uri);
 
                 } else if (id != -1 && path.startsWith(
-                        MediaStore.Files.getContentUri("external").toString())) {
+                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL).toString())) {
                     updateCursor(id);
 
                     // handle downloaded media files
@@ -3063,7 +3069,8 @@ public class MusicPlaybackService extends MediaBrowserService
     private List<MediaBrowser.MediaItem> setupAlbumRoot() {
         List<MediaBrowser.MediaItem> result = new ArrayList<>();
         ArrayList<Long> mediaIds = new ArrayList<>();
-        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        try (Cursor c = getContentResolver().query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{ AlbumColumns.ALBUM, AlbumColumns.ALBUM_ID },
                 "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )", null,
                 MediaStore.Audio.Albums.DEFAULT_SORT_ORDER)) {
@@ -3098,7 +3105,8 @@ public class MusicPlaybackService extends MediaBrowserService
     private List<MediaBrowser.MediaItem> setupArtistRoot() {
         List<MediaBrowser.MediaItem> result = new ArrayList<>();
         ArrayList<String> mediaIds = new ArrayList<>();
-        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        try (Cursor c = getContentResolver().query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{ MediaStore.Audio.ArtistColumns.ARTIST },
                 "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )", null,
                 MediaStore.Audio.Artists.DEFAULT_SORT_ORDER)) {
@@ -3137,7 +3145,8 @@ public class MusicPlaybackService extends MediaBrowserService
 
     private void setupSongRoot() {
         List<MediaBrowser.MediaItem> result = new ArrayList<>();
-        try (Cursor c = getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        try (Cursor c = getContentResolver().query(
+             MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 PROJECTION, "(" + MediaStore.Audio.Media.IS_MUSIC + " !=0 )",
                 null, MediaStore.Audio.Media.DEFAULT_SORT_ORDER)) {
             while (c.moveToNext()) {
@@ -3162,8 +3171,8 @@ public class MusicPlaybackService extends MediaBrowserService
                                 c.getColumnIndexOrThrow(MediaStore.Audio.Media.TITLE)))
                         .putString(MediaMetadata.METADATA_KEY_MEDIA_URI,
                                 ContentUris.withAppendedId(
-                                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, mediaId)
-                                        .toString())
+                                        MediaStore.Audio.Media.getContentUri(
+                                                MediaStore.VOLUME_EXTERNAL), mediaId).toString())
                         .putString(MediaMetadata.METADATA_KEY_ALBUM_ART_URI,
                                 ContentUris.withAppendedId(Uri.parse(
                                         "content://media/external/audio/albumart"),
@@ -3960,7 +3969,7 @@ public class MusicPlaybackService extends MediaBrowserService
             selection.append(")");
 
             Cursor c = getContentResolver().query(
-                    MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                    MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                     new String[]{AudioColumns._ID, AudioColumns.TITLE, AudioColumns.ARTIST},
                     selection.toString(), null, null);
             if (c == null) {

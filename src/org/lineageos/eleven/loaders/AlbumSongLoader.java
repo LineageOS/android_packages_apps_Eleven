@@ -111,7 +111,8 @@ public class AlbumSongLoader extends WrappedAsyncTaskLoader<List<Song>> {
         String selection = (AudioColumns.IS_MUSIC + "=1") +
                 " AND " + AudioColumns.TITLE + " != ''" +
                 " AND " + AudioColumns.ALBUM_ID + "=" + albumId;
-        return context.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        return context.getContentResolver().query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{
                         /* 0 */
                         BaseColumns._ID,
