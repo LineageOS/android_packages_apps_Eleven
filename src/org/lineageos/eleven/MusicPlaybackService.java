@@ -1898,7 +1898,7 @@ public class MusicPlaybackService extends MediaBrowserService
                     updateCursor(uri);
 
                 } else if (id != -1 && path.startsWith(
-                        MediaStore.Files.getContentUri("external").toString())) {
+                        MediaStore.Files.getContentUri(MediaStore.VOLUME_EXTERNAL).toString())) {
                     updateCursor(id);
 
                     // handle downloaded media files

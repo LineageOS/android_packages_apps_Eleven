@@ -142,7 +142,8 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
             if (artistId == -1) {
                 return new EmptyCursor();
             }
-            uri = MediaStore.Audio.Artists.Albums.getContentUri("external", artistId);
+            uri = MediaStore.Audio.Artists.Albums.getContentUri(MediaStore.VOLUME_EXTERNAL,
+                    artistId);
         }
 
         Cursor cursor = context.getContentResolver().query(uri,

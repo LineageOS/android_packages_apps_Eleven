@@ -995,7 +995,8 @@ public final class MusicUtils {
      * @param playlistId The playlist ID.
      */
     public static void clearPlaylist(final Context context, final int playlistId) {
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
+        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL,
+                playlistId);
         context.getContentResolver().delete(uri, null, null);
     }
 
@@ -1033,7 +1034,7 @@ public final class MusicUtils {
         final String[] projection = new String[]{
                 "max(" + Playlists.Members.PLAY_ORDER + ")",
         };
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
+        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistId);
 
         int base = 0;
         try (Cursor cursor = resolver.query(uri, projection, null, null, null)) {
@@ -1062,7 +1063,7 @@ public final class MusicUtils {
      */
     public static void removeFromPlaylist(final Context context, final long id,
                                           final long playlistId) {
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlistId);
+        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistId);
         final ContentResolver resolver = context.getContentResolver();
         resolver.delete(uri, Playlists.Members.AUDIO_ID + " = ? ", new String[]{
                 Long.toString(id)
@@ -1161,7 +1162,7 @@ public final class MusicUtils {
      */
     public static int getSongCountForPlaylist(final Context context, final long playlistId) {
         try (Cursor cursor = context.getContentResolver().query(
-                Playlists.Members.getContentUri("external", playlistId),
+                Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistId),
                 new String[]{BaseColumns._ID}, MusicUtils.MUSIC_ONLY_SELECTION, null, null)) {
             if (cursor != null) {
                 int count = 0;
