@@ -113,7 +113,8 @@ public class PlaylistLoader extends WrappedAsyncTaskLoader<List<Playlist>> {
      * @return The {@link Cursor} used to run the playlist query.
      */
     public static Cursor makePlaylistCursor(final Context context) {
-        return context.getContentResolver().query(MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
+        return context.getContentResolver().query(
+                MediaStore.Audio.Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{
                         /* 0 */
                         BaseColumns._ID,
