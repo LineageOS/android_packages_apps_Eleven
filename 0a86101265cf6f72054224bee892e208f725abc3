@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "30b32054_2d6d93e2",
+        "filename": "build.gradle.kts",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 25732
+      },
+      "writtenOn": "2023-11-15T10:12:58Z",
+      "side": 1,
+      "message": "Keep it 30 at least",
+      "revId": "0a86101265cf6f72054224bee892e208f725abc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
