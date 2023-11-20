@@ -16,6 +16,24 @@
       "message": "Keep it 30 at least",
       "revId": "0a86101265cf6f72054224bee892e208f725abc3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa98dae8_f9089dba",
+        "filename": "build.gradle.kts",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-11-20T20:12:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30b32054_2d6d93e2",
+      "revId": "0a86101265cf6f72054224bee892e208f725abc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
