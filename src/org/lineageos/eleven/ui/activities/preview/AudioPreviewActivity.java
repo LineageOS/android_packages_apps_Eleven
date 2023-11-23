@@ -34,6 +34,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.Media;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -451,7 +452,8 @@ public class AudioPreviewActivity extends AppCompatActivity implements
 
     private void handleFileScheme() {
         String path = mPreviewSong.URI.getPath();
-        sAsyncQueryHandler.startQuery(CONTENT_QUERY_TOKEN, null, Media.EXTERNAL_CONTENT_URI,
+        sAsyncQueryHandler.startQuery(CONTENT_QUERY_TOKEN, null,
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
                 MEDIA_PROJECTION, "_data=?", new String[]{path}, null);
     }
 

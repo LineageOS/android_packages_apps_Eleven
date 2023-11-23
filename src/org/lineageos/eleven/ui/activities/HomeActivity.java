@@ -39,6 +39,7 @@ import android.view.View;
 import android.view.Window;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.Fragment;
@@ -484,8 +485,8 @@ public class HomeActivity extends SlidingPanelActivity implements
     private boolean needRequestStoragePermission() {
         boolean needRequest = false;
         String[] permissions = {
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE
+                Manifest.permission.READ_MEDIA_AUDIO,
+                Manifest.permission.READ_MEDIA_IMAGES,
         };
         ArrayList<String> permissionList = new ArrayList<>();
         for (String permission : permissions) {
@@ -505,7 +506,7 @@ public class HomeActivity extends SlidingPanelActivity implements
                     permissionArray[i] = permissionList.get(i);
                 }
 
-                requestPermissions(permissionArray, PERMISSION_REQUEST_STORAGE);
+                ActivityCompat.requestPermissions(this, permissionArray, PERMISSION_REQUEST_STORAGE);
             }
         }
 

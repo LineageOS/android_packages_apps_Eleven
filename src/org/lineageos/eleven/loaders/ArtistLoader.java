@@ -120,7 +120,7 @@ public class ArtistLoader extends SectionCreator.SimpleListLoader<Artist> {
         // requested artist ordering
         final String artistSortOrder = PreferenceUtils.getInstance(context).getArtistSortOrder();
 
-        Cursor cursor = context.getContentResolver().query(Artists.EXTERNAL_CONTENT_URI,
+        Cursor cursor = context.getContentResolver().query(Artists.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[] {
                         /* 0 */
                         Artists._ID,
