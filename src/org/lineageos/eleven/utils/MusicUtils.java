@@ -1099,7 +1099,8 @@ public final class MusicUtils {
      */
     public static void setRingtone(final Context context, final long id) {
         final ContentResolver resolver = context.getContentResolver();
-        final Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+        final Uri uri = ContentUris.withAppendedId(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY), id);
         try {
             final ContentValues values = new ContentValues(2);
             values.put(AudioColumns.IS_RINGTONE, "1");
@@ -1114,7 +1115,8 @@ public final class MusicUtils {
         };
 
         final String selection = BaseColumns._ID + "=" + id;
-        try (Cursor cursor = resolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        try (Cursor cursor = resolver.query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
                 projection, selection, null, null)) {
             if (cursor != null && cursor.getCount() == 1) {
                 cursor.moveToFirst();
@@ -1180,7 +1182,7 @@ public final class MusicUtils {
                 " AND " + BaseColumns._ID + " = '" + trackId + "'";
 
         final Cursor cursor = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
                 new String[]{
                         /* 0 */
                         MediaStore.Audio.AudioColumns.ALBUM_ID,
@@ -1474,8 +1476,8 @@ public final class MusicUtils {
         }
         selection.append(")");
         try (Cursor c = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection.toString(),
-                null, null)) {
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
+                projection, selection.toString(), null, null)) {
             if (c != null) {
                 // Step 1: Remove selected tracks from the current playlist, as well
                 // as from the album art cache
@@ -1492,7 +1494,8 @@ public final class MusicUtils {
                 }
 
                 // Step 2: Remove selected tracks from the database
-                context.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                context.getContentResolver().delete(
+                        MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
                         selection.toString(), null);
 
                 // Step 3: Remove files from card

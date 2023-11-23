@@ -204,8 +204,8 @@ public class NowPlayingCursor extends AbstractCursor {
         selection.append(")");
 
         mQueueCursor = mContext.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, PROJECTION, selection.toString(),
-                null, MediaStore.Audio.Media._ID);
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY),
+                PROJECTION, selection.toString(), null, MediaStore.Audio.Media._ID);
 
         if (mQueueCursor == null) {
             mSize = 0;
