@@ -119,7 +119,7 @@ public class CreateNewPlaylist extends BasePlaylistDialog {
         final String[] projection = new String[]{MediaStore.Audio.Playlists.NAME};
         final String selection = MediaStore.Audio.Playlists.NAME + " != ''";
         try (final Cursor cursor = resolver.query(
-                MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI, projection,
+                MediaStore.Audio.Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL), projection,
                 selection, null, MediaStore.Audio.Playlists.NAME)) {
             if (cursor == null) {
                 return null;

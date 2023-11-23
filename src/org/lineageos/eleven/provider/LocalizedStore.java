@@ -221,7 +221,7 @@ public class LocalizedStore {
                 }
 
                 cursor = mContext.getContentResolver().query(
-                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                        MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                         new String[]{
                                 // 0
                                 AudioColumns._ID,

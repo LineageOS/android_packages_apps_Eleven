@@ -870,7 +870,8 @@ public final class MusicUtils {
             return -1;
         }
 
-        try (Cursor cursor = context.getContentResolver().query(Playlists.EXTERNAL_CONTENT_URI,
+        try (Cursor cursor = context.getContentResolver().query(
+                Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{BaseColumns._ID}, PlaylistsColumns.NAME + "=?",
                 new String[]{name}, PlaylistsColumns.NAME)) {
             if (cursor != null) {
@@ -890,7 +891,8 @@ public final class MusicUtils {
      */
     public static String getNameForPlaylist(final Context context, final long id) {
         try (Cursor cursor = context.getContentResolver().query(
-                Playlists.EXTERNAL_CONTENT_URI, new String[]{PlaylistsColumns.NAME},
+                Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL),
+                new String[]{PlaylistsColumns.NAME},
                 BaseColumns._ID + "=?", new String[]{Long.toString(id)}, null)) {
             if (cursor != null) {
                 if (cursor.moveToFirst()) {
@@ -914,7 +916,8 @@ public final class MusicUtils {
             return -1;
         }
         try (Cursor cursor = context.getContentResolver().query(
-                MediaStore.Audio.Artists.EXTERNAL_CONTENT_URI, new String[]{BaseColumns._ID},
+                MediaStore.Audio.Artists.getContentUri(MediaStore.VOLUME_EXTERNAL),
+                new String[]{BaseColumns._ID},
                 ArtistColumns.ARTIST + "=?", new String[]{name}, ArtistColumns.ARTIST)) {
             if (cursor != null) {
                 cursor.moveToFirst();
@@ -971,14 +974,14 @@ public final class MusicUtils {
                     PlaylistsColumns.NAME
             };
             final String selection = PlaylistsColumns.NAME + " = '" + name + "'";
-            try (Cursor cursor = resolver.query(Playlists.EXTERNAL_CONTENT_URI,
+            try (Cursor cursor = resolver.query(Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL),
                     projection, selection, null, null)) {
                 if (cursor != null) {
                     if (cursor.getCount() <= 0) {
                         final ContentValues values = new ContentValues(1);
                         values.put(PlaylistsColumns.NAME, name);
                         final Uri uri = resolver.insert(
-                                Playlists.EXTERNAL_CONTENT_URI, values);
+                                Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL), values);
                         if (uri != null && uri.getLastPathSegment() != null) {
                             return Long.parseLong(uri.getLastPathSegment());
                         }
@@ -1034,7 +1037,8 @@ public final class MusicUtils {
         final String[] projection = new String[]{
                 "max(" + Playlists.Members.PLAY_ORDER + ")",
         };
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistId);
+        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL,
+                playlistId);
 
         int base = 0;
         try (Cursor cursor = resolver.query(uri, projection, null, null, null)) {
@@ -1063,7 +1067,8 @@ public final class MusicUtils {
      */
     public static void removeFromPlaylist(final Context context, final long id,
                                           final long playlistId) {
-        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL, playlistId);
+        final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri(MediaStore.VOLUME_EXTERNAL,
+                playlistId);
         final ContentResolver resolver = context.getContentResolver();
         resolver.delete(uri, Playlists.Members.AUDIO_ID + " = ? ", new String[]{
                 Long.toString(id)
@@ -1099,7 +1104,8 @@ public final class MusicUtils {
      */
     public static void setRingtone(final Context context, final long id) {
         final ContentResolver resolver = context.getContentResolver();
-        final Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, id);
+        final Uri uri = ContentUris.withAppendedId(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL), id);
         try {
             final ContentValues values = new ContentValues(2);
             values.put(AudioColumns.IS_RINGTONE, "1");
@@ -1114,7 +1120,8 @@ public final class MusicUtils {
         };
 
         final String selection = BaseColumns._ID + "=" + id;
-        try (Cursor cursor = resolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+        try (Cursor cursor = resolver.query(
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 projection, selection, null, null)) {
             if (cursor != null && cursor.getCount() == 1) {
                 cursor.moveToFirst();
@@ -1137,7 +1144,8 @@ public final class MusicUtils {
             return songCount;
         }
 
-        Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, id);
+        Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.getContentUri(
+                MediaStore.VOLUME_EXTERNAL), id);
         try (Cursor cursor = context.getContentResolver().query(uri,
                 new String[]{AlbumColumns.NUMBER_OF_SONGS}, null, null, null)) {
             if (cursor != null) {
@@ -1180,7 +1188,7 @@ public final class MusicUtils {
                 " AND " + BaseColumns._ID + " = '" + trackId + "'";
 
         final Cursor cursor = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                 new String[]{
                         /* 0 */
                         MediaStore.Audio.AudioColumns.ALBUM_ID,
@@ -1220,7 +1228,8 @@ public final class MusicUtils {
         if (id == -1) {
             return null;
         }
-        Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI, id);
+        Uri uri = ContentUris.withAppendedId(MediaStore.Audio.Albums.getContentUri(
+                MediaStore.VOLUME_EXTERNAL), id);
         String releaseDate = null;
         try (Cursor cursor = context.getContentResolver().query(uri,
                 new String[]{AlbumColumns.FIRST_YEAR}, null, null, null)) {
@@ -1474,8 +1483,8 @@ public final class MusicUtils {
         }
         selection.append(")");
         try (Cursor c = context.getContentResolver().query(
-                MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, projection, selection.toString(),
-                null, null)) {
+                MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
+                projection, selection.toString(), null, null)) {
             if (c != null) {
                 // Step 1: Remove selected tracks from the current playlist, as well
                 // as from the album art cache
@@ -1492,7 +1501,8 @@ public final class MusicUtils {
                 }
 
                 // Step 2: Remove selected tracks from the database
-                context.getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                context.getContentResolver().delete(
+                        MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL),
                         selection.toString(), null);
 
                 // Step 3: Remove files from card

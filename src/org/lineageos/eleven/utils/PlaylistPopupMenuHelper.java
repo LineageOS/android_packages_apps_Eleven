@@ -99,7 +99,7 @@ public abstract class PlaylistPopupMenuHelper extends PopupMenuHelper {
                 .setTitle(mActivity.getString(R.string.delete_dialog_title, playlistName))
                 .setPositiveButton(R.string.context_menu_delete, (dialog, which) -> {
                     final Uri mUri = ContentUris.withAppendedId(
-                            MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
+                            MediaStore.Audio.Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL),
                             playlistId);
                     mActivity.getContentResolver().delete(mUri, null, null);
                     MusicUtils.refresh();

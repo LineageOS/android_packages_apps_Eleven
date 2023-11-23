@@ -137,7 +137,7 @@ public class AlbumLoader extends SectionCreator.SimpleListLoader<Album> {
     public static Cursor makeAlbumCursor(final Context context, final Long artistId) {
         // requested album ordering
         final String albumSortOrder = PreferenceUtils.getInstance(context).getAlbumSortOrder();
-        Uri uri = MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI;
+        Uri uri = MediaStore.Audio.Albums.getContentUri(MediaStore.VOLUME_EXTERNAL);
         if (artistId != null) {
             if (artistId == -1) {
                 return new EmptyCursor();

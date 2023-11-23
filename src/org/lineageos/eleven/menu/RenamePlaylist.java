@@ -90,7 +90,7 @@ public class RenamePlaylist extends BasePlaylistDialog {
 
         final ContentResolver resolver = activity.getContentResolver();
         final Uri uri = ContentUris.withAppendedId(
-                            MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
+                            MediaStore.Audio.Playlists.getContentUri(MediaStore.VOLUME_EXTERNAL),
                             mRenameId);
         final ContentValues values = new ContentValues(1);
         values.put(Audio.Playlists.NAME, playlistName);
