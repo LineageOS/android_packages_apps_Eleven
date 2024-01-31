@@ -1623,7 +1623,7 @@ public class MusicPlaybackService extends MediaBrowserService
             saveQueue(false);
         }
 
-        if (what.equals(PLAYSTATE_CHANGED) || what.equals(META_CHANGED)) {
+        if (mServiceStartId > 0 && (what.equals(PLAYSTATE_CHANGED) || what.equals(META_CHANGED))) {
             updateNotification();
         }
 
