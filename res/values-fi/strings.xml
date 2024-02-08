@@ -67,8 +67,8 @@
     <string name="clear_last_added">Tyhjennä viimeksi lisätyt?</string>
     <string name="cannot_be_undone">Tätä ei voi perua</string>
     <string name="delete_warning">Kaikki välimuistissa olevat kuvat poistetaan pysyvästi</string>
-    <string name="new_photo">Valitse valokuva galleriasta</string>
-    <string name="use_default">Käytä oletusvalokuvaa</string>
+    <string name="new_photo">Valitse kuva Galleriasta</string>
+    <string name="use_default">Käytä oletuskuvaa</string>
     <string name="context_menu_play_selection">Toista</string>
     <string name="context_menu_play_next">Toista seuraava</string>
     <string name="context_menu_play_album">Toista albumi</string>
@@ -136,5 +136,4 @@
     <string name="header_5_plus_albums">Yli 5 albumia</string>
     <string name="header_other">"Muut"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
-    <string name="channel_music">Musiikin toisto</string>
 </resources>
