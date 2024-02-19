@@ -16,6 +16,52 @@
       "message": "Does the job as well",
       "revId": "8ba4fd93c944e98fc1b73c3ba7c624f357b6bedc",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "301cc78b_cdca00c3",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-02-19T21:31:50Z",
+      "side": 1,
+      "message": "this is likely fine but we can improve checking the volume\nfinal StorageVolume volume \u003d intent.getParcelableExtra(StorageVolume.EXTRA_STORAGE_VOLUME);\nif (volume !\u003d null) {\nMediaVolume mediaVolume \u003d MediaVolume.fromStorageVolume(volume);\nif (mediaVolume.getName() \u003d\u003d MediaStore.VOLUME_EXTERNAL) {\nsetupSongRoot();\n}\n}\nmaybe?",
+      "range": {
+        "startLine": 1084,
+        "startChar": 0,
+        "endLine": 1084,
+        "endChar": 49
+      },
+      "revId": "8ba4fd93c944e98fc1b73c3ba7c624f357b6bedc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9f8fb900_152ac111",
+        "filename": "src/org/lineageos/eleven/MusicPlaybackService.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 3191,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-02-19T21:31:50Z",
+      "side": 1,
+      "message": "drop",
+      "range": {
+        "startLine": 3191,
+        "startChar": 0,
+        "endLine": 3191,
+        "endChar": 33
+      },
+      "revId": "8ba4fd93c944e98fc1b73c3ba7c624f357b6bedc",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
