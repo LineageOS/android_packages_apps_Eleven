@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014-2016 The CyanogenMod Project
- * Copyright (C) 2018-2023 The LineageOS Project
+ * Copyright (C) 2018-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
@@ -60,6 +61,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.os.storage.StorageVolume;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Audio.AlbumColumns;
@@ -756,14 +758,16 @@ public class MusicPlaybackService extends MediaBrowserService
         mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent,
                 PendingIntent.FLAG_IMMUTABLE);
 
-        // Bring the queue back
-        reloadQueue();
-        notifyChange(QUEUE_CHANGED);
-        notifyChange(META_CHANGED);
+        // if VOLUME_EXTERNAL is already mounted kickstart the queue
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            reloadQueue();
+            notifyChange(QUEUE_CHANGED);
+            notifyChange(META_CHANGED);
+            setupSongRoot();
+        }
 
         // Initialize the media tree. Only used for Android Auto
         setupRootMediaItems();
-        setupSongRoot();
     }
 
     private void setUpMediaSession() {
@@ -1069,7 +1073,6 @@ public class MusicPlaybackService extends MediaBrowserService
     public void registerExternalStorageListener() {
         if (mUnmountReceiver == null) {
             mUnmountReceiver = new BroadcastReceiver() {
-
                 @Override
                 public void onReceive(final Context context, final Intent intent) {
                     final String action = intent.getAction();
@@ -1077,7 +1080,16 @@ public class MusicPlaybackService extends MediaBrowserService
                         saveQueue(true);
                         mQueueIsSaveable = false;
                         closeExternalStorageFiles();
-                    } else if (action.equals(Intent.ACTION_MEDIA_MOUNTED)) {
+                    } else if (Intent.ACTION_MEDIA_MOUNTED.equals(action)) {
+                        final StorageVolume volume =
+                                intent.getParcelableExtra(StorageVolume.EXTRA_STORAGE_VOLUME);
+                        if (volume != null) {
+                            if (MediaStore.VOLUME_EXTERNAL.equals(
+                                    volume.getMediaStoreVolumeName())) {
+                                setupSongRoot();
+                            }
+                        }
+
                         mMediaMountedCount++;
                         mCardId = getCardId();
                         reloadQueue();
