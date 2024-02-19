@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2012 Andrew Neal
  * Copyright (C) 2014-2016 The CyanogenMod Project
- * Copyright (C) 2018-2023 The LineageOS Project
+ * Copyright (C) 2018-2024 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -589,6 +589,8 @@ public class MusicPlaybackService extends MediaBrowserService
     private HashMap<String, List<MediaBrowser.MediaItem>> mMediaIdToChildren = new HashMap<>();
     private ArrayList<Long> mSongs = new ArrayList<>(100);
 
+    private boolean mDidSetupSongRoot;
+
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
@@ -756,14 +758,8 @@ public class MusicPlaybackService extends MediaBrowserService
         mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent,
                 PendingIntent.FLAG_IMMUTABLE);
 
-        // Bring the queue back
-        reloadQueue();
-        notifyChange(QUEUE_CHANGED);
-        notifyChange(META_CHANGED);
-
         // Initialize the media tree. Only used for Android Auto
         setupRootMediaItems();
-        setupSongRoot();
     }
 
     private void setUpMediaSession() {
@@ -900,6 +896,11 @@ public class MusicPlaybackService extends MediaBrowserService
 
         // deinitialize shake detector
         stopShakeDetector(true);
+
+        if (mBootReceiver != null) {
+            unregisterReceiver(mBootReceiver);
+            mBootReceiver = null;
+        }
     }
 
     @Override
@@ -1084,6 +1085,10 @@ public class MusicPlaybackService extends MediaBrowserService
                         mQueueIsSaveable = true;
                         notifyChange(QUEUE_CHANGED);
                         notifyChange(META_CHANGED);
+
+                        if (!mDidSetupSongRoot) {
+                            setupSongRoot();
+                        }
                     }
                 }
             };
@@ -3188,6 +3193,7 @@ public class MusicPlaybackService extends MediaBrowserService
             }
         }
         mMediaIdToChildren.put(CONTENT_BROWSER_SONGS, result);
+        mDidSetupSongRoot = true;
     }
 
     private final BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
