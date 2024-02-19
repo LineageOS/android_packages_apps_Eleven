@@ -589,6 +589,26 @@ public class MusicPlaybackService extends MediaBrowserService
     private HashMap<String, List<MediaBrowser.MediaItem>> mMediaIdToChildren = new HashMap<>();
     private ArrayList<Long> mSongs = new ArrayList<>(100);
 
+    private final BroadcastReceiver mBootReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action != null && action.equals(Intent.ACTION_BOOT_COMPLETED)) {
+                // Bring the queue back
+                reloadQueue();
+                notifyChange(QUEUE_CHANGED);
+                notifyChange(META_CHANGED);
+
+                // Initialize the media tree. Only used for Android Auto
+                setupRootMediaItems();
+                setupSongRoot();
+
+                // We don't have to listen anymore
+                unregisterReceiver(mBootReceiver);
+            }
+        }
+    };
+
     @Override
     public IBinder onBind(final Intent intent) {
         if (D) Log.d(TAG, "Service bound, intent = " + intent);
@@ -756,14 +776,7 @@ public class MusicPlaybackService extends MediaBrowserService
         mShutdownIntent = PendingIntent.getService(this, 0, shutdownIntent,
                 PendingIntent.FLAG_IMMUTABLE);
 
-        // Bring the queue back
-        reloadQueue();
-        notifyChange(QUEUE_CHANGED);
-        notifyChange(META_CHANGED);
-
-        // Initialize the media tree. Only used for Android Auto
-        setupRootMediaItems();
-        setupSongRoot();
+        registerReceiver(mBootReceiver, new IntentFilter(), Context.RECEIVER_NOT_EXPORTED);
     }
 
     private void setUpMediaSession() {
