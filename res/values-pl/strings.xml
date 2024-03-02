@@ -21,7 +21,7 @@
     <string name="page_artists">Wykonawcy</string>
     <string name="page_albums">Albumy</string>
     <string name="page_songs">Utwory</string>
-    <string name="page_playlists">Playlisty</string>
+    <string name="page_playlists">Listy odtwarzania</string>
     <string name="page_play_queue">Kolejka odtwarzania</string>
     <string name="header_albums">Albumy</string>
     <string name="header_all_songs">Wszystkie utwory</string>
@@ -39,7 +39,7 @@
     <string name="menu_clear_queue">Wyczyść kolejkę</string>
     <string name="menu_save_queue">Zapisz kolejkę odtwarzania jako listę odtwarzania</string>
     <string name="menu_equalizer">Equalizer</string>
-    <string name="add_to_playlist">Dodaj do playlisty</string>
+    <string name="add_to_playlist">Dodaj do listy odtwarzania</string>
     <string name="add_to_queue">Dodaj do kolejki</string>
     <string name="remove_from_queue">Usuń z kolejki</string>
     <string name="sort_order_entry_az">A-Z</string>
@@ -54,13 +54,13 @@
     <string name="playlist_last_added">Ostatnio dodane</string>
     <string name="playlist_recently_played">Ostatnio odtwarzane</string>
     <string name="playlist_top_tracks">Moje najlepsze utwory</string>
-    <string name="new_playlist">Nowa playlista</string>
+    <string name="new_playlist">Nowa lista odtwarzania</string>
     <string name="save">Zapisz</string>
     <string name="cancel">Anuluj</string>
     <string name="overwrite">Nadpisz</string>
     <string name="clear">Wyczyść</string>
-    <string name="new_playlist_name_template">Playlista <xliff:g id="number">%d</xliff:g></string>
-    <string name="create_playlist_prompt">Nazwa playlisty</string>
+    <string name="new_playlist_name_template">Lista odtwarzania <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">Nazwa listy odtwarzania</string>
     <string name="delete_dialog_title">Usunąć <xliff:g id="item" example="album">%s</xliff:g>?</string>
     <string name="clear_top_tracks_title">Wyczyścić najlepiej oceniane utwory?</string>
     <string name="clear_recent_title">Wyczyścić najczęściej słuchane utwory?</string>
@@ -80,7 +80,7 @@
     <string name="context_menu_fetch_artist_image">Pobierz zdjęcie wykonawcy</string>
     <string name="context_menu_remove_from_recent">Usuń z ostatnio słuchanych</string>
     <string name="context_menu_use_as_ringtone">Ustaw jako dzwonek</string>
-    <string name="context_menu_remove_from_playlist">Usuń z playlisty</string>
+    <string name="context_menu_remove_from_playlist">Usuń z listy odtwarzania</string>
     <string name="context_menu_change_image">Zmień obrazek</string>
     <string name="accessibility_play">Odtwórz</string>
     <string name="accessibility_pause">Pauza</string>
@@ -108,8 +108,8 @@
     <string name="no_effects_for_you">Equalizer nie może zostać uruchomiony.</string>
     <string name="empty_recent_main">Brak ostatnio słuchanych utworów</string>
     <string name="empty_recent">Ostatnio przesłuchane albumy pojawią się tutaj. Zobaczysz je po odtworzeniu kilku utworów.</string>
-    <string name="empty_playlist_main">Brak utworów na playliście</string>
-    <string name="empty_playlist_secondary">Aby dodawać utwory do playlisty, użyj przycisku opcji na utworze, albumie lub artyście i wybierz \"Dodaj do playlisty\".</string>
+    <string name="empty_playlist_main">Brak utworów na liście odtwarzania</string>
+    <string name="empty_playlist_secondary">Aby dodawać utwory do listy odtwarzania, użyj przycisku opcji na utworze, albumie lub artyście i wybierz \"Dodaj do listy odtwarzania\".</string>
     <string name="empty_top_tracks_main">Brak najlepiej ocenianych utworów</string>
     <string name="empty_top_tracks_secondary">Utwory, które słuchasz najczęściej zostaną dodane do tej listy.</string>
     <string name="empty_last_added_main">Brak ostatnio dodanych utworów</string>
