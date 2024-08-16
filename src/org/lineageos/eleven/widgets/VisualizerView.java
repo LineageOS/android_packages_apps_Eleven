@@ -72,8 +72,8 @@ public class VisualizerView extends View {
                     for (int i = 0; i < 32; i++) {
                         mValueAnimators[i].cancel();
 
-                        rfk = fft[i * 2 + 2];
-                        ifk = fft[i * 2 + 3];
+                        rfk = fft[i * 4 + 2];
+                        ifk = fft[i * 4 + 3];
                         magnitude = rfk * rfk + ifk * ifk;
                         dbValue = magnitude > 0 ? (int) (10 * Math.log10(magnitude)) : 0;
 
@@ -96,7 +96,7 @@ public class VisualizerView extends View {
             }
 
             mVisualizer.setEnabled(false);
-            mVisualizer.setCaptureSize(66);
+            mVisualizer.setCaptureSize(128);
             mVisualizer.setDataCaptureListener(mVisualizerListener, Visualizer.getMaxCaptureRate(),
                     false, true);
             mVisualizer.setEnabled(true);
