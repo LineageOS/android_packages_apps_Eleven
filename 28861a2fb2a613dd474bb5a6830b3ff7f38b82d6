@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1091e8c_a79e9113",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-08-24T19:07:48Z",
+      "side": 1,
+      "message": "I wouldn\u0027t know how to make it better",
+      "revId": "28861a2fb2a613dd474bb5a6830b3ff7f38b82d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
