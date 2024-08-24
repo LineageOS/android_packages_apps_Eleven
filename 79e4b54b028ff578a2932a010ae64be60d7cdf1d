@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af1d1682_030e267a",
+        "filename": "src/org/lineageos/eleven/widgets/VisualizerView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-08-24T17:59:52Z",
+      "side": 1,
+      "message": "Per the documentation\nIndex 0   1       2   3\nData  Rf0 Rf(n/2) Rf1 If1\n\nThe first magnitude should be Math.abs(fft[0]) and the last magnitude should be Math.abs(fft[1])\n\nEverything in between fft[i*2+0]^2+fft[i*2+1]^2 which is almost what we do here",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 45
+      },
+      "revId": "79e4b54b028ff578a2932a010ae64be60d7cdf1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e139963_6e07c199",
+        "filename": "src/org/lineageos/eleven/widgets/VisualizerView.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 11883
+      },
+      "writtenOn": "2024-08-24T17:59:52Z",
+      "side": 1,
+      "message": "```suggestion\n            mVisualizer.setCaptureSize(Visualizer.getCaptureSizeRange()[0]);\n```\n\n0 is min, 1 is max",
+      "range": {
+        "startLine": 99,
+        "startChar": 12,
+        "endLine": 99,
+        "endChar": 44
+      },
+      "revId": "79e4b54b028ff578a2932a010ae64be60d7cdf1d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
