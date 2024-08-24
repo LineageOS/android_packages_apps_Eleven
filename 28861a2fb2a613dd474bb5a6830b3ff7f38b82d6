@@ -33,6 +33,23 @@
       "message": "probably ok",
       "revId": "28861a2fb2a613dd474bb5a6830b3ff7f38b82d6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "679e652c_01ba875f",
+        "filename": "src/org/lineageos/eleven/widgets/VisualizerView.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2024-08-24T20:46:46Z",
+      "side": 1,
+      "message": "btw wouldn\u0027t (20f * Math.log10(magnitude)) be enough to get rid of casting here?",
+      "revId": "28861a2fb2a613dd474bb5a6830b3ff7f38b82d6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
