@@ -34,7 +34,7 @@
     <string name="menu_shuffle_top_tracks">முதன்மைத் தடங்களைக் குலைக்க</string>
     <string name="menu_shuffle_recent">அண்மையில் இசைத்ததைக் குலைக்க</string>
     <string name="menu_shuffle_last_added">இறுதியாகச் சேர்த்ததைக் குலைக்க</string>
-    <string name="menu_sort_by">வரிசையாக்குக</string>
+    <string name="menu_sort_by">ஏற்ப வரிசையாக்குக</string>
     <string name="menu_clear_list">பட்டியலை அழிக்க</string>
     <string name="menu_clear_queue">சாரையை அழிக்க</string>
     <string name="menu_save_queue">சாரையை இசைப்பட்டியலில் சேமிக்க</string>
@@ -65,9 +65,9 @@
     <string name="clear_top_tracks_title">முதன்மைத் தடங்களை அழிக்கவா?</string>
     <string name="clear_recent_title">அண்மையில் இசைத்ததை அழிக்கவா?</string>
     <string name="clear_last_added">இறுதியாகச் சேர்த்ததை அழிக்கவா?</string>
-    <string name="cannot_be_undone">இது செயற்தவிர்க்க முடியாது</string>
-    <string name="delete_warning">இஃது உறுதியாகத் தேக்கிய படவுள்ளடக்கங்களை நீக்கிவிடும்</string>
-    <string name="new_photo">தொகுப்பிலிருந்து ஒளிப்படத்தைத் தேர்வுசெய்க</string>
+    <string name="cannot_be_undone">இதைச் செயற்தவிர்க்க இயலாது</string>
+    <string name="delete_warning">தேக்கிய படவுள்ளடக்கங்களை இது நிலையாக நீக்கிவிடும்</string>
+    <string name="new_photo">படத்தொகுப்பிலிருந்து தேர்க</string>
     <string name="use_default">இயல்புநிலை படத்தைப் பயன்படுத்துக</string>
     <string name="visualizer_perm_denied">ஒலிப்பதிவு அனுமதி மறுக்கப்பட்டது, இதை இயக்க அமைப்புகள் செயலியில் இசை மனங்காணலை இயக்குக</string>
     <string name="context_menu_play_selection">இசைக்க</string>
@@ -79,7 +79,7 @@
     <string name="context_menu_fetch_album_art">தொகுப்புக் கலையைக் கொணர்க</string>
     <string name="context_menu_fetch_artist_image">கலைஞன் படத்தைக் கொணர்க</string>
     <string name="context_menu_remove_from_recent">அண்மையிலிருந்து அகற்றுக</string>
-    <string name="context_menu_use_as_ringtone">கறங்குத்தொனியாகப் பயன்படுத்துக</string>
+    <string name="context_menu_use_as_ringtone">கறங்குதொனியாகப் பயன்படுத்துக</string>
     <string name="context_menu_remove_from_playlist">இசைப்பட்டியலிலிருந்து அகற்றுக</string>
     <string name="context_menu_change_image">படத்தை மாற்றுக</string>
     <string name="accessibility_play">இசைக்க</string>
@@ -91,17 +91,18 @@
     <string name="accessibility_repeat">மீண்டும்</string>
     <string name="accessibility_repeat_all">யாவும் மறுபடி இசைக்க</string>
     <string name="accessibility_repeat_one">ஒன்றை மறுபடி இசைக்க</string>
-    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' என்பதைக் கறங்குத்தொனியாக அமைக்க</string>
+    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' கறங்குதொனியாக அமைந்தது</string>
     <string name="settings_storage_category">சேமிப்பிடம்</string>
     <string name="settings_delete_cache_title">தேக்கத்தை நீக்குக</string>
     <string name="settings_delete_cache_summary">தேக்கப்பட்ட படங்கள் முழுதும் நீக்குக</string>
     <string name="settings_general_category">பொது</string>
-    <string name="settings_show_music_visualization_title">இசை மனங்காணலைக் காண்பிக்க</string>
+    <string name="settings_show_music_visualization_title">இசை அகக்காணலைக் காண்பிக்க</string>
     <string name="settings_use_blur_title">மங்கலான பின்னணி</string>
     <string name="settings_show_lyrics_title">பாடல் வரிகளைக் காண்பிக்க</string>
     <string name="settings_show_lyrics_summary">srt கோப்பு உடைய பாடல்களுக்கு</string>
     <string name="settings_shake_to_play">இசைக்கக் குலுக்குக</string>
     <string name="settings_shake_to_play_summary">அடுத்த பாடலை இசைக்க உங்கள் கருவியைக் குலுக்குக</string>
+    <string name="app_widget_small">இசை: சதுரம்</string>
     <string name="app_widget_large">இசை: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">இசை: 4 \u00d7 2 (மாற்று)</string>
     <string name="no_effects_for_you">சமனாக்கியைத் திறக்க முடியவில்லை.</string>
@@ -119,22 +120,25 @@
     <string name="empty_queue_secondary">இச்சாரையில் பாடல்களைச் சேர்க்க, பாடல் மீதோ, தொகுப்பு மீதோ, கலைஞர் மீதோ தேர்வுப்பட்டியலைத் தட்டி, \"சாரையில் சேர்க்க\" என்பதைத் தேர்க.</string>
     <string name="error_playing_track">%1$s தடத்தை இசைக்க முடியவில்லை</string>
     <string name="header_unknown_year">அறியப்படாத ஆண்டு</string>
-    <string name="header_less_than_30s">30 வினாடிகளுக்கும் குறைவாக</string>
-    <string name="header_30_to_60_seconds">30 - 60 வினாடிகள்</string>
-    <string name="header_1_to_2_minutes">1 - 2 நிமிடங்கள்</string>
-    <string name="header_2_to_3_minutes">2 - 3 நிமிடங்கள்</string>
-    <string name="header_3_to_4_minutes">3 - 4 நிமிடங்கள்</string>
-    <string name="header_4_to_5_minutes">4 - 5 நிமிடங்கள்</string>
-    <string name="header_5_to_10_minutes">5 - 10 நிமிடங்கள்</string>
-    <string name="header_10_to_30_minutes">10 - 30 நிமிடங்கள்</string>
-    <string name="header_30_to_60_minutes">30 - 60 நிமிடங்கள்</string>
-    <string name="header_greater_than_60_minutes">60 நிமிடங்களுக்கு மேல்</string>
+    <string name="header_less_than_30s">30 நொடிக்கும் குறைவாக</string>
+    <string name="header_30_to_60_seconds">30 முதல் 60 நொடி</string>
+    <string name="header_1_to_2_minutes">1 முதல் 2 நுணுத்தம்</string>
+    <string name="header_2_to_3_minutes">2 முதல் 3 நுணுத்தம்</string>
+    <string name="header_3_to_4_minutes">3 முதல் 4 நுணுத்தம்</string>
+    <string name="header_4_to_5_minutes">4 முதல் 5 நுணுத்தம்</string>
+    <string name="header_5_to_10_minutes">5 முதல் 10 நுணுத்தம்</string>
+    <string name="header_10_to_30_minutes">10 முதல் 30 நுணுத்தம்</string>
+    <string name="header_30_to_60_minutes">30 முதல் 60 நுணுத்தம்</string>
+    <string name="header_greater_than_60_minutes">60 நுணுத்ததிற்கு மேல்</string>
     <string name="header_1_song">1 பாடல்</string>
-    <string name="header_2_to_4_songs">2 - 4 பாடல்கள்</string>
-    <string name="header_5_to_9_songs">5 - 9 பாடல்கள்</string>
-    <string name="header_10_plus_songs">10+ பாடல்கள்</string>
-    <string name="header_5_plus_albums">5+ தொகுப்புகள்</string>
-    <string name="header_other">"மற்றவை"</string>
+    <string name="header_2_to_4_songs">2 முதல் 4 பாடல்</string>
+    <string name="header_5_to_9_songs">5 முதல் 9 பாடல்</string>
+    <string name="header_10_plus_songs">10+ பாடல்</string>
+    <string name="header_5_plus_albums">5+ தொகுப்பு</string>
+    <string name="header_other">" மற்றவை"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
     <string name="channel_music">இசைப்பதிவு மீட்பொலி</string>
+    <string name="widget_track_name">தடப்பெயர்</string>
+    <string name="widget_artist_name">கலைஞர் பெயர்</string>
+    <string name="widget_album_name">தொகுப்புப் பெயர்</string>
 </resources>
