@@ -46,6 +46,6 @@
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one"><xliff:g id="songs_to_delete" example="1">%d</xliff:g> பாடல் நீக்கப்பட்டது.</item>
-        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> பாடல்கள் நீக்கப்பட்டன.</item>
+        <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> பாடல் நீக்கப்பட்டன.</item>
     </plurals>
 </resources>

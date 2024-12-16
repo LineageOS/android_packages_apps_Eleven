@@ -21,14 +21,14 @@
     <string name="page_artists">Artistas</string>
     <string name="page_albums">Álbuns</string>
     <string name="page_songs">Músicas</string>
-    <string name="page_playlists">Playlists</string>
+    <string name="page_playlists">Listas de reprodução</string>
     <string name="page_play_queue">Fila de Reprodução</string>
     <string name="header_albums">Álbuns</string>
     <string name="header_all_songs">Todas as Músicas</string>
     <string name="menu_settings">Configurações</string>
     <string name="menu_shuffle_item">Aleatório</string>
     <string name="menu_shuffle_all">Aleatorizar todas</string>
-    <string name="menu_shuffle_playlist">Aleatorizar playlist</string>
+    <string name="menu_shuffle_playlist">Reproduzir lista de reprodução aleatoriamente</string>
     <string name="menu_shuffle_album">Reproduzir álbum aleatoriamente</string>
     <string name="menu_shuffle_artist">Reproduzir artista aleatoriamente</string>
     <string name="menu_shuffle_top_tracks">Aleatório nas mais tocadas</string>
@@ -37,9 +37,9 @@
     <string name="menu_sort_by">Ordenar por</string>
     <string name="menu_clear_list">Limpar lista</string>
     <string name="menu_clear_queue">Limpar fila</string>
-    <string name="menu_save_queue">Salvar fila na playlist</string>
+    <string name="menu_save_queue">Salvar fila na lista de reprodução</string>
     <string name="menu_equalizer">Equalizador</string>
-    <string name="add_to_playlist">Adicionar à playlist</string>
+    <string name="add_to_playlist">Adicionar à lista de reprodução</string>
     <string name="add_to_queue">Adicionar à fila</string>
     <string name="remove_from_queue">Remover da fila</string>
     <string name="sort_order_entry_az">A-Z</string>
@@ -54,13 +54,13 @@
     <string name="playlist_last_added">Últimas adicionadas</string>
     <string name="playlist_recently_played">Tocadas recentemente</string>
     <string name="playlist_top_tracks">Minhas mais tocadas</string>
-    <string name="new_playlist">Nova playlist</string>
+    <string name="new_playlist">Nova lista de reprodução</string>
     <string name="save">Salvar</string>
     <string name="cancel">Cancelar</string>
     <string name="overwrite">Substituir</string>
     <string name="clear">Limpar</string>
-    <string name="new_playlist_name_template">Playlist <xliff:g id="number">%d</xliff:g></string>
-    <string name="create_playlist_prompt">Nome da playlist</string>
+    <string name="new_playlist_name_template">Lista de reprodução <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">Nome da lista de reprodução</string>
     <string name="delete_dialog_title">Excluir <xliff:g id="item" example="album">%s</xliff:g>?</string>
     <string name="clear_top_tracks_title">Limpar mais tocadas?</string>
     <string name="clear_recent_title">Limpar tocadas recentemente?</string>
@@ -80,7 +80,7 @@
     <string name="context_menu_fetch_artist_image">Buscar imagem do artista</string>
     <string name="context_menu_remove_from_recent">Remover das recentes</string>
     <string name="context_menu_use_as_ringtone">Usar como toque</string>
-    <string name="context_menu_remove_from_playlist">Remover da playlist</string>
+    <string name="context_menu_remove_from_playlist">Remover da lista de reprodução</string>
     <string name="context_menu_change_image">Alterar imagem</string>
     <string name="accessibility_play">Tocar</string>
     <string name="accessibility_pause">Pausar</string>
@@ -108,8 +108,8 @@
     <string name="no_effects_for_you">O equalizador não pôde ser aberto.</string>
     <string name="empty_recent_main">Nenhuma música recente</string>
     <string name="empty_recent">As músicas que você ouviu recentemente aparecerão aqui.</string>
-    <string name="empty_playlist_main">Nenhuma música na playlist</string>
-    <string name="empty_playlist_secondary">Para adicionar músicas a esta playlist, toque no menu de opções de uma música, álbum ou artista e selecione “Adicionar à playlist”.</string>
+    <string name="empty_playlist_main">Não há músicas na lista de reprodução</string>
+    <string name="empty_playlist_secondary">Para adicionar músicas a esta lista de reprodução, toque no menu de opções de uma música, álbum ou artista e selecione “Adicionar à lista de reprodução”.</string>
     <string name="empty_top_tracks_main">Nenhuma música mais tocada</string>
     <string name="empty_top_tracks_secondary">As músicas que você mais ouve serão adicionadas a esta lista.</string>
     <string name="empty_last_added_main">Nenhuma música adicionada recentemente</string>

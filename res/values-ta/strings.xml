@@ -68,7 +68,7 @@
     <string name="cannot_be_undone">இதைச் செயற்தவிர்க்க இயலாது</string>
     <string name="delete_warning">தேக்கிய படவுள்ளடக்கங்களை இது நிலையாக நீக்கிவிடும்</string>
     <string name="new_photo">படத்தொகுப்பிலிருந்து தேர்க</string>
-    <string name="use_default">இயல்புநிலை படத்தைப் பயன்படுத்துக</string>
+    <string name="use_default">இயல்புநிலைப் படத்தைப் பயன்படுத்துக</string>
     <string name="visualizer_perm_denied">ஒலிப்பதிவு அனுமதி மறுக்கப்பட்டது, இதை இயக்க அமைப்புகள் செயலியில் இசை மனங்காணலை இயக்குக</string>
     <string name="context_menu_play_selection">இசைக்க</string>
     <string name="context_menu_play_next">அடுத்ததை இசைக்க</string>
