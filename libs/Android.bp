@@ -1,5 +1,5 @@
 //
-// SPDX-FileCopyrightText: 2024 The LineageOS Project
+// SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -9,21 +9,21 @@ android_library_import {
     name: "Eleven_com.google.android.material_material-nodeps",
     aars: ["com/google/android/material/material/1.9.0/material-1.9.0.aar"],
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "30",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
     static_libs: [
+        "androidx-constraintlayout_constraintlayout",
         "androidx.annotation_annotation",
+        "androidx.annotation_annotation-experimental",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.coordinatorlayout_coordinatorlayout",
-        "androidx-constraintlayout_constraintlayout",
         "androidx.core_core",
         "androidx.drawerlayout_drawerlayout",
         "androidx.dynamicanimation_dynamicanimation",
-        "androidx.annotation_annotation-experimental",
         "androidx.fragment_fragment",
         "androidx.lifecycle_lifecycle-runtime",
         "androidx.recyclerview_recyclerview",
@@ -37,7 +37,7 @@ android_library_import {
 android_library {
     name: "Eleven_com.google.android.material_material",
     sdk_version: "34",
-    min_sdk_version: "14",
+    min_sdk_version: "30",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
@@ -45,15 +45,15 @@ android_library {
     manifest: "com/google/android/material/material/1.9.0/AndroidManifest.xml",
     static_libs: [
         "Eleven_com.google.android.material_material-nodeps",
+        "androidx-constraintlayout_constraintlayout",
         "androidx.annotation_annotation",
+        "androidx.annotation_annotation-experimental",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
         "androidx.coordinatorlayout_coordinatorlayout",
-        "androidx-constraintlayout_constraintlayout",
         "androidx.core_core",
         "androidx.drawerlayout_drawerlayout",
         "androidx.dynamicanimation_dynamicanimation",
-        "androidx.annotation_annotation-experimental",
         "androidx.fragment_fragment",
         "androidx.lifecycle_lifecycle-runtime",
         "androidx.recyclerview_recyclerview",
@@ -62,5 +62,4 @@ android_library {
         "androidx.viewpager2_viewpager2",
         "error_prone_annotations",
     ],
-    java_version: "1.7",
 }
