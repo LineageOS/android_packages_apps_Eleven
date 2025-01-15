@@ -79,7 +79,7 @@
     <string name="context_menu_fetch_album_art">Obtener carátula del álbum</string>
     <string name="context_menu_fetch_artist_image">Obtener foto del artista</string>
     <string name="context_menu_remove_from_recent">Quitar de recientes</string>
-    <string name="context_menu_use_as_ringtone">Usar como timbre de llamada</string>
+    <string name="context_menu_use_as_ringtone">Usar como tono de llamada</string>
     <string name="context_menu_remove_from_playlist">Quitar de la lista de reproducción</string>
     <string name="context_menu_change_image">Cambiar imagen</string>
     <string name="accessibility_play">Reproducir</string>
@@ -105,7 +105,7 @@
     <string name="app_widget_small">Música: Square</string>
     <string name="app_widget_large">Música: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">Música: 4 \u00d7 2 (alternativo)</string>
-    <string name="no_effects_for_you">El ecualizador no se ha podido abrir.</string>
+    <string name="no_effects_for_you">No se ha podido abrir el ecualizador.</string>
     <string name="empty_recent_main">No hay canciones recientes</string>
     <string name="empty_recent">Las canciones que hayas escuchado recientemente aparecerán aquí.</string>
     <string name="empty_playlist_main">No hay canciones en la lista de reproducción</string>
