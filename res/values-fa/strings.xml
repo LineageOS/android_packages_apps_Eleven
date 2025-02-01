@@ -23,19 +23,37 @@
     <string name="header_albums">آلبوم‌ها</string>
     <string name="menu_settings">تنظیمات</string>
     <string name="menu_equalizer">اکولایزر</string>
+    <string name="add_to_playlist">افزودن به فهرست پخش</string>
     <string name="add_to_queue">افزودن به صف</string>
+    <string name="remove_from_queue">برداشتن از صف</string>
+    <string name="sort_order_entry_az">آ-ی</string>
+    <string name="sort_order_entry_za">ی-آ</string>
     <string name="sort_order_entry_artist">هنرمند</string>
     <string name="sort_order_entry_album">آلبوم</string>
     <string name="sort_order_entry_year">سال</string>
+    <string name="sort_order_entry_duration">طول</string>
+    <string name="sort_order_entry_number_of_songs">تعداد آهنگ‌ها</string>
     <string name="sort_order_entry_number_of_albums">تعداد آلبوم‌ها</string>
+    <string name="sort_order_entry_filename">نام پرونده</string>
+    <string name="playlist_last_added">آخرین افزوده</string>
     <string name="playlist_recently_played">اخیراً پخش‌شده</string>
+    <string name="playlist_top_tracks">قطعه‌های برتر من</string>
+    <string name="new_playlist">فهرست پخش جدید</string>
     <string name="save">ذخیره</string>
     <string name="cancel">لغو</string>
     <string name="overwrite">رونویسی</string>
     <string name="clear">پاک‌سازی</string>
+    <string name="new_playlist_name_template">فهرست پخش <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">نام فهرست پخش</string>
+    <string name="delete_dialog_title">حذف <xliff:g id="item" example="album">%s</xliff:g>؟</string>
+    <string name="clear_top_tracks_title">پاک‌سازی قطعه‌های برتر؟</string>
+    <string name="clear_recent_title">پاک‌سازی اخیراً پخش‌شده‌ها؟</string>
+    <string name="clear_last_added">پاک‌سازی آخرین افزوده‌ها؟</string>
     <string name="cannot_be_undone">این کار برگشت‌پذیر نیست</string>
     <string name="delete_warning">این کار تصاویر ذخیره شده را برای همیشه حذف می‌کند</string>
+    <string name="new_photo">گزینش عکس از گالری</string>
     <string name="use_default">استفاده از عکس پیش‌فرض</string>
+    <string name="visualizer_perm_denied">مجوز ضبط صدا رد شد، برای فعال سازی تجسم موسیقی آن را از نرم‌افزار \"تنظیمات\" فعال کنید.</string>
     <string name="context_menu_play_selection">پخش</string>
     <string name="context_menu_play_next">پخش بعدی</string>
     <string name="context_menu_play_album">پخش آلبوم</string>
@@ -44,11 +62,16 @@
     <string name="context_menu_delete">حذف</string>
     <string name="context_menu_fetch_album_art">دریافت تصویر آلبوم</string>
     <string name="context_menu_fetch_artist_image">دریافت تصویر هنرمند</string>
+    <string name="context_menu_remove_from_recent">برداشتن از اخیر</string>
     <string name="context_menu_use_as_ringtone">استفاده به عنوان صدای زنگ</string>
+    <string name="context_menu_remove_from_playlist">برداشتن از لیست‌‍پخش</string>
     <string name="context_menu_change_image">تغییر تصویر</string>
     <string name="accessibility_play">پخش</string>
     <string name="accessibility_pause">مکث</string>
     <string name="accessibility_next">بعدی</string>
+    <string name="accessibility_prev">پیشین</string>
+    <string name="accessibility_shuffle">تصادفی</string>
+    <string name="accessibility_shuffle_all">همه تصادفی</string>
     <string name="accessibility_repeat">تکرار</string>
     <string name="accessibility_repeat_all">تکرار همه</string>
     <string name="accessibility_repeat_one">تکرار یکی</string>
@@ -58,6 +81,8 @@
     <string name="settings_delete_cache_summary">حذف همه تصاویر ذخیره شده</string>
     <string name="settings_general_category">عمومي</string>
     <string name="settings_show_music_visualization_title">نمایش رقص نور موسیقی</string>
+    <string name="settings_use_blur_title">تاری پس‌زمینه</string>
+    <string name="settings_show_lyrics_title">نمایش ترانهٔ آهنگ</string>
     <string name="settings_show_lyrics_summary">برای آهنگ‌های دارای فایل srt</string>
     <string name="settings_shake_to_play">برای پخش بلرزانید</string>
     <string name="settings_shake_to_play_summary">برای پخش آهنگ بعدی، دستگاه خود را بلرزانید</string>
@@ -95,4 +120,5 @@
     <string name="header_5_plus_albums">+۵ آلبوم</string>
     <string name="header_other">"دیگر"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">پخش آهنگ</string>
 </resources>
