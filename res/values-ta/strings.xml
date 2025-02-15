@@ -18,7 +18,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">இசை</string>
-    <string name="page_artists">கலைஞர்</string>
+    <string name="page_artists">கலைஞர்கள்</string>
     <string name="page_albums">தொகுப்புகள்</string>
     <string name="page_songs">பாடல்கள்</string>
     <string name="page_playlists">இசைப்பட்டியல்கள்</string>
@@ -44,7 +44,7 @@
     <string name="remove_from_queue">சாரையிலிருந்து நீக்குக</string>
     <string name="sort_order_entry_az">A-Z</string>
     <string name="sort_order_entry_za">Z-A</string>
-    <string name="sort_order_entry_artist">கலைஞன்</string>
+    <string name="sort_order_entry_artist">கலைஞர்</string>
     <string name="sort_order_entry_album">தொகுப்பு</string>
     <string name="sort_order_entry_year">ஆண்டு</string>
     <string name="sort_order_entry_duration">கால அளவு</string>
@@ -69,15 +69,15 @@
     <string name="delete_warning">தேக்கிய படவுள்ளடக்கங்களை இது நிலையாக நீக்கிவிடும்</string>
     <string name="new_photo">படத்தொகுப்பிலிருந்து தேர்க</string>
     <string name="use_default">இயல்புநிலைப் படத்தைப் பயன்படுத்துக</string>
-    <string name="visualizer_perm_denied">ஒலிப்பதிவு அனுமதி மறுக்கப்பட்டது, இதை இயக்க அமைப்புகள் செயலியில் இசை மனங்காணலை இயக்குக</string>
+    <string name="visualizer_perm_denied">ஒலிப்பதிவு அனுமதி மறுக்கப்பட்டது, இதை இயக்க அமைப்புகள் செயலியில் இசை அகக்காணலை இயக்குக</string>
     <string name="context_menu_play_selection">இசைக்க</string>
     <string name="context_menu_play_next">அடுத்ததை இசைக்க</string>
     <string name="context_menu_play_album">தொகுப்பை இசைக்க</string>
-    <string name="context_menu_more_by_artist">கலைஞனால் மேலும்</string>
+    <string name="context_menu_more_by_artist">கலைஞரால் மேலும்</string>
     <string name="context_menu_rename_playlist">மறுபெயரிடுக</string>
     <string name="context_menu_delete">நீக்குக</string>
     <string name="context_menu_fetch_album_art">தொகுப்புக் கலையைக் கொணர்க</string>
-    <string name="context_menu_fetch_artist_image">கலைஞன் படத்தைக் கொணர்க</string>
+    <string name="context_menu_fetch_artist_image">கலைஞர் படத்தைக் கொணர்க</string>
     <string name="context_menu_remove_from_recent">அண்மையிலிருந்து அகற்றுக</string>
     <string name="context_menu_use_as_ringtone">கறங்குதொனியாகப் பயன்படுத்துக</string>
     <string name="context_menu_remove_from_playlist">இசைப்பட்டியலிலிருந்து அகற்றுக</string>
@@ -91,7 +91,7 @@
     <string name="accessibility_repeat">மீண்டும்</string>
     <string name="accessibility_repeat_all">யாவும் மறுபடி இசைக்க</string>
     <string name="accessibility_repeat_one">ஒன்றை மறுபடி இசைக்க</string>
-    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' கறங்குதொனியாக அமைந்தது</string>
+    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' கறங்குதொனியாக அமைக்கப்பட்டது</string>
     <string name="settings_storage_category">சேமிப்பிடம்</string>
     <string name="settings_delete_cache_title">தேக்கத்தை நீக்குக</string>
     <string name="settings_delete_cache_summary">தேக்கப்பட்ட படங்கள் முழுதும் நீக்குக</string>
@@ -113,9 +113,9 @@
     <string name="empty_top_tracks_main">முதன்மைத் தடங்கள் இல்லை</string>
     <string name="empty_top_tracks_secondary">நீர் அடிக்கடி கேட்கும் பாடல்கள் இப்பட்டியலில் சேர்க்கப்படும்.</string>
     <string name="empty_last_added_main">அண்மையில் பாடல்கள் எவையும் சேர்க்கப்படவில்லை</string>
-    <string name="empty_last_added">சென்ற மாதம் நீர் சேர்த்த பாடல்கள் இங்கே காட்டபப்டும்.</string>
+    <string name="empty_last_added">சென்ற திங்கள் நீர் சேர்த்த பாடல்கள் இங்கே காட்டபப்டும்.</string>
     <string name="empty_generic_main">இசை எதுவும் கிடைக்கவில்லை</string>
-    <string name="empty_generic_secondary">உம் கணினியிலிருந்து இசையை உம் கருவிக்கு நகலெடுக்க, ஒரு USB கம்பி இழையைப் பயன்படுத்துக.</string>
+    <string name="empty_generic_secondary">உம் கணினியிலிருந்து உம் கருவிக்கு இசையைப் படியெடுக்க, ஒரு USB கம்பி இழையைப் பயன்படுத்துக.</string>
     <string name="empty_queue_main">இசைச்சாரையில் பாடல்கள் இல்லை</string>
     <string name="empty_queue_secondary">இச்சாரையில் பாடல்களைச் சேர்க்க, பாடல் மீதோ, தொகுப்பு மீதோ, கலைஞர் மீதோ தேர்வுப்பட்டியலைத் தட்டி, \"சாரையில் சேர்க்க\" என்பதைத் தேர்க.</string>
     <string name="error_playing_track">%1$s தடத்தை இசைக்க முடியவில்லை</string>
@@ -137,7 +137,7 @@
     <string name="header_5_plus_albums">5+ தொகுப்பு</string>
     <string name="header_other">" மற்றவை"</string>
     <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
-    <string name="channel_music">இசைப்பதிவு மீட்பொலி</string>
+    <string name="channel_music">இசைப்பதிவு மீளொலி</string>
     <string name="widget_track_name">தடப்பெயர்</string>
     <string name="widget_artist_name">கலைஞர் பெயர்</string>
     <string name="widget_album_name">தொகுப்புப் பெயர்</string>
