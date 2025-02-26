@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <plurals name="Nalbums">
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> albam</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> albam</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> albam</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> albam</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> albam</item>
+    </plurals>
+    <plurals name="Nsongs">
+        <item quantity="one"><xliff:g id="count">%d</xliff:g> amhrán</item>
+        <item quantity="two"><xliff:g id="count">%d</xliff:g> amhráin</item>
+        <item quantity="few"><xliff:g id="count">%d</xliff:g> amhráin</item>
+        <item quantity="many"><xliff:g id="count">%d</xliff:g> amhráin</item>
+        <item quantity="other"><xliff:g id="count">%d</xliff:g> amhráin</item>
+    </plurals>
+    <plurals name="Nhours">
+        <item quantity="one"><xliff:g id="hours">%d</xliff:g>u</item>
+        <item quantity="two"><xliff:g id="hours">%d</xliff:g>u</item>
+        <item quantity="few"><xliff:g id="hours">%d</xliff:g>u</item>
+        <item quantity="many"><xliff:g id="hours">%d</xliff:g>u</item>
+        <item quantity="other"><xliff:g id="hours">%d</xliff:g>u</item>
+    </plurals>
+    <plurals name="Nminutes">
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g>n</item>
+        <item quantity="two"><xliff:g id="minutes">%d</xliff:g>n</item>
+        <item quantity="few"><xliff:g id="minutes">%d</xliff:g>n</item>
+        <item quantity="many"><xliff:g id="minutes">%d</xliff:g>n</item>
+        <item quantity="other"><xliff:g id="minutes">%d</xliff:g>n</item>
+    </plurals>
+    <plurals name="NNNtrackstoplaylist">
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> amhrán curtha leis an seinnliosta.</item>
+        <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an seinmliosta.</item>
+        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an seinmliosta.</item>
+        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an seinmliosta.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an seinmliosta.</item>
+    </plurals>
+    <plurals name="NNNtracksfromplaylist">
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> amhrán bainte den seinnliosta.</item>
+        <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> amhráin bainte den seinnliosta.</item>
+        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> amhráin bainte den seinnliosta.</item>
+        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> amhráin bainte den seinnliosta.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> amhráin bainte den seinnliosta.</item>
+    </plurals>
+    <plurals name="NNNtrackstoqueue">
+        <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> amhrán curtha leis an scuaine.</item>
+        <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an scuaine.</item>
+        <item quantity="few"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an scuaine.</item>
+        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an scuaine.</item>
+        <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> amhráin curtha leis an scuaine.</item>
+    </plurals>
+    <plurals name="NNNtracksdeleted">
+        <item quantity="one">Scriosadh <xliff:g id="songs_to_delete" example="1">%d</xliff:g> amhrán.</item>
+        <item quantity="two">Scriosadh <xliff:g id="songs_to_delete">%d</xliff:g> amhráin.</item>
+        <item quantity="few">Scriosadh <xliff:g id="songs_to_delete">%d</xliff:g> amhráin.</item>
+        <item quantity="many">Scriosadh <xliff:g id="songs_to_delete">%d</xliff:g> amhráin.</item>
+        <item quantity="other">Scriosadh <xliff:g id="songs_to_delete">%d</xliff:g> amhráin.</item>
+    </plurals>
+</resources>

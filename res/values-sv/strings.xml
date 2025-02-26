@@ -69,6 +69,7 @@
     <string name="delete_warning">Detta kommer ta bort cachade bilder permanent</string>
     <string name="new_photo">Välj foto från Galleri</string>
     <string name="use_default">Använd standardfoto</string>
+    <string name="visualizer_perm_denied">Behörighet för ljudinspelning nekades, aktivera den i appen Inställningar för att aktivera musikvisualisering</string>
     <string name="context_menu_play_selection">Spela</string>
     <string name="context_menu_play_next">Spela nästa</string>
     <string name="context_menu_play_album">Spela album</string>
