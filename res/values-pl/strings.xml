@@ -96,9 +96,9 @@
     <string name="settings_delete_cache_title">Wyczyść pamięć podręczną</string>
     <string name="settings_delete_cache_summary">Usuń wszystkie zapisane grafiki</string>
     <string name="settings_general_category">Ogólne</string>
-    <string name="settings_show_music_visualization_title">Pokaż wizualizacje muzyki</string>
+    <string name="settings_show_music_visualization_title">Pokazuj wizualizacje muzyki</string>
     <string name="settings_use_blur_title">Rozmyj tło</string>
-    <string name="settings_show_lyrics_title">Pokaż teksty piosenek</string>
+    <string name="settings_show_lyrics_title">Pokazuj teksty piosenek</string>
     <string name="settings_show_lyrics_summary">Utwory, które mają plik srt</string>
     <string name="settings_shake_to_play">Potrząśnij, aby rozpocząć odtwarzanie</string>
     <string name="settings_shake_to_play_summary">Potrząśnij urządzeniem, aby odtworzyć następny utwór</string>
