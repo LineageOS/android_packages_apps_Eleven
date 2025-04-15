@@ -83,7 +83,7 @@
     <string name="context_menu_remove_from_playlist">Fjarlægja af spilunarlistanum</string>
     <string name="context_menu_change_image">Skipta um mynd</string>
     <string name="accessibility_play">Afspilun</string>
-    <string name="accessibility_pause">Í bið</string>
+    <string name="accessibility_pause">Bíða</string>
     <string name="accessibility_next">Næsta</string>
     <string name="accessibility_prev">Fyrra</string>
     <string name="accessibility_shuffle">Stokka</string>

@@ -31,7 +31,6 @@
     <string name="menu_shuffle_playlist">Перамяшаць спіс прайгравання</string>
     <string name="menu_shuffle_album">Перамяшаць альбом</string>
     <string name="menu_shuffle_artist">Перамяшаць выканаўца</string>
-    <string name="menu_shuffle_top_tracks">Перамяшаць лепшыя кампазіцыі</string>
     <string name="menu_shuffle_recent">Перамяшаць, якія нядаўна гучалі</string>
     <string name="menu_shuffle_last_added">Перамяшаць апошнія дададзеныя</string>
     <string name="menu_sort_by">Сартаваць па</string>
@@ -45,7 +44,6 @@
     <string name="sort_order_entry_az">А-Я</string>
     <string name="sort_order_entry_za">Я-А</string>
     <string name="sort_order_entry_artist">Выканаўца</string>
-    <string name="sort_order_entry_album">Альбому</string>
     <string name="sort_order_entry_year">Году</string>
     <string name="sort_order_entry_duration">Працягласць</string>
     <string name="sort_order_entry_number_of_songs">Колькасці песень</string>
@@ -53,7 +51,6 @@
     <string name="sort_order_entry_filename">Назва файла</string>
     <string name="playlist_last_added">Апошнія дададзеныя</string>
     <string name="playlist_recently_played">Апошнія прайграныя</string>
-    <string name="playlist_top_tracks">Мае лепшыя кампазіцыі</string>
     <string name="new_playlist">Новы спіс прайгравання</string>
     <string name="save">Захаваць</string>
     <string name="cancel">Скасаваць</string>
@@ -62,7 +59,6 @@
     <string name="new_playlist_name_template">Спіс прайгравання <xliff:g id="number">%d</xliff:g></string>
     <string name="create_playlist_prompt">Назва спіса прайгравання</string>
     <string name="delete_dialog_title">Выдаліць <xliff:g id="item" example="album">%s</xliff:g>?</string>
-    <string name="clear_top_tracks_title">Ачысціць лепшыя кампазіцыі?</string>
     <string name="clear_recent_title">Ачысціць нядаўна прайграныя?</string>
     <string name="clear_last_added">Ачысціць нядаўна дададзеныя?</string>
     <string name="cannot_be_undone">Гэта дзеянне немагчыма адрабіць</string>
@@ -118,7 +114,6 @@
     <string name="header_10_to_30_minutes">10 - 30 хвілін</string>
     <string name="header_30_to_60_minutes">30 - 60 хвілін</string>
     <string name="header_greater_than_60_minutes">Больш за 60 хвілін</string>
-    <string name="header_1_song">1 песня</string>
     <string name="header_2_to_4_songs">2 - 4 песні</string>
     <string name="header_5_to_9_songs">5 - 9 песень</string>
     <string name="header_10_plus_songs">Больш за 10 песень</string>
