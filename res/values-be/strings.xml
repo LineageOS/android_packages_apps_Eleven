@@ -46,8 +46,6 @@
     <string name="sort_order_entry_artist">Выканаўца</string>
     <string name="sort_order_entry_year">Году</string>
     <string name="sort_order_entry_duration">Працягласць</string>
-    <string name="sort_order_entry_number_of_songs">Колькасці песень</string>
-    <string name="sort_order_entry_number_of_albums">Колькасці альбомаў</string>
     <string name="sort_order_entry_filename">Назва файла</string>
     <string name="playlist_last_added">Апошнія дададзеныя</string>
     <string name="playlist_recently_played">Апошнія прайграныя</string>
@@ -68,11 +66,9 @@
     <string name="context_menu_play_selection">Прайграць</string>
     <string name="context_menu_play_next">Прайграць наступным</string>
     <string name="context_menu_play_album">Прайграць альбом</string>
-    <string name="context_menu_more_by_artist">Усе кампазіцыі выканаўцы</string>
     <string name="context_menu_rename_playlist">Перайменаваць</string>
     <string name="context_menu_delete">Выдаліць</string>
     <string name="context_menu_fetch_album_art">Атрымаць вокладку альбома</string>
-    <string name="context_menu_fetch_artist_image">Атрымаць фота выканаўцы</string>
     <string name="context_menu_remove_from_recent">Выдаліць з нядаўніх</string>
     <string name="context_menu_use_as_ringtone">Выкарыстоўваць як мелодыю выкліку</string>
     <string name="context_menu_remove_from_playlist">Выдаліць са спіса прайгравання</string>
