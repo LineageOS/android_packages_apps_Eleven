@@ -29,8 +29,8 @@
         <item quantity="other"><xliff:g id="hours">%d</xliff:g> மணி</item>
     </plurals>
     <plurals name="Nminutes">
-        <item quantity="one"><xliff:g id="minutes">%d</xliff:g> நுணுத்தம்</item>
-        <item quantity="other"><xliff:g id="minutes">%d</xliff:g> நுணுத்தம்</item>
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g>நி</item>
+        <item quantity="other"><xliff:g id="minutes">%d</xliff:g>நி</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
         <item quantity="one"><xliff:g id="number" example="1">%d</xliff:g> பாடல் இசைப்பட்டியலில் சேர்க்கப்பட்டது.</item>
