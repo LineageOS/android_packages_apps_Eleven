@@ -61,12 +61,12 @@
     <string name="clear">Limpar</string>
     <string name="new_playlist_name_template">Playlist <xliff:g id="number">%d</xliff:g></string>
     <string name="create_playlist_prompt">Nome da playlist</string>
-    <string name="delete_dialog_title">Excluir <xliff:g id="item" example="album">%s</xliff:g>?</string>
+    <string name="delete_dialog_title">Apagar <xliff:g id="item" example="album">%s</xliff:g>?</string>
     <string name="clear_top_tracks_title">Limpar mais tocadas?</string>
     <string name="clear_recent_title">Limpar tocadas recentemente?</string>
     <string name="clear_last_added">Limpar últimas adicionadas?</string>
     <string name="cannot_be_undone">Não pode ser desfeito</string>
-    <string name="delete_warning">Isso excluirá permanentemente as imagens em cache</string>
+    <string name="delete_warning">Isso apagará permanentemente as imagens em cache</string>
     <string name="new_photo">Selecionar foto da Galeria</string>
     <string name="use_default">Usar foto padrão</string>
     <string name="visualizer_perm_denied">A permissão de gravação de áudio foi negada, habilite-a no app Configurações para ativar a visualização de música</string>
@@ -75,7 +75,7 @@
     <string name="context_menu_play_album">Tocar o álbum</string>
     <string name="context_menu_more_by_artist">Mais do artista</string>
     <string name="context_menu_rename_playlist">Renomear</string>
-    <string name="context_menu_delete">Excluir</string>
+    <string name="context_menu_delete">Apagar</string>
     <string name="context_menu_fetch_album_art">Buscar a arte do álbum</string>
     <string name="context_menu_fetch_artist_image">Buscar imagem do artista</string>
     <string name="context_menu_remove_from_recent">Remover das recentes</string>
