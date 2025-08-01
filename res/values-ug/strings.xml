@@ -69,6 +69,7 @@
     <string name="delete_warning">بۇ مەشغۇلات غەملەنگەن سۈرەت تۈرلىرىنى مەڭگۈلۈك ئۆچۈرۈۋېتىدۇ</string>
     <string name="new_photo">رەسىم يىغقۇچتىن سۈرەت تاللاڭ</string>
     <string name="use_default">كۆڭۈلدىكى سۈرەتنى ئىشلەت</string>
+    <string name="visualizer_perm_denied">ئۈنگە ئېلىش ئىجازىتى رەت قىلىندى، نەغمە كۆرۈنۈشچانلىقىنى قوزغىتىش ئۈچۈن تەڭشەكتىن قوزغىتىش كېرەك</string>
     <string name="context_menu_play_selection">قويۇش</string>
     <string name="context_menu_play_next">كېيىنكىنى چال</string>
     <string name="context_menu_play_album">پىلاستىنكىنى قويۇش</string>
@@ -96,10 +97,12 @@
     <string name="settings_delete_cache_summary">غەملەنگەن ھەممە سۈرەتلەرنى چىقىرىۋەت</string>
     <string name="settings_general_category">ئادەتتىكى</string>
     <string name="settings_show_music_visualization_title">مۇزىكىنىڭ كۆرۈنۈش ئۈنۈمىنى كۆرسىتىش</string>
+    <string name="settings_use_blur_title">غۇۋا تەگلىك</string>
     <string name="settings_show_lyrics_title">تېكىسىت كۆرسىتىش</string>
     <string name="settings_show_lyrics_summary">بىر srt ھۆججەت ناخشىغا ماس كىلىدۇ</string>
     <string name="settings_shake_to_play">سىلكىپ قويۇش</string>
     <string name="settings_shake_to_play_summary">تېلېفوننى سىلكىپ كىيىنكى ناخشىنى قويۇڭ</string>
+    <string name="app_widget_small">نەغمە: كىۋادرات</string>
     <string name="app_widget_large">مۇزىكا: 4 \u00d7 2</string>
     <string name="app_widget_large_alt">مۇزىكا: 4 \u00d7 2 (نۆۋەتلىشىدۇ)</string>
     <string name="no_effects_for_you">تەڭشىگۈچنى ئاچالمىدى.</string>
@@ -134,4 +137,8 @@
     <string name="header_5_plus_albums">5+ پىلاستىنكا</string>
     <string name="header_other">"باشقا"</string>
     <string name="duration_format"><xliff:g id="HOURS">%1$s</xliff:g> سائەت <xliff:g id="MINUTES">%2$s</xliff:g> مىنۇت</string>
+    <string name="channel_music">نەغمە قويۇش</string>
+    <string name="widget_track_name">نەغمە ئاتى</string>
+    <string name="widget_artist_name">سەنئەتكار ئاتى</string>
+    <string name="widget_album_name">ئالبوم ئاتى</string>
 </resources>
