@@ -35,7 +35,7 @@
         <item quantity="other"><xliff:g id="hours">%d</xliff:g> ש\'</item>
     </plurals>
     <plurals name="Nminutes">
-        <item quantity="one">דק\' <xliff:g id="minutes">%d</xliff:g></item>
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g> דק</item>
         <item quantity="two"><xliff:g id="minutes">%d</xliff:g> דק\'</item>
         <item quantity="many"><xliff:g id="minutes">%d</xliff:g> דק\'</item>
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g> דק\'</item>
