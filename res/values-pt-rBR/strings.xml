@@ -69,7 +69,7 @@
     <string name="delete_warning">Isso apagará permanentemente as imagens em cache</string>
     <string name="new_photo">Selecionar foto da Galeria</string>
     <string name="use_default">Usar foto padrão</string>
-    <string name="visualizer_perm_denied">A permissão de gravação de áudio foi negada, habilite-a no app Configurações para ativar a visualização de música</string>
+    <string name="visualizer_perm_denied">A permissão de gravação de áudio foi negada, ative-a no app de Configurações para ativar a visualização de música</string>
     <string name="context_menu_play_selection">Tocar</string>
     <string name="context_menu_play_next">Tocar seguinte</string>
     <string name="context_menu_play_album">Tocar o álbum</string>
@@ -91,7 +91,7 @@
     <string name="accessibility_repeat">Repetir</string>
     <string name="accessibility_repeat_all">Repetir todas</string>
     <string name="accessibility_repeat_one">Repetir uma</string>
-    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' foi definido como toque de celular</string>
+    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' foi configurado como toque de celular</string>
     <string name="settings_storage_category">Armazenamento</string>
     <string name="settings_delete_cache_title">Apagar cache</string>
     <string name="settings_delete_cache_summary">Remover todas as imagens em cache</string>
