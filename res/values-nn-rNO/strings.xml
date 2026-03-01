@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2012-2013 Andrew Neal
+     Copyright (C) 2012-2014 The CyanogenMod Project
+     Copyright (C) 2017-2020 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Musikk</string>
+    <string name="page_artists">Artistar</string>
+    <string name="page_albums">Album</string>
+    <string name="page_songs">Songar</string>
+    <string name="page_playlists">Spelelister</string>
+    <string name="page_play_queue">Spelekø</string>
+    <string name="header_albums">Album</string>
+    <string name="header_all_songs">Alle songane</string>
+    <string name="menu_settings">Innstillingar</string>
+    <string name="menu_shuffle_item">Bland</string>
+    <string name="menu_shuffle_all">Bland alt</string>
+    <string name="menu_shuffle_playlist">Bland speleliste</string>
+    <string name="menu_shuffle_album">Bland album</string>
+    <string name="menu_shuffle_artist">Bland artist</string>
+    <string name="menu_shuffle_top_tracks">Bland toppsongar</string>
+    <string name="menu_shuffle_recent">Bland nyleg spelte</string>
+    <string name="menu_shuffle_last_added">Bland sist lagde til</string>
+    <string name="menu_sort_by">Sorter etter</string>
+    <string name="menu_clear_list">Tøm lista</string>
+    <string name="menu_clear_queue">Tøm køen</string>
+    <string name="menu_save_queue">Lagra køen i speleliste</string>
+    <string name="menu_equalizer">Equalizer</string>
+    <string name="add_to_playlist">Legg til i speleliste</string>
+    <string name="add_to_queue">Legg til i køen</string>
+    <string name="remove_from_queue">Fjern frå køen</string>
+    <string name="sort_order_entry_az">A–Å</string>
+    <string name="sort_order_entry_za">Å–A</string>
+    <string name="sort_order_entry_artist">Artist</string>
+    <string name="sort_order_entry_album">Album</string>
+    <string name="sort_order_entry_year">År</string>
+    <string name="sort_order_entry_duration">Lengd</string>
+    <string name="sort_order_entry_number_of_songs">Talet på songar</string>
+    <string name="sort_order_entry_number_of_albums">Talet på album</string>
+    <string name="sort_order_entry_filename">Filnamn</string>
+    <string name="playlist_last_added">Sist lagde til</string>
+    <string name="playlist_recently_played">Nyleg spelte</string>
+    <string name="playlist_top_tracks">Toppsongane mine</string>
+    <string name="new_playlist">Ny speleliste</string>
+    <string name="save">Lagra</string>
+    <string name="cancel">Avbryt</string>
+    <string name="overwrite">Skriv over</string>
+    <string name="clear">Tøm</string>
+    <string name="new_playlist_name_template">Speleliste <xliff:g id="number">%d</xliff:g></string>
+    <string name="create_playlist_prompt">Namn på speleliste</string>
+    <string name="delete_dialog_title">Sletta <xliff:g id="item" example="album">%s</xliff:g>?</string>
+    <string name="clear_top_tracks_title">Tøma toppsongane?</string>
+    <string name="clear_recent_title">Tøma nyleg spelte?</string>
+    <string name="clear_last_added">Tøma sist lagde til?</string>
+    <string name="cannot_be_undone">Dette kan ikkje angrast</string>
+    <string name="delete_warning">Dette slettar dei mellomlagra bileta for godt</string>
+    <string name="new_photo">Vel bilete frå galleriet</string>
+    <string name="use_default">Bruk standardbilete</string>
+    <string name="visualizer_perm_denied">Løyvet til lydopptak er avslått. Slå det på i Innstillingar-appen for å nytta musikkvisualisering.</string>
+    <string name="context_menu_play_selection">Spel av</string>
+    <string name="context_menu_play_next">Spel som neste</string>
+    <string name="context_menu_play_album">Spel album</string>
+    <string name="context_menu_more_by_artist">Meir av artisten</string>
+    <string name="context_menu_rename_playlist">Gje nytt namn</string>
+    <string name="context_menu_delete">Slett</string>
+    <string name="context_menu_fetch_album_art">Hent albumbilete</string>
+    <string name="context_menu_fetch_artist_image">Hent artistbilete</string>
+    <string name="context_menu_remove_from_recent">Fjern frå nylege</string>
+    <string name="context_menu_use_as_ringtone">Bruk som ringjetone</string>
+    <string name="context_menu_remove_from_playlist">Fjern frå spelelista</string>
+    <string name="context_menu_change_image">Byt bilete</string>
+    <string name="accessibility_play">Spel av</string>
+    <string name="accessibility_pause">Pause</string>
+    <string name="accessibility_next">Neste</string>
+    <string name="accessibility_prev">Førre</string>
+    <string name="accessibility_shuffle">Bland</string>
+    <string name="accessibility_shuffle_all">Bland alt</string>
+    <string name="accessibility_repeat">Gjenta</string>
+    <string name="accessibility_repeat_all">Gjenta alt</string>
+    <string name="accessibility_repeat_one">Gjenta éin</string>
+    <string name="set_as_ringtone">«<xliff:g id="name" example="Alarm Bell">%s</xliff:g>» sett som ringjetone</string>
+    <string name="settings_storage_category">Lagring</string>
+    <string name="settings_delete_cache_title">Slett snøgglager</string>
+    <string name="settings_delete_cache_summary">Fjern alle mellomlagra bilete</string>
+    <string name="settings_general_category">Generelt</string>
+    <string name="settings_show_music_visualization_title">Vis musikkvisualisering</string>
+    <string name="settings_use_blur_title">Gjer bakgrunnen uskarp</string>
+    <string name="settings_show_lyrics_title">Vis songtekstar</string>
+    <string name="settings_show_lyrics_summary">For songar som har ei srt-fil</string>
+    <string name="settings_shake_to_play">Rist for å spela av</string>
+    <string name="settings_shake_to_play_summary">Rist eininga di for å spela neste song</string>
+    <string name="app_widget_small">Musikk: Firkant</string>
+    <string name="app_widget_large">Musikk: 4 \u00d7 2</string>
+    <string name="app_widget_large_alt">Musikk: 4 \u00d7 2 (alternativ)</string>
+    <string name="no_effects_for_you">Klarte ikkje opna equalizeren.</string>
+    <string name="empty_recent_main">Ingen nylege songar</string>
+    <string name="empty_recent">Songar du har høyrt på nyleg, vert viste her.</string>
+    <string name="empty_playlist_main">Ingen songar i spelelista</string>
+    <string name="empty_playlist_secondary">Trykk på valmenyen for ein song, eit album eller ein artist, og vel «Legg til i speleliste» for å leggja til songar i denne spelelista.</string>
+    <string name="empty_top_tracks_main">Ingen toppsongar</string>
+    <string name="empty_top_tracks_secondary">Songane du høyrer mest på, vert lagde til i denne lista.</string>
+    <string name="empty_last_added_main">Ingen songar nyleg lagde til</string>
+    <string name="empty_last_added">Songar du har lagt til den siste månaden, vert viste her.</string>
+    <string name="empty_generic_main">Fann ingen musikk</string>
+    <string name="empty_generic_secondary">Bruk ein USB-kabel for å kopiera musikk frå datamaskina til eininga di.</string>
+    <string name="empty_queue_main">Ingen songar i spelekøen</string>
+    <string name="empty_queue_secondary">Trykk på valmenyen for ein song, eit album eller ein artist, og vel «Legg til i køen» for å leggja til songar i spelekøen.</string>
+    <string name="error_playing_track">Klarte ikkje spela av sporet %1$s</string>
+    <string name="header_unknown_year">Ukjent år</string>
+    <string name="header_less_than_30s">Mindre enn 30 sekund</string>
+    <string name="header_30_to_60_seconds">30–60 sekund</string>
+    <string name="header_1_to_2_minutes">1–2 minutt</string>
+    <string name="header_2_to_3_minutes">2–3 minutt</string>
+    <string name="header_3_to_4_minutes">3–4 minutt</string>
+    <string name="header_4_to_5_minutes">4–5 minutt</string>
+    <string name="header_5_to_10_minutes">5–10 minutt</string>
+    <string name="header_10_to_30_minutes">10–30 minutt</string>
+    <string name="header_30_to_60_minutes">30–60 minutt</string>
+    <string name="header_greater_than_60_minutes">Meir enn 60 minutt</string>
+    <string name="header_1_song">1 song</string>
+    <string name="header_2_to_4_songs">2–4 songar</string>
+    <string name="header_5_to_9_songs">5–9 songar</string>
+    <string name="header_10_plus_songs">10+ songar</string>
+    <string name="header_5_plus_albums">5+ album</string>
+    <string name="header_other">"Anna"</string>
+    <string name="duration_format"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="channel_music">Musikkavspeling</string>
+    <string name="widget_track_name">Spornamn</string>
+    <string name="widget_artist_name">Artistnamn</string>
+    <string name="widget_album_name">Albumnamn</string>
+</resources>
