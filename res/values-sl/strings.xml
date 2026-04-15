@@ -47,7 +47,7 @@
     <string name="sort_order_entry_artist">Izvajalec</string>
     <string name="sort_order_entry_album">Album</string>
     <string name="sort_order_entry_year">Leto</string>
-    <string name="sort_order_entry_duration">Trajanje</string>
+    <string name="sort_order_entry_duration">Dolžina</string>
     <string name="sort_order_entry_number_of_songs">številu skladb</string>
     <string name="sort_order_entry_number_of_albums">številu albumov</string>
     <string name="sort_order_entry_filename">Ime datoteke</string>
