@@ -29,7 +29,7 @@
         <item quantity="other"><xliff:g id="hours">%d</xliff:g> ک</item>
     </plurals>
     <plurals name="Nminutes">
-        <item quantity="one"><xliff:g id="minutes">%d</xliff:g> خ</item>
+        <item quantity="one"><xliff:g id="minutes">%d</xliff:g> خولەک </item>
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g> خ</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
