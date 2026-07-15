@@ -110,7 +110,8 @@
     <string name="empty_playlist_secondary">لإضافة الأغاني إلى قائمة التشغيل هذه، انقر فوق قائمة خيارات أي أغنية أو ألبوم أو الفنان وحدد \"إضافة إلى قائمة التشغيل\".</string>
     <string name="empty_top_tracks_main">لا توجد أغاني أعلى </string>
     <string name="empty_top_tracks_secondary">ستُضاف الأغاني التي تسمعها كثيراً إلى هذه القائمة.</string>
-    <string name="empty_last_added_main">لم تُضف أغاني مؤخراً</string>
+    <string name="empty_last_added_main">لم تُضف أغاني مؤخراً
+</string>
     <string name="empty_last_added">هنا ستظهر الأغاني التي قمت بإضافتها خلال الشهر الماضي.</string>
     <string name="empty_generic_main">لم يتم العثور على موسيقى</string>
     <string name="empty_generic_secondary">لنسخ ملفات الموسيقى من الكمبيوتر إلى الجهاز الخاص بك، استخدم كبل USB.</string>
