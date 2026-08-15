@@ -92,7 +92,7 @@
     <string name="accessibility_repeat_all">Hamısını təkrarla</string>
     <string name="accessibility_repeat_one">Birini təkrarla</string>
     <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' zəng səsi olaraq ayarlandı</string>
-    <string name="settings_storage_category">Anbar</string>
+    <string name="settings_storage_category">Depo</string>
     <string name="settings_delete_cache_title">Gizli yaddaşı sil</string>
     <string name="settings_delete_cache_summary">Gizli yaddaşdakı bütün təsvirləri sil</string>
     <string name="settings_general_category">Ümumi</string>
