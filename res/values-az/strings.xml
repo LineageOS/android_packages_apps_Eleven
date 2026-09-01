@@ -69,7 +69,7 @@
     <string name="delete_warning">Bu, gizli yaddaşda olan təsvirləri birdəfəlik siləcək</string>
     <string name="new_photo">Qalereyadan foto seçin</string>
     <string name="use_default">İlkin fotodan istifadə et</string>
-    <string name="visualizer_perm_denied">Səsyazma icazəsi rədd edildi, musiqi vizuallaşdırmanı Ayarlardan fəallaşdırın</string>
+    <string name="visualizer_perm_denied">Səsyazma izni rədd edildi, musiqi vizuallaşdırmanı Ayarlardan fəallaşdırın</string>
     <string name="context_menu_play_selection">Oxut</string>
     <string name="context_menu_play_next">Sonrakını oxut</string>
     <string name="context_menu_play_album">Albomu oxut</string>
