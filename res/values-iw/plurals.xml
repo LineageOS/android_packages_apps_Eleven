@@ -19,49 +19,41 @@
     <plurals name="Nalbums">
         <item quantity="one">אלבום אחד</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> אלבומים</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> אלבומים</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> אלבומים</item>
     </plurals>
     <plurals name="Nsongs">
         <item quantity="one">שיר אחד</item>
         <item quantity="two"><xliff:g id="count">%d</xliff:g> שירים</item>
-        <item quantity="many"><xliff:g id="count">%d</xliff:g> שירים</item>
         <item quantity="other"><xliff:g id="count">%d</xliff:g> שירים</item>
     </plurals>
     <plurals name="Nhours">
         <item quantity="one">ש\' <xliff:g id="hours">%d</xliff:g></item>
         <item quantity="two"><xliff:g id="hours">%d</xliff:g> ש\'</item>
-        <item quantity="many"><xliff:g id="hours">%d</xliff:g> ש\'</item>
         <item quantity="other"><xliff:g id="hours">%d</xliff:g> ש\'</item>
     </plurals>
     <plurals name="Nminutes">
         <item quantity="one"><xliff:g id="minutes">%d</xliff:g> דק</item>
         <item quantity="two"><xliff:g id="minutes">%d</xliff:g> דק\'</item>
-        <item quantity="many"><xliff:g id="minutes">%d</xliff:g> דק\'</item>
         <item quantity="other"><xliff:g id="minutes">%d</xliff:g> דק\'</item>
     </plurals>
     <plurals name="NNNtrackstoplaylist">
         <item quantity="one">שיר <xliff:g id="number" example="1">%d</xliff:g> נוסף לרשימת ההשמעה.</item>
         <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לרשימת ההשמעה.</item>
-        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לרשימת ההשמעה.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לרשימת ההשמעה.</item>
     </plurals>
     <plurals name="NNNtracksfromplaylist">
         <item quantity="one">שיר <xliff:g id="number" example="1">%d</xliff:g> הוסר מרשימת ההשמעה.</item>
         <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> שירים הוסרו מרשימת ההשמעה.</item>
-        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> שירים הוסרו מרשימת ההשמעה.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> שירים הוסרו מרשימת ההשמעה.</item>
     </plurals>
     <plurals name="NNNtrackstoqueue">
         <item quantity="one">שיר <xliff:g id="number" example="1">%d</xliff:g> נוסף לתור ההשמעה.</item>
         <item quantity="two"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לתור ההשמעה.</item>
-        <item quantity="many"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לתור ההשמעה.</item>
         <item quantity="other"><xliff:g id="number" example="27">%d</xliff:g> שירים נוספו לתור ההשמעה.</item>
     </plurals>
     <plurals name="NNNtracksdeleted">
         <item quantity="one">שיר אחד נמחק.</item>
         <item quantity="two"><xliff:g id="songs_to_delete">%d</xliff:g> שירים נמחקו.</item>
-        <item quantity="many"><xliff:g id="songs_to_delete">%d</xliff:g> שירים נמחקו.</item>
         <item quantity="other"><xliff:g id="songs_to_delete">%d</xliff:g> שירים נמחקו.</item>
     </plurals>
 </resources>
