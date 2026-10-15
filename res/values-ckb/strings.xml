@@ -61,12 +61,12 @@
     <string name="clear">پاککردنەوە</string>
     <string name="new_playlist_name_template">لیستی لێدانی <xliff:g id="number">%d</xliff:g></string>
     <string name="create_playlist_prompt">ناوی لیستی لێدان</string>
-    <string name="delete_dialog_title">دڵنیای له‌ سڕینه‌وه‌ی  <xliff:g id="item" example="album">%s</xliff:g> ؟</string>
+    <string name="delete_dialog_title">دڵنیای لە سڕینەوەی  <xliff:g id="item" example="album">%s</xliff:g> ؟</string>
     <string name="clear_top_tracks_title">سڕینەوەی تراکە لوتکەکان؟</string>
     <string name="clear_recent_title">سڕینەوەی دوایین لێدراوەکان؟</string>
     <string name="clear_last_added">سڕینەوەی دوایین زیادکراوەکان؟</string>
     <string name="cannot_be_undone">ئەمە ناگەڕێنرێتەوە</string>
-    <string name="delete_warning">ئەمە دەبێتە هۆی سڕینەوەی هەمیشەییی وێنە شاردراوەکان</string>
+    <string name="delete_warning">ئەمە دەبێتە هۆی سڕینەوەی هەمیشەیی وێنە شاردراوەکان</string>
     <string name="new_photo">وێنەیەک لە گەلەری هەڵبژێرە</string>
     <string name="use_default">وێنەی بنەڕەتی بەکاربهێنە</string>
     <string name="visualizer_perm_denied">ڕێپێدانی تۆمارکردنی دەنگ ڕەتکرایەوە، لە ڕێکخستنەکان چالاکی بکە بۆ بینینی جوڵەی مۆسیقا</string>
@@ -91,9 +91,9 @@
     <string name="accessibility_repeat">دووبارەکردنەوە</string>
     <string name="accessibility_repeat_all">دووبارەکردنەوەی هەمووی</string>
     <string name="accessibility_repeat_one">دووبارەکردنەوەی یەکدانە</string>
-    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' خستنه‌ سه‌ر زه‌نگ</string>
+    <string name="set_as_ringtone">\'<xliff:g id="name" example="Alarm Bell">%s</xliff:g>\' خستنە سەر زەنگ</string>
     <string name="settings_storage_category">بیرگە</string>
-    <string name="settings_delete_cache_title">سڕینەوەی کاش (Cache)</string>
+    <string name="settings_delete_cache_title">سڕینەوەی کاش</string>
     <string name="settings_delete_cache_summary">سڕینەوەی هەموو وێنە شاردراوەکان</string>
     <string name="settings_general_category">گشتی</string>
     <string name="settings_show_music_visualization_title">نیشاندانی جوڵەی مۆسیقا</string>
