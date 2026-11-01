@@ -46,7 +46,7 @@
     <string name="sort_order_entry_za">Алфавиту в обр. порядке</string>
     <string name="sort_order_entry_artist">Исполнителю</string>
     <string name="sort_order_entry_album">Альбому</string>
-    <string name="sort_order_entry_year">Году</string>
+    <string name="sort_order_entry_year">Год</string>
     <string name="sort_order_entry_duration">Длительности</string>
     <string name="sort_order_entry_number_of_songs">Количеству треков</string>
     <string name="sort_order_entry_number_of_albums">Количеству альбомов</string>
